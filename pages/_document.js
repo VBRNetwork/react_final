@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import Helmet from 'react-helmet'
 import styles from 'styles/base.scss'
-import GlobalStyle from 'libs/globalStyles';
+
 import { Global } from '@jest/types';
 
 // from https://github.com/zeit/next.js/edit/canary/examples/with-react-helmet/pages/_document.js
@@ -45,11 +45,16 @@ export default class extends Document {
           { this.helmetJsx }
           { this.helmetHeadComponents }
           <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
+        
         </Head>
+
         <body {...this.helmetBodyAttrComponents}>
+  
           <style>{styles}</style>
+          
             <Main />
             <NextScript />
+   
         </body>
       </html>
     )

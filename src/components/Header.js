@@ -10,6 +10,7 @@ library.add(faHome,faPlayCircle,faEnvelopeOpen )
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
+
 const PostJobButtonDiv = styled.div`
   @media (min-width: 700px) {
     margin-right: -30px;

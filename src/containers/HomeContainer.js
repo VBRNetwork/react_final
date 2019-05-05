@@ -178,7 +178,7 @@ class HomeContainer extends Component {
               <Carousel.Item style={{backgroundColor:'black'}}>
                 <img
                   className="d-block"
-                  src={'../../static/images/freelancer-o2.jpg'}
+                  src={'../../static/images/freelancer_old.png'}
                   alt="Third slide"
                 />
 

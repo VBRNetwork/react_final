@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import App, { Container } from 'next/app'
 import Layout from 'components/Layout'
 import createStore from 'store/createStore'
+import GlobalStyle from 'libs/globalStyles';
 
 import fetch from 'isomorphic-unfetch'
 import redirectTo from 'libs/redirectTo.js'
@@ -97,6 +98,7 @@ class MyApp extends App {
             <Component router={router} {...pageProps} />
           </Layout>
         </Provider>
+        <GlobalStyle />
       </Container>
     )
   }
