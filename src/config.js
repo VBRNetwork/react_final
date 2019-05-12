@@ -1,5 +1,6 @@
 export default {
   env: process.env.NODE_ENV,
   mode: process.env.MODE,
-  githubApiEndpoint: process.env.GITHUB_API_ENDPOINT
+  vbrincApiUrl: process.env.VBRINC_API_ENDPOINT,
+  globalUrl: process.env.VBRINC_GENERAL_URL
 }

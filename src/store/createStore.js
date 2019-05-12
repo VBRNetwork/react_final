@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware, compose } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension'
 import config from 'config'
 import rootReducer from '../reducers'
 
@@ -45,11 +45,11 @@ function immutableChildren (obj) {
 export default (initialState = {}, context) => {
   let { isServer } = context
   let middlewares = createMiddlewares({ isServer })
-  let state = immutableChildren(initialState)
-
-  return createStore(
+  let store = createStore(
     rootReducer,
-    state,
+    initialState,
     composeWithDevTools(applyMiddleware(...middlewares))
   )
+
+  return store
 }

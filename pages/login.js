@@ -1,64 +1,113 @@
-import Layout from 'components/Layout.js'
-import API_URL from 'libs/globalApiUrl.js'
+import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Map } from 'immutable'
+import { connect } from 'react-redux'
 import Link from 'next/link'
+import { getAccessToken } from 'actions/user'
+import Form from 'react-bootstrap/Form'
+import { Helmet } from 'react-helmet'
+import FormGroup from 'react-bootstrap/FormGroup'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
 import Router from 'next/router'
 
-export default class extends React.Component {
-
+class Login extends Component {
   constructor (props) {
     super(props)
-    this.state = { email: '', password: '', loggingIn: false, errorMessage: '' }
+    this.state = { username: '', password: '', loggingIn: false, errorMessage: '' }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.validateForm = this.validateForm.bind(this)
+
+    this.handleChangePassword = this.handleChangePassword.bind(this)
   }
 
-  handleChange(event) {
-    const target = event.target, value = target.value, name = target.name;
-    this.setState({ [name]: value });
+  handleChange (event) {
+    const target = event.target; const value = target.value; const name = target.name
+    this.setState({ username: value })
   }
 
-  handleSubmit(event) {
-  		
-  		event.preventDefault();
-  	
-	  	if(!this.state.loggingIn) {
+  handleChangePassword (event) {
+    const target = event.target; const value = target.value; const name = target.name
+    this.setState({ password: value })
+  }
 
-	  		this.setState({loggingIn: true, errorMessage: ''});
+  validateForm () {
+    return (this.state.username.length > 0 && this.state.password.length > 0)
+  }
 
-	  		fetch(API_URL+'/auth', {
-			  method: 'POST', headers: { 'Content-Type': 'application/json' },
-			  body: JSON.stringify({ email: this.state.email, password: this.state.password })
-			})
-	  		.then( r => r.json() )
-			.then( resp => {
+  handleSubmit (event) {
+  		event.preventDefault()
+    let { getAccessToken } = this.props
+	  	if (!this.state.loggingIn) {
+      this.setState({ loggingIn: true, errorMessage: '' })
+      getAccessToken({ username: this.state.username, password: this.state.password }).then((res) => {
+        this.redirectToTarget()
+      })
+    }
+  }
 
-				/* returns a JSON object {result: "success"} or {error:""} with 400 status */
-
-				if(!resp.result) {
-					this.setState({errorMessage: 'Email or Password is invalid.'})
-				}
-				else {
-					document.cookie = 'authtoken='+resp.token;
-					window.location = "/dashboard";
-				}
-
-				this.setState({loggingIn: false });
-			})
-		}
+  redirectToTarget = () => {
+    Router.push('/writing')
   }
 
   render = () => (
-       	<div>
-		    <h2>Login</h2>
-			<form onSubmit={this.handleSubmit}>
-				{this.state.errorMessage}
-				<input name="email" type="email" placeholder="Email Address" value={this.state.email} onChange={this.handleChange} required />
-				<input name="password" type="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required />
-				<Link href="/forgot-password"><a>Forgot password?</a></Link>
-				<button name="submit" type="submit">{this.state.loggingIn ? 'Logging in..' : 'Log In'}</button>
-			</form>
-		  </div>
+    <article>
+      <Helmet>
+        <title>Marketing Page</title>
+        <meta
+          name='description'
+          content='A React.js Boilerplate application page'
+        />
+      </Helmet>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-12 text-center'>
+            <div className='p-5' style={{ width: '400px', margin: '0 auto' }}>
+              <h2>Login Page</h2>
+              <form onSubmit={this.handleSubmit}>
+                <FormGroup controlId='username'>
+                  <FormControl
+                    autoFocus
+                    type='text'
+                    placeholder='Username'
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <FormGroup controlId='password'>
+                  <FormControl
+                    value={this.state.password}
+                    placeholder='Password'
+                    onChange={this.handleChangePassword}
+                    type='password'
+                  />
+                </FormGroup>
+                <Button block type='submit'>
+                Login
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
   )
-
 }
+
+function mapStateToProps (state) {
+  return {
+    user: state.user
+  }
+}
+
+Login.propTypes = {
+  // user: PropTypes.instanceOf(Map).isRequired,
+  getAccessToken: PropTypes.func.isRequired
+}
+
+export { Login }
+export default connect(mapStateToProps, {
+  getAccessToken
+})(Login)

@@ -1,7 +1,19 @@
-import { combineReducers } from 'redux'
+import user from './user'
+import { persistCombineReducers, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-import repos from './repos'
+const persistConfigUser = {
+  key: 'user',
+  storage
+}
+const reducers = {
+  user: persistReducer(persistConfigUser, user)
+}
 
-export default combineReducers({
-  repos
-})
+const persistConfig = {
+  key: 'root',
+  storage: storage,
+  whitelist: ['user']
+}
+
+export default persistCombineReducers(persistConfig, reducers)
