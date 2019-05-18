@@ -79,14 +79,16 @@ class MyApp extends App {
     let persistor = persistStore(store)
 
     return (
-      <Container>
-        <Provider store={store}>
-          <Layout>
-            <Component router={router} {...pageProps} />
-          </Layout>
-        </Provider>
-        <GlobalStyle />
-      </Container>
+     
+        <Container>
+            <Layout>
+            <Provider store={store} persistor={persistor}>
+              <Component router={router} {...pageProps} />
+              </Provider>
+            </Layout>
+          <GlobalStyle />
+        </Container>
+
     )
   }
 }
