@@ -39,7 +39,7 @@ class Login extends Component {
 
   handleSubmit (event) {
   		event.preventDefault()
-    let { getAccessToken } = this.props
+      let { getAccessToken } = this.props
 	  	if (!this.state.loggingIn) {
       this.setState({ loggingIn: true, errorMessage: '' })
       getAccessToken({ username: this.state.username, password: this.state.password }).then((res) => {

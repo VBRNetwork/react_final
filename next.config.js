@@ -1,9 +1,10 @@
 const { ANALYZE, ASSET_HOST } = process.env
+const withCSS = require('@zeit/next-css');
 
 // for those who using CDN
 const assetPrefix = ASSET_HOST || ''
 
-module.exports = {
+module.exports = withCSS({
   assetPrefix,
   target: 'serverless',
   webpack: (config, { dev }) => {
@@ -35,4 +36,4 @@ module.exports = {
 
     return config
   }
-}
+})

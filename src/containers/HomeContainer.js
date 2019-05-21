@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Map } from 'immutable'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -8,45 +6,19 @@ import Carousel from 'react-bootstrap/Carousel'
 import Figure from 'react-bootstrap/Figure'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import styled from 'styled-components'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../styles/home.css'
 
-import CenteredSection from 'components/CenteredSection'
-import Section from 'components/Section'
-
-const SloganText = styled.h2`
-  font-weight: bold;
-  color: #37405e;
-`
-
-const DivSmallPromoText = styled.div`
-  width: 209px;
-  color: #37405e;
-  opacity: 0.7;
-  font-size: 12px;
-  margin-top: 68px;
-  float: right;
-  text-align: right;
-`
-
-const SubText = styled.p`
-  color: #37405e;
-  font-family: 'Helvetica';
-  font-size: 14px;
-  padding-top: 10px;
-`
 
 class HomeContainer extends Component {
   static async getInitialProps ({ store, query }) {
-
   }
 
   componentDidMount () {
-
   }
 
   render () {
@@ -60,8 +32,8 @@ class HomeContainer extends Component {
               position: 'absolute',
               width: '100%',
               height: '98%'
-            }}
-          >
+            }}>
+          
             <Particles
               params={{
                 particles: {
@@ -91,14 +63,14 @@ class HomeContainer extends Component {
               <Row>
                 <Col xs='6'>
                   <div className='intro-text'>
-                    <SloganText>
+                    <h2 className='slogan'>
                       Disrupting the Freelancing Marketplace with the power of
                       blockchain
-                    </SloganText>
-                    <SubText>
+                    </h2>
+                    <p className="subtext-css">
                       No more Fees, Scam Attempts, Poor Customer Support,
                       Delayed Payments or Unfair Mediation!
-                    </SubText>
+                    </p>
                     <div className='input-group'>
                       <Form.Control
                         size='sm'
@@ -122,7 +94,7 @@ class HomeContainer extends Component {
                 </Col>
                 <Col xs='6'>
                   <Image src={'../../static/images/homepage_man.png'} style={{ marginLeft: '40%' }} />
-                  <DivSmallPromoText>
+                  <div className="small-promo-text">
                     <div style={{ position: 'relative' }}>
                       <div
                         style={{ display: 'inline' }}
@@ -139,7 +111,7 @@ class HomeContainer extends Component {
                         Freelancers!
                       </div>
                     </div>
-                  </DivSmallPromoText>
+                  </div>
                 </Col>
               </Row>
             </Jumbotron>
@@ -341,7 +313,7 @@ class HomeContainer extends Component {
 
             <hr />
             <div className='container mt-5'>
-              <Section>
+              <div className="home-section">
                 <Row>
                   <Col lg={3} xs={12}>
                     <Image
@@ -392,7 +364,7 @@ class HomeContainer extends Component {
                     </div>
                   </Col>
                 </Row>
-              </Section>
+              </div>
             </div>
           </div>
         </div>

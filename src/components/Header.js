@@ -3,19 +3,9 @@ import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styled from 'styled-components'
-import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-library.add(faHome, faPlayCircle, faEnvelopeOpen)
-
-const PostJobButtonDiv = styled.div`
-  @media (min-width: 700px) {
-    margin-right: -30px;
-    margin-left: 50px;
-  }
-`
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import '../styles/base.css'
 
 /* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
@@ -43,7 +33,7 @@ class Header extends React.Component {
 
               <Nav>
                 <Nav.Link href='/' className='small'>
-                  <FontAwesomeIcon icon='home' size='sm' /> Home
+                  <FontAwesomeIcon icon='home' size='sm' fixedWidth /> Home
                 </Nav.Link>
                 <Nav.Link href='#how-it-works' className='small'>
                   How it works
@@ -57,7 +47,7 @@ class Header extends React.Component {
                 <Nav.Link href='/register' className='small'>
                   Register
                 </Nav.Link>
-                <PostJobButtonDiv>
+                <div className="post-job-btn">
                   <Button
                     href='/postjob'
                     variant='success'
@@ -66,11 +56,10 @@ class Header extends React.Component {
                     style={{
                       backgroundColor: '#2EC3AB',
                       borderColor: '#2EC3AB'
-                    }}
-                  >
-                    Post a job
+                    }}>
+                      Post a job
                   </Button>
-                </PostJobButtonDiv>
+                </div>
               </Nav>
             </Navbar.Collapse>
           </div>

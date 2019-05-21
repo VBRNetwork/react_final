@@ -4,12 +4,15 @@ import { Provider } from 'react-redux'
 import App, { Container } from 'next/app'
 import Layout from 'components/Layout'
 import createStore from 'store/createStore'
-import GlobalStyle from 'libs/globalStyles'
 import fetch from 'isomorphic-unfetch'
 import redirectTo from 'libs/redirectTo.js'
 import cookies from 'next-cookies'
 import API_URL from 'libs/globalApiUrl.js'
 import { persistStore } from 'redux-persist'
+import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
@@ -86,7 +89,6 @@ class MyApp extends App {
               <Component router={router} {...pageProps} />
               </Provider>
             </Layout>
-          <GlobalStyle />
         </Container>
 
     )

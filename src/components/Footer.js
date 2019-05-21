@@ -24,7 +24,7 @@ class Footer extends React.Component {
     render () {
       return (
 
-        <Wrapper style={{ backgroundColor: '#37405E' }}>
+        <footer className="footer-box" style={{ backgroundColor: '#37405E' }}>
           <div className='container'>
             <Row>
               <Col lg={3} xs={6}>
@@ -138,7 +138,7 @@ class Footer extends React.Component {
               </Col>
             </Row>
           </div>
-        </Wrapper>
+        </footer>
       )
     }
 }
