@@ -45,14 +45,10 @@ export default class extends Document {
           { this.helmetHeadComponents }
           <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
         </Head>
-
         <body {...this.helmetBodyAttrComponents}>
-
           <style>{styles}</style>
-
           <Main />
           <NextScript />
-
         </body>
       </html>
     )
