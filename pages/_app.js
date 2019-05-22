@@ -11,6 +11,8 @@ import API_URL from 'libs/globalApiUrl.js'
 import { persistStore } from 'redux-persist'
 import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import Header from './Header'
+import Footer from './Footer'
 
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
@@ -84,9 +86,11 @@ class MyApp extends App {
     return (
         <Container>
             <Provider store={store} persistor={persistor}>
-              <Layout>
-                <Component router={router} {...pageProps} />
-              </Layout>
+                <Header />
+                  <Layout>
+                    <Component router={router} {...pageProps} />
+                  </Layout>
+                <Footer />
             </Provider>
         </Container>
     )

@@ -1,17 +1,11 @@
+import React, { Component, Fragment } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../styles/base.css'
 
-/* eslint-disable react/prefer-stateless-function */
 class Header extends React.Component {
-  handleClick = e => {
-    
-  };
-
   render () {
     return (
       <div>

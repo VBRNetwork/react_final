@@ -1,20 +1,14 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ListGroup from 'react-bootstrap/ListGroup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Wrapper from './Wrapper'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, fab)
 
 class Footer extends React.Component {
-    
-    handleClick = e => {
-     
-    };
-
     render () {
       return (
 
