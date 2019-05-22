@@ -10,15 +10,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, fab)
 
 class Footer extends React.Component {
-    state = {
-      current: 'mail'
-    };
-
+    
     handleClick = e => {
-      console.log('click ', e)
-      this.setState({
-        current: e.key
-      })
+     
     };
 
     render () {

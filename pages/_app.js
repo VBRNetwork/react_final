@@ -16,11 +16,11 @@ library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
   static async getInitialProps ({ Component, ctx }) {
-    // return {
-    //   pageProps: Component.getInitialProps
-    //     ? await Component.getInitialProps(ctx)
-    //     : {}
-    // }
+    return {
+      pageProps: Component.getInitialProps
+        ? await Component.getInitialProps(ctx)
+        : {}
+    }
 
     let pageProps = {}
     const c = cookies(ctx)
@@ -82,15 +82,13 @@ class MyApp extends App {
     let persistor = persistStore(store)
 
     return (
-     
         <Container>
-            <Layout>
             <Provider store={store} persistor={persistor}>
-              <Component router={router} {...pageProps} />
-              </Provider>
-            </Layout>
+              <Layout>
+                <Component router={router} {...pageProps} />
+              </Layout>
+            </Provider>
         </Container>
-
     )
   }
 }
