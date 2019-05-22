@@ -11,8 +11,8 @@ import API_URL from 'libs/globalApiUrl.js'
 import { persistStore } from 'redux-persist'
 import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import Header from './Header'
-import Footer from './Footer'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
