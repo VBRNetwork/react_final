@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import ListGroup from 'react-bootstrap/ListGroup'
@@ -67,27 +67,27 @@ class Footer extends React.Component {
               </Col>
               <Col lg={3} xs={6}>
                 <ListGroup variant='flush'>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <h5>Browse by skills</h5>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/vbr-community'>Content Writing & Translation</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/about-us'>Marketing & SEO</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/how-works'>Graphic & Web Design</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/terms-and-condition'>Business Development</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/terms-and-condition'>Coding & Developers</a>
-                  </ListGroup.Item>
-                  <ListGroup.Item bsPrefix='footer-list'>
-                    <a href='/vbr-community'>All skills</a>
-                  </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <h5>Browse by skills</h5>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/vbr-community'>Content Writing & Translation</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/about-us'>Marketing & SEO</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/how-works'>Graphic & Web Design</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/terms-and-condition'>Business Development</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/terms-and-condition'>Coding & Developers</a>
+                    </ListGroup.Item>
+                    <ListGroup.Item bsPrefix='footer-list'>
+                        <a href='/vbr-community'>All skills</a>
+                    </ListGroup.Item>
                 </ListGroup>
               </Col>
               <Col lg={3} xs={6}>

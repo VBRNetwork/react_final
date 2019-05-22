@@ -11,19 +11,22 @@ import API_URL from 'libs/globalApiUrl.js'
 import { persistStore } from 'redux-persist'
 import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import Head from 'next/head'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
+
   static async getInitialProps ({ Component, ctx }) {
     return {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
-        : {}
+        : {},
     }
 
+    
     let pageProps = {}
     const c = cookies(ctx)
 
@@ -79,18 +82,46 @@ class MyApp extends App {
 
     if (response !== null) { return { response } } else return { pageProps }
   }
+
+
+
+  get helmetBodyAttrComponents () {
+    return this.props.helmet.bodyAttributes.toComponent()
+  }
+
+  get helmetHeadComponents () {
+    return Object.keys(this.props.helmet)
+      .filter(el => el !== 'htmlAttributes' && el !== 'bodyAttributes')
+      .map(el => this.props.helmet[el].toComponent())
+  }
+
+  get helmetJsx () {
+    let title = 'Hello next.js Real World!'
+    return (
+      <Helmet>
+        <title>{title}</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta property='og:title' content={title} />
+      </Helmet>
+    )
+  }
+
+
   render () {
     const { Component, pageProps, store, router } = this.props
     let persistor = persistStore(store)
 
     return (
         <Container>
+            <Head>
+              <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+            </Head>
             <Provider store={store} persistor={persistor}>
-                <Header />
-                  <Layout>
+                <Layout>
+                  <Header/>
                     <Component router={router} {...pageProps} />
-                  </Layout>
-                <Footer />
+                  <Footer/>
+                </Layout>
             </Provider>
         </Container>
     )
