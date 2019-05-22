@@ -116,12 +116,10 @@ class MyApp extends App {
             <Head>
               <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
             </Head>
-            <Provider store={store} persistor={persistor}>
-                <Layout>
-                  <Header/>
-                    <Component router={router} {...pageProps} />
-                  <Footer/>
-                </Layout>
+            <Provider store={store}>
+                <Header/>
+                  <Component router={router} {...pageProps} />
+                <Footer/>
             </Provider>
         </Container>
     )
