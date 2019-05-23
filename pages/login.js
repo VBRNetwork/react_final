@@ -51,14 +51,39 @@ class Login extends Component {
 
   render = () => (
     <article>
-      
+      <Helmet>
+        <title>Marketing Page</title>
+        <meta
+          name='description'
+          content='A React.js Boilerplate application page'
+        />
+      </Helmet>
       <div className='container'>
         <div className='row'>
           <div className='col-lg-12 text-center'>
             <div className='p-5' style={{ width: '400px', margin: '0 auto' }}>
               <h2>Login Page</h2>
               <form onSubmit={this.handleSubmit}>
-               
+                <FormGroup controlId='username'>
+                  <FormControl
+                    autoFocus
+                    type='text'
+                    placeholder='Username'
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                  />
+                </FormGroup>
+                <FormGroup controlId='password'>
+                  <FormControl
+                    value={this.state.password}
+                    placeholder='Password'
+                    onChange={this.handleChangePassword}
+                    type='password'
+                  />
+                </FormGroup>
+                <Button block type='submit'>
+                Login
+                </Button>
               </form>
             </div>
           </div>
