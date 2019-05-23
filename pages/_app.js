@@ -11,8 +11,7 @@ import { persistStore } from 'redux-persist'
 import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
+import Layout from 'components/Layout'
 
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
@@ -116,9 +115,9 @@ class MyApp extends App {
               <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
             </Head>
             <Provider store={store}>
-                <Header/>
+                <Layout>
                   <Component router={router} {...pageProps} />
-                <Footer/>
+                </Layout>
             </Provider>
         </Container>
     )
