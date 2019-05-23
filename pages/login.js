@@ -65,7 +65,7 @@ class Login extends Component {
               <h2>Login Page</h2>
               <form onSubmit={this.handleSubmit}>
                 
-                <Button block type='submit'>
+                <Button type='submit'>
                 Login
                 </Button>
               </form>
