@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react'
-import Col from 'react-bootstrap/Col'
 
 
-import Row from 'react-bootstrap/Row'
-// import ListGroup from 'react-bootstrap/ListGroup'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -17,8 +14,7 @@ class Footer extends PureComponent {
 
         <footer className="footer-box" style={{ backgroundColor: '#37405E' }}>
           <div className='container'>
-            <Col className='text-center'>
-                      <a className='text-white' href=''>
+          <a className='text-white' href=''>
                         <FontAwesomeIcon icon={['fas', 'envelope-open']} />
                       </a>
                       <a className='text-white' href=''>
@@ -27,7 +23,6 @@ class Footer extends PureComponent {
                       <a className='text-white' href=''>
                         <FontAwesomeIcon icon={['fab', 'linkedin']} />
                       </a>
-            </Col>
           </div>
         </footer>
       )
