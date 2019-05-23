@@ -64,10 +64,7 @@ class Login extends Component {
             <div className='p-5' style={{ width: '400px', margin: '0 auto' }}>
               <h2>Login Page</h2>
               <form onSubmit={this.handleSubmit}>
-                
-                <Button type='submit'>
-                Login
-                </Button>
+          
               </form>
             </div>
           </div>
