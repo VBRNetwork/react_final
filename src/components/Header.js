@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/base.css'
 
-class Header extends PureComponent {
+class Header extends Component {
     render () {
         return (
             <div>
