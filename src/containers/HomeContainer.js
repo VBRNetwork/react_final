@@ -15,12 +15,17 @@ import '../styles/home.css'
 
 
 class HomeContainer extends Component {
- 
+  static async getInitialProps ({ store, query }) {
+  }
+
+  componentDidMount () {
+  }
+
   render () {
     return (
       <Fragment>
 
-       aaaaa
+
       </Fragment>
     )
   }

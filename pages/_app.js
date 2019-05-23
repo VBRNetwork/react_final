@@ -11,9 +11,11 @@ import { persistStore } from 'redux-persist'
 import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
-
 import Layout from 'components/Layout'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
+import 'antd/dist/antd.css'; 
+import 'styles/base.scss'
+import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 
 class MyApp extends App {
 
