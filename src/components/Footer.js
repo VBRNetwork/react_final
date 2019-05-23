@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
-import { Row, Col, List, Typography } from 'antd';
-
-import ListGroup from 'react-bootstrap/ListGroup'
-
+import { Row, Col, List } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'

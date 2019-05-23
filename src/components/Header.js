@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/base.css'
 import { Menu, Icon, Row, Col,Layout,Breadcrumb } from 'antd';
@@ -66,17 +65,10 @@ class Header extends Component {
                     </Col>
                     <Col span={6}>
                         <div className="post-job-btn">
-                            <Button
-                                href='/postjob'
-                                variant='success'
-                                size='sm'
-                                className='post-job-button'
-                                style={{
+                            <button className='post-job-button'  style={{
                                 backgroundColor: '#2EC3AB',
                                 borderColor: '#2EC3AB'
-                                }}>
-                                Post a job
-                            </Button>
+                                }} ><a href="/postjob">Post a job</a></button>
                         </div>
                     </Col>
                 </Row>
