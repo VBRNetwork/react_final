@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {fas} from '@fortawesome/free-solid-svg-icons'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
+import Link from 'next/link'
 
 library.add(fas, fab)
 
@@ -49,9 +50,10 @@ class Footer extends Component {
                             <List
                                 dataSource={menu1}
                                 renderItem={item => (
-
                                     <List.Item className="footer-list footer-item">
-                                        {item}
+                                       
+                                            <a> {item}</a>
+                                      
                                     </List.Item>
                                 )}
                             />
@@ -77,8 +79,9 @@ class Footer extends Component {
                                 renderItem={item =>
 
                                     <List.Item className="footer-list footer-item">
-                                        {item}
-
+                                        <Link href="/jobs/search">
+                                            {item}
+                                        </Link>
                                     </List.Item>}
                             />
                         </Col>
