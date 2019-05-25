@@ -113,150 +113,151 @@ class HomeContainer extends Component {
             </div>
         </div>
 
-        <div style={{width:'600px'}}>
-                <Carousel afterChange={this.onChange}>
-                  <div style={{ backgroundColor: 'black' }}>
-                      <img
-                          className='d-block h-200'
-                          src={'../../static/images/freelancer-working2.png'}
-                          alt='First slide'
-                        />
-                        <div>
-                          <h3>First slide label</h3>
-                          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                  </div>
-                  <div>
-                      <img
-                            className='d-block'
-                            src={'../../static/images/freelancer_old.png'}
-                            alt='Third slide'
-                          />
-                            <div>
-                              <h3>First slide label</h3>
-                              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </div>
-                  </div>
-                  <div>
-                        <img
+        <Layout style={{margin:'10px'}}>
+                <div >
+                        <Carousel afterChange={this.onChange}>
+                        <div style={{ backgroundColor: 'black' }}>
+                            <img
                                 className='d-block h-200'
                                 src={'../../static/images/freelancer-working2.png'}
                                 alt='First slide'
-                              />
-                              <div>
+                                />
+                                <div>
                                 <h3>First slide label</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                              </div>
-                  </div>
-                  <div>
-                        <img
-                                className='d-block h-200'
-                                src={'../../static/images/freelancer-working2.png'}
-                                alt='First slide'
-                              />
-                        <div>
-                          <h3>First slide label</h3>
-                          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
                         </div>
-                  </div>
-                </Carousel>
-        </div>
+                        <div>
+                            <img
+                                    className='d-block'
+                                    src={'../../static/images/freelancer_old.png'}
+                                    alt='Third slide'
+                                />
+                                    <div>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </div>
+                        </div>
+                        <div>
+                                <img
+                                        className='d-block h-200'
+                                        src={'../../static/images/freelancer-working2.png'}
+                                        alt='First slide'
+                                    />
+                                    <div>
+                                        <h3>First slide label</h3>
+                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </div>
+                        </div>
+                        <div>
+                                <img
+                                        className='d-block h-200'
+                                        src={'../../static/images/freelancer-working2.png'}
+                                        alt='First slide'
+                                    />
+                                <div>
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
+                        </div>
+                        </Carousel>
+                </div>
 
-           
-        <Row  type="flex" justify="space-around" gutter={16}>
-            <Col span={6}>
-                <img
-                height='80'
-                width='80'
-                alt='171x180'
-                src={'../../static/images/img-01.png'}
-                />
-                Writing
-            </Col>
-            <Col  span={6}>
-                <img
-                    height='80'
-                    width='80'
-                    alt='171x180'
-                    src={'../../static/images/img-02.png'}
-                    />
-                Design
-            </Col>
-            <Col  span={6}>
-                <img
-                height='80'
-                width='80'
-                alt='171x180'
-                src={'../../static/images/img-03.png'}
-                />
-                Business Consultance
-            </Col>
-        </Row>
-        <Row  type="flex" justify="space-around" gutter={16}>
-            <Col span={6}>
-                 <img
-                    height='80'
-                    width='80'
-                    alt='171x180'
-                    src={'../../static/images/img-05.png'}
-                  />
-                Developers
-              </Col>
-              <Col span={6}>
-                  <img
-                    height='80'
-                    width='80'
-                    alt='171x180'
-                    src={'../../static/images/img-08.png'}
-                  />
-                  Marketing & SEO
-              </Col>
+                
+                <Row  type="flex" justify="space-around" gutter={16}>
+                    <Col span={6}>
+                        <img
+                        height='80'
+                        width='80'
+                        alt='171x180'
+                        src={'../../static/images/img-01.png'}
+                        />
+                        Writing
+                    </Col>
+                    <Col  span={6}>
+                        <img
+                            height='80'
+                            width='80'
+                            alt='171x180'
+                            src={'../../static/images/img-02.png'}
+                            />
+                        Design
+                    </Col>
+                    <Col  span={6}>
+                        <img
+                        height='80'
+                        width='80'
+                        alt='171x180'
+                        src={'../../static/images/img-03.png'}
+                        />
+                        Business Consultance
+                    </Col>
+                </Row>
+                <Row  type="flex" justify="space-around" gutter={16}>
+                    <Col span={6}>
+                        <img
+                            height='80'
+                            width='80'
+                            alt='171x180'
+                            src={'../../static/images/img-05.png'}
+                        />
+                        Developers
+                    </Col>
+                    <Col span={6}>
+                        <img
+                            height='80'
+                            width='80'
+                            alt='171x180'
+                            src={'../../static/images/img-08.png'}
+                        />
+                        Marketing & SEO
+                    </Col>
 
-              <Col span={6}>
-                <img
-                    height='80'
-                    width='80'
-                    alt='171x180'
-                    src={'../../static/images/img-04.png'}
-                    />
-                    PR
-            </Col>
-        </Row>
-      
-        <div style={{ background: '#ECECEC', padding: '30px' }}>
-            <div id='how-it-works'>
-                <h3 className='text-center how-it-work-title' style={{textAlign:'center'}}>How it works?</h3>
-            </div>
-            <Row gutter={16}>
-                <Col span={6}>
-                    <Card title="Post your project" bordered={false}>
-                    Tell us about your project. We connect you with top
-                        talent around the world, or near you.
-                    </Card>
-                </Col>
-                <Col span={6}>
-                    <Card title="Review freelancers" bordered={false}>
-                    Tell us about your project. We connect you with top
-                        talent around the world, or near you.
-                    </Card>
-                </Col>
-                <Col span={6}>
-                    <Card title="Collaborate" bordered={false}>
-                    Tell us about your project. We connect you with top
-                        talent around the world, or near you.
-                    </Card>
-                </Col>
-                <Col span={6}>
-                    <Card title="Collaborate" bordered={false}>
-                    Tell us about your project. We connect you with top
-                        talent around the world, or near you.
-                    </Card>
-                </Col>
-            </Row>
-        </div>
+                    <Col span={6}>
+                        <img
+                            height='80'
+                            width='80'
+                            alt='171x180'
+                            src={'../../static/images/img-04.png'}
+                            />
+                            PR
+                    </Col>
+                </Row>
+            
+                <div style={{ background: '#ECECEC', padding: '30px' }}>
+                    <div id='how-it-works'>
+                        <h3 className='text-center how-it-work-title' style={{textAlign:'center'}}>How it works?</h3>
+                    </div>
+                    <Row gutter={16}>
+                        <Col span={6}>
+                            <Card title="Post your project" bordered={false}>
+                            Tell us about your project. We connect you with top
+                                talent around the world, or near you.
+                            </Card>
+                        </Col>
+                        <Col span={6}>
+                            <Card title="Review freelancers" bordered={false}>
+                            Tell us about your project. We connect you with top
+                                talent around the world, or near you.
+                            </Card>
+                        </Col>
+                        <Col span={6}>
+                            <Card title="Collaborate" bordered={false}>
+                            Tell us about your project. We connect you with top
+                                talent around the world, or near you.
+                            </Card>
+                        </Col>
+                        <Col span={6}>
+                            <Card title="Collaborate" bordered={false}>
+                            Tell us about your project. We connect you with top
+                                talent around the world, or near you.
+                            </Card>
+                        </Col>
+                    </Row>
+                </div>
 
 
-        <div className="home-section">
+                <div className="home-section">
             <Row type="flex" justify="space-around" gutter={0}>
                 <Col  span={3}>
                     <img
@@ -307,7 +308,7 @@ class HomeContainer extends Component {
                 </Col>
             </Row>
           </div>
-
+        </Layout>
       </Fragment>
     )
   }
