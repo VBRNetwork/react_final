@@ -39,22 +39,11 @@ class Header extends Component {
                             <Icon type="appstore" />
                                 How it works
                             </Menu.Item>
-                            <SubMenu
-                            title={
-                                <span className="submenu-title-wrapper">
-                                <Icon type="setting" />
-                                    Community
-                                </span>
-                            }>
-                            <MenuItemGroup title="Item 1">
-                                <Menu.Item key="setting:1">Chat</Menu.Item>
-                                <Menu.Item key="setting:2">Forum</Menu.Item>
-                            </MenuItemGroup>
-                            <MenuItemGroup title="Item 2">
-                                <Menu.Item key="setting:3">Option 3</Menu.Item>
-                                <Menu.Item key="setting:4">Option 4</Menu.Item>
-                            </MenuItemGroup>
-                            </SubMenu>
+                          
+                            <Menu.Item key="app1" >
+                            <Icon type="appstore" />
+                                Community
+                            </Menu.Item>
                             <Menu.Item key="alipay">
                                 <Link href="/login">
                                     <a>  <Icon type="mail" /> Login</a>
@@ -106,10 +95,24 @@ class Header extends Component {
                             <Icon type="appstore" />
                              Developers
                         </Menu.Item>
-                        <Menu.Item key="alipay46">
-                            <Icon type="appstore" />
-                                All Categories
-                        </Menu.Item>
+                        <SubMenu
+                            title={
+                                <span className="submenu-title-wrapper">
+                                <Icon type="setting" />
+                                    All Categories
+                                </span>
+                            }>
+                            <MenuItemGroup title="Web Developers">
+                                <Menu.Item key="setting:1">Programming</Menu.Item>
+                                <Menu.Item key="setting:2">Web design</Menu.Item>
+                                <Menu.Item key="setting:4">Javascript</Menu.Item>
+
+                            </MenuItemGroup>
+                            <MenuItemGroup title="Backend Developers">
+                                <Menu.Item key="setting:3">Python</Menu.Item>
+                                <Menu.Item key="setting:4">PHP</Menu.Item>
+                            </MenuItemGroup>
+                            </SubMenu>
                     </Menu>
             </div>
         )
