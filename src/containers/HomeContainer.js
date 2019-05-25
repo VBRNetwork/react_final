@@ -57,9 +57,7 @@ class HomeContainer extends Component {
                     </div>
 
                     <div className='container'>
-
                         <div style={{padding: '50px'}}>
-
                             <Row type="flex" justify="space-around">
                                 <Col span={8}>
                                     <div className='intro-text'>
@@ -119,58 +117,59 @@ class HomeContainer extends Component {
                     </div>
                 </div>
 
-                <div>
-                    <Carousel afterChange={this.onChange}>
-                        <div style={{backgroundColor: 'black'}}>
-                            <img
-                                className='d-block h-200'
-                                src={'../../static/images/freelancer-working2.png'}
-                                alt='First slide'
-                            />
-                            <div>
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <Row>
+                    <Col span={16} offset={4}>
+                        <Carousel afterChange={this.onChange}>
+                            <div style={{backgroundColor: 'black'}}>
+                                <img
+                                    className='d-block h-200'
+                                    src={'../../static/images/freelancer-working2.png'}
+                                    alt='First slide'
+                                />
+                                <div>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img
-                                className='d-block'
-                                src={'../../static/images/freelancer_old.png'}
-                                alt='Third slide'
-                            />
                             <div>
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <img
+                                    className='d-block'
+                                    src={'../../static/images/freelancer_old.png'}
+                                    alt='Third slide'
+                                />
+                                <div>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img
-                                className='d-block h-200'
-                                src={'../../static/images/freelancer-working2.png'}
-                                alt='First slide'
-                            />
                             <div>
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <img
+                                    className='d-block h-200'
+                                    src={'../../static/images/freelancer-working2.png'}
+                                    alt='First slide'
+                                />
+                                <div>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img
-                                className='d-block h-200'
-                                src={'../../static/images/freelancer-working2.png'}
-                                alt='First slide'
-                            />
                             <div>
-                                <h3>First slide label</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <img
+                                    className='d-block h-200'
+                                    src={'../../static/images/freelancer-working2.png'}
+                                    alt='First slide'
+                                />
+                                <div>
+                                    <h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                </div>
                             </div>
-                        </div>
-                    </Carousel>
-                </div>
-                <Layout style={{margin: '10px'}}>
+                        </Carousel>
+                  
 
+                <Layout style={{margin: '10px'}}>
                     <Row type="flex" justify="space-around">
-                        <Col span={6}>
+                        <Col span={4}>
                             <div style={{padding:'20px'}}>
                                 <img
                                     height='80'
@@ -178,10 +177,11 @@ class HomeContainer extends Component {
                                     alt='171x180'
                                     src={'../../static/images/img-01.png'}
                                 />
+                                  <br/>
                                 Writing
                             </div>
                         </Col>
-                        <Col span={6}>
+                        <Col span={4}>
                             <div  style={{padding:'20px'}}>
                                 <img
                                     height='80'
@@ -189,11 +189,12 @@ class HomeContainer extends Component {
                                     alt='171x180'
                                     src={'../../static/images/img-02.png'}
                                 />
+                                  <br/>
                                 Design
                             </div>
 
                         </Col>
-                        <Col span={6}>
+                        <Col span={4}>
                             <div style={{padding:'20px'}}>
                                 <img
                                     height='80'
@@ -201,12 +202,13 @@ class HomeContainer extends Component {
                                     alt='171x180'
                                     src={'../../static/images/img-03.png'}
                                 />
+                                  <br/>
                                 Business Consultance
                             </div>
                         </Col>
                     </Row>
                     <Row type="flex" justify="space-around">
-                        <Col span={6}>
+                        <Col span={4}>
                             <div style={{padding:'20px'}}>
                             <img
                                 height='80'
@@ -214,10 +216,11 @@ class HomeContainer extends Component {
                                 alt='171x180'
                                 src={'../../static/images/img-05.png'}
                             />
+                            <br/>
                             Developers
                             </div>
                         </Col>
-                        <Col span={6}>
+                        <Col span={4}>
                             <div style={{padding:'20px'}}>
                             <img
                                 height='80'
@@ -225,11 +228,12 @@ class HomeContainer extends Component {
                                 alt='171x180'
                                 src={'../../static/images/img-08.png'}
                             />
+                              <br/>
                             Marketing & SEO
                             </div>
                         </Col>
 
-                        <Col span={6}>
+                        <Col span={4}>
                             <div style={{padding:'20px'}}>
                             <img
                                 height='80'
@@ -237,6 +241,7 @@ class HomeContainer extends Component {
                                 alt='171x180'
                                 src={'../../static/images/img-04.png'}
                             />
+                              <br/>
                             PR
                             </div>
                         </Col>
@@ -274,8 +279,11 @@ class HomeContainer extends Component {
                             </Col>
                         </Row>
                     </div>
-
-
+                </Layout>
+                </Col>
+                </Row>
+                 <Layout>
+                     
                     <div className="home-section">
                         <Row type="flex" justify="space-around">
                             <Col span={3}>
@@ -286,34 +294,34 @@ class HomeContainer extends Component {
                                 />
                             </Col>
                             <Col span={8}>
-                                <div className='middle-description-text'>
-                                    <div className='footer-description-title'>
-                                        What’s great about our platform?
+                                <Card bordered={false}>
+                                    <div className='middle-description-text'>
+                                        <div className='footer-description-title'>
+                                            What’s great about our platform?
+                                        </div>
+                                        <p>
+                                            We provide instant payments using VBR tokens, within 48
+                                            hours for fiat payouts.
+                                        </p>
+                                        <p>
+                                            Mediation will be carried out by the smart contract
+                                            agreed upon by the parties and our ToS, on by the
+                                            community.
+                                        </p>
+                                        <p> Meticulously picked customer experience team</p>
+                                        <p>
+                                            Customer can follow the progress of his required product
+                                            in real time, based on project
+                                        </p>
+                                        <p>
+                                            Ample recruitment process for freelancers in order to
+                                            limit the amount of scammers on our platform Highly
+                                            secure environment based on algorithms developed to
+                                            ensure the safety of each and every one of our users.
+                                        </p>
                                     </div>
-                                    <p>
-                                        We provide instant payments using VBR tokens, within 48
-                                        hours for fiat payouts.
-                                    </p>
-                                    <p>
-                                        Mediation will be carried out by the smart contract
-                                        agreed upon by the parties and our ToS, on by the
-                                        community.
-                                    </p>
-                                    <p> Meticulously picked customer experience team</p>
-                                    <p>
-                                        Customer can follow the progress of his required product
-                                        in real time, based on project
-                                    </p>
-                                    <p>
-                                        Ample recruitment process for freelancers in order to
-                                        limit the amount of scammers on our platform Highly
-                                        secure environment based on algorithms developed to
-                                        ensure the safety of each and every one of our users.
-                                    </p>
-                                </div>
+                                </Card>
                             </Col>
-
-
                             <Col span={4}>
                                 <div style={{marginTop: '50px', textAlign: 'center'}}>
                                     <Button className='vbr-button' type={'primary'}>
@@ -321,13 +329,14 @@ class HomeContainer extends Component {
                                     </Button>
                                     <br/>
                                     <span className='small' style={{fontSize: '11px'}}>
-No upfront payments, no hidden
-</span>
+                                        No upfront payments, no hidden
+                                    </span>
                                 </div>
                             </Col>
                         </Row>
                     </div>
-                </Layout>
+                 </Layout>
+              
             </Fragment>
         )
     }

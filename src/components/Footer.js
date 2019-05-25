@@ -43,8 +43,8 @@ class Footer extends Component {
         return (
             <footer className="footer-box" style={{backgroundColor: '#37405E'}}>
                 <div className="container" style={{marginLeft:'50px',marginRight:'50px'}}>
-                    <Row type="flex" justify="space-around" style={{marginBottom:'20px'}}>
-                        <Col span={6} className="gutter-row">
+                    <Row type="flex" justify="center" style={{marginBottom:'20px'}}>
+                        <Col span={4} className="gutter-row">
                             <h3 className="footer-titles">Company</h3>
                             <List
                                 dataSource={menu1}
@@ -57,7 +57,7 @@ class Footer extends Component {
                             />
                         </Col>
 
-                        <Col span={6} className="gutter-row">
+                        <Col span={4} className="gutter-row">
                             <h3 className="footer-titles">Browse by location</h3>
                             <List
                                 size="small"
@@ -69,7 +69,7 @@ class Footer extends Component {
                             />
                         </Col>
 
-                        <Col span={6} className="gutter-row">
+                        <Col span={4} className="gutter-row">
                             <h3 className="footer-titles">Browse by skills</h3>
                             <List
                                 size="large"
@@ -83,7 +83,7 @@ class Footer extends Component {
                             />
                         </Col>
 
-                        <Col span={6}>
+                        <Col span={4}>
                             <img
                                 src={'../../static/images/vbr_logo.png'}
                                 className='footer-logo'

@@ -36,13 +36,15 @@ class Header extends Component {
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="app1" >
-                            <Icon type="appstore" />
-                                How it works
+                                <Link href="/how-it-works">
+                                    <a>  <Icon type="mail" /> How it works</a>
+                                </Link>
                             </Menu.Item>
                           
-                            <Menu.Item key="app1" >
-                            <Icon type="appstore" />
-                                Community
+                            <Menu.Item key="app122" >
+                                <Link href="/community">
+                                    <a>  <Icon type="mail" />Community</a>
+                                </Link>
                             </Menu.Item>
                             <Menu.Item key="alipay">
                                 <Link href="/login">
@@ -55,7 +57,7 @@ class Header extends Component {
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="alipay33">
-                                <Link href="/register">
+                                <Link href="/jobs/post">
                                     <div className="post-job-btn">
                                         <Button type="primary"  style={{
                                         backgroundColor: '#2EC3AB',
@@ -76,24 +78,29 @@ class Header extends Component {
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="app2" >
-                        <Icon type="appstore" />
-                            Marketing & SEO
+                            <Link href="/marketing-seo">
+                                <a>  <Icon type="mail" /> Marketing & SEO</a>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="alipay42">
-                            <Icon type="appstore" />
-                            Design
+                            <Link href="/design">
+                                <a>  <Icon type="mail" /> Design</a>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="alipay36">
-                            <Icon type="appstore" />
-                            Consultance
+                            <Link href="/consultance">
+                                <a>  <Icon type="mail" /> Consultance</a>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="alipay47">
-                            <Icon type="appstore" />
-                                PR
+                            <Link href="/pr">
+                                <a>  <Icon type="mail" /> PR</a>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="alipay59">
-                            <Icon type="appstore" />
-                             Developers
+                            <Link href="/developers">
+                                <a>  <Icon type="mail" /> Developers</a>
+                            </Link>
                         </Menu.Item>
                         <SubMenu
                             title={
