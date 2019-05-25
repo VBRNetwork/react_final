@@ -114,7 +114,7 @@ class MyApp extends App {
     return (
         <Container>
             <Head>
-              <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+            
             </Head>
             <Provider store={store}>
                 <Layout>

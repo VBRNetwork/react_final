@@ -5,7 +5,8 @@ import { Menu, Icon, Row, Col,Layout,Breadcrumb } from 'antd';
 const { Content } = Layout;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-
+import Link from 'next/link'
+import { Button } from 'antd';
 
 class Header extends Component {
     state = {
@@ -28,8 +29,9 @@ class Header extends Component {
                         <Col span={4}>  <img src={'../static/images/vbr_logo.png'} style={{ width: '75px' }} /></Col>
                         <Col span={14}><Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
                             <Menu.Item key="mail">
-                            <Icon type="mail" />
-                                Home
+                                <Link href="/">
+                                    <a>  <Icon type="mail" /> Home</a>
+                                </Link>
                             </Menu.Item>
                             <Menu.Item key="app" disabled>
                             <Icon type="appstore" />
@@ -52,23 +54,24 @@ class Header extends Component {
                             </MenuItemGroup>
                             </SubMenu>
                             <Menu.Item key="alipay">
-                                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                                    Login
-                                </a>
+                                <Link href="/login">
+                                    <a>  <Icon type="mail" /> Login</a>
+                                </Link>
                             </Menu.Item>
                             <Menu.Item key="alipay2">
-                                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                                    Register
-                                </a>
+                            <Link href="/register">
+                                    <a>  <Icon type="mail" /> Register</a>
+                                </Link>
                             </Menu.Item>
                         </Menu>
                     </Col>
                     <Col span={6}>
+              
                         <div className="post-job-btn">
-                            <button className='post-job-button'  style={{
+                        <Button type="primary"  style={{
                                 backgroundColor: '#2EC3AB',
                                 borderColor: '#2EC3AB'
-                                }} ><a href="/postjob">Post a job</a></button>
+                                }} className='post-job-button'>Post a job</Button>
                         </div>
                     </Col>
                 </Row>

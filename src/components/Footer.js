@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { Row, Col, List } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +6,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 library.add(fas, fab)
 
+import '../styles/footer.css'
 
 const menu1 = [
   'VBR Community',
@@ -43,34 +43,55 @@ class Footer extends Component {
       return (
 
         <footer className="footer-box" style={{ backgroundColor: '#37405E' }}>
+            <div className="container" style={{margin:'10px'}}>
+                <Row  type="flex" justify="space-around" gutter={16}>
 
-                <div>
-                    <h3 style={{ marginBottom: 16 }}>Company</h3>
+
+                <Col span={6}   className="gutter-row" >
+
+                    <h5 >Company</h5>
                     <List
-                    bordered
                     dataSource={menu1}
                     renderItem={item => (
-                        <List.Item>
+                        
+                        <List.Item className="footer-list footer-item">
                             {item}
                         </List.Item>
                     )}
                     />
-                    <h3 style={{ margin: '16px 0' }}>Browse by location</h3>
+                </Col>
+
+                
+                <Col span={6}   className="gutter-row" >
+                    <h5 >Browse by location</h5>
                     <List
                     size="small"
-                    bordered
                     dataSource={menu2}
-                    renderItem={item => <List.Item>{item}</List.Item>}
-                    />
-                    <h3 style={{ margin: '16px 0' }}>Browse by skills</h3>
-                    <List
-                    size="large"
-                    bordered
-                    dataSource={menu3}
-                    renderItem={item => <List.Item>{item}</List.Item>}
+                    renderItem={item => 
+                    
+                    <List.Item className="footer-list footer-item">
+                        {item}
+                    </List.Item>}
                     />
 
-                    <img
+                </Col>
+
+                <Col span={6}   className="gutter-row" >
+
+                    <h5 >Browse by skills</h5>
+                    <List
+                    size="large"
+                    dataSource={menu3}
+                    renderItem={item =>
+                    
+                    <List.Item className="footer-list footer-item">
+                        {item}
+                        
+                    </List.Item>}
+                    />
+                </Col>
+                <Col span={6}>
+                <img
                         src={'../../static/images/vbr_logo.png'}
                         style={{ width: '120px', margin: '0 auto' }}
                     />
@@ -92,19 +113,20 @@ class Footer extends Component {
                         </a>
                         </Col>
                     </Row>
-                </div>
-
-
-          <div className='container'>
-            <hr />
-            <Row>
-              <Col >
-                <div className='text-center text-white copyright'>
+                
+                </Col>
+                </Row>
+              
+                <Row>
+                <Col >
+              <div className='text-right text-white copyright'>
                         VBR Inc. 2019 All Rights Reserved.
                 </div>
               </Col>
             </Row>
-          </div>
+
+                </div>
+
         </footer>
       )
     }

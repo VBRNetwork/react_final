@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getAccessToken } from 'actions/user'
 import { Helmet } from 'react-helmet'
-import FormGroup from 'react-bootstrap/FormGroup'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 import Router from 'next/router'
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+
 
 class Login extends Component {
   constructor (props) {
@@ -21,6 +20,7 @@ class Login extends Component {
   }
 
   handleChange (event) {
+    console.log(event);
     const target = event.target; const value = target.value; const name = target.name
     this.setState({ username: value })
   }
@@ -49,7 +49,8 @@ class Login extends Component {
     Router.push('/writing')
   }
 
-  render = () => (
+  render () {
+   return (
     <article>
       <Helmet>
         <title>Marketing Page</title>
@@ -60,37 +61,45 @@ class Login extends Component {
       </Helmet>
       <div className='container'>
         <div className='row'>
-          <div className='col-lg-12 text-center'>
+          <div className='col-lg-12'>
             <div className='p-5' style={{ width: '400px', margin: '0 auto' }}>
               <h2>Login Page</h2>
-              <form onSubmit={this.handleSubmit}>
-                <FormGroup controlId='username'>
-                  <FormControl
-                    autoFocus
-                    type='text'
-                    placeholder='Username'
-                    value={this.state.username}
-                    onChange={this.handleChange}
-                  />
-                </FormGroup>
-                <FormGroup controlId='password'>
-                  <FormControl
-                    value={this.state.password}
-                    placeholder='Password'
-                    onChange={this.handleChangePassword}
-                    type='password'
-                  />
-                </FormGroup>
-                <Button block type='submit'>
-                Login
-                </Button>
-              </form>
+              <Form onSubmit={this.handleSubmit} className="login-form">
+                <Form.Item>
+                    <Input
+                        onChange={this.handleChange}
+                        value={this.state.username}
+                        prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        placeholder="Username"
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Input
+                      prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                      type="password"
+                      value={this.state.password}
+                      placeholder="Password"
+                      onChange={this.handleChangePassword}
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Checkbox>Remember me</Checkbox>
+                    <a className="login-form-forgot" href="">
+                        Forgot password
+                    </a>
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        Log in
+                    </Button>
+                    Or <a href="">register now!</a>
+                </Form.Item>
+              </Form>
+
             </div>
           </div>
         </div>
       </div>
-    </article>
-  )
+    </article>)
+  }
 }
 
 function mapStateToProps (state) {
@@ -104,7 +113,6 @@ Login.propTypes = {
   getAccessToken: PropTypes.func.isRequired
 }
 
-export { Login }
 export default connect(mapStateToProps, {
   getAccessToken
 })(Login)
