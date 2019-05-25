@@ -1,11 +1,23 @@
 
 
 .footer-item { 
-    
-    
-    border-bottom: 0px solid #e8e8e8 !important; 
+    border-bottom: 0px solid #e8e8e8 !important;
     padding: 15px 0 !important;
     line-height: 0 !important;
+}
 
+.text-white {
+    color:#FFF !important ;
+}
 
+.text-right  {
+    float:right;
+}
+
+.footer-titles {
+    color:#f9c722;
+}
+
+.footer-logo {
+    margin-left: 45px !important;
 }

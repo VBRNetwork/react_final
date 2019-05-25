@@ -5,10 +5,11 @@ import { getAccessToken } from 'actions/user'
 import { Helmet } from 'react-helmet'
 import Router from 'next/router'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-
+import { withAuthSync } from 'libs/auth';
 
 class Login extends Component {
-  constructor (props) {
+
+    constructor (props) {
     super(props)
     this.state = { username: '', password: '', loggingIn: false, errorMessage: '' }
 
@@ -19,8 +20,7 @@ class Login extends Component {
     this.handleChangePassword = this.handleChangePassword.bind(this)
   }
 
-  handleChange (event) {
-    console.log(event);
+    handleChange (event) {
     const target = event.target; const value = target.value; const name = target.name
     this.setState({ username: value })
   }

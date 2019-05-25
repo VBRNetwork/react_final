@@ -114,7 +114,6 @@ class MyApp extends App {
     return (
         <Container>
             <Head>
-            
             </Head>
             <Provider store={store}>
                 <Layout>

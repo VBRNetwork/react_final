@@ -26,14 +26,16 @@ class Header extends Component {
             <div>
                 <Content style={{marginLeft:'50px',marginRight:'50px'}}>
                     <Row>
-                        <Col span={4}>  <img src={'../static/images/vbr_logo.png'} style={{ width: '75px' }} /></Col>
-                        <Col span={14}><Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-                            <Menu.Item key="mail">
+                        <Col lg={6}><img src={'../static/images/vbr_logo.png'} style={{ width: '80px',margin:'8px' }} /></Col>
+                        <Col lg={18}>
+                            
+                            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float:'right'}}>
+                            <Menu.Item key="mail1">
                                 <Link href="/">
                                     <a>  <Icon type="mail" /> Home</a>
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item key="app" disabled>
+                            <Menu.Item key="app1" >
                             <Icon type="appstore" />
                                 How it works
                             </Menu.Item>
@@ -59,49 +61,52 @@ class Header extends Component {
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="alipay2">
-                            <Link href="/register">
+                                <Link href="/register">
                                     <a>  <Icon type="mail" /> Register</a>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="alipay33">
+                                <Link href="/register">
+                                    <div className="post-job-btn">
+                                        <Button type="primary"  style={{
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB',
+                                        }} className='post-job-button'>Post a job</Button>
+                                    </div>
                                 </Link>
                             </Menu.Item>
                         </Menu>
                     </Col>
-                    <Col span={6}>
-              
-                        <div className="post-job-btn">
-                        <Button type="primary"  style={{
-                                backgroundColor: '#2EC3AB',
-                                borderColor: '#2EC3AB'
-                                }} className='post-job-button'>Post a job</Button>
-                        </div>
-                    </Col>
+            
                 </Row>
                 </Content>
-                <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-                        <Menu.Item key="mail">
-                        <Icon type="mail" />
-                            Writing
+                <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{boxShadow: '1px 4px 12px 1px #929292'}}>
+                        <Menu.Item key="mail2">
+                            <Link href="/writing">
+                                <a>  <Icon type="mail" /> Writing</a>
+                            </Link>
                         </Menu.Item>
-                        <Menu.Item key="app" disabled>
+                        <Menu.Item key="app2" >
                         <Icon type="appstore" />
                             Marketing & SEO
                         </Menu.Item>
-                        <Menu.Item key="alipay2">
+                        <Menu.Item key="alipay42">
                             <Icon type="appstore" />
                             Design
                         </Menu.Item>
-                        <Menu.Item key="alipay3">
+                        <Menu.Item key="alipay36">
                             <Icon type="appstore" />
                             Consultance
                         </Menu.Item>
-                        <Menu.Item key="alipay4">
+                        <Menu.Item key="alipay47">
                             <Icon type="appstore" />
                                 PR
                         </Menu.Item>
-                        <Menu.Item key="alipay5">
+                        <Menu.Item key="alipay59">
                             <Icon type="appstore" />
                              Developers
                         </Menu.Item>
-                        <Menu.Item key="alipay6">
+                        <Menu.Item key="alipay46">
                             <Icon type="appstore" />
                                 All Categories
                         </Menu.Item>
