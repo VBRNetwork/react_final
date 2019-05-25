@@ -1,0 +1,2 @@
+import DevelopersContainer from 'containers/DevelopersContainer'
+export default DevelopersContainer

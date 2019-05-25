@@ -1,0 +1,2 @@
+import HowItWorksContainer from 'containers/HowItWorksContainer'
+export default HowItWorksContainer
