@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import { getAccessToken } from 'actions/user'
 import { Helmet } from 'react-helmet'
 import Router from 'next/router'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { withAuthSync } from 'libs/auth';
+import { Form, Icon, Input, Button, Checkbox,Card } from 'antd';
 
 class Login extends Component {
 
@@ -20,7 +19,7 @@ class Login extends Component {
     this.handleChangePassword = this.handleChangePassword.bind(this)
   }
 
-    handleChange (event) {
+  handleChange (event) {
     const target = event.target; const value = target.value; const name = target.name
     this.setState({ username: value })
   }
@@ -46,23 +45,31 @@ class Login extends Component {
   }
 
   redirectToTarget = () => {
-    Router.push('/writing')
+    Router.push('/dashboard')
   }
 
+  componentDidMount(){
+    if(this.props.user.token != 0){
+      this.redirectToTarget();
+    }
+  }
+  
+
   render () {
+    
    return (
     <article>
       <Helmet>
-        <title>Marketing Page</title>
+        <title>Login Page</title>
         <meta
           name='description'
-          content='A React.js Boilerplate application page'
+          content='Login application page'
         />
       </Helmet>
       <div className='container'>
         <div className='row'>
-          <div className='col-lg-12'>
-            <div className='p-5' style={{ width: '400px', margin: '0 auto' }}>
+          <div className='col-12' style={{margin:'25px'}}>
+            <Card className='p-5' style={{ width: '400px', margin: '0 auto' }}>
               <h2>Login Page</h2>
               <Form onSubmit={this.handleSubmit} className="login-form">
                 <Form.Item>
@@ -83,18 +90,22 @@ class Login extends Component {
                     />
                 </Form.Item>
                 <Form.Item>
-                    <Checkbox>Remember me</Checkbox>
-                    <a className="login-form-forgot" href="">
-                        Forgot password
-                    </a>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
+                <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
-                    </Button>
-                    Or <a href="">register now!</a>
+                      </Button>
+                  </Form.Item>  
+
+                <Form.Item>
+                    <Checkbox>Remember me</Checkbox>
+                    <br/>
+                    <a className="login-form-forgot" href="">
+                        Forgot password 
+                    </a>
+                     or <a href="/register">register now!</a>
                 </Form.Item>
               </Form>
 
-            </div>
+            </Card>
           </div>
         </div>
       </div>

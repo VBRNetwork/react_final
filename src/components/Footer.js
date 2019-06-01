@@ -80,7 +80,7 @@ class Footer extends Component {
 
                                     <List.Item className="footer-list footer-item">
                                         <Link href="/jobs/search">
-                                            {item}
+                                           <a>{item}</a> 
                                         </Link>
                                     </List.Item>}
                             />

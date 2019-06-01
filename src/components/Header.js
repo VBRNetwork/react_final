@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../styles/base.css'
+import PropTypes from 'prop-types'
 import { Menu, Icon, Row, Col,Layout,Breadcrumb } from 'antd';
 const { Content } = Layout;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 import Link from 'next/link'
 import { Button } from 'antd';
-
+import '../styles/base.css'
+import { connect } from 'react-redux'
 class Header extends Component {
     state = {
         current: 'mail',
@@ -22,15 +22,25 @@ class Header extends Component {
     
 
     render () {
+        let token = this.props.user.token
+
+        let loginButton = (
+            <Menu.Item key="alipay">
+                                <Link href="/login">
+                                    <a> <Icon type="mail" /> Login</a>
+                                </Link>
+                            </Menu.Item>
+        )
+
         return (
             <div>
-                <Content style={{marginLeft:'50px',marginRight:'50px'}}>
+                <Content style={{marginLeft:'50px',marginRight:'50px',marginBottom:'10px'}}>
                     <Row>
-                        <Col lg={6}><img src={'../static/images/vbr_logo.png'} style={{ width: '80px',margin:'8px' }} /></Col>
-                        <Col lg={18}>
+                        <Col lg={6}> <Link href="/"><a><img src={'../static/images/vbr_logo.png'} style={{ width: '80px',margin:'8px' }} /></a></Link></Col>
+                        <Col lg={16}>
                             
-                            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float:'right'}}>
-                            <Menu.Item key="mail1">
+                            <Menu className="nav1" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float:'right'}}>
+                            <Menu.Item  key="mail1">
                                 <Link href="/">
                                     <a>  <Icon type="mail" /> Home</a>
                                 </Link>
@@ -46,29 +56,38 @@ class Header extends Component {
                                     <a>  <Icon type="mail" />Community</a>
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item key="alipay">
-                                <Link href="/login">
-                                    <a>  <Icon type="mail" /> Login</a>
-                                </Link>
-                            </Menu.Item>
+
+                            
+                            {loginButton}
+                          
+                            {token != 0 && 
                             <Menu.Item key="alipay2">
-                                <Link href="/register">
-                                    <a>  <Icon type="mail" /> Register</a>
-                                </Link>
-                            </Menu.Item>
-                            <Menu.Item key="alipay33">
-                                <Link href="/jobs/post">
-                                    <div className="post-job-btn">
-                                        <Button type="primary"  style={{
-                                        backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB',
-                                        }} className='post-job-button'>Post a job</Button>
-                                    </div>
-                                </Link>
-                            </Menu.Item>
+                            <Link href="/register">
+                                <a><Icon type="mail" /> Register</a>
+                            </Link>
+                            </Menu.Item>}
+                            
+                             {token == 0 && 
+                                <Menu.Item key="alipay2222">
+                                    <Link href="/dashboard">
+                                        <a>Dash</a>
+                                    </Link>
+                                </Menu.Item>
+                             }
+
                         </Menu>
                     </Col>
-            
+
+                    <Col lg={2}>
+                        <Link href="/jobs/post">
+                            <a><div className="post-job-btn">
+                                <Button type="primary"  style={{
+                                backgroundColor: '#2EC3AB',
+                                borderColor: '#2EC3AB',
+                                }} className='post-job-button'>Post a job</Button>
+                            </div></a>
+                        </Link>
+                    </Col>
                 </Row>
                 </Content>
                 <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{boxShadow: '1px 4px 12px 1px #929292'}}>
@@ -125,4 +144,17 @@ class Header extends Component {
         )
     }
 }
-export default Header
+function mapStateToProps (state) {
+    return {
+      user: state.user
+    }
+  }
+  
+  Header.propTypes = {
+    user: PropTypes.instanceOf(Object).isRequired,
+  }
+  
+  export default connect(mapStateToProps, {
+    
+  })(Header)
+  

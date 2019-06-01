@@ -1,7 +1,18 @@
-import Layout from '../src/components/Layout.js'
+import React, { Component } from 'react'
+import withAuth from  '../src/libs/withAuth'
+import {
+  Card
+} from 'antd';
+class Dashboard extends Component {
 
-export default () => (
-  <Layout {...this.props}>
-    <div>Dashboard</div>
-  </Layout>
-)
+  constructor(props){
+    super(props)
+  }
+   render() {
+     return (   
+         <Card title="Dashboard"> Your status account.</Card>
+     )
+   }
+}
+
+export default withAuth(Dashboard) 

@@ -1,11 +1,16 @@
 import axios from 'axios'
 import humps from 'humps'
-import config from 'config'
+
+const apiUrl = 'http://api.vbrinc.test:8000/v1/token/'
 
 const vbrincapi = {
   getToken ({ username, password }) {
-    let path = `http://192.168.0.18/v1/token/`
-    return axios.post(path, { username, password }).then(res => {
+    return axios.post(apiUrl, { username, password }).then(res => {
+      return humps.camelizeKeys(res.data)
+    })
+  },
+  logout ({token}) {
+    return axios.post(apiUrl, { username, password }).then(res => {
       return humps.camelizeKeys(res.data)
     })
   }

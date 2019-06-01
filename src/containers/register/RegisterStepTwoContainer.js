@@ -1,9 +1,10 @@
+
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {Row} from 'antd'
-import PageSubLayout from 'components/PageSubLayout'
-class DesignContainer extends Component {
+
+class RegisterStepTwoContainer extends Component {
   static async getInitialProps ({ store, query }) {
   }
 
@@ -13,9 +14,7 @@ class DesignContainer extends Component {
   render () {
     return (
       <div>
-          <PageSubLayout>
-             Design
-          </PageSubLayout>
+          Formular 2
       </div>
     )}}
     
@@ -25,9 +24,9 @@ class DesignContainer extends Component {
       }
     }
     
-    DesignContainer.propTypes = {
+    RegisterStepTwoContainer.propTypes = {
     }
     
     export default connect(mapStateToProps, {
-    })(DesignContainer)
+    })(RegisterStepTwoContainer)
     

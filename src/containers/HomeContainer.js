@@ -5,7 +5,7 @@ import Particles from 'react-particles-js'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
 import {Carousel, Divider, Layout, Row, Col, Button, Card, Input} from 'antd';
-
+const Search = Input.Search;
 const {Content} = Layout;
 
 class HomeContainer extends Component {
@@ -26,7 +26,7 @@ class HomeContainer extends Component {
                 <div style={{position: 'relative'}}>
                     <div
                         style={{
-                            background: 'linear-gradient(#2ec3ab, #b1b1b1)',
+                            background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
                             position: 'absolute',
                             width: '100%',
                             height: '98%',
@@ -59,7 +59,7 @@ class HomeContainer extends Component {
                     <div className='container'>
                         <div style={{padding: '50px'}}>
                             <Row type="flex" justify="space-around">
-                                <Col span={8}>
+                                <Col span={10}>
                                     <div className='intro-text'>
                                         <h2 className='slogan'>
                                             Disrupting the Freelancing Marketplace with the power of
@@ -69,30 +69,34 @@ class HomeContainer extends Component {
                                             No more Fees, Scam Attempts, Poor Customer Support,
                                             Delayed Payments or Unfair Mediation!
                                         </p>
-                                        <div className='input-group'>
-                                            <Input
-                                                size='small'
-                                                type='text'
-                                                className='searchpost form-control'
-                                                placeholder='Post your project and choose the best freelancer'
-                                            />
-                                            <span className='input-group-btn'>
-                                                        <Button
-                                                            type='primary'
-                                                            style={{
-                                                                backgroundColor: '#2EC3AB',
-                                                                borderColor: '#2EC3AB'
-                                                            }}>
-                                                        Search
-                                                        </Button>
-                                            </span>
-                                        </div>
+
+                                        <Search
+                                           
+                                            placeholder='Post your project and choose the best freelancer'
+                                            className='searchpost form-control ant-input-sm'
+                                            enterButton={<Button
+                                                className='ant-btn-sm'
+                                                type='primary'
+                                                style={{
+                                                    backgroundColor: '#2EC3AB',
+                                                    borderColor: '#2EC3AB'
+                                                }}>
+                                            Search
+                                            </Button>}
+                                            onSearch={value => console.log(value)}
+                                        />
                                     </div>
                                 </Col>
-                                <Col span={16}>
-                                    <img src={'../../static/images/homepage_man.png'}
-                                         style={{marginLeft: '10%', marginTop: '40px'}}/>
+                                <Col span={14}>
+
+                                <img src={'../../static/images/asset_6.png'}
+                                            style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
+                                  
+                                    <img src={'../../static/images/asset_9.png'}
+                                            style={{marginLeft: '25%',  height: '190px'}}/>
+                                            
                                     <div className="small-promo-text">
+
                                         <div style={{position: 'relative'}}>
                                             <div
                                                 style={{display: 'inline'}}
@@ -119,7 +123,7 @@ class HomeContainer extends Component {
 
                 <Row>
                     <Col span={16} offset={4}>
-                        <Carousel afterChange={this.onChange}>
+                        <Carousel autoplay afterChange={this.onChange}>
                             <div style={{backgroundColor: 'black'}}>
                                 <img
                                     className='d-block h-200'
@@ -134,7 +138,7 @@ class HomeContainer extends Component {
                             <div>
                                 <img
                                     className='d-block'
-                                    src={'../../static/images/freelancer_old.png'}
+                                    src={'../../static/images/freelancer-b.png'}
                                     alt='Third slide'
                                 />
                                 <div>
@@ -145,7 +149,7 @@ class HomeContainer extends Component {
                             <div>
                                 <img
                                     className='d-block h-200'
-                                    src={'../../static/images/freelancer-working2.png'}
+                                    src={'../../static/images/freelancer_old.png'}
                                     alt='First slide'
                                 />
                                 <div>
@@ -170,7 +174,7 @@ class HomeContainer extends Component {
                 <Layout style={{margin: '10px'}}>
                     <Row type="flex" justify="space-around">
                         <Col span={4}>
-                            <div style={{padding:'20px'}}>
+                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                                 <img
                                     height='80'
                                     width='80'
@@ -182,7 +186,7 @@ class HomeContainer extends Component {
                             </div>
                         </Col>
                         <Col span={4}>
-                            <div  style={{padding:'20px'}}>
+                            <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                                 <img
                                     height='80'
                                     width='80'
@@ -195,7 +199,7 @@ class HomeContainer extends Component {
 
                         </Col>
                         <Col span={4}>
-                            <div style={{padding:'20px'}}>
+                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                                 <img
                                     height='80'
                                     width='80'
@@ -209,7 +213,7 @@ class HomeContainer extends Component {
                     </Row>
                     <Row type="flex" justify="space-around">
                         <Col span={4}>
-                            <div style={{padding:'20px'}}>
+                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                             <img
                                 height='80'
                                 width='80'
@@ -221,7 +225,7 @@ class HomeContainer extends Component {
                             </div>
                         </Col>
                         <Col span={4}>
-                            <div style={{padding:'20px'}}>
+                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
                             <img
                                 height='80'
                                 width='80'
@@ -234,7 +238,7 @@ class HomeContainer extends Component {
                         </Col>
 
                         <Col span={4}>
-                            <div style={{padding:'20px'}}>
+                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                             <img
                                 height='80'
                                 width='80'
@@ -324,7 +328,8 @@ class HomeContainer extends Component {
                             </Col>
                             <Col span={4}>
                                 <div style={{marginTop: '50px', textAlign: 'center'}}>
-                                    <Button className='vbr-button' type={'primary'}>
+                                    <Button style={{backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'}} className='vbr-button' type={'primary'}>
                                         Register now
                                     </Button>
                                     <br/>
