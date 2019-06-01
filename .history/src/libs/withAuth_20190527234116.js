@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Router from 'next/router'
-import AuthService from './authService'
+import AuthService from './AuthService'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
