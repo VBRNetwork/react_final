@@ -1,0 +1,15 @@
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    color: rgb(46, 195, 171);
+    background-color: azure;
+    padding-left: 48px;
+
+}
+
+.ant-btn-primary {
+    border-color: #2ec3ab;
+    background-color: #2ec3ab;
+}
+
+.ant-layout-sider-zero-width-trigger{
+    z-index: 99;
+}

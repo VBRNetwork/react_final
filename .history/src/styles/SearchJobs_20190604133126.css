@@ -1,0 +1,6 @@
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+
+    color: rgb(46, 195, 171);
+    padding-left: 48px;
+
+}
