@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import '../styles/register.css'
 import {
     Form,
     Input,
@@ -161,6 +162,15 @@ class RegisterStepOneContainer extends Component {
                 <Option value="4">+4</Option>
                 <Option value="44">+44</Option>
             </Select>)} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item label="Website">
+                <AutoComplete
+                    dataSource={websiteOptions}
+                    onChange={this.handleWebsiteChange}
+                    placeholder="website"
+                    >
+                    <Input />
+                    </AutoComplete>
             </Form.Item>
             <Form.Item label="Captcha" extra="We must make sure that your are a human.">
             <Row gutter={8}>

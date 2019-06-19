@@ -162,6 +162,15 @@ class RegisterStepOneContainer extends Component {
                 <Option value="44">+44</Option>
             </Select>)} style={{ width: '100%' }} />
             </Form.Item>
+            <Form.Item label="Website">
+                <AutoComplete
+                    dataSource={websiteOptions}
+                    onChange={this.handleWebsiteChange}
+                    placeholder="website"
+                    >
+                    <Input />
+                    </AutoComplete>
+            </Form.Item>
             <Form.Item label="Captcha" extra="We must make sure that your are a human.">
             <Row gutter={8}>
                 <Col span={12}>

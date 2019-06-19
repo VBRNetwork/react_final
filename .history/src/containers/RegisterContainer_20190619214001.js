@@ -23,11 +23,11 @@ const Step = Steps.Step;
 const steps = [
     {
       title: 'First',
-      content: <RegisterStepOneContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
+      content: <RegisterStepOneContainer/>,
     },
     {
       title: 'Second',
-      content:  <RegisterStepTwoContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
+      content:  <RegisterStepTwoContainer/>,
     }
   ];
 
@@ -64,12 +64,12 @@ class Register extends React.Component {
                         <div style={{margin:'10px'}}>
                             <Steps current={current}  >
                             {steps.map(item => (
-                                <Step key={item.title} title={item.title} />
+                                <Step style={{ backgroundColor: '#2EC3AB'}} key={item.title} title={item.title} />
                             ))}
                             </Steps>
                         </div>
                         <div className="steps-content" >{steps[current].content}</div>
-                        <div className="steps-action"  >
+                        <div className="steps-action" >
                             {current < steps.length - 1 && (
                                 <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
                                 borderColor: '#2EC3AB'}} type="primary" onClick={() => this.next()}>
@@ -77,13 +77,12 @@ class Register extends React.Component {
                                 </Button>
                             )}
                             {current === steps.length - 1 && (
-                                <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
+                                <Button style={{ marginRight: 8 , float:'right'}} type="primary" onClick={() => message.success('Processing complete!')}>
                                 Done
                                 </Button>
                             )}
                             {current > 0 && (
-                                <Button  style={{borderColor: '#2EC3AB'}} onClick={() => this.prev()}>
+                                <Button  onClick={() => this.prev()}>
                                 Previous
                                 </Button>
                             )}

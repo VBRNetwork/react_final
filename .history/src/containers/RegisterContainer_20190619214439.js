@@ -77,13 +77,12 @@ class Register extends React.Component {
                                 </Button>
                             )}
                             {current === steps.length - 1 && (
-                                <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
+                                <Button style={{ marginRight: 8 , float:'right'}} type="primary" onClick={() => message.success('Processing complete!')}>
                                 Done
                                 </Button>
                             )}
                             {current > 0 && (
-                                <Button  style={{borderColor: '#2EC3AB'}} onClick={() => this.prev()}>
+                                <Button  onClick={() => this.prev()}>
                                 Previous
                                 </Button>
                             )}
