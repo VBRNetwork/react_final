@@ -1,16 +1,22 @@
 import axios from 'axios'
 import humps from 'humps'
 
-const apiUrl = 'http://api.vbrinc.test:8000/v1/accounts/auth/login'
+const apiUrl = 'https://api.vbrinc.ro/v1/accounts/auth/login/'
+
+const instance = axios.create({
+    baseURL: apiUrl,
+    timeout: 1000,
+    headers: {'Access-Control-Allow-Origin': '*'}
+});
 
 const vbrincapi = {
   getToken ({ username, password }) {
-    return axios.post(apiUrl, { username, password }).then(res => {
+    return instance.post(apiUrl, { username, password }).then(res => {
       return humps.camelizeKeys(res.data)
     })
   },
   logout ({token}) {
-    return axios.post(apiUrl, { username, password }).then(res => {
+    return instance.post(apiUrl, { username, password }).then(res => {
       return humps.camelizeKeys(res.data)
     })
   }
