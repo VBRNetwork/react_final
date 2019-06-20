@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {Row} from 'antd'
+import { Row } from 'antd'
 
 class PostJobContainer extends Component {
   static async getInitialProps ({ store, query }) {
@@ -13,21 +13,22 @@ class PostJobContainer extends Component {
   render () {
     return (
       <div>
-          <Row>
+        <Row>
           PostJobContainer
-          </Row>
+        </Row>
       </div>
-    )}}
-    
-    function mapStateToProps (state) {
-      return {
-    
-      }
-    }
-    
-    PostJobContainer.propTypes = {
-    }
-    
-    export default connect(mapStateToProps, {
-    })(PostJobContainer)
-    
+    )
+  }
+}
+
+function mapStateToProps (state) {
+  return {
+
+  }
+}
+
+PostJobContainer.propTypes = {
+}
+
+export default connect(mapStateToProps, {
+})(PostJobContainer)
