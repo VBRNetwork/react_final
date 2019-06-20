@@ -12,23 +12,20 @@ import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-sv
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 import Layout from 'components/Layout'
-library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css'
 import 'styles/base.scss'
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
-
   static async getInitialProps ({ Component, ctx }) {
     return {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
-        : {},
+        : {}
     }
   }
-
-
 
   get helmetBodyAttrComponents () {
     return this.props.helmet.bodyAttributes.toComponent()
@@ -51,7 +48,6 @@ class MyApp extends App {
     )
   }
 
-
   render () {
     const { Component, pageProps, store, router } = this.props
     let persistor = persistStore(store)
@@ -59,15 +55,14 @@ class MyApp extends App {
     // persistor.purge();
 
     return (
-        <Container>
-            <Head>
-            </Head>
-            <Provider store={store}>
-                <Layout>
-                  <Component router={router} {...pageProps} />
-                </Layout>
-            </Provider>
-        </Container>
+      <Container>
+        <Head />
+        <Provider store={store}>
+          <Layout>
+            <Component router={router} {...pageProps} />
+          </Layout>
+        </Provider>
+      </Container>
     )
   }
 }
