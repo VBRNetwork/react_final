@@ -156,10 +156,10 @@ class RegisterStepOneContainer extends Component {
             </Form.Item>
             <Form.Item label="Phone Number">
                 <Input addonBefore={( <Select style={{ width: 70 }}>
-                <Option style={{ color: '#2EC3AB' }} value="86">+86</Option>
-                <Option style={{ color: '#2EC3AB' }} value="87">+87</Option>
-                <Option style={{ color: '#2EC3AB' }} value="4">+4</Option>
-                <Option style={{ color: '#2EC3AB' }} value="44">+44</Option>
+                <Option style={{ coloer: '#2EC3AB' }} value="86">+86</Option>
+                <Option value="87">+87</Option>
+                <Option value="4">+4</Option>
+                <Option value="44">+44</Option>
             </Select>)} style={{ width: '100%' }} />
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>

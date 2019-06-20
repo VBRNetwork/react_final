@@ -50,7 +50,7 @@ const skills = [
     defaultSortOrder: 'descend',
   },
   {
-    title: 'Add New',
+    title: <Icon style={{float: 'right'}} type='plus-circle' >Add New</Icon>,
     dataIndex: 'addnew',
     filters: [
       {

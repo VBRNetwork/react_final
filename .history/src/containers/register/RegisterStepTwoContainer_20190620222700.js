@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table, Icon} from 'antd'
+import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table} from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -71,20 +71,18 @@ const skillData = [
     key: '1',
     skill: 'Python',
     level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' /> 
+    addnew: <Icon type='edit' /> 
     
   },
   {
     key: '2',
     skill: 'JavScript',
     level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
   },
   {
     key: '3',
     skill: 'Web Programming',
     level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
   },
 ];
 

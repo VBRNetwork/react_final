@@ -16,10 +16,4 @@ background-color: #2EC3AB !important;
 .anticon svg {color: #2EC3AB}
 .ant-steps-item-finish > .ant-steps-item-content > .ant-steps-item-title::after {background: #2EC3AB}
 .ant-input:hover {border-color: #2EC3AB}
-.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {border-color: #2EC3AB}
-.ant-checkbox-inpout:hover {border-color: #2EC3AB}
-.ant-checkbox-checked .ant-checkbox-inner {background: #2EC3AB; border-color: #2EC3AB}
-.ant-checkbox-inner:hover {border-color: #2EC3AB}
-.ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled)  {border-color: #2EC3AB}
-.ant-select-auto-complete.ant-select .ant-input:focus, .ant-select-auto-complete.ant-select .ant-input:hover {border-color: #2EC3AB}
-.ant-steps-item-process .ant-steps-item-icon:hover {border-color: #2EC3AB }
+.ant-input-affix-wrapper:hover {border-color: #2EC3AB}

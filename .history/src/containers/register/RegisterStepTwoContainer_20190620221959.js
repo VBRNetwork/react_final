@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table, Icon} from 'antd'
+import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table} from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -42,12 +42,15 @@ const skills = [
     ],
     // specify the condition of filtering result
     // here is that finding the name started with `value`
-   
+    onFilter: (value, record) => record.name.indexOf(value) === 0,
+    sorter: (a, b) => a.name.length - b.name.length,
+    sortDirections: ['descend'],
   },
   {
     title: 'Level',
     dataIndex: 'level',
     defaultSortOrder: 'descend',
+    sorter: (a, b) => a.age - b.age,
   },
   {
     title: 'Add New',
@@ -62,38 +65,38 @@ const skills = [
         value: '-',
       },
     ],
-    
+    filterMultiple: false,
+    onFilter: (value, record) => record.address.indexOf(value) === 0,
+    sorter: (a, b) => a.address.length - b.address.length,
+    sortDirections: ['descend', 'ascend'],
   },
 ];
 
-const skillData = [
+const data = [
   {
     key: '1',
     skill: 'Python',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' /> 
+    level: 32,
     
   },
   {
     key: '2',
     skill: 'JavScript',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
+    level: 42,
   },
   {
     key: '3',
     skill: 'Web Programming',
-    level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
+    level: 32,
   },
 ];
 
 
 
-function onChange(checkedValues, pagination) {
+function onChange(checkedValues, pagination, filters, sorter) {
   
   console.log('checked = ', checkedValues);
-  console.log('params', pagination);
+  console.log('params', pagination, filters, sorter);
 }
 
 
@@ -229,8 +232,6 @@ return (
             <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
             <br />
             <br />
-            <hr />
-            <Table columns={skills} dataSource={skillData} onChange={onChange} />
         </Form>
         )}}
     function mapStateToProps (state) {

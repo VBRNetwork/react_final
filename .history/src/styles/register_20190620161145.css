@@ -1,0 +1,13 @@
+
+
+.ant-steps-item-process .ant-steps-item-icon {
+
+background-color: #2EC3AB !important;
+
+}
+
+.ant-steps-item-process .ant-steps-item-icon { background: #2EC3AB; border-color: #2EC3AB }
+
+.ant-radio-button-wrapper-checked:hover { color: #2EC3AB; border-color: #2EC3AB }
+.ant-radio-button-wrapper-checked {color:#2EC3AB; border-color: #2EC3AB }
+.ant-radio-button-wrapper-checked:first-child { border-color: #2EC3AB }

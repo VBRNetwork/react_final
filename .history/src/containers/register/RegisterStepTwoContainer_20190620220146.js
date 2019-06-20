@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table, Icon} from 'antd'
+import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox} from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -22,78 +22,10 @@ const options2 = [
 
 ]
 
-const skills = [
-  {
-    title: 'Skill',
-    dataIndex: 'skill',
-    filters: [
-      {
-        text: 'JavaScript',
-        value: 'JavaScript',
-      },
-      {
-        text: 'Python',
-        value: 'Python',
-      },
-      {
-        text: 'Web Programming',
-        value: 'Web Programming',
-      },
-    ],
-    // specify the condition of filtering result
-    // here is that finding the name started with `value`
-   
-  },
-  {
-    title: 'Level',
-    dataIndex: 'level',
-    defaultSortOrder: 'descend',
-  },
-  {
-    title: 'Add New',
-    dataIndex: 'addnew',
-    filters: [
-      {
-        text: '-',
-        value: '-',
-      },
-      {
-        text: '-',
-        value: '-',
-      },
-    ],
-    
-  },
-];
 
-const skillData = [
-  {
-    key: '1',
-    skill: 'Python',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' /> 
-    
-  },
-  {
-    key: '2',
-    skill: 'JavScript',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-  {
-    key: '3',
-    skill: 'Web Programming',
-    level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-];
-
-
-
-function onChange(checkedValues, pagination) {
+function onChange(checkedValues) {
   
   console.log('checked = ', checkedValues);
-  console.log('params', pagination);
 }
 
 
@@ -218,10 +150,10 @@ return (
               </Select>  
             </FormItem>
             <FormItem label="From">
-              <MonthPicker />
+              <DatePicker />
             </FormItem>
             <FormItem label="To">
-              <MonthPicker />
+              <DatePicker />
             </FormItem>
             <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
             <br />
@@ -229,8 +161,6 @@ return (
             <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
             <br />
             <br />
-            <hr />
-            <Table columns={skills} dataSource={skillData} onChange={onChange} />
         </Form>
         )}}
     function mapStateToProps (state) {
