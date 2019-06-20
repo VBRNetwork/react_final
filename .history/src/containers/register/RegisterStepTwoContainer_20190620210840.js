@@ -2,99 +2,11 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table, Icon} from 'antd'
+import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker} from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 const { MonthPicker, RangePicker } = DatePicker;
-const plainOptions = ['Web Programming', 'Databases', 'Web & Mobile Apps'];
-const options = [
-
-  { label: 'Desktop Apps', value: 'Desktop Apps' },
-  { label: 'Ecommerce Platforms', value: 'Ecommerce Platforms' },
-  { label: 'WordPress', value: 'WordPress' },
-];
-
-const options2 = [
-  { label: 'Desktop Apps', value: 'Desktop Apps' },
-  { label: 'Ecommerce Platforms', value: 'Ecommerce Platforms' },
-  { label: 'WordPress', value: 'WordPress' },
-
-]
-
-const skills = [
-  {
-    title: 'Skill',
-    dataIndex: 'skill',
-    filters: [
-      {
-        text: 'JavaScript',
-        value: 'JavaScript',
-      },
-      {
-        text: 'Python',
-        value: 'Python',
-      },
-      {
-        text: 'Web Programming',
-        value: 'Web Programming',
-      },
-    ],
-    // specify the condition of filtering result
-    // here is that finding the name started with `value`
-   
-  },
-  {
-    title: 'Level',
-    dataIndex: 'level',
-    defaultSortOrder: 'descend',
-  },
-  {
-    title: 'Add New',
-    dataIndex: 'addnew',
-    filters: [
-      {
-        text: '-',
-        value: '-',
-      },
-      {
-        text: '-',
-        value: '-',
-      },
-    ],
-    
-  },
-];
-
-const skillData = [
-  {
-    key: '1',
-    skill: 'Python',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' /> 
-    
-  },
-  {
-    key: '2',
-    skill: 'JavScript',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-  {
-    key: '3',
-    skill: 'Web Programming',
-    level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-];
-
-
-
-function onChange(checkedValues, pagination) {
-  
-  console.log('checked = ', checkedValues);
-  console.log('params', pagination);
-}
 
 
 
@@ -133,7 +45,7 @@ class RegisterStepTwoContainer extends Component {
         confirmDirty: false,
         autoCompleteResult: [],
     };
-  }
+}
   static async getInitialProps ({ store, query }) {
   }
 
@@ -184,9 +96,11 @@ class RegisterStepTwoContainer extends Component {
 return (
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
             <Form.Item label="Language">
+
               <Input />
             </Form.Item>
             <FormItem label="Language Level">
+              
               <Select placeholder="Select Language Level">
                 <Option value="basic">Basic</Option>
                 <Option value="conversational">Conversational</Option>
@@ -196,6 +110,7 @@ return (
             </FormItem>
             <hr />
             <Form.Item label="Education">
+          
               <AutoComplete
                 dataSource={eduOptions}
                 onChange={this.handleEduChange}
@@ -204,33 +119,23 @@ return (
                 <Input />
               </AutoComplete>
             </Form.Item>
-            <FormItem label="Year">
-              <MonthPicker />
-            </FormItem>
             <hr />
             <FormItem label="Occupation">
+              
               <Select placeholder="Select Occupation">
                 <Option value="writing&translation">writing & Translation</Option>
                 <Option value="marketing&seo">Marketing & SEO</Option>
                 <Option value="design">Design</Option>
                 <Option value="businessconsultancy">Business Consultancy</Option>
-                <Option value="programming&developers">Programming & Developers</Option>
+                <Option value="businessconsultancy">Programming & Developers</Option>
               </Select>  
             </FormItem>
             <FormItem label="From">
-              <MonthPicker />
+              <DatePicker />
             </FormItem>
             <FormItem label="To">
-              <MonthPicker />
+              <DatePicker />
             </FormItem>
-            <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
-            <br />
-            <br />
-            <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
-            <br />
-            <br />
-            <hr />
-            <Table columns={skills} dataSource={skillData} onChange={onChange} />
         </Form>
         )}}
     function mapStateToProps (state) {

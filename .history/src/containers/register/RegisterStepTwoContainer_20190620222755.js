@@ -78,13 +78,11 @@ const skillData = [
     key: '2',
     skill: 'JavScript',
     level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
   },
   {
     key: '3',
     skill: 'Web Programming',
     level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
   },
 ];
 

@@ -83,7 +83,7 @@ class Register extends React.Component {
                                 </Button>
                             )}
                             {current > 0 && (
-                                <Button style={{borderColor: '#2EC3AB', color: '#2EC3AB'}} onClick={() => this.prev()}>
+                                <Button style={{borderColor: '#2EC3AB'}} onClick={() => this.prev()}>
                                 Previous
                                 </Button>
                             )}
