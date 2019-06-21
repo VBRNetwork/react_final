@@ -1,74 +1,77 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import {Carousel, Divider, Layout, Row, Col, Button, Card, Input} from 'antd';
-const Search = Input.Search;
-const {Content} = Layout;
+import { Carousel, Divider, Layout, Row, Col, Button, Card, Input } from 'antd'
+const Search = Input.Search
+const { Content } = Layout
 
 class HomeContainer extends Component {
-    static async getInitialProps({store, query}) {
-    }
+  static async getInitialProps ({ store, query }) {
+  }
 
-    componentDidMount() {
-    }
+  componentDidMount () {
+  }
 
-    onChange(a, b, c) {
-        console.log(a, b, c);
-    }
+  onChange (a, b, c) {
+    console.log(a, b, c)
+  }
 
-    render() {
-        return (
-            <Fragment>
+  render () {
+    return (
+      <Fragment>
 
-                <div style={{position: 'relative'}}>
-                    <div
-                        style={{
-                            background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
-                            position: 'absolute',
-                            width: '100%',
-                            height: '98%',
-                            zIndex: '-1'
-                        }}>
-                        <Particles
-                            params={{
-                                particles: {
-                                    number: {
-                                        value: 100
-                                    },
-                                    size: {
-                                        value: 3
-                                    },
-                                    color: {value: '#FFF'}
-                                },
+        <div style={{ position: 'relative' }}>
+          <div
+            style={{
+              background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
+              position: 'absolute',
+              width: '100%',
+              height: '98%',
+              zIndex: '-1'
+            }}>
+            <Particles
+              params={{
+                particles: {
+                  number: {
+                    value: 100
+                  },
+                  size: {
+                    value: 3
+                  },
+                  color: { value: '#FFF' }
+                },
 
-                                interactivity: {
-                                    events: {
-                                        onhover: {
-                                            enable: true,
-                                            mode: 'repulse'
-                                        }
-                                    }
-                                }
-                            }}
-                        />
-                    </div>
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: true,
+                      mode: 'repulse'
+                    }
+                  }
+                }
+              }}
+            />
+          </div>
 
-                    <div className='container'>
-                        <div style={{padding: '50px'}}>
-                            <Row type="flex" justify="space-around">
-                                <Col span={10}>
-                                    <div className='intro-text'>
-                                        <h2 className='slogan'>
+          <div className='container'>
+            <div style={{ padding: '50px' }}>
+              <Row type='flex' justify='space-around'>
+                <Col span={10}>
+                  <div className='intro-text'>
+                    <h2 className='slogan'>
                                             Disrupting the Freelancing Marketplace with the power of
                                             blockchain
                                         </h2>
                                         <p className="subtext-css">
                                             No more Hidden Fees, Scam Attempts, Poor Customer Support,
+
                                             Delayed Payments or Unfair Mediation!
-                                        </p>
+                    </p>
+
+                    <Search
 
                                         <Search
                                            
@@ -81,168 +84,168 @@ class HomeContainer extends Component {
                                                     backgroundColor: '#2EC3AB',
                                                     borderColor: '#2EC3AB'
                                                 }}>
+
                                             Search
-                                            </Button>}
-                                            onSearch={value => console.log(value)}
-                                        />
-                                    </div>
-                                </Col>
-                                <Col span={14}>
+                      </Button>}
+                      onSearch={value => console.log(value)}
+                    />
+                  </div>
+                </Col>
+                <Col span={14}>
 
-                                <img src={'../../static/images/asset_6.png'}
-                                            style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
-                                  
-                                    <img src={'../../static/images/asset_9.png'}
-                                            style={{marginLeft: '25%',  height: '190px'}}/>
-                                            
-                                    <div className="small-promo-text">
+                  <img src={'../../static/images/asset_6.png'}
+                    style={{ height: '190px', marginLeft: '18%', marginTop: '60px' }} />
 
-                                        <div style={{position: 'relative'}}>
-                                            <div
-                                                style={{display: 'inline'}}
-                                                className='small-icon-button'
-                                            >
-                                                <FontAwesomeIcon
-                                                    icon='play-circle'
-                                                    size='2x'
-                                                    className='play-icon-color'
-                                                />
-                                            </div>
-                                            <div style={{display: 'inline'}}>
+                  <img src={'../../static/images/asset_9.png'}
+                    style={{ marginLeft: '25%', height: '190px' }} />
+
+                  <div className='small-promo-text'>
+
+                    <div style={{ position: 'relative' }}>
+                      <div
+                        style={{ display: 'inline' }}
+                        className='small-icon-button'
+                      >
+                        <FontAwesomeIcon
+                                icon='play-circle'
+                                size='2x'
+                                className='play-icon-color'
+                        />
+                      </div>
+                      <div style={{ display: 'inline' }}>
                                                 Meet The First Decentralized Environment for
                                                 Freelancers!
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-                            </Row>
-
-                        </div>
+                      </div>
                     </div>
+                  </div>
+                </Col>
+              </Row>
+
+            </div>
+          </div>
+        </div>
+
+        <Row>
+          <Col span={16} offset={4}>
+            <Carousel autoplay >
+              <div style={{ backgroundColor: 'black' }}>
+                <img
+                  className='d-block h-200'
+                  src={'../../static/images/freelancer-working2.png'}
+                  alt='First slide'
+                />
+                <div>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </div>
+              </div>
+              <div>
+                <img
+                  className='d-block'
+                  src={'../../static/images/freelancer-b.png'}
+                  alt='Third slide'
+                />
+                <div>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  className='d-block h-200'
+                  src={'../../static/images/freelancer_old.png'}
+                  alt='First slide'
+                />
+                <div>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+            </Carousel>
 
-                <Row>
-                    <Col span={16} offset={4}>
-                        <Carousel autoplay >
-                            <div style={{backgroundColor: 'black'}}>
-                                <img
-                                    className='d-block h-200'
-                                    src={'../../static/images/freelancer-working2.png'}
-                                    alt='First slide'
-                                />
-                                <div>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img
-                                    className='d-block'
-                                    src={'../../static/images/freelancer-b.png'}
-                                    alt='Third slide'
-                                />
-                                <div>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img
-                                    className='d-block h-200'
-                                    src={'../../static/images/freelancer_old.png'}
-                                    alt='First slide'
-                                />
-                                <div>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </div>
-                            </div>
-                        </Carousel>
-                  
-
-                <Layout style={{margin: '10px'}}>
-                    <Row type="flex" justify="space-around">
-                        <Col span={4}>
-                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                <img
-                                    height='80'
-                                    width='80'
-                                    alt='171x180'
-                                    src={'../../static/images/img-01.png'}
-                                />
-                                  <br/>
+            <Layout style={{ margin: '10px' }}>
+              <Row type='flex' justify='space-around'>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-01.png'}
+                    />
+                    <br />
                                 Writing
-                            </div>
-                        </Col>
-                        <Col span={4}>
-                            <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                <img
-                                    height='80'
-                                    width='80'
-                                    alt='171x180'
-                                    src={'../../static/images/img-02.png'}
-                                />
-                                  <br/>
+                  </div>
+                </Col>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-02.png'}
+                    />
+                    <br />
                                 Design
-                            </div>
+                  </div>
 
-                        </Col>
-                        <Col span={4}>
-                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                <img
-                                    height='80'
-                                    width='80'
-                                    alt='171x180'
-                                    src={'../../static/images/img-03.png'}
-                                />
-                                  <br/>
+                </Col>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-03.png'}
+                    />
+                    <br />
                                 Business Consultance
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row type="flex" justify="space-around">
-                        <Col span={4}>
-                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                            <img
-                                height='80'
-                                width='80'
-                                alt='171x180'
-                                src={'../../static/images/img-05.png'}
-                            />
-                            <br/>
+                  </div>
+                </Col>
+              </Row>
+              <Row type='flex' justify='space-around'>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-05.png'}
+                    />
+                    <br />
                             Developers
-                            </div>
-                        </Col>
-                        <Col span={4}>
-                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
-                            <img
-                                height='80'
-                                width='80'
-                                alt='171x180'
-                                src={'../../static/images/img-08.png'}
-                            />
-                              <br/>
+                  </div>
+                </Col>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-08.png'}
+                    />
+                    <br />
                             Marketing & SEO
-                            </div>
-                        </Col>
+                  </div>
+                </Col>
 
-                        <Col span={4}>
-                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                            <img
-                                height='80'
-                                width='80'
-                                alt='171x180'
-                                src={'../../static/images/img-04.png'}
-                            />
-                              <br/>
+                <Col span={4}>
+                  <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                    <img
+                      height='80'
+                      width='80'
+                      alt='171x180'
+                      src={'../../static/images/img-04.png'}
+                    />
+                    <br />
                             PR
-                            </div>
-                        </Col>
-                    </Row>
+                  </div>
+                </Col>
+              </Row>
 
-                    <div style={{background: '#ECECEC', padding: '30px'}}>
-                        <div id='how-it-works'>
-                            <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
+              <div style={{ background: '#ECECEC', padding: '30px' }}>
+                <div id='how-it-works'>
+                  <h3 className='text-center how-it-work-title' style={{ textAlign: 'center' }}>How it
                                 works?</h3>
                         </div>
                         <Row gutter={12}>
@@ -298,13 +301,13 @@ class HomeContainer extends Component {
                     </div>
                 </Layout>
                 </Col>
+
                 </Row>
-                 <Layout>
-                     
-                    <div className="home-section">
-                        <Row type="flex" justify="space-around">
-                            <Col span={3}>
-                                <img
+              </div>
+            </Layout>
+          </Col>
+        </Row>
+        <Layout>
 
                                     className='chair-tablet-image img-fluid'
                                     src={'../../static/images/asset_1.png'}
@@ -320,32 +323,34 @@ class HomeContainer extends Component {
                                         <hr />
                                         <p>
                                             We provide instant payments using <strong>VBR tokens</strong>, and within 48
+
                                             hours for fiat payouts.
-                                        </p>
-                                        <p>
+                    </p>
+                    <p>
                                             Mediation will be carried out by the smart contract
                                             agreed upon by the parties and our Terms of Service, by the
                                             community.
-                                        </p>
-                                        <p> Meticulously picked customer experience team</p>
-                                        <p>
+                    </p>
+                    <p> Meticulously picked customer experience team</p>
+                    <p>
                                             Customer can follow the progress of his required product
                                             in real time, based on project
-                                        </p>
-                                        <p>
+                    </p>
+                    <p>
                                             Ample recruitment process for freelancers in order to
                                             limit the amount of scammers on our platform <strong>highly
                                             secure</strong> environment based on algorithms developed to
                                             ensure the safety of each and every one of our users.
-                                        </p>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col span={4}>
-                                <div style={{marginTop: '50px', textAlign: 'center'}}>
-                                    <Button style={{backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'}} className='vbr-button' type={'primary'}>
+                    </p>
+                  </div>
+                </Card>
+              </Col>
+              <Col span={4}>
+                <div style={{ marginTop: '50px', textAlign: 'center' }}>
+                  <Button style={{ backgroundColor: '#2EC3AB',
+                    borderColor: '#2EC3AB' }} className='vbr-button' type={'primary'}>
                                         Download Whitepaper
+
                                     </Button>
                                     <br/>
                                     <span className='small' style={{fontSize: '11px'}}>
@@ -365,13 +370,14 @@ class HomeContainer extends Component {
         )
     }
 
+
     _goToAbout = () => {
-        this.props.router.push('/about')
+      this.props.router.push('/about')
     }
 }
 
-function mapStateToProps(state) {
-    return {}
+function mapStateToProps (state) {
+  return {}
 }
 
 HomeContainer.propTypes = {}
