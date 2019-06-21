@@ -26,16 +26,16 @@ app.prepare().then(() => {
   }))
 
   server.get('/category/:category', (req, res) => {
-    const actualPage = '/categories';
-    const queryParams = { category: req.params.category };
-    app.render(req, res, actualPage, queryParams);
-  });
+    const actualPage = '/categories'
+    const queryParams = { category: req.params.category }
+    app.render(req, res, actualPage, queryParams)
+  })
 
   server.get('/category/:category/:subcategory', (req, res) => {
-    const actualPage = '/jobs';
-    const queryParams = { category: req.params.category , subcategory: req.params.subcategory};
-    app.render(req, res, actualPage, queryParams);
-  });
+    const actualPage = '/jobs'
+    const queryParams = { category: req.params.category, subcategory: req.params.subcategory }
+    app.render(req, res, actualPage, queryParams)
+  })
 
   server.get('*', (req, res) => {
     return handler(req, res)

@@ -1,8 +1,8 @@
-var Handlebars  = require('handlebars');
-var library     = require('@fortawesome/fontawesome-svg-core').library;
-var dom         = require('@fortawesome/fontawesome-svg-core').dom;
-var icon        = require('@fortawesome/fontawesome-svg-core').icon;
-var fas         = require('@fortawesome/free-solid-svg-icons').fas;
+var Handlebars = require('handlebars')
+var library = require('@fortawesome/fontawesome-svg-core').library
+var dom = require('@fortawesome/fontawesome-svg-core').dom
+var icon = require('@fortawesome/fontawesome-svg-core').icon
+var fas = require('@fortawesome/free-solid-svg-icons').fas
 
 // Adds all the icons from the Solid style into our library for easy lookup
 library.add(fas)
