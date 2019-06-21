@@ -283,7 +283,7 @@ class HomeContainer extends Component {
                                 </Card>
                             </Col>
                             <Col span={8} offset={8}>
-                                <Card style={{marginTop: '5%'}} title="Exchange Platform" bordered={false}>
+                                <Card style={{marginTop: '5%', height: '50%'}} title="Exchange Platform" bordered={false}>
                                     <p>
                                         We want our users to feel as comfortable as possible, 
                                         therefore we are implementing an exchange market right on our platform, 

@@ -184,13 +184,13 @@ class RegisterStepTwoContainer extends Component {
 return (
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
           <Row>
-            <Col >
-              <Form.Item style={{width: '50%'}} label="Language">
+            <Col span={12} >
+              <Form.Item label="Language">
                 <Input />
               </Form.Item>
             </Col>
-            <Col >
-              <FormItem style={{width: '50%'}} label="Language Level">
+            <Col span={12} >
+              <FormItem label="Language Level">
                 <Select placeholder="Select Language Level">
                   <Option value="basic">Basic</Option>
                   <Option value="conversational">Conversational</Option>
@@ -200,58 +200,42 @@ return (
               </FormItem>
             </Col>
             <hr />
-            <Row >
-              <Col span={12}>
-                <Form.Item style={{marginTop: '14%',  float: 'left'}} label="Education">
-                  <AutoComplete
-                    dataSource={eduOptions}
-                    onChange={this.handleEduChange}
-                    placeholder="Education"
-                  >
-                    <Input />
-                  </AutoComplete>
-                </Form.Item>
-              </Col>
-              <Col span={12}>
-                <FormItem style={{  width: '50%'}} label="Year">
-                  <MonthPicker />
-                </FormItem>
-              </Col>
-            </Row>
+            <Form.Item label="Education">
+              <AutoComplete
+                dataSource={eduOptions}
+                onChange={this.handleEduChange}
+                placeholder="Education"
+              >
+                <Input />
+              </AutoComplete>
+            </Form.Item>
+            <FormItem label="Year">
+              <MonthPicker />
+            </FormItem>
             <hr />
-            <Row>
-            <Col span={12}>
-              <FormItem  style={{width: '70%'}} label="Occupation">
-                <Select placeholder="Select Occupation">
-                  <Option value="writing&translation">Writing & Translation</Option>
-                  <Option value="marketing&seo">Marketing & SEO</Option>
-                  <Option value="design">Design</Option>
-                  <Option value="businessconsultancy">Business Consultancy</Option>
-                  <Option value="programming&developers">Programming & Developers</Option>
-                </Select>  
-              </FormItem>
-            </Col>
-            <Col span={12}>
-              <FormItem label="From">
-                <MonthPicker />
-              </FormItem>
-              <FormItem label="To">
-                <MonthPicker />
-              </FormItem>
-            </Col>
-            </Row>
-            <Col>
-              <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
-              <br />
-              <br />
-              <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
-              <br />
-              <br />
-            </Col>
+            <FormItem label="Occupation">
+              <Select placeholder="Select Occupation">
+                <Option value="writing&translation">writing & Translation</Option>
+                <Option value="marketing&seo">Marketing & SEO</Option>
+                <Option value="design">Design</Option>
+                <Option value="businessconsultancy">Business Consultancy</Option>
+                <Option value="programming&developers">Programming & Developers</Option>
+              </Select>  
+            </FormItem>
+            <FormItem label="From">
+              <MonthPicker />
+            </FormItem>
+            <FormItem label="To">
+              <MonthPicker />
+            </FormItem>
+            <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
+            <br />
+            <br />
+            <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
+            <br />
+            <br />
             <hr />
-            <Col>
-              <Table columns={skills} dataSource={skillData} onChange={onChange} />
-            </Col>
+            <Table columns={skills} dataSource={skillData} onChange={onChange} />
           </Row>
         </Form>
         )}}

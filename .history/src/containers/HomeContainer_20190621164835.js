@@ -66,13 +66,13 @@ class HomeContainer extends Component {
                                             blockchain
                                         </h2>
                                         <p className="subtext-css">
-                                            No more Hidden Fees, Scam Attempts, Poor Customer Support,
+                                            No more Fees, Scam Attempts, Poor Customer Support,
                                             Delayed Payments or Unfair Mediation!
                                         </p>
 
                                         <Search
                                            
-                                            placeholder='Search for Freelancers'
+                                            placeholder='Post your project and choose the best freelancer'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
                                                 className='ant-btn-sm'
@@ -245,53 +245,34 @@ class HomeContainer extends Component {
                             <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
                                 works?</h3>
                         </div>
-                        <Row gutter={12}>
-                            <Col span={8}>
+                        <Row>
+                            <Col span={6}>
                                 <Card title="Online and Cold wallets" bordered={false}>
-                                    <p>
-                                        Time is money, in that we don’t want to waste either. 
-                                        This is why we implemented a cold wallet system, to ensure the security of your transactions.
-                                    </p>
-                                    <p> 
-                                        Coupled with our Proof of Origin and state of the art encryption, we truly hope to provide only the best.
-                                    </p>
+                                    Time is money, in that we don’t want to waste either. 
+                                    This is why we implemented a cold wallet system, to ensure the security of your transactions. 
+                                    Coupled with our Proof of Origin and state of the art encryption, we hope to provide only the best.
                                 </Card>
                             </Col>
-                            <Col span={8}>
+                            <Col span={6}>
                                 <Card title="100% Transparency" bordered={false}>
-                                    <p> 
-                                        Customers will be able to trace the progress of their project instantly, 
-                                        due to our system that compares it to similar projects in our pre-existent library. 
-                                    </p>
-                                    <p>
-                                        Delays due to unprofessional work ethic are now a thing of the past. Just like your worries. 
-                                        Whatever it is, you're covered.
-                                    </p>   
+                                    Customers will be able to trace the progress of their project in real time, 
+                                    due to our system that compares similar projects in our library. 
+                                    Delays due to unprofessional work ethic are now a thing of the past. 
                                 </Card>
                             </Col>
-                            <Col span={8}>
+                            <Col span={6}>
                                 <Card title="Instant payments" bordered={false}>
-                                    <p>
-                                        All payments with our token will be processed instantly, 
-                                        and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
-                                        <br />
-                                        Payments in fiat or any other payment method (i.e. bitcoin) will still be fast, 
-                                        but depend on their respective processors from the chain.
-                                    </p>
-                                        
-                                    
+                                    All payments with our token will be processed instantly, 
+                                    and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol. 
+                                    Payments in fiat or any other payment method (i.e. bitcoin) will still be fast, 
+                                    but depend on their respective processors from the chain.
                                 </Card>
                             </Col>
-                            <Col span={8} offset={8}>
-                                <Card style={{marginTop: '5%'}} title="Exchange Platform" bordered={false}>
-                                    <p>
-                                        We want our users to feel as comfortable as possible, 
-                                        therefore we are implementing an exchange market right on our platform, 
-                                        so that our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
-                                    </p>
-                                    <p>
-                                        We are here to help, not hinder.
-                                    </p>
+                            <Col span={6}>
+                                <Card title="Integrated Exchange Platform" bordered={false}>
+                                    We want our users to feel as comfortable as possible, 
+                                    therefore we are implementing an exchange market right on our platform, 
+                                    so that our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. We are here to help, not hinder.
                                 </Card>
                             </Col>
                         </Row>
@@ -307,8 +288,7 @@ class HomeContainer extends Component {
                                 <img
 
                                     className='chair-tablet-image img-fluid'
-                                    src={'../../static/images/asset_1.png'}
-                                    style={{ marginTop: '50%'}}
+                                    src={'../../static/images/footer_chair.png'}
                                 />
                             </Col>
                             <Col span={8}>
@@ -317,14 +297,13 @@ class HomeContainer extends Component {
                                         <div className='footer-description-title'>
                                             What’s great about our platform?
                                         </div>
-                                        <hr />
                                         <p>
-                                            We provide instant payments using <strong>VBR tokens</strong>, and within 48
+                                            We provide instant payments using VBR tokens, and within 48
                                             hours for fiat payouts.
                                         </p>
                                         <p>
                                             Mediation will be carried out by the smart contract
-                                            agreed upon by the parties and our Terms of Service, by the
+                                            agreed upon by the parties and our ToS, on by the
                                             community.
                                         </p>
                                         <p> Meticulously picked customer experience team</p>
@@ -334,8 +313,8 @@ class HomeContainer extends Component {
                                         </p>
                                         <p>
                                             Ample recruitment process for freelancers in order to
-                                            limit the amount of scammers on our platform <strong>highly
-                                            secure</strong> environment based on algorithms developed to
+                                            limit the amount of scammers on our platform Highly
+                                            secure environment based on algorithms developed to
                                             ensure the safety of each and every one of our users.
                                         </p>
                                     </div>
@@ -352,10 +331,6 @@ class HomeContainer extends Component {
                                         No more hidden fees or unfair mediation 
                                     </span>
                                 </div>
-                                <img src={'../../static/images/asset_4.png'}
-                                        style={{ marginTop: '20%'}}
-                                 />
-                                
                             </Col>
                         </Row>
                     </div>

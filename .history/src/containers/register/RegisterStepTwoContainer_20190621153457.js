@@ -189,7 +189,7 @@ return (
                 <Input />
               </Form.Item>
             </Col>
-            <Col >
+            <Col span={12}>
               <FormItem style={{width: '50%'}} label="Language Level">
                 <Select placeholder="Select Language Level">
                   <Option value="basic">Basic</Option>
@@ -201,29 +201,30 @@ return (
             </Col>
             <hr />
             <Row >
-              <Col span={12}>
-                <Form.Item style={{marginTop: '14%',  float: 'left'}} label="Education">
-                  <AutoComplete
-                    dataSource={eduOptions}
-                    onChange={this.handleEduChange}
-                    placeholder="Education"
-                  >
-                    <Input />
-                  </AutoComplete>
-                </Form.Item>
+            <Col }>
+            <Form.Item style={{marginTop: '14%',  float: 'left'}} label="Education">
+                <AutoComplete
+                  dataSource={eduOptions}
+                  onChange={this.handleEduChange}
+                  placeholder="Education"
+                >
+                  <Input />
+                </AutoComplete>
+              </Form.Item>
+              
+            </Col>
+            <Col span={12}>
+            <FormItem style={{  width: '50%'}} label="Year">
+                <MonthPicker />
+              </FormItem>
               </Col>
-              <Col span={12}>
-                <FormItem style={{  width: '50%'}} label="Year">
-                  <MonthPicker />
-                </FormItem>
-              </Col>
+              
             </Row>
             <hr />
-            <Row>
             <Col span={12}>
-              <FormItem  style={{width: '70%'}} label="Occupation">
+              <FormItem style={{  width: '80%'}} label="Occupation">
                 <Select placeholder="Select Occupation">
-                  <Option value="writing&translation">Writing & Translation</Option>
+                  <Option value="writing&translation">writing & Translation</Option>
                   <Option value="marketing&seo">Marketing & SEO</Option>
                   <Option value="design">Design</Option>
                   <Option value="businessconsultancy">Business Consultancy</Option>
@@ -231,6 +232,7 @@ return (
                 </Select>  
               </FormItem>
             </Col>
+            
             <Col span={12}>
               <FormItem label="From">
                 <MonthPicker />
@@ -239,7 +241,7 @@ return (
                 <MonthPicker />
               </FormItem>
             </Col>
-            </Row>
+            
             <Col>
               <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
               <br />

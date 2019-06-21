@@ -66,13 +66,13 @@ class HomeContainer extends Component {
                                             blockchain
                                         </h2>
                                         <p className="subtext-css">
-                                            No more Hidden Fees, Scam Attempts, Poor Customer Support,
+                                            No more Fees, Scam Attempts, Poor Customer Support,
                                             Delayed Payments or Unfair Mediation!
                                         </p>
 
                                         <Search
                                            
-                                            placeholder='Search for Freelancers'
+                                            placeholder='Post your project and choose the best freelancer'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
                                                 className='ant-btn-sm'
@@ -317,7 +317,6 @@ class HomeContainer extends Component {
                                         <div className='footer-description-title'>
                                             What’s great about our platform?
                                         </div>
-                                        <hr />
                                         <p>
                                             We provide instant payments using <strong>VBR tokens</strong>, and within 48
                                             hours for fiat payouts.

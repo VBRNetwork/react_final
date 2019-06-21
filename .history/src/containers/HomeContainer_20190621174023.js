@@ -66,13 +66,13 @@ class HomeContainer extends Component {
                                             blockchain
                                         </h2>
                                         <p className="subtext-css">
-                                            No more Hidden Fees, Scam Attempts, Poor Customer Support,
+                                            No more hidden Fees, Scam Attempts, Poor Customer Support,
                                             Delayed Payments or Unfair Mediation!
                                         </p>
 
                                         <Search
                                            
-                                            placeholder='Search for Freelancers'
+                                            placeholder='Post your project and choose the best freelancer'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
                                                 className='ant-btn-sm'

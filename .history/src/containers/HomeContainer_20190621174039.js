@@ -72,7 +72,7 @@ class HomeContainer extends Component {
 
                                         <Search
                                            
-                                            placeholder='Search for Freelancers'
+                                            placeholder='Post your project and choose the best freelancer'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
                                                 className='ant-btn-sm'

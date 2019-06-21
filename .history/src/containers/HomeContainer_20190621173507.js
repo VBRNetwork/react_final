@@ -66,13 +66,13 @@ class HomeContainer extends Component {
                                             blockchain
                                         </h2>
                                         <p className="subtext-css">
-                                            No more Hidden Fees, Scam Attempts, Poor Customer Support,
+                                            No more Fees, Scam Attempts, Poor Customer Support,
                                             Delayed Payments or Unfair Mediation!
                                         </p>
 
                                         <Search
                                            
-                                            placeholder='Search for Freelancers'
+                                            placeholder='Post your project and choose the best freelancer'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
                                                 className='ant-btn-sm'
@@ -284,14 +284,10 @@ class HomeContainer extends Component {
                             </Col>
                             <Col span={8} offset={8}>
                                 <Card style={{marginTop: '5%'}} title="Exchange Platform" bordered={false}>
-                                    <p>
-                                        We want our users to feel as comfortable as possible, 
-                                        therefore we are implementing an exchange market right on our platform, 
-                                        so that our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
-                                    </p>
-                                    <p>
-                                        We are here to help, not hinder.
-                                    </p>
+                                    We want our users to feel as comfortable as possible, 
+                                    therefore we are implementing an exchange market right on our platform, 
+                                    so that our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
+                                    We are here to help, not hinder.
                                 </Card>
                             </Col>
                         </Row>
@@ -317,14 +313,13 @@ class HomeContainer extends Component {
                                         <div className='footer-description-title'>
                                             What’s great about our platform?
                                         </div>
-                                        <hr />
                                         <p>
-                                            We provide instant payments using <strong>VBR tokens</strong>, and within 48
+                                            We provide instant payments using VBR tokens, and within 48
                                             hours for fiat payouts.
                                         </p>
                                         <p>
                                             Mediation will be carried out by the smart contract
-                                            agreed upon by the parties and our Terms of Service, by the
+                                            agreed upon by the parties and our ToS, on by the
                                             community.
                                         </p>
                                         <p> Meticulously picked customer experience team</p>
@@ -334,8 +329,8 @@ class HomeContainer extends Component {
                                         </p>
                                         <p>
                                             Ample recruitment process for freelancers in order to
-                                            limit the amount of scammers on our platform <strong>highly
-                                            secure</strong> environment based on algorithms developed to
+                                            limit the amount of scammers on our platform Highly
+                                            secure environment based on algorithms developed to
                                             ensure the safety of each and every one of our users.
                                         </p>
                                     </div>
