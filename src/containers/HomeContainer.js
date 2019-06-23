@@ -138,8 +138,8 @@ class HomeContainer extends Component {
                                     <div style={{ width: '100%'}}>
                                         <img
                                             className='d-block'
-                                            src={'../../static/images/freelancer-b.png'}
-                                            alt='Third slide'
+                                            src={'../../static/images/picture_7.png'}
+                                            alt='Second slide'
                                         />
                                         <div>
                                             <h3>First slide label</h3>
@@ -150,7 +150,18 @@ class HomeContainer extends Component {
                                         <img
                                             className='d-block h-200'
                                             src={'../../static/images/freelancer_old.png'}
-                                            alt='First slide'
+                                            alt='Third slide'
+                                        />
+                                        <div>
+                                            <h3>First slide label</h3>
+                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        </div>
+                                    </div>
+                                    <div style={{ width: '100%'}}>
+                                        <img
+                                            className='d-block h-200'
+                                            src={'../../static/images/picture_3.png'}
+                                            alt='Fourth slide'
                                         />
                                         <div>
                                             <h3>First slide label</h3>
@@ -162,9 +173,9 @@ class HomeContainer extends Component {
                             <div style={{background: '#FFF'}}>
                             <Row>
                                 <Col span={24}>
-                                    <Row>
-                                        <Col span={12} offset={5}>
-                                            <Row align="middle" type="flex" justify="space-around">
+                                    <Row >
+                                        <Col span={12} offset={6}>
+                                            <Row gutter={8} align="middle" type="flex" justify="space-around">
                                                 
                                                 <Col span={8} >
                                                     <div style={{ textAlign: 'center', cursor: 'pointer'}}> 
@@ -176,7 +187,7 @@ class HomeContainer extends Component {
                                                                 src={'../../static/images/img-1.png'}
                                                             />
                                                             <br/>
-                                                            <div className="text-center"><strong>Writing</strong></div>
+                                                            <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
                                                         </div>
                                                     </div>
                                                 </Col>
@@ -190,7 +201,7 @@ class HomeContainer extends Component {
                                                                 src={'../../static/images/img-2.png'}
                                                             />
                                                             <br/>
-                                                            <strong>Design</strong>
+                                                            <div style={{textAlign: 'center'}}><strong>Design</strong></div>
                                                         </div>
                                                     </div>
                                                 </Col>
@@ -204,18 +215,19 @@ class HomeContainer extends Component {
                                                                 src={'../../static/images/img-3.png'}
                                                             />
                                                             <br/>
-                                                            <strong>Business Consultancy</strong>
+                                                            <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
                                                         </div>
                                                     </div>
                                                 </Col>
                                             </Row>
                                         </Col>
                                     </Row>
+                                    <br />
                                                         
-                                        <Row type="flex" justify="space-around">
+                                        <Row gutter={8} align="middle" type="flex" justify="space-around">
                                             <Col span={12}>
                                             <Col span={8} >
-                                                <div style={{ cursor: 'pointer'}}>
+                                                <div style={{ cursor: 'pointer', textAlign: 'center'}}>
                                                     <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                                                         <img
                                                             height='80'
@@ -229,7 +241,7 @@ class HomeContainer extends Component {
                                                 </div>   
                                             </Col>
                                             <Col span={8} >
-                                                <div style={{ cursor: 'pointer'}}>
+                                                <div style={{ cursor: 'pointer', textAlign: 'center'}}>
                                                     <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
                                                         <img
                                                             height='80'
@@ -238,13 +250,13 @@ class HomeContainer extends Component {
                                                             src={'../../static/images/img-06.png'}
                                                         />
                                                         <br/>
-                                                        <strong>Marketing & SEO</strong>
+                                                        <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
                                                     </div>
                                                 </div>
                                             </Col>
 
                                             <Col span={8} >
-                                            <div style={{ cursor: 'pointer'}}>
+                                            <div style={{ cursor: 'pointer', textAlign: 'center'}}>
                                                 <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
                                                     <img
                                                         height='80'
