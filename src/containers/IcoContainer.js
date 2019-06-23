@@ -1,13 +1,15 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
-
+import '../styles/ico.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Carousel, Divider, Layout, Row, Col, Button, Card, Input, Avatar, Empty} from 'antd';
+import {Carousel, Divider, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic} from 'antd';
 const { Header, Content, Footer, Sider } = Layout
 const { Meta } = Card;
 const { TextArea } = Input;
-import '../styles/ico.css'
+const { Countdown } = Statistic;
+const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
+
 
 class IcoContainer extends Component {
     static async getInitialProps({store, query}) {
@@ -86,7 +88,9 @@ class IcoContainer extends Component {
 
                                             <TextArea rows={4} />
                                             <div style={{fontSize: '12px', marginTop: '-10px', color: '#030852'}}>Press enter to send the message.</div>
-                                            <div style={{float: 'right', marginTop: '-25px'}}><Button type="primary" >Submit</Button></div>
+                                            <div style={{float: 'right', marginTop: '-25px'}}>
+                                                <Button style={{background: '#2EC3AB', borderColor: '#2EC3AB'}} type="primary" >Submit</Button>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
@@ -107,7 +111,7 @@ class IcoContainer extends Component {
                                                     </span>
                                                     }
                                                 >
-                                                    <Button type="primary" style={{background: '#2EC3AB'}}>Download Now</Button>
+                                                    <Button type="primary" style={{background: '#2EC3AB', borderColor: '#2EC3AB'}}>Download Now</Button>
                                                 </Empty>
                                             </div>
                                         </Col>
@@ -155,53 +159,20 @@ class IcoContainer extends Component {
                                                 }}
                                             />
                                         </div>
-                                        <div style={{textAlign: 'center'}}><h2 ><strong>Meet VBR Network Team</strong></h2></div>
-                                        
                                         <Row>
-                                            <Col span={12} offset={6}>
-                                                <Carousel autoplay >
-                                                        
-                                                    <Card
-                                                        hoverable
-                                                        bordered={false}
-                                                        style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
-                                                        className="trans-card"
-                                                    >
-                                                        <Meta title="Stefan Vanea" description="Chief Executive Officer" />
-                                                    </Card>
-                                                    
-                                                    <Card
-                                                        hoverable
-                                                        bordered={false}
-                                                        style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
-                                                        className="trans-card"
-                                                    >
-                                                        <Meta title="Serghei Fedot" description="Chief Technology Officer" />
-                                                    </Card>
-                                                    
-                                                    <Card
-                                                        hoverable
-                                                        bordered={false}
-                                                        style={{ width: 240}}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
-                                                        className="trans-card"
-                                                    >
-                                                        <Meta title="Alex Barborica" description="Chief Operating Officer" />
-                                                    </Card>
-                                                    
-                                                    <Card
-                                                        hoverable
-                                                        bordered={false}
-                                                        style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
-                                                        className="trans-card"
-                                                    >
-                                                        <Meta title="Bogdan Vasilescu" description="Chief Marketing Officer" />
-                                                    </Card>
-
-                                                </Carousel>
+                                            <Col span={24}>
+                                                <div style={{textAlign: 'center'}}>
+                                                    <Countdown style={{color: '#FFF'}} title="VBR ICO Countdown" value={deadline} />
+                                                    <br />
+                                                    <br />
+                                                    <div >
+                                                        <h3 style={{color: '#FFF'}}>    
+                                                            <strong>    VBR Network's ICO will be launched shortly. 
+                                                                <br />  In the meantime, feel free to read all the deatils on our web site. 
+                                                            </strong>
+                                                        </h3>
+                                                    </div>
+                                                </div>
                                             </Col>
                                         </Row>
                                         <br />
@@ -399,6 +370,64 @@ class IcoContainer extends Component {
                                         </Col>
                                     </Row>
                                     <br />
+                                    <div style={{textAlign: 'center'}}><h2 ><strong>Meet VBR Network Team</strong></h2></div>
+                                        
+                                        <Row>
+                                            <Col span={12} offset={6}>
+                                                <Carousel autoplay >
+                                                        
+                                                    <Card
+                                                        hoverable
+                                                        bordered={false}
+                                                        style={{ width: 240 }}
+                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        className="trans-card"
+                                                    >
+                                                        <Meta title="Stefan Vanea" description="Chief Executive Officer" />
+                                                    </Card>
+                                                    
+                                                    <Card
+                                                        hoverable
+                                                        bordered={false}
+                                                        style={{ width: 240 }}
+                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        className="trans-card"
+                                                    >
+                                                        <Meta title="Serghei Fedot" description="Chief Technology Officer" />
+                                                    </Card>
+                                                    
+                                                    <Card
+                                                        hoverable
+                                                        bordered={false}
+                                                        style={{ width: 240}}
+                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        className="trans-card"
+                                                    >
+                                                        <Meta title="Alex Barborica" description="Chief Operating Officer" />
+                                                    </Card>
+                                                    
+                                                    <Card
+                                                        hoverable
+                                                        bordered={false}
+                                                        style={{ width: 240 }}
+                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        className="trans-card"
+                                                    >
+                                                        <Meta title="Bogdan Vasilescu" description="Chief Marketing Officer" />
+                                                    </Card>
+                                                    <Card
+                                                        hoverable
+                                                        bordered={false}
+                                                        style={{ width: 240 }}
+                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        className="trans-card"
+                                                    >
+                                                        <Meta title="Cristian Lipciuc" description="Head of Change Management" />
+                                                    </Card>
+
+                                                </Carousel>
+                                            </Col>
+                                        </Row>
                                     <Row>
                                         <Col>
                                             <div style={{backgroundColor:'white'}}>
@@ -412,6 +441,7 @@ class IcoContainer extends Component {
                                                     <img  style={{width: '10%', marginLeft: '3%'}} src={'../../static/images/hp_logo.png'}/>
                                                     <img  style={{width: '20%', marginLeft: '3%'}} src={'../../static/images/GitHub_Logo.png'}/>
                                                     </Card>
+                                                    
                                                     
                                                 </div>
                                             </div>
