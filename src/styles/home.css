@@ -38,11 +38,12 @@
     border-top: 1px solid #666;
 }
 
-.ant-carousel .slick-slide {
+.home-carousel {
     text-align: center;
     height: 490px;
     line-height: 490px;
-    background: #364d79;
+    width: 100%;
+    background: #FFF;
     overflow: hidden;
   }
   

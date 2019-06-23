@@ -12,9 +12,12 @@ import { faHome, faPlayCircle, faEnvelopeOpen } from '@fortawesome/free-solid-sv
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 import Layout from 'components/Layout'
+import GoogleFontLoader from 'react-google-font-loader';
 
 import 'antd/dist/antd.css'
 import 'styles/base.scss'
+import 'styles/base.css'
+
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
@@ -57,6 +60,23 @@ class MyApp extends App {
     return (
       <Container>
         <Head />
+        <GoogleFontLoader
+          fonts={[
+            {
+              font: 'Roboto',
+              weights: [400, '400i'],
+            },
+            {
+              font: 'Roboto Mono',
+              weights: [400, 700],
+            },
+            {
+              font: 'Merriweather',
+              weights: [400, 700],
+            },
+          ]}
+          subsets={['cyrillic-ext', 'greek']}
+        />
         <Provider store={store}>
           <Layout>
             <Component router={router} {...pageProps} />

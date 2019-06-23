@@ -67,7 +67,7 @@ class Header extends Component {
                   </Menu.Item>
 
                   <Menu.Item key='app122' >
-                    <Link href='/community'>
+                    <Link href='/ico'>
                       <a>  <Icon style={{ fontSize: 17 }} type='file-protect' />Initial Coin Offering</a>
                     </Link>
                   </Menu.Item>
