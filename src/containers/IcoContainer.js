@@ -438,7 +438,6 @@ class IcoContainer extends Component {
                                                     <Card bordered={false}>
                                                     <img src={'../../static/images/logo-ced.png'}/>
                                                     <img  style={{width: '30%', marginLeft: '5%'}} src={'../../static/images/logo_envoy2.png'}/>
-                                                    <img  style={{width: '10%', marginLeft: '3%'}} src={'../../static/images/hp_logo.png'}/>
                                                     <img  style={{width: '20%', marginLeft: '3%'}} src={'../../static/images/GitHub_Logo.png'}/>
                                                     </Card>
                                                     
