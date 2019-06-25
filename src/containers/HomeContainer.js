@@ -171,175 +171,182 @@ class HomeContainer extends Component {
                                 </Carousel>
                         <Layout style={{margin: '10px'}}>
                             <div style={{background: '#FFF'}}>
-                            <Row>
-                                <Col span={24}>
-                                    <Row >
-                                        <Col span={12} offset={6}>
-                                            <Row gutter={8} align="middle" type="flex" justify="space-around">
+                                    <Row > 
+                                        <Col span={24}>
+                                            <Row>
+                                                <Col span={24} >
+                                                    <Card style={{width: '50%', height: 300, background: '#0e004214', position: 'absolute',  marginLeft: '25%'}}>
                                                 
-                                                <Col span={8} >
-                                                    <div style={{ textAlign: 'center', cursor: 'pointer'}}> 
-                                                        <div style={{marginLeft:'50%',marginRight: '50%'}}>
-                                                            <img
-                                                                height='80'
-                                                                width='80'
-                                                                alt='171x180'
-                                                                src={'../../static/images/img-1.png'}
-                                                            />
-                                                            <br/>
-                                                            <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
-                                                        </div>
-                                                    </div>
+                                                    </Card>
                                                 </Col>
-                                                <Col span={8} >
-                                                    <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                                        <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                            <img
-                                                                height='80'
-                                                                width='80'
-                                                                alt='171x180'
-                                                                src={'../../static/images/img-2.png'}
-                                                            />
-                                                            <br/>
-                                                            <div style={{textAlign: 'center'}}><strong>Design</strong></div>
-                                                        </div>
-                                                    </div>
+                                            </Row>
+                                            <Row >
+                                                <Col span={12} offset={6}>
+                                                    <Row gutter={8} align="middle" type="flex" justify="space-around">
+                                                        
+                                                        <Col span={8} >
+                                                            <div style={{ textAlign: 'center', cursor: 'pointer'}}> 
+                                                                <div style={{marginLeft:'50%',marginRight: '50%'}}>
+                                                                    <img
+                                                                        height='80'
+                                                                        width='80'
+                                                                        alt='171x180'
+                                                                        src={'../../static/images/img-1.png'}
+                                                                    />
+                                                                    <br/>
+                                                                    <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
+                                                                </div>
+                                                            </div>
+                                                        </Col>
+                                                        <Col span={8} >
+                                                            <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                                                                <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                                    <img
+                                                                        height='80'
+                                                                        width='80'
+                                                                        alt='171x180'
+                                                                        src={'../../static/images/img-2.png'}
+                                                                    />
+                                                                    <br/>
+                                                                    <div style={{textAlign: 'center'}}><strong>Design</strong></div>
+                                                                </div>
+                                                            </div>
+                                                        </Col>
+                                                        <Col span={8} >
+                                                            <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                                                                <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                                    <img
+                                                                        height='80'
+                                                                        width='80'
+                                                                        alt='171x180'
+                                                                        src={'../../static/images/img-3.png'}
+                                                                    />
+                                                                    <br/>
+                                                                    <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
+                                                                </div>
+                                                            </div>
+                                                        </Col>
+                                                    </Row>
                                                 </Col>
-                                                <Col span={8} >
-                                                    <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                                        <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                            <img
-                                                                height='80'
-                                                                width='80'
-                                                                alt='171x180'
-                                                                src={'../../static/images/img-3.png'}
-                                                            />
-                                                            <br/>
-                                                            <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
+                                            </Row>
+                                            <br />
+                                                            
+                                            <Row gutter={8} align="middle" type="flex" justify="space-around">
+                                                <Col span={12}>
+                                                    <Col span={8} >
+                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                                <img
+                                                                    height='80'
+                                                                    width='80'
+                                                                    alt='171x180'
+                                                                    src={'../../static/images/img-5.png'}
+                                                                />
+                                                                <br/>
+                                                                <strong >Developers</strong>
+                                                            </div>
+                                                        </div>   
+                                                    </Col>
+                                                    <Col span={8} >
+                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
+                                                                <img
+                                                                    height='80'
+                                                                    width='80'
+                                                                    alt='171x180'
+                                                                    src={'../../static/images/img-06.png'}
+                                                                />
+                                                                <br/>
+                                                                <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </Col>
+
+                                                    <Col span={8} >
+                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                                <img
+                                                                    height='80'
+                                                                    width='80'
+                                                                    alt='171x180'
+                                                                    src={'../../static/images/img-4.png'}
+                                                                />
+                                                                <br/>
+                                                                <strong>PR</strong>
+                                                            </div>
+                                                        </div>
+                                                    </Col>
                                                 </Col>
                                             </Row>
                                         </Col>
                                     </Row>
-                                    <br />
-                                                        
-                                        <Row gutter={8} align="middle" type="flex" justify="space-around">
-                                            <Col span={12}>
-                                            <Col span={8} >
-                                                <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                    <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                        <img
-                                                            height='80'
-                                                            width='80'
-                                                            alt='171x180'
-                                                            src={'../../static/images/img-5.png'}
-                                                        />
-                                                        <br/>
-                                                        <strong >Developers</strong>
-                                                    </div>
-                                                </div>   
-                                            </Col>
-                                            <Col span={8} >
-                                                <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                    <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
-                                                        <img
-                                                            height='80'
-                                                            width='80'
-                                                            alt='171x180'
-                                                            src={'../../static/images/img-06.png'}
-                                                        />
-                                                        <br/>
-                                                        <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
-                                                    </div>
-                                                </div>
-                                            </Col>
-
-                                            <Col span={8} >
-                                            <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                    <img
-                                                        height='80'
-                                                        width='80'
-                                                        alt='171x180'
-                                                        src={'../../static/images/img-4.png'}
-                                                    />
-                                                    <br/>
-                                                    <strong>PR</strong>
-                                                </div>
-                                            </div>
-                                            </Col>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                            </div>
-                            <div style={{background: '#ECECEC', padding: '30px'}}>
-                                <div id='how-it-works'>
-                                    <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
-                                        works?</h3>
                                 </div>
-                                <Row gutter={12}>
-                                    <Col span={6}>
-                                        <Card style= {{width: 300}} title="Online and Cold wallets" bordered={false}>
-                                            <p>
-                                                Time is money, in that we don’t want to waste either. 
-                                            </p>
-                                            <p>    
-                                                This is why we implemented a cold wallet system, to ensure the security of your transactions.
-                                            </p>
-                                            <p> 
-                                                Coupled with our Proof of Origin and state of the art encryption, we truly hope to provide only the best.
-                                                <br />
-                                            </p>
-                                        </Card>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Card style= {{width: 300}} title="100% Transparency" bordered={false}>
-                                            <p> 
-                                                Customers will be able to trace the progress of their project instantly, 
-                                                due to our system that compares it to similar projects in our pre-existent library. 
-                                            </p>
-                                            <p>
-                                                Delays due to unprofessional work ethic are now a thing of the past. Just like your worries. 
-                                                Whatever it is, you're covered.
-                                            </p>   
-                                        </Card>
-                                    </Col>
-                                    <Col span={6}>
-                                        <Card style= {{width: 300}} title="Instant payments" bordered={false}>
-                                            <p>
-                                                All payments with our token will be processed instantly, 
-                                                and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
-                                            </p>
-                                            <p>   
-                                                Payments in fiat or any other payment method (i.e. bitcoin) will still be fast, 
-                                                but depend on their respective processors from the chain.
-                                            </p>
+                                <div style={{background: '#ECECEC', padding: '30px'}}>
+                                    <div id='how-it-works'>
+                                        <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
+                                            works?</h3>
+                                    </div>
+                                    <Row gutter={24} type="flex" justify="start">
+                                        <Col span={6}>
+                                            <Card style= {{width: 300}} title="Online and Cold wallets" bordered={false}>
+                                                <p>
+                                                    Time is money, in that we don’t want to waste either. 
+                                                </p>
+                                                <p>    
+                                                    This is why we implemented a cold wallet system, to ensure the security of your transactions.
+                                                </p>
+                                                <p> 
+                                                    Coupled with our Proof of Origin and state of the art encryption, we truly hope to provide only the best.
+                                                    <br />
+                                                </p>
+                                            </Card>
+                                        </Col>
+                                        <Col span={6}>
+                                            <Card style= {{width: 300}} title="100% Transparency" bordered={false}>
+                                                <p> 
+                                                    Customers will be able to trace the progress of their project instantly, 
+                                                    due to our system that compares it to similar projects in our pre-existent library. 
+                                                </p>
+                                                <p>
+                                                    Delays due to unprofessional work ethic are now a thing of the past. Just like your worries. 
+                                                    Whatever it is, you're covered.
+                                                </p>   
+                                            </Card>
+                                        </Col>
+                                        <Col span={6}>
+                                            <Card style= {{width: 300}} title="Instant payments" bordered={false}>
+                                                <p>
+                                                    All payments with our token will be processed instantly, 
+                                                    and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
+                                                </p>
+                                                <p>   
+                                                    Payments in fiat or any other payment method (i.e. bitcoin) will still be fast, 
+                                                    but depend on their respective processors from the chain.
+                                                </p>
+                                                    
                                                 
-                                            
-                                        </Card>
-                                    </Col>
-                                    <Col span={6} >
-                                        <Card  style= {{width: 300}} title="Exchange Platform" bordered={false}>
-                                            <p>
-                                                We want our users to feel as comfortable as possible.
-                                            </p>
-                                            <p>    
-                                                Therefore we are implementing an exchange market right on our platform.
-                                            </p>
-                                            <p>
-                                                Our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
-                                                <br />
-                                            </p>
-                                            
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </Layout>
-                    </Col>
-                </Row>
+                                            </Card>
+                                        </Col>
+                                        <Col span={6} >
+                                            <Card  style= {{width: 300}} title="Exchange Platform" bordered={false}>
+                                                <p>
+                                                    We want our users to feel as comfortable as possible.
+                                                </p>
+                                                <p>    
+                                                    Therefore we are implementing an exchange market right on our platform.
+                                                </p>
+                                                <p>
+                                                    Our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
+                                                    <br />
+                                                </p>
+                                                
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </Layout>
+                        </Col>
+                    </Row>
                  <Layout>
                      
                     <div className="home-section">
