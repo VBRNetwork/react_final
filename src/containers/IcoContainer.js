@@ -160,18 +160,34 @@ class IcoContainer extends Component {
                                             />
                                         </div>
                                         <Row>
-                                            <Col span={24}>
-                                                <div style={{textAlign: 'center'}}>
-                                                    <Countdown style={{color: '#FFF'}} title="VBR ICO Countdown" value={deadline} />
-                                                    <br />
-                                                    <br />
-                                                    <div >
-                                                        <h3 style={{color: '#FFF'}}>    
-                                                            <strong>    VBR Network's ICO will be launched shortly. 
-                                                                <br />  In the meantime, feel free to read all the deatils on our web site. 
-                                                            </strong>
-                                                        </h3>
-                                                    </div>
+                                            <Col span={24} offset={6}>
+                                                <div>
+                                                    <Card 
+                                                        style={{width: '50%', background: '#1f003a29'}}
+                                                        bordered={false}
+                                                        cover={
+                                                            <div style={{textAlign: 'center'}}>
+                                                                    <Countdown 
+                                                                        style={{color: '#FFF', marginTop: '5%'}} 
+                                                                        title="VBR ICO Countdown" 
+                                                                        value={deadline} 
+                                                                    />
+                                                                    <div style={{color: '#FFF'}}><strong>Days</strong>
+
+                                                                    </div>
+                                                            </div>
+                                                        }
+                                                    >   
+                                                        <hr />
+                                                        <div >
+                                                            <h4 style={{color: '#FFF', textAlign: 'center'}}>    
+                                                                <strong>    VBR Network's ICO will be launched shortly. 
+                                                                    <hr />  In the meantime, feel free to read all the deatils on our web site. 
+                                                                </strong>
+                                                            </h4>
+                                                        </div>
+                                                        <hr />
+                                                    </Card>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -380,49 +396,75 @@ class IcoContainer extends Component {
                                                         hoverable
                                                         bordered={false}
                                                         style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        cover={<img style={{position: 'absolute'}} src={'../../static/images/picture_6.png'}/>}
                                                         className="trans-card"
+                                                        
                                                     >
-                                                        <Meta title="Stefan Vanea" description="Chief Executive Officer" />
+                                                        <Meta 
+                                                        avatar={<Avatar size={64} 
+                                                        icon="user" 
+                                                        style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />} 
+                                                        title="Stefan Vanea" 
+                                                        description="Chief Executive Officer" />
                                                     </Card>
                                                     
                                                     <Card
                                                         hoverable
                                                         bordered={false}
                                                         style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        cover={<img style={{position: 'absolute'}} src={'../../static/images/picture_6.png'}/>}
                                                         className="trans-card"
                                                     >
-                                                        <Meta title="Serghei Fedot" description="Chief Technology Officer" />
+                                                        <Meta 
+                                                        avatar={<Avatar size={64} 
+                                                        icon="user" 
+                                                        style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
+                                                        title="Serghei Fedot" 
+                                                        description="Chief Technology Officer" />
                                                     </Card>
                                                     
                                                     <Card
                                                         hoverable
                                                         bordered={false}
                                                         style={{ width: 240}}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        cover={<img style={{position: 'absolute'}} src={'../../static/images/picture_6.png'}/>}
                                                         className="trans-card"
                                                     >
-                                                        <Meta title="Alex Barborica" description="Chief Operating Officer" />
+                                                        <Meta 
+                                                        avatar={<Avatar size={64} 
+                                                        icon="user" 
+                                                        style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
+                                                        title="Alex Barborica" 
+                                                        description="Chief Operating Officer" />
                                                     </Card>
                                                     
                                                     <Card
                                                         hoverable
                                                         bordered={false}
                                                         style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        cover={<img style={{position: 'absolute'}} src={'../../static/images/picture_6.png'}/>}
                                                         className="trans-card"
                                                     >
-                                                        <Meta title="Bogdan Vasilescu" description="Chief Marketing Officer" />
+                                                        <Meta 
+                                                        avatar={<Avatar size={64} 
+                                                        icon="user" 
+                                                        style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
+                                                        title="Bogdan Vasilescu" 
+                                                        description="Chief Marketing Officer" />
                                                     </Card>
                                                     <Card
                                                         hoverable
                                                         bordered={false}
                                                         style={{ width: 240 }}
-                                                        cover={<Avatar size={64} icon="user" style={{marginTop: '5px', marginLeft: '10px'}} />}
+                                                        cover={<img style={{position: 'absolute'}} src={'../../static/images/picture_6.png'}/>}
                                                         className="trans-card"
                                                     >
-                                                        <Meta title="Cristian Lipciuc" description="Head of Change Management" />
+                                                        <Meta 
+                                                        avatar={<Avatar size={64} 
+                                                        icon="user" 
+                                                        style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF'}} />}
+                                                        title="Cristian Lipciuc" 
+                                                        description="Head of Change Management" />
                                                     </Card>
 
                                                 </Carousel>

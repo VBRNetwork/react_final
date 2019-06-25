@@ -6,3 +6,7 @@
 
 
 .ant-carousel .slick-slide img {display: inherit }
+
+.ant-card-meta-detail > div:not(:last-child) {position: relative; color: #FFF; text-align: center}
+
+.ant-card-meta-description {position: relative; color: #FFF; text-align: center; margin-top: 9%}
