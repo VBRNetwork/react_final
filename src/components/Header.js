@@ -52,7 +52,7 @@ class Header extends Component {
         <div>
           <Content style={{ marginLeft: '50px', marginRight: '50px', marginBottom: '10px' }}>
             <Row>
-              <Col lg={6}> <Link href='/'><a><img src={'../static/images/vbr_logo.png'} style={{ width: '80px', margin: '8px' }} /></a></Link></Col>
+              <Col lg={6}> <Link href='/'><a><img src={'../static/images/vbrLogo.png'} style={{ width: '80px', margin: '8px' }} /></a></Link></Col>
               <Col lg={16}>
                 <Menu className='nav1' selectedKeys={[this.state.current]} mode='horizontal' style={{ float: 'right' }}>
                   <Menu.Item key='mail1'>
