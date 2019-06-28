@@ -86,7 +86,7 @@ class Footer extends Component {
 
             <Col span={4}>
               <img
-                src={'../../static/images/vbr_logo.png'}
+                src={'../../static/images/vbrLogo.png'}
                 className='footer-logo'
                 style={{ width: '120px', margin: '0 auto' }}
               />

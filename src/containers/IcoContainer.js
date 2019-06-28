@@ -31,39 +31,34 @@ class IcoContainer extends Component {
                                             alt="concept" 
                                             src={'../../static/images/asset_5.png'} 
                                     />
-                                    <p> We realize that the proportions of current market share
-                                        are not reflecting the truth, as out there is still more
-                                        unexploited market then the current one; therefore, we
-                                        plan to build the VBR Academy, as part of our platform,
-                                        in order to help those who would like to get into the
-                                        field, but do not currently have the possibility to do so.
+                                    <p> We realized that the current freelancing market is missing something bad, 
+                                        and those who have great ideas are often not given a platform to express them.
+                                        The market grows best with your input, not with impersonal customer support and dishonesty. 
+                                        It's time to start over and give you the tools you need to build your project to the best of your ability. 
+                                        Say goodbye to having to read between the lines!
                                     </p>
                                     <p>
-                                        This will consist of video courses that will give people
-                                        new skills in the several domains domain.
-                                    </p>
-                                    <p> VBR aims to start with free developing courses for
-                                        women, so we can offer them the opportunity of
-                                        learning in a friendly, easy way, what majority of them
-                                        were unable to understand yet, due to lack of friendly,
-                                        free courses.
-                                    </p>
-                                    <p> The Terms of Service will be voted upon by the
-                                        community, to ensure that our platform truly satisfies as
-                                        many people as possible. VBR members strive to let
-                                        the market grow on its’ own, with as little interference
-                                        as possible.
+                                        Enter VBR: Made by freelancers, for freelancers. 
+                                        You know how you want to run your business far better than we do: help us help you.
+                                        
                                     </p>
                                     <p>
-                                        One of our tools will allow the customer to track the
-                                        progress of the freelancer in real time, based on
-                                        measurement of project size. This will help eliminate
-                                        long SLAs.
+                                        Our Terms and Projects are voted on by you and the community. 
+                                        It's time to abandon bureacratic processes and anti-consumer practices. 
                                     </p>
                                     <p>
-                                        VBR will be working closely with partners that will allow
-                                        talented freelancers from underdeveloped countries to
-                                        integrate themselves better into the global market,
+                                        VBR members strive to let the market grow on its’ own, with as little interference as possible. 
+                                        However, we've come up with a few improvements ourselves, which we hope you will find useful!
+                                    </p>
+                                    <p> 
+                                        One of our tools will allow the customer to track the progress of the freelancer in real time, 
+                                        by measuring the project size against other similar projects in our library. 
+                                        This will help us eliminate long SLAs.
+                                    </p>
+                                    <p>
+                                        VBR will be working closely with partners 
+                                        that will allow talented freelancers 
+                                        from underdeveloped countries to integrate themselves better into the global market, 
                                         ensuring equal opportunities for all.
                                     </p>
                                 </Card>
@@ -101,7 +96,7 @@ class IcoContainer extends Component {
                                             <div style={{textAlign: 'center'}} >
                                                 <Empty
                                                     
-                                                    image={'../../static/images/vbr_logo.png'}
+                                                    image={'../../static/images/vbrLogo.png'}
                                                     imageStyle={{
                                                     height: 60,
                                                     }}
@@ -160,10 +155,10 @@ class IcoContainer extends Component {
                                             />
                                         </div>
                                         <Row>
-                                            <Col span={24} offset={6}>
-                                                <div>
+                                            <Col span={24} >
+                                                <div style={{float: 'right', marginRight: '20%'}}>
                                                     <Card 
-                                                        style={{width: '50%', background: '#1f003a29'}}
+                                                        style={{width: '100%', background: '#1f003a29'}}
                                                         bordered={false}
                                                         cover={
                                                             <div style={{textAlign: 'center'}}>
@@ -182,7 +177,7 @@ class IcoContainer extends Component {
                                                         <div >
                                                             <h4 style={{color: '#FFF', textAlign: 'center'}}>    
                                                                 <strong>    VBR Network's ICO will be launched shortly. 
-                                                                    <hr />  In the meantime, feel free to read all the deatils on our web site. 
+                                                                    <hr />  In the meantime, feel free to read all the details on our web site. 
                                                                 </strong>
                                                             </h4>
                                                         </div>
@@ -477,10 +472,32 @@ class IcoContainer extends Component {
                                                     <div> 
                                                     <h3> <strong>Partners</strong> </h3>
                                                     </div>
+                                                    <hr />
                                                     <Card bordered={false}>
                                                     <img src={'../../static/images/logo-ced.png'}/>
-                                                    <img  style={{width: '30%', marginLeft: '5%'}} src={'../../static/images/logo_envoy2.png'}/>
-                                                    <img  style={{width: '20%', marginLeft: '3%'}} src={'../../static/images/GitHub_Logo.png'}/>
+                                                    </Card>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <div style={{backgroundColor:'white'}}>
+                                                <div style={{margin:'20px'}}>
+                                                    
+                                                    <div> 
+                                                    <h3> <strong>Technology</strong> </h3>
+                                                    </div>
+                                                    <hr />
+                                                    <Card bordered={false}>
+                                                    <img  style={{width: '35%'}} src={'../../static/images/python-logo.png'}/>
+                                                    <img  style={{width: '30%'}} src={'../../static/images/logo_envoy2.png'}/>
+                                                    <img  style={{width: '20%', marginLeft: '5%'}} src={'../../static/images/django-logo.png'}/>
+                                                    <img  style={{width: '35%'}} src={'../../static/images/react-logo.png'}/>
+                                                    <img  style={{width: '30%'}} src={'../../static/images/eth-logo.png'}/>
+                                                    <img  style={{width: '30%'}} src={'../../static/images/mongodb-logo.png'}/>
                                                     </Card>
                                                     
                                                     
