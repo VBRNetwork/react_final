@@ -1,7 +1,7 @@
 import axios from 'axios'
 import humps from 'humps'
 
-const apiUrl = 'https://api.vbrinc.ro/v1/accounts/auth/login/'
+const apiUrl = 'https://marketplace.vbrinc.ro/api/v1/'
 
 const instance = axios.create({
   baseURL: apiUrl,
@@ -11,7 +11,7 @@ const instance = axios.create({
 
 const vbrincapi = {
   getToken ({ username, password }) {
-    return instance.post(apiUrl, { username, password }).then(res => {
+    return instance.post(apiUrl + 'accounts/auth/login/', { username, password }).then(res => {
       return humps.camelizeKeys(res.data)
     })
   },
