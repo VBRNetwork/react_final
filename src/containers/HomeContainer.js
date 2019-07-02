@@ -88,6 +88,7 @@ class HomeContainer extends Component {
                                     </div>
                                 </Col>
                                 <Col span={14}>
+                                
 
                                 <img src={'../../static/images/asset_6.png'}
                                             style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
