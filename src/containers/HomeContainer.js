@@ -124,51 +124,70 @@ class HomeContainer extends Component {
 
                 <Row>
                     <Col span={24} >
-                                <Carousel autoplay className="home-carousel">
+                                <Carousel autoplay  className="home-carousel">
                                     <div style={{backgroundColor: 'black', width: '100%'}}>
-                                        <img
-                                            className='d-block h-200'
-                                            src={'../../static/images/freelancer-working2.png'}
-                                            alt='First slide'
-                                        />
-                                        <div>
-                                            <h3>First slide label</h3>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        <div className="image">
+
+                                                <img
+                                                        className='d-block h-200'
+                                                        src={'../../static/images/freelancer-working2.png'}
+                                                        alt='First slide'
+                                                    />
+
+                                                <h2 className="h2-absolute"><span>Don't worry<span class="spacer">&nbsp;</span>
+                                                <span class="spacer">&nbsp;</span>We got this</span></h2>
+
                                         </div>
                                     </div>
-                                    <div style={{ width: '100%'}}>
-                                        <img
-                                            className='d-block'
-                                            src={'../../static/images/picture_7.png'}
-                                            alt='Second slide'
-                                        />
-                                        <div>
-                                            <h3>First slide label</h3>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+
+                                    <div style={{backgroundColor: 'black', width: '100%'}}>
+                                        <div className="image">
+
+                                                <img
+                                                    className='d-block'
+                                                    src={'../../static/images/picture_7.png'}
+                                                    alt='Second slide'
+                                                />
+
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
+                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+
                                         </div>
                                     </div>
-                                    <div style={{ width: '100%'}}>
-                                        <img
-                                            className='d-block h-200'
-                                            src={'../../static/images/freelancer_old.png'}
-                                            alt='Third slide'
-                                        />
-                                        <div>
-                                            <h3>First slide label</h3>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+
+
+
+                                    <div style={{backgroundColor: 'black', width: '100%'}}>
+                                        <div className="image">
+
+                                                <img
+                                                    className='d-block h-200'
+                                                    src={'../../static/images/freelancer_old.png'}
+                                                    alt='Third slide'
+                                                />
+
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
+                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+
                                         </div>
                                     </div>
-                                    <div style={{ width: '100%'}}>
-                                        <img
-                                            className='d-block h-200'
-                                            src={'../../static/images/picture_3.png'}
-                                            alt='Fourth slide'
-                                        />
-                                        <div>
-                                            <h3>First slide label</h3>
-                                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+
+
+
+                                    <div style={{backgroundColor: 'black', width: '100%'}}>
+                                        <div className="image">
+
+                                                <img
+                                                    className='d-block h-200'
+                                                    src={'../../static/images/picture_3.png'}
+                                                    alt='Fourth slide'
+                                                />
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
+                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+
                                         </div>
                                     </div>
+                                   
                                 </Carousel>
                         <Layout style={{margin: '10px'}}>
                             <div style={{background: '#FFF'}}>
