@@ -1,7 +1,7 @@
 import axios from 'axios'
 import humps from 'humps'
 
-const apiUrl = 'http://marketplace.vbrinc.ro/api/v1/'
+const apiUrl = 'https://marketplace.vbrinc.ro/api/v1/'
 
 const instance = axios.create({
     baseURL: apiUrl,
