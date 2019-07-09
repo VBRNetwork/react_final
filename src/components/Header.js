@@ -5,6 +5,8 @@ import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
 import {connect} from 'react-redux'
+import { getVBRSettings } from '../actions/app_settings'
+import {Map} from "immutable/dist/immutable";
 
 const {Content} = Layout
 const SubMenu = Menu.SubMenu
@@ -23,7 +25,17 @@ class Header extends Component {
         isLogged: false
     };
 
+    static async getInitialProps ({ store, query }) {
+        let lang = query.lang || 'javascript'
+        await store.dispatch(getVBRSettings())
+    }
+
     componentDidMount() {
+        let { getVBRSettings } = this.props
+        getVBRSettings().then((e) => {
+            console.log(e)
+        });
+
         let token = this.props.user.token
         if (token !== 0) {
             this.setState({
@@ -75,19 +87,19 @@ class Header extends Component {
                                     </Link>
                                 </Menu.Item>
 
-                                {this.state.isLogged === true &&
+                                {this.state.isLogged == true &&
                                 <Menu.Item key='alipay243434'>
                                     <Link href='/dashboard'>
                                         <a><Icon style={{fontSize: 17}} type='dashboard'/> Dashboard</a>
                                     </Link>
                                 </Menu.Item>}
 
-                                {this.state.isLogged === false && loginButton}
+                                {this.state.isLogged == false && loginButton}
                             </Menu>
                         </Col>
 
                         <Col lg={2}>
-                            {this.state.isLogged === false && <Link href='/register'>
+                            {this.state.isLogged == false && <Link href='/register'>
                                 <a>
                                     <div className='post-job-btn'>
                                         <Button type='primary' style={{
@@ -135,8 +147,10 @@ function mapStateToProps(state) {
     }
 }
 
-Header.propTypes = {
-    user: PropTypes.instanceOf(Object).isRequired
-}
 
-export default connect(mapStateToProps, {})(Header)
+Header.propTypes = {
+    user: PropTypes.instanceOf(Object).isRequired,
+    getVBRSettings: PropTypes.func.isRequired
+}
+export { Header }
+export default connect(mapStateToProps, {getVBRSettings})(Header)
