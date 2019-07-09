@@ -1,8 +1,7 @@
 
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {Row, Radio, Form, Select, AutoComplete, Input, Col, Button, DatePicker, TimePicker, Checkbox, Table, Icon} from 'antd'
+import {Row, Form, Select, AutoComplete, Input, Col, DatePicker, Checkbox,} from 'antd'
 import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -15,87 +14,15 @@ const options = [
   { label: 'WordPress', value: 'WordPress' },
 ];
 
-const options2 = [
-  { label: 'Desktop Apps', value: 'Desktop Apps' },
-  { label: 'Ecommerce Platforms', value: 'Ecommerce Platforms' },
-  { label: 'WordPress', value: 'WordPress' },
-
-]
-
-const skills = [
-  {
-    title: 'Skill',
-    dataIndex: 'skill',
-    filters: [
-      {
-        text: 'JavaScript',
-        value: 'JavaScript',
-      },
-      {
-        text: 'Python',
-        value: 'Python',
-      },
-      {
-        text: 'Web Programming',
-        value: 'Web Programming',
-      },
-    ],
-    // specify the condition of filtering result
-    // here is that finding the name started with `value`
-   
-  },
-  {
-    title: 'Level',
-    dataIndex: 'level',
-    defaultSortOrder: 'descend',
-  },
-  {
-    title: 'Add New',
-    dataIndex: 'addnew',
-    filters: [
-      {
-        text: '-',
-        value: '-',
-      },
-      {
-        text: '-',
-        value: '-',
-      },
-    ],
-    
-  },
-];
-
-const skillData = [
-  {
-    key: '1',
-    skill: 'Python',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' /> 
-    
-  },
-  {
-    key: '2',
-    skill: 'JavScript',
-    level: 'Intermediate',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-  {
-    key: '3',
-    skill: 'Web Programming',
-    level: 'Beginner',
-    addnew: <Icon style={{float: 'right'}} type='edit' />
-  },
-];
-
-
-
 function onChange(checkedValues, pagination) {
   
   console.log('checked = ', checkedValues);
   console.log('params', pagination);
 }
 
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
 
 
 class RegisterStepTwoContainer extends Component {
@@ -183,6 +110,7 @@ class RegisterStepTwoContainer extends Component {
     
 return (
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+          <hr />
           <Row>
             <Col >
               <Form.Item style={{width: '50%'}} label="Language">
@@ -200,9 +128,9 @@ return (
               </FormItem>
             </Col>
             <hr />
-            <Row >
+            <Row gutter={24}>
               <Col span={12}>
-                <Form.Item style={{marginTop: '14%',  float: 'left'}} label="Education">
+                <Form.Item style={{marginTop: '15%'}} label="Education">
                   <AutoComplete
                     dataSource={eduOptions}
                     onChange={this.handleEduChange}
@@ -219,9 +147,9 @@ return (
               </Col>
             </Row>
             <hr />
-            <Row>
+            <Row gutter={24}>
             <Col span={12}>
-              <FormItem  style={{width: '70%'}} label="Occupation">
+              <FormItem  style={{width: '100%'}} label="Occupation">
                 <Select placeholder="Select Occupation">
                   <Option value="writing&translation">Writing & Translation</Option>
                   <Option value="marketing&seo">Marketing & SEO</Option>
@@ -241,18 +169,49 @@ return (
             </Col>
             </Row>
             <Col>
-              <Checkbox.Group  options={plainOptions} defaultValue={['Web Programming']} onChange={onChange} />
+              <Checkbox.Group  options={plainOptions}  onChange={onChange} />
               <br />
               <br />
-              <Checkbox.Group options={options} defaultValue={['Ecommerce Platforms']} onChange={onChange} />
+              <Checkbox.Group options={options}  onChange={onChange} />
               <br />
               <br />
             </Col>
             <hr />
             <Col>
-              <Table columns={skills} dataSource={skillData} onChange={onChange} />
+              <div>
+                <strong>Add Skills</strong>
+              </div>
+              <br />
+              <Select
+                mode="multiple"
+                style={{ width: '100%' }}
+                placeholder="Select a skill"
+                onChange={handleChange}
+                optionLabelProp="label"
+              >
+                <Option value="python" label="Python">
+                  <span role="img" aria-label="Python">
+                    PY{' '}
+                  </span>
+                  Python
+                </Option>
+                <Option value="javascript" label="JavaScript">
+                  <span role="img" aria-label="JavaScript">
+                    JS{' '}
+                  </span>
+                  JavaScript
+                </Option>
+                <Option value="blockchain" label="Blockchain">
+                  <span role="img" aria-label="Blockchain">
+                    BC{' '}
+                  </span>
+                  Blockchain
+                </Option>
+              </Select>
             </Col>
           </Row>
+          <br />
+          <br />
         </Form>
         )}}
     function mapStateToProps (state) {

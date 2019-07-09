@@ -127,8 +127,10 @@ class RegisterStepOneContainer extends Component {
       <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
     ));
 
+    
     return (
       <div>
+      <hr />
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
             <Form.Item label="E-mail">
                 <Input />
@@ -167,7 +169,6 @@ class RegisterStepOneContainer extends Component {
                 I agree with<a style={{color: '#2EC3AB'}} href=""> VBR Terms of Service</a>
                 </Checkbox>
             </Form.Item>
-           
         </Form>
       </div>
     )}}

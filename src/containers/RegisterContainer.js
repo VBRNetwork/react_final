@@ -16,6 +16,7 @@ const AutoCompleteOption = AutoComplete.Option;
 import { connect } from 'react-redux'
 import RegisterStepOneContainer from '../containers/register/RegisterStepOneContainer'
 import RegisterStepTwoContainer from '../containers/register/RegisterStepTwoContainer'
+import RegisterStepThreeContainer from '../containers/register/RegisterStepThreeContainer'
 import '../styles/register.css'
 
 import { Steps, message } from 'antd';
@@ -28,7 +29,12 @@ const steps = [
     {
       title: 'Second',
       content:  <RegisterStepTwoContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
-    }
+    },
+
+    {
+        title: 'Third',
+        content:  <RegisterStepThreeContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
+      }
   ];
 
 
@@ -76,6 +82,7 @@ class Register extends React.Component {
                                 Next
                                 </Button>
                             )}
+
                             {current === steps.length - 1 && (
                                 <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
                                 borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
