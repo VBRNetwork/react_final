@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Map } from 'immutable'
 import { connect } from 'react-redux'
 
-import { getTopRepos } from 'actions/repos'
+
 import SearchResults from 'components/SearchResults'
 
 class SearchRepoContainer extends Component {

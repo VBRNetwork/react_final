@@ -71,7 +71,7 @@ class HomeContainer extends Component {
                                         </p>
 
                                         <Search
-                                           
+
                                             placeholder='Search for Freelancers'
                                             className='searchpost form-control ant-input-sm'
                                             enterButton={<Button
@@ -88,14 +88,14 @@ class HomeContainer extends Component {
                                     </div>
                                 </Col>
                                 <Col span={14}>
-                                
+
 
                                 <img src={'../../static/images/asset_6.png'}
                                             style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
-                                  
+
                                     <img src={'../../static/images/asset_9.png'}
                                             style={{marginLeft: '25%',  height: '190px'}}/>
-                                            
+
                                     <div className="small-promo-text">
 
                                         <div style={{position: 'relative'}}>
@@ -134,8 +134,8 @@ class HomeContainer extends Component {
                                                         alt='First slide'
                                                     />
 
-                                                <h2 className="h2-absolute"><span>Don't worry<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>We got this</span></h2>
+                                                <h2 className="h2-absolute"><span>Don't worry<span className="spacer">&nbsp;</span>
+                                                <span className="spacer">&nbsp;</span>We got this</span></h2>
 
                                         </div>
                                     </div>
@@ -149,8 +149,8 @@ class HomeContainer extends Component {
                                                     alt='Second slide'
                                                 />
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
+                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
 
                                         </div>
                                     </div>
@@ -166,8 +166,8 @@ class HomeContainer extends Component {
                                                     alt='Third slide'
                                                 />
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
+                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
 
                                         </div>
                                     </div>
@@ -182,30 +182,30 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/picture_3.png'}
                                                     alt='Fourth slide'
                                                 />
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
+                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
 
                                         </div>
                                     </div>
-                                   
+
                                 </Carousel>
                         <Layout style={{margin: '10px'}}>
                             <div style={{background: '#FFF'}}>
-                                    <Row > 
+                                    <Row >
                                         <Col span={24}>
                                             <Row>
                                                 <Col span={24} >
                                                     <Card style={{width: '50%', height: 300, background: '#0e004214', position: 'absolute',  marginLeft: '25%'}}>
-                                                
+
                                                     </Card>
                                                 </Col>
                                             </Row>
                                             <Row >
                                                 <Col span={12} offset={6}>
                                                     <Row gutter={8} align="middle" type="flex" justify="space-around">
-                                                        
+
                                                         <Col span={8} >
-                                                            <div style={{ textAlign: 'center', cursor: 'pointer'}}> 
+                                                            <div style={{ textAlign: 'center', cursor: 'pointer'}}>
                                                                 <div style={{marginLeft:'50%',marginRight: '50%'}}>
                                                                     <img
                                                                         height='80'
@@ -250,7 +250,7 @@ class HomeContainer extends Component {
                                                 </Col>
                                             </Row>
                                             <br />
-                                                            
+
                                             <Row gutter={8} align="middle" type="flex" justify="space-around">
                                                 <Col span={12}>
                                                     <Col span={8} >
@@ -265,7 +265,7 @@ class HomeContainer extends Component {
                                                                 <br/>
                                                                 <strong >Developers</strong>
                                                             </div>
-                                                        </div>   
+                                                        </div>
                                                     </Col>
                                                     <Col span={8} >
                                                         <div style={{ cursor: 'pointer', textAlign: 'center'}}>
@@ -310,12 +310,12 @@ class HomeContainer extends Component {
                                         <Col span={6}>
                                             <Card style= {{width: 300}} title="Online and Cold wallets" bordered={false}>
                                                 <p>
-                                                    Time is money, in that we don’t want to waste either. 
+                                                    Time is money, in that we don’t want to waste either.
                                                 </p>
-                                                <p>    
+                                                <p>
                                                     This is why we implemented a cold wallet system, to ensure the security of your transactions.
                                                 </p>
-                                                <p> 
+                                                <p>
                                                     Coupled with our Proof of Origin and state of the art encryption, we truly hope to provide only the best.
                                                     <br />
                                                 </p>
@@ -323,28 +323,28 @@ class HomeContainer extends Component {
                                         </Col>
                                         <Col span={6}>
                                             <Card style= {{width: 300}} title="100% Transparency" bordered={false}>
-                                                <p> 
-                                                    Customers will be able to trace the progress of their project instantly, 
-                                                    due to our system that compares it to similar projects in our pre-existent library. 
+                                                <p>
+                                                    Customers will be able to trace the progress of their project instantly,
+                                                    due to our system that compares it to similar projects in our pre-existent library.
                                                 </p>
                                                 <p>
-                                                    Delays due to unprofessional work ethic are now a thing of the past. Just like your worries. 
+                                                    Delays due to unprofessional work ethic are now a thing of the past. Just like your worries.
                                                     Whatever it is, you're covered.
-                                                </p>   
+                                                </p>
                                             </Card>
                                         </Col>
                                         <Col span={6}>
                                             <Card style= {{width: 300}} title="Instant payments" bordered={false}>
                                                 <p>
-                                                    All payments with our token will be processed instantly, 
+                                                    All payments with our token will be processed instantly,
                                                     and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
                                                 </p>
-                                                <p>   
-                                                    Payments in fiat or any other payment method (i.e. bitcoin) will still be fast, 
+                                                <p>
+                                                    Payments in fiat or any other payment method (i.e. bitcoin) will still be fast,
                                                     but depend on their respective processors from the chain.
                                                 </p>
-                                                    
-                                                
+
+
                                             </Card>
                                         </Col>
                                         <Col span={6} >
@@ -352,14 +352,14 @@ class HomeContainer extends Component {
                                                 <p>
                                                     We want our users to feel as comfortable as possible.
                                                 </p>
-                                                <p>    
+                                                <p>
                                                     Therefore we are implementing an exchange market right on our platform.
                                                 </p>
                                                 <p>
-                                                    Our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all. 
+                                                    Our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all.
                                                     <br />
                                                 </p>
-                                                
+
                                             </Card>
                                         </Col>
                                     </Row>
@@ -368,7 +368,7 @@ class HomeContainer extends Component {
                         </Col>
                     </Row>
                  <Layout>
-                     
+
                     <div className="home-section">
                         <Row type="flex" justify="space-around">
                             <Col span={3}>
@@ -417,18 +417,18 @@ class HomeContainer extends Component {
                                     </Button>
                                     <br/>
                                     <span className='small' style={{fontSize: '11px'}}>
-                                        No more hidden fees or unfair mediation 
+                                        No more hidden fees or unfair mediation
                                     </span>
                                 </div>
                                 <img src={'../../static/images/asset_4.png'}
                                         style={{ marginTop: '20%'}}
                                  />
-                                
+
                             </Col>
                         </Row>
                     </div>
                  </Layout>
-              
+
             </Fragment>
         )
     }

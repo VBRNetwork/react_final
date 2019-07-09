@@ -1,7 +1,10 @@
 import axios from 'axios'
 import humps from 'humps'
+let apiUrl = 'https://marketplace.vbrinc.ro/api/v1/'
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    apiUrl = 'http://127.0.0.1:8000/'
+}
 
-const apiUrl = 'https://marketplace.vbrinc.ro/api/v1/'
 
 const instance = axios.create({
     baseURL: apiUrl,
@@ -21,7 +24,7 @@ const vbrincapi = {
         })
     },
     getAppSettings() {
-        return instance.post(apiUrl + 'settings/', {username, password}).then(res => {
+        return instance.get(apiUrl + 'settings/', {}).then(res => {
             return humps.camelizeKeys(res.data)
         })
     }
