@@ -11,7 +11,7 @@ const instance = axios.create({
 
 const vbrincapi = {
   getToken ({ username, password }) {
-    return instance.post(apiUrl + 'accounts/auth/login/', { username, password }).then(res => {
+    return instance.post(apiUrl + 'accounts/auth/login', { username, password }).then(res => {
       return humps.camelizeKeys(res.data)
     })
   },
