@@ -149,8 +149,8 @@ class HomeContainer extends Component {
                                                     alt='Second slide'
                                                 />
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>We do know<span class="spacer">&nbsp;</span>
+                                                <span class="spacer">&nbsp;</span>what we know best</span></h2>
 
                                         </div>
                                     </div>
@@ -166,8 +166,8 @@ class HomeContainer extends Component {
                                                     alt='Third slide'
                                                 />
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>Ace your standards!<span class="spacer">&nbsp;</span>
+                                                </span></h2>
 
                                         </div>
                                     </div>
@@ -182,8 +182,8 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/picture_3.png'}
                                                     alt='Fourth slide'
                                                 />
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span class="spacer">&nbsp;</span>
-                                                <span class="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>All in your good time<span class="spacer">&nbsp;</span>
+                                                </span></h2>
 
                                         </div>
                                     </div>
