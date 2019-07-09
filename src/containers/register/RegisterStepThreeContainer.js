@@ -10,6 +10,7 @@ import {
     DatePicker
   } from 'antd';
   const { MonthPicker } = DatePicker;
+  const { Option } = Select;
 
   function onChange(date, dateString) {
     console.log(date, dateString);
@@ -85,10 +86,10 @@ import {
                             <Col>
                                 <Form.Item label="Payment Method" >
                                     <Select placeholder="Select Payment Method">
-                                        <Select.Option value="visa">Visa</Select.Option>
-                                        <Select.Option value="mastercard">Mastercard</Select.Option>
-                                        <Select.Option value="crypto">Crypto</Select.Option>
-                                        <Select.Option value="paypal">PayPal</Select.Option>
+                                        <Option value="visa">Visa</Option>
+                                        <Option value="mastercard">Mastercard</Option>
+                                        <Option value="crypto">Crypto</Option>
+                                        <Option value="paypal">PayPal</Option>
                                     </Select>  
                                 </Form.Item>
                             </Col>
