@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 export default function withAuth (AuthComponent) {
-  const Auth = new AuthService('http://192.168.0.18')
+  const Auth = new AuthService('http://marketplace.vbrinc.ro/api/')
 
   class Authenticated extends Component {
     static async getInitialProps (ctx) {

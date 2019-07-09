@@ -1,2 +1,3 @@
 import DashboardContainer from 'containers/DashboardContainer'
-export default (DashboardContainer)
+import withAuth from  '../src/libs/withAuth'
+export default withAuth(DashboardContainer)
