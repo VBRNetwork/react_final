@@ -61,6 +61,14 @@ class IcoContainer extends Component {
                                         from underdeveloped countries to integrate themselves better into the global market, 
                                         ensuring equal opportunities for all.
                                     </p>
+                                    <p>
+                                        Did you just BARELY miss that one crypto startup that would have made your day (and your fortune)? 
+                                        Don't miss this one. We're here to change the game, and your standards. 
+                                        Help us change the state of the game. We're not taking the reins, you are. 
+                                        We're only here to give you the tools to do that. Invest today, profit tommorrow. 
+                                        Your future depends on you, and we aim to brighten it. Join the first truly free market. 
+                                        Not as an employee, as our partner.
+                                    </p>
                                 </Card>
                                 <br />
                                 <Row>
