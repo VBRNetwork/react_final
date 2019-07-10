@@ -113,10 +113,37 @@ return (
           <hr />
           <Row>
             <Col >
-              <Form.Item style={{width: '50%'}} label="Language">
-                <Input />
-              </Form.Item>
-            </Col>
+              <div>
+                <strong>Language</strong>
+              </div>
+              <br />
+              <Select
+                  mode="multiple"
+                  style={{ width: '100%' }}
+                  placeholder="Select one or more languages"
+                  onChange={handleChange}
+                  optionLabelProp="label"
+                >
+                  <Option value="english" label="English">
+                    <span role="img" aria-label="English">
+                      ENG{' '}
+                    </span>
+                    English
+                  </Option>
+                  <Option value="spanish" label="Spanish">
+                    <span role="img" aria-label="Spanish">
+                      SPN{' '}
+                    </span>
+                    Spanish
+                  </Option>
+                  <Option value="french" label="French">
+                    <span role="img" aria-label="French">
+                      FR{' '}
+                    </span>
+                    French
+                  </Option>
+                </Select>
+              </Col>
             <Col >
               <FormItem style={{width: '50%'}} label="Language Level">
                 <Select placeholder="Select Language Level">
@@ -140,10 +167,14 @@ return (
                   </AutoComplete>
                 </Form.Item>
               </Col>
-              <Col span={12}>
-                <FormItem style={{  width: '50%'}} label="Year">
+              <Col span={12} >
+                <FormItem style={{  width: '50%'}} label="From">
                   <MonthPicker />
                 </FormItem>
+                <FormItem style={{  width: '50%'}} label="To">
+                  <MonthPicker />
+                </FormItem>
+                
               </Col>
             </Row>
             <hr />

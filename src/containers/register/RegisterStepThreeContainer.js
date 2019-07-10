@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {
-    Form,
-    Input,
-    Select,
-    Row,
-    Col,
-    Radio, 
-    DatePicker
-  } from 'antd';
+import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'antd';
   const { MonthPicker } = DatePicker;
   const { Option } = Select;
 
@@ -83,6 +75,14 @@ import {
                 <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                     <Row>
                         <Row>
+                            <div style={{textAlign: 'center'}}>
+                                <strong>Add Payment Method</strong>
+                                
+                            </div>
+                            <div style={{ fontSize: '30px', marginTop: '-5%' }}>
+                            <Icon  type="credit-card" />
+                            </div>
+                            <hr />
                             <Col>
                                 <Form.Item label="Payment Method" >
                                     <Select placeholder="Select Payment Method">
@@ -112,17 +112,26 @@ import {
                             </Col>
                         </Row>
                         <hr />
-                        <Row >
+                        <Row gutter={24}>
+                            <div style={{textAlign: 'center'}}>
+                                <strong>Add Payout Method</strong>
+                                
+                            </div>
+                            <div style={{  fontSize: '35px', marginTop: '-5%' }}>
+                            <Icon  type="bank" />
+                            </div>
+
+                            <hr />
                             <Radio.Group defaultValue="b" size="small">
-                            <Col span={12}>
+                            <Col span={10} >
                                 <Radio.Button  value="a">Bank Account</Radio.Button>
                             </Col>
                            
-                            <Col  span={12}>
+                            <Col  span={10} >
                                 <Radio.Button  value="b">Crypto Wallet</Radio.Button>
                             </Col>
                             
-                            <Col  span={12}>
+                            <Col  span={4} >
                                 <Radio.Button  value="c">PayPal</Radio.Button>
                             </Col>
                             </Radio.Group>
@@ -130,10 +139,11 @@ import {
                         <Row>
                             <Col span={24}>
                                 <Form.Item>
-                                    <Input />
+                                    <Input 
+                                    placeholder="Add account or email address" />
                                 </Form.Item>
                             </Col>
-                            </Row>
+                        </Row>
                     </Row>
                 </Form>
             </div>
