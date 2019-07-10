@@ -49,7 +49,10 @@
   
   .ant-carousel .slick-slide h3 {
     color: #fff;
+    
   }
+
+  .ant-carousel .slick-slide img {display: inline}
 
   .intro-text {
     margin-top: 35px;
