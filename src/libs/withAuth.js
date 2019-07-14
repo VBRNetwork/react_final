@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 export default function withAuth (AuthComponent) {
-  const Auth = new AuthService('http://marketplace.vbrinc.ro/api/')
+  const Auth = new AuthService('http://marketplace.vbrinc.ro/api/');
 
   class Authenticated extends Component {
     static async getInitialProps (ctx) {
       // Ensures material-ui renders the correct css prefixes server-side
-      let userAgent
+      let userAgent;
       if (process.browser) {
         userAgent = navigator.userAgent
       } else {
@@ -18,13 +18,13 @@ export default function withAuth (AuthComponent) {
       }
 
       // Check if Page has a `getInitialProps`; if so, call it.
-      const pageProps = AuthComponent.getInitialProps && await AuthComponent.getInitialProps(ctx)
+      const pageProps = AuthComponent.getInitialProps && await AuthComponent.getInitialProps(ctx);
       // Return props.
       return { ...pageProps, userAgent }
     }
 
     constructor (props) {
-      super(props)
+      super(props);
       this.state = {
         isLoading: true
       }
@@ -58,7 +58,7 @@ export default function withAuth (AuthComponent) {
 
   Authenticated.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired
-  }
+  };
 
   return connect(mapStateToProps, {
 

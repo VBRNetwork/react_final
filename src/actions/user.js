@@ -19,15 +19,22 @@ export function getAccessToken ({ username, password }) {
 
 export function logout () {
   return dispatch => {
-    return vbrincapi.getToken({ username, password }).then(res => {
+    return vbrincapi.logout().then(res => {
       dispatch({
         type: SAVE_TOKEN,
-        data: res
-      })
+        data: {
+            token:0,
+            user:{
+                pk:0,
+                first_name:'',
+                last_name:'',
+                username:''
+            }
+        }
+      });
 
-      // Clear user token and profile data from localStorage
-      localStorage.removeItem('id_token')
-      localStorage.removeItem('profile')
+      localStorage.removeItem('id_token');
+      localStorage.removeItem('profile');
       document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
       document.cookie = 'refresh_token=""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
       return res

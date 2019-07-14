@@ -2,7 +2,7 @@ import withRedux from 'next-redux-wrapper'
 import {withRouter} from 'next/router'
 import {Provider} from 'react-redux'
 import App, {Container} from 'next/app'
-import createStore from 'store/createStore'
+import {makeStore} from 'store/createStore'
 import fetch from 'isomorphic-unfetch'
 import redirectTo from 'libs/redirectTo.js'
 import cookies from 'next-cookies'
@@ -13,6 +13,7 @@ import {library} from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 import Layout from 'components/Layout'
 import GoogleFontLoader from 'react-google-font-loader';
+import {PersistGate} from 'redux-persist/integration/react'
 
 import 'antd/dist/antd.css'
 import 'styles/base.scss'
@@ -24,12 +25,14 @@ library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
     static async getInitialProps({Component, ctx}) {
+
         return {
             pageProps: Component.getInitialProps
                 ? await Component.getInitialProps(ctx)
                 : {}
         }
     }
+
 
     get helmetBodyAttrComponents() {
         return this.props.helmet.bodyAttributes.toComponent()
@@ -44,10 +47,6 @@ class MyApp extends App {
 
     render() {
         const {Component, pageProps, store, router} = this.props
-        let persistor = persistStore(store)
-
-        // persistor.purge();
-
         return (
             <Container>
                 <Head/>
@@ -69,15 +68,17 @@ class MyApp extends App {
                     subsets={['cyrillic-ext', 'greek']}
                 />
                 <Provider store={store}>
-                    <Layout>
-                        <Component router={router} {...pageProps} />
-                    </Layout>
+                    <PersistGate loading={null} persistor={store.__persistor}>
+                        <Layout>
+                            <Component router={router} {...pageProps} />
+                        </Layout>
+                    </PersistGate>
                 </Provider>
             </Container>
         )
     }
 }
 
-export default withRedux(createStore)(
+export default withRedux(makeStore,{debug:true})(
     withRouter(MyApp)
 )
