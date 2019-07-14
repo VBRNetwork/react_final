@@ -7,19 +7,18 @@ export const initialState = Immutable.fromJS({
   user_id: 0,
   token: 0,
   username: 'guest'
-})
+});
 
 export default function (state = initialState, action) {
-  let data = action.data
+  let data = action.data;
   switch (action.type) {
     case ActionType.SAVE_TOKEN:
-      const newData = update(state, {
-        token: { $set: data.token },
-        user_id: { $set: data.user.pk },
-        name: { $set: data.user.first_name + ' ' + data.user.last_name },
-        username: { $set: data.user.username}
-      })
-      return newData
+        return update(state, {
+                token: { $set: data.token },
+                user_id: { $set: data.user.pk },
+                name: { $set: data.user.first_name + ' ' + data.user.last_name },
+                username: { $set: data.user.username}
+          });
     default:
       return state
   }

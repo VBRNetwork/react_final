@@ -20,6 +20,7 @@ import RegisterStepThreeContainer from '../containers/register/RegisterStepThree
 import '../styles/register.css'
 
 import { Steps, message } from 'antd';
+import Router from "next/dist/client/router";
 const Step = Steps.Step;
 const steps = [
     {
@@ -58,6 +59,15 @@ class Register extends React.Component {
         this.setState({ current });
     }
 
+    redirectToTarget = () => {
+        Router.push('/dashboard')
+    };
+
+    componentDidMount() {
+        if (this.props.user.token !== 0) {
+            this.redirectToTarget()
+        }
+    }
 
     render() {
         const { current} = this.state;

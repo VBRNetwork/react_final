@@ -5,9 +5,10 @@ import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
 import {connect} from 'react-redux'
-import { getVBRSettings } from '../actions/app_settings'
+import {getVBRSettings} from '../actions/app_settings'
+import {logout} from '../actions/user'
 import {Map} from "immutable/dist/immutable";
-
+import Router from 'next/router'
 const {Content} = Layout
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
@@ -20,31 +21,41 @@ const categories = [
 ]
 
 class Header extends Component {
-    state = {
-        current: 'mail',
-        isLogged: false
-    };
 
-    static async getInitialProps ({ store, query }) {
-        let lang = query.lang || 'javascript'
-        await store.dispatch(getVBRSettings())
+    constructor(props) {
+        super(props)
+        this.state = {
+            current: 'mail',
+            isLogged: false
+        };
+        this.clickLogout = this.clickLogout.bind(this);
     }
 
     componentDidMount() {
-        let { getVBRSettings } = this.props
+        let {getVBRSettings} = this.props
         getVBRSettings().then((e) => {
             console.log(e)
         });
 
-        let token = this.props.user.token
-        if (token !== 0) {
+
+    }
+
+    clickLogout(e) {
+        this.props.logout().then(() => {
             this.setState({
-                isLogged: true
+                isLogged: false
             })
-        }
+            Router.push(`/`);
+        });
     }
 
     render() {
+
+        let token = false;
+        if (this.props.user.token) {
+            token = true
+        }
+
         let loginButton = (
             <Menu.Item key='alipay'>
                 <Link href='/login'>
@@ -87,25 +98,36 @@ class Header extends Component {
                                     </Link>
                                 </Menu.Item>
 
-                                {this.state.isLogged == true &&
+                                {token === true &&
                                 <Menu.Item key='alipay243434'>
-                                    <Link href='/dashboard'>
-                                        <a><Icon style={{fontSize: 17}} type='dashboard'/> Dashboard</a>
-                                    </Link>
+                                    <div onClick={this.clickLogout}>
+                                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                                    </div>
                                 </Menu.Item>}
 
-                                {this.state.isLogged == false && loginButton}
+                                {token === false && loginButton}
                             </Menu>
                         </Col>
 
                         <Col lg={2}>
-                            {this.state.isLogged == false && <Link href='/register'>
+                            {token === false && <Link href='/register'>
                                 <a>
                                     <div className='post-job-btn'>
                                         <Button type='primary' style={{
                                             backgroundColor: '#2EC3AB',
                                             borderColor: '#2EC3AB'
                                         }} className='post-job-button'>Register</Button>
+                                    </div>
+                                </a>
+                            </Link>}
+
+                            {token !== false && <Link href='/dashboard'>
+                                <a>
+                                    <div className='post-job-btn'>
+                                        <Button type='primary' style={{
+                                            backgroundColor: '#2EC3AB',
+                                            borderColor: '#2EC3AB'
+                                        }} className='post-job-button'>Dashboard</Button>
                                     </div>
                                 </a>
                             </Link>}
@@ -150,7 +172,8 @@ function mapStateToProps(state) {
 
 Header.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
-    getVBRSettings: PropTypes.func.isRequired
+    getVBRSettings: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired
 }
-export { Header }
-export default connect(mapStateToProps, {getVBRSettings})(Header)
+export {Header}
+export default connect(mapStateToProps, {getVBRSettings,logout})(Header)

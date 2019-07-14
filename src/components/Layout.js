@@ -5,6 +5,8 @@ import Footer from 'components/Footer'
 
 
 export default class Layout extends PureComponent {
+
+    
   render () {
 
     return (

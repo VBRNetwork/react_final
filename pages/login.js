@@ -49,7 +49,7 @@ class Login extends Component {
 
     redirectToTarget = () => {
         Router.push('/dashboard')
-    }
+    };
 
     componentDidMount() {
         if (this.props.user.token !== 0) {
