@@ -78,20 +78,20 @@ class Register extends React.Component {
                         <div className="steps-action"  >
                             {current < steps.length - 1 && (
                                 <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                borderColor: '#2EC3AB'}} type="primary" onClick={() => this.next()}>
-                                Next
+                                    borderColor: '#2EC3AB'}} type="primary" onClick={() => this.next()}>
+                                    Next
                                 </Button>
                             )}
 
                             {current === steps.length - 1 && (
                                 <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
-                                Done
+                                    borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
+                                    Done
                                 </Button>
                             )}
                             {current > 0 && (
                                 <Button style={{borderColor: '#2EC3AB', color: '#2EC3AB'}} onClick={() => this.prev()}>
-                                Previous
+                                    Previous
                                 </Button>
                             )}
                         </div>

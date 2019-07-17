@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { formValueSelector } from 'redux-form';
 import {
     Form,
     Input,
@@ -16,6 +17,8 @@ import {
     AutoComplete,
     Radio
   } from 'antd';
+  import Link from 'next/link'
+import { throwStatement } from '@babel/types';
   const { Option } = Select;
   const AutoCompleteOption = AutoComplete.Option;
   const residences = [
@@ -53,6 +56,9 @@ import {
     },
   ];
   
+  const selector = formValueSelector('formName');
+
+
 
 class RegisterStepOneContainer extends Component {
     constructor(props) {
@@ -60,9 +66,26 @@ class RegisterStepOneContainer extends Component {
         this.state = {
             confirmDirty: false,
             autoCompleteResult: [],
+            userType: ' ',
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+
+      this.setState({
+        userType: event.target.value
+      });
+    }
+
+    handleSubmit(event) {
+      event.preventDefault();
+      <Link href='/register' />
     }
     
+
   componentDidMount () {
   }
 
@@ -85,6 +108,10 @@ class RegisterStepOneContainer extends Component {
     
   };
 
+  
+
+
+
   handleWebsiteChange = value => {
     let autoCompleteResult;
     if (!value) {
@@ -94,6 +121,7 @@ class RegisterStepOneContainer extends Component {
     }
     this.setState({ autoCompleteResult });
   };
+  
 
 
   render () {
@@ -142,14 +170,14 @@ class RegisterStepOneContainer extends Component {
                 <Input.Password onBlur={this.handleConfirmBlur} />
             </Form.Item>
             <Form.Item label="User Type">
-              <Radio.Group defaultValue="a" size="small">
+              <Radio.Group onSubmit={this.handleSubmit} defaultValue="a" size="small">
                 <Row>
                   <Col span={12}>
-                <Radio.Button value="a">Customer</Radio.Button>
-                </Col>
-                <Col span={12}>
-                <Radio.Button value="b">Freelancer</Radio.Button>
-                </Col>
+                    <Radio.Button checked={this.state.userType === 'customer'} onChange={this.handleChange} value="a">Customer </Radio.Button>
+                  </Col>
+                  <Col span={12}>
+                    <Radio.Button value="b">Freelancer</Radio.Button>
+                  </Col>
                 </Row>
               </Radio.Group>
             </Form.Item>
@@ -173,11 +201,11 @@ class RegisterStepOneContainer extends Component {
       </div>
     )}}
     
-    function mapStateToProps (state) {
-      return {
+    function mapStateToProps(state) {
     
-      }
-    }
+    return { };
+}
+    
     
     RegisterStepOneContainer.propTypes = {
     }
