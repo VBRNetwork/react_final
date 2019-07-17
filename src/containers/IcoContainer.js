@@ -1,14 +1,12 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {Carousel, Divider, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic} from 'antd';
-const { Header, Content, Footer, Sider } = Layout
+import Moment from 'react-moment';
+import {Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic} from 'antd';
+const { Content } = Layout
 const { Meta } = Card;
 const { TextArea } = Input;
-const { Countdown } = Statistic;
-const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
 
 
 class IcoContainer extends Component {
@@ -169,15 +167,12 @@ class IcoContainer extends Component {
                                                         style={{width: '100%', background: '#1f003a29'}}
                                                         bordered={false}
                                                         cover={
-                                                            <div style={{textAlign: 'center'}}>
-                                                                    <Countdown 
-                                                                        style={{color: '#FFF', marginTop: '5%'}} 
-                                                                        title="VBR ICO Countdown" 
-                                                                        value={deadline} 
-                                                                    />
-                                                                    <div style={{color: '#FFF'}}><strong>Days</strong>
-
-                                                                    </div>
+                                                            <div style={{textAlign: 'center', marginTop: '10%'}}>
+                                                                <Moment
+                                                                    style={{color: '#FFF'}} 
+                                                                    to="2019-12-31"
+                                                                >   2019-07-19T12:59-0500
+                                                                </Moment>
                                                             </div>
                                                         }
                                                     >   
@@ -215,13 +210,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q2 2018"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Concept Development
                                                         <hr />
                                                         Gathering The Team
                                                         <hr />
                                                         Tech Reaserch & Market Analysis
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -231,13 +226,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q3 2018"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Infrastructure Development
                                                         <hr />
                                                         Ethereum Blockchain Analysis
                                                         <hr />
                                                         Pitch Deck Creation
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -249,13 +244,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240, margin: '0 auto'}}
                                                     title="Q4 2018"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Marketplace Architecture
                                                         <hr />
                                                         Databse Architecture
                                                         <hr />
                                                         Contacted Freelancers via Social Media
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -265,13 +260,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240, margin: '0 auto'}}
                                                     title="Q1 2019"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Blockchain Testing
                                                         <hr />
                                                         Whitepaper Creation
                                                         <hr />
                                                         Developing Marketing Strategy
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -294,13 +289,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240, margin: '0 auto'}}
                                                     title="Q2 2019"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Developing Demo Marketplace
                                                         <hr />
                                                         Partnership with Coin Exchange Data
                                                         <hr />
                                                         Testing KYC API
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -310,13 +305,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240, margin: '0 auto'}}
                                                     title="Q3 2019"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Launching Demo of the Marketpace
                                                         <hr />
                                                         Gathering Feedback from potential users
                                                         <hr />
                                                         Spread the word through online channels
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -331,13 +326,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q4 2019"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Private fundraising for early-bird investors
                                                         <hr />
                                                         Launching Pre-ICO
                                                         <hr />
                                                         ICO Launch
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -347,13 +342,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q1 2020"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Referal Program & Airdrop
                                                         <hr />
                                                         Growing freelancer's commumnity under VBR Network
                                                         <hr />
                                                         Exchanges Partnership
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -367,13 +362,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q2 2020"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Launching Beta with all functionalities
                                                         <hr />
                                                         Developing Exchange Platform
                                                         <hr />
                                                         Gathering Feedback for Beta
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>
@@ -383,13 +378,13 @@ class IcoContainer extends Component {
                                                     style={{ width: 240}}
                                                     title="Q3/Q4 2020"
                                             >   <div>
-                                                    <p>
+                                                    <strong>
                                                         Releasing Final Version of the VBR Marketplace
                                                         <hr />
                                                         Minting Tokens
                                                         <hr />
                                                         Releasing Exchange Platform 
-                                                    </p>
+                                                    </strong>
                                                 </div>
                                             </Card>
                                         </Col>

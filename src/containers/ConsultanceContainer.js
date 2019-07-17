@@ -16,6 +16,7 @@ const data = [
 class ConsultanceContainer extends Component {
   static async getInitialProps ({ store, query }) {
   }
+  
 
   componentDidMount () {
   }

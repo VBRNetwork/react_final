@@ -150,8 +150,8 @@ class HomeContainer extends Component {
                                                 />
 
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
-                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>We do know what we know best<span className="spacer">&nbsp;</span>
+                                                </span></h2>
 
 
                                         </div>
@@ -169,8 +169,8 @@ class HomeContainer extends Component {
                                                 />
 
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
-                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>Ace your standards!<span className="spacer">&nbsp;</span>
+                                                </span></h2>
 
 
                                         </div>
@@ -187,8 +187,8 @@ class HomeContainer extends Component {
                                                     alt='Fourth slide'
                                                 />
 
-                                                <h2 className="h2-absolute"><span>A Movie in the Park:<span className="spacer">&nbsp;</span>
-                                                <span className="spacer">&nbsp;</span>Kung Fu Panda</span></h2>
+                                                <h2 className="h2-absolute"><span>All in your good time<span className="spacer">&nbsp;</span>
+                                                </span></h2>
 
                                         </div>
                                     </div>

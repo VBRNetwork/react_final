@@ -87,7 +87,7 @@ class SubCategoriesContainer extends Component {
                     style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
                     cover={<img alt='example' src='../static/images/developers_1.jpg' />}
                   >
-                    <Meta title='Financial Forecst' />
+                    <Meta title='Search in all' />
                   </Card>
                 </Col>
 

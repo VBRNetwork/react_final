@@ -122,7 +122,7 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'a
                             </div>
 
                             <hr />
-                            <Radio.Group defaultValue="b" size="small">
+                            <Radio.Group defaultValue="b" size="small" >
                             <Col span={10} >
                                 <Radio.Button  value="a">Bank Account</Radio.Button>
                             </Col>
@@ -136,12 +136,26 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'a
                             </Col>
                             </Radio.Group>
                         </Row>
+                        <br />
                         <Row>
-                            <Col span={24}>
+                            <Col span={20}>
                                 <Form.Item>
-                                    <Input 
-                                    placeholder="Add account or email address" />
+                                    <Input  size='small' placeholder="Add account or email address" />
+                                    
                                 </Form.Item>
+                            </Col>
+                            <Col span={4} pull={10}>
+                                <Button type='primary' 
+                                        className='ant-btn-sm' 
+                                        block ={true}
+                                        size='large' 
+                                        style={{
+                                            backgroundColor: '#2EC3AB',
+                                            borderColor: '#2EC3AB',
+                                            marginTop: '7%'
+                                        }}>
+                                        Add
+                                </Button>
                             </Col>
                         </Row>
                     </Row>
