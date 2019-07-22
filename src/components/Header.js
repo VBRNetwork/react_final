@@ -7,18 +7,9 @@ import '../styles/base.css'
 import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
-import {Map} from "immutable/dist/immutable";
 import Router from 'next/router'
 const {Content} = Layout
-const SubMenu = Menu.SubMenu
-const MenuItemGroup = Menu.ItemGroup
-const categories = [
-    {name: 'Writing', icon: 'file-text', url: 'writing'},
-    {name: 'Marketing & SEO', icon: 'like', url: 'marketing-and-seo'},
-    {name: 'Design', icon: 'laptop', url: 'design'},
-    {name: 'Business Consultancy', icon: 'pie-chart', url: 'business-consultancy'},
-    {name: 'Developers', icon: 'code', url: 'developers'}
-]
+
 
 class Header extends Component {
 
@@ -34,10 +25,7 @@ class Header extends Component {
     componentDidMount() {
         let {getVBRSettings} = this.props
         getVBRSettings().then((e) => {
-            console.log(e)
         });
-
-
     }
 
     clickLogout(e) {
@@ -55,6 +43,8 @@ class Header extends Component {
         if (this.props.user.token) {
             token = true
         }
+       
+        let main_menu = this.props.settings.main_menu
 
         let loginButton = (
             <Menu.Item key='alipay'>
@@ -64,9 +54,9 @@ class Header extends Component {
             </Menu.Item>
         );
 
-        let menuItems = categories.map((category) => {
+        let menuItems = main_menu.map((category) => {
             return (<Menu.Item key={'menu_' + category.name}>
-                <Link href={'/category/' + category.url}>
+                <Link href={'/' + category.url}>
                     <a> <Icon style={{fontSize: 17}} type={category.icon}/> {category.name}</a>
                 </Link>
             </Menu.Item>)
@@ -76,7 +66,7 @@ class Header extends Component {
             <div>
                 <Content style={{marginLeft: '50px', marginRight: '50px', marginBottom: '10px'}}>
                     <Row>
-                        <Col lg={6}> <Link href='/'><a><img src={'../static/images/vbrLogo.png'}
+                        <Col lg={6}> <Link href='/'><a><img src={'/static/images/vbrLogo.png'}
                                                             style={{width: '80px', margin: '8px'}}/></a></Link></Col>
                         <Col lg={16}>
                             <Menu className='nav1' selectedKeys={[this.state.current]} mode='horizontal'
@@ -138,24 +128,6 @@ class Header extends Component {
                 <Menu selectedKeys={[this.state.current]} mode='horizontal'
                       style={{boxShadow: '1px 4px 12px 1px #929292'}}>
                     {menuItems}
-                    <SubMenu
-                        title={
-                            <span className='submenu-title-wrapper'>
-                  <Icon style={{fontSize: 17}} type='global'/>
-                            All Categories
-                </span>
-                        }>
-                        <MenuItemGroup title='Web Developers'>
-                            <Menu.Item key='setting:1'>Programming</Menu.Item>
-                            <Menu.Item key='setting:2'>Web design</Menu.Item>
-                            <Menu.Item key='setting:4'>Javascript</Menu.Item>
-
-                        </MenuItemGroup>
-                        <MenuItemGroup title='Backend Developers'>
-                            <Menu.Item key='setting:3'>Python</Menu.Item>
-                            <Menu.Item key='setting:4'>PHP</Menu.Item>
-                        </MenuItemGroup>
-                    </SubMenu>
                 </Menu>
 
             </div>
@@ -165,13 +137,15 @@ class Header extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.user
+        user: state.user,
+        settings: state.settings
     }
 }
 
 
 Header.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
+    settings: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }

@@ -15,7 +15,7 @@ import {
     Checkbox,
     Button,
     AutoComplete,
-    Radio
+    Radio 
   } from 'antd';
   import Link from 'next/link'
 import { throwStatement } from '@babel/types';
@@ -56,9 +56,7 @@ import { throwStatement } from '@babel/types';
     },
   ];
   
-  const selector = formValueSelector('formName');
-
-
+const selector = formValueSelector('formName');
 
 class RegisterStepOneContainer extends Component {
     constructor(props) {
@@ -66,7 +64,8 @@ class RegisterStepOneContainer extends Component {
         this.state = {
             confirmDirty: false,
             autoCompleteResult: [],
-            userType: ' ',
+            userType: '',
+            testVariable:false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -74,9 +73,8 @@ class RegisterStepOneContainer extends Component {
     }
 
     handleChange(event) {
-
       this.setState({
-        userType: event.target.value
+        userType: event.target.value,
       });
     }
 
@@ -84,14 +82,15 @@ class RegisterStepOneContainer extends Component {
       event.preventDefault();
       <Link href='/register' />
     }
-    
 
   componentDidMount () {
+    console.log('Step1 - ' + this.props.register)
   }
 
   
   handleSubmit = e => {
     e.preventDefault();
+    
     
   };
 
@@ -160,7 +159,7 @@ class RegisterStepOneContainer extends Component {
       <div>
       <hr />
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-            <Form.Item label="E-mail">
+             <Form.Item label="E-mail">
                 <Input />
             </Form.Item>
             <Form.Item label="Password" hasFeedback>
@@ -203,7 +202,10 @@ class RegisterStepOneContainer extends Component {
     
     function mapStateToProps(state) {
     
-    return { };
+    return {
+      register: state.register_user,
+      myuser: state.user
+     };
 }
     
     

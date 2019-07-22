@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'antd';
+import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button ,Alert } from 'antd';
   const { MonthPicker } = DatePicker;
   const { Option } = Select;
 
@@ -29,10 +29,10 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'a
         });
       };
     
+      componentDidMount () {
+        console.log('Step3 - ' + this.props.register)
+      }
     
-  componentDidMount () {
-  }
-
   
   handleConfirmBlur = e => {
     const value = e.target.value;
@@ -74,6 +74,22 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'a
             <hr />
                 <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                     <Row>
+                        <Row>
+                            <Col>
+                                <Alert
+                                    message="Success Text"
+                                    description="Success Description Success Description Success Description"
+                                    type="success"
+                                />
+                                <br/>
+                                <Alert
+                                    message="Error Text"
+                                    description="Error Description Error Description Error Description Error Description"
+                                    type="error"
+                                    />
+                                <br/>
+                            </Col>
+                        </Row>
                         <Row>
                             <div style={{textAlign: 'center'}}>
                                 <strong>Add Payment Method</strong>
@@ -166,7 +182,7 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button } from 'a
     
     function mapStateToProps (state) {
       return {
-    
+        register: state.register_user
       }
     }
     
