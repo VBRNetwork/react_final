@@ -1,13 +1,14 @@
 import user from './user'
-import repos from './repos'
+import register_user from './register_user'
 import { combineReducers } from 'redux'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import settings from './settings'
 
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['user']
+  whitelist: ['user','settings']
 };
-const combinedReducers = combineReducers({ user,repos});
+const combinedReducers = combineReducers({ user,register_user, settings});
 export default persistReducer(persistConfig, combinedReducers);

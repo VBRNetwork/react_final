@@ -77,7 +77,7 @@ class Footer extends Component {
                 renderItem={item =>
 
                   <List.Item className='footer-list footer-item'>
-                    <Link href='/jobs/search'>
+                    <Link href='/categories/business/business-plan-for-start-ups'>
                       <a>{item}</a>
                     </Link>
                   </List.Item>}

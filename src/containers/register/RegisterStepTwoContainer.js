@@ -6,26 +6,23 @@ import FormItem from 'antd/lib/form/FormItem';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 const { MonthPicker, RangePicker } = DatePicker;
-const plainOptions = ['Web Programming', 'Databases', 'Web & Mobile Apps'];
-const options = [
-
-  { label: 'Desktop Apps', value: 'Desktop Apps' },
-  { label: 'Ecommerce Platforms', value: 'Ecommerce Platforms' },
-  { label: 'WordPress', value: 'WordPress' },
-];
-
-function onChange(checkedValues, pagination) {
-  
-  console.log('checked = ', checkedValues);
-  console.log('params', pagination);
-}
-
-function handleChange(value) {
-  console.log(`selected ${value}`);
-}
+const plainOptions = [{label:'Web Programming',value:'webprog'}, {label:'Databases',value:'db'}, {label:'Web & Mobile Apps',value:'web_mobile_app'},{ label: 'Desktop Apps', value: 'desk_app' },
+{ label: 'Ecommerce Platforms', value: 'ecomm_platform' },
+{ label: 'WordPress', value: 'wp' }];
 
 
 class RegisterStepTwoContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        confirmDirty: false,
+        autoCompleteResult: [],
+    };
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
 
   handleSubmit = e => {
     e.preventDefault();
@@ -53,19 +50,20 @@ class RegisterStepTwoContainer extends Component {
       console.log('Received values of form: ', values);
     });
   };
+   
+  onChange(checkedValues) {
+    console.log('checked = ', checkedValues);
+  }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        confirmDirty: false,
-        autoCompleteResult: [],
-    };
+  handleChange(value) {
+    console.log(`selected ${value}`);
   }
-  static async getInitialProps ({ store, query }) {
-  }
+
 
   componentDidMount () {
+    console.log('Step2 - ' + this.props.register)
   }
+
 
   handleEduChange = value => {
     let autoCompleteResult;
@@ -121,7 +119,7 @@ return (
                   mode="multiple"
                   style={{ width: '100%' }}
                   placeholder="Select one or more languages"
-                  onChange={handleChange}
+                  onChange={this.handleChange}
                   optionLabelProp="label"
                 >
                   <Option value="english" label="English">
@@ -200,11 +198,7 @@ return (
             </Col>
             </Row>
             <Col>
-              <Checkbox.Group  options={plainOptions}  onChange={onChange} />
-              <br />
-              <br />
-              <Checkbox.Group options={options}  onChange={onChange} />
-              <br />
+              <Checkbox.Group  options={plainOptions}  onChange={this.handleChange} className="checkbox-lh"/>
               <br />
             </Col>
             <hr />
@@ -217,7 +211,7 @@ return (
                 mode="multiple"
                 style={{ width: '100%' }}
                 placeholder="Select a skill"
-                onChange={handleChange}
+                onChange={this.handleChange}
                 optionLabelProp="label"
               >
                 <Option value="python" label="Python">
@@ -245,9 +239,12 @@ return (
           <br />
         </Form>
         )}}
+
+
+
     function mapStateToProps (state) {
       return {
-    
+        register: state.register_user
       }
     }
     
