@@ -44,6 +44,7 @@ class Header extends Component {
             token = true
         }
        
+        console.log(this.props.settings.main_menu)
         let main_menu = this.props.settings.main_menu
 
         let loginButton = (
