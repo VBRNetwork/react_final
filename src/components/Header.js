@@ -43,9 +43,7 @@ class Header extends Component {
         if (this.props.user.token) {
             token = true
         }
-       
-        console.log(this.props.settings.main_menu)
-        let main_menu = this.props.settings.main_menu
+
 
         let loginButton = (
             <Menu.Item key='alipay'>
@@ -55,13 +53,19 @@ class Header extends Component {
             </Menu.Item>
         );
 
-        let menuItems = main_menu.map((category) => {
-            return (<Menu.Item key={'menu_' + category.name}>
-                <Link href={'/' + category.url}>
-                    <a> <Icon style={{fontSize: 17}} type={category.icon}/> {category.name}</a>
-                </Link>
-            </Menu.Item>)
-        });
+        let menuItems = ''
+        if(this.props.settings.main_menu && this.props.settings.main_menu.length > 0){
+            let main_menu = this.props.settings.main_menu
+
+            menuItems = main_menu.map((category) => {
+                return (<Menu.Item key={'menu_' + category.name}>
+                    <Link href={'/' + category.url}>
+                        <a> <Icon style={{fontSize: 17}} type={category.icon}/> {category.name}</a>
+                    </Link>
+                </Menu.Item>)
+            });
+        }
+
 
         return (
             <div>

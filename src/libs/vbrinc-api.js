@@ -7,7 +7,6 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 
 const instance = axios.create({
     baseURL: apiUrl,
-    timeout: 1000,
     headers: {'Access-Control-Allow-Origin': '*'}
 });
 
@@ -22,7 +21,6 @@ if (typeof window !== 'undefined') {
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    timeout: 1000,
     headers: {'Access-Control-Allow-Origin': '*','Authorization': "Bearer " + token }
 });
 
