@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import {  Row, Card, List, Col , Layout} from 'antd'
 const { Meta } = Card
 const { Content, Sider } = Layout
+import Link from 'next/link'
 
 class SubCategoriesContainer extends Component {
 
@@ -28,7 +29,27 @@ class SubCategoriesContainer extends Component {
           </Col>
         )
     })
+    let menuItems = [];
+    let subcategories = []
 
+    if(this.props.siderMenuItems && this.props.siderMenuItems.main_menu && this.props.siderMenuItems.main_menu.mainMenu){
+      let main_menu  = this.props.siderMenuItems.main_menu.mainMenu
+      Object.keys(main_menu).map((category,index) => {
+          subcategories.push(main_menu[category])
+      })
+      let currentCategory = subcategories.filter(obj => {
+        return obj.url === 'categories/' + this.props.category
+      })
+      let currentSubcategories =  currentCategory[0].subcategories
+  
+      if(currentSubcategories){
+        currentSubcategories.map(function(subcategory,index){
+          menuItems.push(<li key={index}><a>{subcategory.title}</a></li>)
+        })
+      }
+    }
+
+    
     return (
       <Content>
         <div>
@@ -37,14 +58,9 @@ class SubCategoriesContainer extends Component {
               <Row>
                 <Col span={24}>
                   <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>Writing & Translation</h3></div>
-                  <div >
-                    <List
-                      style={{ backgroundColor: '#FFF' }}
-                      size='small'
-                      dataSource={jobs}
-                      renderItem={item => <List.Item><a style={{ color: '#37405E' }} href={item.url}>{item.name}</a></List.Item>}
-                    />
-                  </div>
+                  <ul >
+                    {menuItems}
+                  </ul>
                 </Col>
               </Row>
             </Sider>

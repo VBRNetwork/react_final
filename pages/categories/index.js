@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import SubCategoriesContainer from 'containers/SubCategoriesContainer'
-export default class Index extends Component {
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+
+class Index extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -12,6 +15,8 @@ export default class Index extends Component {
             {name: 'Search in all', img: '../static/images/writing_1.jpg', url: '#'}
         ]
     }
+
+    this.getSubcategories = this.getSubcategories.bind(this);
   }
 
   static getInitialProps (ctx) {
@@ -19,8 +24,7 @@ export default class Index extends Component {
   }
 
   componentWillMount () {
-    let category = this.props.router.query.category
-    console.log(this.props.router)
+    this.getSubcategories();
   }
 
   getSubcategories(){
@@ -30,6 +34,22 @@ export default class Index extends Component {
   }
 
   render () {
-    return <SubCategoriesContainer jobs={this.state.jobs} siderMenuItems={[]} />
+    let category = this.props.router.query.category
+    return <SubCategoriesContainer jobs={this.state.jobs} category={category} siderMenuItems={this.props.settings} />
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+      settings: state.settings
+  }
+}
+
+
+Index.propTypes = {
+  settings: PropTypes.instanceOf(Object).isRequired,
+}
+export {Index}
+
+export default connect(mapStateToProps, {})(Index)

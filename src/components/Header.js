@@ -54,16 +54,16 @@ class Header extends Component {
         );
 
         let menuItems = ''
-        if(this.props.settings.main_menu && this.props.settings.main_menu.length > 0){
-            let main_menu = this.props.settings.main_menu
-
-            menuItems = main_menu.map((category) => {
-                return (<Menu.Item key={'menu_' + category.name}>
-                    <Link href={'/' + category.url}>
-                        <a> <Icon style={{fontSize: 17}} type={category.icon}/> {category.name}</a>
+        if(this.props.settings.main_menu && this.props.settings.main_menu.mainMenu){
+            let main_menu = this.props.settings.main_menu.mainMenu
+            menuItems = Object.keys(main_menu).map((category,index) => {
+                return (<Menu.Item key={'menu_' + index}>
+                    <Link href={'/' + main_menu[category].url}>
+                        <a> <Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</a>
                     </Link>
                 </Menu.Item>)
-            });
+            })
+
         }
 
 
@@ -71,8 +71,14 @@ class Header extends Component {
             <div>
                 <Content style={{marginLeft: '50px', marginRight: '50px', marginBottom: '10px'}}>
                     <Row>
-                        <Col lg={6}> <Link href='/'><a><img src={'/static/images/vbrLogo.png'}
-                                                            style={{width: '80px', margin: '8px'}}/></a></Link></Col>
+                        <Col lg={6}> 
+                            <Link href='/'>
+                                <a><img src={'/static/images/vbrLogo.png'}
+                                        style={{width: '80px', margin: '8px'}}
+                                    />
+                                </a>
+                            </Link>
+                        </Col>
                         <Col lg={16}>
                             <Menu className='nav1' selectedKeys={[this.state.current]} mode='horizontal'
                                   style={{float: 'right'}}>
