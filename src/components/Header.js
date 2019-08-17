@@ -9,7 +9,7 @@ import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
 import Router from 'next/router'
 const {Content} = Layout
-
+import {Helmet} from "react-helmet";
 
 class Header extends Component {
 
@@ -48,7 +48,7 @@ class Header extends Component {
         let loginButton = (
             <Menu.Item key='alipay'>
                 <Link href='/login'>
-                    <a> <Icon style={{fontSize: 17}} type='login'/> Login</a>
+                    <span><Icon style={{fontSize: 17}} type='login'/> Login</span>
                 </Link>
             </Menu.Item>
         );
@@ -59,7 +59,7 @@ class Header extends Component {
             menuItems = Object.keys(main_menu).map((category,index) => {
                 return (<Menu.Item key={'menu_' + index}>
                     <Link href={'/' + main_menu[category].url}>
-                        <a> <Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</a>
+                        <span><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</span>
                     </Link>
                 </Menu.Item>)
             })
@@ -69,14 +69,18 @@ class Header extends Component {
 
         return (
             <div>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>VBR </title>
+                </Helmet>
                 <Content style={{marginLeft: '50px', marginRight: '50px', marginBottom: '10px'}}>
                     <Row>
                         <Col lg={6}> 
                             <Link href='/'>
-                                <a><img src={'/static/images/vbrLogo.png'}
+                                <img src={'/static/images/vbrLogo.png'}
                                         style={{width: '80px', margin: '8px'}}
                                     />
-                                </a>
+                                
                             </Link>
                         </Col>
                         <Col lg={16}>

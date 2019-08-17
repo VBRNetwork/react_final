@@ -4,7 +4,7 @@ import {  Row, Card, List, Col , Layout} from 'antd'
 const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
-
+import {Helmet} from "react-helmet";
 class SubCategoriesContainer extends Component {
 
   constructor(props){
@@ -16,21 +16,9 @@ class SubCategoriesContainer extends Component {
 
   render () {
     let categories_card = []
-    let jobs = this.props.jobs
-    jobs.map(function(category,index){
-        categories_card.push(
-          <Col key={index} span={8} >
-            <Card
-              hoverable
-              style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
-              cover={<img alt='example' src={category.img}  />}>
-              <Meta title={category.name} />
-            </Card>
-          </Col>
-        )
-    })
     let menuItems = [];
     let subcategories = []
+    let currentCategoryName = ''
 
     if(this.props.siderMenuItems && this.props.siderMenuItems.main_menu && this.props.siderMenuItems.main_menu.mainMenu){
       let main_menu  = this.props.siderMenuItems.main_menu.mainMenu
@@ -44,20 +32,38 @@ class SubCategoriesContainer extends Component {
   
       if(currentSubcategories){
         currentSubcategories.map(function(subcategory,index){
-          menuItems.push(<li key={index}><a>{subcategory.title}</a></li>)
+          menuItems.push(<li key={index}> <Link href={'/'+subcategory.url}>{subcategory.title}</Link></li>)
+
+          categories_card.push(
+            <Col key={'subcat-'+ index} span={8} >
+              <Card
+                hoverable
+                style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
+                cover={<img alt={subcategory.title} src={''+subcategory.img}  />}>
+                <Link href={'/'+subcategory.url}><Meta title={subcategory.title} /></Link>
+              </Card>
+            </Col>
+          )
+          
         })
       }
+
+      currentCategoryName = currentCategory[0].name
     }
 
     
     return (
       <Content>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>VBR - {currentCategoryName}</title>
+        </Helmet>
         <div>
           <Layout  >
             <Sider style={{ backgroundColor: '#FFF', padding: '1%' }}>
               <Row>
                 <Col span={24}>
-                  <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>Writing & Translation</h3></div>
+                  <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>{currentCategoryName}</h3></div>
                   <ul >
                     {menuItems}
                   </ul>

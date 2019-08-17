@@ -393,7 +393,7 @@ class IcoContainer extends Component {
                                         <div style={{textAlign: 'center'}}><h2 ><strong>Meet VBR Network Team</strong></h2></div>
                                         <Row>
                                             <Col span={12} offset={6}>
-                                                <Carousel autoplay >
+                                                <Carousel  >
                                                         
                                                     <Card
                                                         hoverable
@@ -403,12 +403,14 @@ class IcoContainer extends Component {
                                                         className="trans-card"
                                                         
                                                     >
-                                                        <Meta 
+                                                        <Meta
                                                         avatar={<Avatar size={64} 
                                                         icon="user" 
                                                         style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />} 
-                                                        title="Stefan Vanea" 
-                                                        description="Chief Executive Officer" />
+                                                        title={<div className="trans-card-title"><strong>Stefan Vanea</strong></div>}
+                                                        description={<div className="trans-card"><strong>Chief Executive Officer</strong></div>} 
+                                                        className="trans-meta"
+                                                        />
                                                     </Card>
                                                     
                                                     <Card
@@ -422,8 +424,9 @@ class IcoContainer extends Component {
                                                         avatar={<Avatar size={64} 
                                                         icon="user" 
                                                         style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
-                                                        title="Serghei Fedot" 
-                                                        description="Chief Technology Officer" />
+                                                        title={<div className="trans-card-title"><strong>Serghjei Fedot</strong></div>} 
+                                                        description={<div className="trans-card"><strong>Chief Technology Officer</strong></div>} 
+                                                        className="trans-meta"/>
                                                     </Card>
                                                     
                                                     <Card
@@ -437,8 +440,9 @@ class IcoContainer extends Component {
                                                         avatar={<Avatar size={64} 
                                                         icon="user" 
                                                         style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
-                                                        title="Alex Barborica" 
-                                                        description="Chief Operating Officer" />
+                                                        title={<div className="trans-card-title"><strong>Alex Barborica</strong></div>} 
+                                                        description={<div className="trans-card"><strong>Chief Operating Officer</strong></div>} 
+                                                        className="trans-meta"/>
                                                     </Card>
                                                     
                                                     <Card
@@ -452,8 +456,9 @@ class IcoContainer extends Component {
                                                         avatar={<Avatar size={64} 
                                                         icon="user" 
                                                         style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF', float: 'right'}} />}
-                                                        title="Bogdan Vasilescu" 
-                                                        description="Chief Marketing Officer" />
+                                                        title={<div className="trans-card-title"><strong>Bogdan Vasilescu</strong></div>} 
+                                                        description={<div className="trans-card"><strong>Chief Marketing Officer</strong></div>}
+                                                        className="trans-meta" />
                                                     </Card>
                                                     <Card
                                                         hoverable
@@ -466,8 +471,9 @@ class IcoContainer extends Component {
                                                         avatar={<Avatar size={64} 
                                                         icon="user" 
                                                         style={{marginTop: '5px', marginLeft: '10px', background: '#FFF', color: '#FFF'}} />}
-                                                        title="Cristian Lipciuc" 
-                                                        description="Head of Change Management" />
+                                                        title={<div className="trans-card-title"><strong>Cristian Lipciuc</strong></div>} 
+                                                        description={<div className="trans-card"><strong>Head of Change Management</strong></div>} 
+                                                        className="trans-meta"/>
                                                     </Card>
 
                                                 </Carousel>

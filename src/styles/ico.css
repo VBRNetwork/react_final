@@ -1,12 +1,13 @@
 .ant-layout-content {background: '#2EC3AB'}
 
-.trans-card {background: #ffffff63; border-radius: 2px}
 
 .contact-form {line-height: 35px; margin: 15px}
 
 
 .ant-carousel .slick-slide img {display: inherit }
 
-.ant-card-meta-detail > div:not(:last-child) {position: relative; color: #FFF; text-align: center}
+.trans-meta {position: relative; color: #FFF; text-align: center}
 
-.ant-card-meta-description {position: relative; color: #FFF; text-align: center; margin-top: 9%}
+.trans-card {position: relative; color: #FFF; text-align: center; margin-top: 9%; }
+
+.trans-card-title {color: #FFF; border-radius: 2px}
