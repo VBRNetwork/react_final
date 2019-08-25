@@ -3,13 +3,20 @@ import SubCategoriesContainer from 'containers/SubCategoriesContainer'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import { useRouter } from 'next/router'
-
+import SearchJobsContainer from 'containers/jobs/SearchJobsContainer'
 
 const Index = (props) => {
   const router = useRouter()
-  const { category } = router.query
-  console.log(router.query);
-  return <SubCategoriesContainer category={category} siderMenuItems={props.settings} />
+  const { category , subcategory } = router.query
+  console.log(category,subcategory)
+  if(category && !subcategory){
+      return <SubCategoriesContainer category={category} siderMenuItems={props.settings} />
+  }
+
+  if(subcategory){
+    return <SearchJobsContainer jobs={[]} siderMenuItems={[]} />
+  }
+ 
 }
 
 

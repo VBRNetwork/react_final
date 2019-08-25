@@ -6,9 +6,6 @@ import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox } from 'antd
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
-function onChange(e) {
-  console.log(`checked = ${e.target.checked}`);
-}
 
 const listData = []
  {
@@ -57,12 +54,21 @@ const IconText = ({ type, text }) => (
 )
 
 class SearchJobsContainer extends Component {
-  static async getInitialProps ({ store, query }) {
+
+  constructor(props){
+    super(props)
+
+    this.onChange = this.onChange.bind(this)
   }
 
   componentDidMount () {
   }
 
+  onChange(e) {
+    console.log(`checked = ${e.target.checked}`);
+  }
+
+  
   render () {
     return (
       <div>
@@ -102,11 +108,11 @@ class SearchJobsContainer extends Component {
                     </span>
                   }
                 >
-                  <Menu.Item key='1'><Checkbox style={{float: 'right'}} onChange={onChange}/>Writing </Menu.Item>
-                  <Menu.Item key='2'><Checkbox style={{float: 'right'}} onChange={onChange}/>Marketing</Menu.Item>
-                  <Menu.Item key='3'><Checkbox style={{float: 'right'}} onChange={onChange}/>Design</Menu.Item>
-                  <Menu.Item key='4'><Checkbox style={{float: 'right'}} onChange={onChange}/>Consultancy</Menu.Item>
-                  <Menu.Item key='5'><Checkbox style={{float: 'right'}} onChange={onChange}/>Developers</Menu.Item>
+                  <Menu.Item key='1'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Writing </Menu.Item>
+                  <Menu.Item key='2'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Marketing</Menu.Item>
+                  <Menu.Item key='3'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Design</Menu.Item>
+                  <Menu.Item key='4'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Consultancy</Menu.Item>
+                  <Menu.Item key='5'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Developers</Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key='filter2'
@@ -117,18 +123,18 @@ class SearchJobsContainer extends Component {
                     </span>
                   }
                 >
-                  <Menu.Item key='5'><Checkbox style={{float: 'right'}} onChange={onChange}/>Content Writing</Menu.Item>
-                  <Menu.Item key='6'><Checkbox style={{float: 'right'}} onChange={onChange}/>Translation</Menu.Item>
-                  <Menu.Item key='7'><Checkbox style={{float: 'right'}} onChange={onChange}/>Social Media</Menu.Item>
-                  <Menu.Item key='8'><Checkbox style={{float: 'right'}} onChange={onChange}/>SEO</Menu.Item>
-                  <Menu.Item key='9'><Checkbox style={{float: 'right'}} onChange={onChange}/>UI/UX Design</Menu.Item>
-                  <Menu.Item key='10'><Checkbox style={{float: 'right'}} onChange={onChange}/>Graphic Design</Menu.Item>
-                  <Menu.Item key='11'><Checkbox style={{float: 'right'}} onChange={onChange}/>Business Plan</Menu.Item>
-                  <Menu.Item key='12'><Checkbox style={{float: 'right'}} onChange={onChange}/>Forecast</Menu.Item>
-                  <Menu.Item key='13'><Checkbox style={{float: 'right'}} onChange={onChange}/>Financial Advise</Menu.Item>
-                  <Menu.Item key='14'><Checkbox style={{float: 'right'}} onChange={onChange}/>Web Developers</Menu.Item>
-                  <Menu.Item key='15'><Checkbox style={{float: 'right'}} onChange={onChange}/>Mobile Devs</Menu.Item>
-                  <Menu.Item key='16'><Checkbox style={{float: 'right'}} onChange={onChange}/>Blockchain</Menu.Item>
+                  <Menu.Item key='5'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Content Writing</Menu.Item>
+                  <Menu.Item key='7'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Social Media</Menu.Item>
+                  <Menu.Item key='6'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Translation</Menu.Item>
+                  <Menu.Item key='8'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>SEO</Menu.Item>
+                  <Menu.Item key='9'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>UI/UX Design</Menu.Item>
+                  <Menu.Item key='10'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Graphic Design</Menu.Item>
+                  <Menu.Item key='11'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Business Plan</Menu.Item>
+                  <Menu.Item key='12'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Forecast</Menu.Item>
+                  <Menu.Item key='13'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Financial Advise</Menu.Item>
+                  <Menu.Item key='14'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Web Developers</Menu.Item>
+                  <Menu.Item key='15'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Mobile Devs</Menu.Item>
+                  <Menu.Item key='16'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Blockchain</Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key='filter3'
@@ -139,10 +145,10 @@ class SearchJobsContainer extends Component {
                     </span>
                   }
                 >
-                  <Menu.Item key='17'><Checkbox style={{float: 'right'}} onChange={onChange}/>>$30/hour</Menu.Item>
-                  <Menu.Item key='18'><Checkbox style={{float: 'right'}} onChange={onChange}/>$30 - $50/hour</Menu.Item>
-                  <Menu.Item key='19'><Checkbox style={{float: 'right'}} onChange={onChange}/>$50 - $100/hour</Menu.Item>
-                  <Menu.Item key='20'><Checkbox style={{float: 'right'}} onChange={onChange}/>&lt; $100/hour</Menu.Item>
+                  <Menu.Item key='17'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>>$30/hour</Menu.Item>
+                  <Menu.Item key='18'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>$30 - $50/hour</Menu.Item>
+                  <Menu.Item key='19'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>$50 - $100/hour</Menu.Item>
+                  <Menu.Item key='20'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>&lt; $100/hour</Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key='filter4'
@@ -153,10 +159,10 @@ class SearchJobsContainer extends Component {
                     </span>
                   }
                 >
-                  <Menu.Item key='21'><Checkbox style={{float: 'right'}} onChange={onChange}/>3 Stars</Menu.Item>
-                  <Menu.Item key='22'><Checkbox style={{float: 'right'}} onChange={onChange}/>4 Stars</Menu.Item>
-                  <Menu.Item key='23'><Checkbox style={{float: 'right'}} onChange={onChange}/>5 Stars</Menu.Item>
-                  <Menu.Item key='24'><Checkbox style={{float: 'right'}} onChange={onChange}/>Top Rated</Menu.Item>
+                  <Menu.Item key='21'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>3 Stars</Menu.Item>
+                  <Menu.Item key='22'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>4 Stars</Menu.Item>
+                  <Menu.Item key='23'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>5 Stars</Menu.Item>
+                  <Menu.Item key='24'><Checkbox style={{float: 'right'}} onChange={this.onChange}/>Top Rated</Menu.Item>
                 </SubMenu>
               </Menu>
             </Sider>

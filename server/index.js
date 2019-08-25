@@ -25,18 +25,12 @@ app.prepare().then(() => {
     immutable: true
   }))
 
-  server.get('/categories/:category', (req, res) => {
-    const actualPage = '/categories'
-    const queryParams = { category: req.params.category }
-    app.render(req, res, actualPage, queryParams)
-  })
-
   server.get('/categories/:category/:subcategory', (req, res) => {
-    const actualPage = '/subcategories'
+    const actualPage = '/categories'
     const queryParams = { category: req.params.category, subcategory: req.params.subcategory }
     app.render(req, res, actualPage, queryParams)
   })
-
+ 
   server.get('*', (req, res) => {
     return handler(req, res)
   })
