@@ -48,7 +48,7 @@ class Header extends Component {
         let loginButton = (
             <Menu.Item key='alipay'>
                 <Link href='/login'>
-                    <span><Icon style={{fontSize: 17}} type='login'/> Login</span>
+                    <a><Icon style={{fontSize: 17}} type='login'/> Login</a>
                 </Link>
             </Menu.Item>
         );
@@ -58,8 +58,8 @@ class Header extends Component {
             let main_menu = this.props.settings.main_menu.mainMenu
             menuItems = Object.keys(main_menu).map((category,index) => {
                 return (<Menu.Item key={'menu_' + index}>
-                    <Link href={'/' + main_menu[category].url}>
-                        <span><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</span>
+                    <Link as={'/' + main_menu[category].url} href={'/categories/?category=' + (main_menu[category].url).replace('categories/','')}>
+                        <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</a>
                     </Link>
                 </Menu.Item>)
             })

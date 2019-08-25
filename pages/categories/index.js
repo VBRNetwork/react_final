@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 const Index = (props) => {
   const router = useRouter()
   const { category } = router.query
+  console.log(router.query);
   return <SubCategoriesContainer category={category} siderMenuItems={props.settings} />
 }
 
@@ -21,5 +22,4 @@ function mapStateToProps(state) {
 Index.propTypes = {
   settings: PropTypes.instanceOf(Object).isRequired,
 }
-export {Index}
 export default connect(mapStateToProps, {})(Index)

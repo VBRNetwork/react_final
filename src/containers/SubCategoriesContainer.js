@@ -5,12 +5,12 @@ const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
 import {Helmet} from "react-helmet";
+
 class SubCategoriesContainer extends Component {
 
   constructor(props){
     super(props)
   }
-
   componentDidMount () {
   }
 
@@ -29,10 +29,15 @@ class SubCategoriesContainer extends Component {
         return obj.url === 'categories/' + this.props.category
       })
       let currentSubcategories =  currentCategory[0].subcategories
-  
+      let subcategories_url = []
       if(currentSubcategories){
         currentSubcategories.map(function(subcategory,index){
-          menuItems.push(<li key={index}> <Link href={'/'+subcategory.url}>{subcategory.title}</Link></li>)
+          menuItems.push(<li key={index}> <Link href={'/'+subcategory.url}><a>{subcategory.title}</a></Link></li>)
+
+          subcategories_url = subcategory.url.split('/');
+          let final_url = '/categories/?category='+subcategories_url[1]+'&subcategory='+subcategories_url[2]
+
+          console.log(final_url)
 
           categories_card.push(
             <Col key={'subcat-'+ index} span={8} >
@@ -40,7 +45,7 @@ class SubCategoriesContainer extends Component {
                 hoverable
                 style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
                 cover={<img alt={subcategory.title} src={''+subcategory.img}  />}>
-                <Link href={'/'+subcategory.url}><Meta title={subcategory.title} /></Link>
+                <Link as={'/'+subcategory.url} href={final_url}><a><Meta title={subcategory.title} /></a></Link>
               </Card>
             </Col>
           )
