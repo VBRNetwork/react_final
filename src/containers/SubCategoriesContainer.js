@@ -38,7 +38,7 @@ class SubCategoriesContainer extends Component {
           menuItems.push(<li key={index}> <Link as={'/'+subcategory.url} href={final_url}><a><Meta title={subcategory.title} /></a></Link> </li>)
 
           categories_card.push(
-            <Col key={'subcat-'+ index} span={8} >
+            <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:8,offset:8}} key={'subcat-'+ index} span={8} >
               <Card
                 hoverable
                 style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
@@ -65,7 +65,7 @@ class SubCategoriesContainer extends Component {
           <Layout  >
             <Sider style={{ backgroundColor: '#FFF', padding: '1%' }}>
               <Row>
-                <Col span={24}>
+                <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:24,offset:0}}>
                   <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>{currentCategoryName}</h3></div>
                   <ul >
                     {menuItems}

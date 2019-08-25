@@ -73,7 +73,7 @@ class Register extends React.Component {
         const { current} = this.state;
         return (
             <Row>
-            <Col span={12} offset={6}>
+            <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:12,offset:6}}>
                 <Card style={{margin:'25px'}}>
                     <div>
                         <h3 style={{textAlign:'center'}}>VBR Users Registration</h3>

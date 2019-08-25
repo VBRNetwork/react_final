@@ -1,10 +1,9 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import {Carousel, Divider, Layout, Row, Col, Button, Card, Input} from 'antd';
+import {Carousel, Layout, Row, Col, Button, Card, Input} from 'antd';
 const Search = Input.Search;
 const {Content} = Layout;
 
@@ -22,16 +21,14 @@ class HomeContainer extends Component {
     render() {
         return (
             <Fragment>
-
                 <div style={{position: 'relative'}}>
-
                     <div className='container'   style={{
                             background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
                         }}>
-                    <Particles
-                    style={{
-                        'position':'absolute'
-                    }}
+                        <Particles
+                            style={{
+                                'position':'absolute'
+                            }}
                             params={{
                                 particles: {
                                     number: {
@@ -53,8 +50,10 @@ class HomeContainer extends Component {
                                 }
                             }}
                         />
+
                         <div style={{padding: '50px'}}>
                             <Row type="flex" justify="space-around">
+
                                 <Col xs={24} sm={4} md={6} lg={8} xl={10}>
                                     <div className='intro-text'>
                                         <h2 className='slogan'>
@@ -83,9 +82,8 @@ class HomeContainer extends Component {
                                         />
                                     </div>
                                 </Col>
+
                                 <Col xs={24} sm={4} md={6} lg={8} xl={14}>
-
-
                                 <img src={'../../static/images/asset_6.png'}
                                             style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
 
@@ -113,83 +111,63 @@ class HomeContainer extends Component {
                                     </div>
                                 </Col>
                             </Row>
-
                         </div>
                     </div>
                 </div>
 
                 <Row>
                     <Col span={24} >
-                                <Carousel autoplay  className="home-carousel">
-                                    <div style={{backgroundColor: 'black', width: '100%'}}>
-                                        <div className="image">
+                        <Carousel autoplay  className="home-carousel">
+                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                                <div className="image">
+                                    <img
+                                            className='d-block h-200'
+                                            src={'../../static/images/freelancer-working2.png'}
+                                            alt='First slide'
+                                        />
 
-                                                <img
-                                                        className='d-block h-200'
-                                                        src={'../../static/images/freelancer-working2.png'}
-                                                        alt='First slide'
-                                                    />
+                                    <h2 className="h2-absolute"><span>Don't worry<span className="spacer">&nbsp;</span>
+                                    <span className="spacer">&nbsp;</span>We got this</span></h2>
+                                </div>
+                            </div>
 
-                                                <h2 className="h2-absolute"><span>Don't worry<span className="spacer">&nbsp;</span>
-                                                <span className="spacer">&nbsp;</span>We got this</span></h2>
+                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                                <div className="image">
+                                    <img
+                                        className='d-block'
+                                        src={'../../static/images/picture_7.png'}
+                                        alt='Second slide'
+                                    />
+                                    <h2 className="h2-absolute"><span>We do know what we know best<span className="spacer">&nbsp;</span>
+                                    </span></h2>
+                                </div>
+                            </div>
 
-                                        </div>
-                                    </div>
+                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                                <div className="image">
+                                    <img
+                                        className='d-block h-200'
+                                        src={'../../static/images/freelancer_old.png'}
+                                        alt='Third slide'
+                                    />
+                                    <h2 className="h2-absolute"><span>Ace your standards!<span className="spacer">&nbsp;</span>
+                                    </span></h2>
+                                </div>
+                            </div>
 
-                                    <div style={{backgroundColor: 'black', width: '100%'}}>
-                                        <div className="image">
+                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                                <div className="image">
+                                    <img
+                                        className='d-block h-200'
+                                        src={'../../static/images/picture_3.png'}
+                                        alt='Fourth slide'
+                                    />
+                                    <h2 className="h2-absolute"><span>All in your good time<span className="spacer">&nbsp;</span>
+                                    </span></h2>
+                                </div>
+                            </div>
 
-                                                <img
-                                                    className='d-block'
-                                                    src={'../../static/images/picture_7.png'}
-                                                    alt='Second slide'
-                                                />
-
-
-                                                <h2 className="h2-absolute"><span>We do know what we know best<span className="spacer">&nbsp;</span>
-                                                </span></h2>
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                    <div style={{backgroundColor: 'black', width: '100%'}}>
-                                        <div className="image">
-
-                                                <img
-                                                    className='d-block h-200'
-                                                    src={'../../static/images/freelancer_old.png'}
-                                                    alt='Third slide'
-                                                />
-
-
-                                                <h2 className="h2-absolute"><span>Ace your standards!<span className="spacer">&nbsp;</span>
-                                                </span></h2>
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                    <div style={{backgroundColor: 'black', width: '100%'}}>
-                                        <div className="image">
-
-                                                <img
-                                                    className='d-block h-200'
-                                                    src={'../../static/images/picture_3.png'}
-                                                    alt='Fourth slide'
-                                                />
-
-                                                <h2 className="h2-absolute"><span>All in your good time<span className="spacer">&nbsp;</span>
-                                                </span></h2>
-
-                                        </div>
-                                    </div>
-
-                                </Carousel>
+                        </Carousel>
                         <Layout style={{margin: '10px'}}>
                             <div style={{background: '#FFF',width:'80%',margin:'0 auto'}}>
                                 <Row>

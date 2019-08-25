@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {getAccessToken} from 'actions/user'
 import {Helmet} from 'react-helmet'
 import Router from 'next/router'
-import {Form, Icon, Input, Button, Checkbox, Card} from 'antd'
+import {Form, Icon, Input, Button, Checkbox, Card,Col,Row} from 'antd'
 
 class Login extends Component {
     constructor(props) {
@@ -68,47 +68,48 @@ class Login extends Component {
                     />
                 </Helmet>
                 <div className='container'>
-                    <div className='row'>
-                        <div className='col-12' style={{margin: '25px'}}>
-                            <Card className='p-5' style={{width: '400px', margin: '0 auto'}}>
-                                <h2>Login Page</h2>
-                                <Form onSubmit={this.handleSubmit} className='login-form'>
-                                    <Form.Item>
-                                        <Input
-                                            onChange={this.handleChange}
-                                            value={this.state.username}
-                                            prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            placeholder='Username'
-                                        />
-                                    </Form.Item>
-                                    <Form.Item>
-                                        <Input
-                                            prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            type='password'
-                                            value={this.state.password}
-                                            placeholder='Password'
-                                            onChange={this.handleChangePassword}
-                                        />
-                                    </Form.Item>
-                                    <Form.Item>
-                                        <Button type='primary' htmlType='submit' className='login-form-button'>
-                                            Log in
-                                        </Button>
-                                    </Form.Item>
+                    <Row>
+                        <Col  xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:8,offset:8}} >
+                            <div >
+                                <Card className='p-5' style={{margin:'20px'}}>
+                                    <h2>Login Page</h2>
+                                    <Form onSubmit={this.handleSubmit} className='login-form'>
+                                        <Form.Item>
+                                            <Input
+                                                onChange={this.handleChange}
+                                                value={this.state.username}
+                                                prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                                placeholder='Username'
+                                            />
+                                        </Form.Item>
+                                        <Form.Item>
+                                            <Input
+                                                prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                                type='password'
+                                                value={this.state.password}
+                                                placeholder='Password'
+                                                onChange={this.handleChangePassword}
+                                            />
+                                        </Form.Item>
+                                        <Form.Item>
+                                            <Button type='primary' htmlType='submit' className='login-form-button'>
+                                                Log in
+                                            </Button>
+                                        </Form.Item>
 
-                                    <Form.Item>
-                                        <Checkbox>Remember me</Checkbox>
-                                        <br/>
-                                        <a className='login-form-forgot' href=''>
-                                            Forgot password
-                                        </a>
-                                        or <a href='/register'>register now!</a>
-                                    </Form.Item>
-                                </Form>
-
-                            </Card>
-                        </div>
-                    </div>
+                                        <Form.Item>
+                                            <Checkbox>Remember me</Checkbox>
+                                            <br/>
+                                            <a className='login-form-forgot' href=''>
+                                                Forgot password
+                                            </a>
+                                            or <a href='/register'>register now!</a>
+                                        </Form.Item>
+                                    </Form>
+                                </Card>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
             </article>)
     }
