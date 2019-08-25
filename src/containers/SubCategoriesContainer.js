@@ -32,12 +32,10 @@ class SubCategoriesContainer extends Component {
       let subcategories_url = []
       if(currentSubcategories){
         currentSubcategories.map(function(subcategory,index){
-          menuItems.push(<li key={index}> <Link href={'/'+subcategory.url}><a>{subcategory.title}</a></Link></li>)
 
           subcategories_url = subcategory.url.split('/');
           let final_url = '/categories/?category='+subcategories_url[1]+'&subcategory='+subcategories_url[2]
-
-          console.log(final_url)
+          menuItems.push(<li key={index}> <Link as={'/'+subcategory.url} href={final_url}><a><Meta title={subcategory.title} /></a></Link> </li>)
 
           categories_card.push(
             <Col key={'subcat-'+ index} span={8} >
