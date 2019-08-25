@@ -24,19 +24,18 @@ class HomeContainer extends Component {
             <Fragment>
 
                 <div style={{position: 'relative'}}>
-                    <div
-                        style={{
+
+                    <div className='container'   style={{
                             background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
-                            position: 'absolute',
-                            width: '100%',
-                            height: '98%',
-                            zIndex: '-1'
                         }}>
-                        <Particles
+                    <Particles
+                    style={{
+                        'position':'absolute'
+                    }}
                             params={{
                                 particles: {
                                     number: {
-                                        value: 100
+                                        value: 50
                                     },
                                     size: {
                                         value: 3
@@ -54,12 +53,9 @@ class HomeContainer extends Component {
                                 }
                             }}
                         />
-                    </div>
-
-                    <div className='container'>
                         <div style={{padding: '50px'}}>
                             <Row type="flex" justify="space-around">
-                                <Col span={10}>
+                                <Col xs={24} sm={4} md={6} lg={8} xl={10}>
                                     <div className='intro-text'>
                                         <h2 className='slogan'>
                                             Disrupting the Freelancing Marketplace with the power of
@@ -87,7 +83,7 @@ class HomeContainer extends Component {
                                         />
                                     </div>
                                 </Col>
-                                <Col span={14}>
+                                <Col xs={24} sm={4} md={6} lg={8} xl={14}>
 
 
                                 <img src={'../../static/images/asset_6.png'}
@@ -195,116 +191,96 @@ class HomeContainer extends Component {
 
                                 </Carousel>
                         <Layout style={{margin: '10px'}}>
-                            <div style={{background: '#FFF'}}>
-                                    <Row >
-                                        <Col span={24}>
-                                            <Row>
-                                                <Col span={24} >
-                                                    <Card style={{width: '50%', height: 300, background: '#0e004214', position: 'absolute',  marginLeft: '25%'}}>
+                            <div style={{background: '#FFF',width:'80%',margin:'0 auto'}}>
+                                <Row>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
+                                        <div style={{ textAlign: 'center', cursor: 'pointer'}}>
+                                            <div >
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-1.png'}
+                                                />
+                                                <br/>
+                                                <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}  >
+                                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                                            <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-2.png'}
+                                                />
+                                                <br/>
+                                                <div style={{textAlign: 'center'}}><strong>Design</strong></div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}  >
+                                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
+                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-3.png'}
+                                                />
+                                                <br/>
+                                                <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <Row gutter={8} align="middle" type="flex" justify="space-around">
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
+                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-5.png'}
+                                                />
+                                                <br/>
+                                                <strong >Developers</strong>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-06.png'}
+                                                />
+                                                <br/>
+                                                <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
+                                            </div>
+                                        </div>
+                                    </Col>
 
-                                                    </Card>
-                                                </Col>
-                                            </Row>
-                                            <Row >
-                                                <Col span={12} offset={6}>
-                                                    <Row gutter={8} align="middle" type="flex" justify="space-around">
-
-                                                        <Col span={8} >
-                                                            <div style={{ textAlign: 'center', cursor: 'pointer'}}>
-                                                                <div style={{marginLeft:'50%',marginRight: '50%'}}>
-                                                                    <img
-                                                                        height='80'
-                                                                        width='80'
-                                                                        alt='171x180'
-                                                                        src={'../../static/images/img-1.png'}
-                                                                    />
-                                                                    <br/>
-                                                                    <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
-                                                                </div>
-                                                            </div>
-                                                        </Col>
-                                                        <Col span={8} >
-                                                            <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                                                <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                                    <img
-                                                                        height='80'
-                                                                        width='80'
-                                                                        alt='171x180'
-                                                                        src={'../../static/images/img-2.png'}
-                                                                    />
-                                                                    <br/>
-                                                                    <div style={{textAlign: 'center'}}><strong>Design</strong></div>
-                                                                </div>
-                                                            </div>
-                                                        </Col>
-                                                        <Col span={8} >
-                                                            <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                                                <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                                    <img
-                                                                        height='80'
-                                                                        width='80'
-                                                                        alt='171x180'
-                                                                        src={'../../static/images/img-3.png'}
-                                                                    />
-                                                                    <br/>
-                                                                    <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
-                                                                </div>
-                                                            </div>
-                                                        </Col>
-                                                    </Row>
-                                                </Col>
-                                            </Row>
-                                            <br />
-
-                                            <Row gutter={8} align="middle" type="flex" justify="space-around">
-                                                <Col span={12}>
-                                                    <Col span={8} >
-                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                                <img
-                                                                    height='80'
-                                                                    width='80'
-                                                                    alt='171x180'
-                                                                    src={'../../static/images/img-5.png'}
-                                                                />
-                                                                <br/>
-                                                                <strong >Developers</strong>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                    <Col span={8} >
-                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
-                                                                <img
-                                                                    height='80'
-                                                                    width='80'
-                                                                    alt='171x180'
-                                                                    src={'../../static/images/img-06.png'}
-                                                                />
-                                                                <br/>
-                                                                <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-
-                                                    <Col span={8} >
-                                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
-                                                                <img
-                                                                    height='80'
-                                                                    width='80'
-                                                                    alt='171x180'
-                                                                    src={'../../static/images/img-4.png'}
-                                                                />
-                                                                <br/>
-                                                                <strong>PR</strong>
-                                                            </div>
-                                                        </div>
-                                                    </Col>
-                                                </Col>
-                                            </Row>
-                                        </Col>
-                                    </Row>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
+                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
+                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                                <img
+                                                    height='80'
+                                                    width='80'
+                                                    alt='171x180'
+                                                    src={'../../static/images/img-4.png'}
+                                                />
+                                                <br/>
+                                                <strong>PR</strong>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
                                 </div>
                                 <div style={{background: '#ECECEC', padding: '30px'}}>
                                     <div id='how-it-works'>
@@ -312,8 +288,8 @@ class HomeContainer extends Component {
                                             works?</h3>
                                     </div>
                                     <Row gutter={24} type="flex" justify="start">
-                                        <Col span={6}>
-                                            <Card style= {{width: 300}} title="Online and Cold wallets" bordered={false}>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card  title="Online and Cold wallets" bordered={false}>
                                                 <p>
                                                     Time is money, in that we don’t want to waste either.
                                                 </p>
@@ -326,8 +302,8 @@ class HomeContainer extends Component {
                                                 </p>
                                             </Card>
                                         </Col>
-                                        <Col span={6}>
-                                            <Card style= {{width: 300}} title="100% Transparency" bordered={false}>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card  title="100% Transparency" bordered={false}>
                                                 <p>
                                                     Customers will be able to trace the progress of their project instantly,
                                                     due to our system that compares it to similar projects in our pre-existent library.
@@ -338,8 +314,8 @@ class HomeContainer extends Component {
                                                 </p>
                                             </Card>
                                         </Col>
-                                        <Col span={6}>
-                                            <Card style= {{width: 300}} title="Instant payments" bordered={false}>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card  title="Instant payments" bordered={false}>
                                                 <p>
                                                     All payments with our token will be processed instantly,
                                                     and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
@@ -352,8 +328,8 @@ class HomeContainer extends Component {
 
                                             </Card>
                                         </Col>
-                                        <Col span={6} >
-                                            <Card  style= {{width: 300}} title="Exchange Platform" bordered={false}>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6} >
+                                            <Card  title="Exchange Platform" bordered={false}>
                                                 <p>
                                                     We want our users to feel as comfortable as possible.
                                                 </p>
@@ -376,7 +352,7 @@ class HomeContainer extends Component {
 
                     <div className="home-section">
                         <Row type="flex" justify="space-around">
-                            <Col span={3}>
+                            <Col xs={24} sm={4} md={6} lg={8} xl={3}>
                                 <img
 
                                     className='chair-tablet-image img-fluid'
@@ -384,7 +360,7 @@ class HomeContainer extends Component {
                                     style={{ marginTop: '50%'}}
                                 />
                             </Col>
-                            <Col span={8}>
+                            <Col xs={24} sm={4} md={6} lg={8} xl={8}>
                                 <Card bordered={false}>
                                     <div className='middle-description-text'>
                                         <div className='footer-description-title'>
@@ -414,7 +390,7 @@ class HomeContainer extends Component {
                                     </div>
                                 </Card>
                             </Col>
-                            <Col span={4}>
+                            <Col xs={24} sm={4} md={6} lg={8} xl={4}>
                                 <div style={{marginTop: '50px', textAlign: 'center'}}>
                                     <Button style={{backgroundColor: '#2EC3AB',
                                         borderColor: '#2EC3AB'}} className='vbr-button' type={'primary'}>

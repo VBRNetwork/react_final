@@ -10,6 +10,8 @@ import {logout} from '../actions/user'
 import Router from 'next/router'
 const {Content} = Layout
 import {Helmet} from "react-helmet";
+import Navigation from '../components/Navigation/navigation'
+
 
 class Header extends Component {
 
@@ -71,11 +73,11 @@ class Header extends Component {
             <div>
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>VBR </title>
+                    <title>VBR</title>
                 </Helmet>
-                <Content style={{marginLeft: '50px', marginRight: '50px', marginBottom: '10px'}}>
+                <Content style={{marginBottom: '10px'}}>
                     <Row>
-                        <Col lg={6}> 
+                        <Col xs={8} sm={4} md={6} lg={8} xl={10}> 
                             <Link href='/'>
                                 <img src={'/static/images/vbrLogo.png'}
                                         style={{width: '80px', margin: '8px'}}
@@ -83,45 +85,44 @@ class Header extends Component {
                                 
                             </Link>
                         </Col>
-                        <Col lg={16}>
-                            <Menu className='nav1' selectedKeys={[this.state.current]} mode='horizontal'
-                                  style={{float: 'right'}}>
-                                <Menu.Item key='mail1'>
-                                    <Link href='/'>
-                                        <a> <Icon style={{fontSize: 17}} type='home'/> Home</a>
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item key='app1'>
-                                    <Link href='/how-it-works'>
-                                        <a> <Icon style={{fontSize: 17}} type='bulb'/> How it works</a>
-                                    </Link>
-                                </Menu.Item>
+                        <Col  xs={16} sm={4} md={6} lg={8} xl={12}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
+                                    <Menu.Item key='mail1'>
+                                        <Link href='/'>
+                                            <a> <Icon style={{fontSize: 17}} type='home'/> Home</a>
+                                        </Link>
+                                    </Menu.Item>
+                                    <Menu.Item key='app1'>
+                                        <Link href='/how-it-works'>
+                                            <a> <Icon style={{fontSize: 17}} type='bulb'/> How it works</a>
+                                        </Link>
+                                    </Menu.Item>
 
-                                <Menu.Item key='app122'>
-                                    <Link href='/ico'>
-                                        <a> <Icon style={{fontSize: 17}} type='file-protect'/>Initial Coin Offering</a>
-                                    </Link>
-                                </Menu.Item>
+                                    <Menu.Item key='app122'>
+                                        <Link href='/ico'>
+                                            <a> <Icon style={{fontSize: 17}} type='file-protect'/>Initial Coin Offering</a>
+                                        </Link>
+                                    </Menu.Item>
 
-                                {token === true &&
-                                <Menu.Item key='alipay243434'>
-                                    <div onClick={this.clickLogout}>
-                                        <Icon style={{fontSize: 17}} type='logout'/> Logout
-                                    </div>
-                                </Menu.Item>}
+                                    {token === true &&
+                                    <Menu.Item key='alipay243434'>
+                                        <div onClick={this.clickLogout}>
+                                            <Icon style={{fontSize: 17}} type='logout'/> Logout
+                                        </div>
+                                    </Menu.Item>}
 
-                                {token === false && loginButton}
-                            </Menu>
+                                    {token === false && loginButton}
+                                </Menu>
                         </Col>
 
-                        <Col lg={2}>
+                        <Col  xs={24} sm={4} md={6} lg={2} xl={2}>
                             {token === false && <Link href='/register'>
                                 <a>
                                     <div className='post-job-btn'>
                                         <Button type='primary' style={{
                                             backgroundColor: '#2EC3AB',
                                             borderColor: '#2EC3AB'
-                                        }} className='post-job-button'>Register</Button>
+                                        }}>Register</Button>
                                     </div>
                                 </a>
                             </Link>}
@@ -132,7 +133,7 @@ class Header extends Component {
                                         <Button type='primary' style={{
                                             backgroundColor: '#2EC3AB',
                                             borderColor: '#2EC3AB'
-                                        }} className='post-job-button'>Dashboard</Button>
+                                        }}>Dashboard</Button>
                                     </div>
                                 </a>
                             </Link>}
@@ -140,11 +141,12 @@ class Header extends Component {
                     </Row>
 
                 </Content>
-                <Menu selectedKeys={[this.state.current]} mode='horizontal'
-                      style={{boxShadow: '1px 4px 12px 1px #929292'}}>
-                    {menuItems}
-                </Menu>
-
+                <div>
+                    <Menu selectedKeys={[this.state.current]} mode='horizontal'
+                        style={{boxShadow: '1px 4px 12px 1px #929292'}}>
+                        {menuItems}
+                    </Menu>
+                </div>
             </div>
         )
     }

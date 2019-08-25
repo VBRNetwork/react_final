@@ -43,7 +43,7 @@ class Footer extends Component {
       <footer className='footer-box' style={{ backgroundColor: '#37405E' }}>
         <div className='container' style={{ marginLeft: '50px', marginRight: '50px' }}>
           <Row type='flex' justify='center' style={{ marginBottom: '20px' }}>
-            <Col span={4} className='gutter-row'>
+            <Col  xs={24} sm={4} md={6} lg={8} xl={4} className='gutter-row'>
               <h3 className='footer-titles'>Company</h3>
               <List
                 dataSource={menu1}
@@ -57,7 +57,7 @@ class Footer extends Component {
               />
             </Col>
 
-            <Col span={4} className='gutter-row'>
+            <Col xs={24} sm={4} md={6} lg={8} xl={4} className='gutter-row'>
               <h3 className='footer-titles'>Browse by location</h3>
               <List
                 size='small'
@@ -69,7 +69,7 @@ class Footer extends Component {
               />
             </Col>
 
-            <Col span={4} className='gutter-row'>
+            <Col xs={24} sm={4} md={6} lg={8} xl={4} className='gutter-row'>
               <h3 className='footer-titles'>Browse by skills</h3>
               <List
                 size='large'
@@ -84,7 +84,7 @@ class Footer extends Component {
               />
             </Col>
 
-            <Col span={4}>
+            <Col xs={24} sm={4} md={6} lg={8} xl={4}>
               <img
                 src={'../../static/images/vbrLogo.png'}
                 className='footer-logo'
@@ -113,7 +113,7 @@ class Footer extends Component {
           </Row>
           <hr />
           <Row>
-            <Col>
+            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div className='text-right text-white copyright'>
                                 VBR Inc. 2019 All Rights Reserved.
               </div>
