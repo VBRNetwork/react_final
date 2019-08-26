@@ -19,6 +19,10 @@ const APP_ROUTES = [
     pattern: '/categories/:category/:subcategory'
   },
   {
+    page: 'categories/',
+    pattern: '/categories/:category/'
+  },
+  {
     page: 'profile/',
     pattern: '/profile/:username'
   }
