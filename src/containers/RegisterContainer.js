@@ -1,127 +1,222 @@
 
-import React from 'react';
-
-import {
-  Select,
-  Row,
-  Col,
-  Button,
-  AutoComplete,
-  Card,
-  Radio
-} from 'antd';
-
-const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
+import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import RegisterStepOneContainer from '../containers/register/RegisterStepOneContainer'
-import RegisterStepTwoContainer from '../containers/register/RegisterStepTwoContainer'
-import RegisterStepThreeContainer from '../containers/register/RegisterStepThreeContainer'
-import '../styles/register.css'
-
-import { Steps, message } from 'antd';
-import Router from "next/dist/client/router";
-const Step = Steps.Step;
-const steps = [
+import { formValueSelector } from 'redux-form';
+import {
+    Form,
+    Input,
+    Tooltip,
+    Icon,
+    Cascader,
+    Select,
+    Row,
+    Col,
+    Checkbox,
+    Button,
+    AutoComplete,
+    Radio 
+  } from 'antd';
+  import Link from 'next/link'
+import { throwStatement } from '@babel/types';
+  const { Option } = Select;
+  const AutoCompleteOption = AutoComplete.Option;
+  const residences = [
     {
-      title: 'First',
-      content: <RegisterStepOneContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
+      value: 'Europe',
+      label: 'Europe',
+      children: [
+        {
+          value: 'Romania',
+          label: 'Romania',
+          children: [
+            {
+              value: 'Bucharest',
+              label: 'Bucharest',
+            },
+          ],
+        },
+      ],
     },
     {
-      title: 'Second',
-      content:  <RegisterStepTwoContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
+      value: 'USA',
+      label: 'USA',
+      children: [
+        {
+          value: 'New York',
+          label: 'New York',
+          children: [
+            {
+              value: 'New York City',
+              label: 'New York City',
+            },
+          ],
+        },
+      ],
     },
-
-    {
-        title: 'Third',
-        content:  <RegisterStepThreeContainer style={{ backgroundColor: '#2EC3AB', borderColor: '#2EC3AB'}}/>,
-      }
   ];
+  
+const selector = formValueSelector('formName');
 
-
-class Register extends React.Component {
-
+class RegisterContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            current: 0,
+            confirmDirty: false,
+            autoCompleteResult: [],
+            userType: '',
+            testVariable:false
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
-    next() {
-        const current = this.state.current + 1;
-        this.setState({ current });
+    handleChange(event) {
+      this.setState({
+        userType: event.target.value,
+      });
     }
 
-    prev() {
-        const current = this.state.current - 1;
-        this.setState({ current });
+    handleSubmit(event) {
+      event.preventDefault();
+      <Link href='/register' />
     }
 
-    redirectToTarget = () => {
-        Router.push('/dashboard')
+  componentDidMount () {
+    console.log('Step1 - ' + this.props.register)
+  }
+
+  
+  handleSubmit = e => {
+    e.preventDefault();
+    
+    
+  };
+
+  handleConfirmBlur = e => {
+    const value = e.target.value;
+    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+  };
+
+  compareToFirstPassword = (rule, value, callback) => {
+    
+  };
+
+  validateToNextPassword = (rule, value, callback) => {
+    
+  };
+
+  
+
+
+
+  handleWebsiteChange = value => {
+    let autoCompleteResult;
+    if (!value) {
+      autoCompleteResult = [];
+    } else {
+      autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
+    }
+    this.setState({ autoCompleteResult });
+  };
+  
+
+
+  render () {
+
+     const { autoCompleteResult ,current} = this.state;
+
+    const formItemLayout = {
+      labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+      },
+      wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+      },
+    };
+    const tailFormItemLayout = {
+      wrapperCol: {
+        xs: {
+          span: 24,
+          offset: 0,
+        },
+        sm: {
+          span: 16,
+          offset: 8,
+        },
+      },
     };
 
-    componentDidMount() {
-        if (this.props.user.token !== 0) {
-            this.redirectToTarget()
-        }
-    }
+    const websiteOptions = autoCompleteResult.map(website => (
+      <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
+    ));
 
-    render() {
-        const { current} = this.state;
-        return (
-            <Row>
-            <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:12,offset:6}}>
-                <Card style={{margin:'25px'}}>
-                    <div>
-                        <h3 style={{textAlign:'center'}}>VBR Users Registration</h3>
-                        <div style={{margin:'10px'}}>
-                            <Steps current={current}  >
-                            {steps.map(item => (
-                                <Step key={item.title} title={item.title} />
-                            ))}
-                            </Steps>
-                        </div>
-                        <div className="steps-content" >{steps[current].content}</div>
-                        <div className="steps-action"  >
-                            {current < steps.length - 1 && (
-                                <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                    borderColor: '#2EC3AB'}} type="primary" onClick={() => this.next()}>
-                                    Next
-                                </Button>
-                            )}
-
-                            {current === steps.length - 1 && (
-                                <Button style={{ marginRight: 8 , float:'right', backgroundColor: '#2EC3AB',
-                                    borderColor: '#2EC3AB'}} type="primary" onClick={() => message.success('Processing complete!')}>
-                                    Done
-                                </Button>
-                            )}
-                            {current > 0 && (
-                                <Button style={{borderColor: '#2EC3AB', color: '#2EC3AB'}} onClick={() => this.prev()}>
-                                    Previous
-                                </Button>
-                            )}
-                        </div>
-                    </div>
-                </Card>
-            </Col>
-        </Row>
-    )
-  }
-}
-
-function mapStateToProps (state) {
+    
+    return (
+        <div className='container' style={{margin: 20}}>
+        <Row>
+            <Col  xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:9,offset:7}}>
+                <div className='text-center'><strong><h3>Register User</h3></strong></div>
+        <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+             <Form.Item label="E-mail">
+                <Input />
+            </Form.Item>
+            <Form.Item label="Password" hasFeedback>
+                <Input.Password />
+            </Form.Item>
+            <Form.Item label="Confirm Password" hasFeedback>
+                <Input.Password onBlur={this.handleConfirmBlur} />
+            </Form.Item>
+            <Form.Item label="User Type">
+              <Radio.Group onSubmit={this.handleSubmit} defaultValue="a" size="small">
+                <Row>
+                  <Col span={12}>
+                    <Radio.Button checked={this.state.userType === 'customer'} onChange={this.handleChange} value="a">Customer </Radio.Button>
+                  </Col>
+                  <Col span={12}>
+                    <Radio.Button value="b">Freelancer</Radio.Button>
+                  </Col>
+                </Row>
+              </Radio.Group>
+            </Form.Item>
+            <Form.Item label="Contry of Residence">
+                <Cascader options={residences} />
+            </Form.Item>
+            <Form.Item label="Phone Number">
+                <Input addonBefore={( <Select style={{ width: 70 }}>
+                <Option style={{ color: '#2EC3AB' }} value="86">+86</Option>
+                <Option style={{ color: '#2EC3AB' }} value="87">+87</Option>
+                <Option style={{ color: '#2EC3AB' }} value="4">+4</Option>
+                <Option style={{ color: '#2EC3AB' }} value="44">+44</Option>
+            </Select>)} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item {...tailFormItemLayout}>
+                <Checkbox>
+                I agree with<a style={{color: '#2EC3AB'}} href=""> VBR Terms of Service</a>
+                </Checkbox>
+            </Form.Item>
+        </Form>
+       
+        </Col>
+    </Row>
+    </div>
+    )}}
+    
+    function mapStateToProps(state) {
+    
     return {
-      user: state.user
+      register: state.register_user,
+      myuser: state.user
+     };
+}
+    
+    
+    RegisterContainer.propTypes = {
     }
-  }
-  
-  Register.propTypes = {
-    // user: PropTypes.instanceOf(Map).isRequired,
-  }
-  
-  export default connect(mapStateToProps, {
-  })(Register)
+    
+    export default connect(mapStateToProps, {
+    })(RegisterContainer)
+    

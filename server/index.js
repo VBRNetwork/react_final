@@ -30,6 +30,12 @@ app.prepare().then(() => {
     const queryParams = { category: req.params.category, subcategory: req.params.subcategory }
     app.render(req, res, actualPage, queryParams)
   })
+
+  server.get('/profile/:username/', (req, res) => {
+    const actualPage = '/profile'
+    const queryParams = { username: req.params.username}
+    app.render(req, res, actualPage, queryParams)
+  })
  
   server.get('*', (req, res) => {
     return handler(req, res)

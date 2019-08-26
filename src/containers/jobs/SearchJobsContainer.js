@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox } from 'antd'
-
+import Link from 'next/link'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
@@ -10,20 +10,24 @@ const { Header, Content, Footer, Sider } = Layout
 const listData = []
  {
   listData.push({
-    href: '/',
+    href: '/profile',
     title: `Python Programmer Needed`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
       'Pyhon developer for e-commerce app',
     content:
-      'We need a senior python developer to help us with an e-commerce app. All details will be shared upon chat discussion.'
+      'We need a senior python developer to help us with an e-commerce app. All details will be shared upon chat discussion.',
+      user: {
+        username :'UserTest',
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      }
   })
 }
 
 const listData1 = []
  {
   listData1.push({
-    href: '/',
+    href: '/profile',
     title: `Looking for a Web Designer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
@@ -36,7 +40,7 @@ const listData1 = []
 const listData2 = []
  {
   listData2.push({
-    href: '/',
+    href: '/profile',
     title: `SEO Specialist Needed`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
@@ -57,7 +61,6 @@ class SearchJobsContainer extends Component {
 
   constructor(props){
     super(props)
-
     this.onChange = this.onChange.bind(this)
   }
 
@@ -190,7 +193,7 @@ class SearchJobsContainer extends Component {
                   >
                     <List.Item.Meta
                       avatar={<Avatar src={item.avatar} />}
-                      title={<a href={item.href}>{item.title}</a>}
+                      title={<Link as={''+item.href+'/UserTest'} href={item.href+'/?username=UserTest'}>{item.title}</Link>}
                       description={item.description}
                     />
                     {item.content}
@@ -202,7 +205,6 @@ class SearchJobsContainer extends Component {
                 itemLayout='vertical'
                 size='large'
                 dataSource={listData1}
-                
                 renderItem={item => (
                   <List.Item
                     key={item.title}
@@ -218,7 +220,7 @@ class SearchJobsContainer extends Component {
                         src='../../static/images/search_dsg.png'
                       />
                     }
-                  >
+                    >
                     <List.Item.Meta
                       avatar={<Avatar src={item.avatar} />}
                       title={<a href={item.href}>{item.title}</a>}
