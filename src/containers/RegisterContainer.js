@@ -6,55 +6,18 @@ import { formValueSelector } from 'redux-form';
 import {
     Form,
     Input,
-    Tooltip,
     Icon,
-    Cascader,
     Select,
     Row,
     Col,
     Checkbox,
     Button,
-    AutoComplete,
-    Radio 
+    Card,
   } from 'antd';
   import Link from 'next/link'
+  import {Helmet} from 'react-helmet'
 import { throwStatement } from '@babel/types';
   const { Option } = Select;
-  const AutoCompleteOption = AutoComplete.Option;
-  const residences = [
-    {
-      value: 'Europe',
-      label: 'Europe',
-      children: [
-        {
-          value: 'Romania',
-          label: 'Romania',
-          children: [
-            {
-              value: 'Bucharest',
-              label: 'Bucharest',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      value: 'USA',
-      label: 'USA',
-      children: [
-        {
-          value: 'New York',
-          label: 'New York',
-          children: [
-            {
-              value: 'New York City',
-              label: 'New York City',
-            },
-          ],
-        },
-      ],
-    },
-  ];
   
 const selector = formValueSelector('formName');
 
@@ -156,53 +119,55 @@ class RegisterContainer extends Component {
 
     
     return (
-        <div className='container' style={{margin: 20}}>
-        <Row>
-            <Col  xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:9,offset:7}}>
-                <div className='text-center'><strong><h3>Register User</h3></strong></div>
-        <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-             <Form.Item label="E-mail">
-                <Input />
-            </Form.Item>
-            <Form.Item label="Password" hasFeedback>
-                <Input.Password />
-            </Form.Item>
-            <Form.Item label="Confirm Password" hasFeedback>
-                <Input.Password onBlur={this.handleConfirmBlur} />
-            </Form.Item>
-            <Form.Item label="User Type">
-              <Radio.Group onSubmit={this.handleSubmit} defaultValue="a" size="small">
-                <Row>
-                  <Col span={12}>
-                    <Radio.Button checked={this.state.userType === 'customer'} onChange={this.handleChange} value="a">Customer </Radio.Button>
-                  </Col>
-                  <Col span={12}>
-                    <Radio.Button value="b">Freelancer</Radio.Button>
-                  </Col>
-                </Row>
-              </Radio.Group>
-            </Form.Item>
-            <Form.Item label="Contry of Residence">
-                <Cascader options={residences} />
-            </Form.Item>
-            <Form.Item label="Phone Number">
-                <Input addonBefore={( <Select style={{ width: 70 }}>
-                <Option style={{ color: '#2EC3AB' }} value="86">+86</Option>
-                <Option style={{ color: '#2EC3AB' }} value="87">+87</Option>
-                <Option style={{ color: '#2EC3AB' }} value="4">+4</Option>
-                <Option style={{ color: '#2EC3AB' }} value="44">+44</Option>
-            </Select>)} style={{ width: '100%' }} />
-            </Form.Item>
-            <Form.Item {...tailFormItemLayout}>
-                <Checkbox>
-                I agree with<a style={{color: '#2EC3AB'}} href=""> VBR Terms of Service</a>
-                </Checkbox>
-            </Form.Item>
-        </Form>
-       
-        </Col>
-    </Row>
-    </div>
+        <article>
+        <Helmet>
+            <title>Login Page</title>
+            <meta
+                name='description'
+                content='Login application page'
+            />
+        </Helmet>
+        <div className='container'>
+            <Row>
+                <Col  xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:8,offset:8}} >
+                    <div >
+                        <Card className='p-5' style={{margin:'20px'}}>
+                            <strong><h2>User Registration</h2></strong>
+                            <Form onSubmit={this.handleSubmit} className='login-form'>
+                                <Form.Item>
+                                    <Input
+                                        onChange={this.handleChange}
+                                        value={this.state.username}
+                                        prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                        placeholder='Email'
+                                    />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Input
+                                        prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                        type='password'
+                                        value={this.state.password}
+                                        placeholder='Password'
+                                        onChange={this.handleChangePassword}
+                                    />
+                                </Form.Item>
+                                <Form.Item>
+                                    <Button style={{background: 'rgba(0, 177, 153, 0.74)', borderColor: 'rgba(0, 177, 153, 0.74)'}} type='primary' htmlType='submit' className='login-form-button'>
+                                        Register
+                                    </Button>
+                                </Form.Item>
+
+                                <Form.Item>
+                                    <Checkbox>I agree with VBR Terms & Conditions</Checkbox>
+                                    <br/>
+                                </Form.Item>
+                            </Form>
+                        </Card>
+                    </div>
+                </Col>
+            </Row>
+        </div>
+    </article>
     )}}
     
     function mapStateToProps(state) {

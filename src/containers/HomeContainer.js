@@ -8,9 +8,6 @@ const Search = Input.Search;
 const {Content} = Layout;
 
 class HomeContainer extends Component {
-    static async getInitialProps({store, query}) {
-    }
-
     componentDidMount() {
     }
 

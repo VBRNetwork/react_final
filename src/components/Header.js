@@ -141,12 +141,14 @@ class Header extends Component {
                     </Row>
 
                 </Content>
-                <div>
-                    <Menu selectedKeys={[this.state.current]} mode='horizontal'
-                        style={{boxShadow: '1px 4px 12px 1px #929292'}}>
-                        {menuItems}
-                    </Menu>
-                </div>
+                <Row>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <Menu selectedKeys={[this.state.current]} mode='horizontal'
+                            style={{boxShadow: '1px 4px 12px 1px #929292'}}>
+                            {menuItems}
+                        </Menu>
+                    </Col>
+                </Row>
             </div>
         )
     }
