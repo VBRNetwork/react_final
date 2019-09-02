@@ -82,7 +82,6 @@
     "now-start": "yarn serve",
     "lint:fix": "standard --fix --verbose | snazzy"
   },
-  "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": [
       "yarn lint:fix",
