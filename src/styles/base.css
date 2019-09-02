@@ -170,3 +170,5 @@ html,
 }
 
 .text-center {text-align: center}
+
+.sub-menu {list-style: none; min-width: '500px'}

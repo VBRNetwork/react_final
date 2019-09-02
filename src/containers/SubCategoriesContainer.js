@@ -5,6 +5,7 @@ const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
 import {Helmet} from "react-helmet";
+import '../styles/base.css'
 
 class SubCategoriesContainer extends Component {
 
@@ -67,7 +68,7 @@ class SubCategoriesContainer extends Component {
               <Row>
                 <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:24,offset:0}}>
                   <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>{currentCategoryName}</h3></div>
-                  <ul >
+                  <ul className='sub-menu'>
                     {menuItems}
                   </ul>
                 </Col>

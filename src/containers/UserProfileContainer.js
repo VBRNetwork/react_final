@@ -4,7 +4,10 @@ import { connect } from 'react-redux'
 import { Menu, Icon, Button, Avatar, Progress, Row, Card, Switch, Layout, List, Col, Statistic, Timeline, Dropdown, Rate } from 'antd'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
-const profileList = [ {label: 'Stefan Vanea', value: 'name', icon: 'file-protect'}, {label: 'Edit Profile', value: 'editprofile', icon: 'file-protect'} ];
+const profileList = [ 
+  {label: 'Stefan Vanea', value: 'name', icon: 'file-protect'}, 
+  {label: 'Edit Profile', value: 'editprofile', icon: 'file-protect'} 
+];
 
 
 
