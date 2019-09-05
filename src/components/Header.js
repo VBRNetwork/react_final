@@ -11,7 +11,7 @@ import Router from 'next/router'
 const {Content} = Layout
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
-
+import ReactGA from 'react-ga';
 
 class Header extends Component {
 
@@ -22,6 +22,7 @@ class Header extends Component {
             isLogged: false
         };
         this.clickLogout = this.clickLogout.bind(this);
+        ReactGA.initialize('UA-147139648-1');
     }
 
     componentDidMount() {
