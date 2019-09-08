@@ -9,7 +9,7 @@ import {
     Col,
     Checkbox,
     Button,
-    Card,
+    Card, Alert,
 } from 'antd';
 import PropTypes from "prop-types";
 import {registerAccount} from '../actions/user'
@@ -25,7 +25,8 @@ class RegisterContainer extends Component {
             confirm_password: '',
             first_name: '',
             last_name: '',
-            tos:false,
+            tos: false,
+            loggingIn: false, errorMessage: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -80,17 +81,29 @@ class RegisterContainer extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        let {registerAccount} = this.props
-        registerAccount(this.state).then((e) => {
-            if(e.token.length > 2){
-                Router.push('/dashboard')
-            }
-        });
+        let {registerAccount} = this.props;
+        if (!this.state.loggingIn) {
+            this.setState({loggingIn: true, errorMessage: ''});
+            registerAccount(this.state).then((res) => {
+                if (e.token.length > 2) {
+                    Router.push('/dashboard')
+                }
+            }).catch((error) => {
+                let errorText = '';
+                Object.keys(error.response.data).map(function(e,i){
+                    errorText += error.response.data[e][0]+'\n'
+                });
+                this.setState({
+                    errorMessage: errorText,
+                    loggingIn: false
+                })
+            })
+        }
     };
 
     tosAccepted() {
         this.setState({
-            tos:!this.state.tos
+            tos: !this.state.tos
         })
     }
 
@@ -154,10 +167,27 @@ class RegisterContainer extends Component {
                                             />
                                         </Form.Item>
 
+                                        {this.state.errorMessage.length > 0 &&
+                                        <Row>
+                                            <Col>
+                                                <ul>
+                                                    <Alert
+                                                        showIcon
+                                                        message={this.state.errorMessage}
+                                                        type="error"
+                                                    />
+                                                </ul>
+                                            </Col>
+                                        </Row>
+                                        }
+
                                         <Form.Item>
-                                            <Checkbox checked={this.state.tos} onChange={this.tosAccepted}>I agree with VBR Platform Terms & Conditions</Checkbox>
+                                            <Checkbox checked={this.state.tos} onChange={this.tosAccepted}>I agree with
+                                                VBR Platform Terms & Conditions</Checkbox>
                                             <br/>
                                         </Form.Item>
+
+
 
                                         <Form.Item>
                                             <Button style={{
@@ -169,6 +199,8 @@ class RegisterContainer extends Component {
                                                 Create account
                                             </Button>
                                         </Form.Item>
+
+
 
                                     </Form>
                                 </Card>

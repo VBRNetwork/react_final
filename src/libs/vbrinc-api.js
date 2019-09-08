@@ -7,7 +7,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 
 const instance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Content-Type':'multipart/form-data'}
+    headers: {'Access-Control-Allow-Origin': '*','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 });
 
 let token = '';
@@ -27,8 +27,11 @@ const secureInstance = axios.create({
 
 const vbrincapi = {
     getToken({username, password}) {
-        return instance.post(apiUrl + 'accounts/auth/login/', {username, password}).then(res => {
-            return humps.camelizeKeys(res.data)
+        let bodyFormData = new FormData();
+        bodyFormData.set('username', username);
+        bodyFormData.set('password', password);
+        return instance.post(apiUrl + 'accounts/auth/login/', bodyFormData).then(res => {
+            return res;
         })
     },
     logout() {
@@ -42,7 +45,6 @@ const vbrincapi = {
         })
     },
     registerAccount(data){
-        console.log(data);
         let bodyFormData = new FormData();
         bodyFormData.set('username', data.email);
         bodyFormData.set('email', data.email);

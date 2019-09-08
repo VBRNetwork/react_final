@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {getAccessToken} from 'actions/user'
 import {Helmet} from 'react-helmet'
 import Router from 'next/router'
-import {Form, Icon, Input, Button, Checkbox, Card,Col,Row} from 'antd'
+import {Form, Icon, Input, Button, Checkbox, Card, Col, Row, Alert} from 'antd'
 
 class Login extends Component {
     constructor(props) {
@@ -37,12 +37,21 @@ class Login extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault()
+        event.preventDefault();
         let {getAccessToken} = this.props
         if (!this.state.loggingIn) {
             this.setState({loggingIn: true, errorMessage: ''})
             getAccessToken({username: this.state.username, password: this.state.password}).then((res) => {
                 this.redirectToTarget()
+            }).catch((error) => {
+                let errorText = '';
+                Object.keys(error.response.data).map(function(e,i){
+                    errorText += error.response.data[e][0] + '\n'
+                });
+                this.setState({
+                    errorMessage: errorText,
+                    loggingIn: false
+                })
             })
         }
     }
@@ -69,9 +78,9 @@ class Login extends Component {
                 </Helmet>
                 <div className='container'>
                     <Row>
-                        <Col  xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:8,offset:8}} >
-                            <div >
-                                <Card className='p-5' style={{margin:'20px'}}>
+                        <Col xs={{span: 22, offset: 1}} sm={4} md={6} lg={8} xl={{span: 8, offset: 8}}>
+                            <div>
+                                <Card className='p-5' style={{margin: '20px'}}>
                                     <h2>Login Page</h2>
                                     <Form onSubmit={this.handleSubmit} className='login-form'>
                                         <Form.Item>
@@ -105,7 +114,19 @@ class Login extends Component {
                                             </a>
                                             or <a href='/register'>register now!</a>
                                         </Form.Item>
+
                                     </Form>
+                                    {this.state.errorMessage.length > 0 &&
+                                    <Row>
+                                        <Col>
+                                            <Alert
+                                                showIcon
+                                                message={this.state.errorMessage}
+                                                type="error"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    }
                                 </Card>
                             </div>
                         </Col>
