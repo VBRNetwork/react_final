@@ -30,6 +30,7 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-final-form": "^6.3.0",
+    "react-ga": "^2.6.0",
     "react-google-font-loader": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-moment": "^0.9.2",
@@ -83,6 +84,8 @@
     "lint": "standard --verbose | snazzy",
     "now-start": "yarn serve",
     "lint:fix": "standard --fix --verbose | snazzy"
+  },
+  "lint-staged": {
   },
   "standard": {
     "parser": "babel-eslint",
