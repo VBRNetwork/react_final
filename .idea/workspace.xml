@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="143c37e4-33a1-4524-b29b-7ad48b261e3c" name="Default Changelist" comment="">
+=======
+    <list default="true" id="8cafcd2f-5671-4e43-8e77-5404135a1784" name="Default Changelist" comment="">
+>>>>>>> 79ab5e6af6e58cd01921546f067437be3aa094a5
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,8 +249,15 @@
       <workItem from="1564500739008" duration="1911000" />
       <workItem from="1567351607335" duration="1453000" />
       <workItem from="1567353461393" duration="1210000" />
+<<<<<<< HEAD
       <workItem from="1567442248400" duration="8581000" />
       <workItem from="1567948315695" duration="7825000" />
+=======
+      <workItem from="1567442248400" duration="8994000" />
+      <workItem from="1567542177102" duration="28000" />
+      <workItem from="1567542244091" duration="1677000" />
+      <workItem from="1567689430436" duration="8799000" />
+>>>>>>> 79ab5e6af6e58cd01921546f067437be3aa094a5
     </task>
     <task id="LOCAL-00001" summary="change https url">
       <created>1564501740067</created>
@@ -271,6 +280,17 @@
       <option name="project" value="LOCAL" />
       <updated>1567957354479</updated>
     </task>
+<<<<<<< HEAD
+=======
+    <task id="LOCAL-00003" summary="change https url">
+      <created>1567700771977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567700771977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+>>>>>>> 79ab5e6af6e58cd01921546f067437be3aa094a5
     <servers />
   </component>
   <component name="TimeTrackingManager">

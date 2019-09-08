@@ -85,8 +85,7 @@
     "now-start": "yarn serve",
     "lint:fix": "standard --fix --verbose | snazzy"
   },
-  "lint-staged": {
-  },
+  "lint-staged": {},
   "standard": {
     "parser": "babel-eslint",
     "env": [
