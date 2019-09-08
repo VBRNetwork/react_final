@@ -32,12 +32,11 @@ export default function withAuth(AuthComponent) {
         }
 
         componentDidMount() {
-            if (this.props.user.token.length > 2) {
+            if (this.props.user.token !== 0) {
                 Router.push('/dashboard')
             } else {
                 this.setState({isLoading: false})
             }
-
         }
 
         render() {
