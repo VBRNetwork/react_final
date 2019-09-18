@@ -25,8 +25,10 @@ class HowItWorksContainer extends Component {
               </Breadcrumb>
               <Row>
                   <Col>
+                    <Row>
+                      <Col span={18}>
                       <div style={{padding: '1%'}}><h2 className="about"><strong>VBR Network - How It Works</strong></h2><hr /></div>
-                    <div className="paragraphs" style={{textAlign: 'center', color: 'rgba(0, 37, 70, 0.74)'}}>
+                    <div className="paragraphs" style={{margin: '3%', color: 'rgba(0, 37, 70, 0.74)'}}>
                       <strong>
                         <h4>
                           <p>
@@ -36,9 +38,14 @@ class HowItWorksContainer extends Component {
 
                             based on Blockchain Technology.
 
+                          </p>
+                          <p>
+
                             We bring a new fresh perspective,
 
                             where the platform is owned by the community,
+
+
 
                             chages voted by the community,
                           </p>
@@ -47,10 +54,15 @@ class HowItWorksContainer extends Component {
                             Smart Contracts for transaction and mediation purposes,
 
                             and many other new featuers.
+                          </p>
+                          <p>
 
                             Besides transparency, and a high level of security,
 
                             on VBR Marketplace the payments are going to be processed within seconds.
+
+                          </p>
+                          <p>
 
                             By preventing payment delays, and bringing this fresh concept,
 
@@ -59,6 +71,13 @@ class HowItWorksContainer extends Component {
                         </h4>
                       </strong>
                     </div>
+                        </Col>
+                      <Col span={6} >
+                        <div >
+                          <img  style={{marginTop: '20%'}} src={'../../static/images/homepage_man.png'} />
+                        </div>
+                      </Col>
+                      </Row>
                       <Card 
                         size="small"
                         bordered={false}
