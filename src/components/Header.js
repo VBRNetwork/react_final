@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {Menu, Icon, Row, Col, Layout, Breadcrumb, List} from 'antd'
+import {Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown} from 'antd'
 import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
@@ -9,11 +9,16 @@ import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
 import Router from 'next/router'
 const {Content} = Layout
+const {SubMenu} = Menu
+
+
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
+import ReactGA from 'react-ga';
 
 
 class Header extends Component {
+
 
     constructor(props) {
         super(props)
@@ -22,6 +27,8 @@ class Header extends Component {
             isLogged: false
         };
         this.clickLogout = this.clickLogout.bind(this);
+        ReactGA.initialize('UA-147139648-1');
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }
 
     componentDidMount() {
@@ -39,14 +46,12 @@ class Header extends Component {
         });
     }
 
-    render() {
 
+    render() {
         let token = false;
         if (this.props.user.token) {
             token = true
         }
-
-
         let loginButton = (
             <Menu.Item key='alipay'>
                 <Link href='/login'>
@@ -59,13 +64,32 @@ class Header extends Component {
         if(this.props.settings.main_menu && this.props.settings.main_menu.mainMenu){
             let main_menu = this.props.settings.main_menu.mainMenu
             menuItems = Object.keys(main_menu).map((category,index) => {
-                return (<Menu.Item key={'menu_' + index}>
-                    <Link as={'/' + main_menu[category].url} href={'/categories/?category=' + (main_menu[category].url).replace('categories/','')}>
-                        <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {main_menu[category].name}</a>
-                    </Link>
-                </Menu.Item>)
-            })
 
+                let subcategoriesList = [];
+                let subcategories = main_menu[category].subcategories;
+                subcategories.map(function(subcategory,index){
+                    subcategoriesList.push(
+                        <Menu.Item key={'menu_' + index}>
+                            <Link as={'/' + subcategory.url} href={'/categories/?category=' + (subcategory.url).replace('categories/','')}>
+                                <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {subcategory.title}</a>
+                            </Link>
+                        </Menu.Item>
+                    )
+                })
+
+                return (
+                    <SubMenu
+                        key={'menu2_' + index}
+                        title={
+                            <span className="submenu-title-wrapper">
+                              <Icon type={main_menu[category].icon} />
+                                {main_menu[category].name}
+                            </span>
+                        } >
+                        {subcategoriesList}
+                    </SubMenu>
+              )
+            })
         }
 
 

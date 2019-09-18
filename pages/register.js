@@ -1,2 +1,3 @@
 import RegisterContainer from 'containers/RegisterContainer'
-export default RegisterContainer
+import withoutAuth from  '../src/libs/withoutAuth'
+export default withoutAuth(RegisterContainer)

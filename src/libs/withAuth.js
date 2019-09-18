@@ -33,8 +33,10 @@ export default function withAuth (AuthComponent) {
     componentDidMount () {
       if (this.props.user.token === 0) {
         Router.push('/')
+      }else{
+          this.setState({ isLoading: false })
       }
-      this.setState({ isLoading: false })
+
     }
 
     render () {
