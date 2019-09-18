@@ -171,4 +171,7 @@ html,
 
 .text-center {text-align: center}
 
-.sub-menu {list-style: none; min-width: '500px'}
+.sub-menu {list-style: none}
+
+.ant-card-meta-title{text-overflow: unset!important; white-space: normal!important; padding: '1px'!important}
+  

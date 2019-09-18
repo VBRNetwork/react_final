@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import {Carousel, Layout, Row, Col, Button, Card, Input} from 'antd';
+import {Carousel, Layout, Row, Col, Button, Card, Input, Breadcrumb} from 'antd';
 const Search = Input.Search;
 const {Content} = Layout;
 
@@ -18,6 +18,11 @@ class HomeContainer extends Component {
     render() {
         return (
             <Fragment>
+                <Breadcrumb style={{margin: '1%'}}>
+                    <Breadcrumb.Item>
+                        <a href='/home'>Home</a>
+                    </Breadcrumb.Item>
+                </Breadcrumb>
                 <div style={{position: 'relative'}}>
                     <div className='container'   style={{
                             background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',

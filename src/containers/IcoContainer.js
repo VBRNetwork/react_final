@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
 import Moment from 'react-moment';
-import {Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic} from 'antd';
+import {Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic, Breadcrumb} from 'antd';
 const { Content } = Layout
 const { Meta } = Card;
 const { TextArea } = Input;
@@ -19,6 +19,14 @@ class IcoContainer extends Component {
     render() {
         return (
                     <Layout>
+                        <Breadcrumb style={{margin: '1%'}}>
+                            <Breadcrumb.Item>
+                                <a href='/home'>Home</a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item>
+                                <a href='/ico'>Initial Coin Offering</a>
+                            </Breadcrumb.Item>
+                         </Breadcrumb>
                         <Row>
                             <Col span={8}>
                                 <Card    title="VBR Network Concept" 

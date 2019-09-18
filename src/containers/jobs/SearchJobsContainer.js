@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox } from 'antd'
+import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox, Breadcrumb } from 'antd'
 import Link from 'next/link'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
@@ -93,6 +93,17 @@ class SearchJobsContainer extends Component {
               </Col>
               </Row>
             </Card>
+            <Breadcrumb>
+              <Breadcrumb.Item>
+                <a href='/home'>Home</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href='/categories'>Categories</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href="">Search Jobs</a>
+              </Breadcrumb.Item>
+            </Breadcrumb>
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
             <Sider width={200} style={{ background: '#fff' }}>
             <div><strong>Filters</strong></div>

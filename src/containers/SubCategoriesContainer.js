@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import {  Row, Card, List, Col , Layout} from 'antd'
+import {  Row, Card, List, Col , Layout, Breadcrumb} from 'antd'
 const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
@@ -63,11 +63,22 @@ class SubCategoriesContainer extends Component {
             <title>VBR - {currentCategoryName}</title>
         </Helmet>
         <div>
+        <Breadcrumb style={{margin: '1%'}}>
+              <Breadcrumb.Item>
+                <a href='/home'>Home</a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href='/categories'>Categories</a>
+              </Breadcrumb.Item>
+            </Breadcrumb>
           <Layout  >
             <Sider style={{ backgroundColor: '#FFF', padding: '1%' }}>
               <Row>
                 <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:24,offset:0}}>
-                  <div style={{ backgroundColor: '#FFF', marginLeft: '5%' }}><h3 style={{ margin: '16px 0' }}>{currentCategoryName}</h3></div>
+                  <div className='sider-menu' style={{ backgroundColor: '#FFF', marginLeft: '5%' }}>
+                    
+                    <strong><h3 style={{ margin: '16px 0'}}>{currentCategoryName}</h3></strong>
+                  </div>
                   <ul className='sub-menu'>
                     {menuItems}
                   </ul>
