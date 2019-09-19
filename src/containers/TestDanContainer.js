@@ -17,30 +17,31 @@ class TestDanContainer extends Component {
       <div>
         <Row>
           <Col>
+          <Button type="default">1</Button>
+          <Button type="default">2</Button>
+          <Button type="default">3</Button>
             <Card
               size="small"
-              extra={<Button type='primary' style={{background: 'rgba(0, 37, 70, 0.74)'}}>Dan</Button>}
-              bordered={false}
-              cover={<img src='../../static/images/picture_5.png' />}
+              extra={<Button type='primary' style={{background: '#1890ff'}}>Dan</Button>}
+              bordered={true}
             >
               <Meta
                 title={<div ><h3 className="about"><strong>Test</strong></h3><hr /></div>}
                 description={<div className="paragraphs" ><strong><p>This is a test page</p></strong></div>}
               />
             </Card>
-    
           </Col>
         </Row>
       </div>
     )
   }
 }
-
 function mapStateToProps (state) {
   return {
 
   }
 }
+
 
 TestDanContainer.propTypes = {
 }
