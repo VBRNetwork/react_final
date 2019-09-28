@@ -1,0 +1,2 @@
+import RecoveryAccountContainer from 'containers/RecoveryAccountContainer'
+export default RecoveryAccountContainer

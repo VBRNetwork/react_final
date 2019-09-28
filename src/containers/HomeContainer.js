@@ -261,7 +261,7 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-4.png'}
                                                 />
                                                 <br/>
-                                                <strong>PR</strong>
+                                                <strong>More Coming Soon</strong>
                                             </div>
                                         </div>
                                     </Col>
@@ -314,7 +314,6 @@ class HomeContainer extends Component {
                                                 be fast,
                                                 but depend on their respective processors from the chain.
                                             </p>
-
 
                                         </Card>
                                     </Col>
