@@ -97,16 +97,15 @@ class Header extends Component {
             <div>
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>VBR</title>
+                    <title>VBR Network Marketplace</title>
                 </Helmet>
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
-                        <Col xs={8} sm={4} md={6} lg={8} xl={10}> 
+                        <Col xs={8} sm={4} md={6} lg={8} xl={10}>
                             <Link href='/'>
                                 <img src={'/static/images/vbrLogo.png'}
                                         style={{width: '80px', margin: '8px'}}
                                     />
-                                
                             </Link>
                         </Col>
                         <Col  xs={16} sm={4} md={6} lg={8} xl={12}>
@@ -134,7 +133,6 @@ class Header extends Component {
                                             <Icon style={{fontSize: 17}} type='logout'/> Logout
                                         </div>
                                     </Menu.Item>}
-
                                     {token === false && loginButton}
                                 </Menu>
                         </Col>
@@ -166,11 +164,13 @@ class Header extends Component {
 
                 </Content>
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <Menu selectedKeys={[this.state.current]} mode='horizontal'
-                            style={{boxShadow: '1px 4px 12px 1px #929292'}}>
-                            {menuItems}
-                        </Menu>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={{span:18,offset:3}}>
+                        <div style={{margin:'0 auto'}}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal'
+                                  style={{boxShadow:'rgb(185, 185, 185) 1px 2px 3px 1px'}}>
+                                {menuItems}
+                            </Menu>
+                        </div>
                     </Col>
                 </Row>
             </div>

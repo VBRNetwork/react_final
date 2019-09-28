@@ -1,36 +1,39 @@
-import React, {Component, Fragment} from 'react'
-import {connect} from 'react-redux'
+import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import {Carousel, Layout, Row, Col, Button, Card, Input, Breadcrumb} from 'antd';
-const Search = Input.Search;
-const {Content} = Layout;
+import { Carousel, Layout, Row, Col, Button, Card, Input, Breadcrumb } from 'antd'
+
+const Search = Input.Search
+const { Content } = Layout
 
 class HomeContainer extends Component {
-    componentDidMount() {
+    componentDidMount () {
     }
 
-    onChange(a, b, c) {
-        console.log(a, b, c);
+    onChange (a, b, c) {
+        console.log(a, b, c)
     }
 
-    render() {
+    render () {
         return (
             <Fragment>
-                <Breadcrumb style={{margin: '1%'}}>
-                    <Breadcrumb.Item>
-                        <a href='/home'>Home</a>
-                    </Breadcrumb.Item>
-                </Breadcrumb>
-                <div style={{position: 'relative'}}>
-                    <div className='container'   style={{
-                            background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
-                        }}>
+                <Row>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18,offset:3}}>
+                        <Breadcrumb style={{ margin: '5px' }}>
+                            <Breadcrumb.Item>
+                                <a href='/home'>Home</a>
+                            </Breadcrumb.Item>
+                        </Breadcrumb>
+                    </Col>
+                </Row>
+                <div style={{ position: 'relative' }}>
+                    <div className='container' style={{
+                        background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))',
+                    }}>
                         <Particles
-                            style={{
-                                'position':'absolute'
-                            }}
+                            style={{ 'position': 'absolute' }}
                             params={{
                                 particles: {
                                     number: {
@@ -39,9 +42,8 @@ class HomeContainer extends Component {
                                     size: {
                                         value: 3
                                     },
-                                    color: {value: '#FFF'}
+                                    color: { value: '#FFF' }
                                 },
-
                                 interactivity: {
                                     events: {
                                         onhover: {
@@ -53,64 +55,62 @@ class HomeContainer extends Component {
                             }}
                         />
 
-                        <div style={{padding: '50px'}}>
+                        <div style={{ padding: '50px' }}>
                             <Row type="flex" justify="space-around">
+                                <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18}}>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={10}>
+                                        <div className='intro-text'>
+                                            <h2 className='slogan'>
+                                                Disrupting the Freelancing Marketplace with the power of
+                                                blockchain
+                                            </h2>
+                                            <p className="subtext-css">
+                                                No more Hidden Fees, Scam Attempts, Poor Customer Support,
+                                                Delayed Payments or Unfair Mediation!
+                                            </p>
+                                            <Search
+                                                placeholder='Search for Freelancers'
+                                                className='searchpost form-control ant-input-sm'
+                                                enterButton={<Button
+                                                    className='ant-btn-sm'
+                                                    type='primary'
+                                                    style={{
+                                                        backgroundColor: '#2EC3AB',
+                                                        borderColor: '#2EC3AB'
+                                                    }}>
+                                                    Search
+                                                </Button>}
+                                                onSearch={value => console.log(value)}
+                                            />
+                                        </div>
+                                    </Col>
 
-                                <Col xs={24} sm={4} md={6} lg={8} xl={10}>
-                                    <div className='intro-text'>
-                                        <h2 className='slogan'>
-                                            Disrupting the Freelancing Marketplace with the power of
-                                            blockchain
-                                        </h2>
-                                        <p className="subtext-css">
-                                            No more Hidden Fees, Scam Attempts, Poor Customer Support,
-                                            Delayed Payments or Unfair Mediation!
-                                        </p>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={14}>
+                                        <img src={'../../static/images/asset_6.png'}
+                                             style={{ height: '190px', marginLeft: '18%', marginTop: '60px' }}/>
 
-                                        <Search
+                                        <img src={'../../static/images/asset_9.png'}
+                                             style={{ marginLeft: '25%', height: '190px' }}/>
 
-                                            placeholder='Search for Freelancers'
-                                            className='searchpost form-control ant-input-sm'
-                                            enterButton={<Button
-                                                className='ant-btn-sm'
-                                                type='primary'
-                                                style={{
-                                                    backgroundColor: '#2EC3AB',
-                                                    borderColor: '#2EC3AB'
-                                                }}>
-                                            Search
-                                            </Button>}
-                                            onSearch={value => console.log(value)}
-                                        />
-                                    </div>
-                                </Col>
+                                        <div className="small-promo-text">
+                                            <div style={{ position: 'relative' }}>
+                                                <div
+                                                    style={{ display: 'inline' }}
+                                                    className='small-icon-button'>
 
-                                <Col xs={24} sm={4} md={6} lg={8} xl={14}>
-                                <img src={'../../static/images/asset_6.png'}
-                                            style={{height: '190px' ,marginLeft: '18%', marginTop: '60px'}}/>
-
-                                    <img src={'../../static/images/asset_9.png'}
-                                            style={{marginLeft: '25%',  height: '190px'}}/>
-
-                                    <div className="small-promo-text">
-
-                                        <div style={{position: 'relative'}}>
-                                            <div
-                                                style={{display: 'inline'}}
-                                                className='small-icon-button'
-                                            >
-                                                <FontAwesomeIcon
-                                                    icon='play-circle'
-                                                    size='2x'
-                                                    className='play-icon-color'
-                                                />
-                                            </div>
-                                            <div style={{display: 'inline'}}>
-                                                Meet The First Decentralized Environment for
-                                                Freelancers!
+                                                    <FontAwesomeIcon
+                                                        icon='play-circle'
+                                                        size='2x'
+                                                        className='play-icon-color'
+                                                    />
+                                                </div>
+                                                <div style={{ display: 'inline' }}>
+                                                    Meet The First Decentralized Environment for
+                                                    Freelancers!
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Col>
                                 </Col>
                             </Row>
                         </div>
@@ -118,64 +118,67 @@ class HomeContainer extends Component {
                 </div>
 
                 <Row>
-                    <Col span={24} >
-                        <Carousel autoplay  className="home-carousel">
-                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                    <Col span={24}>
+                        <Carousel autoplay className="home-carousel">
+                            <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
                                     <img
-                                            className='d-block h-200'
-                                            src={'../../static/images/freelancer-working2.png'}
-                                            alt='First slide'
-                                        />
+                                        className='d-block h-200'
+                                        src={'../../static/images/freelancer-working2.png'}
+                                        alt='First slide'
+                                    />
 
                                     <h2 className="h2-absolute"><span>Don't worry<span className="spacer">&nbsp;</span>
                                     <span className="spacer">&nbsp;</span>We got this</span></h2>
                                 </div>
                             </div>
 
-                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                            <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
                                     <img
                                         className='d-block'
                                         src={'../../static/images/picture_7.png'}
                                         alt='Second slide'
                                     />
-                                    <h2 className="h2-absolute"><span>We do know what we know best<span className="spacer">&nbsp;</span>
+                                    <h2 className="h2-absolute"><span>We do know what we know best<span
+                                        className="spacer">&nbsp;</span>
                                     </span></h2>
                                 </div>
                             </div>
 
-                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                            <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
                                     <img
                                         className='d-block h-200'
                                         src={'../../static/images/freelancer_old.png'}
                                         alt='Third slide'
                                     />
-                                    <h2 className="h2-absolute"><span>Ace your standards!<span className="spacer">&nbsp;</span>
+                                    <h2 className="h2-absolute"><span>Ace your standards!<span
+                                        className="spacer">&nbsp;</span>
                                     </span></h2>
                                 </div>
                             </div>
 
-                            <div style={{backgroundColor: 'black', width: '100%'}}>
+                            <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
                                     <img
                                         className='d-block h-200'
                                         src={'../../static/images/picture_3.png'}
                                         alt='Fourth slide'
                                     />
-                                    <h2 className="h2-absolute"><span>All in your good time<span className="spacer">&nbsp;</span>
+                                    <h2 className="h2-absolute"><span>All in your good time<span
+                                        className="spacer">&nbsp;</span>
                                     </span></h2>
                                 </div>
                             </div>
 
                         </Carousel>
-                        <Layout style={{margin: '10px'}}>
-                            <div style={{background: '#FFF',width:'80%',margin:'0 auto'}}>
+                        <Layout style={{ margin: '10px' }}>
+                            <div style={{ background: '#FFF', width: '80%', margin: '0 auto' }}>
                                 <Row>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
-                                        <div style={{ textAlign: 'center', cursor: 'pointer'}}>
-                                            <div >
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
+                                            <div>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -183,13 +186,13 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-1.png'}
                                                 />
                                                 <br/>
-                                                <div  style={{textAlign: 'center'}}><strong>Writing</strong></div>
+                                                <div style={{ textAlign: 'center' }}><strong>Writing</strong></div>
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}  >
-                                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                            <div  href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -197,13 +200,13 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-2.png'}
                                                 />
                                                 <br/>
-                                                <div style={{textAlign: 'center'}}><strong>Design</strong></div>
+                                                <div style={{ textAlign: 'center' }}><strong>Design</strong></div>
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}  >
-                                        <div style={{textAlign: 'center', cursor: 'pointer'}}>
-                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -211,15 +214,16 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-3.png'}
                                                 />
                                                 <br/>
-                                                <div style={{textAlign: 'center'}}><strong>Business Consultancy</strong></div>
+                                                <div style={{ textAlign: 'center' }}><strong>Business
+                                                    Consultancy</strong></div>
                                             </div>
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row gutter={8} align="middle" type="flex" justify="space-around">
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
-                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -227,13 +231,13 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-5.png'}
                                                 />
                                                 <br/>
-                                                <strong >Developers</strong>
+                                                <strong>Developers</strong>
                                             </div>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding:'20px'}}>
+                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -241,14 +245,15 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-06.png'}
                                                 />
                                                 <br/>
-                                                <div style={{textAlign: 'center'}}><strong>Marketing & SEO</strong></div>
+                                                <div style={{ textAlign: 'center' }}><strong>Marketing & SEO</strong>
+                                                </div>
                                             </div>
                                         </div>
                                     </Col>
 
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8} >
-                                        <div style={{ cursor: 'pointer', textAlign: 'center'}}>
-                                            <div href='#link' style={{cursor: 'pointer', padding:'20px'}}>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
                                                 <img
                                                     height='80'
                                                     width='80'
@@ -261,74 +266,80 @@ class HomeContainer extends Component {
                                         </div>
                                     </Col>
                                 </Row>
+                            </div>
+                            <div style={{ background: '#ECECEC', padding: '30px' }}>
+                                <div id='how-it-works'>
+                                    <h3 className='text-center how-it-work-title' style={{ textAlign: 'center' }}>How it
+                                        works?</h3>
                                 </div>
-                                <div style={{background: '#ECECEC', padding: '30px'}}>
-                                    <div id='how-it-works'>
-                                        <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
-                                            works?</h3>
-                                    </div>
-                                    <Row gutter={24} type="flex" justify="start">
-                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                            <Card  title="Online and Cold wallets" bordered={false}>
-                                                <p>
-                                                    Time is money, in that we don’t want to waste either.
-                                                </p>
-                                                <p>
-                                                    This is why we implemented a cold wallet system, to ensure the security of your transactions.
-                                                </p>
-                                                <p>
-                                                    Coupled with our Proof of Origin and state of the art encryption, we truly hope to provide only the best.
-                                                    <br />
-                                                </p>
-                                            </Card>
-                                        </Col>
-                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                            <Card  title="100% Transparency" bordered={false}>
-                                                <p>
-                                                    Customers will be able to trace the progress of their project instantly,
-                                                    due to our system that compares it to similar projects in our pre-existent library.
-                                                </p>
-                                                <p>
-                                                    Delays due to unprofessional work ethic are now a thing of the past. Just like your worries.
-                                                    Whatever it is, you're covered.
-                                                </p>
-                                            </Card>
-                                        </Col>
-                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                            <Card  title="Instant payments" bordered={false}>
-                                                <p>
-                                                    All payments with our token will be processed instantly,
-                                                    and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
-                                                </p>
-                                                <p>
-                                                    Payments in fiat or any other payment method (i.e. bitcoin) will still be fast,
-                                                    but depend on their respective processors from the chain.
-                                                </p>
+                                <Row gutter={24} type="flex" justify="start">
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                        <Card title="Online and Cold wallets" bordered={false}>
+                                            <p>
+                                                Time is money, in that we don’t want to waste either.
+                                            </p>
+                                            <p>
+                                                This is why we implemented a cold wallet system, to ensure the security
+                                                of your transactions.
+                                            </p>
+                                            <p>
+                                                Coupled with our Proof of Origin and state of the art encryption, we
+                                                truly hope to provide only the best.
+                                                <br/>
+                                            </p>
+                                        </Card>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                        <Card title="100% Transparency" bordered={false}>
+                                            <p>
+                                                Customers will be able to trace the progress of their project instantly,
+                                                due to our system that compares it to similar projects in our
+                                                pre-existent library.
+                                            </p>
+                                            <p>
+                                                Delays due to unprofessional work ethic are now a thing of the past.
+                                                Just like your worries.
+                                                Whatever it is, you're covered.
+                                            </p>
+                                        </Card>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                        <Card title="Instant payments" bordered={false}>
+                                            <p>
+                                                All payments with our token will be processed instantly,
+                                                and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
+                                            </p>
+                                            <p>
+                                                Payments in fiat or any other payment method (i.e. bitcoin) will still
+                                                be fast,
+                                                but depend on their respective processors from the chain.
+                                            </p>
 
 
-                                            </Card>
-                                        </Col>
-                                        <Col xs={24} sm={4} md={6} lg={8} xl={6} >
-                                            <Card  title="Exchange Platform" bordered={false}>
-                                                <p>
-                                                    We want our users to feel as comfortable as possible.
-                                                </p>
-                                                <p>
-                                                    Therefore we are implementing an exchange market right on our platform.
-                                                </p>
-                                                <p>
-                                                    Our users can exchange crypto to fiat, crypto to crypto etc. with minimal fees, or no fees at all.
-                                                    <br />
-                                                </p>
+                                        </Card>
+                                    </Col>
+                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                        <Card title="Exchange Platform" bordered={false}>
+                                            <p>
+                                                We want our users to feel as comfortable as possible.
+                                            </p>
+                                            <p>
+                                                Therefore we are implementing an exchange market right on our platform.
+                                            </p>
+                                            <p>
+                                                Our users can exchange crypto to fiat, crypto to crypto etc. with
+                                                minimal fees, or no fees at all.
+                                                <br/>
+                                            </p>
 
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </Layout>
-                        </Col>
-                    </Row>
-                 <Layout>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Layout>
+                    </Col>
+                </Row>
+                <Layout>
 
                     <div className="home-section">
                         <Row type="flex" justify="space-around">
@@ -337,7 +348,7 @@ class HomeContainer extends Component {
 
                                     className='chair-tablet-image img-fluid'
                                     src={'../../static/images/asset_1.png'}
-                                    style={{ marginTop: '50%'}}
+                                    style={{ marginTop: '50%' }}
                                 />
                             </Col>
                             <Col xs={24} sm={4} md={6} lg={8} xl={8}>
@@ -346,7 +357,7 @@ class HomeContainer extends Component {
                                         <div className='footer-description-title'>
                                             What’s great about our platform?
                                         </div>
-                                        <hr />
+                                        <hr/>
                                         <p>
                                             We provide instant payments using <strong>VBR tokens</strong>, and within 48
                                             hours for fiat payouts.
@@ -371,24 +382,26 @@ class HomeContainer extends Component {
                                 </Card>
                             </Col>
                             <Col xs={24} sm={4} md={6} lg={8} xl={4}>
-                                <div style={{marginTop: '50px', textAlign: 'center'}}>
-                                    <Button style={{backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'}} className='vbr-button' type={'primary'}>
+                                <div style={{ marginTop: '50px', textAlign: 'center' }}>
+                                    <Button style={{
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'
+                                    }} className='vbr-button' type={'primary'}>
                                         Download Whitepaper
                                     </Button>
                                     <br/>
-                                    <span className='small' style={{fontSize: '11px'}}>
+                                    <span className='small' style={{ fontSize: '11px' }}>
                                         No more hidden fees or unfair mediation
                                     </span>
                                 </div>
                                 <img src={'../../static/images/asset_4.png'}
-                                        style={{ marginTop: '20%'}}
-                                 />
+                                     style={{ marginTop: '20%' }}
+                                />
 
                             </Col>
                         </Row>
                     </div>
-                 </Layout>
+                </Layout>
 
             </Fragment>
         )
@@ -399,7 +412,7 @@ class HomeContainer extends Component {
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
     return {}
 }
 
