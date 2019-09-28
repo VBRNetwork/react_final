@@ -256,7 +256,7 @@ class HomeContainer extends Component {
                                                     src={'../../static/images/img-4.png'}
                                                 />
                                                 <br/>
-                                                <strong>PR</strong>
+                                                <strong>More Coming Soon</strong>
                                             </div>
                                         </div>
                                     </Col>
@@ -264,8 +264,7 @@ class HomeContainer extends Component {
                                 </div>
                                 <div style={{background: '#ECECEC', padding: '30px'}}>
                                     <div id='how-it-works'>
-                                        <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>How it
-                                            works?</h3>
+                                        <h3 className='text-center how-it-work-title' style={{textAlign: 'center'}}>What we offer ?</h3>
                                     </div>
                                     <Row gutter={24} type="flex" justify="start">
                                         <Col xs={24} sm={4} md={6} lg={8} xl={6}>
