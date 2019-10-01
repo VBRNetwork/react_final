@@ -74,8 +74,8 @@ class SearchJobsContainer extends Component {
   
   render () {
     return (
-      <div>
-
+      <Row>
+          <Col xs={24} sm={24} md={24} lg={{span:19,offset:3}} xl={{span:19,offset:3}}>
         <Content style={{ padding: '0 50px' }}>
           <Card style={{background: 'rgba(0, 156, 107, 0.24)'}}>
             <Row>
@@ -204,7 +204,9 @@ class SearchJobsContainer extends Component {
                   >
                     <List.Item.Meta
                       avatar={<Avatar src={item.avatar} />}
-                      title={<Link as={''+item.href+'/UserTest'} href={item.href+'/?username=UserTest'}>{item.title}</Link>}
+                      title={<Link as={''+item.href+'/UserTest'} href={item.href+'/?username=UserTest'}>
+                          <a href="">{item.title}</a>
+                      </Link>}
                       description={item.description}
                     />
                     {item.content}
@@ -283,8 +285,8 @@ class SearchJobsContainer extends Component {
             </Content>
           </Layout>
         </Content>
-
-      </div>
+          </Col>
+      </Row>
     )
   }
 }

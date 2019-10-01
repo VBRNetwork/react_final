@@ -44,6 +44,7 @@
     width: 100%;
     background: #FFF;
     overflow: hidden;
+    display: initial !important;
   }
   
   .ant-carousel .slick-slide h3 {
