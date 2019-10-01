@@ -17,8 +17,7 @@ export function getAccessToken({username, password}) {
 
 function generateAuthCookies(res) {
     if(res.access){
-        document.cookie = 'token=' + res.access + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
-        document.cookie = 'refresh_token=' + res.refresh + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
+        document.cookie = 'token=' + res.token + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
     }
 }
 
@@ -41,7 +40,6 @@ export function logout() {
             localStorage.removeItem('id_token');
             localStorage.removeItem('profile');
             document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
-            document.cookie = 'refresh_token=""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             return res
         })
     }
