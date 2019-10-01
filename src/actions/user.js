@@ -16,7 +16,7 @@ export function getAccessToken({username, password}) {
 }
 
 function generateAuthCookies(res) {
-    if(res.access){
+    if(res.token){
         document.cookie = 'token=' + res.token + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
     }
 }
