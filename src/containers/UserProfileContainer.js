@@ -84,30 +84,32 @@ class UserProfileContainer extends Component {
 
     render () {
         const {likes, dislikes, action} = this.state;
-        const actions = [
-            <span key='comment-like'>
-        <Tooltip title='Like'>
-          <Icon
-              type='like'
-              theme={action === 'liked' ? 'filled' : 'outlined'}
-              onClick={this.like}
-          />
-        </Tooltip>
-        <span style={{paddingLeft: 8, coursor: 'auto'}} >{likes}</span>
-      </span>,
-            <span key='comment-dislike'>
-        <Tooltip tiitle='Dislike'>
-          <Icon
-              type='dislike'
-              theme={action === 'disliked' ? 'filled' : 'outlined'}
-              onClick={this.dislike}
-          />
-        </Tooltip>
-        <span style={{paddingLeft: 8, coursor: 'auto'}} >{dislikes}</span>
-      </span>,
-            <span key='comment-reply-to'>Reply to</span>
+        const actions = (
+            <div>
+                 <span key='comment-like'>
+                <Tooltip title='Like'>
+                  <Icon
+                      type='like'
+                      theme={action === 'liked' ? 'filled' : 'outlined'}
+                      onClick={this.like}
+                  />
+                </Tooltip>
+                <span style={{paddingLeft: 8, coursor: 'auto'}} >{likes}</span>
+              </span>,
+                        <span key='comment-dislike'>
+                <Tooltip tiitle='Dislike'>
+                  <Icon
+                      type='dislike'
+                      theme={action === 'disliked' ? 'filled' : 'outlined'}
+                      onClick={this.dislike}
+                  />
+                </Tooltip>
+                <span style={{paddingLeft: 8, coursor: 'auto'}} >{dislikes}</span>
+              </span>,
+                        <span key='comment-reply-to'>Reply to</span>
+            </div>
+        );
 
-        ];
         return (
             <div>
                 <div>
@@ -182,10 +184,11 @@ class UserProfileContainer extends Component {
                                                                 - USD/hr
                                                             </h4>
                                                             <hr />
-                                                            <p>
-                                                                0 Reviews
-                                                            </p>
+
                                                         </strong>
+                                                        <p>
+                                                            0 Reviews
+                                                        </p>
                                                         <Rate />
                                                     </div>
                                                 </Col>
@@ -204,8 +207,9 @@ class UserProfileContainer extends Component {
                             <Card
                                 style={{width: '75%', marginLeft: '15%'}}
                                 title={<div><strong><h3> Freelancer Portfolio</h3></strong></div>}
-                                extra={<Button type={'primary'} style={{background: 'rgba(0, 177, 153, 0.74)', borderColor: 'rgba(0, 177, 153, 0.74)'}}> Add Items</Button>}
-                            >
+                                extra={<Button type={'primary'} style={{background: 'rgba(0, 177, 153, 0.74)',
+                                    borderColor: 'rgba(0, 177, 153, 0.74)'}}> Add Items</Button>}>
+
                                 <div>
                                     <Empty
                                         image={
@@ -215,16 +219,7 @@ class UserProfileContainer extends Component {
                                                     color: 'rgba(0, 177, 153, 0.74)'}}
                                                 type={'file-image'}
                                             />}
-                                        description={
-                                            <div>
-                                                <p>
-                                                    Wanna show off your talent ?
-                                                </p>
-                                                <p>
-                                                    Start by uploading your portfolio !
-                                                </p>
-                                            </div>
-                                        }
+
                                     />
                                 </div>
                             </Card>
@@ -243,8 +238,8 @@ class UserProfileContainer extends Component {
                                                 Reviews
                                             </h3>
                                         </strong>
-                                    </div>}
-                            >
+                                    </div>}>
+
                                 <Meta
                                     description={
                                         <div>
@@ -259,11 +254,11 @@ class UserProfileContainer extends Component {
                                                     />
                                                 }
                                                 content={
-                                                    <p>
+                                                    <div>
                                                         We supply a series of design principles, practical patterns and high quality design
                                                         resources (Sketch and Axure), to help people create their product prototypes beautifully
                                                         and efficiently.
-                                                    </p>
+                                                    </div>
                                                 }
                                                 datetime={
                                                     <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
