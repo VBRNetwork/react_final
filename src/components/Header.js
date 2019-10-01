@@ -68,9 +68,12 @@ class Header extends Component {
                 let subcategoriesList = [];
                 let subcategories = main_menu[category].subcategories;
                 subcategories.map(function(subcategory,index){
+                    let localSubcategories = subcategory.url.split("/")
+                    localSubcategories = localSubcategories.filter(item => item !== 'categories')
                     subcategoriesList.push(
                         <Menu.Item key={'menu_' + index}>
-                            <Link as={'/' + subcategory.url} href={'/categories/?category=' + (subcategory.url).replace('categories/','')}>
+                            <Link as={'/' + subcategory.url}
+                                  href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
                                 <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {subcategory.title}</a>
                             </Link>
                         </Menu.Item>
@@ -101,14 +104,14 @@ class Header extends Component {
                 </Helmet>
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
-                        <Col xs={8} sm={4} md={6} lg={8} xl={10}>
+                        <Col xs={8} sm={4} md={6} lg={8} xl={12}>
                             <Link href='/'>
                                 <img src={'/static/images/vbrLogo.png'}
                                         style={{width: '80px', margin: '8px'}}
                                     />
                             </Link>
                         </Col>
-                        <Col  xs={16} sm={4} md={6} lg={8} xl={12}>
+                        <Col  xs={16} sm={4} md={6} lg={8} xl={10}>
                             <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
                                     <Menu.Item key='mail1'>
                                         <Link href='/'>
@@ -140,7 +143,7 @@ class Header extends Component {
                         <Col  xs={24} sm={4} md={6} lg={2} xl={2}>
                             {token === false && <Link href='/register'>
                                 <a>
-                                    <div className='post-job-btn'>
+                                    <div className='post-job-btn' style={{marginTop:'10px'}}>
                                         <Button type='primary' style={{
                                             backgroundColor: '#2EC3AB',
                                             borderColor: '#2EC3AB'
@@ -151,7 +154,7 @@ class Header extends Component {
 
                             {token !== false && <Link href='/dashboard'>
                                 <a>
-                                    <div className='post-job-btn'>
+                                    <div className='post-job-btn' style={{marginTop:'10px'}}>
                                         <Button type='primary' style={{
                                             backgroundColor: '#2EC3AB',
                                             borderColor: '#2EC3AB'
@@ -161,15 +164,15 @@ class Header extends Component {
                             </Link>}
                         </Col>
                     </Row>
-
                 </Content>
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={{span:18,offset:3}}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={{span:24,offset:0,}} style={{boxShadow:'rgb(185, 185, 185) 1px 2px 3px 1px'}}>
                         <div style={{margin:'0 auto'}}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal'
-                                  style={{boxShadow:'rgb(185, 185, 185) 1px 2px 3px 1px'}}>
-                                {menuItems}
-                            </Menu>
+                            <Col xs={24} sm={24} md={24} lg={24} xl={{span:17,offset:4}}>
+                                <Menu selectedKeys={[this.state.current]} mode='horizontal'>
+                                    {menuItems}
+                                </Menu>
+                            </Col>
                         </div>
                     </Col>
                 </Row>

@@ -55,6 +55,8 @@ export const makeStore = (initialState = {}, {isServer, req, debug, storeKey}) =
 
         store.__persistor = persistStore(store);
 
+        // store.__persistor.purge();
+
         return store;
 
     }

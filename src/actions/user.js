@@ -7,10 +7,10 @@ export function getAccessToken({username, password}) {
         return vbrincapi.getToken({username, password}).then(res => {
             dispatch({
                 type: SAVE_TOKEN,
-                data: res
+                data: res.data
             });
-            generateAuthCookies(res);
-            return res
+            generateAuthCookies(res.data);
+            return res.data
         })
     }
 }
@@ -52,10 +52,10 @@ export function registerAccount(data) {
         return vbrincapi.registerAccount(data).then(res => {
             dispatch({
                 type: SAVE_TOKEN,
-                data: res
+                data: res.data
             });
-            generateAuthCookies(res);
-            return res
+            generateAuthCookies(res.data);
+            return res.data
         })
     }
 }

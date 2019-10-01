@@ -55,7 +55,7 @@ class DashboardContainer extends Component {
             <Col span={6} offset={18}>
               <Dropdown overlay={menu} >
                 <a style={{ float: 'right', color: '#FFF', marginRight: '1%' }} className='ant-dropdown-link' href='#'>
-                  <strong>{this.props.user.name}</strong> <Icon type='down' />
+                  <strong>{this.props.user.username}</strong> <Icon type='down' />
                 </a>
               </Dropdown>
             </Col>

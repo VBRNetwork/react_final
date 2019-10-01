@@ -20,8 +20,8 @@ class HomeContainer extends Component {
         return (
             <Fragment>
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18,offset:3}}>
-                        <Breadcrumb style={{ margin: '5px' }}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 17,offset:4}}>
+                        <Breadcrumb style={{ marginLeft: '15px',paddingTop:'10px' }}>
                             <Breadcrumb.Item>
                                 <a href='/home'>Home</a>
                             </Breadcrumb.Item>
@@ -116,9 +116,6 @@ class HomeContainer extends Component {
                         </div>
                     </div>
                 </div>
-
-                <Row>
-                    <Col span={24}>
                         <Carousel autoplay className="home-carousel">
                             <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
@@ -171,176 +168,182 @@ class HomeContainer extends Component {
                                     </span></h2>
                                 </div>
                             </div>
-
                         </Carousel>
-                        <Layout style={{ margin: '10px' }}>
-                            <div style={{ background: '#FFF', width: '80%', margin: '0 auto' }}>
-                                <Row>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
-                                            <div>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-1.png'}
-                                                />
-                                                <br/>
-                                                <div style={{ textAlign: 'center' }}><strong>Writing</strong></div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-2.png'}
-                                                />
-                                                <br/>
-                                                <div style={{ textAlign: 'center' }}><strong>Design</strong></div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ textAlign: 'center', cursor: 'pointer' }}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-3.png'}
-                                                />
-                                                <br/>
-                                                <div style={{ textAlign: 'center' }}><strong>Business
-                                                    Consultancy</strong></div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                                <Row gutter={8} align="middle" type="flex" justify="space-around">
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-5.png'}
-                                                />
-                                                <br/>
-                                                <strong>Developers</strong>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-06.png'}
-                                                />
-                                                <br/>
-                                                <div style={{ textAlign: 'center' }}><strong>Marketing & SEO</strong>
+
+                        <Layout style={{background: '#ECECEC'}}>
+                            <div style={{marginTop:'20px',marginBottom:'20px',background: '#FFF'}}>
+                                <h1 style={{textAlign:'center',padding:'10px'}}>What jobs you can find?</h1>
+                                <div style={{width: '80%',margin:'0 auto',padding:'20px'}}>
+                                    <Row>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ textAlign: 'center', cursor: 'pointer', padding: '20px' }}>
+                                                <div>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-1.png'}
+                                                    />
+                                                    <br/>
+                                                    <div style={{ textAlign: 'center' }}><strong>Writing</strong></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </Col>
-
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={8}>
-                                        <div style={{ cursor: 'pointer', textAlign: 'center' }}>
-                                            <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
-                                                <img
-                                                    height='80'
-                                                    width='80'
-                                                    alt='171x180'
-                                                    src={'../../static/images/img-4.png'}
-                                                />
-                                                <br/>
-                                                <strong>More Coming Soon</strong>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ textAlign: 'center', cursor: 'pointer' }}>
+                                                <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-2.png'}
+                                                    />
+                                                    <br/>
+                                                    <div style={{ textAlign: 'center' }}><strong>Design</strong></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </div>
-                            <div style={{ background: '#ECECEC', padding: '30px' }}>
-                                <div id='how-it-works'>
-                                    <h3 className='text-center how-it-work-title' style={{ textAlign: 'center' }}>How it
-                                        works?</h3>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ textAlign: 'center', cursor: 'pointer' }}>
+                                                <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-3.png'}
+                                                    />
+                                                    <br/>
+                                                    <div style={{ textAlign: 'center' }}><strong>Business
+                                                        Consultancy</strong></div>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                    <Row gutter={8} align="middle" type="flex" justify="space-around">
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                                <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-5.png'}
+                                                    />
+                                                    <br/>
+                                                    <strong>Developers</strong>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                                <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-06.png'}
+                                                    />
+                                                    <br/>
+                                                    <div style={{ textAlign: 'center' }}><strong>Marketing & SEO</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Col>
+
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={8}>
+                                            <div style={{ cursor: 'pointer', textAlign: 'center' }}>
+                                                <div href='#link' style={{ cursor: 'pointer', padding: '20px' }}>
+                                                    <img
+                                                        height='80'
+                                                        width='80'
+                                                        alt='171x180'
+                                                        src={'../../static/images/img-4.png'}
+                                                    />
+                                                    <br/>
+                                                    <strong>More Coming Soon</strong>
+                                                </div>
+                                            </div>
+                                        </Col>
+                                    </Row>
                                 </div>
-                                <Row gutter={24} type="flex" justify="start">
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                        <Card title="Online and Cold wallets" bordered={false}>
-                                            <p>
-                                                Time is money, in that we don’t want to waste either.
-                                            </p>
-                                            <p>
-                                                This is why we implemented a cold wallet system, to ensure the security
-                                                of your transactions.
-                                            </p>
-                                            <p>
-                                                Coupled with our Proof of Origin and state of the art encryption, we
-                                                truly hope to provide only the best.
-                                                <br/>
-                                            </p>
-                                        </Card>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                        <Card title="100% Transparency" bordered={false}>
-                                            <p>
-                                                Customers will be able to trace the progress of their project instantly,
-                                                due to our system that compares it to similar projects in our
-                                                pre-existent library.
-                                            </p>
-                                            <p>
-                                                Delays due to unprofessional work ethic are now a thing of the past.
-                                                Just like your worries.
-                                                Whatever it is, you're covered.
-                                            </p>
-                                        </Card>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                        <Card title="Instant payments" bordered={false}>
-                                            <p>
-                                                All payments with our token will be processed instantly,
-                                                and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
-                                            </p>
-                                            <p>
-                                                Payments in fiat or any other payment method (i.e. bitcoin) will still
-                                                be fast,
-                                                but depend on their respective processors from the chain.
-                                            </p>
+                            </div>
 
-                                        </Card>
-                                    </Col>
-                                    <Col xs={24} sm={4} md={6} lg={8} xl={6}>
-                                        <Card title="Exchange Platform" bordered={false}>
-                                            <p>
-                                                We want our users to feel as comfortable as possible.
-                                            </p>
-                                            <p>
-                                                Therefore we are implementing an exchange market right on our platform.
-                                            </p>
-                                            <p>
-                                                Our users can exchange crypto to fiat, crypto to crypto etc. with
-                                                minimal fees, or no fees at all.
-                                                <br/>
-                                            </p>
+                            <div style={{marginBottom:'30px'}}>
+                                <div id='how-it-works' style={{ marginTop: '30px' }}>
+                                    <h2 className='text-center how-it-work-title' style={{ textAlign: 'center' }}>What we offer ?</h2>
+                                </div>
+                                <Row>
+                                    <Col xs={24} sm={24} md={24} lg={{span:18,offset:4}} xl={{span:18,offset:4}}>
+                                        <Row gutter={20}>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card title="Online and Cold wallets" bordered={false}>
+                                                <p>
+                                                    Time is money, in that we don’t want to waste either.
+                                                </p>
+                                                <p>
+                                                    This is why we implemented a cold wallet system, to ensure the security
+                                                    of your transactions.
+                                                </p>
+                                                <p>
+                                                    Coupled with our Proof of Origin and state of the art encryption, we
+                                                    truly hope to provide only the best.
+                                                    <br/>
+                                                </p>
+                                            </Card>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card title="100% Transparency" bordered={false}>
+                                                <p>
+                                                    Customers will be able to trace the progress of their project instantly,
+                                                    due to our system that compares it to similar projects in our
+                                                    pre-existent library.
+                                                </p>
+                                                <p>
+                                                    Delays due to unprofessional work ethic are now a thing of the past.
+                                                    Just like your worries.
+                                                    Whatever it is, you're covered.
+                                                </p>
+                                            </Card>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card title="Instant payments" bordered={false}>
+                                                <p>
+                                                    All payments with our token will be processed instantly,
+                                                    and based on Zero-Knowledge-Proof protocol and Proof-of-Origin protocol.
+                                                </p>
+                                                <p>
+                                                    Payments in fiat or any other payment method (i.e. bitcoin) will still
+                                                    be fast,
+                                                    but depend on their respective processors from the chain.
+                                                </p>
 
-                                        </Card>
+                                            </Card>
+                                        </Col>
+                                        <Col xs={24} sm={4} md={6} lg={8} xl={6}>
+                                            <Card title="Exchange Platform" bordered={false}>
+                                                <p>
+                                                    We want our users to feel as comfortable as possible.
+                                                </p>
+                                                <p>
+                                                    Therefore we are implementing an exchange market right on our platform.
+                                                </p>
+                                                <p>
+                                                    Our users can exchange crypto to fiat, crypto to crypto etc. with
+                                                    minimal fees, or no fees at all.
+                                                    <br/>
+                                                </p>
+
+                                            </Card>
+                                        </Col>
+                                        </Row>
                                     </Col>
                                 </Row>
                             </div>
-                        </Layout>
-                    </Col>
-                </Row>
-                <Layout>
 
-                    <div className="home-section">
+                        </Layout>
+
+                <Layout>
+                    <div className="home-section" >
                         <Row type="flex" justify="space-around">
                             <Col xs={24} sm={4} md={6} lg={8} xl={3}>
                                 <img

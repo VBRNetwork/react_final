@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
 import Moment from 'react-moment';
-import {Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Statistic, Breadcrumb, Form} from 'antd';
+import {Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form} from 'antd';
 const { Content } = Layout
 const { Meta } = Card;
 const { TextArea } = Input;
@@ -22,7 +22,8 @@ class IcoContainer extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
-        this.handleChangeEmail = this.handleChangeEmail.bind(this); 
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
+        this.handleChangeDescription = this.handleChangeDescription.bind(this);
 
     }
 

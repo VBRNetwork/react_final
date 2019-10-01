@@ -36,7 +36,11 @@ class SubCategoriesContainer extends Component {
 
           subcategories_url = subcategory.url.split('/');
           let final_url = '/categories/?category='+subcategories_url[1]+'&subcategory='+subcategories_url[2]
-          menuItems.push(<li key={index}> <Link as={'/'+subcategory.url} href={final_url}><a><Meta title={subcategory.title} /></a></Link> </li>)
+          menuItems.push(<li key={index}>
+              <Link as={final_url} href={'/'+subcategory.url}>
+                  <a><Meta title={subcategory.title} /></a>
+              </Link>
+          </li>)
 
           categories_card.push(
             <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:8,offset:8}} key={'subcat-'+ index} span={8} >
@@ -44,7 +48,11 @@ class SubCategoriesContainer extends Component {
                 hoverable
                 style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
                 cover={<img alt={subcategory.title} src={''+subcategory.img}  />}>
-                <Link as={'/'+subcategory.url} href={final_url}><a><Meta title={subcategory.title} /></a></Link>
+                <Link href={'/'+subcategory.url} as={final_url}>
+                    <a>
+                    <Meta title={subcategory.title} />
+                    </a>
+                </Link>
               </Card>
             </Col>
           )
