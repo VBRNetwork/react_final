@@ -21,8 +21,8 @@ class RegisterContainer extends Component {
         this.state = {
             email: '',
             username: '',
-            password: '',
-            confirm_password: '',
+            password1: '',
+            password2: '',
             first_name: '',
             last_name: '',
             tos: false,
@@ -69,15 +69,19 @@ class RegisterContainer extends Component {
 
     handleChangePassword(event) {
         this.setState({
-            password: event.target.value,
+            password1: event.target.value,
         });
     }
 
     handleChangeRepeatPassword(event) {
         this.setState({
-            confirm_password: event.target.value,
+            password2: event.target.value,
         });
     }
+
+    redirectToTarget = () => {
+        Router.push('/dashboard')
+    };
 
     handleSubmit = e => {
         e.preventDefault();
@@ -85,9 +89,7 @@ class RegisterContainer extends Component {
         if (!this.state.loggingIn) {
             this.setState({loggingIn: true, errorMessage: ''});
             registerAccount(this.state).then((res) => {
-                if (e.token.length > 2) {
-                    Router.push('/dashboard')
-                }
+                this.redirectToTarget()
             }).catch((error) => {
                 let errorText = '';
                 Object.keys(error.response.data).map(function(e,i){
@@ -128,6 +130,7 @@ class RegisterContainer extends Component {
                                             <Input
                                                 onChange={this.handleChangeFirstName}
                                                 value={this.state.first_name}
+                                                name={'first_name'}
                                                 prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 placeholder='First Name'
                                             />
@@ -138,6 +141,7 @@ class RegisterContainer extends Component {
                                                 value={this.state.last_name}
                                                 prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 placeholder='Last Name'
+                                                name={'last_name'}
                                             />
                                         </Form.Item>
                                         <Form.Item>
@@ -146,23 +150,26 @@ class RegisterContainer extends Component {
                                                 value={this.state.email}
                                                 prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 placeholder='Email'
+                                                name={'email'}
                                             />
                                         </Form.Item>
                                         <Form.Item>
                                             <Input
                                                 prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type='password'
-                                                value={this.state.password}
+                                                value={this.state.password1}
                                                 placeholder='Password'
                                                 onChange={this.handleChangePassword}
+                                                name={'password1'}
                                             />
                                         </Form.Item>
                                         <Form.Item>
                                             <Input
                                                 prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type='password'
-                                                value={this.state.confirm_password}
+                                                value={this.state.password2}
                                                 placeholder='Confirm Password'
+                                                name={'password2'}
                                                 onChange={this.handleChangeRepeatPassword}
                                             />
                                         </Form.Item>
@@ -182,8 +189,9 @@ class RegisterContainer extends Component {
                                         }
 
                                         <Form.Item>
-                                            <Checkbox checked={this.state.tos} onChange={this.tosAccepted}>I agree with
-                                                VBR Platform Terms & Conditions</Checkbox>
+                                            <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>I agree with
+                                                VBR Platform Terms & Conditions
+                                            </Checkbox>
                                             <br/>
                                         </Form.Item>
 
