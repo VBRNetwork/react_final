@@ -50,11 +50,11 @@ const vbrincapi = {
         bodyFormData.set('email', data.email);
         bodyFormData.set('first_name', data.first_name);
         bodyFormData.set('last_name', data.last_name);
-        bodyFormData.set('password', data.password);
-        bodyFormData.set('confirm_password', data.confirm_password,);
+        bodyFormData.set('password1', data.password1);
+        bodyFormData.set('password2', data.password2,);
 
         return instance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
-            return humps.camelizeKeys(res.data)
+            return humps.camelizeKeys(res)
         })
     }
 };

@@ -72,8 +72,8 @@ class Header extends Component {
                     localSubcategories = localSubcategories.filter(item => item !== 'categories')
                     subcategoriesList.push(
                         <Menu.Item key={'menu_' + index}>
-                            <Link as={'/' + subcategory.url}
-                                  href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
+                            <Link href={'/' + subcategory.url}
+                                  as={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
                                 <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {subcategory.title}</a>
                             </Link>
                         </Menu.Item>
