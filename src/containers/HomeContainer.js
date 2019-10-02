@@ -116,6 +116,8 @@ class HomeContainer extends Component {
                         </div>
                     </div>
                 </div>
+                <Row>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 17,offset:4}}>
                         <Carousel autoplay className="home-carousel">
                             <div style={{ backgroundColor: 'black', width: '100%' }}>
                                 <div className="image">
@@ -169,6 +171,9 @@ class HomeContainer extends Component {
                                 </div>
                             </div>
                         </Carousel>
+
+                    </Col>
+                </Row>
 
                         <Layout style={{background: '#ECECEC'}}>
                             <div style={{marginTop:'20px',marginBottom:'20px',background: '#FFF'}}>
