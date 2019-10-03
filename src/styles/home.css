@@ -39,12 +39,11 @@
 
 .home-carousel {
     text-align: center;
-    height: 490px;
-    line-height: 490px;
+    height: 390px;
+    line-height: 220px;
     width: 100%;
     background: #FFF;
     overflow: hidden;
-    display: initial !important;
   }
   
   .ant-carousel .slick-slide h3 {
