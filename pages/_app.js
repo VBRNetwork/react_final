@@ -1,13 +1,9 @@
+import React from 'react'
 import withRedux from 'next-redux-wrapper'
 import {withRouter} from 'next/router'
 import {Provider} from 'react-redux'
 import App, {Container} from 'next/app'
 import {makeStore} from 'store/createStore'
-import fetch from 'isomorphic-unfetch'
-import redirectTo from 'libs/redirectTo.js'
-import cookies from 'next-cookies'
-import API_URL from 'libs/globalApiUrl.js'
-import {persistStore} from 'redux-persist'
 import {faHome, faPlayCircle, faEnvelopeOpen} from '@fortawesome/free-solid-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
@@ -18,11 +14,8 @@ import {PersistGate} from 'redux-persist/integration/react'
 import 'antd/dist/antd.css'
 import 'styles/base.scss'
 import 'styles/base.css'
-
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
-import { FullStory } from 'react-fullstory-component'
-import React from 'react'
-
+import { ConnectedRouter } from 'connected-next-router'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
@@ -73,9 +66,11 @@ class MyApp extends App {
                 />
                 <Provider store={store}>
                     <PersistGate loading={null} persistor={store.__persistor}>
-                        <Layout>
-                            <Component router={router} {...pageProps} />
-                        </Layout>
+                        <ConnectedRouter>
+                            <Layout>
+                                <Component router={router} {...pageProps} />
+                            </Layout>
+                        </ConnectedRouter>
                     </PersistGate>
                 </Provider>
             </Container>

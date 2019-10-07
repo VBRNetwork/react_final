@@ -12,14 +12,14 @@ import { FullStory } from 'react-fullstory-component';
 const {Content} = Layout
 const {SubMenu} = Menu
 import {withRouter} from 'next/router';
-
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-147139648-1');
+
 
 class Header extends Component {
-
 
     constructor(props) {
         super(props)
@@ -41,41 +41,94 @@ class Header extends Component {
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
             }
-
         };
-
         this.clickLogout = this.clickLogout.bind(this);
-        ReactGA.initialize('UA-147139648-1');
-        ReactGA.pageview(window.location.pathname + window.location.search);
+        this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this);
+    }
+
+
+    componentDidUpdate (prevProps, prevState, snapshot) {
+        if(prevProps.router.pathname !== this.props.router.pathname){
+            ReactGA.pageview(window.location.pathname + window.location.search);
+            console.log('pageview sent')
+            this.rebuildBreadcrumbs()
+        }
     }
 
     componentDidMount() {
         let {getVBRSettings} = this.props
         getVBRSettings().then((e) => {
         });
+        this.rebuildBreadcrumbs();
 
-        let {category,subcategory} = this.props.router.query
+    }
 
-
+    rebuildBreadcrumbs(){
         if( typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
 
             let categories = Object.keys(this.props.settings.main_menu.mainMenu).map(key => {
                 return this.props.settings.main_menu.mainMenu[key];
             })
-            let currentCategory = categories.find(obj => obj.url === 'categories/'+category);
-            if(currentCategory){
-                let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+category+'/'+subcategory);
-                if(!this.state.breadcrumb.category.length > 0){
-                    this.setState({
-                        breadcrumb:{
-                            category:currentCategory,
-                            subcategory:currentSubCategory
+
+            let fullLink = this.props.redux_router.location.pathname.split('/')
+
+
+            if(fullLink[0] === '' && fullLink[1] === ''){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'/',name:'Home'},
+                        subcategory:{
+                            url:'',
+                            name:'',
                         }
-                    })
+                    }
+                })
+            }
+
+            if(fullLink[1] === 'ico'){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'ico',name:'Initial Coin Offering'},
+                        subcategory:{
+                            url:'',
+                            name:'',
+                        }
+                    }
+                })
+            }
+
+
+            if(fullLink[1] === 'how-it-works'){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'how-it-works',name:'How it works'},
+                        subcategory:{
+                            url:'',
+                            name:'',
+                        }
+                    }
+                })
+            }
+
+
+            if(typeof fullLink[2] !== 'undefined'){
+                let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
+                if(currentCategory && typeof fullLink[3] !== 'undefined'){
+                    let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
+                    if(!this.state.breadcrumb.category.length > 0){
+                        this.setState({
+                            breadcrumb:{
+                                category:currentCategory,
+                                subcategory:currentSubCategory
+                            }
+                        })
+                    }
                 }
             }
+
         }
+
 
     }
 
@@ -87,7 +140,6 @@ class Header extends Component {
             Router.push(`/`);
         });
     }
-
 
     render() {
         let token = false;
@@ -229,9 +281,14 @@ class Header extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
                         <Breadcrumb style={{ marginLeft: '20px',paddingTop:'10px' }}>
                             <Breadcrumb.Item>
-                                <a href='/home'>Home </a> /
-                                <a href={"/" + this.state.breadcrumb.category.url}>{this.state.breadcrumb.category.name} </a> /
-                                { this.state.breadcrumb.subcategory && <a href={"/" + this.state.breadcrumb.subcategory.url}> {this.state.breadcrumb.subcategory.title} </a>}
+                                <a href={"/" + this.state.breadcrumb.category.url}>
+                                    {this.state.breadcrumb.category.name}
+                                </a>
+
+                                { this.state.breadcrumb.subcategory.url.length > 0 &&
+                                    <a href={"/" + this.state.breadcrumb.subcategory.url}> /
+                                    {this.state.breadcrumb.subcategory.title} </a>}
+
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>
@@ -244,7 +301,8 @@ class Header extends Component {
 function mapStateToProps(state) {
     return {
         user: state.user,
-        settings: state.settings
+        settings: state.settings,
+        redux_router: state.router
     }
 }
 
@@ -252,6 +310,7 @@ function mapStateToProps(state) {
 Header.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
+    router: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }

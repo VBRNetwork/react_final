@@ -7,6 +7,8 @@ import config from 'config'
 import persistedReducers from '../reducers'
 import {persistStore,persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import { createRouterMiddleware, initialRouterState } from 'connected-next-router'
+import Router from 'next/router'
 
 function createMiddlewares({isServer}) {
     let middlewares = [
@@ -36,10 +38,19 @@ function createMiddlewares({isServer}) {
     return middlewares
 }
 
+const routerMiddleware = createRouterMiddleware({
+    Router,
+    methods: {
+        push: 'pushRoute',
+        replace: 'replaceRoute',
+        prefetch: 'prefetchRoute',
+    },
+});
+
 let composed = compose(applyMiddleware(logger,thunkMiddleware))
 
 if (config.env === 'development'){
-    composed = composeWithDevTools(applyMiddleware(logger,thunkMiddleware))
+    composed = composeWithDevTools(applyMiddleware(logger,thunkMiddleware,routerMiddleware))
 }
 
 const makeConfiguredStore = (reducer, initialState) =>
@@ -49,23 +60,20 @@ export const reducer = (state, {type, payload}) => {
     return state;
 };
 
-export const makeStore = (initialState = {}, {isServer, req, debug, storeKey}) => {
+export const makeStore = (initialState = {}, {isServer, req, debug, storeKey, asPath}) => {
+
+    if (asPath) {
+        initialState.router = initialRouterState(asPath);
+    }
+
     if (isServer) {
-
         initialState = initialState || {fromServer: 'foo'};
-
         return makeConfiguredStore(reducer, initialState);
-
     } else {
-
         const store = makeConfiguredStore(persistedReducers, initialState);
-
         store.__persistor = persistStore(store);
-
         // store.__persistor.purge();
-
         return store;
-
     }
 
 }

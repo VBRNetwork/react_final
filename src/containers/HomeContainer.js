@@ -3,18 +3,14 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import { Carousel, Layout, Row, Col, Button, Card, Input, Breadcrumb } from 'antd'
-
-const Search = Input.Search
-const { Content } = Layout
+import { Carousel, Layout, Row, Col, Button, Card } from 'antd'
+import Link from 'next/link'
 
 class HomeContainer extends Component {
     componentDidMount () {
     }
 
-    onChange (a, b, c) {
-        console.log(a, b, c)
-    }
+
 
     render () {
         return (
@@ -61,20 +57,15 @@ class HomeContainer extends Component {
                                                 No more Hidden Fees, Scam Attempts, Poor Customer Support,
                                                 Delayed Payments or Unfair Mediation!
                                             </p>
-                                            <Search
-                                                placeholder='Search for Freelancers'
-                                                className='searchpost form-control ant-input-sm'
-                                                enterButton={<Button
-                                                    className='ant-btn-sm'
+
+                                                <Link href='/register'><Button
+                                                    className='ant-btn-lg'
                                                     type='primary'
                                                     style={{
                                                         backgroundColor: '#2EC3AB',
                                                         borderColor: '#2EC3AB'
-                                                    }}>
-                                                    Search
-                                                </Button>}
-                                                onSearch={value => console.log(value)}
-                                            />
+                                                    }}>Join our platform </Button></Link>
+
                                         </div>
                                     </Col>
 
