@@ -173,5 +173,25 @@ html,
 
 .sub-menu {list-style: none}
 
-.ant-card-meta-title{text-overflow: unset!important; white-space: normal!important; padding: '1px'!important}
-  
+.ant-card-meta-title{text-overflow: unset!important; white-space: normal!important; padding: 1px !important}
+
+.ant-list-vertical .ant-list-item-meta {
+    margin-bottom: 10px;
+}
+.ant-list-item-meta-description {
+    font-size: 12px !important;
+}
+
+.ant-list-vertical .ant-list-item-meta-title {
+    margin-bottom: 0px !important;
+}
+
+.ant-list-vertical .ant-list-item-meta-title {
+    text-align: left;
+}
+
+.ant-list-vertical .ant-list-item-action {
+    background: #2ec3ab0f;
+    border-radius: 4px;
+    padding: 5px;
+}
