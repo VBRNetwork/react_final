@@ -47,7 +47,6 @@ class Header extends Component {
         });
 
         let {category,subcategory} = this.props.router.query
-        console.log(this.props.settings.main_menu.mainMenu,category,subcategory)
 
 
         if(typeof this.props.settings.main_menu.mainMenu !== 'undefined'){
