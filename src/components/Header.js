@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
 import Router from 'next/router'
+import { FullStory } from 'react-fullstory-component';
 const {Content} = Layout
 const {SubMenu} = Menu
 import {withRouter} from 'next/router';
@@ -34,8 +35,15 @@ class Header extends Component {
                     url:'',
                     title:''
                 }
+            },
+            fullStorySettings:{
+                debug: false,
+                host: 'www.fullstory.com',
+                orgKey: 'PDZM8'
             }
+
         };
+
         this.clickLogout = this.clickLogout.bind(this);
         ReactGA.initialize('UA-147139648-1');
         ReactGA.pageview(window.location.pathname + window.location.search);
@@ -49,7 +57,9 @@ class Header extends Component {
         let {category,subcategory} = this.props.router.query
 
 
-        if(typeof this.props.settings.main_menu.mainMenu !== 'undefined'){
+        if( typeof(this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
+
             let categories = Object.keys(this.props.settings.main_menu.mainMenu).map(key => {
                 return this.props.settings.main_menu.mainMenu[key];
             })
@@ -66,6 +76,7 @@ class Header extends Component {
                 }
             }
         }
+
     }
 
     clickLogout(e) {
@@ -92,9 +103,10 @@ class Header extends Component {
         );
 
         let menuItems = ''
-        if(this.props.settings.main_menu && this.props.settings.main_menu.mainMenu){
-            let main_menu = this.props.settings.main_menu.mainMenu
-            menuItems = Object.keys(main_menu).map((category,index) => {
+        if(typeof(this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
+                let main_menu = this.props.settings.main_menu.mainMenu
+                menuItems = Object.keys(main_menu).map((category,index) => {
 
                 let subcategoriesList = [];
                 let subcategories = main_menu[category].subcategories;
@@ -133,6 +145,8 @@ class Header extends Component {
                     <meta charSet="utf-8" />
                     <title>VBR Network Marketplace</title>
                 </Helmet>
+                <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
+
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 

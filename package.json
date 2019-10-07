@@ -30,6 +30,7 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-final-form": "^6.3.0",
+    "react-fullstory-component": "^2.1.0",
     "react-ga": "^2.6.0",
     "react-google-font-loader": "^1.0.5",
     "react-helmet": "^5.2.0",
