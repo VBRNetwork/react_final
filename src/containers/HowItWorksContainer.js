@@ -15,75 +15,53 @@ class HowItWorksContainer extends Component {
   render () {
     return (
             <div>
-              <Breadcrumb style={{margin: '1%'}}>
-                <Breadcrumb.Item>
-                  <a href='/home'>Home</a>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                  <a href='/how-it-works'>How It Works</a>
-                </Breadcrumb.Item>
-              </Breadcrumb>
               <Row>
-                  <Col>
-                    <Row>
+                  <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
+
+                  <Row>
                       <Col span={18}>
-                      <div style={{padding: '1%'}}><h2 className="about"><strong>VBR Network - How It Works</strong></h2><hr /></div>
-                    <div className="paragraphs" style={{margin: '3%', color: 'rgba(0, 37, 70, 0.74)'}}>
-                      <strong>
-                        <h4>
-                          <p>
-                            VBR Network is a decentralized marketplace
-
-                            for freelancers all over the world,
-
-                            based on Blockchain Technology.
-
-                          </p>
-                          <p>
-
-                            We bring a new fresh perspective,
-
-                            where the platform is owned by the community,
-
-
-
-                            chages voted by the community,
-                          </p>
-                          <p>
-
-                            Smart Contracts for transaction and mediation purposes,
-
-                            and many other new featuers.
-                          </p>
-                          <p>
-
-                            Besides transparency, and a high level of security,
-
-                            on VBR Marketplace the payments are going to be processed within seconds.
-
-                          </p>
-                          <p>
-
-                            By preventing payment delays, and bringing this fresh concept,
-
-                            we aim to offer to our community the experience they deserve on a freelancing website.
-                          </p>
-                        </h4>
-                      </strong>
-                    </div>
-                        </Col>
+                      <div style={{padding: '1%'}}><h2 className="about">
+                          <strong>VBR Network - How It Works</strong></h2><hr />
+                      </div>
+                        <div className="paragraphs" style={{margin: '3%', color: 'rgba(0, 37, 70, 0.74)'}}>
+                          <strong>
+                            <h4>
+                              <p>
+                                VBR Network is a decentralized marketplace
+                                for freelancers all over the world,
+                                based on Blockchain Technology.
+                              </p>
+                              <p>
+                                We bring a new fresh perspective,
+                                where the platform is owned by the community,
+                                chages voted by the community,
+                              </p>
+                              <p>
+                                Smart Contracts for transaction and mediation purposes,
+                                and many other new featuers.
+                              </p>
+                              <p>
+                                Besides transparency, and a high level of security,
+                                on VBR Marketplace the payments are going to be processed within seconds.
+                              </p>
+                              <p>
+                                By preventing payment delays, and bringing this fresh concept,
+                                we aim to offer to our community the experience they deserve on a freelancing website.
+                              </p>
+                            </h4>
+                          </strong>
+                        </div>
+                     </Col>
                       <Col span={6} >
                         <div >
                           <img  style={{marginTop: '20%'}} src={'../../static/images/homepage_man.png'} />
                         </div>
                       </Col>
-                      </Row>
-                      <Card 
-                        size="small"
-                        bordered={false}
-                      >
+                    </Row>
 
-                      <Meta 
+
+                      <Card   size="small" bordered={false} >
+                      <Meta
                           title={<div ><h3 className="about"><strong>Learn About VBR</strong></h3><hr /></div>} 
                           description=
                           {<div className="paragraphs" >
