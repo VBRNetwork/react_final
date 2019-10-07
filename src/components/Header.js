@@ -26,8 +26,14 @@ class Header extends Component {
             current: 'mail',
             isLogged: false,
             breadcrumb:{
-                category:'',
-                subcategory:''
+                category:{
+                    url:'',
+                    name:''
+                },
+                subcategory:{
+                    url:'',
+                    title:''
+                }
             }
         };
         this.clickLogout = this.clickLogout.bind(this);
@@ -210,9 +216,9 @@ class Header extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
                         <Breadcrumb style={{ marginLeft: '20px',paddingTop:'10px' }}>
                             <Breadcrumb.Item>
-                                <a href='/home'>Home</a> /
-                                <a href={this.state.breadcrumb.category.url}>{this.state.breadcrumb.category.name}</a> /
-                                <a href={this.state.breadcrumb.subcategory.url}>{this.state.breadcrumb.subcategory.title}</a>
+                                <a href='/home'>Home </a> /
+                                <a href={"/" + this.state.breadcrumb.category.url}>{this.state.breadcrumb.category.name} </a> /
+                                { this.state.breadcrumb.subcategory && <a href={"/" + this.state.breadcrumb.subcategory.url}> {this.state.breadcrumb.subcategory.title} </a>}
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>

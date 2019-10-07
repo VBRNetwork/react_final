@@ -7,48 +7,79 @@ import Link from 'next/link'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
-const listData = []
-{
-    listData.push({
-        href: '/profile',
-        title: `Python Programmer Needed`,
+const listData = [{
+    href: '/profile',
+    title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Blockchain Expert',
+    content:
+        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+    user: {
+        username: 'Stefan Vanea',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description:
-            'Pyhon developer for e-commerce app',
-        content:
-            'We need a senior python developer to help us with an e-commerce app. All details will be shared upon chat discussion.',
-        user: {
-            username: 'UserTest',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        }
-    })
-}
-
-const listData1 = []
-{
-    listData1.push({
-        href: '/profile',
-        title: `Looking for a Web Designer`,
+    }
+},{
+    href: '/profile',
+    title: `Looking for a Web Designer`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Python Programmer',
+    content:
+        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+    user: {
+        username: 'Fedot Serghei',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description:
-            'Web designer for a traveling website',
-        content:
-            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible'
-    })
-}
-
-const listData2 = []
-{
-    listData2.push({
-        href: '/profile',
-        title: `SEO Specialist Needed`,
+    }
+},{
+    href: '/profile',
+    title: `Looking for a test team for a large project!`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Web designer for a traveling website',
+    content:
+        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+    user: {
+        username: 'CEO of Samsung',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description:
-            'SEO and Adwords for Rent a Car website',
-        content:
-            'We looking for a SEO specialist who can help  us reach first positions on google, for our rent a car site.'
-    })
-}
+    }
+},{
+    href: '/profile',
+    title: `Looking for a Web Designer`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Devops Vbrinc Platform',
+    content:
+        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+    user: {
+        username: 'Barborica Devops',
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    }
+},{
+    href: '/profile',
+    title: `Python Programmer Needed`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Pyhon developer for e-commerce app',
+    content:
+        'We need a senior python developer to help us with an e-commerce app. All details will be shared upon chat discussion.',
+    user: {
+        username: 'User Test',
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    }
+},{
+    href: '/profile',
+    title: `SEO Specialist Needed`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'SEO and Adwords for Rent a Car website',
+    content:
+        'We looking for a SEO specialist who can help  us reach first positions on google, for our rent a car site.',
+    user: {
+        username: 'User Test',
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    }
+}]
 
 const IconText = ({ type, text }) => (
     <span>
@@ -74,8 +105,8 @@ class SearchJobsContainer extends Component {
     render () {
         return (
             <Row>
-                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 19, offset: 3 }}>
-                    <Content style={{ padding: '0 50px' }}>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
+                    <Content style={{marginLeft:'1rem'}}>
                         <Card style={{ background: 'rgba(0, 156, 107, 0.24)' }}>
                             <Row>
                                 <Col span={12}>
@@ -210,6 +241,11 @@ class SearchJobsContainer extends Component {
                                         <List.Item
                                             key={item.title}
                                             actions={[
+                                                <List.Item.Meta
+                                                    avatar={<Avatar src={'../../static/images/search_dsg.png'}/>}
+                                                    title={item.user.username}
+                                                    description={item.description}
+                                                />,
                                                 <IconText type='star-o' text='156'/>,
                                                 <IconText type='like-o' text='156'/>,
                                                 <IconText type='message' text='2'/>
@@ -222,85 +258,12 @@ class SearchJobsContainer extends Component {
                                                 />
                                             }
                                         >
-                                            <List.Item.Meta
-                                                avatar={<Avatar src={item.avatar}/>}
-                                                title={<Link as={'' + item.href + '/UserTest'}
-                                                             href={item.href + '/?username=UserTest'}>
-                                                    <a href="">{item.title}</a>
-                                                </Link>}
-                                                description={item.description}
-                                            />
-                                            {item.content}
-                                        </List.Item>
-                                    )}
-
-                                />
-                                <List
-                                    itemLayout='vertical'
-                                    size='large'
-                                    dataSource={listData1}
-                                    renderItem={item => (
-                                        <List.Item
-                                            key={item.title}
-                                            actions={[
-                                                <IconText type='star-o' text='156'/>,
-                                                <IconText type='like-o' text='156'/>,
-                                                <IconText type='message' text='2'/>
-                                            ]}
-                                            extra={
-                                                <img
-                                                    width={272}
-                                                    alt='logo'
-                                                    src='../../static/images/search_dsg.png'
-                                                />
-                                            }
-                                        >
-                                            <List.Item.Meta
-                                                avatar={<Avatar src={item.avatar}/>}
-                                                title={<a href={item.href}>{item.title}</a>}
-                                                description={item.description}
-                                            />
-                                            {item.content}
-                                        </List.Item>
-                                    )}
-
-                                />
-                                <List
-                                    itemLayout='vertical'
-                                    size='large'
-                                    pagination={{
-                                        onChange: page => {
-                                            console.log(page)
-                                        },
-                                        pageSize: 3
-                                    }}
-                                    dataSource={listData2}
-
-                                    renderItem={item => (
-                                        <List.Item
-                                            key={item.title}
-                                            actions={[
-                                                <IconText type='star-o' text='156'/>,
-                                                <IconText type='like-o' text='156'/>,
-                                                <IconText type='message' text='2'/>
-                                            ]}
-                                            extra={
-                                                <img
-                                                    width={272}
-                                                    alt='logo'
-                                                    src='../../static/images/search_seo.png'
-                                                />
-                                                }
-                                            >
-                                            <List.Item.Meta
-                                                avatar={<Avatar src={item.avatar}/>}
-                                                title={<a href={item.href}>{item.title}</a>}
-                                                description={item.description}
-                                            />
+                                            <h3>{item.title}</h3>
                                             {item.content}
                                         </List.Item>
                                     )}
                                 />
+
                             </Content>
                         </Layout>
                     </Content>
