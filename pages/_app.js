@@ -20,6 +20,8 @@ import 'styles/base.scss'
 import 'styles/base.css'
 
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+import { FullStory } from 'react-fullstory-component'
+import React from 'react'
 
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
@@ -49,7 +51,9 @@ class MyApp extends App {
         const {Component, pageProps, store, router} = this.props
         return (
             <Container>
-                <Head/>
+                <Head>
+                    <script dangerouslySetInnerHTML = {{__html:`console.log('header script')`}}/>
+                </Head>
                 <GoogleFontLoader
                     fonts={[
                         {
