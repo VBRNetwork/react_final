@@ -7,18 +7,17 @@ export function getAccessToken({username, password}) {
         return vbrincapi.getToken({username, password}).then(res => {
             dispatch({
                 type: SAVE_TOKEN,
-                data: res
+                data: res.data
             });
-            generateAuthCookies(res);
-            return res
+            generateAuthCookies(res.data);
+            return res.data
         })
     }
 }
 
 function generateAuthCookies(res) {
-    if(res.access){
-        document.cookie = 'token=' + res.access + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
-        document.cookie = 'refresh_token=' + res.refresh + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
+    if(res.token){
+        document.cookie = 'token=' + res.token + '; expires=Thu, 01 Jul 2019 00:00:00 UTC; path=/;'
     }
 }
 
@@ -41,7 +40,6 @@ export function logout() {
             localStorage.removeItem('id_token');
             localStorage.removeItem('profile');
             document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
-            document.cookie = 'refresh_token=""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             return res
         })
     }
@@ -52,10 +50,10 @@ export function registerAccount(data) {
         return vbrincapi.registerAccount(data).then(res => {
             dispatch({
                 type: SAVE_TOKEN,
-                data: res
+                data: res.data
             });
-            generateAuthCookies(res);
-            return res
+            generateAuthCookies(res.data);
+            return res.data
         })
     }
 }

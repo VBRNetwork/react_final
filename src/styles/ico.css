@@ -6,8 +6,10 @@
 
 .ant-carousel .slick-slide img {display: inherit }
 
-.trans-meta {position: relative; color: #FFF; text-align: center}
+.trans-meta {position: relative !important; color: #FFF !important; text-align: center !important}
 
-.trans-card {position: relative; color: #FFF; text-align: center; margin-top: 9%; }
+.trans-card {position: relative !important; color: #FFF !important; text-align: center !important; margin-top: 9% !important; width: 240 !important}
 
-.trans-card-title {color: #FFF; border-radius: 2px}
+.trans-card-title {color: #FFF !important; border-radius: 2px !important}
+
+.road-map-card {color: rgb(110, 61, 145) !important }

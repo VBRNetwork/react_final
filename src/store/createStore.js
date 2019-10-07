@@ -35,8 +35,15 @@ function createMiddlewares({isServer}) {
 
     return middlewares
 }
+
+let composed = compose(applyMiddleware(logger,thunkMiddleware))
+
+if (config.env === 'development'){
+    composed = composeWithDevTools(applyMiddleware(logger,thunkMiddleware))
+}
+
 const makeConfiguredStore = (reducer, initialState) =>
-    createStore(reducer, initialState, composeWithDevTools(applyMiddleware(logger,thunkMiddleware)));
+    createStore(reducer, initialState, composed);
 
 export const reducer = (state, {type, payload}) => {
     return state;
@@ -54,6 +61,8 @@ export const makeStore = (initialState = {}, {isServer, req, debug, storeKey}) =
         const store = makeConfiguredStore(persistedReducers, initialState);
 
         store.__persistor = persistStore(store);
+
+        // store.__persistor.purge();
 
         return store;
 
