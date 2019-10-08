@@ -386,7 +386,7 @@ class HomeContainer extends Component {
                                         backgroundColor: '#2EC3AB',
                                         borderColor: '#2EC3AB'
                                     }} className='vbr-button' type={'primary'}>
-                                        Download Whitepaper
+                                        <a href={'../../static/files/vbr_network_whitepaper.docx'}> Download Whitepaper</a>
                                     </Button>
                                     <br/>
                                     <span className='small' style={{ fontSize: '11px' }}>
