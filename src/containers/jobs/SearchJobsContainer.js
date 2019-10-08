@@ -140,7 +140,7 @@ class SearchJobsContainer extends Component {
 
                         <Layout style={{ padding: '24px 0', background: '#fff' }}>
                             <Row>
-                                <Col  xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 5}}>
+                                <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
                                         <div><strong>Filters</strong></div>
                                         <Menu
                                             mode='inline'
@@ -246,7 +246,7 @@ class SearchJobsContainer extends Component {
                                             </SubMenu>
                                         </Menu>
                                 </Col>
-                                <Col  xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 19}}>
+                                <Col  xs={24} sm={24} md={{span:17}} lg={{span:19}} xl={{span:19}} xxl={{ span: 19}}>
                                     <Content style={{ padding: '0 24px', minHeight: 280 }}>
                                         <List
                                             itemLayout='vertical'
