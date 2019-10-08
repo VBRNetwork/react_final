@@ -42,6 +42,12 @@ app.prepare().then(() => {
         app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/jobs/add-job', (req, res) => {
+        const actualPage = '/jobs/add-job'
+        const queryParams = { job_slug: req.params.slug }
+        app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('/jobs/:slug/', (req, res) => {
         const actualPage = '/jobs'
         const queryParams = { job_slug: req.params.slug }

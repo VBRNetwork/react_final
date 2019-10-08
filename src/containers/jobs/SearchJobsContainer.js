@@ -251,8 +251,8 @@ class SearchJobsContainer extends Component {
                                         <List
                                             itemLayout='vertical'
                                             size='large'
-                                            dataSource={listData}
 
+                                            dataSource={listData}
                                             renderItem={item => (
                                                 <List.Item
                                                     key={item.title}

@@ -121,18 +121,17 @@ class IcoContainer extends Component {
                                                             height: 60,
                                                         }}
                                                         description={
-                                                            <span>
-                                                    <strong>Whitepaper</strong>
-                                                </span>
-                                                        }
-                                                    >
+                                                        <span>
+                                                            <strong>Whitepaper</strong>
+                                                        </span>
+                                                        }>
                                                         <Button type="primary"
                                                                 style={{
                                                                     background: '#2EC3AB',
                                                                     borderColor: '#2EC3AB'
                                                                 }}
-                                                                htmlType='submit'
-                                                        >Download Now
+                                                                htmlType='submit'>
+                                                            <a href={'../../static/files/vbr_network_whitepaper.docx'}>Download Whitepaper</a>
                                                         </Button>
                                                     </Empty>
                                                 </div>
