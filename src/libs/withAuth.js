@@ -3,6 +3,7 @@ import Router from 'next/router'
 import AuthService from './authService'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+var jwtDecode = require('jwt-decode');
 
 export default function withAuth (AuthComponent) {
   const Auth = new AuthService('http://marketplace.vbrinc.ro/api/');
@@ -31,12 +32,17 @@ export default function withAuth (AuthComponent) {
     }
 
     componentDidMount () {
-      if (this.props.user.token === 0) {
-        Router.push('/')
+      if (this.props.user.token === 0 || typeof this.props.user.token === 'undefined') {
+          let decoded = null;
+          try {
+               decoded = jwtDecode(this.props.user.token);
+              console.log(decoded);
+          } catch (e) {
+              Router.push('/')
+          }
       }else{
           this.setState({ isLoading: false })
       }
-
     }
 
     render () {

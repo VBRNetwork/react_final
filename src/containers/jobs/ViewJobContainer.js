@@ -144,7 +144,7 @@ class ViewJobContainer extends Component {
 
                                 <Row>
 
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 15}}>
+                                    <Col xs={24} sm={15} md={{span:15}}  lg={{span:15}}  xl={{span:15}} xxl={{ span: 15}}>
                                         <p style={{paddingTop:'20px',fontSize:'15px'}}>
 
                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
@@ -158,7 +158,7 @@ class ViewJobContainer extends Component {
 
                                     </Col>
 
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 6,offset:3}}>
+                                    <Col xs={24} sm={{span: 6,offset:2}}  md={{span: 6,offset:2}} lg={{span: 6,offset:2}} xl={{span: 6,offset:1}} xxl={{ span: 6,offset:3}}>
                                         <div>
                                             <img
                                                 style={{width: '100%',padding:'5px'}}
@@ -166,7 +166,7 @@ class ViewJobContainer extends Component {
                                             />
 
                                             <Link as={'/users/vanea'} href={'/users/?username=vanea'}>
-                                                <a href="">
+                                                <a>
                                                     <h3>
                                                         Stefan Vanea
                                                     </h3>

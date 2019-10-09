@@ -48,7 +48,7 @@ class Header extends Component {
 
 
     componentDidUpdate (prevProps, prevState, snapshot) {
-        if(prevProps.router.pathname !== this.props.router.pathname){
+        if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
             ReactGA.pageview(window.location.pathname + window.location.search);
             console.log('pageview sent')
             this.rebuildBreadcrumbs()
@@ -251,16 +251,29 @@ class Header extends Component {
                                 </a>
                             </Link>}
 
-                            {token !== false && <Link href='/dashboard'>
-                                <a>
-                                    <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
-                                        <Button type='primary' style={{
-                                            backgroundColor: '#2EC3AB',
-                                            borderColor: '#2EC3AB'
-                                        }}>Dashboard</Button>
-                                    </div>
-                                </a>
-                            </Link>}
+                            {token !== false &&
+                                <div style={{display: 'inline-block',marginTop:'13px'}}>
+                                    <Button type='primary' style={{
+                                    }}>
+                                        <Link href='/jobs/add-job'>
+                                            <a>
+                                                Post job
+                                            </a>
+                                        </Link>
+                                    </Button>
+
+                                    <Button type='primary' style={{
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB',
+                                        marginLeft:'5px'
+                                    }}>
+                                        <Link href='/dashboard'>
+                                            Dashboard
+                                        </Link>
+
+                                    </Button>
+                                </div>
+                            }
                         </Col>
 
                     </Row>
