@@ -10,7 +10,7 @@ import Head from 'next/head'
 import Layout from 'components/Layout'
 import GoogleFontLoader from 'react-google-font-loader';
 import {PersistGate} from 'redux-persist/integration/react'
-
+import { Spin } from 'antd';
 import 'antd/dist/antd.css'
 import 'styles/base.scss'
 import 'styles/base.css'
@@ -65,7 +65,14 @@ class MyApp extends App {
                     subsets={['cyrillic-ext', 'greek']}
                 />
                 <Provider store={store}>
-                    <PersistGate loading={null} persistor={store.__persistor}>
+                    <PersistGate loading={<div style={{
+                        position: 'absolute',
+                        width: '150px',
+                        height: '100',
+                        zIndex: '15',
+                        top: '50%',
+                        left: '50%',
+                        }}><Spin size="large" /></div>} persistor={store.__persistor}>
                         <ConnectedRouter>
                             <Layout>
                                 <Component router={router} {...pageProps} />

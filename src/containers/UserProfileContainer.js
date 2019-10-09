@@ -155,7 +155,7 @@ class UserProfileContainer extends Component {
 
 
                                 <Row>
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 4}}>
+                                    <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 4}}>
                                         <div>
                                             <img
                                                 style={{width: '100%',padding:'5px'}}
@@ -170,7 +170,7 @@ class UserProfileContainer extends Component {
                                             <p style={{fontSize:'12px'}}>Active since September 18, 2019</p>
                                         </div>
                                     </Col>
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 13,offset:1}}>
+                                    <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
                                         <h3 styl>What is Lorem Ipsum?</h3>
                                         <p style={{paddingTop:'20px',fontSize:'15px'}}>
 
@@ -184,7 +184,7 @@ class UserProfileContainer extends Component {
                                         </p>
                                     </Col>
 
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 6}}>
+                                    <Col xs={24} sm={{ span: 6}} md={{ span: 6}} lg={{ span: 6}} xl={{ span: 6}} xxl={{ span: 6}}>
                                         <div style={{padding:'20px'}}>
 
                                             <strong>
@@ -230,7 +230,7 @@ class UserProfileContainer extends Component {
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17,offset:3}}>
 
-                        <Col span={8}>
+                        <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
                                     title={
@@ -274,7 +274,7 @@ class UserProfileContainer extends Component {
                                 </Card>
                             </div>
                         </Col>
-                        <Col span={8}>
+                        <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
                                     title={<div><strong><h3>Certifications</h3></strong></div>}
@@ -304,7 +304,7 @@ class UserProfileContainer extends Component {
                                 </Card>
                             </div>
                         </Col>
-                        <Col span={8}>
+                        <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
                                     title={<div><strong><h3> Work Portfolio</h3></strong></div>}
