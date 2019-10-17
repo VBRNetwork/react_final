@@ -100,64 +100,6 @@ class HomeContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
-                        <div style={{margin:'5px'}}>
-                            <Carousel autoplay className="home-carousel">
-                            <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                <div className="image">
-                                    <img
-                                        className='d-block h-200'
-                                        src={'../../static/images/freelancer-working2.png'}
-                                        alt='First slide'
-                                    />
-                                    <h2 className="h2-absolute"><span>Don't worry<span className="spacer">&nbsp;</span>
-                                    <span className="spacer">&nbsp;</span>We got this</span></h2>
-                                </div>
-                            </div>
-
-                            <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                <div className="image">
-                                    <img
-                                        className='d-block'
-                                        src={'../../static/images/picture_7.png'}
-                                        alt='Second slide'
-                                    />
-                                    <h2 className="h2-absolute"><span>We do know what we know best<span
-                                        className="spacer">&nbsp;</span>
-                                    </span></h2>
-                                </div>
-                            </div>
-
-                            <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                <div className="image">
-                                    <img
-                                        className='d-block h-200'
-                                        src={'../../static/images/freelancer_old.png'}
-                                        alt='Third slide'
-                                    />
-                                    <h2 className="h2-absolute"><span>Ace your standards!<span
-                                        className="spacer">&nbsp;</span>
-                                    </span></h2>
-                                </div>
-                            </div>
-
-                            <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                <div className="image">
-                                    <img
-                                        className='d-block h-200'
-                                        src={'../../static/images/picture_3.png'}
-                                        alt='Fourth slide'
-                                    />
-                                    <h2 className="h2-absolute"><span>All in your good time<span
-                                        className="spacer">&nbsp;</span>
-                                    </span></h2>
-                                </div>
-                            </div>
-                        </Carousel>
-                        </div>
-                    </Col>
-                </Row>
 
                 <Row style={{ background: '#ECECEC' }}>
                     <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}
@@ -257,6 +199,57 @@ class HomeContainer extends Component {
                             </Row>
                         </div>
                     </Col>
+
+
+
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
+                            <div style={{margin:'5px'}}>
+                                <Carousel autoplay className="home-carousel">
+                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
+                                        <div className="image">
+                                            <img
+                                                className='d-block h-200'
+                                                src={'../../static/images/freelancer-working2.png'}
+                                                alt='First slide'
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
+                                        <div className="image">
+                                            <img
+                                                className='d-block'
+                                                src={'../../static/images/picture_7.png'}
+                                                alt='Second slide'
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
+                                        <div className="image">
+                                            <img
+                                                className='d-block h-200'
+                                                src={'../../static/images/freelancer_old.png'}
+                                                alt='Third slide'
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
+                                        <div className="image">
+                                            <img
+                                                className='d-block h-200'
+                                                src={'../../static/images/picture_3.png'}
+                                                alt='Fourth slide'
+                                            />
+                                        </div>
+                                    </div>
+                                </Carousel>
+                            </div>
+                        </Col>
+                    </Row>
+
 
                     <Row style={{ marginBottom: '30px' }}>
                         <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>

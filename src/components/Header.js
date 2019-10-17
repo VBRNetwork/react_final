@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import {Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown} from 'antd'
+import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
@@ -133,7 +133,9 @@ class Header extends Component {
     }
 
     clickLogout(e) {
-        this.props.logout().then(() => {
+        let {logout} = this.props
+        
+       logout().then(() => {
             this.setState({
                 isLogged: false
             })
@@ -153,6 +155,35 @@ class Header extends Component {
                 </Link>
             </Menu.Item>
         );
+
+
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <Link href='/dashboard'>
+                        <a >
+                            Dashboard
+                        </a>
+                    </Link>
+
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' >
+                        Change Avatar
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' href='#'>
+                        Payments History
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <div onClick={this.clickLogout}>
+                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                    </div>
+                </Menu.Item>
+            </Menu>
+        )
 
         let menuItems = ''
         if(typeof(this.props.settings.main_menu) !== 'undefined' &&
@@ -202,7 +233,7 @@ class Header extends Component {
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 
-                        <Col xs={6} sm={4} md={4} lg={6} xl={8} xxl={12}>
+                        <Col xs={6} sm={4} md={4} lg={6} xl={8} xxl={10}>
                             <Link href='/'>
                                 <img src={'/static/images/vbrLogo.png'}
                                         style={{width: '80px', margin: '8px'}}
@@ -210,7 +241,7 @@ class Header extends Component {
                             </Link>
                         </Col>
 
-                        <Col  xs={11} sm={16} md={16} lg={14} xl={12} xxl={9}>
+                        <Col  xs={11} sm={16} md={16} lg={14} xl={12} xxl={8}>
                             <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
                                     <Menu.Item key='mail1'>
                                         <Link href='/'>
@@ -228,33 +259,32 @@ class Header extends Component {
                                             <a> <Icon style={{fontSize: 17}} type='file-protect'/>Initial Coin Offering</a>
                                         </Link>
                                     </Menu.Item>
-
-                                    {token === true &&
-                                    <Menu.Item key='alipay243434'>
-                                        <div onClick={this.clickLogout}>
-                                            <Icon style={{fontSize: 17}} type='logout'/> Logout
-                                        </div>
-                                    </Menu.Item>}
                                     {token === false && loginButton}
                                 </Menu>
                         </Col>
 
-                        <Col  xs={4} sm={4} md={4} lg={4} xl={4} xxl={3}>
+                        <Col  xs={4} sm={4} md={4} lg={4} xl={4} xxl={5}>
                             {token === false && <Link href='/register'>
-                                <a>
-                                    <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
-                                        <Button type='primary' style={{
-                                            backgroundColor: '#2EC3AB',
-                                            borderColor: '#2EC3AB'
-                                        }}>Register</Button>
-                                    </div>
-                                </a>
+                              <div>
+                                  <a>
+                                      <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
+                                          <Button type='primary' style={{
+                                              backgroundColor: '#2EC3AB',
+                                              borderColor: '#2EC3AB'
+                                          }}>Register</Button>
+                                      </div>
+                                  </a>
+                              </div>
                             </Link>}
 
                             {token !== false &&
-                                <div style={{display: 'inline-block',marginTop:'13px'}}>
-                                    <Button type='primary' style={{
-                                    }}>
+                                <div style={{marginTop:'10px'}}>
+                                    <Button
+                                             type='primary'
+                                             style={{
+                                                 backgroundColor: '#2EC3AB',
+                                                 borderColor: '#2EC3AB'
+                                             }}>
                                         <Link href='/jobs/add-job'>
                                             <a>
                                                 Post job
@@ -263,15 +293,27 @@ class Header extends Component {
                                     </Button>
 
                                     <Button type='primary' style={{
+                                        marginLeft:'5px',
                                         backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB',
-                                        marginLeft:'5px'
+                                        borderColor: '#2EC3AB'
                                     }}>
-                                        <Link href='/dashboard'>
-                                            Dashboard
+                                        <Link href='/jobs/add-job'>
+                                            <a>
+                                                Be freelancer
+                                            </a>
                                         </Link>
-
                                     </Button>
+
+                                    <Dropdown overlay={menu}>
+                                        <div style={{ color: '#FFF', marginLeft: '18%',display: 'inline'}}
+                                             className='ant-dropdown-link'>
+                                            <Avatar size='large' icon='user' style={{
+                                                backgroundColor: '#2ec3ab',
+                                                cursor: 'pointer',
+                                            }}/>
+
+                                        </div>
+                                    </Dropdown>
                                 </div>
                             }
                         </Col>

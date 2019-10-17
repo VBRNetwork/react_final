@@ -36,6 +36,13 @@ app.prepare().then(() => {
         app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/users/search', (req, res) => {
+        const actualPage = '/profile/search'
+        const queryParams = {  }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+
     server.get('/users/:username/', (req, res) => {
         const actualPage = '/profile'
         const queryParams = { username: req.params.username }
@@ -44,7 +51,7 @@ app.prepare().then(() => {
 
     server.get('/jobs/add-job', (req, res) => {
         const actualPage = '/jobs/add-job'
-        const queryParams = { job_slug: req.params.slug }
+        const queryParams = { }
         app.render(req, res, actualPage, queryParams)
     })
 

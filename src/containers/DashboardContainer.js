@@ -7,35 +7,16 @@ const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
 
-const menu = (
-  <Menu>
-    <Menu.Item>
-      <a target='_blank' rel='noopener noreferrer' href='#'>
-        Change Avatar
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target='_blank' rel='noopener noreferrer' href='#'>
-        Payments History
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target='_blank' rel='noopener noreferrer' href='#'>
-        Log Out
-      </a>
-    </Menu.Item>
-  </Menu>
-)
 
 class DashboardContainer extends Component {
   static async getInitialProps ({ store, query }) {
   }
 
-  componentDidMount () {
-  }
-
   render () {
-    return (
+      let full_name = this.props.user.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+          return letter.toUpperCase();
+      });
+      return (
       <Content>
           <Row>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
@@ -43,23 +24,13 @@ class DashboardContainer extends Component {
 
                       <div style={{border:'1px solid rgb(232, 227, 227)',margin:'10px',padding:'5px'}}>
                           <Row>
-                              <Col span={12}>
+                              <Col xl={{span:20}}>
                                   <div>
                                       <a href='#'><h2 style={{ marginLeft: '2%' }}>Account Dashboard</h2></a>
                                   </div>
                               </Col>
-                              <Col lg={{span: 10,offset:2 }}>
-                                  <Dropdown overlay={menu}>
-                                      <div style={{ float: 'right', color: '#FFF', marginRight: '1%' }}
-                                           className='ant-dropdown-link'>
-                                          <strong style={{color:'#000',margin: '10px',padding: '5px'}}>{this.props.user.name}</strong> <Icon type='down'/>
-                                          <Avatar size='large' icon='user' style={{
-                                              backgroundColor: '#2ec3ab',
-                                              cursor: 'pointer',
-                                          }}/>
-
-                                      </div>
-                                  </Dropdown>
+                              <Col xl={{span: 4}}>
+                                  <strong style={{color:'#000',marginLeft: '10px'}}>{full_name}</strong>
                               </Col>
                           </Row>
                       </div>
