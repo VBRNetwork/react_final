@@ -233,15 +233,17 @@ class Header extends Component {
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 
-                        <Col xs={6} sm={4} md={4} lg={6} xl={8} xxl={10}>
-                            <Link href='/'>
-                                <img src={'/static/images/vbrLogo.png'}
-                                        style={{width: '80px', margin: '8px'}}
+                        <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
+                            <div style={{textAlign:'center'}}>
+                                <Link href='/'>
+                                    <img src={'/static/images/vbrLogo.png'}
+                                         style={{width: '80px', margin: '8px'}}
                                     />
-                            </Link>
+                                </Link>
+                            </div>
                         </Col>
 
-                        <Col  xs={11} sm={16} md={16} lg={14} xl={12} xxl={8}>
+                        <Col  xs={24} sm={16} md={9} lg={9} xl={10} xxl={8}>
                             <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
                                     <Menu.Item key='mail1'>
                                         <Link href='/'>
@@ -263,7 +265,7 @@ class Header extends Component {
                                 </Menu>
                         </Col>
 
-                        <Col  xs={4} sm={4} md={4} lg={4} xl={4} xxl={5}>
+                        <Col  xs={24} sm={4} md={10} lg={9} xl={6} xxl={5}>
                             {token === false && <Link href='/register'>
                               <div>
                                   <a>
