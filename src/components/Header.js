@@ -234,7 +234,7 @@ class Header extends Component {
                     <Row>
 
                         <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
-                            <div style={{textAlign:'center'}}>
+                            <div className="logo-img">
                                 <Link href='/'>
                                     <img src={'/static/images/vbrLogo.png'}
                                          style={{width: '80px', margin: '8px'}}
