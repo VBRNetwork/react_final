@@ -144,6 +144,10 @@ html,
           background-color: inherit;
           border-top:0 none;
       }
+
+      .logo-img {
+          text-align: center;
+      }
       
       
   }
