@@ -107,7 +107,7 @@ class UserProfileContainer extends Component {
                 <span style={{paddingLeft: 8, coursor: 'auto'}} >{likes}</span>
               </span>,
                         <span key='comment-dislike'>
-                <Tooltip tiitle='Dislike'>
+                <Tooltip title='Dislike'>
                   <Icon
                       type='dislike'
                       theme={action === 'disliked' ? 'filled' : 'outlined'}

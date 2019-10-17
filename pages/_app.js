@@ -47,23 +47,7 @@ class MyApp extends App {
                 <Head>
                     <script dangerouslySetInnerHTML = {{__html:`console.log('header script')`}}/>
                 </Head>
-                <GoogleFontLoader
-                    fonts={[
-                        {
-                            font: 'Roboto',
-                            weights: [400, '400i'],
-                        },
-                        {
-                            font: 'Roboto Mono',
-                            weights: [400, 700],
-                        },
-                        {
-                            font: 'Merriweather',
-                            weights: [400, 700],
-                        },
-                    ]}
-                    subsets={['cyrillic-ext', 'greek']}
-                />
+
                 <Provider store={store}>
                     <PersistGate loading={<div style={{
                         position: 'absolute',
