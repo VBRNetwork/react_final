@@ -26,7 +26,7 @@ class HomeContainer extends Component {
                             params={{
                                 particles: {
                                     number: {
-                                        value: 50
+                                        value: 70
                                     },
                                     size: {
                                         value: 3
@@ -44,18 +44,16 @@ class HomeContainer extends Component {
                             }}
                         />
 
-                        <div style={{ padding: '25px' }}>
+                        <div style={{ padding: '80px' }}>
                             <Row type="flex" justify="space-around">
                                 <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18 }}>
                                     <Col xs={24} sm={10} md={10} lg={10} xl={10}>
                                         <div className='intro-text'>
                                             <h2 className='slogan'>
-                                                Disrupting the Freelancing Marketplace with the power of
-                                                blockchain
+                                                Freelancer's Marketplace on Blockchain
                                             </h2>
                                             <p className="subtext-css">
-                                                No more Hidden Fees, Scam Attempts, Poor Customer Support,
-                                                Delayed Payments or Unfair Mediation!
+                                                Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs
                                             </p>
 
                                                 <Link href='/register'><Button
@@ -71,29 +69,10 @@ class HomeContainer extends Component {
 
                                     <Col xs={24} sm={14} md={14} lg={14} xl={14}>
                                         <img src={'../../static/images/asset_6.png'}
-                                             style={{ height: '190px', marginLeft: '18%', marginTop: '60px' }}/>
+                                             style={{ height: '190px', marginLeft: '30%', marginTop: '60px' }}/>
 
                                         <img src={'../../static/images/asset_9.png'}
                                              style={{ marginLeft: '25%', height: '190px' }}/>
-
-                                        <div className="small-promo-text">
-                                            <div style={{ position: 'relative' }}>
-                                                <div
-                                                    style={{ display: 'inline' }}
-                                                    className='small-icon-button'>
-
-                                                    <FontAwesomeIcon
-                                                        icon='play-circle'
-                                                        size='2x'
-                                                        className='play-icon-color'
-                                                    />
-                                                </div>
-                                                <div style={{ display: 'inline' }}>
-                                                    Meet The First Decentralized Environment for
-                                                    Freelancers!
-                                                </div>
-                                            </div>
-                                        </div>
                                     </Col>
                                 </Col>
                             </Row>
