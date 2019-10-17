@@ -23,6 +23,185 @@ const listData = [{
     }
 },{
     href: '/profile',
+    title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+    slug: `looking-for-a-web-developer`,
+    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    description:
+        'Blockchain Expert',
+    content:
+        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+    user: {
+        name: 'Stefan Vanea',
+        username: 'stefan_vanea',
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+    }
+},
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },{
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+        href: '/profile',
+        title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
+        slug: `looking-for-a-web-developer`,
+        avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        description:
+            'Blockchain Expert',
+        content:
+            'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        user: {
+            name: 'Stefan Vanea',
+            username: 'stefan_vanea',
+            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+        }
+    },
+    {
+    href: '/profile',
     title: `Looking for a Web Designer`,
     slug: `looking-for-a-web-designer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -135,7 +314,7 @@ class SearchJobsContainer extends Component {
                                                 md: 4,
                                                 lg: 4,
                                                 xl: 6,
-                                                xxl: 3,
+                                                xxl: 4,
                                             }}
                                             dataSource={listData}
                                             renderItem={item => (
@@ -147,21 +326,20 @@ class SearchJobsContainer extends Component {
                                                             boxShadow: '0px 0px 5px 0px #acacac',
                                                             padding:'5px'
                                                         }}>
-                                                            <Link as={'/users/'+item.user.username} href={'/users/?username='+item.user.username}>
+                                                            <Link as={'/users/'+item.user.username}
+                                                                  href={'/users/?username='+item.user.username}>
+
                                                                 <div style={{padding:'5px'}}>
                                                                     <img
                                                                         width={'100%'}
                                                                         alt='logo'
                                                                         src='../../static/images/search_dsg.png'
                                                                     />
-                                                                    <ul className="ant-list-item-action">
-                                                                        <li><h5>Senior Software Engineer</h5><em
-                                                                            className="ant-list-item-action-split"/>
-                                                                        </li>
-                                                                        <li><h4>$37</h4></li>
-                                                                    </ul>
+
                                                                     <a>
                                                                         <h3>{item.user.name}</h3>
+                                                                        <h4>Senior Software Engineer, $37 </h4><em
+                                                                        className="ant-list-item-action-split"/>
                                                                     </a>
                                                                     {item.content}
 

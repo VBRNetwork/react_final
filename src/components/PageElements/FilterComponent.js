@@ -74,9 +74,9 @@ class FilterComponent extends PureComponent {
                         key='filter1'
                         title={
                             <span>
-                                              <Icon style={{ fontSize: '20px' }} type='appstore'/>
-                                                Categories
-                                            </span>
+                              <Icon style={{ fontSize: '20px' }} type='appstore'/>
+                                Categories
+                            </span>
                         }>
 
                         <Menu.Item key='1'><Checkbox style={{ float: 'right' }}
@@ -94,39 +94,39 @@ class FilterComponent extends PureComponent {
                         key='filter2'
                         title={
                             <span>
-                                              <Icon style={{ fontSize: '20px' }} type='cluster'/>
-                                                Subcategories
-                                            </span>
-                        }>
+                              <Icon style={{ fontSize: '20px' }} type='cluster'/>
+                                Subcategories
+                            </span>}>
 
                         {subcategoriesElements}
                     </SubMenu>
+
                     <SubMenu
                         key='filter3'
                         title={
                             <span>
-                                              <Icon style={{ fontSize: '20px' }} type='euro'/>
-                                                Pricing
-                                            </span>
+                                <Icon style={{ fontSize: '20px' }} type='euro'/>
+                                Pricing
+                            </span>
                         }>
                         <Menu.Item key='17'><Checkbox style={{ float: 'right' }}
-                                                      onChange={this.onChange}/> &lt; $30/hour</Menu.Item>
+                          onChange={this.onChange}/> &lt; $30/hour</Menu.Item>
                         <Menu.Item key='18'><Checkbox style={{ float: 'right' }}
-                                                      onChange={this.onChange}/>$30 -
+                                  onChange={this.onChange}/>$30 -
                             $50/hour</Menu.Item>
                         <Menu.Item key='19'><Checkbox style={{ float: 'right' }}
-                                                      onChange={this.onChange}/>$50 -
+                              onChange={this.onChange}/>$50 -
                             $100/hour</Menu.Item>
                         <Menu.Item key='20'><Checkbox style={{ float: 'right' }}
-                                                      onChange={this.onChange}/>&gt; $100/hour</Menu.Item>
+                          onChange={this.onChange}/>&gt; $100/hour</Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key='filter4'
                         title={
                             <span>
-                                              <Icon style={{ fontSize: '20px' }} type='star'/>
-                                                Rating
-                                            </span>}>
+                              <Icon style={{ fontSize: '20px' }} type='star'/>
+                                Rating
+                            </span>}>
                         <Menu.Item key='21'>
                             <Checkbox style={{ float: 'right' }} onChange={this.onChange}/>3 Stars</Menu.Item>
                         <Menu.Item key='22'>

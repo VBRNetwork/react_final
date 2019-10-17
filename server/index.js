@@ -36,6 +36,18 @@ app.prepare().then(() => {
         app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/dashboard', (req, res) => {
+        const actualPage = '/dashboard'
+        const queryParams = {  }
+        app.render(req, res, actualPage, queryParams)
+    })
+
+    server.get('/dashboard/:slug/', (req, res) => {
+        const actualPage = '/dashboard'
+        const queryParams = {  }
+        app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('/users/search', (req, res) => {
         const actualPage = '/profile/search'
         const queryParams = {  }

@@ -297,7 +297,7 @@ class Header extends Component {
                                         backgroundColor: '#2EC3AB',
                                         borderColor: '#2EC3AB'
                                     }}>
-                                        <Link href='/jobs/add-job'>
+                                        <Link href='/dashboard/become-freelancer'>
                                             <a>
                                                 Be freelancer
                                             </a>
