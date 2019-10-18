@@ -301,7 +301,7 @@ class Header extends Component {
                                     }}>
                                         <Link href='/dashboard/become-freelancer'>
                                             <a>
-                                                Be freelancer
+                                                Become a freelancer
                                             </a>
                                         </Link>
                                     </Button>
