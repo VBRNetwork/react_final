@@ -4,7 +4,7 @@ import { Tag, Input, Tooltip, Icon } from 'antd';
 
 export default class EditableTagGroup extends React.Component {
     state = {
-        tags: ['Unremovable', 'Tag 2', 'Tag 3'],
+        tags: ['Up to 3 Skills'],
         inputVisible: false,
         inputValue: '',
     };
@@ -72,7 +72,7 @@ export default class EditableTagGroup extends React.Component {
                 )}
                 {!inputVisible && (
                     <Tag onClick={this.showInput} style={{ background: '#fff', borderStyle: 'dashed' }}>
-                        <Icon type="plus" /> New Tag
+                        <Icon type="plus" /> Add New Skill
                     </Tag>
                 )}
             </div>

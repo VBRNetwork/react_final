@@ -50,7 +50,7 @@ class HomeContainer extends Component {
                                     <Col xs={24} sm={10} md={10} lg={10} xl={10}>
                                         <div className='intro-text'>
                                             <h2 className='slogan'>
-                                                Freelancer's Marketplace on Blockchain
+                                                Peer-to-peer Marketplace for Freelancers <br /> Powered by Blockchain
                                             </h2>
                                             <p className="subtext-css">
                                                 Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs
@@ -96,7 +96,7 @@ class HomeContainer extends Component {
                                                 src={'../../static/images/img-1.png'}
                                             />
                                             <br/>
-                                            <div style={{ textAlign: 'center' }}><strong>Writing</strong></div>
+                                            <div style={{ textAlign: 'center' }}><strong>Writing & Translation</strong></div>
                                         </div>
                                     </div>
                                 </Col>
@@ -110,7 +110,7 @@ class HomeContainer extends Component {
                                                 src={'../../static/images/img-2.png'}
                                             />
                                             <br/>
-                                            <div style={{ textAlign: 'center' }}><strong>Design</strong></div>
+                                            <div style={{ textAlign: 'center' }}><strong>Web & Graphic Design</strong></div>
                                         </div>
                                     </div>
                                 </Col>
@@ -141,7 +141,7 @@ class HomeContainer extends Component {
                                                 src={'../../static/images/img-5.png'}
                                             />
                                             <br/>
-                                            <strong>Developers</strong>
+                                            <strong>IT & Programming</strong>
                                         </div>
                                     </div>
                                 </Col>
@@ -155,7 +155,7 @@ class HomeContainer extends Component {
                                                 src={'../../static/images/img-06.png'}
                                             />
                                             <br/>
-                                            <div style={{ textAlign: 'center' }}><strong>Marketing & SEO</strong>
+                                            <div style={{ textAlign: 'center' }}><strong>Digital Marketing</strong>
                                             </div>
                                         </div>
                                     </div>
@@ -178,8 +178,6 @@ class HomeContainer extends Component {
                             </Row>
                         </div>
                     </Col>
-
-
 
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
@@ -240,55 +238,53 @@ class HomeContainer extends Component {
 
                             <Row gutter={20}>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
-                                    <Card title="Online and Cold wallets" bordered={false}>
+                                    <Card title={<div><strong><h3>Lowest Fees</h3></strong></div>} bordered={false}>
                                         <p>
                                             Time is money, in that we don’t want to waste either.
                                         </p>
                                         <p>
-                                            This is why we implemented a cold wallet system, to ensure the
-                                            security
-                                            of your transactions.
+                                            This is why we implemented lowest fee on market,
+                                            3% for each transaction between customer and freelancer.
                                         </p>
                                         <p>
-                                            Coupled with our Proof of Origin and state of the art encryption, we
-                                            truly hope to provide only the best.
+                                            Even more, our Exchange Market fees will be dynamic, between 0% - 3%.
+                                            <br/>
                                             <br/>
                                         </p>
                                     </Card>
                                 </Col>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
-                                    <Card title="100% Transparency" bordered={false}>
+                                    <Card title={<div><strong><h3>100% Transparency</h3></strong></div>} bordered={false}>
                                         <p>
                                             Customers will be able to trace the progress of their project
-                                            instantly,
+                                            in real time,
                                             due to our system that compares it to similar projects in our
                                             pre-existent library.
                                         </p>
                                         <p>
-                                            Delays due to unprofessional work ethic are now a thing of the past.
-                                            Just like your worries.
-                                            Whatever it is, you're covered.
+                                            This is a machine learning algorithm which allow VBR Platform
+                                            to be among most transparent in the existing market.
                                         </p>
                                     </Card>
                                 </Col>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
-                                    <Card title="Instant payments" bordered={false}>
+                                    <Card title={<div><strong><h3>Instant Payments</h3></strong></div>} bordered={false}>
                                         <p>
-                                            All payments with our token will be processed instantly,
-                                            and based on Zero-Knowledge-Proof protocol and Proof-of-Origin
-                                            protocol.
+                                            All transactions with our token will be processed instantly,
+                                            and in a highly secure environment.
                                         </p>
                                         <p>
-                                            Payments in fiat or any other payment method (i.e. bitcoin) will
-                                            still
-                                            be fast,
-                                            but depend on their respective processors from the chain.
+                                            We simplify a lot the payment process for both freelancer and customer:
+                                        </p>
+                                        <p>
+                                            Introducing automatic exchanges, free withdraws to bank account,
+                                            or minimum exchange fees.
                                         </p>
 
                                     </Card>
                                 </Col>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
-                                    <Card title="Exchange Platform" bordered={false}>
+                                    <Card title={<div><strong><h3>Exchange Market</h3></strong></div>} bordered={false}>
                                         <p>
                                             We want our users to feel as comfortable as possible.
                                         </p>
@@ -298,7 +294,7 @@ class HomeContainer extends Component {
                                         </p>
                                         <p>
                                             Our users can exchange crypto to fiat, crypto to crypto etc. with
-                                            minimal fees, or no fees at all.
+                                            minimal fees, or no fees at all, based on out Terms & Conditions.
                                             <br/>
                                         </p>
 
@@ -330,24 +326,22 @@ class HomeContainer extends Component {
                                         </div>
                                         <hr/>
                                         <p>
-                                            We provide instant payments using <strong>VBR tokens</strong>, and within 48
-                                            hours for fiat payouts.
+                                            Lowest fee on market: 3% for jobs, and dynamic fee: 0% - 3% for exchanges.
                                         </p>
                                         <p>
                                             Mediation will be carried out by the smart contract
                                             agreed upon by the parties and our Terms of Service, by the
                                             community.
                                         </p>
-                                        <p> Meticulously picked customer experience team</p>
+                                        <p> We provide instant payments using <strong>VBR tokens</strong>, and within 48
+                                            hours for fiat payouts.</p>
                                         <p>
                                             Customer can follow the progress of his required product
                                             in real time, based on project
                                         </p>
                                         <p>
-                                            Ample recruitment process for freelancers in order to
-                                            limit the amount of scammers on our platform <strong>highly
-                                            secure</strong> environment based on algorithms developed to
-                                            ensure the safety of each and every one of our users.
+                                            Using Blockchain technology to simplify,
+                                            reduce costs, decentralize, and to build a community.
                                         </p>
                                     </div>
                                 </Card>
@@ -362,7 +356,7 @@ class HomeContainer extends Component {
                                     </Button>
                                     <br/>
                                     <span className='small' style={{ fontSize: '11px' }}>
-                                        No more hidden fees or unfair mediation
+                                        Read more about VBR Platform
                                     </span>
                                 </div>
                                 <div style={{textAlign:'center'}}>
