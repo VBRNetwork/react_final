@@ -4,7 +4,7 @@ import { Tag, Input, Tooltip, Icon } from 'antd';
 
 export default class EditableTagGroup extends React.Component {
     state = {
-        tags: ['Up to 3 Skills'],
+        tags: ['Up to 5 Skills'],
         inputVisible: false,
         inputValue: '',
     };
