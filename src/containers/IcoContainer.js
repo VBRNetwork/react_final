@@ -642,29 +642,6 @@ class IcoContainer extends Component {
                                                                             marginTop: '5px',
                                                                             marginLeft: '10px',
                                                                             background: '#FFF',
-                                                                            color: '#FFF',
-                                                                            float: 'right'
-                                                                        }}/>}
-                                                        title={<div className="trans-card-title"><strong>Andrei
-                                                            Porumbel</strong></div>}
-                                                        description={<div className="trans-card"><strong>VP Customer
-                                                            Ops</strong></div>}
-                                                        className="trans-meta"/>
-                                                </Card>
-
-                                                <Card
-                                                    hoverable
-                                                    style={{position:'relative'}}
-                                                    cover={<img style={{ position: 'absolute' }}
-                                                                src={'../../static/images/picture_6.png'}/>}
-                                                >
-                                                    <Meta
-                                                        avatar={<Avatar size={64}
-                                                                        icon="user"
-                                                                        style={{
-                                                                            marginTop: '5px',
-                                                                            marginLeft: '10px',
-                                                                            background: '#FFF',
                                                                             color: '#FFF'
                                                                         }}/>}
                                                         title={<div className="trans-card-title"><strong>Cristian

@@ -17,46 +17,290 @@ const { TextArea } = Input;
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
-const residences = [
+const jobCat = [
     {
-        value: 'zhejiang',
-        label: 'Zhejiang',
+        value: 'Writing & Translation',
+        label: 'Writing & Translation',
         children: [
             {
-                value: 'hangzhou',
-                label: 'Hangzhou',
-                children: [
-                    {
-                        value: 'xihu',
-                        label: 'West Lake',
-                    },
-                ],
+                value: 'Article Writing',
+                label: 'Article Writing',
+
+            },
+
+            {
+                value: 'Blog Posts',
+                label: 'Blog Posts',
+
+            },
+
+            {
+                value: 'Simple Content Writing',
+                label: 'Simple Content Writing',
+
+            },
+            {
+                value: 'Copywriting',
+                label: 'Copywriting',
+
+            },
+            {
+                value: 'Complex Content Writing',
+                label: 'Complex Content Writing',
+
+            },
+            {
+                value: 'Translation',
+                label: 'Translation',
+
             },
         ],
     },
+
     {
-        value: 'jiangsu',
-        label: 'Jiangsu',
+        value: 'Digital Marketing',
+        label: 'Digital Marketing',
         children: [
             {
-                value: 'nanjing',
-                label: 'Nanjing',
-                children: [
-                    {
-                        value: 'zhonghuamen',
-                        label: 'Zhong Hua Men',
-                    },
-                ],
+                value: 'SEO',
+                label: 'SEO',
+
             },
+
+            {
+                value: 'Google AddWords',
+                label: 'Google AddWords',
+
+            },
+
+            {
+                value: 'Email Marketing',
+                label: 'Email Marketing',
+
+            },
+
+            {
+                value: 'Social Media Marketing',
+                label: 'Social Media Marketing',
+
+            },
+
+            {
+                value: 'Marketing Strategy',
+                label: 'Marketing Strategy',
+
+            },
+
         ],
+
+
+    },
+
+    {
+        value: 'Web & Graphic Design',
+        label: 'Web & Graphic Design',
+        children: [
+
+            {
+                value: '3D Animation',
+                label: '3D Animation',
+
+            },
+
+            {
+                value: 'PhotoShop',
+                label: 'PhotoShop',
+
+            },
+
+            {
+                value: 'Logo Design',
+                label: 'Logo Design',
+
+            },
+
+            {
+                value: '3D Design',
+                label: '3D Design',
+
+            },
+
+            {
+                value: 'Web Design',
+                label: 'Web Design',
+
+            },
+
+            {
+                value: 'Graphic Design',
+                label: 'Graphic Design',
+
+            },
+
+            {
+                value: '3D-Rendering',
+                label: '3D-Rendering',
+
+            },
+
+        ],
+    },
+
+    {
+        value: 'Business Consultancy',
+        label: 'Business Consultancy',
+        children: [
+            {
+                value: 'Business Analysis',
+                label: 'Business Analysis',
+
+            },
+
+            {
+                value: 'Project Management',
+                label: 'Project Management',
+
+            },
+
+            {
+                value: 'Legal Consultancy',
+                label: 'Legal Consultancy',
+
+            },
+
+            {
+                value: 'Finance',
+                label: 'Finance',
+
+            },
+
+            {
+                value: 'Business Plans',
+                label: 'Business Plans',
+
+            },
+
+            {
+                value: 'Project Management',
+                label: 'Project Management',
+
+            },
+
+
+        ],
+
+
+    },
+
+    {
+        value: 'IT & Programming',
+        label: 'IT & Programming',
+        children: [
+            {
+                value: 'JavaScript',
+                label: 'JavaScript',
+
+            },
+
+            {
+                value: 'HTML5',
+                label: 'HTML5',
+
+            },
+
+            {
+                value: 'Web Programming',
+                label: 'Web Programming',
+
+            },
+
+            {
+                value: 'Desktop & Mobile Apps',
+                label: 'Desktop & Mobile Apps',
+
+            },
+
+            {
+                value: 'e-Commerce Platforms',
+                label: 'e-Commerce Platforms',
+
+            },
+
+            {
+                value: 'WordPress',
+                label: 'WordPress',
+
+            },
+
+        ],
+
+
     },
 ];
 
 class PostJobContainer extends React.Component {
-    state = {
-        confirmDirty: false,
-        autoCompleteResult: [],
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            job: '',
+            title: '',
+            description: '',
+            skills: '',
+            category: '',
+            budget: '',
+            tos: false,
+        };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleChangeDescription = this.handleChangeDescription.bind(this);
+        this.handleChangeSkills = this.handleChangeSkills.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
+        this.handleChangeBudget = this.handleChangeBudget.bind(this);
+        this.tosAccepted = this.tosAccepted.bind(this);
+
+
+
+    }
+
+    handleChange(event) {
+        this.setState({
+            job: event.target.value,
+        });
+    }
+
+    handleChangeTitle(event) {
+        this.setState({
+            title: event.target.value,
+        });
+    }
+
+    handleChangeDescription(event) {
+        this.setState({
+            description: event.target.value,
+        });
+    }
+
+    handleChangeSkills(event) {
+        this.setState({
+            skills: event.target.value,
+        });
+    }
+
+    handleChangeCategory(event) {
+        this.setState({
+            category: event.target.value,
+        });
+    }
+
+    handleChangeBudget(event) {
+        this.setState({
+            budget: event.target.value,
+        });
+    }
+
+
 
     handleSubmit = e => {
         e.preventDefault();
@@ -67,42 +311,14 @@ class PostJobContainer extends React.Component {
         });
     };
 
-    handleConfirmBlur = e => {
-        const { value } = e.target;
-        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-    };
-
-    compareToFirstPassword = (rule, value, callback) => {
-        const { form } = this.props;
-        if (value && value !== form.getFieldValue('password')) {
-            callback('Two passwords that you enter is inconsistent!');
-        } else {
-            callback();
-        }
-    };
-
-    validateToNextPassword = (rule, value, callback) => {
-        const { form } = this.props;
-        if (value && this.state.confirmDirty) {
-            form.validateFields(['confirm'], { force: true });
-        }
-        callback();
-    };
-
-    handleWebsiteChange = value => {
-        let autoCompleteResult;
-        if (!value) {
-            autoCompleteResult = [];
-        } else {
-            autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
-        }
-        this.setState({ autoCompleteResult });
-    };
+    tosAccepted() {
+        this.setState({
+            tos: !this.state.tos
+        })
+    }
 
     render() {
         const { getFieldDecorator } = this.props.form;
-        const { autoCompleteResult } = this.state;
-
         console.log(this.props.user)
         const formItemLayout = {
             labelCol: {
@@ -126,55 +342,29 @@ class PostJobContainer extends React.Component {
                 },
             },
         };
-        const prefixSelector = getFieldDecorator('prefix', {
-            initialValue: '+00',
-        })(
-            <Select style={{ width: 70 }}>
-                <Option value="04">04</Option>
-                <Option value="07">07</Option>
-            </Select>,
-        );
-
-        const websiteOptions = autoCompleteResult.map(website => (
-            <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
-        ));
 
         return (
             <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 10, offset:5 }}>
                     <h2 style={{textAlign:'center'}}>Post new job</h2>
                     <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-                        <Form.Item label="Title" >
-                            {getFieldDecorator('email', {
-                                rules: [
-                                    {
-                                        type: 'email',
-                                        message: 'The input is not valid E-mail!',
-                                    },
-                                    {
-                                        required: true,
-                                        message: 'Please input your E-mail!',
-                                    },
-                                ],
-                            })(<Input    placeholder="Controlled autosize" />)}
+                        <Form.Item label="Job Title" >
+                            <Input    placeholder="Enter Job Title" />
                         </Form.Item>
-
 
                         <Form.Item
                             label={
                                 <span>
-                                  Nickname&nbsp;
-                                                        <Tooltip title="What do you want others to call you?">
+                                  Job Description&nbsp;
+                                                        <Tooltip title="Describe clearly the job you need, including all particularities.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
                                 </span>
                             }
                         >
-
                             <TextArea
-                                value={''}
                                 onChange={this.onChange}
-                                placeholder="Controlled autosize"
+                                placeholder="Enter Job Description"
                                 autosize={{ minRows: 3, maxRows: 5 }}
                             />
                         </Form.Item>
@@ -182,7 +372,7 @@ class PostJobContainer extends React.Component {
                             label={
                                 <span>
                                   Skills&nbsp;
-                                    <Tooltip title="What do you want others to call you?">
+                                    <Tooltip title="Enter necessary skills for the job you want to post.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
                                 </span>
@@ -191,44 +381,28 @@ class PostJobContainer extends React.Component {
                             <SkillsGroup/>
                         </Form.Item>
 
-                        <Form.Item label="Location">
-                            {getFieldDecorator('residence', {
-                                initialValue: ['Europe', 'USA', 'Asia'],
-                                rules: [
-                                    { type: 'array', required: true, message: 'Please select your residence!' },
-                                ],
-                            })(<Cascader options={residences} />)}
+                        <Form.Item label="Job Category">
+                            <Cascader options={jobCat} />
                         </Form.Item>
-                        <Form.Item label="Phone Number">
-                            {getFieldDecorator('phone', {
-                                rules: [{ required: true, message: 'Please input your phone number!' }],
-                            })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
-                        </Form.Item>
-                        <Form.Item label="Website">
-                            {getFieldDecorator('website', {
-                                rules: [{ required: true, message: 'Please input website!' }],
-                            })(
-                                <AutoComplete
-                                    dataSource={websiteOptions}
-                                    onChange={this.handleWebsiteChange}
-                                    placeholder="website"
-                                >
-                                    <Input />
-                                </AutoComplete>,
-                            )}
+                        <Form.Item label="Available Budget" >
+
+                            <Input    placeholder="Enter amount" />
                         </Form.Item>
 
                         <Form.Item {...tailFormItemLayout}>
-                            {getFieldDecorator('agreement', {
-                                valuePropName: 'checked',
-                            })(
-                                <Checkbox>
-                                    I have read the <a href="">agreement</a>
+
+                                <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
+                                    I agree with <strong>VBR Network</strong> <a href="">Terms & Conditions</a>
                                 </Checkbox>,
-                            )}
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary" htmlType="submit">
+                            <Button type="primary"
+                                    htmlType="submit"
+                                    disabled={!this.state.tos}
+                                    style={{
+                                        background: 'rgb(46, 195, 171)',
+                                        borderColor: 'rgb(46, 195, 171)'}}
+                                    >
                                 Post job
                             </Button>
                         </Form.Item>
