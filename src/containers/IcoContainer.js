@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
-import Moment from 'react-moment'
 import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form } from 'antd'
 
 const { Content } = Layout
@@ -63,52 +62,16 @@ class IcoContainer extends Component {
                     <Layout>
                         <Row>
                             <Col xs={24} sm={24} md={24} lg={8} xl={8} xxl={{ span: 8 }}>
-                                <Card title="VBR Network Concept"
-                                      bordered={false}
-                                      style={{ width: '100%' }}
+                                <Card 
+                                    title="VBR Network Concept"
+                                    bordered={false}
+                                    style={{ width: '100%' }}
                                 >
-                                    <img style={{ float: 'right' }}
-                                         alt="concept"
-                                         src={'../../static/images/asset_5.png'}
+                                    <img 
+                                        style={{ float: 'right' }}
+                                        alt="concept"
+                                        src={'../../static/images/asset_5.png'}
                                     />
-                                    <p> We realized that the current freelancing market is missing something bad,
-                                        and those who have great ideas are often not given a platform to express them.
-                                        <br/>
-                                        The market grows best with your input, not with impersonal customer support and
-                                        dishonesty.
-                                        It's time to start over and give you the tools you need to build your project to
-                                        the best of your ability.
-                                        Say goodbye to having to read between the lines!
-                                    </p>
-                                    <p>
-                                        Enter VBR: Made by freelancers, for freelancers.
-                                        You know how you want to run your business far better than we do: help us help
-                                        you.
-
-                                    </p>
-                                    <p>
-                                        Our Terms and Projects are voted on by you and the community.
-                                        It's time to abandon bureacratic processes and anti-consumer practices.
-                                    </p>
-                                    <p>
-                                        VBR members strive to let the market grow on its’ own, with as little
-                                        interference as possible.
-                                        However, we've come up with a few improvements ourselves, which we hope you will
-                                        find useful!
-                                    </p>
-                                    <p>
-                                        One of our tools will allow the customer to track the progress of the freelancer
-                                        in real time,
-                                        by measuring the project size against other similar projects in our library.
-                                        This will help us eliminate long SLAs.
-                                    </p>
-                                    <p>
-                                        VBR will be working closely with partners
-                                        that will allow talented freelancers
-                                        from underdeveloped countries to integrate themselves better into the global
-                                        market,
-                                        ensuring equal opportunities for all.
-                                    </p>
                                     <p>
                                         Did you just BARELY miss that one crypto startup that would have made your day
                                         (and your fortune)?
@@ -119,6 +82,24 @@ class IcoContainer extends Component {
                                         Your future depends on you, and we aim to brighten it. Join the first truly free
                                         market.
                                         Not as an employee, as our partner.
+                                    </p>
+                                    <p>
+                                        The freelancing market grows best with te community input, helped by Blockchain Technology, 
+                                        along with all VBR's great features.
+                                        It's time to start over and give you the tools you need to build your project to
+                                        the best of your ability.
+                                    </p>
+                                    <p>
+                                        Enter VBR: Made by freelancers, for freelancers.
+                                        You know how you want to run your business far better than we do: help us help
+                                        you.
+                                    </p>
+                                    <p>
+                                        VBR will be working closely with partners
+                                        that will allow talented freelancers
+                                        from underdeveloped countries to integrate themselves better into the global
+                                        market,
+                                        ensuring equal opportunities for all.
                                     </p>
 
                                     <Row>

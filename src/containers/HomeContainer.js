@@ -10,8 +10,6 @@ class HomeContainer extends Component {
     componentDidMount () {
     }
 
-
-
     render () {
         return (
             <Fragment>
@@ -43,7 +41,6 @@ class HomeContainer extends Component {
                                 }
                             }}
                         />
-
                         <div style={{ padding: '80px' }}>
                             <Row type="flex" justify="space-around">
                                 <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18 }}>
@@ -55,14 +52,18 @@ class HomeContainer extends Component {
                                             <p className="subtext-css">
                                                 Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs
                                             </p>
-
-                                                <Link href='/register'><Button
+                                            <Link 
+                                                href='/register'
+                                            >
+                                                <Button
                                                     className='ant-btn-lg'
                                                     type='primary'
                                                     style={{
                                                         backgroundColor: '#2EC3AB',
                                                         borderColor: '#2EC3AB'
-                                                    }}>Join our platform </Button></Link>
+                                                    }}>Join our platform 
+                                                </Button>
+                                            </Link>
 
                                         </div>
                                     </Col>
@@ -227,15 +228,14 @@ class HomeContainer extends Component {
                         </Col>
                     </Row>
 
-
                     <Row style={{ marginBottom: '30px' }}>
                         <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
                             <div id='how-it-works' style={{ marginTop: '30px' }}>
-                                <h2 className='text-center how-it-work-title' style={{ textAlign: 'center' }}>What we
-                                    offer
-                                    ?</h2>
+                                <h2 className='text-center how-it-work-title' 
+                                    style={{ textAlign: 'center' }}
+                                > What we  offer ?
+                                </h2>
                             </div>
-
                             <Row gutter={20}>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
                                     <Card title={<div><strong><h3>Lowest Fees</h3></strong></div>} bordered={false}>
@@ -248,9 +248,9 @@ class HomeContainer extends Component {
                                         </p>
                                         <p>
                                             Even more, our Exchange Market fees will be dynamic, between 0% - 3%.
-                                            <br/>
-                                            <br/>
                                         </p>
+                                        <br />
+                                        <br />
                                     </Card>
                                 </Col>
                                 <Col xs={24} sm={12} md={6} lg={6} xl={6}>
@@ -295,16 +295,13 @@ class HomeContainer extends Component {
                                         <p>
                                             Our users can exchange crypto to fiat, crypto to crypto etc. with
                                             minimal fees, or no fees at all, based on out Terms & Conditions.
-                                            <br/>
                                         </p>
-
+                                        <br />
                                     </Card>
                                 </Col>
                             </Row>
-
                         </Col>
                     </Row>
-
                 </Row>
 
                 <Layout>
@@ -327,26 +324,26 @@ class HomeContainer extends Component {
                                         </div>
                                         <hr/>
                                         <div style={{fontSize: 16}} className='footer-description-content'>
-                                        <h4>
-                                        <p>
-                                            Lowest fee on market: 3% for jobs, and dynamic fee: 0% - 3% for exchanges.
-                                        </p>
-                                        <p>
-                                            Mediation will be carried out by the smart contract
-                                            agreed upon by the parties and our Terms of Service, by the
-                                            community.
-                                        </p>
-                                        <p> We provide instant payments using <strong>VBR tokens</strong>, and within 48
-                                            hours for fiat payouts.</p>
-                                        <p>
-                                            Customer can follow the progress of his required product
-                                            in real time, based on project
-                                        </p>
-                                        <p>
-                                            Using Blockchain technology to simplify,
-                                            reduce costs, decentralize, and to build a community.
-                                        </p>
-                                        </h4>
+                                            <h4>
+                                            <p>
+                                                Lowest fee on market: 3% for jobs, and dynamic fee: 0% - 3% for exchanges.
+                                            </p>
+                                            <p>
+                                                Mediation will be carried out by the smart contract
+                                                agreed upon by the parties and our Terms of Service, by the
+                                                community.
+                                            </p>
+                                            <p> We provide instant payments using <strong>VBR tokens</strong>, and within 48
+                                                hours for fiat payouts.</p>
+                                            <p>
+                                                Customer can follow the progress of his required product
+                                                in real time, based on project
+                                            </p>
+                                            <p>
+                                                Using Blockchain technology to simplify,
+                                                reduce costs, decentralize, and to build a community.
+                                            </p>
+                                            </h4>
                                         </div>
                                     </div>
                                 </Card>
@@ -365,16 +362,15 @@ class HomeContainer extends Component {
                                     </span>
                                 </div>
                                 <div style={{textAlign:'center'}}>
-                                    <img src={'../../static/images/asset_4.png'}
-                                         style={{ marginTop: '20%' }}
+                                    <img 
+                                        src={'../../static/images/asset_4.png'}
+                                        style={{ marginTop: '20%' }}
                                     />
                                 </div>
-
                             </Col>
                         </Row>
                     </div>
                 </Layout>
-
             </Fragment>
         )
     }
