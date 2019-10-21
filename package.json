@@ -49,6 +49,7 @@
     "normalize-scss": "^7.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.10.2",
+    "react-circular-progressbar": "^2.0.2",
     "react-dom": "^16.10.2",
     "react-final-form": "^6.3.0",
     "react-fullstory-component": "^2.1.0",
