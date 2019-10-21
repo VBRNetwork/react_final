@@ -312,19 +312,22 @@ class HomeContainer extends Component {
                         <Row type="flex" justify="space-around">
                             <Col xs={24} sm={12} md={6} lg={8} xl={3}>
                                 <img
-
                                     className='chair-tablet-image img-fluid'
                                     src={'../../static/images/asset_1.png'}
                                     style={{ marginTop: '50%' }}
                                 />
                             </Col>
                             <Col xs={24} sm={12} md={6} lg={8} xl={8}>
-                                <Card bordered={false}>
+                                <Card 
+                                    bordered={false} 
+                                >
                                     <div className='middle-description-text'>
                                         <div className='footer-description-title'>
-                                            What’s great about our platform?
+                                            <h3>What’s great about our platform?</h3>
                                         </div>
                                         <hr/>
+                                        <div style={{fontSize: 16}} className='footer-description-content'>
+                                        <h4>
                                         <p>
                                             Lowest fee on market: 3% for jobs, and dynamic fee: 0% - 3% for exchanges.
                                         </p>
@@ -343,6 +346,8 @@ class HomeContainer extends Component {
                                             Using Blockchain technology to simplify,
                                             reduce costs, decentralize, and to build a community.
                                         </p>
+                                        </h4>
+                                        </div>
                                     </div>
                                 </Card>
                             </Col>

@@ -50,6 +50,7 @@ html,
     font-weight:bold;
     margin-bottom:5px;
     }
+
     .searchpost::-webkit-input-placeholder { color: #145252; } /* WebKit, Blink, Edge */
     .searchpost:-moz-placeholder { color: #145252; } /* Mozilla Firefox 4 to 18 */
     .searchpost::-moz-placeholder { color: #145252; } /* Mozilla Firefox 19+ */

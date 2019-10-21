@@ -231,7 +231,8 @@ class IcoContainer extends Component {
                                                 params={{
                                                     particles: {
                                                         number: {
-                                                            value: 39
+                                                            value: 55
+
                                                         },
                                                         size: {
                                                             value: 3
@@ -253,30 +254,20 @@ class IcoContainer extends Component {
                                         <Row>
                                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
                                                 <div style={{ width: '300px', height: '160px', margin: '0 auto' }}>
-                                                    <Card
-                                                        style={{ width: '100%', background: '#1f003a29' }}
-                                                        bordered={false}
-                                                        cover={
-                                                            <div style={{ textAlign: 'center', marginTop: '10%' }}>
-                                                                <Moment
-                                                                    style={{ color: '#FFF' }}
-                                                                    to="2019-12-31"
-                                                                > 2019-07-19T12:59-0500
-                                                                </Moment>
-                                                            </div>
-                                                        }
-                                                    >
-                                                        <hr/>
-                                                        <div>
-                                                            <h4 style={{ color: '#FFF', textAlign: 'center' }}>
-                                                                <strong> VBR Network's ICO will be launched shortly.
-                                                                    <hr/> In the meantime, feel free to read all the
-                                                                    details on our web site.
-                                                                </strong>
-                                                            </h4>
-                                                        </div>
-                                                        <hr/>
-                                                    </Card>
+                                                    <div>
+                                                        <h3 style={{ color: '#FFF', textAlign: 'center', marginTop: '10%' }}>
+                                                            <strong>
+                                                                <p> 
+                                                                    VBR Network's Initial Coin Offering
+                                                                </p>
+                                                                <p>
+                                                                    Our Crowd Sale will be launched shortly.<br /> 
+                                                                    Stay tuned for more details !
+                                                                </p>
+                                                            </strong>
+                                                        </h3>
+                                                    </div>
+
                                                 </div>
                                             </Col>
                                         </Row>
@@ -535,7 +526,6 @@ class IcoContainer extends Component {
                                                             Officer</strong></div>}
                                                     />
                                                 </Card>
-
                                                 <Card
                                                     hoverable
                                                     style={{position:'relative'}}
@@ -552,10 +542,11 @@ class IcoContainer extends Component {
                                                                             color: '#FFF',
                                                                             float: 'right'
                                                                         }}/>}
-                                                        title={<div className="trans-card-title"><strong>Serghjei
+                                                        title={<div className="trans-card-title"><strong>Serghei
                                                             Fedot</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief
                                                             Technology Officer</strong></div>}
+
                                                         className="trans-meta"/>
                                                 </Card>
 
@@ -578,11 +569,13 @@ class IcoContainer extends Component {
                                                         title={<div className="trans-card-title"><strong>Alex
                                                             Barborica</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief Operating
+
                                                             Officer</strong></div>}
                                                         className="trans-meta"/>
                                                 </Card>
 
                                                 <Card
+                                                    style={{position:'relative'}}
                                                     hoverable
                                                     style={{position:'relative'}}
                                                     cover={<img style={{ position: 'absolute' }}
@@ -602,16 +595,19 @@ class IcoContainer extends Component {
                                                             Vasilescu</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief Marketing
                                                             Officer</strong></div>}
+
                                                         className="trans-meta"/>
                                                 </Card>
 
                                                 <Card
                                                     style={{position:'relative'}}
                                                     hoverable
-                                                    cover={<img style={{ position: 'absolute' }}
-                                                                src={'../../static/images/picture_6.png'}/>}
+                                                    cover={
+                                                    <img 
+                                                        style={{ position: 'absolute' }}
+                                                        src={'../../static/images/picture_6.png'}
+                                                    />}
                                                 >
-
                                                     <Meta
                                                         avatar={<Avatar size={64}
                                                                         icon="user"
@@ -663,8 +659,12 @@ class IcoContainer extends Component {
                                                         <h3><strong>Partners</strong></h3>
                                                     </div>
                                                     <hr/>
-                                                    <Card bordered={false}>
+                                                    <Card bordered={false} size='small'>
                                                         <img src={'../../static/images/logo-ced.png'}/>
+                                                        <img 
+                                                            src={'../../static/images/urban_garden_logo.png'}
+                                                            style={{ width: '35%' }}
+                                                        />
                                                     </Card>
                                                 </div>
                                             </div>
@@ -674,7 +674,6 @@ class IcoContainer extends Component {
                                         <Col>
                                             <div style={{ backgroundColor: 'white' }}>
                                                 <div style={{ margin: '20px' }}>
-
                                                     <div>
                                                         <h3><strong>Technology</strong></h3>
                                                     </div>
