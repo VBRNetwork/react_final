@@ -355,10 +355,10 @@ class PostJobContainer extends React.Component {
                         <Form.Item
                             label={
                                 <span>
-                                  Job Description&nbsp;
-                                                        <Tooltip title="Describe clearly the job you need, including all particularities.">
-                                    <Icon type="question-circle-o" />
-                                  </Tooltip>
+                                    Job Description&nbsp;
+                                    <Tooltip title="Describe clearly the job you need, including all particularities.">
+                                        <Icon type="question-circle-o" />
+                                    </Tooltip>
                                 </span>
                             }
                         >

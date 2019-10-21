@@ -7,12 +7,13 @@ import {
     Row,
     Layout,
     Col,
-    Form, Input, Tooltip, Cascader, Checkbox
+    Select,
+    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown
 } from 'antd'
-const { Header, Content, Footer, Sider } = Layout
 const { TextArea } = Input;
 import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
+const { Option, OptGroup } = Select;
 
 const lang = [
     {
@@ -40,7 +41,6 @@ const lang = [
             },
         ],
     },
-
     {
         value: 'Spanish',
         label: 'Spanish',
@@ -66,7 +66,6 @@ const lang = [
             },
         ],
     },
-
     {
         value: 'Mandarin',
         label: 'Mandarin',
@@ -92,7 +91,6 @@ const lang = [
             },
         ],
     },
-
     {
         value: 'French',
         label: 'French',
@@ -118,7 +116,6 @@ const lang = [
             },
         ],
     },
-
     {
         value: 'German',
         label: 'German',
@@ -172,69 +169,51 @@ const lang = [
     },
 ];
 
-const jobCat = [
-    {
-        value: 'Writing & Translation',
-        label: 'Writing & Translation',
-    },
-
-    {
-        value: 'Digital Marketing',
-        label: 'Digital Marketing',
-    },
-
-    {
-        value: 'Web & Graphic Design',
-        label: 'Web & Graphic Design',
-    },
-
-    {
-        value: 'Business Consultancy',
-        label: 'Business Consultancy',
-    },
-
-    {
-        value: 'IT & Programming',
-        label: 'IT & Programming',
-
-    },
-];
 
 class BecomeFreelancerContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            freelancer_id: '',
-            freelancer_category: '',
+            selectedCategories:[],
             languages: '',
             description: '',
             skills: '',
-            portfolio: '',
+            cvFile: '',
+            categories:[]
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleChangeFreelancerCategory = this.handleChangeFreelancerCategory.bind(this);
         this.handleChangeLanguages = this.handleChangeLanguages.bind(this);
         this.handleChangeDescription = this.handleChangeDescription.bind(this);
-        this.handleChangePortfolio = this.handleChangePortfolio.bind(this);
         this.tosAccepted = this.tosAccepted.bind(this);
+        this.getSubcategories = this.getSubcategories.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
+        this.becomeFreelancer = this.becomeFreelancer.bind(this);
+        this.saveSkills = this.saveSkills.bind(this);
+        this.uploadCv = this.uploadCv.bind(this);
 
     }
-    handleChange(event) {
-        this.setState({
-            freelancer_id: event.target.value,
-        });
+
+    getSubcategories(){
+        if(this.props.menu.mainMenu){
+            let main_menu = this.props.menu.mainMenu;
+            let categories = [];
+            Object.keys(main_menu).map((category,index) => {
+                categories.push(main_menu[category])
+            })
+
+            this.setState({
+                categories:categories
+            })
+        }
     }
 
-    handleChangeFreelancerCategory(event) {
-        this.setState({
-            freelancer_category: event.target.value,
-        });
+    componentDidMount () {
+        this.getSubcategories();
     }
 
     handleChangeLanguages(event) {
         this.setState({
-            languages: event.target.value,
+            language:event
         });
     }
 
@@ -244,12 +223,11 @@ class BecomeFreelancerContainer extends Component {
         });
     }
 
-    handleChangePortfolio(event) {
+    saveSkills(event){
         this.setState({
-            portfolio: event.target.value,
-        });
+            skills:event
+        })
     }
-
 
     static async getInitialProps ({ store, query }) {
     }
@@ -260,7 +238,32 @@ class BecomeFreelancerContainer extends Component {
         })
     }
 
+    handleChangeCategory(value) {
+        this.setState({
+            selectedCategories:value
+        })
+    }
+
+    uploadCv(info){
+        if (info.file.status !== 'uploading') {
+            this.setState({
+                cvFile:[
+                    info.file,
+                    info.fileList
+                ]
+            })
+        }
+
+        if (info.file.status === 'done') {
+        } else if (info.file.status === 'error') {
+        }
+    }
+
+    becomeFreelancer(){
+        console.log(this.state);
+    }
     render () {
+
 
         const formItemLayout = {
             labelCol: {
@@ -295,7 +298,20 @@ class BecomeFreelancerContainer extends Component {
                         <h2 style={{textAlign:'center'}}>Become Freelancer</h2>
                         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                             <Form.Item label="Freelancer Category">
-                                <Cascader options={jobCat} />
+                                <Select
+                                    mode="multiple"
+                                    style={{ width: '100%' }}
+                                    placeholder="Please select"
+                                    onChange={this.handleChangeCategory}
+                                >
+
+                                    {this.state.categories &&
+                                    this.state.categories.map((value, index, array) => {
+                                        return <OptGroup key={value.id} label={value.name}>
+                                            {value.subcategories.map((subcategory,indexsub) => {
+                                                return <Option key={'sub'+indexsub} value={subcategory.id}>{subcategory.title}</Option>})}
+                                            </OptGroup>})}
+                                </Select>
                             </Form.Item>
 
                             <Form.Item
@@ -309,7 +325,7 @@ class BecomeFreelancerContainer extends Component {
                                 }
                             >
                                 <TextArea
-                                    onChange={this.onChange}
+                                    onChange={this.handleChangeDescription}
                                     placeholder="Enter Short Description"
                                     autosize={{ minRows: 3, maxRows: 5 }}
                                 />
@@ -318,21 +334,24 @@ class BecomeFreelancerContainer extends Component {
                                 label={
                                     <span>
                                   Skills&nbsp;
-                                        <Tooltip title="Enter all the skills you have.">
+                                        <Tooltip title="Up to 5 Skills.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
                                 </span>
                                 }
                             >
-                                <SkillsGroup/>
+                                <SkillsGroup saveTags={this.saveSkills}/>
                             </Form.Item>
 
                             <Form.Item label="Languages">
-                                <Cascader options={lang} />
+                                <Cascader options={lang} onChange={this.handleChangeLanguages}/>
                             </Form.Item>
-                            <Form.Item label="Import Portfolio" >
-
-                                <Input    placeholder="Upload Portfolio" />
+                            <Form.Item label="Import Your Portfolio" >
+                                <Upload  name='file' onChange={this.uploadCv}>
+                                    <Button>
+                                        <Icon type="upload" /> Click to Upload
+                                    </Button>
+                                </Upload>
                             </Form.Item>
 
                             <Form.Item {...tailFormItemLayout}>
@@ -345,6 +364,7 @@ class BecomeFreelancerContainer extends Component {
                                 <Button type="primary"
                                         htmlType="submit"
                                         disabled={!this.state.tos}
+                                        onClick={this.becomeFreelancer}
                                         style={{
                                             background: 'rgb(46, 195, 171)',
                                             borderColor: 'rgb(46, 195, 171)'}}
@@ -362,7 +382,8 @@ class BecomeFreelancerContainer extends Component {
 
 function mapStateToProps (state) {
     return {
-        user:state.user
+        user:state.user,
+        menu:state.settings.main_menu
     }
 }
 
