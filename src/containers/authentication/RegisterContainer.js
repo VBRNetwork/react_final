@@ -12,7 +12,7 @@ import {
     Card, Alert,
 } from 'antd';
 import PropTypes from "prop-types";
-import {registerAccount} from '../actions/user'
+import {registerAccount} from '../../actions/user'
 import Router from "next/dist/client/router";
 
 class RegisterContainer extends Component {
@@ -36,16 +36,6 @@ class RegisterContainer extends Component {
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeLastName = this.handleChangeLastName.bind(this);
         this.tosAccepted = this.tosAccepted.bind(this);
-    }
-
-    redirectToTarget = () => {
-        Router.push('/dashboard')
-    };
-
-    componentWillMount() {
-        if (this.props.authUser.token !== 0) {
-            this.redirectToTarget()
-        }
     }
 
     handleChangeLastName(event) {
@@ -79,9 +69,6 @@ class RegisterContainer extends Component {
         });
     }
 
-    redirectToTarget = () => {
-        Router.push('/dashboard')
-    };
 
     handleSubmit = e => {
         e.preventDefault();

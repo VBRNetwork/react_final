@@ -8,9 +8,6 @@ export const initialState = Immutable.fromJS({
   token: 0,
   username: 'guest',
   profile:{
-      name:'',
-      location:'',
-      status: ''
   }
 });
 
@@ -24,7 +21,7 @@ export default function (state = initialState, action) {
                 name: { $set: data.user.first_name + ' ' + data.user.last_name },
                 username: { $set: data.user.username},
                 profile:{
-                    name:{$set: 'test'}
+                    $set: data.user.profile
                 }
           });
     default:

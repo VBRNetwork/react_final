@@ -232,6 +232,7 @@ class IcoContainer extends Component {
                                                     particles: {
                                                         number: {
                                                             value: 55
+
                                                         },
                                                         size: {
                                                             value: 3
@@ -266,6 +267,7 @@ class IcoContainer extends Component {
                                                             </strong>
                                                         </h3>
                                                     </div>
+
                                                 </div>
                                             </Col>
                                         </Row>
@@ -524,7 +526,6 @@ class IcoContainer extends Component {
                                                             Officer</strong></div>}
                                                     />
                                                 </Card>
-
                                                 <Card
                                                     hoverable
                                                     style={{position:'relative'}}
@@ -541,10 +542,11 @@ class IcoContainer extends Component {
                                                                             color: '#FFF',
                                                                             float: 'right'
                                                                         }}/>}
-                                                        title={<div className="trans-card-title"><strong>Serghjei
+                                                        title={<div className="trans-card-title"><strong>Serghei
                                                             Fedot</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief
                                                             Technology Officer</strong></div>}
+
                                                         className="trans-meta"/>
                                                 </Card>
 
@@ -567,11 +569,13 @@ class IcoContainer extends Component {
                                                         title={<div className="trans-card-title"><strong>Alex
                                                             Barborica</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief Operating
+
                                                             Officer</strong></div>}
                                                         className="trans-meta"/>
                                                 </Card>
 
                                                 <Card
+                                                    style={{position:'relative'}}
                                                     hoverable
                                                     style={{position:'relative'}}
                                                     cover={<img style={{ position: 'absolute' }}
@@ -591,16 +595,19 @@ class IcoContainer extends Component {
                                                             Vasilescu</strong></div>}
                                                         description={<div className="trans-card"><strong>Chief Marketing
                                                             Officer</strong></div>}
+
                                                         className="trans-meta"/>
                                                 </Card>
 
                                                 <Card
                                                     style={{position:'relative'}}
                                                     hoverable
-                                                    cover={<img style={{ position: 'absolute' }}
-                                                                src={'../../static/images/picture_6.png'}/>}
+                                                    cover={
+                                                    <img 
+                                                        style={{ position: 'absolute' }}
+                                                        src={'../../static/images/picture_6.png'}
+                                                    />}
                                                 >
-
                                                     <Meta
                                                         avatar={<Avatar size={64}
                                                                         icon="user"

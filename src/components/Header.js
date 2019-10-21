@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import {Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown} from 'antd'
+import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
@@ -12,14 +12,14 @@ import { FullStory } from 'react-fullstory-component';
 const {Content} = Layout
 const {SubMenu} = Menu
 import {withRouter} from 'next/router';
-
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-147139648-1');
+
 
 class Header extends Component {
-
 
     constructor(props) {
         super(props)
@@ -41,53 +41,107 @@ class Header extends Component {
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
             }
-
         };
-
         this.clickLogout = this.clickLogout.bind(this);
-        ReactGA.initialize('UA-147139648-1');
-        ReactGA.pageview(window.location.pathname + window.location.search);
+        this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this);
+    }
+
+
+    componentDidUpdate (prevProps, prevState, snapshot) {
+        if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
+            ReactGA.pageview(window.location.pathname + window.location.search);
+            console.log('pageview sent')
+            this.rebuildBreadcrumbs()
+        }
     }
 
     componentDidMount() {
         let {getVBRSettings} = this.props
         getVBRSettings().then((e) => {
         });
+        this.rebuildBreadcrumbs();
 
-        let {category,subcategory} = this.props.router.query
+    }
 
-
+    rebuildBreadcrumbs(){
         if( typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
 
             let categories = Object.keys(this.props.settings.main_menu.mainMenu).map(key => {
                 return this.props.settings.main_menu.mainMenu[key];
             })
-            let currentCategory = categories.find(obj => obj.url === 'categories/'+category);
-            if(currentCategory){
-                let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+category+'/'+subcategory);
-                if(!this.state.breadcrumb.category.length > 0){
-                    this.setState({
-                        breadcrumb:{
-                            category:currentCategory,
-                            subcategory:currentSubCategory
+
+            let fullLink = this.props.redux_router.location.pathname.split('/')
+
+
+            if(fullLink[0] === '' && fullLink[1] === ''){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'/',name:'Home'},
+                        subcategory:{
+                            url:'',
+                            name:'',
                         }
-                    })
+                    }
+                })
+            }
+
+            if(fullLink[1] === 'ico'){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'ico',name:'Initial Coin Offering'},
+                        subcategory:{
+                            url:'',
+                            name:'',
+                        }
+                    }
+                })
+            }
+
+
+            if(fullLink[1] === 'how-it-works'){
+                this.setState({
+                    breadcrumb:{
+                        category:{url:'how-it-works',name:'How it works'},
+                        subcategory:{
+                            url:'',
+                            name:'',
+                        }
+                    }
+                })
+            }
+
+
+            if(typeof fullLink[2] !== 'undefined'){
+                let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
+                if(currentCategory && typeof fullLink[3] !== 'undefined'){
+                    let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
+                    if(!this.state.breadcrumb.category.length > 0){
+                        this.setState({
+                            breadcrumb:{
+                                category:currentCategory,
+                                subcategory:currentSubCategory
+                            }
+                        })
+                    }
                 }
             }
+
         }
+
 
     }
 
     clickLogout(e) {
-        this.props.logout().then(() => {
+        let {logout} = this.props
+        
+       logout().then(() => {
             this.setState({
                 isLogged: false
             })
             Router.push(`/`);
         });
     }
-
 
     render() {
         let token = false;
@@ -101,6 +155,35 @@ class Header extends Component {
                 </Link>
             </Menu.Item>
         );
+
+
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <Link href='/dashboard'>
+                        <a >
+                            Dashboard
+                        </a>
+                    </Link>
+
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' >
+                        Change Avatar
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' href='#'>
+                        Payments History
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <div onClick={this.clickLogout}>
+                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                    </div>
+                </Menu.Item>
+            </Menu>
+        )
 
         let menuItems = ''
         if(typeof(this.props.settings.main_menu) !== 'undefined' &&
@@ -150,15 +233,17 @@ class Header extends Component {
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 
-                        <Col xs={6} sm={4} md={4} lg={6} xl={8} xxl={12}>
-                            <Link href='/'>
-                                <img src={'/static/images/vbrLogo.png'}
-                                        style={{width: '80px', margin: '8px'}}
+                        <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
+                            <div className="logo-img">
+                                <Link href='/'>
+                                    <img src={'/static/images/vbrLogo.png'}
+                                         style={{width: '80px', margin: '8px'}}
                                     />
-                            </Link>
+                                </Link>
+                            </div>
                         </Col>
 
-                        <Col  xs={11} sm={16} md={16} lg={14} xl={12} xxl={9}>
+                        <Col  xs={24} sm={16} md={9} lg={9} xl={10} xxl={8}>
                             <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
                                     <Menu.Item key='mail1'>
                                         <Link href='/'>
@@ -176,39 +261,63 @@ class Header extends Component {
                                             <a> <Icon style={{fontSize: 17}} type='file-protect'/>Initial Coin Offering</a>
                                         </Link>
                                     </Menu.Item>
-
-                                    {token === true &&
-                                    <Menu.Item key='alipay243434'>
-                                        <div onClick={this.clickLogout}>
-                                            <Icon style={{fontSize: 17}} type='logout'/> Logout
-                                        </div>
-                                    </Menu.Item>}
                                     {token === false && loginButton}
                                 </Menu>
                         </Col>
 
-                        <Col  xs={4} sm={4} md={4} lg={4} xl={4} xxl={3}>
+                        <Col  xs={24} sm={4} md={10} lg={9} xl={6} xxl={5}>
                             {token === false && <Link href='/register'>
-                                <a>
-                                    <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
-                                        <Button type='primary' style={{
-                                            backgroundColor: '#2EC3AB',
-                                            borderColor: '#2EC3AB'
-                                        }}>Register</Button>
-                                    </div>
-                                </a>
+                              <div>
+                                  <a>
+                                      <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
+                                          <Button type='primary' style={{
+                                              backgroundColor: '#2EC3AB',
+                                              borderColor: '#2EC3AB'
+                                          }}>Register</Button>
+                                      </div>
+                                  </a>
+                              </div>
                             </Link>}
 
-                            {token !== false && <Link href='/dashboard'>
-                                <a>
-                                    <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
-                                        <Button type='primary' style={{
-                                            backgroundColor: '#2EC3AB',
-                                            borderColor: '#2EC3AB'
-                                        }}>Dashboard</Button>
-                                    </div>
-                                </a>
-                            </Link>}
+                            {token !== false &&
+                                <div style={{marginTop:'10px'}}>
+                                    <Button
+                                             type='primary'
+                                             style={{
+                                                 backgroundColor: '#2EC3AB',
+                                                 borderColor: '#2EC3AB'
+                                             }}>
+                                        <Link href='/jobs/add-job'>
+                                            <a>
+                                                Post job
+                                            </a>
+                                        </Link>
+                                    </Button>
+
+                                    <Button type='primary' style={{
+                                        marginLeft:'5px',
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'
+                                    }}>
+                                        <Link href='/dashboard/become-freelancer'>
+                                            <a>
+                                                Become a freelancer
+                                            </a>
+                                        </Link>
+                                    </Button>
+
+                                    <Dropdown overlay={menu}>
+                                        <div style={{ color: '#FFF', marginLeft: '18%',display: 'inline'}}
+                                             className='ant-dropdown-link'>
+                                            <Avatar size='large' icon='user' style={{
+                                                backgroundColor: '#2ec3ab',
+                                                cursor: 'pointer',
+                                            }}/>
+
+                                        </div>
+                                    </Dropdown>
+                                </div>
+                            }
                         </Col>
 
                     </Row>
@@ -229,9 +338,14 @@ class Header extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
                         <Breadcrumb style={{ marginLeft: '20px',paddingTop:'10px' }}>
                             <Breadcrumb.Item>
-                                <a href='/home'>Home </a> /
-                                <a href={"/" + this.state.breadcrumb.category.url}>{this.state.breadcrumb.category.name} </a> /
-                                { this.state.breadcrumb.subcategory && <a href={"/" + this.state.breadcrumb.subcategory.url}> {this.state.breadcrumb.subcategory.title} </a>}
+                                <a href={"/" + this.state.breadcrumb.category.url}>
+                                    {this.state.breadcrumb.category.name}
+                                </a>
+
+                                { this.state.breadcrumb.subcategory.url.length > 0 &&
+                                    <a href={"/" + this.state.breadcrumb.subcategory.url}> /
+                                    {this.state.breadcrumb.subcategory.title} </a>}
+
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>
@@ -244,7 +358,8 @@ class Header extends Component {
 function mapStateToProps(state) {
     return {
         user: state.user,
-        settings: state.settings
+        settings: state.settings,
+        redux_router: state.router
     }
 }
 
@@ -252,6 +367,7 @@ function mapStateToProps(state) {
 Header.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
+    router: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }

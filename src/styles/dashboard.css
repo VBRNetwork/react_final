@@ -1,6 +1,5 @@
 .ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
     color: rgb(46, 195, 171);
-    background-color: azure;
     padding-left: 48px;
 }
 
@@ -11,4 +10,23 @@
 
 .ant-layout-sider-zero-width-trigger{
     z-index: 99;
+}
+
+.wallet-tabs {
+    color: rgba(27,153,139,1) ;
+    border-color: rgba(27,153,139,1);
+}
+
+.ant-tabs-ink-bar {
+    background: rgba(27,153,139,1)!important;
+}
+
+.statistic-balance {
+    margin-top: 15%;
+}
+
+.wallet-statistic-1 {
+    background: rgba(255,111,89,1);
+    padding: 20px;
+
 }
