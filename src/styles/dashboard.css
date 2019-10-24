@@ -30,3 +30,14 @@
     padding: 20px;
 
 }
+
+.wallet-title {
+    background: rgba(27,153,139,1)!important;
+    margin-top: -25px!important;
+    padding: 4%;
+
+}
+
+.wallet-text {
+    text-align: center;
+}
