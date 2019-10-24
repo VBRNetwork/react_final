@@ -10,11 +10,14 @@ import {
     Select,
     Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown
 } from 'antd'
+
+import PropTypes from "prop-types";
+
 const { TextArea } = Input;
 import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
-
+import {becomeFreelancer} from '../../actions/user'
 const lang = [
     {
         value: 'English',
@@ -187,7 +190,7 @@ class BecomeFreelancerContainer extends Component {
         this.tosAccepted = this.tosAccepted.bind(this);
         this.getSubcategories = this.getSubcategories.bind(this);
         this.handleChangeCategory = this.handleChangeCategory.bind(this);
-        this.becomeFreelancer = this.becomeFreelancer.bind(this);
+        this.becomeFreelancerButton = this.becomeFreelancerButton.bind(this);
         this.saveSkills = this.saveSkills.bind(this);
         this.uploadCv = this.uploadCv.bind(this);
 
@@ -259,8 +262,10 @@ class BecomeFreelancerContainer extends Component {
         }
     }
 
-    becomeFreelancer(){
-        console.log(this.state);
+    becomeFreelancerButton(){
+        this.props.becomeFreelancer(this.state).then((e) => {
+            console.log(e);
+        })
     }
     render () {
 
@@ -364,7 +369,7 @@ class BecomeFreelancerContainer extends Component {
                                 <Button type="primary"
                                         htmlType="submit"
                                         disabled={!this.state.tos}
-                                        onClick={this.becomeFreelancer}
+                                        onClick={this.becomeFreelancerButton}
                                         style={{
                                             background: 'rgb(46, 195, 171)',
                                             borderColor: 'rgb(46, 195, 171)'}}
@@ -388,7 +393,8 @@ function mapStateToProps (state) {
 }
 
 BecomeFreelancerContainer.propTypes = {
+    becomeFreelancer: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps, {
+export default connect(mapStateToProps, {becomeFreelancer
 })(BecomeFreelancerContainer)

@@ -12,10 +12,15 @@ const instance = axios.create({
 
 let token = '';
 let tokenJson = {};
+let tokenJsonRoot = {};
 if (typeof window !== 'undefined') {
     tokenJson = JSON.parse(localStorage.getItem('persist:user'));
+    tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
     if(tokenJson){
-      token = token.token
+      token = tokenJson.token
+    }
+    if(tokenJsonRoot){
+        token = JSON.parse(tokenJsonRoot.user).token
     }
 }
 
@@ -55,6 +60,15 @@ const vbrincapi = {
 
         return instance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
             return humps.camelizeKeys(res)
+        })
+    },
+    becomeFreelancer(data){
+        let bodyFormData = new FormData();
+        Object.keys(data).map(function(key, index) {
+            bodyFormData.set(key,JSON.stringify(data['key']))
+        });
+        return secureInstance.post(apiUrl + 'accounts/become-freelancer',bodyFormData).then(res => {
+            return humps.camelizeKeys(res.data)
         })
     }
 };

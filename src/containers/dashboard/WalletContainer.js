@@ -24,6 +24,9 @@ import {
 } from 'antd'
 const { SubMenu } = Menu;
 const { Meta } = Card;
+
+import { DonutChart } from '../../components/Charts/DonutChart'
+
 import '../../styles/dashboard.css'
 const percentage = 40;
 const balance = [
@@ -31,46 +34,21 @@ const balance = [
         'USD - 40%',
 ];
 const { TabPane } = Tabs;
-const currency = (
-    <Menu>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                EUR
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                USD
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                GBP
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                VBRT
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                BTC
-            </a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target={'#'} href={'#'}>
-                ETH
-            </a>
-        </Menu.Item>
-    </Menu>
-);
+
 
 function handleClick(e) {
     console.log('click', e);
 }
 
 class WalletContainer extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          balance: [0],
+        };
+
+    }
 
     static async getInitialProps ({ store, query }) {
     }
@@ -129,25 +107,34 @@ class WalletContainer extends Component {
 
                                             <Col span={8}>
                                                 <Tooltip title="3 done / 3 in progress / 4 to do">
-                                                    <CircularProgressbar
-                                                        className={'cir-progress'}
-                                                        value={percentage}
-                                                        text={`${balance}`}
-                                                        styles={buildStyles({
-                                                            textColor: 'black',
-                                                            pathColor: 'rgba(204,195,71,1)',
-                                                            trailColor: 'rgba(27,153,139,1)',
-                                                            textSize: '6px',
 
-                                                        })}
-                                                    />
                                                 </Tooltip>
+
+                                               <DonutChart/>
                                             </Col>
                                         </Row>
                                     </div>}
                                 bordered={false}
                             >
-                                <hr />
+                            </Card>
+                            <br />
+                            <Card
+                                bordered={false}
+                                title={<div><strong><h3>Wallets</h3></strong><hr /></div>}
+                            >
+                                <Meta
+                                    title={
+                                        <div
+                                            className={'wallet-title'}
+                                        >
+                                            <img
+                                                style={{width: 120}}
+                                                src={'../../static/images/vbr_logo.png'}
+                                            />
+                                            <div className={'wallet-text'} ><span ><strong>VBR Wallet</strong></span></div>
+                                        </div>
+                                    }
+                                />
                             </Card>
                         </div>
                     </TabPane>
