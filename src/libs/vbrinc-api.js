@@ -13,6 +13,7 @@ const instance = axios.create({
 let token = '';
 let tokenJson = {};
 let tokenJsonRoot = {};
+
 if (typeof window !== 'undefined') {
     tokenJson = JSON.parse(localStorage.getItem('persist:user'));
     tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
@@ -26,7 +27,7 @@ if (typeof window !== 'undefined') {
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Authorization': "Bearer " + token }
+    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + token }
 });
 
 
@@ -64,9 +65,12 @@ const vbrincapi = {
     },
     becomeFreelancer(data){
         let bodyFormData = new FormData();
-        Object.keys(data).map(function(key, index) {
-            bodyFormData.set(key,JSON.stringify(data['key']))
-        });
+        bodyFormData.set('description', data.description)
+        bodyFormData.set('languages', JSON.stringify(data.language))
+        bodyFormData.set('categories',JSON.stringify(data.selectedCategories))
+        bodyFormData.set('skills', JSON.stringify(data.skills))
+        bodyFormData.set('cv_file', data.cvFile)
+        bodyFormData.set('tos',data.tos)
         return secureInstance.post(apiUrl + 'accounts/become-freelancer',bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
         })

@@ -11,12 +11,11 @@ const Index = (props) => {
     const { category, subcategory } = router.query
     console.log(category, subcategory)
 
-    let userType = 'client'
-    if (userType === 'client') {
+    if (props.user.type === 0) {
         return <SearchMembersContainer category={category} siderMenuItems={props.settings}/>
 
     }
-    if (category && !subcategory) {
+    if (props.user.type === 1) {
         return <SearchJobsContainer jobs={[]} siderMenuItems={[]}/>
     }
 
@@ -24,7 +23,8 @@ const Index = (props) => {
 
 function mapStateToProps (state) {
     return {
-        settings: state.settings
+        settings: state.settings,
+        user: state.user
     }
 }
 

@@ -270,7 +270,7 @@ class Header extends Component {
                         <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
                             <div className="logo-img">
                                 <Link href='/'>
-                                    <img src={'/static/images/vbrLogo.png'}
+                                    <img src={'/static/images/vbr_l.png'}
                                          style={{width: '80px', margin: '8px'}}
                                     />
                                 </Link>
@@ -328,17 +328,22 @@ class Header extends Component {
                                         </Link>
                                     </Button>
 
-                                    <Button type='primary' style={{
-                                        marginLeft:'5px',
-                                        backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'
-                                    }}>
-                                        <Link href='/dashboard/become-freelancer'>
-                                            <a>
-                                                Become a freelancer
-                                            </a>
-                                        </Link>
-                                    </Button>
+                                    { this.props.user.type === 0 &&
+                                        <Button type='primary' style={{
+                                            marginLeft:'5px',
+                                            backgroundColor: '#2EC3AB',
+                                            borderColor: '#2EC3AB'
+                                        }}>
+                                            <Link href='/dashboard/become-freelancer'>
+                                                <a>
+                                                    Become a freelancer
+                                                </a>
+                                            </Link>
+                                        </Button>
+                                    }
+                                    { this.props.user.type === 1 &&
+                                        <span style={{marginLeft:'5px'}}>You are freelancer</span>
+                                    }
 
                                     <Dropdown overlay={menu}>
                                         <div style={{ color: '#FFF', marginLeft: '18%',display: 'inline'}}
