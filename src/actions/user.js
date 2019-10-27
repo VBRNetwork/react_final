@@ -40,18 +40,15 @@ export function logout() {
             dispatch({
                 type: SAVE_TOKEN,
                 data: {
+                    name: 'guest',
+                    user_id: 0,
                     token: 0,
-                    user: {
-                        pk: 0,
-                        first_name: '',
-                        last_name: '',
-                        username: ''
+                    username: 'guest',
+                    type:0,
+                    profile:{
                     }
                 }
             });
-
-            localStorage.removeItem('id_token');
-            localStorage.removeItem('profile');
             document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             return res
         })
