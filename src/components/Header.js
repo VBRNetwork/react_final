@@ -29,7 +29,8 @@ class Header extends Component {
             breadcrumb:{
                 category:{
                     url:'',
-                    name:''
+                    name:'',
+                    meta_description: ''
                 },
                 subcategory:{
                     url:'',
@@ -71,6 +72,9 @@ class Header extends Component {
     }
 
     rebuildBreadcrumbs(){
+
+        let generalMetaDescription = 'Peer-to-peer Marketplace for Freelancers Powered by Blockchain.Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs.';
+
         if( typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
 
@@ -84,10 +88,11 @@ class Header extends Component {
             if(fullLink[0] === '' && fullLink[1] === ''){
                 this.setState({
                     breadcrumb:{
-                        category:{url:'/',name:'Home'},
+                        category:{url:'/',name:'Home', meta_description: generalMetaDescription},
                         subcategory:{
                             url:'',
-                            name:'',
+                            title:'',
+                            metaDescription: generalMetaDescription,
                         }
                     }
                 })
@@ -96,10 +101,11 @@ class Header extends Component {
             if(fullLink[1] === 'ico'){
                 this.setState({
                     breadcrumb:{
-                        category:{url:'ico',name:'Initial Coin Offering'},
+                        category:{url:'ico',name:'Initial Coin Offering',meta_description: generalMetaDescription},
                         subcategory:{
                             url:'',
-                            name:'',
+                            title:'',
+                            metaDescription: generalMetaDescription
                         }
                     }
                 })
@@ -109,10 +115,11 @@ class Header extends Component {
             if(fullLink[1] === 'how-it-works'){
                 this.setState({
                     breadcrumb:{
-                        category:{url:'how-it-works',name:'How it works'},
+                        category:{url:'how-it-works',name:'How it works',meta_description: generalMetaDescription},
                         subcategory:{
                             url:'',
-                            name:'',
+                            title:'',
+                            metaDescription: generalMetaDescription
                         }
                     }
                 })
@@ -123,7 +130,6 @@ class Header extends Component {
                 let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
                
                 if(currentCategory && typeof fullLink[3] !== 'undefined'){
-                    console.log('serghei', currentCategory)
                     let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
                     if(!this.state.breadcrumb.category.length > 0){
                         this.setState({
@@ -165,6 +171,7 @@ class Header extends Component {
         if (this.props.user.token) {
             token = true
         }
+
         let loginButton = (
             <Menu.Item key='alipay'>
                 <Link href='/login'>
@@ -172,7 +179,6 @@ class Header extends Component {
                 </Link>
             </Menu.Item>
         );
-
 
         const menu = (
             <Menu>
@@ -240,13 +246,20 @@ class Header extends Component {
 
         console.log('vanea', this.state)
 
+        console.log(this.state.breadcrumb);
+
         return (
             <div>
                 <Helmet >
                     
                     <meta charSet="utf-8" />
-                    <title>VBR Network Marketplace</title>
                     
+                    <title>{this.state.breadcrumb.category.name}
+                        {this.state.breadcrumb.subcategory.title && " - " + this.state.breadcrumb.subcategory.title}
+                         - Veelancing
+                    </title>
+                    <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
+
                 </Helmet>
                 
                 <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
