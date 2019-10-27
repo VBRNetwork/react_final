@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
 import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form } from 'antd'
+import { ProgressBar } from "react-milestone";
 
 const { Content } = Layout
 const { Meta } = Card
@@ -15,7 +16,8 @@ class IcoContainer extends Component {
         this.state = {
             name: '',
             email: '',
-            description: ''
+            description: '',
+            
 
         }
 
@@ -268,78 +270,32 @@ class IcoContainer extends Component {
                                         </Col>
 
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-                                                  title={<div className='road-map-card'><strong><h3>Q2 2018</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Concept Development
-                                                        <hr/>
-                                                        Gathering The Team
-                                                        <hr/>
-                                                        Tech Reaserch & Market Analysis
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                        <ProgressBar 
+                                            vertical={true} 
+                                            percentage={50} 
+                                            milestoneCount={10}
+                                        >
+                                            {({ containerStyles, completedBarStyles, milestoneElements }) => {
+                                            return (
+                                            <div style={{ ...containerStyles, backgroundColor: 'rgb(46, 195, 171)' }}>
+                                                
+                                                <div style={completedBarStyles} />
+                                                {milestoneElements.map(milestone => milestone)}
+                                            </div>
+                                            );
+                                            }}
+                                        </ProgressBar>
                                         </Col>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-                                                  title={<div className='road-map-card'><strong><h3>Q3 2018</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Infrastructure Development
-                                                        <hr/>
-                                                        Ethereum Blockchain Analysis
-                                                        <hr/>
-                                                        Pitch Deck Creation
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240, margin: '0 auto' }}
-                                                  title={<div className='road-map-card'><strong><h3>Q4 2018</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Marketplace Architecture
-                                                        <hr/>
-                                                        Databse Architecture
-                                                        <hr/>
-                                                        Contacted Freelancers via Social Media
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240, margin: '0 auto' }}
-                                                  title={<div className='road-map-card'><strong><h3>Q1 2019</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Blockchain Testing
-                                                        <hr/>
-                                                        Whitepaper Creation
-                                                        <hr/>
-                                                        Developing Marketing Strategy
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
 
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
@@ -355,40 +311,10 @@ class IcoContainer extends Component {
                                     <br/>
                                     <Row>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240, margin: '0 auto' }}
-                                                  title={<div className='road-map-card'><strong><h3>Q2 2019</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Developing Demo Marketplace
-                                                        <hr/>
-                                                        Partnership with Coin Exchange Data
-                                                        <hr/>
-                                                        Testing KYC API
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240, margin: '0 auto' }}
-                                                  title={<div className='road-map-card'><strong><h3>Q3 2019</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Launching Demo of the Marketpace
-                                                        <hr/>
-                                                        Gathering Feedback from potential users
-                                                        <hr/>
-                                                        Spread the word through online channels
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
 
                                     </Row>
@@ -396,81 +322,20 @@ class IcoContainer extends Component {
                                     <Row>
 
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-                                                  title={<div className='road-map-card'><strong><h3>Q4 2019</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Private fundraising for early-bird investors
-                                                        <hr/>
-                                                        Launching Pre-ICO
-                                                        <hr/>
-                                                        ICO Launch
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-                                                  title={<div className='road-map-card'><strong><h3>Q1 2020</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Referal Program & Airdrop
-                                                        <hr/>
-                                                        Growing freelancer's commumnity under VBR Network
-                                                        <hr/>
-                                                        Exchanges Partnership
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                     </Row>
                                     <br/>
                                     <Row>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
 
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-                                                  title={<div className='road-map-card'><strong><h3>Q2 2020</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Launching Beta with all functionalities
-                                                        <hr/>
-                                                        Developing Exchange Platform
-                                                        <hr/>
-                                                        Gathering Feedback for Beta
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                         <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8 }}>
-                                            <Card hoverable
-                                                  bordered={false}
-                                                  style={{ width: 240 }}
-
-                                                  title={<div className='road-map-card'><strong><h3>Q3/Q4 2020</h3>
-                                                  </strong></div>}
-                                            >
-                                                <div>
-                                                    <strong>
-                                                        Releasing Final Version of the VBR Marketplace
-                                                        <hr/>
-                                                        Minting Tokens
-                                                        <hr/>
-                                                        Releasing Exchange Platform
-                                                    </strong>
-                                                </div>
-                                            </Card>
+                                            
                                         </Col>
                                     </Row>
                                     <br/>

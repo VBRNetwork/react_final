@@ -44,8 +44,15 @@ class Header extends Component {
         };
         this.clickLogout = this.clickLogout.bind(this);
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
     }
 
+    
+    handleChangeCategory(event){
+        this.setState({
+            category: event.target.value,
+        })
+    }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
@@ -114,23 +121,33 @@ class Header extends Component {
 
             if(typeof fullLink[2] !== 'undefined'){
                 let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
+               
                 if(currentCategory && typeof fullLink[3] !== 'undefined'){
+                    console.log('serghei', currentCategory)
                     let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
                     if(!this.state.breadcrumb.category.length > 0){
                         this.setState({
                             breadcrumb:{
                                 category:currentCategory,
                                 subcategory:currentSubCategory
+                                
                             }
+                            
                         })
+
+                        
                     }
                 }
             }
 
         }
 
+        
 
     }
+    
+
+    
 
     clickLogout(e) {
         let {logout} = this.props
@@ -221,13 +238,17 @@ class Header extends Component {
             })
         }
 
+        console.log('vanea', this.state)
 
         return (
             <div>
-                <Helmet>
+                <Helmet >
+                    
                     <meta charSet="utf-8" />
                     <title>VBR Network Marketplace</title>
+                    
                 </Helmet>
+                
                 <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
 
                 <Content style={{marginBottom: '10px'}}>
