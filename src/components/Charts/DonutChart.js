@@ -13,9 +13,27 @@ export class DonutChart extends Component {
         this.state = {
             options: {
                 dataLabels: {
-                    enabled: false
+                    enabled: true,
+                    formatter: function (val) {
+                        return val + "%"
+                    },
+                    title: {
+                        formatter: function (seriesName) {
+                            return ''
+                        }
+                    }
                 },
+                plotOptions: {
+                    enabled:false,
+                    pie: {
+                        donut: {
+                            labels: {
+                                show: false,
+                            },
 
+                        },
+                    },
+                },
                 responsive: [{
                     breakpoint: 480,
                     options: {
@@ -27,48 +45,29 @@ export class DonutChart extends Component {
                         }
                     }
                 }],
+                tooltip: {
+                    enabled: true,
+                    y: {
+                        formatter: function(val) {
+                            return val + ".00" + " "
+                        },
+                        title: {
+                            formatter: function (seriesName) {
+                                return ''
+                            }
+                        }
+                    }
+                },
                 legend: {
-                    position: 'right',
+                    show:false,
+                    position: 'left',
                     offsetY: 0,
                     height: 230,
                 }
             },
-            series: [44, 55, 13, 33],
+            series: [20,30,10,40],
+            labels: ['VBRT','USD'],
         }
-    }
-
-    appendData () {
-        var arr = this.state.series.slice()
-        arr.push(Math.floor(Math.random() * (100 - 1 + 1)) + 1)
-
-        this.setState({
-            series: arr
-        })
-    }
-
-    removeData () {
-        if (this.state.series.length === 1) return
-
-        var arr = this.state.series.slice()
-        arr.pop()
-
-        this.setState({
-            series: arr
-        })
-    }
-
-    randomize () {
-        this.setState({
-            series: this.state.series.map(() => {
-                return Math.floor(Math.random() * (100 - 1 + 1)) + 1
-            })
-        })
-    }
-
-    reset () {
-        this.setState({
-            series: [44, 55, 13, 33]
-        })
     }
 
     render () {
@@ -77,15 +76,20 @@ export class DonutChart extends Component {
             <div id="donut">
                 <div className="chart-wrap">
                     <div id="chart">
-                        <Chart options={this.state.options} series={this.state.series} type="donut"
-                                        width="380"/>
+                        <div>
+                            <ul>
+                                <li>Test</li>
+                                <li>Test</li>
+                                <li>Test</li>
+                                <li>Test</li>
+                                <li>Test</li>
+                                <li>Test</li>
+                            </ul>
+                            <Chart options={this.state.options} labels={this.state.labels} series={this.state.series} type="donut"
+                                   width="380"/>
+                        </div>
+
                     </div>
-                </div>
-                <div className="actions">
-                    <button onClick={() => this.randomize()}>RANDOMIZE</button>
-                    <button onClick={() => this.appendData()}>ADD</button>
-                    <button onClick={() => this.removeData()}>REMOVE</button>
-                    <button onClick={() => this.reset()}>RESET</button>
                 </div>
             </div>)
     }
