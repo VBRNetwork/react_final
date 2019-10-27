@@ -25,14 +25,31 @@ import {
 const { SubMenu } = Menu;
 const { Meta } = Card;
 
+
 import { DonutChart } from '../../components/Charts/DonutChart'
 
 import '../../styles/dashboard.css'
 const percentage = 40;
-const balance = [
-        'VBRT - 60%',
-        'USD - 40%',
-];
+
+const menu = (
+    <Menu>
+        <Menu.Item>
+            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+                EUR
+            </a>
+        </Menu.Item>
+        <Menu.Item>
+            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+                ETH
+            </a>
+        </Menu.Item>
+        <Menu.Item>
+            <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+                USD
+            </a>
+        </Menu.Item>
+    </Menu>
+);
 const { TabPane } = Tabs;
 
 
@@ -77,7 +94,7 @@ class WalletContainer extends Component {
                                         <br />
                                         <br />
                                         <Row>
-                                        <Col span={16} push={4}>
+                                        <Col span={12} push={4}>
                                             <Statistic
                                                 className={'statistic-balance'}
                                                 valueStyle={{fontSize: 50}}
@@ -100,7 +117,7 @@ class WalletContainer extends Component {
                                                            <Menu.Item key="6">ETH</Menu.Item>
                                                        </Menu.ItemGroup></SubMenu></Menu></div>}
                                                 value={112893}
-                                                precision={2}
+                                                precision={12}
 
                                             />
                                         </Col>
@@ -110,7 +127,8 @@ class WalletContainer extends Component {
 
                                                 </Tooltip>
 
-                                               <DonutChart/>
+                                               <DonutChart
+                                               />
                                             </Col>
                                         </Row>
                                     </div>}
@@ -124,15 +142,177 @@ class WalletContainer extends Component {
                             >
                                 <Meta
                                     title={
-                                        <div
-                                            className={'wallet-title'}
-                                        >
+                                        <div style={{padding: '2%'}}>
+                                            <Row>
+                                                <Col span={8}>
                                             <img
-                                                style={{width: 120}}
-                                                src={'../../static/images/vbr_logo.png'}
+                                                style={{width: 120, marginBottom: '3%'}}
+                                                src={'../../static/images/vbr_l.png'}
                                             />
+                                            </Col>
+                                                <Col span={8} pull={4}>
                                             <div className={'wallet-text'} ><span ><strong>VBR Wallet</strong></span></div>
+                                                </Col>
+                                                <Col span={8} push={2}>
+                                                    <Statistic
+                                                        valueStyle={{fontSize: 30}}
+                                                        value={112893}
+                                                        precision={2}
+                                                    />
+                                                </Col>
+                                            </Row>
+                                            <hr />
                                         </div>
+                                    }
+                                    description={
+
+                                        <React.Fragment key={1}>
+                                        <div style={{padding: '2%'}}>
+                                            <Row>
+                                              <Col span={6}>
+                                                <div style={{fontSize: '17px', color: 'rgba(27,153,139,1)'}}>
+                                                    <strong>
+                                                            VBR Token
+                                                    </strong>
+                                                </div>
+                                              </Col>
+                                              <Col span={2}>
+                                                  <Statistic
+                                                    value={112893}
+                                                    precision={2}
+                                                  />
+                                              </Col>
+                                                <Col span={4} push={1}>
+                                                    <Dropdown overlay={menu}>
+                                                        <Icon type={'down'}/>
+                                                    </Dropdown>
+                                                </Col>
+                                              <Col span={4} >
+                                                <Button type={'primary'}>
+                                                    Trade
+                                                </Button>
+                                              </Col>
+                                              <Col span={4} >
+                                                  <Button type={'primary'}>
+                                                      Deposit
+                                                  </Button>
+                                              </Col>
+                                              <Col span={4} >
+                                                  <Button type={'primary'}>
+                                                      Withdraw
+                                                  </Button>
+                                              </Col>
+                                            </Row>
+                                            <hr />
+                                            <Row>
+                                                <Col span={6}>
+                                                    <div style={{fontSize: '17px', color: 'rgba(27,153,139,1)'}}>
+                                                        <strong>
+                                                            Euro
+                                                        </strong>
+                                                    </div>
+                                                </Col>
+                                                <Col span={2}>
+                                                    <Statistic
+                                                        value={112893}
+                                                        precision={2}
+                                                    />
+                                                </Col>
+                                                <Col span={4} push={1}>
+                                                    <Dropdown overlay={menu}>
+                                                        <Icon type={'down'}/>
+                                                    </Dropdown>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Trade
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Deposit
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Withdraw
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                            <hr />
+                                            <Row>
+                                                <Col span={6}>
+                                                    <div style={{fontSize: '17px', color: 'rgba(27,153,139,1)'}}>
+                                                        <strong>
+                                                            Ethereum
+                                                        </strong>
+                                                    </div>
+                                                </Col>
+                                                <Col span={2}>
+                                                    <Statistic
+                                                        value={112893}
+                                                        precision={2}
+                                                    />
+                                                </Col>
+                                                <Col span={4} push={1}>
+                                                    <Dropdown overlay={menu}>
+                                                        <Icon type={'down'}/>
+                                                    </Dropdown>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Trade
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Deposit
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Withdraw
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                            <hr />
+                                            <Row>
+                                                <Col span={6}>
+                                                    <div style={{fontSize: '17px', color: 'rgba(27,153,139,1)'}}>
+                                                        <strong>
+                                                            Bitcoin
+                                                        </strong>
+                                                    </div>
+                                                </Col>
+                                                <Col span={2}>
+                                                    <Statistic
+                                                        value={112893}
+                                                        precision={2}
+                                                    />
+                                                </Col>
+                                                <Col span={4} push={1}>
+                                                    <Dropdown overlay={menu}>
+                                                        <Icon type={'down'}/>
+                                                    </Dropdown>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Trade
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Deposit
+                                                    </Button>
+                                                </Col>
+                                                <Col span={4} >
+                                                    <Button type={'primary'}>
+                                                        Withdraw
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                        </React.Fragment>
                                     }
                                 />
                             </Card>
