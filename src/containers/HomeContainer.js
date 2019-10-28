@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
-import { Carousel, Layout, Row, Col, Button, Card } from 'antd'
+import { Carousel, Layout, Row, Col, Button, Card, Avatar } from 'antd'
 import Link from 'next/link'
+
+const { Meta } = Card;
 
 class HomeContainer extends Component {
     componentDidMount () {
@@ -81,7 +83,7 @@ class HomeContainer extends Component {
                     </div>
                 </div>
 
-                <Row style={{ background: '#ECECEC' }}>
+               {true &&  <Row style={{ background: '#ECECEC' }}>
                     <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}
                          style={{ marginTop: '20px', marginBottom: '20px', background: '#FFF' }}>
                         <h1 style={{ textAlign: 'center', padding: '10px' }}>What jobs you can find?</h1>
@@ -179,56 +181,111 @@ class HomeContainer extends Component {
                             </Row>
                         </div>
                     </Col>
+                </Row>}
 
-                    <Row>
-                        <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
+        {true &&   <Row style={{background: 'rgb(236, 236, 236)'}}>
+                        <Col span={8} push={2}>
                             <div style={{margin:'5px'}}>
-                                <Carousel autoplay className="home-carousel">
-                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                        <div className="image">
-                                            <img
-                                                className='d-block h-200'
-                                                src={'../../static/images/freelancer-working2.png'}
-                                                alt='First slide'
-                                            />
+                                <Card 
+                                    title={
+                                        <div>
+                                            <strong>
+                                                Freelancer 1
+                                            </strong>
+                                            <br />
+                                            <span>
+                                                Web Designer
+                                            </span>
                                         </div>
-                                    </div>
-
-                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                        <div className="image">
-                                            <img
-                                                className='d-block'
-                                                src={'../../static/images/picture_7.png'}
-                                                alt='Second slide'
-                                            />
+                                    }
+                                    extra={<Avatar size={'large'} icon='user'/>}
+                                    style={{width: 240}}
+                                >
+                                    <Meta 
+                                    description={
+                                        <div>
+                                            <strong>
+                                                <p>
+                                                    I am a web designer, with 4 years experience, and with a large portfolio.
+                                                </p>
+                                                <p>
+                                                    I am very happy to try VBR Marketplace, and looking forward to meet all of you !
+                                                </p>
+                                            </strong>
+                                        </div>}
+                                    />
+                                </Card>
+                            </div>
+                            </Col>
+                            <Col span={8} push={2}>
+                            <div style={{margin:'5px'}}>
+                                <Card 
+                                    title={
+                                        <div>
+                                            <strong>
+                                                Freelancer 2
+                                            </strong>
+                                            <br />
+                                            <span>
+                                                Web Developer
+                                            </span>
                                         </div>
-                                    </div>
-
-                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                        <div className="image">
-                                            <img
-                                                className='d-block h-200'
-                                                src={'../../static/images/freelancer_old.png'}
-                                                alt='Third slide'
-                                            />
+                                    }
+                                    extra={<Avatar size={'large'} icon='user'/>}
+                                    style={{width: 240}}
+                                >
+                                    <Meta 
+                                    description={
+                                        <div>
+                                            <strong>
+                                                <p>
+                                                    I am a web developer, with 4 years experience, and with a large portfolio.
+                                                </p>
+                                                <p>
+                                                    I am very happy to try VBR Marketplace, and looking forward to meet all of you !
+                                                </p>
+                                            </strong>
+                                        </div>}
+                                    />
+                                </Card>
+                            </div>
+                            </Col>
+                            <Col span={8} push={2}>
+                            <div style={{margin:'5px'}}>
+                                <Card 
+                                    title={
+                                        <div>
+                                            <strong>
+                                                Freelancer 3
+                                            </strong>
+                                            <br />
+                                            <span>
+                                                SEO Specialist
+                                            </span>
                                         </div>
-                                    </div>
-
-                                    <div style={{ backgroundColor: 'black', width: '100%' }}>
-                                        <div className="image">
-                                            <img
-                                                className='d-block h-200'
-                                                src={'../../static/images/picture_3.png'}
-                                                alt='Fourth slide'
-                                            />
-                                        </div>
-                                    </div>
-                                </Carousel>
+                                    }
+                                    extra={<Avatar size={'large'} icon='user'/>}
+                                    style={{width: 240}}
+                                >
+                                    <Meta 
+                                    description={
+                                        <div>
+                                            <strong>
+                                                <p>
+                                                    I am a SEO specialist, with 4 years experience, and with a large portfolio.
+                                                </p>
+                                                <p>
+                                                    I am very happy to try VBR Marketplace, and looking forward to meet all of you !
+                                                </p>
+                                            </strong>
+                                        </div>}
+                                    />
+                                </Card>
                             </div>
                         </Col>
                     </Row>
-
-                    <Row style={{ marginBottom: '30px' }}>
+                    }
+                <Row style={{ marginBottom: '30px' }}>
                         <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}>
                             <div id='how-it-works' style={{ marginTop: '30px' }}>
                                 <h2 className='text-center how-it-work-title' 
@@ -302,8 +359,7 @@ class HomeContainer extends Component {
                             </Row>
                         </Col>
                     </Row>
-                </Row>
-
+                
                 <Layout>
                     <div className="home-section">
                         <Row type="flex" justify="space-around">

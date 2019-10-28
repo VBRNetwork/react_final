@@ -40,7 +40,7 @@ const menu3 = [
 class Footer extends Component {
   render () {
     return (
-      <footer className='footer-box' style={{ backgroundColor: '#37405E'}}>
+      <footer className='footer-box' style={{ backgroundColor: 'rgba(26, 29, 40, 0.86)'}}>
 
           <Row>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
@@ -89,7 +89,7 @@ class Footer extends Component {
 
                           <Col xs={24} sm={4} md={6} lg={8} xl={6} xxl={6} className="text-center">
                               <img
-                                  src={'../../static/images/vbrLogo.png'}
+                                  src={'../../static/images/vbr_logo.png'}
                                   className=''
                                   style={{ width: '120px', margin: '0 auto' }}
                               />

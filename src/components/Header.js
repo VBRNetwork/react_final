@@ -270,7 +270,7 @@ class Header extends Component {
                         <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
                             <div className="logo-img">
                                 <Link href='/'>
-                                    <img src={'/static/images/vbr_l.png'}
+                                    <img src={'/static/images/vbr_logo.png'}
                                          style={{width: '80px', margin: '8px'}}
                                     />
                                 </Link>
