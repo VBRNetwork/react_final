@@ -9,7 +9,7 @@ const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
 import MenuDashboardContainer from './MenuDashboardContainer'
 import DashboardLayout from '../../components/DashboardLayout'
 import ViewProfileContainer from './ViewProfileContainer'
-import EditProfileContainer from './EditProfileContainer'
+import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
 
@@ -42,9 +42,9 @@ class DashboardContainer extends Component {
       console.log(this.state.location );
 
 
-      let dashboardComponent = <ViewProfileContainer/>
-      if(this.state.location === '/dashboard/edit-profile'){
-          dashboardComponent = <EditProfileContainer/>
+      let dashboardComponent = <PanelContainer/>
+      if(this.state.location === '/dashboard/view-profile'){
+          dashboardComponent = <ViewProfileContainer/>
       }else if(this.state.location === '/dashboard/become-freelancer'){
           dashboardComponent = <BecomeFreelancerContainer/>
       }else if(this.state.location === '/dashboard/wallet'){

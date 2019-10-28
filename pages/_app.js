@@ -8,7 +8,9 @@ import {faHome, faPlayCircle, faEnvelopeOpen} from '@fortawesome/free-solid-svg-
 import {library} from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 import Layout from 'components/Layout'
-import GoogleFontLoader from 'react-google-font-loader';
+const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
+    ssr: false,
+})
 import {PersistGate} from 'redux-persist/integration/react'
 import { Spin } from 'antd';
 import 'antd/dist/antd.css'
@@ -16,6 +18,9 @@ import 'styles/base.scss'
 import 'styles/base.css'
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { ConnectedRouter } from 'connected-next-router'
+import dynamic from 'next/dynamic'
+
+
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
@@ -45,6 +50,19 @@ class MyApp extends App {
         return (
             <Container>
                 <Head>
+                    <GoogleFontLoader
+                        fonts={[
+                            {
+                                font: 'Roboto',
+                                weights: [400, '400i'],
+                            },
+                            {
+                                font: 'Roboto Mono',
+                                weights: [400, 700],
+                            },
+                        ]}
+                        subsets={['cyrillic-ext', 'greek']}
+                    />
                     <script dangerouslySetInnerHTML = {{__html:`console.log('header script')`}}/>
                 </Head>
 

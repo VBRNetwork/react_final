@@ -5,11 +5,11 @@ html,
   }
 
   body {
-    font-family: 'Merriweather', serif !important
+    font-family: 'Roboto', serif !important
   }
 
   body.fontLoaded {
-    font-family:'Merriweather', serif
+    font-family:'Roboto', serif
   }
 
   #app {
