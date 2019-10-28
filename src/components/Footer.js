@@ -90,6 +90,7 @@ class Footer extends Component {
                           <Col xs={24} sm={4} md={6} lg={8} xl={6} xxl={6} className="text-center">
                               <img
                                   src={'../../static/images/vbr_logo.png'}
+
                                   className=''
                                   style={{ width: '120px', margin: '0 auto' }}
                               />

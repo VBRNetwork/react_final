@@ -22,7 +22,7 @@ class MenuDashboardContainer extends Component {
                        width={200} style={{ background: '#fff', marginLeft: '1%' }}>
                     <Menu
                         mode='inline'
-                        defaultSelectedKeys={['1']}
+                        defaultSelectedKeys={[5]}
                         defaultOpenKeys={['sub1']}
                         style={{ height: '100%' }}
                         theme='dark'>
@@ -30,23 +30,20 @@ class MenuDashboardContainer extends Component {
                         <SubMenu
                             key='sub1'
                             title={<span>
-                    <Icon type='user'/>Profile
-                        </span>}>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='1'>
-                                <Link href={'/dashboard?slug=view-profile'} as={'/dashboard/view-profile'}><a>View Profile</a></Link>
-                            </Menu.Item>
+                        <Icon type='user'/>Profile
+                            </span>}>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='5'>
-                                <Link href={'/dashboard?slug=edit-profile'} as={'/dashboard/edit-profile'}><a>Edit Profile</a></Link>
+                                <Link href={'/dashboard'} as={'/dashboard'}><a>Dashboard</a></Link>
                             </Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='6'>
-                                <Link href={'/dashboard?slug=security'} as={'/dashboard/security'}><a>Security</a></Link>
-                            </Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='4'>
-                                <Link href={'/dashboard?slug=settings'} as={'/dashboard/settings'}><a>Settings</a></Link>
-                            </Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='3'>
-                                <Link href={'/dashboard?slug=statistics'} as={'/dashboard/statistics'}><a>Statistics</a></Link>
-                            </Menu.Item>
+                                <Menu.Item style={{ color: '#2ec3ab' }} key='1'>
+                                    <Link href={'/dashboard?slug=view-profile'} as={'/dashboard/view-profile'}><a>View Profile</a></Link>
+                                </Menu.Item>
+                                <Menu.Item style={{ color: '#2ec3ab' }} key='4'>
+                                    <Link href={'/dashboard?slug=settings'} as={'/dashboard/settings'}><a>Settings</a></Link>
+                                </Menu.Item>
+                                <Menu.Item style={{ color: '#2ec3ab' }} key='3'>
+                                    <Link href={'/dashboard?slug=statistics'} as={'/dashboard/statistics'}><a>Statistics</a></Link>
+                                </Menu.Item>
                         </SubMenu>
                         <SubMenu
                             key='sub2'

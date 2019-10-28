@@ -267,7 +267,7 @@ class Header extends Component {
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 
-                        <Col xs={24} sm={4} md={4} lg={6} xl={8} xxl={10}>
+                        <Col xs={24} sm={4} md={2} lg={4} xl={6} xxl={9}>
                             <div className="logo-img">
                                 <Link href='/'>
                                     <img src={'/static/images/vbr_logo.png'}
@@ -277,8 +277,8 @@ class Header extends Component {
                             </div>
                         </Col>
 
-                        <Col  xs={24} sm={16} md={9} lg={9} xl={10} xxl={8}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px'}}>
+                        <Col  xs={24} sm={16} md={12} lg={11} xl={10} xxl={10}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px',float:'right',paddingRight:'20px'}}>
                                     <Menu.Item key='mail1'>
                                         <Link href='/'>
                                             <a> <Icon style={{fontSize: 17}} type='home'/> Home</a>
@@ -299,7 +299,7 @@ class Header extends Component {
                                 </Menu>
                         </Col>
 
-                        <Col  xs={24} sm={4} md={10} lg={9} xl={6} xxl={5}>
+                        <Col  xs={24} sm={4} md={10} lg={9} xl={8} xxl={5}>
                             {token === false && <Link href='/register'>
                               <div>
                                   <a>
@@ -348,11 +348,10 @@ class Header extends Component {
                                     <Dropdown overlay={menu}>
                                         <div style={{ color: '#FFF', marginLeft: '18%',display: 'inline'}}
                                              className='ant-dropdown-link'>
-                                            <Avatar size='large' icon='user' style={{
+                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
                                                 backgroundColor: '#2ec3ab',
                                                 cursor: 'pointer',
                                             }}/>
-
                                         </div>
                                     </Dropdown>
                                 </div>
