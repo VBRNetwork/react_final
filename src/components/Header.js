@@ -45,8 +45,15 @@ class Header extends Component {
         };
         this.clickLogout = this.clickLogout.bind(this);
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
     }
 
+    
+    handleChangeCategory(event){
+        this.setState({
+            category: event.target.value,
+        })
+    }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
@@ -121,24 +128,32 @@ class Header extends Component {
 
             if(typeof fullLink[2] !== 'undefined'){
                 let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
+               
                 if(currentCategory && typeof fullLink[3] !== 'undefined'){
-
                     let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
                     if(!this.state.breadcrumb.category.length > 0){
                         this.setState({
                             breadcrumb:{
                                 category:currentCategory,
                                 subcategory:currentSubCategory
+                                
                             }
+                            
                         })
+
+                        
                     }
                 }
             }
 
         }
 
+        
 
     }
+    
+
+    
 
     clickLogout(e) {
         let {logout} = this.props
@@ -229,19 +244,24 @@ class Header extends Component {
             })
         }
 
+        console.log('vanea', this.state)
 
         console.log(this.state.breadcrumb);
 
         return (
             <div>
-                <Helmet>
+                <Helmet >
+                    
                     <meta charSet="utf-8" />
+                    
                     <title>{this.state.breadcrumb.category.name}
                         {this.state.breadcrumb.subcategory.title && " - " + this.state.breadcrumb.subcategory.title}
-                         - Velancing
+                         - Veelancing
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
+
                 </Helmet>
+                
                 <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
 
                 <Content style={{marginBottom: '10px'}}>
@@ -250,7 +270,7 @@ class Header extends Component {
                         <Col xs={24} sm={4} md={2} lg={4} xl={6} xxl={9}>
                             <div className="logo-img">
                                 <Link href='/'>
-                                    <img src={'/static/images/vbr_l.png'}
+                                    <img src={'/static/images/vbr_logo.png'}
                                          style={{width: '80px', margin: '8px'}}
                                     />
                                 </Link>
@@ -345,7 +365,7 @@ class Header extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{boxShadow:'rgb(185, 185, 185) 1px 2px 3px 1px'}}>
                         <div style={{margin:'0 auto'}}>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
-                                <Menu selectedKeys={[this.state.current]} mode='horizontal'>
+                                <Menu style={{background: 'rgba(26, 29, 40, 0.86)', color: '#FFF'}} selectedKeys={[this.state.current]} mode='horizontal'>
                                     {menuItems}
                                 </Menu>
                             </Col>
