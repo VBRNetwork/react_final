@@ -190,26 +190,28 @@ class HomeContainer extends Component {
                                     title={
                                         <div>
                                             <strong>
-                                                Freelancer 1
+                                                Theo Ghizdareanu
                                             </strong>
                                             <br />
                                             <span>
-                                                Web Designer
+                                            3D Generalist Artist
                                             </span>
                                         </div>
                                     }
-                                    extra={<Avatar size={'large'} icon='user'/>}
-                                    style={{width: 240}}
+                                    extra={<Avatar size={'large'} style={{width: 70, height: 70}} src={'../../static/images/theo_freelancer.jpeg'} />}
+                                    style={{width: 340}}
                                 >
                                     <Meta 
                                     description={
                                         <div>
                                             <strong>
                                                 <p>
-                                                    I am a web designer, with 4 years experience, and with a large portfolio.
+                                                    After working as a freelancer for 3 years and counting, with a wide variety of clients from around the world (UK, US, Austria, China, Australia etc), 
+                                                    I  grew into a 3D Generalist expanding my skills and got to enter into the CGI Industry. 
                                                 </p>
                                                 <p>
-                                                    I am very happy to try VBR Marketplace, and looking forward to meet all of you !
+                                                    In the present I am active in both worlds, modeling and texturing low poly environments for games and apps, 
+                                                    but also creating  realistic environments and products for CGI needs, such as advertising firms and print industry.
                                                 </p>
                                             </strong>
                                         </div>}
