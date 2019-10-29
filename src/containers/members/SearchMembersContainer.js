@@ -326,8 +326,7 @@ class SearchJobsContainer extends Component {
                                                             boxShadow: '0px 0px 5px 0px #acacac',
                                                             padding:'5px'
                                                         }}>
-                                                            <Link as={'/users/'+item.user.username}
-                                                                  href={'/users/?username='+item.user.username}>
+
 
                                                                 <div style={{padding:'5px'}}>
                                                                     <img
@@ -344,15 +343,14 @@ class SearchJobsContainer extends Component {
                                                                     {item.content}
 
                                                                 </div>
-                                                            </Link>
-
+                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}>
                                                             <div style={{textAlign:'center'}}>
-                                                                <Button type={'primary'} style={{
-                                                                    backgroundColor: '#2EC3AB',
-                                                                    borderColor: '#2EC3AB'
-                                                                }}>View Profile</Button>,
-                                                            </div>
-
+                                                                    <Button type={'primary'} style={{
+                                                                        backgroundColor: '#2EC3AB',
+                                                                        borderColor: '#2EC3AB'
+                                                                    }}>View Profile</Button>,
+                                                                </div>
+                                                        </Link>
                                                         </div>
                                                     </List.Item>
                                                 </div>
