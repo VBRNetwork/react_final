@@ -366,6 +366,7 @@ class SearchJobsContainer extends Component {
                         </Layout>
                     </Content>
                 </Col>
+
             </Row>
         )
     }

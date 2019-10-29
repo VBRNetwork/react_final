@@ -363,10 +363,11 @@ class Header extends Component {
 
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
+                        background: 'rgba(26, 29, 40, 0.86)',
                         boxShadow:'rgb(185, 185, 185) 0px 0px 20px 0px'}}>
                         <div style={{margin:'0 auto'}}>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
-                                <Menu style={{background: 'rgba(26, 29, 40, 0.86)', color: '#FFF',borderBottom:'0px'}} selectedKeys={[this.state.current]} mode='horizontal'>
+                                <Menu style={{background:'transparent',color: '#FFF',borderBottom:'0px'}} selectedKeys={[this.state.current]} mode='horizontal'>
                                     {menuItems}
                                 </Menu>
                             </Col>
