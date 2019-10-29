@@ -77,7 +77,7 @@ class HomeContainer extends Component {
                     </div>
                 </div>
 
-                {this.props.user.type === 1 && <Row style={{ background: '#ECECEC' }}>
+               <Row style={{ background: '#ECECEC' }}>
                     <Col xs={24} sm={24} md={24} lg={24} xl={{ span: 18, offset: 3 }}
                          style={{ marginTop: '20px', marginBottom: '20px', background: '#FFF' }}>
                         <h1 style={{ textAlign: 'center', padding: '10px' }}>What jobs you can find?</h1>
@@ -177,9 +177,9 @@ class HomeContainer extends Component {
                             </Row>
                         </div>
                     </Col>
-                </Row>}
+                </Row>
 
-                <div style={{ paddingBottom: '10px', background: 'rgb(236, 236, 236)' }}>
+                <div style={{ paddingBottom: '10px',paddingTop:'10px',background: 'rgb(236, 236, 236)' }}>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24}  xl={24} xxl={{ span: 18, offset: 3 }}>
                             <Row>
