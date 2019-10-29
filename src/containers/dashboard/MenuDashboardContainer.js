@@ -22,7 +22,7 @@ class MenuDashboardContainer extends Component {
                        width={200} style={{ background: '#fff', marginLeft: '1%' }}>
                     <Menu
                         mode='inline'
-                        defaultSelectedKeys={[5]}
+                        defaultSelectedKeys={['5']}
                         defaultOpenKeys={['sub1']}
                         style={{ height: '100%' }}
                         theme='dark'>

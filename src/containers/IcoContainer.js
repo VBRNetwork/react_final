@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import '../styles/ico.css'
-import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon } from 'antd'
+import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon ,Alert} from 'antd'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -18,7 +18,6 @@ class IcoContainer extends Component {
             name: '',
             email: '',
             description: '',
-            
 
         }
 
@@ -59,6 +58,22 @@ class IcoContainer extends Component {
     }
 
     render () {
+
+
+        return (
+            <Row>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
+                    <Alert
+                        style={{marginTop:'20px',marginBottom:'20px'}}
+                        message="Informational Notes"
+                        description="This page is currently under construction."
+                        type="info"
+                        showIcon
+                    />
+                </Col>
+            </Row>
+        )
+
         return (
             <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>

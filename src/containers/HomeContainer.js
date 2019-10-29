@@ -15,12 +15,8 @@ class HomeContainer extends Component {
     render () {
         return (
             <Fragment>
-
                 <div style={{ position: 'relative' }}>
-                    <div className='container' style={{
-                        background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))'
-                    }}>
-
+                    <div className='container' style={{ background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))'}}>
                         <Particles
                             style={{ 'position': 'absolute' }}
                             params={{
@@ -54,9 +50,7 @@ class HomeContainer extends Component {
                                             <p className="subtext-css">
                                                 Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs
                                             </p>
-                                            <Link 
-                                                href='/register'
-                                            >
+                                            <Link href='/register'>
                                                 <Button
                                                     className='ant-btn-lg'
                                                     type='primary'
@@ -66,14 +60,12 @@ class HomeContainer extends Component {
                                                     }}>Join our platform 
                                                 </Button>
                                             </Link>
-
                                         </div>
                                     </Col>
 
                                     <Col xs={24} sm={14} md={14} lg={14} xl={14}>
                                         <img src={'../../static/images/asset_6.png'}
                                              style={{ height: '190px', marginLeft: '30%', marginTop: '60px' }}/>
-
                                         <img src={'../../static/images/asset_9.png'}
                                              style={{ marginLeft: '25%', height: '190px' }}/>
                                     </Col>
@@ -184,9 +176,9 @@ class HomeContainer extends Component {
                 </Row>}
 
         {true &&   <Row style={{background: 'rgb(236, 236, 236)'}}>
-                        <Col span={8} push={2}>
+                        <Col span={4} push={4} >
                             <div style={{margin:'5px'}}>
-                                <Card 
+                                <Card
                                     title={
                                         <div>
                                             <strong>
@@ -219,7 +211,7 @@ class HomeContainer extends Component {
                                 </Card>
                             </div>
                             </Col>
-                            <Col span={8} push={2}>
+                            <Col span={3} push={5} >
                             <div style={{margin:'5px'}}>
                                 <Card 
                                     title={
@@ -252,7 +244,7 @@ class HomeContainer extends Component {
                                 </Card>
                             </div>
                             </Col>
-                            <Col span={8} push={2}>
+                            <Col span={4} push={6} >
                             <div style={{margin:'5px'}}>
                                 <Card 
                                     title={
@@ -281,6 +273,39 @@ class HomeContainer extends Component {
                                                 </p>
                                             </strong>
                                         </div>}
+                                    />
+                                </Card>
+                            </div>
+                        </Col>
+                        <Col span={4} push={6} >
+                            <div style={{margin:'5px'}}>
+                                <Card
+                                    title={
+                                        <div>
+                                            <strong>
+                                                Freelancer 3
+                                            </strong>
+                                            <br />
+                                            <span>
+                                                            SEO Specialist
+                                                        </span>
+                                        </div>
+                                    }
+                                    extra={<Avatar size={'large'} icon='user'/>}
+                                    style={{width: 240}}
+                                >
+                                    <Meta
+                                        description={
+                                            <div>
+                                                <strong>
+                                                    <p>
+                                                        I am a SEO specialist, with 4 years experience, and with a large portfolio.
+                                                    </p>
+                                                    <p>
+                                                        I am very happy to try VBR Marketplace, and looking forward to meet all of you !
+                                                    </p>
+                                                </strong>
+                                            </div>}
                                     />
                                 </Card>
                             </div>
