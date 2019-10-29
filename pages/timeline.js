@@ -11,8 +11,6 @@ const { Meta } = Card;
 
 export default class timeline extends Component {
 
- 
-
   render () {
     return (
         <div>
