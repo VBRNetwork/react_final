@@ -18,6 +18,7 @@ import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
+import AutoCompleteInput from '../../components/Elements/AutoCompleteInput'
 const lang = [
     {
         value: 'English',
@@ -179,11 +180,48 @@ class ViewProfileContainer extends Component {
             selectedCategories:[],
             languages: '',
             description: '',
-            skills: '',
+            skills: [
+                ''
+            ],
             cvFile: '',
             categories:[],
-            skillsSource: [],
+            skillsSource: [ {
+                title: 'Libraries',
+                children: [
+                    {
+                        title: 'AntDesign',
+                        count: 10000,
+                    },
+                    {
+                        title: 'AntDesign UI',
+                        count: 10600,
+                    },
+                ],
+            },
+                {
+                    title: 'Solutions',
+                    children: [
+                        {
+                            title: 'AntDesign UI',
+                            count: 60100,
+                        },
+                        {
+                            title: 'AntDesign',
+                            count: 30010,
+                        },
+                    ],
+                },
+                {
+                    title: 'Articles',
+                    children: [
+                        {
+                            title: 'AntDesign design language',
+                            count: 100000,
+                        },
+                    ],
+                }],
             valueSkills: '',
+            tags:[]
         };
 
         this.handleChangeLanguages = this.handleChangeLanguages.bind(this);
@@ -192,7 +230,6 @@ class ViewProfileContainer extends Component {
         this.getSubcategories = this.getSubcategories.bind(this);
         this.handleChangeCategory = this.handleChangeCategory.bind(this);
         this.becomeFreelancerButton = this.becomeFreelancerButton.bind(this);
-        this.saveSkills = this.saveSkills.bind(this);
         this.uploadCv = this.uploadCv.bind(this);
         this.onChangeAutocomplete = this.onChangeAutocomplete.bind(this);
         this.onSearch = this.onSearch.bind(this);
@@ -220,7 +257,8 @@ class ViewProfileContainer extends Component {
     };
 
     onChangeAutocomplete = value => {
-        this.setState({ valueSkills:value });
+        let skills =   [...this.state.skills, value];
+        this.setState({ valueSkills:value ,skills:skills });
     };
 
 
@@ -238,15 +276,6 @@ class ViewProfileContainer extends Component {
         this.setState({
             description: event.target.value,
         });
-    }
-
-    saveSkills(event){
-        this.setState({
-            skills:event
-        })
-    }
-
-    static async getInitialProps ({ store, query }) {
     }
 
     tosAccepted() {
@@ -281,6 +310,7 @@ class ViewProfileContainer extends Component {
             console.log(e);
         })
     }
+
 
     render () {
         const { skillsSource, valueSkills } = this.state;
@@ -352,19 +382,19 @@ class ViewProfileContainer extends Component {
                             <Form.Item
                                 label={
                                     <span>
-                                        Skills&nbsp;
+                                        Skills &nbsp;
                                         <Tooltip title="Up to 5 Skills.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
                                 </span>}>
-                                <SkillsGroup saveTags={this.saveSkills}/>
-                                <AutoComplete
+                                <SkillsGroup tags={this.state.skills}/>
+                                <AutoCompleteInput
                                     dataSource={skillsSource}
                                     style={{ width: 200 }}
                                     value={valueSkills}
                                     onSelect={this.onChangeAutocomplete}
                                     onSearch={this.onSearch}
-                                    placeholder="input here"
+                                    placeholder="Search your skill"
                                 />
                             </Form.Item>
 
@@ -377,6 +407,15 @@ class ViewProfileContainer extends Component {
                         <h2 >Security</h2>
                         <h3 >Change your password</h3>
                         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+
+                            <Form.Item label={'Old password'}>
+                                <Input
+                                    onChange={this.handleChange}
+                                    value={this.state.username}
+                                    prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                    placeholder='Old password'
+                                />
+                            </Form.Item>
 
                             <Form.Item label={'Password'}>
                                 <Input
@@ -394,8 +433,8 @@ class ViewProfileContainer extends Component {
                                     prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                     placeholder='Repeat Password'
                                 />
+                                <Button type="danger">Reset password</Button>
                             </Form.Item>
-
                         </Form>
 
                     </Col>
