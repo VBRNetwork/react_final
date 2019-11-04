@@ -63,7 +63,20 @@ class MyApp extends App {
                         ]}
                         subsets={['cyrillic-ext', 'greek']}
                     />
-                    <script dangerouslySetInnerHTML = {{__html:`console.log('header script')`}}/>
+                    <script src="../static/jquery.min.js"/>
+                    <script src="https://support.veelancing.io/assets/chat/chat.min.js"/>
+                    <script dangerouslySetInnerHTML = {{__html:`
+                    $( document ).ready(function() {
+                         new ZammadChat({
+                            background: '#4241b8',
+                            fontSize: '12px',
+                            chatId: 1,
+                            flat: true,
+                            chatId: 1,
+                            show: true,
+                            cssAutoload:false,
+                        });
+                    });`}}/>
                 </Head>
 
                 <Provider store={store}>

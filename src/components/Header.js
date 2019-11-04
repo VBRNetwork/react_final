@@ -4,6 +4,7 @@ import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from
 import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
+import '../styles/chat.css'
 import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
@@ -15,6 +16,7 @@ import {withRouter} from 'next/router';
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
+import Head from 'next/head'
 
 ReactGA.initialize('UA-147139648-1');
 
