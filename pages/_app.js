@@ -53,12 +53,10 @@ class MyApp extends App {
                     <GoogleFontLoader
                         fonts={[
                             {
-                                font: 'Roboto',
-                                weights: [400, '400i'],
+                                font: 'Roboto', weights: [400, '400i'],
                             },
                             {
-                                font: 'Roboto Mono',
-                                weights: [400, 700],
+                                font: 'Roboto Mono', weights: [400, 700],
                             },
                         ]}
                         subsets={['cyrillic-ext', 'greek']}
@@ -77,9 +75,6 @@ class MyApp extends App {
                             show: true,
                         });
                     });`}}/>
-
-
-
                 </Head>
 
                 <Provider store={store}>
