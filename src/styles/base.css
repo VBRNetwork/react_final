@@ -200,3 +200,8 @@ html,
     border-radius: 4px;
     padding: 5px;
 }
+
+.zammad-chat-header {
+    background: #2ec3ab !important;
+    height: 3.5em !important;
+}
