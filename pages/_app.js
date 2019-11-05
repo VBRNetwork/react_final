@@ -75,7 +75,6 @@ class MyApp extends App {
                             target: $(".chat-support"),
                             host:'wss://support.veelancing.io/ws',
                             show: true,
-                            cssAutoload:false,
                         });
                     });`}}/>
                 </Head>
