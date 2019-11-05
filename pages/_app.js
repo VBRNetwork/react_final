@@ -72,7 +72,7 @@ class MyApp extends App {
                             background: '#4241b8',
                             fontSize: '12px', 
                             chatId: 1,
-                            host:'ws://support.veelancing.io/ws',
+                            host:'wss://support.veelancing.io/ws',
                             show: true,
                             cssAutoload:false,
                             debug:true,
