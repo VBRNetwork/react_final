@@ -65,20 +65,17 @@ class MyApp extends App {
                     />
                     <script src="../static/jquery-2.1.4.min.js"/>
                     <script src="../static/chat.min.js"/>
-
+                    <script src="../static/form.js"/>
                     <script dangerouslySetInnerHTML = {{__html:`
                     $( document ).ready(function() {
                          new ZammadChat({
                             background: '#4241b8',
                             fontSize: '12px', 
                             chatId: 1,
-                            host:'wss://support.veelancing.io/ws',
+                            target: $(".chat-support"),
                             show: true,
-                            cssAutoload:false,
-                            debug:true,
                         });
                     });`}}/>
-
                 </Head>
 
                 <Provider store={store}>
@@ -97,6 +94,7 @@ class MyApp extends App {
                         </ConnectedRouter>
                     </PersistGate>
                 </Provider>
+                <div className="chat-support"/>
             </Container>
         )
     }
