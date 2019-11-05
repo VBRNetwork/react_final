@@ -4,7 +4,6 @@ import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from
 import Link from 'next/link'
 import {Button} from 'antd'
 import '../styles/base.css'
-import '../styles/chat.css'
 import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
