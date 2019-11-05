@@ -15,6 +15,7 @@ import {withRouter} from 'next/router';
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
+import Head from 'next/head'
 
 ReactGA.initialize('UA-147139648-1');
 
