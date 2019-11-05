@@ -63,20 +63,22 @@ class MyApp extends App {
                         ]}
                         subsets={['cyrillic-ext', 'greek']}
                     />
-                    <script src="../static/jquery.min.js"/>
-                    <script src="https://support.veelancing.io/assets/chat/chat.min.js"/>
+                    <script src="../static/jquery-2.1.4.min.js"/>
+                    <script src="../static/chat.min.js"/>
+
                     <script dangerouslySetInnerHTML = {{__html:`
                     $( document ).ready(function() {
                          new ZammadChat({
                             background: '#4241b8',
-                            fontSize: '12px',
+                            fontSize: '12px', 
                             chatId: 1,
-                            flat: true,
-                            chatId: 1,
+                            host:'ws://support.veelancing.io/ws',
                             show: true,
                             cssAutoload:false,
+                            debug:true,
                         });
                     });`}}/>
+
                 </Head>
 
                 <Provider store={store}>
