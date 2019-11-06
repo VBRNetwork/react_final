@@ -5,11 +5,11 @@ html,
   }
 
   body {
-    font-family: 'Roboto', serif !important
+    font-family: 'Roboto';
   }
 
   body.fontLoaded {
-    font-family:'Roboto', serif
+    font-family:'Roboto'
   }
 
   #app {

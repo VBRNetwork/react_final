@@ -87,6 +87,7 @@ class NewHomeContainer extends Component {
                                    <Link href='/'>
                                        <img src={'/static/images/vbr_logo.png'}
                                             style={{width: '80px', margin: '8px'}}
+
                                        />
                                    </Link>
                                </div>
@@ -113,7 +114,22 @@ class NewHomeContainer extends Component {
                                    {token === false && loginButton}
                                </Menu>
                            </Col>
+
                        </Row>
+
+                        <Row>
+                            <Col>
+                                <div>
+                                    <br/>
+                                    <br/>
+                                    <h1 className="a-blockchain-marketp"> <span className="big">A Blockchain Marketplace for Freelancers</span></h1>
+                                    <div className="a-blockchain-marketp">
+                                        <span className="mid">
+                                            Be part of our community to find a job or hire experts.</span>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
             </Fragment>
         )
