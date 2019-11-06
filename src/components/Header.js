@@ -126,10 +126,8 @@ class Header extends Component {
                 })
             }
 
-
             if(typeof fullLink[2] !== 'undefined'){
                 let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
-               
                 if(currentCategory && typeof fullLink[3] !== 'undefined'){
                     let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
                     if(!this.state.breadcrumb.category.length > 0){
@@ -139,26 +137,16 @@ class Header extends Component {
                                 subcategory:currentSubCategory
                                 
                             }
-                            
                         })
-
-                        
                     }
                 }
             }
-
         }
-
-        
-
     }
-    
 
-    
 
     clickLogout(e) {
         let {logout} = this.props
-        
        logout().then(() => {
             this.setState({
                 isLogged: false
@@ -246,7 +234,6 @@ class Header extends Component {
         }
 
         console.log('vanea', this.state)
-
         console.log(this.state.breadcrumb);
 
         return (

@@ -88,3 +88,19 @@
     box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
     position:relative
 }
+
+.a-blockchain-marketp {
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 60px;
+    width: 660px;
+    text-align: left;
+}
+.a-blockchain-marketp .big {
+    font-size: 50px;
+}
+
+.a-blockchain-marketp .mid {
+    font-size: 20px;
+}
