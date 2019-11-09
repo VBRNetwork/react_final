@@ -79,6 +79,26 @@ class IcoContainer extends Component {
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                         <Row>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
+
+                                <h1 className="a-blockchain-marketp">
+                                    <span className="big">A blockchain Marketplace<br/> for Freelancers </span>
+                                </h1>
+                                <div className="a-blockchain-marketp">
+                                        <span className="stay-up-to-date">
+                                            Stay up to date, and get notified about we open the Initial Coin Offering.
+                                        </span>
+                                    <Form layout='inline'>
+                                        <Row gutter={24}>
+                                            <Col span={14}>
+                                                <Input className="email-input" size="large" type="email" placeholder='Email' />
+                                            </Col>
+                                            <Col span={8}>
+                                                <Button className="btn-style" size="large">Get Notified!</Button>
+                                            </Col>
+                                        </Row>
+                                    </Form>
+                                </div>
+
                                     <div style={{
                                         position: 'relative',
                                         background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))'
