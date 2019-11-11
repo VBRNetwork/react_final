@@ -63,7 +63,12 @@ class IcoContainer extends Component {
             <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                         <Row>
-                            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
+                               
+                                   
+                               
+                              
+
+                            <Col xs={24} sm={24} md={24} lg={16} xl={16} xxl={{ span: 16 }}>
                                     <div style={{
                                         position: 'relative',
                                         background: 'linear-gradient(rgb(46, 195, 171), rgb(35, 33, 33))'
@@ -387,15 +392,33 @@ class IcoContainer extends Component {
                                         <Col>
                                             <div style={{ backgroundColor: 'white' }}>
                                                 <div style={{ margin: '20px' }}>
-                                                    <div>
-                                                        <h3><strong>Partners</strong></h3>
-                                                    </div>
-                                                    <hr/>
-                                                    <Card bordered={false} size='small'>
-                                                        <img src={'../../static/images/logo-ced.png'}/>
-                                                        <img 
-                                                            src={'../../static/images/urban_garden_logo.png'}
-                                                            style={{ width: '35%' }}
+                                                    
+                                                    
+                                                    <Card 
+                                                        bordered={false} 
+                                                        size='small'
+                                                        title={<div>
+                                                            <h3><strong>Partners</strong></h3><hr/>
+                                                        </div>}
+                                                    >
+                                                        <Meta
+                                                            description={
+                                                                <div>
+                                                                    <Row>
+                                                                        <Col span={6}>
+                                                                            <img 
+                                                                                src={'../../static/images/logo-ced.png'}
+                                                                            />
+                                                                        </Col>
+                                                                        <Col span={6} push={2}>
+                                                                            <img 
+                                                                                src={'../../static/images/urban_logo2.png'}
+                                                                                style={{ width: 155 }}
+                                                                            />
+                                                                        </Col>
+                                                                    </Row>
+                                                                </div>
+                                                            } 
                                                         />
                                                     </Card>
                                                 </div>
@@ -406,23 +429,44 @@ class IcoContainer extends Component {
                                         <Col>
                                             <div style={{ backgroundColor: 'white' }}>
                                                 <div style={{ margin: '20px' }}>
-                                                    <div>
-                                                        <h3><strong>Technology</strong></h3>
-                                                    </div>
-                                                    <hr/>
-                                                    <Card bordered={false}>
-                                                        <img style={{ width: '35%' }}
-                                                             src={'../../static/images/python-logo.png'}/>
-                                                        <img style={{ width: '30%' }}
-                                                             src={'../../static/images/logo_envoy2.png'}/>
-                                                        <img style={{ width: '20%', marginLeft: '5%' }}
-                                                             src={'../../static/images/django-logo.png'}/>
-                                                        <img style={{ width: '35%' }}
-                                                             src={'../../static/images/react-logo.png'}/>
-                                                        <img style={{ width: '30%' }}
-                                                             src={'../../static/images/eth-logo.png'}/>
-                                                        <img style={{ width: '30%' }}
-                                                             src={'../../static/images/mongodb-logo.png'}/>
+                                                    
+                                                    
+                                                    <Card 
+                                                        size={'small'} 
+                                                        bordered={false}
+                                                        title={<div>
+                                                            <h3><strong>Technology</strong></h3><hr/>
+                                                        </div>}
+                                                        
+                                                    >   
+                                                        <Meta
+                                                            description={<div>
+                                                                <img 
+                                                                    style={{ width: '35%' }}
+                                                                    src={'../../static/images/python-logo.png'}
+                                                                />
+                                                                <img 
+                                                                    style={{ width: '30%' }}
+                                                                    src={'../../static/images/logo_envoy2.png'}
+                                                                />
+                                                                <img 
+                                                                    style={{ width: '20%', marginLeft: '5%' }}
+                                                                    src={'../../static/images/django-logo.png'}
+                                                                />
+                                                                <img 
+                                                                    style={{ width: '35%' }}
+                                                                    src={'../../static/images/react-logo.png'}
+                                                                />
+                                                                <img 
+                                                                    style={{ width: '30%' }}
+                                                                    src={'../../static/images/eth-logo.png'}
+                                                                />
+                                                                <img 
+                                                                    style={{ width: '30%' }}
+                                                                    src={'../../static/images/mongodb-logo.png'}
+                                                                />
+                                                            </div>} 
+                                                        />
                                                     </Card>
                                                 </div>
                                             </div>

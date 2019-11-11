@@ -4,15 +4,63 @@ import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/home.css'
 import { Carousel, Layout, Row, Col, Button, Card, Avatar } from 'antd'
+import {
+    isBrowser,
+    isMobile,
+    isTablet,
+    isSmartTV
+  } from "react-device-detect";
 import Link from 'next/link'
 
 const { Meta } = Card;
 
 class HomeContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            particles: {
+                number: {
+                    value: 70
+                },
+                size: {
+                    value: 2
+                },
+                color:{
+                    value:'#FFF'
+                }
+            },
+        };
+
+        this.handleChangeParticles = this.handleChangeParticles.bind(this);
+    }
+
+    handleChangeParticles(value) {
+        this.setState({
+            particles:  {
+                number: {
+                    value: value
+                }
+            },
+        })
+    }
+
     componentDidMount () {
+        let number_particles = 60;
+
+        if(isBrowser){
+            number_particles = 80;
+            console.log('isBrowser');
+        }
+        if(isMobile){
+            number_particles = 30;
+            console.log('isMobile');
+        }
+
+        this.handleChangeParticles(number_particles);
     }
 
     render () {
+     
         return (
             <Fragment>
 
@@ -29,9 +77,11 @@ class HomeContainer extends Component {
                                         value: 70
                                     },
                                     size: {
-                                        value: 3
+                                        value: 2
                                     },
-                                    color: { value: '#FFF' }
+                                    color:{
+                                        value:'#FFF'
+                                    }
                                 },
                                 interactivity: {
                                     events: {
