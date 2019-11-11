@@ -250,7 +250,7 @@ class NewHomeContainer extends Component {
                 </div>
 
 
-                <div style={{ marginTop: '200px', marginBottom: '50px' }}>
+                <div style={{ marginTop: '150px', marginBottom: '50px' }}>
                     <Row>
                         <Col xxl={{ span: 24}}>
                             <div>
@@ -261,20 +261,216 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
                     </Row>
+                    <br />
+                    <br />
                     <Row>
                         <Col xxl={{ span: 6, offset:1}}>
-                          1
+                          <img src={'../../static/images/communicate_directly.svg'}/>
+                          <br />
+                          <br />
+                          <span className={'communicate-directly'}>Commuincate Directly</span>
+                          <br />
+                          <br />
+                          <span className={'home-paragraph-1'}>
+                              <p>
+                                You can easily connect and communicate
+                                <br />
+                                with a freelancer or recruiter directly with our chat feature.
+                              </p>
+                          </span>
                         </Col>
                         <Col xxl={{ span: 6}}>
-                            2
+                            <img src={'../../static/images/smart_contracts.svg'}/>
+                            <br />
+                            <br />
+                            <span className={'communicate-directly'}>Create Smart Contracts</span>
+                            <br />
+                            <br />
+                            <span className={'home-paragraph-1'}>
+                              <p>
+                                As a freelancer or recruiter you can create a contract together
+                                <br />
+                                and make the final agreement on your specific terms.
+                              </p>
+                          </span>
                         </Col>
                         <Col xxl={{ span: 6}}>
-                            3
+                            <img src={'../../static/images/get_paid_instantly.svg'}/>
+                            <br />
+                            <br />
+                            <span className={'communicate-directly'}>Get Paid Instantly</span>
+                            <br />
+                            <br />
+                            <span className={'home-paragraph-1'}>
+                              <p>
+                                The payments are processed instantly and in a highly secure environment
+                                <br />
+                                created with Blockchain technology.
+                              </p>
+                          </span>
                         </Col>
                         <Col xxl={{ span: 5}}>
-                            4
+                            <img src={'../../static/images/get_paid_instantly.svg'}/>
+                            <br />
+                            <br />
+                            <span className={'communicate-directly'}>Exchange You Money</span>
+                            <br />
+                            <br />
+                            <span className={'home-paragraph-1'}>
+                              <p>
+                                All transactions are made with our Veelancing token.
+                                <br />
+                                You can exchange tokens into any Crypto or currency with minimal fees or no fees at all.
+                              </p>
+                          </span>
                         </Col>
                     </Row>
+                    <br />
+                    <Row>
+                        <Col xxl={{span: 12, offset: 11}}>
+                            <Button className={'vbr-btn-style'}>
+                                How it Works
+                            </Button>
+                        </Col>
+                    </Row>
+                        <br />
+                        <br />
+                        <br />
+                        <div className={'home-investors-box'}>
+                            <Row>
+                                <Col xxl={{span: 24}}>
+                                    <div className={'investor-box'}>
+                                        <img  className={'investors-img'} src={'../../static/images/become_an_investor.jpg'}/>
+                                    </div>
+                                    <div className={'investors-text-box'}>
+                                    <span className={'investors-title'}>
+                                        Help us create the first
+                                        <br />
+                                        Blockchain Freelancer Community
+                                    </span>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <p className={'investors-text'}>
+                                        Made by freelancers for freelancers, Veelancing aims to help people find jobs and talent fast and easy.
+                                        <br/>
+                                        With out Blockchain technology we give everyone the opportunity to have access to instant payment and cryptocurrencies.
+                                    </p>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <Button className={'vbr-btn-style'}>
+                                        Become an Investor
+                                    </Button>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Row>
+                        <Col xxl={{span: 12, push: 4}}>
+                            <div className={'join-freelancer-box'}>
+                                    <span className={'join-freelancer-title'}>
+                                        Be part of a community that
+                                        <br />
+                                        owns the platform.
+                                    </span>
+                                <br />
+                                <br />
+                                <br />
+                                <p className={'join-freelancer-text'}>
+                                    We belive in a true form of community.
+                                    <br/>
+                                    With Veelancing, everyone can contribute to the platform by requesting and voting changes and new features.
+                                </p>
+                                <br />
+                                <br />
+                                <br />
+                                <Button className={'vbr-btn-style'}>
+                                    Join as Freelancer
+                                </Button>
+                            </div>
+                        </Col>
+                        <Col xxl={{span: 12}}>
+                            <div>
+                                <img style={{width: 534, height: 640}} src={'../../static/images/for_freelancers_imagery@2x.png'} />
+                            </div>
+                        </Col>
+                    </Row>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Row>
+                        <Col xxl={{span: 12, push: 4}}>
+                            <div>
+                                <img style={{width: 534, height: 640}} src={'../../static/images/talent_seeker_imagery@1x.png'} />
+                            </div>
+                        </Col>
+                        <Col xxl={{span: 12}}>
+
+                            <div className={'join-freelancer-box'}>
+                                    <span className={'join-freelancer-title'}>
+                                        Find the best canditate
+                                        <br />
+                                        for the job.
+                                    </span>
+                                <br />
+                                <br />
+                                <br />
+                                <p className={'join-freelancer-text'}>
+                                    We belive in a true form of community.
+                                    <br/>
+                                    With Veelancing, everyone can contribute to the platform by requesting and voting changes and new features.
+                                </p>
+                                <br />
+                                <br />
+                                <br />
+                                <Button className={'vbr-btn-style'}>
+                                    Join as Freelancer
+                                </Button>
+                            </div>
+                        </Col>
+                    </Row>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div className={'launch-time-text'}>
+                    <span >
+                        We’ll let you know when we launch!
+                    </span>
+                    <br />
+                    <br />
+                    <Row>
+                        <Col xxl={{span: 8, push: 6}}>
+                            <Input size={'large'} className={'launch-time-input'} placeholder={'Email'}/>
+                        </Col>
+                        <Col xxl={{span: 14, pull: 1}}>
+                            <Button className={'vbr-btn-style'}>
+                                Get Notified!
+                            </Button>
+                        </Col>
+                    </Row>
+                        <div className={'home-privacy-policy-text'}>
+                            <span>
+                                We promise no spam!
+                                <br />
+                                <a>
+                                    Privacy Policy
+                                </a>
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
             </Fragment>
