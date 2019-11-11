@@ -327,7 +327,7 @@ class NewHomeContainer extends Component {
                     </Row>
                     <br />
                     <Row>
-                        <Col xxl={{span: 12, offset: 11}}>
+                        <Col xxl={{span: 12, offset: 10}}>
                             <Button className={'vbr-btn-style'}>
                                 How it Works
                             </Button>
