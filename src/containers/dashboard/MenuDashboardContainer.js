@@ -20,19 +20,20 @@ class MenuDashboardContainer extends Component {
                        onCollapse={(collapsed, type) => { console.log(collapsed, type) }}
                        style={{ minHeight: '100vh', zIndex: 99 }}
                        width={200} style={{ background: '#fff', marginLeft: '1%' }}>
+
                     <Menu
                         mode='inline'
-                        defaultSelectedKeys={[5]}
-                        defaultOpenKeys={['sub1']}
+                        defaultSelectedKeys={['abc']}
+                        defaultOpenKeys={['sub1','sub3','sub2']}
                         style={{ height: '100%' }}
                         theme='dark'>
 
                         <SubMenu
                             key='sub1'
                             title={<span>
-                        <Icon type='user'/>Profile
+                                <Icon type='user'/>Profile
                             </span>}>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='5'>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='abc'>
                                 <Link href={'/dashboard'} as={'/dashboard'}><a>Dashboard</a></Link>
                             </Menu.Item>
                                 <Menu.Item style={{ color: '#2ec3ab' }} key='1'>
@@ -46,30 +47,31 @@ class MenuDashboardContainer extends Component {
                                 </Menu.Item>
                         </SubMenu>
                         <SubMenu
-                            key='sub2'
-                            title={
-                                <span>
-                      <Icon type='tool'/>
-                                    VBR Tools
-                    </span>}>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='5'>Marketplace</Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='6'>Exchange Market</Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='7'>Chat Preferences</Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='8'>Smart Contracts</Menu.Item>
-                        </SubMenu>
-                        <SubMenu
                             key='sub3'
                             title={
                                 <span>
-                      <Icon type='wallet'/>
-                                Wallet
-                    </span>}>
+                                  <Icon type='wallet'/>
+                                            Wallet
+                                </span>}>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='9'>
                                 <Link href={'/dashboard?slug=wallet'} as={'/dashboard/wallet'}><a>Balance</a></Link>
                             </Menu.Item>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='10'>Quick Top UP</Menu.Item>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='11'>Send/Request Money</Menu.Item>
                         </SubMenu>
+                        <SubMenu
+                            key='sub2'
+                            title={
+                                <span>
+                                  <Icon type='tool'/>
+                                                VBR Tools
+                                </span>}>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='5'>Marketplace</Menu.Item>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='6'>Exchange Market</Menu.Item>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='7'>Chat Preferences</Menu.Item>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='8'>Smart Contracts</Menu.Item>
+                        </SubMenu>
+
                     </Menu>
                 </Sider>
         )

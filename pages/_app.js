@@ -53,17 +53,32 @@ class MyApp extends App {
                     <GoogleFontLoader
                         fonts={[
                             {
-                                font: 'Roboto',
-                                weights: [400, '400i'],
+                                font: 'Roboto', weights: [400, '400i'],
                             },
                             {
-                                font: 'Roboto Mono',
-                                weights: [400, 700],
+                                font: 'Roboto Mono', weights: [400, 700],
                             },
                         ]}
                         subsets={['cyrillic-ext', 'greek']}
                     />
-                    <script dangerouslySetInnerHTML = {{__html:`console.log('header script')`}}/>
+                    <script src="../static/jquery-2.1.4.min.js"/>
+                    <script src="../static/chat.min.js"/>
+                    <script src="../static/form.js"/>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+                    <script dangerouslySetInnerHTML = {{__html:`
+                    $( document ).ready(function() {
+                         new ZammadChat({
+                            background: '#4241b8',
+                            fontSize: '12px', 
+                            chatId: 1,
+                            target: $(".chat-support"),
+                            host:'wss://support.veelancing.io/ws',
+                            show: true,
+                        });
+                    });`}}/>
                 </Head>
 
                 <Provider store={store}>
@@ -82,6 +97,7 @@ class MyApp extends App {
                         </ConnectedRouter>
                     </PersistGate>
                 </Provider>
+                <div className="chat-support"/>
             </Container>
         )
     }

@@ -5,12 +5,27 @@ html,
   }
 
   body {
-    font-family: 'Roboto', serif !important
+    font-family: 'Roboto';
   }
 
   body.fontLoaded {
-    font-family:'Roboto', serif
+    font-family:'Roboto'
   }
+
+    @font-face {
+        font-family: dinfont;
+        src: url("/static/fonts/alte-din-1451-mittelschrift/din1451alt.ttf");
+    }
+
+.logo {
+    font-family: dinfont;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-align: left;
+}
 
   #app {
     min-height: 100%;
@@ -199,4 +214,265 @@ html,
     background: #2ec3ab0f;
     border-radius: 4px;
     padding: 5px;
+}
+
+.zammad-chat-header {
+    background: #2ec3ab !important;
+    height: 3.5em !important;
+}
+
+.menu-item {
+    color: #FFFFFF !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+    line-height: 17px !important;
+    text-align: left !important;
+}
+.intro-text {
+    padding:100px;
+}
+
+.logo-box {
+    padding: 35px;
+}
+
+.auth-button {
+    border: 1px solid #87C6C1;
+    border-radius: 10px;
+    width: 110px;
+    height: 40px;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    text-align: center;
+}
+
+.stay-up-to-date {
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+
+}
+
+
+.email-input {
+    border: 1px solid #87C6C1 !important;
+    border-radius: 10px !important;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25) !important;
+    height: 70px !important;
+    width:100%;
+    background: transparent !important;
+}
+
+.email-input::placeholder {
+    color: orange;
+}
+
+.btn-style {
+    color: #008D7F !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
+    height: 70px !important;
+    width:100%;
+}
+
+.vbr-btn-style {
+    background-color: #008D7F !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    height: 60px !important;
+    width: 260px !important;
+}
+
+.vbr-btn-style span{
+    color:#FFF;
+    font-weight: bold;
+}
+
+
+
+.coming-soon {
+    color: #FDF81F;
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 46px;
+    text-align: left;
+}
+
+.find-the-job-you-lov {
+    color: #3B3D47;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    width: 420px;
+    text-align: left;
+}
+
+.choose-from-a-vast-p {
+    color: #3B3D47;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25px;
+    width: 420px;
+    text-align: left;
+}
+
+.categories-image {
+    margin:10px;
+    border-radius:10px
+}
+
+.categories-title {
+
+    text-align: center;
+}
+.categories-title span {
+    color: #202C39;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.why-veelancing {
+    color: #3B3D47;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    text-align: center;
+}
+.we-are-a-decentraliz {
+    color: #202C39;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+}
+
+.communicate-directly {
+    color: #202C39;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25px;
+    width: 240px;
+    text-align: left;
+}
+
+.home-paragraph-1 {
+    color: #202C39;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    width: 240px;
+    text-align: left;
+}
+
+.hiw-vbr-btn {
+    background-color: #008D7F;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
+    width: 260px;
+    height: 60px;
+}
+
+.investors-img {
+    width: 1440px;
+    height: 580px;
+    margin-left: 11%;
+    position: relative;
+
+
+}
+
+.investors-title {
+    color: #3B3D47;
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    width: 600px;
+    text-align: left;
+}
+
+.investors-text {
+    color: #202C39;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    width: 600px;
+    text-align: left;
+}
+
+.investors-text-box {
+    position: absolute;
+    top: 1px;
+    left: 7%;
+    padding: 5%;
+
+}
+
+.join-freelancer-title {
+    color: #3B3D47;
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    width: 420px;
+    text-align: left;
+}
+
+.join-freelancer-text {
+    color: #202C39;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    width: 420px;
+    text-align: left;
+}
+
+.join-freelancer-box{
+    margin-top: 10%;
+}
+
+.launch-time-text {
+    color: #3B3D47;
+    font-family: Roboto;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    text-align: center !important;
+}
+
+.launch-time-input {
+    background-color: #FFFFFF;
+    border: 1px solid #B1B1B5;
+    border-radius: 10px;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25);
+    width: 330px !important;
+    height: 60px !important;
+}
+
+.home-privacy-policy-text {
+
+    color: #3B3D47 !important;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 17px !important;
+    width: 249px !important;
+    text-align: center !important;
+    margin-top: 2% !important;
+    margin-left: 44%;
 }

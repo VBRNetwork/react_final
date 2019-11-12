@@ -8,7 +8,7 @@ var jwtDecode = require('jwt-decode');
 
 
 export default function withAuth(AuthComponent) {
-    const Auth = new AuthService('http://marketplace.vbrinc.ro/api/');
+    const Auth = new AuthService('http://veelancing.io/api/v1');
 
     class Authenticated extends Component {
         static async getInitialProps(ctx) {

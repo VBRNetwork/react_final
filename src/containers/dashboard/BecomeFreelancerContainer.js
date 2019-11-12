@@ -12,12 +12,13 @@ import {
 } from 'antd'
 
 import PropTypes from "prop-types";
-
 const { TextArea } = Input;
 import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
+
+
 const lang = [
     {
         value: 'English',
@@ -302,6 +303,7 @@ class BecomeFreelancerContainer extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 10, offset:5 }}>
                         <h2 style={{textAlign:'center'}}>Become Freelancer</h2>
                         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+
                             <Form.Item label="Freelancer Category">
                                 <Select
                                     mode="multiple"
@@ -352,7 +354,7 @@ class BecomeFreelancerContainer extends Component {
                                 <Cascader options={lang} onChange={this.handleChangeLanguages}/>
                             </Form.Item>
                             <Form.Item label="Import Your Portfolio" >
-                                <Upload  name='file' onChange={this.uploadCv}>
+                                <Upload  name='cvfile' onChange={this.uploadCv}>
                                     <Button>
                                         <Icon type="upload" /> Click to Upload
                                     </Button>

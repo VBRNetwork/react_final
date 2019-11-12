@@ -15,6 +15,7 @@ import {withRouter} from 'next/router';
 import {Helmet} from "react-helmet";
 import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
+import Head from 'next/head'
 
 ReactGA.initialize('UA-147139648-1');
 
@@ -125,10 +126,8 @@ class Header extends Component {
                 })
             }
 
-
             if(typeof fullLink[2] !== 'undefined'){
                 let currentCategory = categories.find(obj => obj.url === 'categories/'+fullLink[2]);
-               
                 if(currentCategory && typeof fullLink[3] !== 'undefined'){
                     let currentSubCategory = currentCategory['subcategories'].find(obj => obj.url === 'categories/'+fullLink[2]+'/'+fullLink[3]);
                     if(!this.state.breadcrumb.category.length > 0){
@@ -138,26 +137,16 @@ class Header extends Component {
                                 subcategory:currentSubCategory
                                 
                             }
-                            
                         })
-
-                        
                     }
                 }
             }
-
         }
-
-        
-
     }
-    
 
-    
 
     clickLogout(e) {
         let {logout} = this.props
-        
        logout().then(() => {
             this.setState({
                 isLogged: false
@@ -245,7 +234,6 @@ class Header extends Component {
         }
 
         console.log('vanea', this.state)
-
         console.log(this.state.breadcrumb);
 
         return (
@@ -362,10 +350,12 @@ class Header extends Component {
                 </Content>
 
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{boxShadow:'rgb(185, 185, 185) 1px 2px 3px 1px'}}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
+                        background: 'rgba(26, 29, 40, 0.86)',
+                        boxShadow:'rgb(185, 185, 185) 0px 0px 20px 0px'}}>
                         <div style={{margin:'0 auto'}}>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
-                                <Menu style={{background: 'rgba(26, 29, 40, 0.86)', color: '#FFF'}} selectedKeys={[this.state.current]} mode='horizontal'>
+                                <Menu style={{background:'transparent',color: '#FFF',borderBottom:'0px'}} selectedKeys={[this.state.current]} mode='horizontal'>
                                     {menuItems}
                                 </Menu>
                             </Col>
