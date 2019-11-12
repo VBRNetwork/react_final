@@ -64,6 +64,10 @@ class MyApp extends App {
                     <script src="../static/jquery-2.1.4.min.js"/>
                     <script src="../static/chat.min.js"/>
                     <script src="../static/form.js"/>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
                     <script dangerouslySetInnerHTML = {{__html:`
                     $( document ).ready(function() {
                          new ZammadChat({
