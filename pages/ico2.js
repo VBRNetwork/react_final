@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import '../src/styles/ico.css'
 import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon } from 'antd'
-
+import "../src/styles/base.css"
 const { TextArea } = Input
 const { Meta } = Card
 
@@ -50,6 +49,18 @@ export default class ico2 extends Component {
                                  </Col>
                             </div>
 
+                        </Row>
+
+                        <Row>
+                            <div>
+                            <Col>
+                            <h1 className={"invest-in-the-first"}>Invest in the first Blockchain Community for Freelancers</h1>
+                            <p className={"stay-up-to-date-and"}>Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                            </Col>
+                            <col>
+                            </col>
+                            </div>
+                            
                         </Row>
 
                         <Row>
