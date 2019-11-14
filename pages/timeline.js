@@ -64,6 +64,7 @@ export default class timeline extends Component {
                 </Col>
             </Row>
         </div>
+
                <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -156,7 +157,8 @@ export default class timeline extends Component {
                         icon={<Icon type={'fund'} />}
                     />
                 </VerticalTimeline>
-                <Row>
+
+            <Row>
                         <Col span={20} push={7}>
                 <Card 
                                     title="VBR Network Concept"
