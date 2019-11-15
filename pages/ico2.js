@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon } from 'antd'
+import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon, Statistic } from 'antd'
 import "../src/styles/base.css"
 const { TextArea } = Input
 const { Meta } = Card
@@ -11,10 +11,18 @@ const { Meta } = Card
 export default class ico2 extends Component {
 
     render () {
+
+        const { Countdown } = Statistic;
+        const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
+
+        function onFinish() {
+            console.log('finished!');
+          }
+   
         return (
             <div>
-                <div>
-                    <div className='container background-header'>
+                <div className='rectangle' xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+                    <div>
                         <Particles
                             style={{ position: 'absolute' }}
                             params={{
@@ -39,71 +47,54 @@ export default class ico2 extends Component {
                         >
                         </Particles>
                         <Row>
-                            <div className={'logo'}>
+                            <div>
                                 <Col span={12}>
-                                  <p>VEELANCING</p>
+                                <div className="logo-box">
+                                    <span class="logo">VEELANCING</span>
+                               </div>
                                 </Col>
+                            </div>
 
-                                 <Col span={12}>
-
+                            <div>
+                                 <Col >
+                                
                                  </Col>
                             </div>
-
                         </Row>
-
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                         <Row>
                             <div>
-                            <Col>
-                            <h1 className={"invest-in-the-first"}>Invest in the first Blockchain Community for Freelancers</h1>
-                            <p className={"stay-up-to-date-and"}>Stay up to date, and get notified about when we open the Initial Coin Offering</p>
-                            </Col>
-                            <col>
-                            </col>
+                                <Col span={12}>
+                                    <h1 className="invest-in-the-first">Invest in the first</h1>
+                                    <h1 className="invest-in-the-first">Blockchain Community for</h1>
+                                    <h1 className="invest-in-the-first">Freelancers</h1>
+                                    <br />
+                                    <br />
+                                    <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                                </Col>
                             </div>
-                            
+                            <div>
+                                <Col span={12} push={2}>
+                                    <div className="count-down">
+                                    </div>
+                                </Col>
+                                <br />
+                            </div>
                         </Row>
-
                         <Row>
-                            <Col span={18} push={8}>
-                                <div style={{ width: '50%' }} className="contact-form">
-                                    <Card className='p-5'>
-                                        <strong><h3>Contact Us</h3></strong>
-                                        <Form className='login-form'>
-                                            <Form.Item>
-                                                <Input
-                                                    size="small"
-                                                    placeholder='Name'
-                                                />
-                                            </Form.Item>
-                                            <Form.Item>
-                                                <Input
-                                                    size="small"
-                                                    placeholder='Email'
-                                                />
-                                            </Form.Item>
-                                            <Form.Item>
-                                                <TextArea
-                                                    rows={4}
-                                                    size="small"
-                                                    placeholder='Description'
-                                                />
-                                            </Form.Item>
-                                            <Form.Item>
-                                                <Button
-                                                    style={{
-                                                        background: 'rgba(0, 177, 153, 0.74)',
-                                                        borderColor: 'rgba(0, 177, 153, 0.74)'
-                                                    }}
-                                                    type='primary'
-                                                    htmlType='submit'
-                                                    className='contact-form-button'>
-                                                    Submit
-                                                </Button>
-                                            </Form.Item>
-                                        </Form>
-                                    </Card>
+                            <Col span={12}>
+                                <div className="example-input">
+                                    <Input size="large" placeholder="Email" />
+                                    <Button style={{height: '40px',
+                                                    padding: '0 50px',
+                                                    fontStyle: 'transparent'}}>Get Notified!</Button>
                                 </div>
-
+                                <div>
+                                    <p className="no-spam">We promise no spam! Privacy Policy</p>
+                                </div>
                             </Col>
                         </Row>
                     </div>
