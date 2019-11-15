@@ -74,6 +74,24 @@ const vbrincapi = {
         return secureInstance.post(apiUrl + 'accounts/become-freelancer',bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
         })
+    },
+
+    knowYourCustomer(data){
+        let bodyFormData = new FormData();
+        console.log(data)
+        bodyFormData.set('first_name', data.first_name)
+        bodyFormData.set('last_name', data.last_name)
+        bodyFormData.set('gender',data.gender)
+        bodyFormData.set('date_birth', data.date_birth)
+        bodyFormData.set('id_front_picture', data.id_front_picture[0])
+        bodyFormData.set('id_back_picture', data.id_back_picture[0])
+        bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])
+        bodyFormData.set('tos', data.tos)
+
+        return secureInstance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
+
     }
 };
 

@@ -2,6 +2,7 @@ import vbrincapi from 'libs/vbrinc-api'
 
 export const SAVE_TOKEN = Symbol('SAVE_TOKEN');
 export const BECOME_FREELANCER = Symbol('BECOME_FREELANCER');
+export const NO_DATA = Symbol('NO_DATA');
 
 export function getAccessToken({username, password}) {
     return dispatch => {
@@ -27,6 +28,19 @@ export function becomeFreelancer(data) {
         })
     }
 }
+
+export function knowYourCustomer(data) {
+    return dispatch => {
+        return vbrincapi.knowYourCustomer(data).then(res => {
+            dispatch({
+                type: NO_DATA,
+                data: res.data
+            });
+            return res.data
+        })
+    }
+}
+
 
 function generateAuthCookies(res) {
     if(res.token){
