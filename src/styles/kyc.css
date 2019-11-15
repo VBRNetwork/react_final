@@ -1,0 +1,39 @@
+.kyc-form-footer {
+    text-align: center;
+}
+
+.kyc-form-btn {
+    text-align: center;
+    
+}
+
+.kyc-upload-btn {
+    background-color: #008D7F !important;
+    color: #FFF;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    width: 260px !important;
+    height: 60px !important;
+    margin-left: 30% !important;
+    
+}
+
+.kyc-upload-btn-sub {
+    background-color: #008D7F !important;
+    color: #FFF;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    width: 260px !important;
+    height: 60px !important;
+    
+}
+
+.kyc-input {
+    background-color: #FFFFFF !important;
+    border: 1px solid #B1B1B5 !important;
+    border-radius: 10px !important;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25) !important;
+    width: 330px !important;
+    height: 60px !important;
+    margin-left: 12% !important;
+}
