@@ -4,3 +4,20 @@
 .trans-card {position: relative !important; color: #FFF !important; text-align: center !important; margin-top: 9% !important; width: 240 !important}
 .trans-card-title {color: #FFF !important; border-radius: 2px !important}
 .road-map-card {color: rgb(110, 61, 145) !important }
+
+.rectangle {
+    background-image: linear-gradient(225deg, #20A3CA 0%, #008D7F 100%);
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
+}
+
+.logo {
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 17px;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 30px;
+}
