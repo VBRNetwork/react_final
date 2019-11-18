@@ -538,3 +538,40 @@ html,
     font-size: 14px;
     margin-left: 95px;
  }
+
+ .get-notified {
+   color: #008D7F !important;
+   font-size: 15px !important;
+   text-align: center !important;
+   background-color: #FFFFFF;
+   border-radius: 7px !important;
+   box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+   height: 43px !important;
+   width: 180px !important;
+  }
+
+  .veelancing-is-a-dece {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 19px !important;
+    width: 600px !important;
+    text-align: left !important;
+  }
+
+  .rectangle-copy {
+    background-color: #DEEEED !important;
+    width: 1400px !important;
+    height: 600px !important;
+    margin-left: 35px !important;
+  }
+
+  .the-problem {
+    color: #3B3D47;
+    font-size: 38px !important;
+    font-weight: 700;
+    line-height: 46px;
+    width: 480px;
+    text-align: left;
+  }

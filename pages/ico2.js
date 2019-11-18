@@ -88,17 +88,102 @@ export default class ico2 extends Component {
                             <Col span={12}>
                                 <div className="example-input">
                                     <Input size="large" placeholder="Email" />
-                                    <Button style={{height: '40px',
-                                                    padding: '0 50px',
-                                                    fontStyle: 'transparent'}}>Get Notified!</Button>
+                                    <Button className="get-notified">Get Notified!</Button>
                                 </div>
                                 <div>
                                     <p className="no-spam">We promise no spam! Privacy Policy</p>
                                 </div>
                             </Col>
                         </Row>
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
+                <br />
+                <br />
+                <br />
+                <Row>
+                    <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
+                        <div className={'join-freelancer-box'}>
+                            <span className={'why-veelancing'}>
+                                Why Veelancing?</span>
+                            <br />
+                            <br />
+                            <br />
+                            <p className="veelancing-is-a-dece">
+                                Veelancing is a decentralized platform for freelancers and talent seekers from all over the world.
+                                Here, you can find the job you love or hire experts that fit your needs.</p>
+                            <p className="veelancing-is-a-dece">
+                                With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.
+                                Everyone can contribute to the platform by requesting and voting changes and new features.</p>
+                            <p className="veelancing-is-a-dece">With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.</p>
+                            <br />
+                            <br />
+                            <br />
+                            <Button className={'vbr-btn-style'}>
+                                Learn More
+                                </Button>
+                        </div>
+                    </Col>
+                    <Col xs={24} sm={16} md={{ span: 12, push: 4 }} lg={11} xl={{ span: 12 }} xxl={{ span: 12 }}>
+                        <br />
+                        <br />
+                        <br />
+                        <div>
+                            <img style={{ width: 260, height: 395, }} src={'../../static/images/coins_photo@1x.jpg'} />
+                        </div>
+                    </Col>
+                </Row>
+                <br />
+                <br />
+                <br />
+                <br />
+                <Row className='rectangle-copy'>
+                    <br />
+                    <br />
+                    <br />
+                    <Col span={10} push={1}>
+                        <div className={'the-problem'}>
+                            The Problem
+                            </div>
+                        <br />
+                        <br />
+                        <p className="veelancing-is-a-dece">
+                            Veelancing is a decentralized platform for freelancers and talent seekers from all over the world.
+                            Here, you can find the job you love or hire experts that fit your needs.
+                            </p>
+                        <p className="veelancing-is-a-dece">
+                            With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.
+                            Everyone can contribute to the platform by requesting and voting changes and new features.
+                            </p>
+                        <p className="veelancing-is-a-dece">
+                            With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.
+                        </p>
+                    </Col>
+
+                    <Col span={12} push={3}>
+                        <div className={'the-problem'}>
+                            The Solution
+                            </div>
+                        <br />
+                        <br />
+                        <p className="veelancing-is-a-dece">
+                            Veelancing is a decentralized platform for freelancers and talent seekers from all over the world.
+                            Here, you can find the job you love or hire experts that fit your needs.
+                            </p>
+                        <p className="veelancing-is-a-dece">
+                            With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.
+                            Everyone can contribute to the platform by requesting and voting changes and new features.
+                            </p>
+                        <p className="veelancing-is-a-dece">
+                            With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.
+                        </p>
+                    </Col>
+
+
+                </Row>
+                <br />
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
