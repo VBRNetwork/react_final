@@ -10,15 +10,15 @@ const { Meta } = Card
 
 export default class ico2 extends Component {
 
-    render () {
+    render() {
 
         const { Countdown } = Statistic;
         const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
 
         function onFinish() {
             console.log('finished!');
-          }
-   
+        }
+
         return (
             <div>
                 <div className='rectangle' xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
@@ -49,16 +49,16 @@ export default class ico2 extends Component {
                         <Row>
                             <div>
                                 <Col span={12}>
-                                <div className="logo-box">
-                                    <span class="logo">VEELANCING</span>
-                               </div>
+                                    <div className="logo-box">
+                                        <span class="logo">VEELANCING</span>
+                                    </div>
                                 </Col>
                             </div>
 
                             <div>
-                                 <Col >
-                                
-                                 </Col>
+                                <Col >
+
+                                </Col>
                             </div>
                         </Row>
                         <br />
@@ -131,7 +131,12 @@ export default class ico2 extends Component {
                         <br />
                         <br />
                         <div>
-                            <img style={{ width: 260, height: 395, }} src={'../../static/images/coins_photo@1x.jpg'} />
+                            <div className={"geometric-particles"}>
+                                <img src={'../../static/images/geometric_particles.svg'} />
+                            </div>
+                            <div>
+                                <img className={"coins"} src={'../../static/images/coins_photo@1x.jpg'} />
+                            </div>
                         </div>
                     </Col>
                 </Row>
@@ -180,10 +185,66 @@ export default class ico2 extends Component {
                             With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.
                         </p>
                     </Col>
+                    </Row>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Row>
+                        <Col span={12} push={1}>
+                            <h1 className={'the-blockchain-techn'}>
+                                The Blockchain Technology
+                        </h1>
+                            <p className="hotographs-are-a-wa">
+                                Photographs are a way of preserving a moment in our lives for the rest of our lives.
+                                Many of us have at least been tempted at the flashy array of photo printers which seemingly
+                                leap off the shelves at even the least tech-savvy.</p>
+                            <br />
+                            <br />
+                            <Row gutter={[10, 20]}>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/python@2x.jpg" />
+                                    </Col>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/envoy@2x.jpg" />
+                                    </Col>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/django@2x.jpg" />
+                                    </Col>
+                            </Row>
+                            <br />
+                            <Row gutter={[10, 20]}>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/mongo@2x.jpg" />
+                                    </Col>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/react@2x.jpg" />
+                                    </Col>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                                        <img className="technology-images"
+                                             src="../../static/images/ethereum@2x.jpg" />
+                                    </Col>
+                            </Row>
+                        </Col>
 
-
-                </Row>
+                        <Col span={12} push={2}>
+                            <div>
+                                <img src={'../../static/images/geometric_particles2.svg'} />
+                            </div>
+                        </Col>
+                    </Row>
                 <br />
+                <br />
+                <Col span={24} push={10}><h1 className="the-blockchain-techn">Our Journey</h1></Col> 
+                <br />
+                <br />
+                <br /> 
+                <br />                
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -191,7 +252,7 @@ export default class ico2 extends Component {
                         contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                         date="2011 - present"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Creative Director</h3>
                         <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
@@ -203,7 +264,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--work"
                         date="2010 - 2011"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Art Director</h3>
                         <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
@@ -215,7 +276,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--work"
                         date="2008 - 2010"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Web Designer</h3>
                         <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
@@ -227,7 +288,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--work"
                         date="2006 - 2008"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Web Designer</h3>
                         <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
@@ -239,7 +300,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--education"
                         date="April 2013"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social
                             Media</h3>
@@ -252,7 +313,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--education"
                         date="November 2012"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
                         <h4 className="vertical-timeline-element-subtitle">Certification</h4>
@@ -264,7 +325,7 @@ export default class ico2 extends Component {
                         className="vertical-timeline-element--education"
                         date="2002 - 2006"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'}/>}
+                        icon={<Icon type={'fund'} />}
                     >
                         <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media
                             Visual Imaging</h3>

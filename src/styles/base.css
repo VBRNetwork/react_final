@@ -553,9 +553,9 @@ html,
   .veelancing-is-a-dece {
     color: #202C39 !important;
     font-family: Roboto !important;
-    font-size: 16px !important;
+    font-size: 17px !important;
     font-weight: 400 !important;
-    line-height: 19px !important;
+    line-height: 25px !important;
     width: 600px !important;
     text-align: left !important;
   }
@@ -563,7 +563,7 @@ html,
   .rectangle-copy {
     background-color: #DEEEED !important;
     width: 1400px !important;
-    height: 600px !important;
+    height: 450px !important;
     margin-left: 35px !important;
   }
 
@@ -574,4 +574,48 @@ html,
     line-height: 46px;
     width: 480px;
     text-align: left;
+  }
+
+  .geometric-particles {
+    position: relative;
+    margin-left: -115px;
+  }
+
+  .coins {
+    position: absolute !important;
+    width: 260px;
+    height: 395px;
+    margin-top: -475px !important;
+    box-shadow: 0 5px 50px 0 rgba(112, 112, 112, 0.637);
+  }
+
+  .photographs-are-a-wa {
+    color: #202C39 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 19px !important;
+    width: 400px !important;
+    text-align: left !important;
+  }
+
+  .the-blockchain-techn {
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 46px;
+    width: 600px;
+    text-align: left;
+  }
+
+  .technology-images {
+  border: 1px solid #EBEBEC;
+  border-radius: 10px;
+  width: 180px;
+  height: 120px;
+  }
+
+  .geometric-particles2 {
+    color: #87C6C1;
+    width: 420px;
+    height: 500px;
   }
