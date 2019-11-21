@@ -51,11 +51,8 @@ class MyApp extends App {
                 <Head>
                     <GoogleFontLoader
                         fonts={[
-                            {
-                                font: 'Roboto', weights: [400, '400i'],
-                            },
-                            {
-                                font: 'Roboto Mono', weights: [400, 700],
+                            {font: 'Roboto', weights: [400, '400i'],
+                            },{font: 'Roboto Mono', weights: [400, 700],
                             },
                         ]}
                         subsets={['cyrillic-ext', 'greek']}
@@ -63,10 +60,6 @@ class MyApp extends App {
                     <script src="../static/jquery-2.1.4.min.js"/>
                     <script src="../static/chat.min.js"/>
                     <script src="../static/form.js"/>
-                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-                     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
                     <script dangerouslySetInnerHTML = {{__html:`
                     $( document ).ready(function() {
                          new ZammadChat({
@@ -81,19 +74,9 @@ class MyApp extends App {
                 </Head>
 
                 <Provider store={store}>
-                    <PersistGate loading={<div style={{
-                        position: 'absolute',
-                        width: '150px',
-                        height: '100',
-                        zIndex: '15',
-                        top: '50%',
-                        left: '50%',
-                        }}><Spin size="large" /></div>} persistor={store.__persistor}>
-                        <ConnectedRouter>
-                            <Layout>
-                                <Component router={router} {...pageProps} />
-                            </Layout>
-                        </ConnectedRouter>
+                    <PersistGate loading={<div className={'loading-start'}>
+                        <Spin size="large" /></div>} persistor={store.__persistor}>
+                        <ConnectedRouter><Layout><Component router={router} {...pageProps}/></Layout></ConnectedRouter>
                     </PersistGate>
                 </Provider>
                 <div className="chat-support"/>

@@ -353,9 +353,7 @@ function mapStateToProps (state) {
 HeaderNew.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
-    router: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }
-export { HeaderNew }
-export default connect(mapStateToProps, { getVBRSettings, logout })(withRouter(HeaderNew))
+export default connect(mapStateToProps, { getVBRSettings, logout })(HeaderNew)
