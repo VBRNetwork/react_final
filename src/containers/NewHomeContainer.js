@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
-import { Row, Col, Button ,Menu, Icon, Input, Form } from 'antd'
+import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 
 class NewHomeContainer extends Component {
@@ -32,6 +32,7 @@ class NewHomeContainer extends Component {
     }
 
     componentDidMount () {
+
     }
 
     render () {
@@ -42,7 +43,7 @@ class NewHomeContainer extends Component {
         }
 
         let loginButton = (
-            <Button ghost size="large"><Link href='/register'>
+            <Button ghost size="large"><Link href='/login'>
                 <a><b>Log in</b></a>
                 </Link>
             </Button>
@@ -54,6 +55,42 @@ class NewHomeContainer extends Component {
                     <a><b>Register</b></a>
                 </Link>
             </Button>
+        )
+
+        let postJobButton = (
+            <Button size="large" style={{ marginLeft: '10px' }}>
+                <Link href='/post-job'>
+                    <a><b>Post Job</b></a>
+                </Link>
+            </Button>
+        )
+
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <Link href='/dashboard'>
+                        <a >
+                            Dashboard
+                        </a>
+                    </Link>
+
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' >
+                        Change Avatar
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' href='#'>
+                        Payments History
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <div onClick={this.clickLogout}>
+                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                    </div>
+                </Menu.Item>
+            </Menu>
         )
 
         return (
@@ -124,8 +161,44 @@ class NewHomeContainer extends Component {
                             <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
                                 {token === false && loginButton}
                                 {token === false && joinButton}
+
+                                {token !== false &&
+                                <div>
+                                    {postJobButton}
+
+                                    { this.props.user.type === 0 &&
+                                    <Button type='primary' style={{
+                                        marginLeft:'5px',
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'
+                                    }}>
+                                        <Link href='/dashboard/become-freelancer'>
+                                            <a>
+                                                Become a freelancer
+                                            </a>
+                                        </Link>
+                                    </Button>
+                                    }
+                                    { this.props.user.type === 1 &&
+                                    <span style={{marginLeft:'5px'}}>You are freelancer</span>
+                                    }
+
+                                    <Dropdown overlay={menu}>
+                                        <div style={{ color: '#FFF', marginLeft: '20px',display: 'inline'}}
+                                             className='ant-dropdown-link'>
+                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
+                                                backgroundColor: '#2ec3ab',
+                                                cursor: 'pointer',
+                                            }}/>
+                                        </div>
+                                    </Dropdown>
+                                </div>
+                                }
                             </div>
+
                         </Col>
+
+
                     </Row>
 
                     <Row>
@@ -154,7 +227,7 @@ class NewHomeContainer extends Component {
                                             </Col>
                                             <Col span={10}>
                                                 <Button className="btn-style" size="large">
-                                                    <Link href='/register'>
+                                                    <Link href='/post-a-job'>
                                                         <a>                                                                                                                                                  <b>Post a job</b>
                                                         </a>
                                                     </Link>
