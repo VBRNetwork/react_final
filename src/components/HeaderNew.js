@@ -25,7 +25,7 @@ class HeaderNew extends Component {
         super(props)
         this.state = {
             current: 'mail',
-            sessionId:Math.random().toString(36).substr(2, 9),
+            sessionId: 129839283928,
             isLogged: false,
             breadcrumb: {
                 category: {
@@ -232,92 +232,94 @@ class HeaderNew extends Component {
                 </Helmet>
                 <FullStory settings={this.state.fullStorySettings} sessionId={this.state.sessionId}/>
                 <Content className={'background-header'} style={{ marginBottom: '10px' }}>
-                    <Particles
-                        style={{ position: 'absolute' }}
-                        params={{
-                            particles: {
-                                number: {
-                                    value: 20
+                    <div>
+                        <Particles
+                            style={{ position: 'absolute' }}
+                            params={{
+                                particles: {
+                                    number: {
+                                        value: 20
+                                    },
+                                    size: {
+                                        value: 3
+                                    },
+                                    color: { value: '#FFF' }
                                 },
-                                size: {
-                                    value: 3
-                                },
-                                color: { value: '#FFF' }
-                            },
-                            interactivity: {
-                                events: {
-                                    onhover: {
-                                        enable: true,
-                                        mode: 'repulse'
+                                interactivity: {
+                                    events: {
+                                        onhover: {
+                                            enable: true,
+                                            mode: 'repulse'
+                                        }
                                     }
                                 }
-                            }
-                        }}
-                    >
-                    </Particles>
+                            }}
+                        >
+                        </Particles>
 
-                    <Row>
-                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
-                            <div className="logo-box">
-                                <Link href='/'>
-                                    <span className="logo">VEELANCING</span>
-                                </Link>
-                            </div>
-                        </Col>
+                        <Row>
+                            <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
+                                <div className="logo-box">
+                                    <Link href='/'>
+                                        <span className="logo">VEELANCING</span>
+                                    </Link>
+                                </div>
+                            </Col>
 
-                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
-                            <Menu  mode='horizontal' style={{
-                                marginTop: '5px',
-                                background: 'transparent',
-                                borderBottom: 'initial'
+                            <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                                <Menu  mode='horizontal' style={{
+                                    marginTop: '5px',
+                                    background: 'transparent',
+                                    borderBottom: 'initial'
+                                }}>
+
+                                    <Menu.Item key='app12222'>
+                                        <Link href='/ico'>
+                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
+                                                Coin Offering</a>
+                                        </Link>
+                                    </Menu.Item>
+
+                                    <Menu.Item key='app122'>
+                                        <Link href='/how-it-works'>
+                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
+                                                works</a>
+                                        </Link>
+                                    </Menu.Item>
+                                    <Menu.Item key='about22'>
+                                        <Link href='/about'>
+                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/>  About Us</a>
+                                        </Link>
+                                    </Menu.Item>
+                                </Menu>
+                            </Col>
+                            <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
+                                <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                                    {token === false && loginButton}
+                                    {token === false && joinButton}
+                                </div>
+                            </Col>
+                        </Row>
+
+
+                        <Row>
+                            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
+                                background: 'rgba(26, 29, 40, 0.86)',
+                                boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
                             }}>
+                                <div style={{ margin: '0 auto' }}>
+                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
+                                        <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
+                                              selectedKeys={[this.state.current]}
+                                              mode='horizontal'>
+                                            {menuItems}
+                                        </Menu>
+                                    </Col>
+                                </div>
+                            </Col>
+                        </Row>
 
-                                <Menu.Item key='app12222'>
-                                    <Link href='/ico'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
-                                            Coin Offering</a>
-                                    </Link>
-                                </Menu.Item>
-
-                                <Menu.Item key='app122'>
-                                    <Link href='/how-it-works'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
-                                            works</a>
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item key='about22'>
-                                    <Link href='/about'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/>  About Us</a>
-                                    </Link>
-                                </Menu.Item>
-                            </Menu>
-                        </Col>
-                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
-                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
-                                {token === false && loginButton}
-                                {token === false && joinButton}
-                            </div>
-                        </Col>
-                    </Row>
-
-
-                    <Row>
-                        <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                            background: 'rgba(26, 29, 40, 0.86)',
-                            boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
-                        }}>
-                            <div style={{ margin: '0 auto' }}>
-                                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
-                                    <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
-                                          selectedKeys={[this.state.current]}
-                                          mode='horizontal'>
-                                        {menuItems}
-                                    </Menu>
-                                </Col>
-                            </div>
-                        </Col>
-                    </Row>
-
+                    </div>
                 </Content>
 
                 <Row>
@@ -353,6 +355,7 @@ function mapStateToProps (state) {
 HeaderNew.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
+    redux_router: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }

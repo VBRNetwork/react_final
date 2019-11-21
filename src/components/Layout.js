@@ -10,7 +10,7 @@ class Layout extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            showHeader: false
+            showHeader:false
         }
 
         this.showHeader = this.showHeader.bind(this)
@@ -22,26 +22,26 @@ class Layout extends Component {
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if (this.props.router_state.location.pathname !== prevProps.router_state.location.pathname) {
-            this.showHeader()
+           this.showHeader()
         }
     }
 
-    showHeader () {
-        if (this.props.router_state.location.pathname !== '/') {
+    showHeader(){
+        if(this.props.router_state.location.pathname !== '/'){
             this.setState({
-                showHeader: true
-            })
-        } else {
+                showHeader:true
+            });
+        }else{
             this.setState({
-                showHeader: false
-            })
+                showHeader:false
+            });
         }
     }
 
     render () {
         return (
             <div className='layout'>
-              <HeaderNew/>{this.props.children}<FooterNew/>
+                {this.state.showHeader && <HeaderNew/>}{this.props.children}<FooterNew/>
             </div>
         )
     }
