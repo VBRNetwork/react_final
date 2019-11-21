@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Icon, Row, Col, Layout, Breadcrumb, Button } from 'antd'
+import { Menu, Icon, Row, Col, Layout, Breadcrumb, Button, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import { getVBRSettings } from '../actions/app_settings'
@@ -183,6 +183,43 @@ class HeaderNew extends Component {
             </Button>
         )
 
+        let postJobButton = (
+            <Button size="large" style={{ marginLeft: '10px' }}>
+                <Link href='/post-job'>
+                    <a><b>Post Job</b></a>
+                </Link>
+            </Button>
+        )
+
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <Link href='/dashboard'>
+                        <a >
+                            Dashboard
+                        </a>
+                    </Link>
+
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' >
+                        Change Avatar
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <a target='_blank' rel='noopener noreferrer' href='#'>
+                        Payments History
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <div onClick={this.clickLogout}>
+                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                    </div>
+                </Menu.Item>
+            </Menu>
+        )
+
+
         let menuItems = ''
         if(typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
@@ -298,7 +335,41 @@ class HeaderNew extends Component {
                             <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
                                 {token === false && loginButton}
                                 {token === false && joinButton}
+
+                                {token !== false &&
+                                <div>
+                                    {postJobButton}
+
+                                    { this.props.user.type === 0 &&
+                                    <Button type='primary' style={{
+                                        marginLeft:'5px',
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'
+                                    }}>
+                                        <Link href='/dashboard/become-freelancer'>
+                                            <a>
+                                                Become a freelancer
+                                            </a>
+                                        </Link>
+                                    </Button>
+                                    }
+                                    { this.props.user.type === 1 &&
+                                    <span style={{marginLeft:'5px'}}>You are freelancer</span>
+                                    }
+
+                                    <Dropdown overlay={menu}>
+                                        <div style={{ color: '#FFF', marginLeft: '20px',display: 'inline'}}
+                                             className='ant-dropdown-link'>
+                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
+                                                backgroundColor: '#2ec3ab',
+                                                cursor: 'pointer',
+                                            }}/>
+                                        </div>
+                                    </Dropdown>
+                                </div>
+                                }
                             </div>
+
                         </Col>
                     </Row>
 
