@@ -13,7 +13,7 @@ class Layout extends Component {
 
     render () {
         let headerComponent = false
-        if (this.props.router_state.location.pathname === '/') {
+        if (this.props.router_state.location.pathname !== '/') {
             headerComponent = true
         }
 
