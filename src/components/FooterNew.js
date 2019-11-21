@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Row, Col, List, Menu, Icon } from 'antd'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Link from 'next/link'
-
 import '../styles/footer.css'
-
 library.add(fas, fab)
 
 class NewFooter extends Component {

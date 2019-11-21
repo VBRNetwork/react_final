@@ -19,9 +19,7 @@ class Layout extends Component {
 
         return (
             <div className='layout'>
-                {headerComponent && <HeaderNew/>}
-                {this.props.children}
-                <FooterNew/>
+                {headerComponent && <HeaderNew/>}{this.props.children}<FooterNew/>
             </div>
         )
     }
