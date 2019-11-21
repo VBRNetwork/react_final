@@ -4,9 +4,24 @@ html,
     width: 100%;
   }
 
-  body {
+
+html {
+
     font-family: 'Roboto';
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+
+  body {
+    font-family: 'Roboto',sans-serif !important;
   }
+
+
 
 
   body.fontLoaded {
@@ -37,7 +52,6 @@ html,
 
   p,
   label {
-    font-family: 'Merriweather', serif;
     line-height: 1.5em;
   }
 
@@ -307,7 +321,6 @@ html,
     color: #FDF81F;
     font-size: 38px;
     font-weight: bold;
-    line-height: 46px;
     text-align: left;
 }
 
@@ -315,7 +328,6 @@ html,
     color: #3B3D47;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
     width: 420px;
     text-align: left;
 }
@@ -324,7 +336,6 @@ html,
     color: #3B3D47;
     font-size: 21px;
     font-weight: 400;
-    line-height: 25px;
     width: 420px;
     text-align: left;
 }
@@ -349,30 +360,24 @@ html,
     color: #3B3D47;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
     text-align: center;
 }
 .we-are-a-decentraliz {
     color: #202C39;
     font-size: 21px;
     font-weight: 400;
-    line-height: 25px;
     text-align: center;
 }
 
 .communicate-directly {
     color: #202C39;
-    font-family: Roboto;
     font-size: 21px;
     font-weight: 700;
-    line-height: 25px;
-    width: 240px;
     text-align: left;
 }
 
-.home-paragraph-1 {
+.home-paragraph-1 p {
     color: #202C39;
-    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -393,23 +398,19 @@ html,
     height: 580px;
     margin-left: 11%;
     position: relative;
-
-
 }
 
 .investors-title {
     color: #3B3D47;
-    font-family: Roboto;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
     width: 600px;
     text-align: left;
+    margin-bottom:50px;
 }
 
 .investors-text {
     color: #202C39;
-    font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -417,27 +418,24 @@ html,
     text-align: left;
 }
 
+
 .investors-text-box {
     position: absolute;
     top: 1px;
     left: 7%;
     padding: 5%;
-
 }
 
 .join-freelancer-title {
     color: #3B3D47;
-    font-family: Roboto;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
-    width: 420px;
     text-align: left;
+    margin-bottom: 35px;
 }
 
 .join-freelancer-text {
     color: #202C39;
-    font-family: Roboto;
     font-size: 18px;
     font-weight: 400;
     line-height: 22px;
@@ -451,10 +449,8 @@ html,
 
 .launch-time-text {
     color: #3B3D47;
-    font-family: Roboto;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
     text-align: center !important;
 }
 
@@ -468,16 +464,12 @@ html,
 }
 
 .home-privacy-policy-text {
-
     color: #3B3D47 !important;
-    font-family: Roboto !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     line-height: 17px !important;
-    width: 249px !important;
     text-align: center !important;
     margin-top: 2% !important;
-    margin-left: 44%;
 }
 
 .rectangle {
@@ -521,7 +513,6 @@ html,
     font-family: dinfont;
     font-size: 15px;
     font-weight: 900;
-    line-height: 25px;
     opacity: 100%;
   }
 
@@ -552,10 +543,8 @@ html,
 
   .veelancing-is-a-dece {
     color: #202C39 !important;
-    font-family: Roboto !important;
     font-size: 17px !important;
     font-weight: 400 !important;
-    line-height: 25px !important;
     width: 600px !important;
     text-align: left !important;
   }
@@ -571,7 +560,6 @@ html,
     color: #3B3D47;
     font-size: 38px !important;
     font-weight: 700;
-    line-height: 46px;
     width: 480px;
     text-align: left;
   }
@@ -602,7 +590,6 @@ html,
     color: #202C39 !important;
     font-size: 38px;
     font-weight: 700;
-    line-height: 46px;
     width: 600px;
     text-align: left;
   }
@@ -619,3 +606,28 @@ html,
     width: 420px;
     height: 500px;
   }
+
+  .home-investors-box {
+      margin-top:200px;
+      margin-bottom:200px;
+  }
+
+  .mt35 {
+      margin-top:35px;
+  }
+
+.well-let-you-know-w {
+    color: #3B3D47;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.item-f {
+    color: #FFFFFF !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    line-height: 17px !important;
+    text-align: left !important;
+}

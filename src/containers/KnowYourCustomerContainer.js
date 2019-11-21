@@ -182,6 +182,7 @@ class KnowYourCustomerContainer extends Component {
             id_front_picture: '',
             id_back_picture: '',
             id_selfie_picture: '',
+            phone: '',
             fileList: [],
             previewVisible: false,
             previewImage: "",
@@ -197,6 +198,7 @@ class KnowYourCustomerContainer extends Component {
         this.uploadFrontPicture = this.uploadFrontPicture.bind(this)
         this.uploadBackPicture = this.uploadBackPicture.bind(this)
         this.handleSetDateBirth = this.handleSetDateBirth.bind(this)
+        this.handleChangePhone = this.handleChangePhone.bind(this)
         this.selfiePicture = this.selfiePicture.bind(this)
     }
 
@@ -217,6 +219,14 @@ class KnowYourCustomerContainer extends Component {
             last_name: event.target.value,
         })
     }
+
+
+    handleChangePhone (event) {
+        this.setState({
+            phone: event.target.value,
+        })
+    }
+
 
     handleChangeAddress1 (event) {
         this.setState({
@@ -378,6 +388,11 @@ class KnowYourCustomerContainer extends Component {
                             <Form.Item label="Gender">
                                 <Input className="kyc-input" onChange={this.handleChangeGender} placeholder="Gender"/>
                             </Form.Item>
+
+                            <Form.Item label="Phone">
+                                <Input className="kyc-input" type={'number'} pattern="[0-9]"  onChange={this.handleChangePhone} placeholder="Phone"/>
+                            </Form.Item>
+
 
                             <Form.Item label="Date Of Birth">
                                 {getFieldDecorator('date-picker', config)(<DatePicker onChange={this.handleSetDateBirth} className="kyc-input"/>)}
