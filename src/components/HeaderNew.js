@@ -13,6 +13,7 @@ import Particles from 'react-particles-js'
 
 ReactGA.initialize('UA-147139648-1')
 import { logout } from '../actions/user'
+import '../styles/home.css'
 import '../styles/base.css'
 
 const { Content } = Layout
@@ -166,18 +167,17 @@ class HeaderNew extends Component {
             token = true
         }
 
+        let loginButton = (
+            <Button ghost size="large"><Link href='/login'>
+                <a><b>Log in</b></a>
+            </Link>
+            </Button>
+        )
+
         let joinButton = (
             <Button size="large" style={{ marginLeft: '10px' }}>
                 <Link href='/register'>
                     <a><b>Register</b></a>
-                </Link>
-            </Button>
-        )
-
-        let loginButton = (
-            <Button size="large">
-                <Link href='/login'>
-                    <a><Icon style={{ fontSize: 17 }} type='login'/> <b>Login</b> </a>
                 </Link>
             </Button>
         )
@@ -256,6 +256,7 @@ class HeaderNew extends Component {
                         }}
                     >
                     </Particles>
+
                     <Row>
                         <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
                             <div className="logo-box">
@@ -287,7 +288,7 @@ class HeaderNew extends Component {
                                 </Menu.Item>
                                 <Menu.Item key='about22'>
                                     <Link href='/about'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> About Us</a>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/>  About Us</a>
                                     </Link>
                                 </Menu.Item>
                             </Menu>
@@ -300,25 +301,26 @@ class HeaderNew extends Component {
                         </Col>
                     </Row>
 
-                    <div>
-                        <Row>
-                            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                                background: 'rgba(26, 29, 40, 0.86)',
-                                boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
-                            }}>
-                                <div style={{ margin: '0 auto' }}>
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
-                                        <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
-                                              selectedKeys={[this.state.current]}
-                                              mode='horizontal'>
-                                            {menuItems}
-                                        </Menu>
-                                    </Col>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
+
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
+                            background: 'rgba(26, 29, 40, 0.86)',
+                            boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
+                        }}>
+                            <div style={{ margin: '0 auto' }}>
+                                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
+                                    <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
+                                          selectedKeys={[this.state.current]}
+                                          mode='horizontal'>
+                                        {menuItems}
+                                    </Menu>
+                                </Col>
+                            </div>
+                        </Col>
+                    </Row>
+
                 </Content>
+
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
                         <Breadcrumb style={{ marginLeft: '20px', paddingTop: '10px' }}>
@@ -335,6 +337,7 @@ class HeaderNew extends Component {
                         </Breadcrumb>
                     </Col>
                 </Row>
+
             </div>
         )
     }

@@ -12,10 +12,14 @@ class Layout extends PureComponent {
     }
 
     render () {
-        console.log(this.props.router_state)
+        let headerComponent = ''
+        if(this.props.router_state.location.pathname !== '/'){
+            headerComponent = <HeaderNew/>
+        }
+
         return (
             <div className='layout'>
-                <HeaderNew/>
+                {headerComponent}
                 {this.props.children}
                 <FooterNew/>
             </div>
