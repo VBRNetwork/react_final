@@ -24,7 +24,7 @@ class HeaderNew extends Component {
         super(props)
         this.state = {
             current: 'mail',
-            sessionId: 129839283928,
+            sessionId: '12983928daolkdlkajd',
             isLogged: false,
             breadcrumb: {
                 category: {
