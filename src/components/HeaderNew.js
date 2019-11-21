@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from 'antd'
+import { Menu, Icon, Row, Col, Layout, Breadcrumb, Dropdown, Avatar,Button } from 'antd'
 import Link from 'next/link'
-import {Button} from 'antd'
 import '../styles/base.css'
 import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
@@ -13,14 +12,11 @@ const {Content} = Layout
 const {SubMenu} = Menu
 import {withRouter} from 'next/router';
 import {Helmet} from "react-helmet";
-import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
-import Head from 'next/head'
-
 ReactGA.initialize('UA-147139648-1');
 
 
-class Header extends Component {
+class HeaderNew extends Component {
 
     constructor(props) {
         super(props)
@@ -42,14 +38,14 @@ class Header extends Component {
                 debug: false,
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
-            }
+            },
         };
         this.clickLogout = this.clickLogout.bind(this);
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this);
         this.handleChangeCategory = this.handleChangeCategory.bind(this);
     }
 
-    
+
     handleChangeCategory(event){
         this.setState({
             category: event.target.value,
@@ -59,7 +55,6 @@ class Header extends Component {
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
             ReactGA.pageview(window.location.pathname + window.location.search);
-            console.log('pageview sent')
             this.rebuildBreadcrumbs()
         }
     }
@@ -74,7 +69,8 @@ class Header extends Component {
 
     rebuildBreadcrumbs(){
 
-        let generalMetaDescription = 'Peer-to-peer Marketplace for Freelancers Powered by Blockchain.Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs.';
+        let generalMetaDescription = 'Peer-to-peer Marketplace for Freelancers Powered by Blockchain.' +
+            'Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs.';
 
         if( typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
@@ -84,7 +80,6 @@ class Header extends Component {
             })
 
             let fullLink = this.props.redux_router.location.pathname.split('/')
-
 
             if(fullLink[0] === '' && fullLink[1] === ''){
                 this.setState({
@@ -135,7 +130,7 @@ class Header extends Component {
                             breadcrumb:{
                                 category:currentCategory,
                                 subcategory:currentSubCategory
-                                
+
                             }
                         })
                     }
@@ -144,10 +139,9 @@ class Header extends Component {
         }
     }
 
-
     clickLogout(e) {
         let {logout} = this.props
-       logout().then(() => {
+        logout().then(() => {
             this.setState({
                 isLogged: false
             })
@@ -161,47 +155,27 @@ class Header extends Component {
             token = true
         }
 
-        let loginButton = (
-            <Menu.Item key='alipay'>
-                <Link href='/login'>
-                    <a><Icon style={{fontSize: 17}} type='login'/> Login</a>
+        let joinButton = (
+            <Button size="large" style={{ marginLeft: '10px' }}>
+                <Link href='/register'>
+                    <a><b>Register</b></a>
                 </Link>
-            </Menu.Item>
-        );
-
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <Link href='/dashboard'>
-                        <a >
-                            Dashboard
-                        </a>
-                    </Link>
-
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' >
-                        Change Avatar
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' href='#'>
-                        Payments History
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <div onClick={this.clickLogout}>
-                        <Icon style={{fontSize: 17}} type='logout'/> Logout
-                    </div>
-                </Menu.Item>
-            </Menu>
+            </Button>
         )
 
-        let menuItems = ''
+        let loginButton = (
+            <Button size="large">
+                <Link href='/login'>
+                    <a><Icon style={{fontSize: 17}} type='login'/> <b>Login</b> </a>
+                </Link>
+            </Button>
+        );
+
+        let menuItems = {}
         if(typeof(this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
-                let main_menu = this.props.settings.main_menu.mainMenu
-                menuItems = Object.keys(main_menu).map((category,index) => {
+            let main_menu = this.props.settings.main_menu.mainMenu
+            menuItems = Object.keys(main_menu).map((category,index) => {
 
                 let subcategoriesList = [];
                 let subcategories = main_menu[category].subcategories;
@@ -229,124 +203,71 @@ class Header extends Component {
                         } >
                         {subcategoriesList}
                     </SubMenu>
-              )
+                )
             })
         }
 
-        console.log('vanea', this.state)
-        console.log(this.state.breadcrumb);
 
         return (
             <div>
                 <Helmet >
-                    
                     <meta charSet="utf-8" />
-                    
                     <title>{this.state.breadcrumb.category.name}
                         {this.state.breadcrumb.subcategory.title && " - " + this.state.breadcrumb.subcategory.title}
-                         - Veelancing
+                        - Veelancing
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
-
                 </Helmet>
-                
-                <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
+                <FullStory settings={this.state.fullStorySettings}
+                           sessionId={navigator.userAgent.replaceAll(' ','').toLowerCase()}
+                           custom={{key: 'vanea'}} />
 
-                <Content style={{marginBottom: '10px'}}>
+                <Content className={'background-header'} style={{marginBottom: '10px'}}>
+
                     <Row>
-
-                        <Col xs={24} sm={4} md={2} lg={4} xl={6} xxl={9}>
-                            <div className="logo-img">
+                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
+                            <div className="logo-box">
                                 <Link href='/'>
-                                    <img src={'/static/images/vbr_logo.png'}
-                                         style={{width: '80px', margin: '8px'}}
-                                    />
+                                    <span className="logo">VEELANCING</span>
                                 </Link>
                             </div>
                         </Col>
 
-                        <Col  xs={24} sm={16} md={12} lg={11} xl={10} xxl={10}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{marginTop:'5px',float:'right',paddingRight:'20px'}}>
-                                    <Menu.Item key='mail1'>
-                                        <Link href='/'>
-                                            <a> <Icon style={{fontSize: 17}} type='home'/> Home</a>
-                                        </Link>
-                                    </Menu.Item>
-                                    <Menu.Item key='app1'>
-                                        <Link href='/how-it-works'>
-                                            <a> <Icon style={{fontSize: 17}} type='bulb'/> How it works</a>
-                                        </Link>
-                                    </Menu.Item>
+                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                marginTop: '5px',
+                                background: 'transparent',
+                                borderBottom: 'initial'
+                            }}>
 
-                                    <Menu.Item key='app122'>
-                                        <Link href='/ico'>
-                                            <a> <Icon style={{fontSize: 17}} type='file-protect'/>Initial Coin Offering</a>
-                                        </Link>
-                                    </Menu.Item>
-                                    {token === false && loginButton}
-                                </Menu>
+                                <Menu.Item key='app12222'>
+                                    <Link href='/ico'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
+                                            Coin Offering</a>
+                                    </Link>
+                                </Menu.Item>
+
+                                <Menu.Item key='app122'>
+                                    <Link href='/how-it-works'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
+                                            works</a>
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key='about22'>
+                                    <Link href='/about'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> About Us</a>
+                                    </Link>
+                                </Menu.Item>
+                            </Menu>
                         </Col>
-
-                        <Col  xs={24} sm={4} md={10} lg={9} xl={8} xxl={5}>
-                            {token === false && <Link href='/register'>
-                              <div>
-                                  <a>
-                                      <div className='post-job-btn' style={{marginTop:'10px',textAlign:'center'}}>
-                                          <Button type='primary' style={{
-                                              backgroundColor: '#2EC3AB',
-                                              borderColor: '#2EC3AB'
-                                          }}>Register</Button>
-                                      </div>
-                                  </a>
-                              </div>
-                            </Link>}
-
-                            {token !== false &&
-                                <div style={{marginTop:'10px'}}>
-                                    <Button
-                                             type='primary'
-                                             style={{
-                                                 backgroundColor: '#2EC3AB',
-                                                 borderColor: '#2EC3AB'
-                                             }}>
-                                        <Link href='/jobs/add-job'>
-                                            <a>
-                                                Post job
-                                            </a>
-                                        </Link>
-                                    </Button>
-
-                                    { this.props.user.type === 0 &&
-                                        <Button type='primary' style={{
-                                            marginLeft:'5px',
-                                            backgroundColor: '#2EC3AB',
-                                            borderColor: '#2EC3AB'
-                                        }}>
-                                            <Link href='/dashboard/become-freelancer'>
-                                                <a>
-                                                    Become a freelancer
-                                                </a>
-                                            </Link>
-                                        </Button>
-                                    }
-                                    { this.props.user.type === 1 &&
-                                        <span style={{marginLeft:'5px'}}>You are freelancer</span>
-                                    }
-
-                                    <Dropdown overlay={menu}>
-                                        <div style={{ color: '#FFF', marginLeft: '18%',display: 'inline'}}
-                                             className='ant-dropdown-link'>
-                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
-                                                backgroundColor: '#2ec3ab',
-                                                cursor: 'pointer',
-                                            }}/>
-                                        </div>
-                                    </Dropdown>
-                                </div>
-                            }
+                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
+                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                                {token === false && loginButton}
+                                {token === false && joinButton}
+                            </div>
                         </Col>
-
                     </Row>
+
                 </Content>
 
                 <Row>
@@ -355,7 +276,9 @@ class Header extends Component {
                         boxShadow:'rgb(185, 185, 185) 0px 0px 20px 0px'}}>
                         <div style={{margin:'0 auto'}}>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18,offset:3}}>
-                                <Menu style={{background:'transparent',color: '#FFF',borderBottom:'0px'}} selectedKeys={[this.state.current]} mode='horizontal'>
+                                <Menu style={{background:'transparent',color: '#FFF',borderBottom:'0px'}}
+                                      selectedKeys={[this.state.current]}
+                                      mode='horizontal'>
                                     {menuItems}
                                 </Menu>
                             </Col>
@@ -371,7 +294,7 @@ class Header extends Component {
                                 </a>
 
                                 { this.state.breadcrumb.subcategory.url.length > 0 &&
-                                    <a href={"/" + this.state.breadcrumb.subcategory.url}> /
+                                <a href={"/" + this.state.breadcrumb.subcategory.url}> /
                                     {this.state.breadcrumb.subcategory.title} </a>}
 
                             </Breadcrumb.Item>
@@ -383,7 +306,6 @@ class Header extends Component {
     }
 }
 
-
 function mapStateToProps(state) {
     return {
         user: state.user,
@@ -393,12 +315,12 @@ function mapStateToProps(state) {
 }
 
 
-Header.propTypes = {
+HeaderNew.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
     router: PropTypes.instanceOf(Object).isRequired,
     getVBRSettings: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired
 }
-export {Header}
-export default connect(mapStateToProps, {getVBRSettings,logout})(withRouter(Header))
+export {HeaderNew}
+export default connect(mapStateToProps, {getVBRSettings,logout})(withRouter(HeaderNew))
