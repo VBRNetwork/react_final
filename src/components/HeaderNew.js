@@ -25,6 +25,7 @@ class HeaderNew extends Component {
         super(props)
         this.state = {
             current: 'mail',
+            sessionId:Math.random().toString(36).substr(2, 9),
             isLogged: false,
             breadcrumb: {
                 category: {
@@ -228,10 +229,7 @@ class HeaderNew extends Component {
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
                 </Helmet>
-                <FullStory settings={this.state.fullStorySettings}
-                           sessionId={navigator.userAgent.replaceAll(' ', '').toLowerCase()}
-                           custom={{ key: 'vanea' }}/>
-
+                <FullStory settings={this.state.fullStorySettings} sessionId={this.state.sessionId}/>
                 <Content className={'background-header'} style={{ marginBottom: '10px' }}>
                     <Particles
                         style={{ position: 'absolute' }}
