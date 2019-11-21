@@ -383,7 +383,6 @@ class Header extends Component {
     }
 }
 
-
 function mapStateToProps(state) {
     return {
         user: state.user,

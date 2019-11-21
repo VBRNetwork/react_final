@@ -54,7 +54,6 @@ class FilterComponent extends PureComponent {
         let subcategoriesElements = []
         if(this.state.category[0]){
             this.state.category[0].subcategories.forEach(function(value, index, array){
-                console.log(value);
                 subcategoriesElements.push(
                     <Menu.Item key={index}><Checkbox style={{ float: 'right' }}/>{value.title}</Menu.Item>);
             })
