@@ -45,7 +45,7 @@ class NewHomeContainer extends Component {
         let loginButton = (
             <Button ghost size="large"><Link href='/login'>
                 <a><b>Log in</b></a>
-                </Link>
+            </Link>
             </Button>
         )
 
@@ -69,14 +69,14 @@ class NewHomeContainer extends Component {
             <Menu>
                 <Menu.Item>
                     <Link href='/dashboard'>
-                        <a >
+                        <a>
                             Dashboard
                         </a>
                     </Link>
 
                 </Menu.Item>
                 <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' >
+                    <a target='_blank' rel='noopener noreferrer'>
                         Change Avatar
                     </a>
                 </Menu.Item>
@@ -87,7 +87,7 @@ class NewHomeContainer extends Component {
                 </Menu.Item>
                 <Menu.Item>
                     <div onClick={this.clickLogout}>
-                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
                     </div>
                 </Menu.Item>
             </Menu>
@@ -150,7 +150,7 @@ class NewHomeContainer extends Component {
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key='about'>
-                                    <Link href='/about'>
+                                    <Link href='/about-us'>
                                         <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
                                     </Link>
                                 </Menu.Item>
@@ -166,9 +166,9 @@ class NewHomeContainer extends Component {
                                 <div>
                                     {postJobButton}
 
-                                    { this.props.user.type === 0 &&
+                                    {this.props.user.type === 0 &&
                                     <Button type='primary' style={{
-                                        marginLeft:'5px',
+                                        marginLeft: '5px',
                                         backgroundColor: '#2EC3AB',
                                         borderColor: '#2EC3AB'
                                     }}>
@@ -179,17 +179,18 @@ class NewHomeContainer extends Component {
                                         </Link>
                                     </Button>
                                     }
-                                    { this.props.user.type === 1 &&
-                                    <span style={{marginLeft:'5px'}}>You are freelancer</span>
+                                    {this.props.user.type === 1 &&
+                                    <span style={{ marginLeft: '5px' }}>You are freelancer</span>
                                     }
 
                                     <Dropdown overlay={menu}>
-                                        <div style={{ color: '#FFF', marginLeft: '20px',display: 'inline'}}
+                                        <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
                                              className='ant-dropdown-link'>
-                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
-                                                backgroundColor: '#2ec3ab',
-                                                cursor: 'pointer',
-                                            }}/>
+                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user'
+                                                    style={{
+                                                        backgroundColor: '#2ec3ab',
+                                                        cursor: 'pointer',
+                                                    }}/>
                                         </div>
                                     </Dropdown>
                                 </div>
@@ -202,7 +203,7 @@ class NewHomeContainer extends Component {
                     </Row>
 
                     <Row>
-                        <Col xs={24} sm={16} md={24} lg={{ span: 12 }} xl={12} xxl={{ span: 11, offset: 1 }}>
+                        <Col xs={24} sm={24} md={{span: 17,offset:1 }} lg={{span: 17,offset:2 }} xl={{span: 17,offset:3 }} xxl={{ span: 17,offset:3 }}>
                             <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
@@ -220,7 +221,7 @@ class NewHomeContainer extends Component {
                                             <Col span={10}>
                                                 <Button className="btn-style" size="large">
                                                     <Link href='/register'>
-                                                        <a>                                                                                                                                                   <b>Join as Freelancer</b>
+                                                        <a> <b>Join as Freelancer</b>
                                                         </a>
                                                     </Link>
                                                 </Button>
@@ -228,7 +229,7 @@ class NewHomeContainer extends Component {
                                             <Col span={10}>
                                                 <Button className="btn-style" size="large">
                                                     <Link href='/post-a-job'>
-                                                        <a>                                                                                                                                                  <b>Post a job</b>
+                                                        <a> <b>Post a job</b>
                                                         </a>
                                                     </Link>
                                                 </Button>
@@ -236,13 +237,6 @@ class NewHomeContainer extends Component {
                                         </Row>
                                     </Form>
                                 </div>
-                            </div>
-                        </Col>
-
-                        <Col xs={24} sm={16} md={18} lg={{ span: 12 }} xl={12} xxl={{ span: 11, offset: 1 }}>
-                            <div className="image-box">
-                                <img style={{ width: '100%' }} src="../../static/images/design/header_image@2x.png"
-                                     alt=""/>
                             </div>
                         </Col>
                     </Row>
@@ -393,7 +387,7 @@ class NewHomeContainer extends Component {
                 </div>
 
 
-                <div style={{margin:'50px'}}>
+                <div style={{ margin: '50px' }}>
                     <Row>
                         <Col xs={24}
                              md={{ span: 12, offset: 9 }}
@@ -408,8 +402,9 @@ class NewHomeContainer extends Component {
                     </Row>
                 </div>
 
-                <div className={'home-investors-box'} style={{background:'url(../../static/images/become_an_investor.jpg)'}}>
-                    <div style={{padding:'200px'}}>
+                <div className={'home-investors-box'}
+                     style={{ background: 'url(../../static/images/become_an_investor.jpg)' }}>
+                    <div style={{ padding: '200px' }}>
                         <Row>
                             <Col xs={24} sm={16} md={12} lg={1} xl={6} xxl={{ span: 24 }}>
                                 <div className={'investors-title'}>
@@ -433,7 +428,7 @@ class NewHomeContainer extends Component {
                 </div>
 
 
-                <div style={{marginTop:'80px',marginBottom:'80px'}}>
+                <div style={{ marginTop: '80px', marginBottom: '80px' }}>
                     <Row>
                         <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
                              xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
@@ -465,7 +460,7 @@ class NewHomeContainer extends Component {
 
 
                 <Row>
-                    <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12}} xxl={{ span: 8, offset:2 }}>
+                    <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
                         <div>
                             <img style={{ width: 'auto' }}
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>
@@ -473,7 +468,7 @@ class NewHomeContainer extends Component {
                     </Col>
                     <Col xs={24} sm={16}
                          md={{ span: 12, }}
-                         lg={{ span: 10, offset:4}}
+                         lg={{ span: 10, offset: 4 }}
                          xl={{ span: 12 }}
                          xxl={{ span: 8 }}>
 
@@ -497,20 +492,20 @@ class NewHomeContainer extends Component {
                     </Col>
                 </Row>
 
-                <div  style={{marginTop:'100px',marginBottom:'100px'}}>
+                <div style={{ marginTop: '100px', marginBottom: '100px' }}>
                     <div className={'well-let-you-know-w'}>
                         We’ll let you know when we launch!
                     </div>
                     <Row>
                         <Col xs={24} sm={16}
-                             md={{ span: 5, offset:8}}
-                             lg={{ span: 5, offset:6}}
-                             xl={{ span: 7, offset:6}}
-                             xxl={{ span: 5, offset:8}}>
+                             md={{ span: 5, offset: 8 }}
+                             lg={{ span: 5, offset: 6 }}
+                             xl={{ span: 7, offset: 6 }}
+                             xxl={{ span: 5, offset: 8 }}>
 
                             <Input size={'large'} className={'launch-time-input'} placeholder={'Email'}/>
                         </Col>
-                        <Col xs={24} sm={5} md={{ span: 5 }} lg={{ span: 5 }} xl={{ span: 5}} xxl={{span: 5}}>
+                        <Col xs={24} sm={5} md={{ span: 5 }} lg={{ span: 5 }} xl={{ span: 5 }} xxl={{ span: 5 }}>
                             <Button className={'vbr-btn-style'}>
                                 Get Notified!
                             </Button>
@@ -519,7 +514,8 @@ class NewHomeContainer extends Component {
                     <Row>
                         <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
                             <div className={'home-privacy-policy-text'}>
-                                <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span></h4>
+                                <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span>
+                                </h4>
                             </div>
                         </Col>
                     </Row>
