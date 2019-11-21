@@ -14,7 +14,6 @@ const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
 import {PersistGate} from 'redux-persist/integration/react'
 import { Spin } from 'antd';
 import 'antd/dist/antd.css'
-import 'styles/base.scss'
 import 'styles/base.css'
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { ConnectedRouter } from 'connected-next-router'

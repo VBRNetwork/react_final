@@ -1,11 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Carousel, Layout, Row, Col, Button, Card, Avatar, Menu, Icon, Input, Form } from 'antd'
+import { Row, Col, Button ,Menu, Icon, Input, Form } from 'antd'
 import Link from 'next/link'
-
-const { Meta } = Card
 
 class NewHomeContainer extends Component {
 
@@ -175,9 +172,9 @@ class NewHomeContainer extends Component {
                                      alt=""/>
                             </div>
                         </Col>
-
                     </Row>
                 </div>
+
 
                 <div style={{ marginTop: '200px', marginBottom: '50px' }}>
                     <Row>
