@@ -9,17 +9,39 @@ class Layout extends Component {
 
     constructor (props) {
         super(props)
+        this.state = {
+            showHeader: false
+        }
+
+        this.showHeader = this.showHeader.bind(this)
+    }
+
+    componentDidMount () {
+        this.showHeader()
+    }
+
+    componentDidUpdate (prevProps, prevState, snapshot) {
+        if (this.props.router_state.location.pathname !== prevProps.router_state.location.pathname) {
+            this.showHeader()
+        }
+    }
+
+    showHeader () {
+        if (this.props.router_state.location.pathname !== '/') {
+            this.setState({
+                showHeader: true
+            })
+        } else {
+            this.setState({
+                showHeader: false
+            })
+        }
     }
 
     render () {
-        let headerComponent = false
-        if (this.props.router_state.location.pathname !== '/') {
-            headerComponent = true
-        }
-
         return (
             <div className='layout'>
-                {headerComponent && <HeaderNew/>}{this.props.children}<FooterNew/>
+                {this.state.showHeader && <HeaderNew/>}{this.props.children}<FooterNew/>
             </div>
         )
     }
