@@ -6,23 +6,17 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 var jwtDecode = require('jwt-decode');
 
-
 export default function withAuth(AuthComponent) {
-    const Auth = new AuthService('http://veelancing.io/api/v1');
 
     class Authenticated extends Component {
         static async getInitialProps(ctx) {
-            // Ensures material-ui renders the correct css prefixes server-side
             let userAgent;
             if (process.browser) {
                 userAgent = navigator.userAgent
             } else {
                 userAgent = ctx.req.headers['user-agent']
             }
-
-            // Check if Page has a `getInitialProps`; if so, call it.
             const pageProps = AuthComponent.getInitialProps && await AuthComponent.getInitialProps(ctx);
-            // Return props.
             return {...pageProps, userAgent}
         }
 
@@ -41,18 +35,13 @@ export default function withAuth(AuthComponent) {
                 } catch (e) {
                     console.log(e)
                 }
-
             }
         }
 
         render() {
             return (
                 <div>
-                    {this.state.isLoading ? (
-                        <div>LOADING....</div>
-                    ) : (
-                        <AuthComponent {...this.props} auth={Auth}/>
-                    )}
+                    {this.state.isLoading ? (<div>LOADING....</div>) : (<AuthComponent {...this.props}/>)}
                 </div>
             )
         }
