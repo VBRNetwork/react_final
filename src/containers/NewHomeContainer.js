@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../styles/home.css'
 import { Carousel, Layout, Row, Col, Button, Card, Avatar, Menu, Icon, Input, Form } from 'antd'
 import Link from 'next/link'
 
@@ -48,7 +47,7 @@ class NewHomeContainer extends Component {
         let loginButton = (
             <Button ghost size="large"><Link href='/register'>
                 <a><b>Log in</b></a>
-            </Link>
+                </Link>
             </Button>
         )
 
@@ -86,6 +85,52 @@ class NewHomeContainer extends Component {
                         }}
                     >
                     </Particles>
+
+                    <Row>
+                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
+                            <div className="logo-box">
+                                <Link href='/'>
+                                    <span className="logo">VEELANCING</span>
+                                </Link>
+                            </div>
+                        </Col>
+
+                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                marginTop: '5px',
+                                background: 'transparent',
+                                borderBottom: 'initial'
+                            }}>
+
+                                <Menu.Item key='app122'>
+                                    <Link href='/ico'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
+                                            Coin Offering</a>
+                                    </Link>
+                                </Menu.Item>
+
+                                <Menu.Item key='app1'>
+                                    <Link href='/how-it-works'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
+                                            works</a>
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key='about'>
+                                    <Link href='/about'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                    </Link>
+                                </Menu.Item>
+                            </Menu>
+                        </Col>
+
+                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
+                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                                {token === false && loginButton}
+                                {token === false && joinButton}
+                            </div>
+                        </Col>
+                    </Row>
+
                     <Row>
                         <Col xs={24} sm={16} md={24} lg={{ span: 12 }} xl={12} xxl={{ span: 11, offset: 1 }}>
                             <div className="intro-text">
@@ -102,14 +147,21 @@ class NewHomeContainer extends Component {
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Form layout='inline'>
                                         <Row gutter={24}>
-                                            <Col span={8}>
+                                            <Col span={10}>
                                                 <Button className="btn-style" size="large">
-                                                    <b>Join as Freelancer</b>
+                                                    <Link href='/register'>
+                                                        <a>                                                                                                                                                   <b>Join as Freelancer</b>
+                                                        </a>
+                                                    </Link>
                                                 </Button>
                                             </Col>
-                                            <Col span={8}>
+                                            <Col span={10}>
                                                 <Button className="btn-style" size="large">
-                                                    <b>Post a job</b></Button>
+                                                    <Link href='/register'>
+                                                        <a>                                                                                                                                                  <b>Post a job</b>
+                                                        </a>
+                                                    </Link>
+                                                </Button>
                                             </Col>
                                         </Row>
                                     </Form>
@@ -321,18 +373,12 @@ class NewHomeContainer extends Component {
                                     <br/>
                                     owns the platform.
                                 </span>
-                                <br/>
-                                <br/>
-                                <br/>
                                 <p className={'join-freelancer-text'}>
-                                    We belive in a true form of community.
+                                    We believe in a true form of community.
                                     <br/>
                                     With Veelancing, everyone can contribute to the platform by requesting and voting
                                     changes and new features.
                                 </p>
-                                <br/>
-                                <br/>
-                                <br/>
                                 <Button className={'vbr-btn-style'}>
                                     Join as Freelancer
                                 </Button>
@@ -349,7 +395,7 @@ class NewHomeContainer extends Component {
 
 
                 <Row>
-                    <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12}} xxl={{ span: 12 }}>
+                    <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12}} xxl={{ span: 8, offset:2 }}>
                         <div>
                             <img style={{ width: 'auto' }}
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>
@@ -359,7 +405,7 @@ class NewHomeContainer extends Component {
                          md={{ span: 12, }}
                          lg={{ span: 10, offset:4}}
                          xl={{ span: 12 }}
-                         xxl={{ span: 12 }}>
+                         xxl={{ span: 8 }}>
 
                         <div className={'join-freelancer-box'}>
                             <div className={'join-freelancer-title '}>
@@ -381,8 +427,8 @@ class NewHomeContainer extends Component {
                     </Col>
                 </Row>
 
-                <div>
-                    <div className={'well-let-you-know-w'} style={{marginTop:'50px',marginBottom:'50px'}}>
+                <div  style={{marginTop:'100px',marginBottom:'100px'}}>
+                    <div className={'well-let-you-know-w'}>
                         We’ll let you know when we launch!
                     </div>
                     <Row>

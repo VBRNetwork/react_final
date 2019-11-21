@@ -85,7 +85,6 @@
 
 .background-header {
     background-image: linear-gradient(225deg, #20A3CA 0%, #008D7F 100%);
-    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
     position:relative
 }
 
