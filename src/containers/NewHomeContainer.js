@@ -434,12 +434,13 @@ class NewHomeContainer extends Component {
                     <Row>
                         <Col xs={24} sm={16}
                              md={{ span: 5, offset:8}}
-                             lg={{ span: 8, offset:5}}
-                             xl={{ span: 5, offset:8}}
+                             lg={{ span: 5, offset:6}}
+                             xl={{ span: 7, offset:6}}
                              xxl={{ span: 5, offset:8}}>
+
                             <Input size={'large'} className={'launch-time-input'} placeholder={'Email'}/>
                         </Col>
-                        <Col xs={24} sm={16} md={{ span: 14 }} lg={{ span: 10 }} xl={{ span: 14}} xxl={{span: 5}}>
+                        <Col xs={24} sm={5} md={{ span: 5 }} lg={{ span: 5 }} xl={{ span: 5}} xxl={{span: 5}}>
                             <Button className={'vbr-btn-style'}>
                                 Get Notified!
                             </Button>
