@@ -150,7 +150,7 @@ class NewHomeContainer extends Component {
                                     </Link>
                                 </Menu.Item>
                                 <Menu.Item key='about'>
-                                    <Link href='/about'>
+                                    <Link href='/about-us'>
                                         <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
                                     </Link>
                                 </Menu.Item>
