@@ -86,6 +86,52 @@ class NewHomeContainer extends Component {
                         }}
                     >
                     </Particles>
+
+                    <Row>
+                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
+                            <div className="logo-box">
+                                <Link href='/'>
+                                    <span className="logo">VEELANCING</span>
+                                </Link>
+                            </div>
+                        </Col>
+
+                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                marginTop: '5px',
+                                background: 'transparent',
+                                borderBottom: 'initial'
+                            }}>
+
+                                <Menu.Item key='app122'>
+                                    <Link href='/ico'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
+                                            Coin Offering</a>
+                                    </Link>
+                                </Menu.Item>
+
+                                <Menu.Item key='app1'>
+                                    <Link href='/how-it-works'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
+                                            works</a>
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key='about'>
+                                    <Link href='/about'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> About Us</a>
+                                    </Link>
+                                </Menu.Item>
+                            </Menu>
+                        </Col>
+
+                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
+                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                                {token === false && loginButton}
+                                {token === false && joinButton}
+                            </div>
+                        </Col>
+                    </Row>
+
                     <Row>
                         <Col xs={24} sm={16} md={24} lg={{ span: 12 }} xl={12} xxl={{ span: 11, offset: 1 }}>
                             <div className="intro-text">
