@@ -169,9 +169,10 @@ class HeaderNew extends Component {
         }
 
         let loginButton = (
-            <Button ghost size="large"><Link href='/login'>
+            <Button ghost size="large">
+                <Link href='/login'>
                 <a><b>Log in</b></a>
-            </Link>
+                </Link>
             </Button>
         )
 
@@ -208,10 +209,10 @@ class HeaderNew extends Component {
                     <SubMenu
                         key={'menu2_' + index}
                         title={
-                            <span className="submenu-title-wrapper">
+                            <div className="submenu-title-wrapper">
                               <Icon type={main_menu[category].icon}/>
                                 {main_menu[category].name}
-                            </span>
+                            </div>
                         }>
                         {subcategoriesList}
                     </SubMenu>
@@ -265,7 +266,7 @@ class HeaderNew extends Component {
                         </Col>
 
                         <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                            <Menu  mode='horizontal' style={{
                                 marginTop: '5px',
                                 background: 'transparent',
                                 borderBottom: 'initial'
