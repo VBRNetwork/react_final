@@ -233,9 +233,6 @@ class Header extends Component {
             })
         }
 
-        console.log('vanea', this.state)
-        console.log(this.state.breadcrumb);
-
         return (
             <div>
                 <Helmet >

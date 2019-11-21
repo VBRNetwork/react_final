@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Icon, Row, Col, Layout, Breadcrumb, Button } from 'antd'
 import Link from 'next/link'
@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import { getVBRSettings } from '../actions/app_settings'
 import Router from 'next/router'
 import { FullStory } from 'react-fullstory-component'
-import { withRouter } from 'next/router'
 import { Helmet } from 'react-helmet'
 import ReactGA from 'react-ga'
 import Particles from 'react-particles-js'
@@ -171,7 +170,7 @@ class HeaderNew extends Component {
         let loginButton = (
             <Button ghost size="large">
                 <Link href='/login'>
-                <a><b>Log in</b></a>
+                    <a><b>Log in</b></a>
                 </Link>
             </Button>
         )
@@ -184,22 +183,22 @@ class HeaderNew extends Component {
             </Button>
         )
 
-        let menuItems = {}
-        if (typeof (this.props.settings.main_menu) !== 'undefined' &&
-            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
+        let menuItems = ''
+        if(typeof(this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
             let main_menu = this.props.settings.main_menu.mainMenu
-            menuItems = Object.keys(main_menu).map((category, index) => {
+            menuItems = Object.keys(main_menu).map((category,index) => {
 
-                let subcategoriesList = []
-                let subcategories = main_menu[category].subcategories
-                subcategories.map(function (subcategory, index) {
-                    let localSubcategories = subcategory.url.split('/').filter(item => item !== 'categories')
+                let subcategoriesList = [];
+                let subcategories = main_menu[category].subcategories;
+                subcategories.map(function(subcategory,index){
+                    let localSubcategories = subcategory.url.split("/")
+                    localSubcategories = localSubcategories.filter(item => item !== 'categories')
                     subcategoriesList.push(
                         <Menu.Item key={'menu_' + index}>
                             <Link as={'/' + subcategory.url}
                                   href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
-                                <a><Icon style={{ fontSize: 17 }} type={main_menu[category].icon}/> {subcategory.title}
-                                </a>
+                                <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {subcategory.title}</a>
                             </Link>
                         </Menu.Item>
                     )
@@ -209,11 +208,11 @@ class HeaderNew extends Component {
                     <SubMenu
                         key={'menu2_' + index}
                         title={
-                            <div className="submenu-title-wrapper">
-                              <Icon type={main_menu[category].icon}/>
+                            <span className="submenu-title-wrapper">
+                              <Icon type={main_menu[category].icon} />
                                 {main_menu[category].name}
-                            </div>
-                        }>
+                            </span>
+                        } >
                         {subcategoriesList}
                     </SubMenu>
                 )
@@ -230,97 +229,97 @@ class HeaderNew extends Component {
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
                 </Helmet>
-                <FullStory settings={this.state.fullStorySettings} sessionId={this.state.sessionId}/>
-                <Content className={'background-header'} style={{ marginBottom: '10px' }}>
-                    <div>
-                        <Particles
-                            style={{ position: 'absolute' }}
-                            params={{
-                                particles: {
-                                    number: {
-                                        value: 20
-                                    },
-                                    size: {
-                                        value: 3
-                                    },
-                                    color: { value: '#FFF' }
+                <div>
+                    <FullStory settings={this.state.fullStorySettings} sessionId={this.state.sessionId}/>
+                </div>
+                <div className='container background-header'>
+                    <Particles
+                        style={{ position: 'absolute' }}
+                        params={{
+                            particles: {
+                                number: {
+                                    value: 45
                                 },
-                                interactivity: {
-                                    events: {
-                                        onhover: {
-                                            enable: true,
-                                            mode: 'repulse'
-                                        }
+                                size: {
+                                    value: 3
+                                },
+                                color: { value: '#FFF' }
+                            },
+                            interactivity: {
+                                events: {
+                                    onhover: {
+                                        enable: true,
+                                        mode: 'repulse'
                                     }
                                 }
-                            }}
-                        >
-                        </Particles>
+                            }
+                        }}
+                    >
+                    </Particles>
 
-                        <Row>
-                            <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
-                                <div className="logo-box">
-                                    <Link href='/'>
-                                        <span className="logo">VEELANCING</span>
-                                    </Link>
-                                </div>
-                            </Col>
+                    <Row>
+                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
+                            <div className="logo-box">
+                                <Link href='/'>
+                                    <span className="logo">VEELANCING</span>
+                                </Link>
+                            </div>
+                        </Col>
 
-                            <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
-                                <Menu  mode='horizontal' style={{
-                                    marginTop: '5px',
-                                    background: 'transparent',
-                                    borderBottom: 'initial'
-                                }}>
-
-                                    <Menu.Item key='app12222'>
-                                        <Link href='/ico'>
-                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
-                                                Coin Offering</a>
-                                        </Link>
-                                    </Menu.Item>
-
-                                    <Menu.Item key='app122'>
-                                        <Link href='/how-it-works'>
-                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
-                                                works</a>
-                                        </Link>
-                                    </Menu.Item>
-                                    <Menu.Item key='about22'>
-                                        <Link href='/about'>
-                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/>  About Us</a>
-                                        </Link>
-                                    </Menu.Item>
-                                </Menu>
-                            </Col>
-                            <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
-                                <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
-                                    {token === false && loginButton}
-                                    {token === false && joinButton}
-                                </div>
-                            </Col>
-                        </Row>
-
-
-                        <Row>
-                            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                                background: 'rgba(26, 29, 40, 0.86)',
-                                boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
+                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                marginTop: '5px',
+                                background: 'transparent',
+                                borderBottom: 'initial'
                             }}>
-                                <div style={{ margin: '0 auto' }}>
-                                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
-                                        <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
-                                              selectedKeys={[this.state.current]}
-                                              mode='horizontal'>
-                                            {menuItems}
-                                        </Menu>
-                                    </Col>
-                                </div>
-                            </Col>
-                        </Row>
 
-                    </div>
-                </Content>
+                                <Menu.Item key='app122'>
+                                    <Link href='/ico'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
+                                            Coin Offering</a>
+                                    </Link>
+                                </Menu.Item>
+
+                                <Menu.Item key='app1'>
+                                    <Link href='/how-it-works'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
+                                            works</a>
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key='about'>
+                                    <Link href='/about'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                    </Link>
+                                </Menu.Item>
+                            </Menu>
+                        </Col>
+
+                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
+                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                                {token === false && loginButton}
+                                {token === false && joinButton}
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
+                            background: 'rgba(26, 29, 40, 0.86)',
+                            boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
+                        }}>
+                            <div style={{ margin: '0 auto' }}>
+                                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
+                                    <Menu style={{ background: 'transparent', color: '#FFF', borderBottom: '0px' }}
+                                          selectedKeys={[this.state.current]}
+                                          mode='horizontal'>
+                                        {menuItems}
+                                    </Menu>
+                                </Col>
+                            </div>
+                        </Col>
+                    </Row>
+
+                </div>
 
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>
