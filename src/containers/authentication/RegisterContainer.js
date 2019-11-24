@@ -29,7 +29,7 @@ class RegisterContainer extends Component {
             loggingIn: false,
             errorMessage: '',
             captcha:false,
-            captchaKey:'6LfQWcQUAAAAAPAIfrtV23wAXE_JR7FFJpP73e1s'
+            captchaKey:'6LfHWsQUAAAAAEDzYgjRyY2bftAt_lO-yF9qmFcN'
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -188,11 +188,13 @@ class RegisterContainer extends Component {
 
                                         <ReCAPTCHA
                                             sitekey={this.state.captchaKey}
+                                            theme={'dark'}
                                             onChange={this.captchaResponse}
                                         />
 
                                         <Form.Item>
-                                            <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>I agree with
+                                            <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
+                                                I agree with
                                                 VBR Platform Terms & Conditions
                                             </Checkbox>
                                             <br/>
@@ -205,7 +207,7 @@ class RegisterContainer extends Component {
                                                 background: 'rgba(0, 177, 153, 0.74)',
                                                 borderColor: 'rgba(0, 177, 153, 0.74)',
                                             }} type='primary' htmlType='submit'
-                                                    disabled={!this.state.tos && this.state.captcha}
+                                                    disabled={!this.state.tos && !this.state.captcha}
                                                     className='login-form-button'>
                                                 Create account
                                             </Button>
