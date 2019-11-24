@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import {  Row, Card, List, Col , Layout, Breadcrumb} from 'antd'
+import { Row, Card, List, Col, Layout, Breadcrumb, Icon, Menu } from 'antd'
 const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
@@ -23,47 +23,44 @@ class SubCategoriesContainer extends Component {
 
     if(this.props.siderMenuItems && this.props.siderMenuItems.main_menu && this.props.siderMenuItems.main_menu.mainMenu){
       let main_menu  = this.props.siderMenuItems.main_menu.mainMenu
-      Object.keys(main_menu).map((category,index) => {
-          subcategories.push(main_menu[category])
-      })
-      let currentCategory = subcategories.filter(obj => {
-        return obj.url === 'categories/' + this.props.category
-      })
-      let currentSubcategories =  currentCategory[0].subcategories
-      let subcategories_url = []
-      if(currentSubcategories){
-        currentSubcategories.map(function(subcategory,index){
+        Object.keys(main_menu).map((category,index) => {
+            subcategories.push(main_menu[category])
+            let categoryItem = main_menu[category];
+            let subcategoryItems = main_menu[category].subcategories;
 
-          subcategories_url = subcategory.url.split('/');
-          let final_url = '/categories/?category='+subcategories_url[1]+'&subcategory='+subcategories_url[2]
-          menuItems.push(<li key={index}>
-              <Link as={final_url} href={'/'+subcategory.url}>
-                  <a><Meta title={subcategory.title} /></a>
-              </Link>
-          </li>)
+            menuItems.push(
+                <div><h4>{categoryItem.name}</h4></div>
+            )
 
-          categories_card.push(
-            <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:6}} key={'subcat-'+ index} >
-              <Card
-                hoverable
-                style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
-                cover={<img alt={subcategory.title} src={''+subcategory.img}  />}>
-                <Link href={'/'+subcategory.url} as={final_url}>
-                    <a>
-                    <Meta title={subcategory.title} />
-                    </a>
-                </Link>
-              </Card>
-            </Col>
-          )
-          
+            subcategoryItems.forEach(function(subcategoryItem,index) {
+                let localSubcategories = subcategoryItem.url.split("/")
+                localSubcategories = localSubcategories.filter(item => item !== 'categories')
+                menuItems.push(
+                    <div> <Link as={'/' + subcategoryItem.url}
+                                     href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
+                        <a><h5> <Icon style={{fontSize: 17}} type={main_menu[category].icon}/>  {subcategoryItem.title}</h5></a>
+                    </Link>
+                    </div>
+                )
+                categories_card.push(
+                    <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:6}} key={categoryItem.name + index} >
+                        <Card
+                            hoverable
+                            style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
+                            cover={<img alt={subcategoryItem.title} src={subcategoryItem.img}  />}>
+                            <Link href={'/'+subcategoryItem.url} as={''}>
+                                <a>
+                                    <Meta title={subcategoryItem.title} />
+                                </a>
+                            </Link>
+                        </Card>
+                    </Col>
+                )
+            })
         })
+
       }
 
-      currentCategoryName = currentCategory[0].name
-    }
-
-    
     return (
       <Content>
         <Helmet>
@@ -75,7 +72,7 @@ class SubCategoriesContainer extends Component {
 
             <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:18,offset:3}}>
           <Layout  >
-            <Sider style={{ backgroundColor: '#FFF', padding: '1%' }}>
+            <Sider style={{ backgroundColor: '#FFF', padding: '1%' }} width={300}>
 
                   <div className='sider-menu' style={{ backgroundColor: '#FFF', marginLeft: '5%' }}>
                     

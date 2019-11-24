@@ -319,36 +319,30 @@ class SearchJobsContainer extends Component {
                                             dataSource={listData}
                                             renderItem={item => (
                                                 <div>
-                                                    <List.Item
-                                                        key={item.title}
-                                                        >
+                                                    <List.Item key={item.title} >
                                                         <div style={{
                                                             boxShadow: '0px 0px 5px 0px #acacac',
                                                             padding:'5px'
                                                         }}>
-
-
-                                                                <div style={{padding:'5px'}}>
-                                                                    <img
-                                                                        width={'100%'}
-                                                                        alt='logo'
-                                                                        src='../../static/images/search_dsg.png'
-                                                                    />
-
-                                                                    <a>
-                                                                        <h3>{item.user.name}</h3>
-                                                                        <h4>Senior Software Engineer, $37 </h4><em
-                                                                        className="ant-list-item-action-split"/>
-                                                                    </a>
-                                                                    {item.content}
-
-                                                                </div>
+                                                        <div style={{padding:'5px'}}>
+                                                            <img
+                                                                width={'100%'}
+                                                                alt='logo'
+                                                                src='../../static/images/search_dsg.png'
+                                                            />
+                                                            <a>
+                                                                <h3>{item.user.name}</h3>
+                                                                <h4>Senior Software Engineer, $37 </h4><em
+                                                                className="ant-list-item-action-split"/>
+                                                            </a>
+                                                            {item.content}
+                                                        </div>
                                                         <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}>
                                                             <div style={{textAlign:'center'}}>
                                                                     <Button type={'primary'} style={{
                                                                         backgroundColor: '#2EC3AB',
                                                                         borderColor: '#2EC3AB'
-                                                                    }}>View Profile</Button>,
+                                                                    }}>View Profile</Button>
                                                                 </div>
                                                         </Link>
                                                         </div>

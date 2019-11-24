@@ -13,7 +13,6 @@ import {
 } from 'antd';
 import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
-import Router from "next/dist/client/router";
 import ReCAPTCHA from "react-google-recaptcha";
 class RegisterContainer extends Component {
     constructor(props) {
