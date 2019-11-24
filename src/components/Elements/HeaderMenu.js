@@ -139,7 +139,7 @@ class HeaderMenu extends Component {
                                     {postJobButton}
 
                                     { this.props.user.type === 0 &&
-                                    <Button type='primary' style={{
+                                    <Button type='primary' ghost size="large" style={{
                                         marginLeft:'5px',
                                         backgroundColor: '#2EC3AB',
                                         borderColor: '#2EC3AB'
