@@ -47,7 +47,7 @@ const routerMiddleware = createRouterMiddleware({
     },
 });
 
-let composed = compose(applyMiddleware(thunkMiddleware,routerMiddleware))
+let composed = compose(applyMiddleware(thunkMiddleware))
 
 if (config.env === 'development'){
     composed = composeWithDevTools(applyMiddleware(logger,thunkMiddleware,routerMiddleware))
