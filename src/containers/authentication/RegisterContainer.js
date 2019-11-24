@@ -108,6 +108,12 @@ class RegisterContainer extends Component {
     }
 
     render() {
+
+        let securityPassed = true;
+        if(this.state.tos && this.state.captcha){
+            securityPassed = false;
+        }
+
         return (
             <article>
                 <Helmet>
@@ -207,7 +213,7 @@ class RegisterContainer extends Component {
                                                 background: 'rgba(0, 177, 153, 0.74)',
                                                 borderColor: 'rgba(0, 177, 153, 0.74)',
                                             }} type='primary' htmlType='submit'
-                                                    disabled={!this.state.tos && !this.state.captcha}
+                                                    disabled={securityPassed}
                                                     className='login-form-button'>
                                                 Create account
                                             </Button>
