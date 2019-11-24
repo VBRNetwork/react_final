@@ -10,33 +10,36 @@ import storage from 'redux-persist/lib/storage'
 import { createRouterMiddleware, initialRouterState } from 'connected-next-router'
 import Router from 'next/router'
 
-function createMiddlewares({isServer}) {
-    let middlewares = [
-        thunkMiddleware
-    ];
+// function createMiddlewares({isServer}) {
+//     let middlewares = [
+//         thunkMiddleware
+//     ];
+//
+//     if (config.env === 'development' && typeof window !== 'undefined') {
+//         middlewares.push(createLogger({
+//             level: 'info',
+//             collapsed: true,
+//             stateTransformer: (state) => {
+//                 let newState = {}
+//
+//                 for (let i of Object.keys(state)) {
+//                     if (Immutable.Iterable.isIterable(state[i])) {
+//                         newState[i] = state[i].toJS()
+//                     } else {
+//                         newState[i] = state[i]
+//                     }
+//                 }
+//
+//                 return newState
+//             }
+//         }))
+//     }
+//
+//     return middlewares
+// }
 
-    if (config.env === 'development' && typeof window !== 'undefined') {
-        middlewares.push(createLogger({
-            level: 'info',
-            collapsed: true,
-            stateTransformer: (state) => {
-                let newState = {}
 
-                for (let i of Object.keys(state)) {
-                    if (Immutable.Iterable.isIterable(state[i])) {
-                        newState[i] = state[i].toJS()
-                    } else {
-                        newState[i] = state[i]
-                    }
-                }
 
-                return newState
-            }
-        }))
-    }
-
-    return middlewares
-}
 
 const routerMiddleware = createRouterMiddleware({
     Router,
@@ -47,7 +50,7 @@ const routerMiddleware = createRouterMiddleware({
     },
 });
 
-let composed = compose(applyMiddleware(thunkMiddleware))
+let composed = compose(applyMiddleware(thunkMiddleware,routerMiddleware))
 
 if (config.env === 'development'){
     composed = composeWithDevTools(applyMiddleware(logger,thunkMiddleware,routerMiddleware))
