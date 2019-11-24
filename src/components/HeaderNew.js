@@ -25,7 +25,7 @@ class HeaderNew extends Component {
         super(props)
         this.state = {
             current: 'mail',
-            sessionId: '12983928daolkdlkajd',
+            sessionId: this.makeid(10),
             isLogged: false,
             breadcrumb: {
                 category: {
@@ -47,6 +47,16 @@ class HeaderNew extends Component {
         this.clickLogout = this.clickLogout.bind(this)
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this)
         this.handleChangeCategory = this.handleChangeCategory.bind(this)
+    }
+
+    makeid(length) {
+        var result           = '';
+        var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
     }
 
     handleChangeCategory (event) {
