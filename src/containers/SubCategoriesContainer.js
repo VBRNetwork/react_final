@@ -46,7 +46,8 @@ class SubCategoriesContainer extends Component {
                     <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:6}} key={categoryItem.name + index} >
                         <Card
                             hoverable
-                            style={{ marginTop: '5%', marginLeft: '5%', width: '90%', height: 'auto' }}
+                            style={{ margin:'10px'}}
+                            bodyStyle={{padding:'10px'}}
                             cover={<img alt={subcategoryItem.title} src={subcategoryItem.img}  />}>
                             <Link href={'/'+subcategoryItem.url} as={''}>
                                 <a><h5>{subcategoryItem.title}</h5></a>
