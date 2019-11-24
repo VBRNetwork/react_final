@@ -101,14 +101,12 @@ class RegisterContainer extends Component {
     }
 
     captchaResponse(value){
-        console.log("Captcha value:", value);
         this.setState({
             captcha: value
         })
     }
 
     render() {
-
         let securityPassed = true;
         if(this.state.tos && this.state.captcha){
             securityPassed = false;
