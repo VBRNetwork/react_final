@@ -14,7 +14,7 @@ import {
 import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
 import Router from "next/dist/client/router";
-
+import ReCAPTCHA from "react-google-recaptcha";
 class RegisterContainer extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +26,10 @@ class RegisterContainer extends Component {
             first_name: '',
             last_name: '',
             tos: false,
-            loggingIn: false, errorMessage: ''
+            loggingIn: false,
+            errorMessage: '',
+            captcha:false,
+            captchaKey:'6LfQWcQUAAAAAPAIfrtV23wAXE_JR7FFJpP73e1s'
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +39,7 @@ class RegisterContainer extends Component {
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeLastName = this.handleChangeLastName.bind(this);
         this.tosAccepted = this.tosAccepted.bind(this);
+        this.captchaResponse = this.captchaResponse.bind(this);
     }
 
     handleChangeLastName(event) {
@@ -93,6 +97,13 @@ class RegisterContainer extends Component {
     tosAccepted() {
         this.setState({
             tos: !this.state.tos
+        })
+    }
+
+    captchaResponse(value){
+        console.log("Captcha value:", value);
+        this.setState({
+            captcha: value
         })
     }
 
@@ -175,6 +186,11 @@ class RegisterContainer extends Component {
                                         </Row>
                                         }
 
+                                        <ReCAPTCHA
+                                            sitekey={this.state.captchaKey}
+                                            onChange={this.captchaResponse}
+                                        />
+
                                         <Form.Item>
                                             <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>I agree with
                                                 VBR Platform Terms & Conditions
@@ -189,7 +205,7 @@ class RegisterContainer extends Component {
                                                 background: 'rgba(0, 177, 153, 0.74)',
                                                 borderColor: 'rgba(0, 177, 153, 0.74)',
                                             }} type='primary' htmlType='submit'
-                                                    disabled={!this.state.tos}
+                                                    disabled={!this.state.tos && this.state.captcha}
                                                     className='login-form-button'>
                                                 Create account
                                             </Button>

@@ -60,6 +60,7 @@
     "react-fullstory-component": "^2.1.0",
     "react-ga": "^2.7.0",
     "react-google-font-loader": "^1.1.0",
+    "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^5.2.0",
     "react-milestone": "^1.0.5",
     "react-moment": "^0.9.6",
