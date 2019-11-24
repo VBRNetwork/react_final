@@ -27,13 +27,13 @@ class Layout extends Component {
     }
 
     showHeader(){
-        if(this.props.router_state.location.pathname !== '/'){
+        if(this.props.router_state.location.pathname === '/' || this.props.router_state.location.pathname === '/ico'){
             this.setState({
-                showHeader:true
+                showHeader:false
             });
         }else{
             this.setState({
-                showHeader:false
+                showHeader:true
             });
         }
     }
