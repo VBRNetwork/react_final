@@ -192,7 +192,6 @@ class RegisterContainer extends Component {
 
                                         <ReCAPTCHA
                                             sitekey={this.state.captchaKey}
-                                            theme={'dark'}
                                             onChange={this.captchaResponse}
                                         />
 
