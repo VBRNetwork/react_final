@@ -337,14 +337,18 @@ class SearchJobsContainer extends Component {
                                                             </a>
                                                             {item.content}
                                                         </div>
-                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}>
+
                                                             <div style={{textAlign:'center'}}>
+
                                                                     <Button type={'primary'} style={{
                                                                         backgroundColor: '#2EC3AB',
                                                                         borderColor: '#2EC3AB'
-                                                                    }}>View Profile</Button>
+                                                                    }}>
+                                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}> View Profile   </Link>
+                                                                    </Button>
+
                                                                 </div>
-                                                        </Link>
+
                                                         </div>
                                                     </List.Item>
                                                 </div>

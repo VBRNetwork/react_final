@@ -54,7 +54,6 @@ app.prepare().then(() => {
         app.render(req, res, actualPage, queryParams)
     })
 
-
     server.get('/users/:username/', (req, res) => {
         const actualPage = '/profile'
         const queryParams = { username: req.params.username }

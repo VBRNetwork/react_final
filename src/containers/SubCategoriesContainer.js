@@ -49,7 +49,7 @@ class SubCategoriesContainer extends Component {
                             style={{ margin:'10px'}}
                             bodyStyle={{padding:'10px'}}
                             cover={<img alt={subcategoryItem.title} src={subcategoryItem.img}  />}>
-                            <Link href={'/'+subcategoryItem.url} as={''}>
+                            <Link as={'/'+subcategoryItem.url}  href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
                                 <a><h5>{subcategoryItem.title}</h5></a>
                             </Link>
                         </Card>
