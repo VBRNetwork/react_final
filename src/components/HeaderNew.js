@@ -297,7 +297,7 @@ class HeaderNew extends Component {
                     <HeaderMenu/>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                            background: 'rgba(26, 29, 40, 0.86)',
+                            background: 'rgba(26, 29, 40, 0.54)',
                             boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
                         }}>
                             <div style={{ margin: '0 auto' }}>
