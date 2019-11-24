@@ -361,7 +361,6 @@ class HeaderNew extends Component {
                                         <div style={{ color: '#FFF', marginLeft: '20px',display: 'inline'}}
                                              className='ant-dropdown-link'>
                                             <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
-                                                backgroundColor: '#2ec3ab',
                                                 cursor: 'pointer',
                                             }}/>
                                         </div>
