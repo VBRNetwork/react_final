@@ -4,6 +4,7 @@ import { Menu, Icon, Row, Col,  Button, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import { logout } from '../../actions/user'
+import Router from 'next/router'
 
 class HeaderMenu extends Component {
 
@@ -15,11 +16,9 @@ class HeaderMenu extends Component {
     }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
-
     }
 
     componentDidMount () {
-
     }
 
 
@@ -182,7 +181,6 @@ function mapStateToProps (state) {
 
 HeaderMenu.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
-    redux_router: PropTypes.instanceOf(Object).isRequired,
     logout: PropTypes.func.isRequired
 }
 export default connect(mapStateToProps, { logout })(HeaderMenu)

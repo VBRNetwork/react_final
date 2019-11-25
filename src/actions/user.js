@@ -51,6 +51,7 @@ function generateAuthCookies(res) {
 export function logout() {
     return dispatch => {
         return vbrincapi.logout().then(res => {
+            document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             dispatch({
                 type: SAVE_TOKEN,
                 data: {
@@ -67,7 +68,6 @@ export function logout() {
 
                 }
             });
-            document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             return res
         })
     }
