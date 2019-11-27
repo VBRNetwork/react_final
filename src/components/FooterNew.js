@@ -12,13 +12,11 @@ class NewFooter extends Component {
         return (
             <footer className='footer-box' style={{ backgroundColor: 'rgba(26, 29, 40, 0.86)'}}>
                 <Row>
-                    <div className='container' style={{ marginLeft: '50px', marginRight: '50px'}}>
+                    <div className='container'>
                         <Row>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+                            <Col xs={24} sm={12} md={12} lg={12} xl={{span:12, offset:6}}>
                                 <Menu mode='horizontal' style={{
                                     marginTop: '5px',
-                                    float: 'right',
-                                    paddingRight: '20px',
                                     background: 'transparent',
                                     borderBottom: 'initial'
                                 }}>
@@ -49,7 +47,7 @@ class NewFooter extends Component {
                                     </Menu.Item>
                                 </Menu>
                             </Col>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+                            <Col xs={24} sm={12} md={12} lg={12} xl={6}>
                                 <div className='text-right text-white copyright mt35'>
                                     VBR Inc. 2019 All Rights Reserved.
                                 </div>

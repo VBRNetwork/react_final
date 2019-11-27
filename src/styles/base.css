@@ -101,7 +101,8 @@ html {
     }
 
     .copyright {
-      font-size:10px;
+        font-size:10px;
+        margin-right:20px;
     }
 
     .vbr-button {
@@ -168,22 +169,6 @@ html {
       color: #fff;
       background-color:#59b5fa;
   }
-  @media(max-width:768px){
-      #login-dp{
-          background-color: inherit;
-          color: #fff;
-      }
-      #login-dp .bottom{
-          background-color: inherit;
-          border-top:0 none;
-      }
-
-      .logo-img {
-          text-align: center;
-      }
-      
-      
-  }
 
   .ant-menu-horizontal > .ant-menu-item-selected > a {
     color: #2ec3ab !important;
@@ -239,15 +224,12 @@ html {
 }
 
 .menu-item {
-    color: #FFFFFF !important;
-    font-size: 14px !important;
-    font-weight: bold !important;
-    letter-spacing: 0.5px !important;
-    line-height: 17px !important;
-    text-align: left !important;
-}
-.intro-text {
-    padding:100px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold ;
+    letter-spacing: 0.5px;
+    line-height: 17px ;
+    text-align: left ;
 }
 
 .logo-box {
@@ -328,7 +310,6 @@ html {
     color: #3B3D47;
     font-size: 38px;
     font-weight: 700;
-    width: 420px;
     text-align: left;
 }
 
@@ -336,7 +317,6 @@ html {
     color: #3B3D47;
     font-size: 21px;
     font-weight: 400;
-    width: 420px;
     text-align: left;
 }
 
@@ -404,7 +384,6 @@ html {
     color: #3B3D47;
     font-size: 38px;
     font-weight: 700;
-    width: 600px;
     text-align: left;
     margin-bottom:50px;
 }
@@ -414,7 +393,6 @@ html {
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    width: 600px;
     text-align: left;
 }
 
@@ -441,7 +419,6 @@ html {
     line-height: 22px;
     margin-top:50px;
     margin-bottom:50px;
-    width: 420px;
     text-align: left;
 }
 
@@ -461,7 +438,6 @@ html {
     border: 1px solid #B1B1B5;
     border-radius: 10px;
     box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25);
-    width: 330px !important;
     height: 60px !important;
 }
 
@@ -605,13 +581,12 @@ html {
 
   .geometric-particles2 {
     color: #87C6C1;
-    width: 420px;
     height: 500px;
   }
 
   .home-investors-box {
-      margin-top:200px;
-      margin-bottom:200px;
+      margin-top:250px;
+      margin-bottom:250px;
   }
 
   .mt35 {
@@ -647,4 +622,38 @@ html {
     zIndex: 15;
     top: 50%;
     left:50%;
+}
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+
+@media(max-width:415px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+
+    .logo-img {
+        text-align: center;
+    }
+
+}
+
+.menu-item {
+    color: #FFF !important;
+    font-weight: bold !important;
+    letter-spacing: 0.1px !important;
+}
+@media only screen and (max-width: 600px) {
+    .menu-item {
+        font-size: 12px !important;
+        font-weight: bold !important;
+        letter-spacing: 0.1px !important;
+    }
 }

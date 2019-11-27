@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+} from "react-device-detect";
 
 class NewHomeContainer extends Component {
 
@@ -121,44 +127,51 @@ class NewHomeContainer extends Component {
                     </Particles>
 
                     <Row>
-                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
-                            <div className="logo-box">
+                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={4}>
+                            <div className="logo-box" style={{textAlign:'center'}}>
                                 <Link href='/'>
                                     <span className="logo">VEELANCING</span>
                                 </Link>
                             </div>
                         </Col>
 
-                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
+                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={14}>
                             <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                                marginTop: '5px',
+                                marginTop: '10px',
                                 background: 'transparent',
-                                borderBottom: 'initial'
+                                float:'right',
+                                borderBottom: 'initial',
                             }}>
 
                                 <Menu.Item key='app122'>
                                     <Link href='/ico'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
-                                            Coin Offering</a>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                        Initial  Coin Offering
+                                        </a>
                                     </Link>
                                 </Menu.Item>
 
                                 <Menu.Item key='app1'>
                                     <Link href='/how-it-works'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
-                                            works</a>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                            How it works
+                                        </a>
                                     </Link>
                                 </Menu.Item>
-                                <Menu.Item key='about'>
-                                    <Link href='/about-us'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
-                                    </Link>
-                                </Menu.Item>
+                                    <Menu.Item key='about'>
+                                        <BrowserView>
+                                            <div >
+                                                <Link href='/about-us'>
+                                                    <a className="menu-item" style={{verticalAlign:'bottom'}}> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                                </Link>
+                                            </div>
+                                        </BrowserView>
+                                    </Menu.Item>
                             </Menu>
                         </Col>
 
-                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
-                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
+                        <Col xs={0} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={4}>
+                            <div style={{ marginTop: '20px', float: 'right'}}>
                                 {token === false && loginButton}
                                 {token === false && joinButton}
 
@@ -196,14 +209,11 @@ class NewHomeContainer extends Component {
                                 </div>
                                 }
                             </div>
-
                         </Col>
-
-
                     </Row>
 
                     <Row>
-                        <Col xs={24} sm={24} md={{span: 17,offset:1 }} lg={{span: 17,offset:2 }} xl={{span: 17,offset:3 }} xxl={{ span: 17,offset:3 }}>
+                        <Col xs={24} sm={24} md={{span: 17,offset:1 }} lg={{span: 17,offset:2 }} xl={{span: 17,offset:3 }} xxl={{ span: 15,offset:5 }}>
                             <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
@@ -216,9 +226,8 @@ class NewHomeContainer extends Component {
                                         </span>
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-                                    <Form layout='inline'>
-                                        <Row gutter={24}>
-                                            <Col span={10}>
+                                        <Row gutter={5}>
+                                            <Col xs={24} md={6}>
                                                 <Button className="btn-style" size="large">
                                                     <Link href='/register'>
                                                         <a> <b>Join as Freelancer</b>
@@ -226,7 +235,7 @@ class NewHomeContainer extends Component {
                                                     </Link>
                                                 </Button>
                                             </Col>
-                                            <Col span={10}>
+                                            <Col  xs={24} md={6}>
                                                 <Button className="btn-style" size="large">
                                                     <Link href='/jobs/add-job'>
                                                         <a> <b>Post a job</b>
@@ -235,7 +244,6 @@ class NewHomeContainer extends Component {
                                                 </Button>
                                             </Col>
                                         </Row>
-                                    </Form>
                                 </div>
                             </div>
                         </Col>
@@ -245,7 +253,7 @@ class NewHomeContainer extends Component {
 
                 <div style={{ marginTop: '200px', marginBottom: '50px' }}>
                     <Row>
-                        <Col xs={24} sm={16} md={24} lg={24} xl={8} xxl={{ span: 8, offset: 1 }}>
+                        <Col xs={{ span: 21, offset: 3 }} sm={16} md={24} lg={24} xl={8} xxl={{ span: 6, offset: 3 }}>
                             <div className="intro-text">
                                 <h2 className="find-the-job-you-lov">
                                     Find the job you love.
@@ -264,7 +272,7 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={24} sm={16} md={{ span: 18, offset: 4 }} lg={17} xl={12} xxl={{ span: 14, offset: 1 }}>
+                        <Col xs={{span:19,offset:5}} sm={16} md={{ span: 18, offset: 4 }} lg={17} xl={12} xxl={{ span: 10, offset: 1 }}>
                             <div>
                                 <Row>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
@@ -313,8 +321,7 @@ class NewHomeContainer extends Component {
                     </Row>
                 </div>
 
-                <div style={{ padding: '80px' }}>
-                    <div style={{ margin: '70px' }}>
+                <div style={{ padding: '80px' ,marginTop:'120px'}}>
                         <Row>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
                                 <div>
@@ -327,71 +334,73 @@ class NewHomeContainer extends Component {
                                 </div>
                             </Col>
                         </Row>
-                    </div>
                 </div>
 
-                <div style={{ marginLeft: '200px', marginRight: '200px' }}>
+                <div>
                     <Row>
-
-                        <Col xs={24} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 6 }}>
-                            <img src={'../../static/images/communicate_directly.svg'}/> <br/>
-                            <span className={'communicate-directly'}>Communicate Directly</span>
-                            <span className={'home-paragraph-1'}>
-                                <p>
-                                    You can easily connect and communicate
-                                    <br/>
-                                    with a freelancer or recruiter directly with our chat feature.
-                                </p>
-                            </span>
+                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 , offset:5}}>
+                            <div style={{padding:'20px'}}>
+                                <img src={'../../static/images/communicate_directly.svg'}/> <br/>
+                                <span className={'communicate-directly'}>Communicate Directly</span>
+                                <span className={'home-paragraph-1'}>
+                                    <p>
+                                        You can easily connect and communicate
+                                        <br/>
+                                        with a freelancer or recruiter directly with our chat feature.
+                                    </p>
+                                </span>
+                            </div>
                         </Col>
-
-
-                        <Col xs={24} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 6 }}>
-                            <img src={'../../static/images/smart_contracts.svg'}/><br/>
-                            <span className={'communicate-directly'}>Create Smart Contracts</span>
-                            <div className={'home-paragraph-1'}>
-                                <p>
-                                    As a freelancer or recruiter
-                                    <br/>
-                                    you can create a contract together
-                                    <br/>
-                                    and make the final agreement on your specific terms.
-                                </p>
+                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
+                            <div style={{padding:'20px'}}>
+                                <img src={'../../static/images/smart_contracts.svg'}/><br/>
+                                <span className={'communicate-directly'}>Create Smart Contracts</span>
+                                <div className={'home-paragraph-1'}>
+                                    <p>
+                                        As a freelancer or recruiter
+                                        <br/>
+                                        you can create a contract together
+                                        <br/>
+                                        and make the final agreement on your specific terms.
+                                    </p>
+                                </div>
                             </div>
                         </Col>
 
-                        <Col xs={24} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 6 }}>
-                            <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
-                            <span className={'communicate-directly'}>Get Paid Instantly</span>
-                            <div className={'home-paragraph-1'}>
-                                <p>
-                                    The payments are processed instantly
-                                    and in a highly secure environment
-                                    <br/>
-                                    created with Blockchain technology.
-                                </p>
+                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
+                           <div style={{padding:'20px'}}>
+                               <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
+                               <span className={'communicate-directly'}>Get Paid Instantly</span>
+                               <div className={'home-paragraph-1'}>
+                                   <p>
+                                       The payments are processed instantly
+                                       and in a highly secure environment
+                                       <br/>
+                                       created with Blockchain technology.
+                                   </p>
+                               </div>
+                           </div>
+                        </Col>
+
+                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
+                            <div style={{padding:'20px'}}>
+                                <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
+                                <span className={'communicate-directly'}>Exchange You Money</span>
+                                <span className={'home-paragraph-1'}>
+                                    <p>
+                                        All transactions are made with our Veelancing token.
+                                        <br/>
+                                        You can exchange tokens into any Crypto or currency with minimal fees or no fees at all.
+                                    </p>
+                                </span>
                             </div>
                         </Col>
-
-                        <Col xs={24} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 6 }}>
-                            <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
-                            <span className={'communicate-directly'}>Exchange You Money</span>
-                            <span className={'home-paragraph-1'}>
-                                <p>
-                                    All transactions are made with our Veelancing token.
-                                    <br/>
-                                    You can exchange tokens into any Crypto or currency with minimal fees or no fees at all.
-                                </p>
-                            </span>
-                        </Col>
-
                     </Row>
                 </div>
 
-
                 <div style={{ margin: '50px' }}>
                     <Row>
-                        <Col xs={24}
+                        <Col xs={{span: 8, offset: 3}}
                              md={{ span: 12, offset: 9 }}
                              lg={{ span: 12, offset: 10 }}
                              xl={{ span: 12, offset: 10 }}
@@ -406,11 +415,10 @@ class NewHomeContainer extends Component {
                     </Row>
                 </div>
 
-                <div className={'home-investors-box'}
-                     style={{ background: 'url(../../static/images/become_an_investor.jpg)' }}>
-                    <div style={{ padding: '200px' }}>
+                <div className={'home-investors-box'}  style={{position:'relative'}}>
+                    <div>
                         <Row>
-                            <Col xs={24} sm={16} md={12} lg={1} xl={6} xxl={{ span: 24 }}>
+                            <Col xs={{span:22,offset:2}} sm={16} md={12} lg={1} xl={6} xxl={{ span: 8 , offset:4}}>
                                 <div className={'investors-title'}>
                                     Help us create the first
                                     <br/>
@@ -427,18 +435,18 @@ class NewHomeContainer extends Component {
                                     <Link href='/register' as={'/register'}>
                                         <b style={{color:'#FFF'}}>Become an Investor</b>
                                     </Link>
-
                                 </Button>
+                            </Col>
+                            <Col xs={24} sm={16} md={12} lg={1} xl={6} xxl={{ span: 8}}>
+                                   <img className={'img-responsive'}  style={{marginTop:'150px'}} src="../../static/images/design/become_an_investor_image@2x.jpg" alt=""/>
                             </Col>
                         </Row>
                     </div>
                 </div>
-
-
                 <div style={{ marginTop: '80px', marginBottom: '80px' }}>
                     <Row>
-                        <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
-                             xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
+                        <Col xs={{span:22,offset:2}} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
+                             xl={{ span: 12, push: 2 }} xxl={{ span: 10, push: 4 }}>
                             <div className={'join-freelancer-box'}>
                                 <span className={'join-freelancer-title'}>
                                     Be part of a community that
@@ -448,7 +456,8 @@ class NewHomeContainer extends Component {
                                 <p className={'join-freelancer-text'}>
                                     We believe in a true form of community.
                                     <br/>
-                                    With Veelancing, everyone can contribute to the platform by requesting and voting
+                                    With Veelancing, everyone can contribute  <br/> to the platform
+                                    by requesting and voting <br/>
                                     changes and new features.
                                 </p>
                                 <Button className={'vbr-btn-style'}>
@@ -458,9 +467,9 @@ class NewHomeContainer extends Component {
                                 </Button>
                             </div>
                         </Col>
-                        <Col xs={24} sm={16} md={{ span: 12 }} lg={11} xl={{ span: 12 }} xxl={{ span: 12 }}>
+                        <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
                             <div>
-                                <img style={{ width: 534, height: 640 }}
+                                <img className={'img-responsive'}
                                      src={'../../static/images/for_freelancers_imagery@2x.png'}/>
                             </div>
                         </Col>
@@ -469,13 +478,13 @@ class NewHomeContainer extends Component {
 
 
                 <Row>
-                    <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
+                    <Col  sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
                         <div>
-                            <img style={{ width: 'auto' }}
+                            <img className={'img-responsive'}
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>
                         </div>
                     </Col>
-                    <Col xs={24} sm={16}
+                    <Col xs={{span:21,offset:2}} sm={16}
                          md={{ span: 12, }}
                          lg={{ span: 10, offset: 4 }}
                          xl={{ span: 12 }}
@@ -488,9 +497,10 @@ class NewHomeContainer extends Component {
                                 for the job.
                             </div>
                             <p className={'join-freelancer-text'}>
-                                We believe in a true form of community.
+                                We believe in a true form of community.<br/>
+                                With Veelancing, everyone can contribute
                                 <br/>
-                                With Veelancing, everyone can contribute to the platform by requesting and voting
+                                to the platform by requesting and voting  <br/>
                                 changes and new features.
                             </p>
                             <Button className={'vbr-btn-style mt35'}>
@@ -503,25 +513,18 @@ class NewHomeContainer extends Component {
                     </Col>
                 </Row>
 
-                <div style={{ marginTop: '100px', marginBottom: '100px' }}>
-                    <div className={'well-let-you-know-w'}>
+                <div style={{ marginTop: '100px', marginBottom: '100px',textAlign:'center'}}>
+                    <div className={'well-let-you-know-w'} >
                         We’ll let you know when we launch!
                     </div>
-                    <Row>
-                        <Col xs={24} sm={16}
-                             md={{ span: 5, offset: 8 }}
-                             lg={{ span: 5, offset: 6 }}
-                             xl={{ span: 7, offset: 6 }}
-                             xxl={{ span: 5, offset: 8 }}>
-
-                            <Input size={'large'} className={'launch-time-input'} placeholder={'Email'}/>
-                        </Col>
-                        <Col xs={24} sm={5} md={{ span: 5 }} lg={{ span: 5 }} xl={{ span: 5 }} xxl={{ span: 5 }}>
-                            <Button className={'vbr-btn-style'}>
+                    <div style={{maxWidth:'300px',minWidth:'400px',margin:'0 auto'}}>
+                        <div style={{textAlign:'center'}}>
+                            <Input size={'large'} className={'launch-time-input'}  style={{marginTop:'20px'}} placeholder={'Email'}/>
+                            <Button className={'vbr-btn-style'} style={{marginTop:'20px'}}>
                                 Get Notified!
                             </Button>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
                     <Row>
                         <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
                             <div className={'home-privacy-policy-text'}>
