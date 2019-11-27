@@ -9,7 +9,6 @@ import { FullStory } from 'react-fullstory-component'
 import { Helmet } from 'react-helmet'
 import ReactGA from 'react-ga'
 import Particles from 'react-particles-js'
-
 ReactGA.initialize('UA-147139648-1')
 import { logout } from '../actions/user'
 import '../styles/home.css'
@@ -18,6 +17,7 @@ import HeaderMenu from './Elements/HeaderMenu'
 
 const { Content } = Layout
 const { SubMenu } = Menu
+var jwtDecode = require('jwt-decode');
 
 class HeaderNew extends Component {
 
@@ -78,6 +78,18 @@ class HeaderNew extends Component {
         })
         this.rebuildBreadcrumbs()
 
+        if (this.props.user.token === 0 || typeof this.props.user.token === 'undefined') {
+            let decoded = null;
+            try {
+                decoded = jwtDecode(this.props.user.token);
+                console.log(decoded);
+            } catch (e) {
+                localStorage.clear();
+                Router.push('/')
+            }
+        }else{
+            this.setState({ isLoading: false })
+        }
     }
 
     rebuildBreadcrumbs () {
@@ -163,8 +175,7 @@ class HeaderNew extends Component {
     }
 
     clickLogout (e) {
-        let { logout } = this.props
-        logout().then(() => {
+        this.props.logout().then(() => {
             this.setState({
                 isLogged: false
             })
