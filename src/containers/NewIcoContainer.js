@@ -233,88 +233,138 @@ export default class NewIcoContainer extends Component {
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                        date="2011 - present"
+                        date="2018"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="bulb" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+                        <h3 className="vertical-timeline-element-title">Veelancing concept is born</h3>
                         <p>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                        ✓ Concept & Team Developement
+                        </p>
+                        <p>
+                        ✓ Tech Research & Market Analysis   
+                        </p>
+                        <p>
+                        ✓ Platform Infrastructure & Architecture
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2010 - 2011"
+                        date="Q1 - 2019"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="fund" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Art Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                        <h3 className="vertical-timeline-element-title">Planning & Strategy</h3>
                         <p>
-                            Creative Direction, User Experience, Visual Design, SEO, Online Marketing
+                        ✓ Blockchain Testing
+                        </p>
+                        <p>
+                        ✓ Whitepaper Creation   
+                        </p>
+                        <p>
+                        ✓ Marketing Strategy   
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2008 - 2010"
+                        date="Q2 - 2019"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="setting" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
+                        <h3 className="vertical-timeline-element-title">Building the Platform</h3>
                         <p>
-                            User Experience, Visual Design
+                        ✓ Veelancing Platform Developement
+                        </p>
+                        <p>
+                        ✓ Partnership with Coin Exchange Data    
+                        </p>
+                        <p>
+                        ✓ Testing KYC API
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        date="2006 - 2008"
+                        date="Q3 - 2019"
                         iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="notification" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                        <h3 className="vertical-timeline-element-title">Launching the Demo Version</h3>
                         <p>
-                            User Experience, Visual Design
+                        ✓ User Testing
+                        </p>
+                        <p>
+                        ✓ Capture Feedback & Iterate   
+                        </p>
+                        <p>
+                        ✓ Start Marketing Campaign   
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        date="April 2013"
+                        date="Q4 - 2019"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="dollar-circle" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social
-                            Media</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+                        <h3 className="vertical-timeline-element-title">Raising Funds</h3>
                         <p>
-                            Strategy, Social Media
+                        ✓ Private fundraising for early-bird investors
+                        </p>
+                        <p>
+                        ✓ Launching Pre-initial Coin Offering    
+                        </p>
+                        <p>
+                        ✓ Launching Initial Coin Offering   
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        date="November 2012"
+                        date="Q1 - 2020"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="project" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+                        <h3 className="vertical-timeline-element-title">Growing User Data Base</h3>
                         <p>
-                            Creative Direction, User Experience, Visual Design
+                        ✓ Referral Program & Airdrop
+                        </p>
+                        <p>
+                        ✓ Growing Veelancing Community   
+                        </p>
+                        <p>
+                        ✓ New Partnerships  
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        date="2002 - 2006"
+                        date="Q2 - 2020"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                        icon={<Icon type={'fund'} />}
+                        icon={<Icon type="interaction" theme="filled" />}
                     >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media
-                            Visual Imaging</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
+                        <h3 className="vertical-timeline-element-title">Launch Beta Version</h3>
                         <p>
-                            Creative Direction, Visual Design
+                        ✓ User Testing Beta Version
+                        </p>
+                        <p>
+                        ✓ Capture Feedback & Iterate   
+                        </p>
+                        <p>
+                        ✓ Exchange Market Developement   
+                        </p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--education"
+                        date="Q3 & Q4 - 2020"
+                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                        icon={<Icon type="rocket" theme="filled" />}
+                    >
+                        <h3 className="vertical-timeline-element-title">Official Platform Release</h3>
+                        <p>
+                        ✓ Final Platform Release
+                        </p>
+                        <p>
+                        ✓ Mining Tokens   
+                        </p>
+                        <p>
+                        ✓ Release Exchange Market Feature   
                         </p>
                     </VerticalTimelineElement>
                 </VerticalTimeline>
