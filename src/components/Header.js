@@ -59,7 +59,6 @@ class Header extends Component {
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
             ReactGA.pageview(window.location.pathname + window.location.search);
-            console.log('pageview sent')
             this.rebuildBreadcrumbs()
         }
     }

@@ -5,7 +5,6 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button ,Alert } 
   const { Option } = Select;
 
   function onChange(date, dateString) {
-    console.log(date, dateString);
   }
 
   class RegisterStepOneContainer extends Component {
@@ -30,7 +29,6 @@ import {Form, Input, Select, Row, Col, Radio, DatePicker, Icon, Button ,Alert } 
       };
     
       componentDidMount () {
-        console.log('Step3 - ' + this.props.register)
       }
     
   

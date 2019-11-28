@@ -11,6 +11,7 @@ import {
     isBrowser,
     isMobile
 } from 'react-device-detect'
+import ReactGA from 'react-ga'
 
 class HeaderMenu extends Component {
 
@@ -20,11 +21,100 @@ class HeaderMenu extends Component {
         this.clickLogout = this.clickLogout.bind(this)
     }
 
+
     componentDidUpdate (prevProps, prevState, snapshot) {
+        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
+            ReactGA.pageview(window.location.pathname + window.location.search)
+            this.rebuildBreadcrumbs()
+        }
     }
 
     componentDidMount () {
     }
+
+
+    rebuildBreadcrumbs () {
+
+        let generalMetaDescription = 'Peer-to-peer Marketplace for Freelancers Powered by Blockchain.' +
+            'Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs.'
+
+        if (typeof (this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
+
+            let categories = Object.keys(this.props.settings.main_menu.mainMenu).map(key => {
+                return this.props.settings.main_menu.mainMenu[key]
+            })
+
+            let fullLink = this.props.redux_router.location.pathname.split('/')
+
+            if (fullLink[0] === '' && fullLink[1] === '') {
+                this.setState({
+                    breadcrumb: {
+                        category: { url: '/', name: 'Home', meta_description: generalMetaDescription },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription,
+                        }
+                    }
+                })
+            }
+
+            if (fullLink[1] === 'ico') {
+                this.setState({
+                    breadcrumb: {
+                        category: {
+                            url: 'ico',
+                            name: 'Initial Coin Offering',
+                            meta_description: generalMetaDescription
+                        },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription
+                        }
+                    }
+                })
+            }
+
+            if (fullLink[1] === 'how-it-works') {
+                this.setState({
+                    breadcrumb: {
+                        category: {
+                            url: 'how-it-works',
+                            name: 'How it works',
+                            meta_description: generalMetaDescription
+                        },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription
+                        }
+                    }
+                })
+            }
+
+            if (typeof fullLink[2] !== 'undefined') {
+                let currentCategory = categories.find(obj => obj.url === 'categories/' + fullLink[2])
+                if (currentCategory && typeof fullLink[3] !== 'undefined') {
+                    let currentSubCategory = currentCategory['subcategories']
+                    .find(obj => obj.url === 'categories/' + fullLink[2] + '/' + fullLink[3])
+
+                    if (!this.state.breadcrumb.category.length > 0) {
+                        this.setState({
+                            breadcrumb: {
+                                category: currentCategory,
+                                subcategory: currentSubCategory
+
+                            }
+                        })
+                    }
+                }
+            }
+
+        }
+    }
+
 
     clickLogout (e) {
         let { logout } = this.props
@@ -183,11 +273,15 @@ class HeaderMenu extends Component {
 function mapStateToProps (state) {
     return {
         user: state.user,
+        redux_router: state.router,
+        settings:state.settings
     }
 }
 
 HeaderMenu.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
+    redux_router: PropTypes.instanceOf(Object).isRequired,
+    settings: PropTypes.instanceOf(Object).isRequired,
 }
 export default connect(mapStateToProps, { logout })(HeaderMenu)

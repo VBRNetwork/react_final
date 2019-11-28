@@ -34,7 +34,6 @@ export default function withAuth (AuthComponent) {
           let decoded = null;
           try {
                decoded = jwtDecode(this.props.user.token);
-              console.log('decoded: ' + decoded);
           } catch (e) {
               Router.push('/')
           }

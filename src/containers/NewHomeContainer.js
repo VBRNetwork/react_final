@@ -121,7 +121,6 @@ class NewHomeContainer extends Component {
                     >
                     </Particles>
                     <HeaderMenu/>
-
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
                              xl={{ span: 17, offset: 3 }} xxl={{ span: 15, offset: 5 }}>
