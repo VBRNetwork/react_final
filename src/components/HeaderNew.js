@@ -46,6 +46,7 @@ class HeaderNew extends Component {
             },
         }
         this.clickLogout = this.clickLogout.bind(this)
+        this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this)
         this.handleChangeCategory = this.handleChangeCategory.bind(this)
     }
 
@@ -65,10 +66,100 @@ class HeaderNew extends Component {
         })
     }
 
+    componentDidUpdate (prevProps, prevState, snapshot) {
+        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
+            ReactGA.pageview(window.location.pathname + window.location.search)
+            this.rebuildBreadcrumbs()
+        }
+    }
+
     componentDidMount () {
         let { getVBRSettings } = this.props
         getVBRSettings().then((e) => {
         })
+        this.rebuildBreadcrumbs()
+    }
+
+    rebuildBreadcrumbs () {
+
+        let generalMetaDescription = 'Peer-to-peer Marketplace for Freelancers Powered by Blockchain.' +
+            'Instant payments, Lowest Fees, Peer-to-peer interaction, Smart Contract based jobs.'
+
+        if (typeof (this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
+
+            let categories = Object.keys(this.props.settings.main_menu.mainMenu).map(key => {
+                return this.props.settings.main_menu.mainMenu[key]
+            })
+
+            let fullLink = this.props.redux_router.location.pathname.split('/')
+
+            if (fullLink[0] === '' && fullLink[1] === '') {
+                this.setState({
+                    breadcrumb: {
+                        category: { url: '/', name: 'Home', meta_description: generalMetaDescription },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription,
+                        }
+                    }
+                })
+            }
+
+            if (fullLink[1] === 'ico') {
+                this.setState({
+                    breadcrumb: {
+                        category: {
+                            url: 'ico',
+                            name: 'Initial Coin Offering',
+                            meta_description: generalMetaDescription
+                        },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription
+                        }
+                    }
+                })
+            }
+
+            if (fullLink[1] === 'how-it-works') {
+                this.setState({
+                    breadcrumb: {
+                        category: {
+                            url: 'how-it-works',
+                            name: 'How it works',
+                            meta_description: generalMetaDescription
+                        },
+                        subcategory: {
+                            url: '',
+                            title: '',
+                            metaDescription: generalMetaDescription
+                        }
+                    }
+                })
+            }
+
+            if (typeof fullLink[2] !== 'undefined') {
+                let currentCategory = categories.find(obj => obj.url === 'categories/' + fullLink[2])
+                if (currentCategory && typeof fullLink[3] !== 'undefined') {
+                    let currentSubCategory = currentCategory['subcategories']
+                    .find(obj => obj.url === 'categories/' + fullLink[2] + '/' + fullLink[3])
+
+                    if (!this.state.breadcrumb.category.length > 0) {
+                        this.setState({
+                            breadcrumb: {
+                                category: currentCategory,
+                                subcategory: currentSubCategory
+
+                            }
+                        })
+                    }
+                }
+            }
+
+        }
     }
 
     clickLogout (e) {
@@ -181,7 +272,7 @@ class HeaderNew extends Component {
                     <meta charSet="utf-8"/>
                     <title>{this.state.breadcrumb.category.name}
                         {this.state.breadcrumb.subcategory.title && ' - ' + this.state.breadcrumb.subcategory.title}
-                        Veelancing - Blockchain freelancing
+                        Veelancing - Blockchain community
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
                 </Helmet>

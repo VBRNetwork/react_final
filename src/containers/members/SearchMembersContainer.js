@@ -344,7 +344,9 @@ class SearchJobsContainer extends Component {
                                                                         backgroundColor: '#2EC3AB',
                                                                         borderColor: '#2EC3AB'
                                                                     }}>
-                                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}> View Profile   </Link>
+                                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}>
+                                                                            <a href="">View Profile </a>
+                                                                        </Link>
                                                                     </Button>
 
                                                                 </div>
