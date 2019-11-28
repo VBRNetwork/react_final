@@ -47,7 +47,6 @@ class RegisterStepTwoContainer extends Component {
         ],
         'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
       };
-      console.log('Received values of form: ', values);
     });
   };
    

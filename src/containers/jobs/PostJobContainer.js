@@ -319,7 +319,6 @@ class PostJobContainer extends React.Component {
 
     render() {
         const { getFieldDecorator } = this.props.form;
-        console.log(this.props.user)
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },

@@ -265,7 +265,6 @@ class BecomeFreelancerContainer extends Component {
 
     becomeFreelancerButton(){
         this.props.becomeFreelancer(this.state).then((e) => {
-            console.log(e);
         })
     }
     render () {
