@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Icon, Row, Col,  Button, Dropdown, Avatar } from 'antd'
+import { Menu, Icon, Row, Col, Button, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import { logout } from '../../actions/user'
 import Router from 'next/router'
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+} from 'react-device-detect'
 
 class HeaderMenu extends Component {
 
     constructor (props) {
         super(props)
-        this.state = {
-        }
+        this.state = {}
         this.clickLogout = this.clickLogout.bind(this)
     }
 
@@ -20,7 +25,6 @@ class HeaderMenu extends Component {
 
     componentDidMount () {
     }
-
 
     clickLogout (e) {
         let { logout } = this.props
@@ -66,14 +70,14 @@ class HeaderMenu extends Component {
             <Menu>
                 <Menu.Item>
                     <Link href='/dashboard'>
-                        <a >
+                        <a>
                             Dashboard
                         </a>
                     </Link>
 
                 </Menu.Item>
                 <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' >
+                    <a target='_blank' rel='noopener noreferrer'>
                         Change Avatar
                     </a>
                 </Menu.Item>
@@ -84,90 +88,93 @@ class HeaderMenu extends Component {
                 </Menu.Item>
                 <Menu.Item>
                     <div onClick={this.clickLogout}>
-                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
                     </div>
                 </Menu.Item>
             </Menu>
         )
         return (
             <div>
-                    <Row>
-                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={10}>
-                            <div className="logo-box">
-                                <Link href='/'>
-                                    <span className="logo">VEELANCING</span>
+                <Row>
+                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={10}>
+                        <div className="logo-box" style={{ textAlign: 'center' }}>
+                            <Link href='/'>
+                                <span className="logo">VEELANCING</span>
+                            </Link>
+                        </div>
+                    </Col>
+
+                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={8}>
+                        <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                            marginTop: '5px',
+                            background: 'transparent',
+                            borderBottom: 'initial',
+                            float: 'right'
+                        }}>
+                            <Menu.Item key='app122'>
+                                <Link href='/ico'>
+                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                    Initial Coin Offering</a>
                                 </Link>
-                            </div>
-                        </Col>
-
-                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={8}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                                marginTop: '5px',
-                                background: 'transparent',
-                                borderBottom: 'initial'
-                            }}>
-
-                                <Menu.Item key='app122'>
-                                    <Link href='/ico'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>Initial
-                                            Coin Offering</a>
-                                    </Link>
-                                </Menu.Item>
-
-                                <Menu.Item key='app1'>
-                                    <Link href='/how-it-works'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/> How it
-                                            works</a>
-                                    </Link>
-                                </Menu.Item>
-                                <Menu.Item key='about'>
+                            </Menu.Item>
+                            <Menu.Item key='app1'>
+                                <Link href='/how-it-works'>
+                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                        How it  works
+                                    </a>
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key='about'>
+                                <BrowserView>
                                     <Link href='/about-us'>
                                         <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
                                     </Link>
-                                </Menu.Item>
-                            </Menu>
-                        </Col>
+                                </BrowserView>
+                            </Menu.Item>
+                        </Menu>
+                    </Col>
 
-                        <Col xs={24} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={6}>
-                            <div style={{ marginTop: '17px', float: 'right', marginRight: '10%' }}>
-                                {token === false && loginButton}
-                                {token === false && joinButton}
+                    <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
+                        <div style={{ marginTop: '17px' }}>
+                            {token === false && loginButton}
+                            {token === false && joinButton}
 
-                                {token !== false &&
-                                <div>
-                                    {postJobButton}
+                            {token !== false &&
+                            <div>
+                                {postJobButton}
 
-                                    { this.props.user.type === 0 &&
-                                    <Button type='primary' ghost size="large" style={{
-                                        marginLeft:'5px',
-                                        backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'
-                                    }}>
-                                        <Link href='/dashboard/become-freelancer'>
-                                            <a>
-                                                Become a freelancer
-                                            </a>
-                                        </Link>
-                                    </Button>
-                                    }
-                                    { this.props.user.type === 1 &&
-                                    <span style={{marginLeft:'5px'}}>You are freelancer</span>
-                                    }
-
-                                    <Dropdown overlay={menu}>
-                                        <div style={{ color: '#FFF', marginLeft: '20px',display: 'inline'}}
-                                             className='ant-dropdown-link'>
-                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user' style={{
-                                                cursor: 'pointer',
-                                            }}/>
-                                        </div>
-                                    </Dropdown>
-                                </div>
+                                {this.props.user.type === 0 &&
+                                <Button type='primary' ghost size="large" style={{
+                                    marginLeft: '5px',
+                                    backgroundColor: '#2EC3AB',
+                                    borderColor: '#2EC3AB'
+                                }}>
+                                    <Link href='/dashboard/become-freelancer'>
+                                        <a>
+                                            Become a freelancer
+                                        </a>
+                                    </Link>
+                                </Button>
                                 }
-                            </div>
+                                {this.props.user.type === 1 &&
+                                <span style={{ marginLeft: '5px' }}>You are freelancer</span>
+                                }
 
-                        </Col>
-                    </Row>
+                                <Dropdown overlay={menu}>
+                                    <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
+                                         className='ant-dropdown-link'>
+                                        <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user'
+                                                style={{
+                                                    cursor: 'pointer',
+                                                }}/>
+                                    </div>
+                                </Dropdown>
+                            </div>
+                            }
+                        </div>
+
+                    </Col>
+                </Row>
             </div>
         )
     }
