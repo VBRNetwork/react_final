@@ -361,7 +361,6 @@ html {
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    width: 240px;
     text-align: left;
 }
 
@@ -587,6 +586,8 @@ html {
   .home-investors-box {
       margin-top:250px;
       margin-bottom:250px;
+      background-color: #DEEEED;
+      padding: 30px;
   }
 
   .mt35 {
@@ -650,6 +651,11 @@ html {
     font-weight: bold !important;
     letter-spacing: 0.1px !important;
 }
+
+.category-box {
+    padding:5px;
+}
+
 @media only screen and (max-width: 600px) {
     .menu-item {
         font-size: 12px !important;

@@ -3,12 +3,7 @@ import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
 import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
-import {
-    BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
-} from "react-device-detect";
+import HeaderMenu from '../components/Elements/HeaderMenu'
 
 class NewHomeContainer extends Component {
 
@@ -125,95 +120,11 @@ class NewHomeContainer extends Component {
                         }}
                     >
                     </Particles>
+                    <HeaderMenu/>
 
                     <Row>
-                        <Col xs={24} sm={4} md={7} lg={7} xl={6} xxl={4}>
-                            <div className="logo-box" style={{textAlign:'center'}}>
-                                <Link href='/'>
-                                    <span className="logo">VEELANCING</span>
-                                </Link>
-                            </div>
-                        </Col>
-
-                        <Col xs={24} sm={16} md={16} lg={16} xl={10} xxl={14}>
-                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                                marginTop: '10px',
-                                background: 'transparent',
-                                float:'right',
-                                borderBottom: 'initial',
-                            }}>
-
-                                <Menu.Item key='app122'>
-                                    <Link href='/ico'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                        Initial  Coin Offering
-                                        </a>
-                                    </Link>
-                                </Menu.Item>
-
-                                <Menu.Item key='app1'>
-                                    <Link href='/how-it-works'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
-                                            How it works
-                                        </a>
-                                    </Link>
-                                </Menu.Item>
-                                    <Menu.Item key='about'>
-                                        <BrowserView>
-                                            <div >
-                                                <Link href='/about-us'>
-                                                    <a className="menu-item" style={{verticalAlign:'bottom'}}> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
-                                                </Link>
-                                            </div>
-                                        </BrowserView>
-                                    </Menu.Item>
-                            </Menu>
-                        </Col>
-
-                        <Col xs={0} sm={16} md={4} lg={1} xl={{ span: 8, pull: 1 }} xxl={4}>
-                            <div style={{ marginTop: '20px', float: 'right'}}>
-                                {token === false && loginButton}
-                                {token === false && joinButton}
-
-                                {token !== false &&
-                                <div>
-                                    {postJobButton}
-
-                                    {this.props.user.type === 0 &&
-                                    <Button type='primary' style={{
-                                        marginLeft: '5px',
-                                        backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'
-                                    }}>
-                                        <Link href='/dashboard/become-freelancer'>
-                                            <a>
-                                                Become a freelancer
-                                            </a>
-                                        </Link>
-                                    </Button>
-                                    }
-                                    {this.props.user.type === 1 &&
-                                    <span style={{ marginLeft: '5px' }}>You are freelancer</span>
-                                    }
-
-                                    <Dropdown overlay={menu}>
-                                        <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
-                                             className='ant-dropdown-link'>
-                                            <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user'
-                                                    style={{
-                                                        backgroundColor: '#2ec3ab',
-                                                        cursor: 'pointer',
-                                                    }}/>
-                                        </div>
-                                    </Dropdown>
-                                </div>
-                                }
-                            </div>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col xs={24} sm={24} md={{span: 17,offset:1 }} lg={{span: 17,offset:2 }} xl={{span: 17,offset:3 }} xxl={{ span: 15,offset:5 }}>
+                        <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
+                             xl={{ span: 17, offset: 3 }} xxl={{ span: 15, offset: 5 }}>
                             <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
@@ -226,24 +137,24 @@ class NewHomeContainer extends Component {
                                         </span>
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-                                        <Row gutter={5}>
-                                            <Col xs={24} md={6}>
-                                                <Button className="btn-style" size="large">
-                                                    <Link href='/register'>
-                                                        <a> <b>Join as Freelancer</b>
-                                                        </a>
-                                                    </Link>
-                                                </Button>
-                                            </Col>
-                                            <Col  xs={24} md={6}>
-                                                <Button className="btn-style" size="large">
-                                                    <Link href='/jobs/add-job'>
-                                                        <a> <b>Post a job</b>
-                                                        </a>
-                                                    </Link>
-                                                </Button>
-                                            </Col>
-                                        </Row>
+                                    <Row gutter={5}>
+                                        <Col xs={24} md={7}>
+                                            <Button className="btn-style" size="large">
+                                                <Link href='/register'>
+                                                    <a> <b>Join as Freelancer</b>
+                                                    </a>
+                                                </Link>
+                                            </Button>
+                                        </Col>
+                                        <Col xs={24} md={7}>
+                                            <Button className="btn-style" size="large">
+                                                <Link href='/jobs/add-job'>
+                                                    <a> <b>Post a job</b>
+                                                    </a>
+                                                </Link>
+                                            </Button>
+                                        </Col>
+                                    </Row>
                                 </div>
                             </div>
                         </Col>
@@ -253,7 +164,7 @@ class NewHomeContainer extends Component {
 
                 <div style={{ marginTop: '200px', marginBottom: '50px' }}>
                     <Row>
-                        <Col xs={{ span: 21, offset: 3 }} sm={16} md={24} lg={24} xl={8} xxl={{ span: 6, offset: 3 }}>
+                        <Col xs={{ span: 21, offset: 2 }} sm={16} md={24} lg={9} xl={9} xxl={{ span: 6, offset: 3 }}>
                             <div className="intro-text">
                                 <h2 className="find-the-job-you-lov">
                                     Find the job you love.
@@ -266,53 +177,70 @@ class NewHomeContainer extends Component {
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Button className="vbr-btn-style">
                                         <Link href='/categories' as={'categories'}>
-                                          <b style={{color:'#FFF'}}>See all categories</b>
+                                            <b style={{ color: '#FFF' }}>See all categories</b>
                                         </Link>
                                     </Button>
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={{span:19,offset:5}} sm={16} md={{ span: 18, offset: 4 }} lg={17} xl={12} xxl={{ span: 10, offset: 1 }}>
+                        <Col xs={{ span: 19, offset: 1 }} sm={16} md={{ span: 16 }} lg={10} xl={9} xxl={{ span: 10 }}>
                             <div>
                                 <Row>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/business_consultancy_image@1x.png" alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/business_consultancy_image@1x.png"
+                                                 alt=""/>
+                                            <br/>
+                                            <span className="categories-title">Business Consultancy</span>
+                                        </div>
                                     </Col>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/customer_service_image@1x.png" alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/customer_service_image@1x.png" alt=""/>
+                                            <br/>
+                                            <span className="categories-title">Customer Service</span>
+                                        </div>
                                     </Col>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/design_and_creative_image@1x.png" alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/design_and_creative_image@1x.png"
+                                                 alt=""/>
+                                            <br/>
+                                            <span className="categories-title">Design & Creative</span>
+                                        </div>
                                     </Col>
                                 </Row>
+
                                 <Row>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/digital_marketing_image@1x.png" alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/digital_marketing_image@1x.png"
+                                                 alt=""/>
+                                            <br/>
+                                            <span className="categories-title">Digital Marketing</span>
+                                        </div>
                                     </Col>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/it_and_programming_image@1x.png" alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/it_and_programming_image@1x.png"
+                                                 alt=""/>
+                                            <br/>
+                                            <span className="categories-title">IT & Programing</span>
+                                        </div>
                                     </Col>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
-                                        <img className="categories-image"
-                                             src="../../static/images/design/writing_and_translation_image@1x.png"
-                                             alt=""/>
-                                        <br/>
-                                        <span className="categories-title">Writing & Translation</span>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <img className="categories-image img-responsive"
+                                                 src="../../static/images/design/writing_and_translation_image@1x.png"
+                                                 alt=""/>
+                                            <br/>
+                                            <span className="categories-title">Writing & Translation</span>
+                                        </div>
                                     </Col>
                                 </Row>
 
@@ -321,25 +249,25 @@ class NewHomeContainer extends Component {
                     </Row>
                 </div>
 
-                <div style={{ padding: '80px' ,marginTop:'120px'}}>
-                        <Row>
-                            <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
-                                <div>
-                                    <h2 className="why-veelancing">Why Veelancing?</h2>
-                                </div>
-                                <div>
-                                    <h3 className="we-are-a-decentraliz">
-                                        We are a decentralized marketplace for freelancers all over the world.
-                                    </h3>
-                                </div>
-                            </Col>
-                        </Row>
+                <div style={{ padding: '80px', marginTop: '120px' }}>
+                    <Row>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
+                            <div>
+                                <h2 className="why-veelancing">Why Veelancing?</h2>
+                            </div>
+                            <div>
+                                <h3 className="we-are-a-decentraliz">
+                                    We are a decentralized marketplace for freelancers all over the world.
+                                </h3>
+                            </div>
+                        </Col>
+                    </Row>
                 </div>
 
                 <div>
                     <Row>
-                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 , offset:5}}>
-                            <div style={{padding:'20px'}}>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset: 5 }}>
+                            <div style={{ padding: '20px' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
                                 <span className={'home-paragraph-1'}>
@@ -351,8 +279,8 @@ class NewHomeContainer extends Component {
                                 </span>
                             </div>
                         </Col>
-                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
-                            <div style={{padding:'20px'}}>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '20px' }}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
                                 <span className={'communicate-directly'}>Create Smart Contracts</span>
                                 <div className={'home-paragraph-1'}>
@@ -367,23 +295,23 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
-                           <div style={{padding:'20px'}}>
-                               <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
-                               <span className={'communicate-directly'}>Get Paid Instantly</span>
-                               <div className={'home-paragraph-1'}>
-                                   <p>
-                                       The payments are processed instantly
-                                       and in a highly secure environment
-                                       <br/>
-                                       created with Blockchain technology.
-                                   </p>
-                               </div>
-                           </div>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '20px' }}>
+                                <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
+                                <span className={'communicate-directly'}>Get Paid Instantly</span>
+                                <div className={'home-paragraph-1'}>
+                                    <p>
+                                        The payments are processed instantly
+                                        and in a highly secure environment
+                                        <br/>
+                                        created with Blockchain technology.
+                                    </p>
+                                </div>
+                            </div>
                         </Col>
 
-                        <Col xs={{span:20}} sm={16} md={{ span: 12 }} lg={12} xl={6} xxl={{ span: 4 }}>
-                            <div style={{padding:'20px'}}>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '20px' }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
                                 <span className={'home-paragraph-1'}>
@@ -399,26 +327,20 @@ class NewHomeContainer extends Component {
                 </div>
 
                 <div style={{ margin: '50px' }}>
-                    <Row>
-                        <Col xs={{span: 8, offset: 3}}
-                             md={{ span: 12, offset: 9 }}
-                             lg={{ span: 12, offset: 10 }}
-                             xl={{ span: 12, offset: 10 }}
-                             xxl={{ span: 12, offset: 10 }}>
-
-                            <Button className={'vbr-btn-style'}>
-                                <Link href='/how-it-works' as={'/how-it-works'}>
-                                    <b style={{color:'#FFF'}}> How it Works</b>
-                                </Link>
-                            </Button>
-                        </Col>
-                    </Row>
+                    <div style={{ textAlign: 'center' }}>
+                        <Button className={'vbr-btn-style'}>
+                            <Link href='/how-it-works' as={'/how-it-works'}>
+                                <b style={{ color: '#FFF' }}> How it Works</b>
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
 
-                <div className={'home-investors-box'}  style={{position:'relative'}}>
+                <div className={'home-investors-box'} style={{ position: 'relative' }}>
                     <div>
                         <Row>
-                            <Col xs={{span:22,offset:2}} sm={16} md={12} lg={1} xl={6} xxl={{ span: 8 , offset:4}}>
+                            <Col xs={{ span: 22 }} sm={16} md={12} lg={12} xl={{ span: 10 }}
+                                 xxl={{ span: 8, offset: 4 }}>
                                 <div className={'investors-title'}>
                                     Help us create the first
                                     <br/>
@@ -433,20 +355,21 @@ class NewHomeContainer extends Component {
                                 </p>
                                 <Button className={'vbr-btn-style mt35'}>
                                     <Link href='/register' as={'/register'}>
-                                        <b style={{color:'#FFF'}}>Become an Investor</b>
+                                        <b style={{ color: '#FFF' }}>Become an Investor</b>
                                     </Link>
                                 </Button>
                             </Col>
-                            <Col xs={24} sm={16} md={12} lg={1} xl={6} xxl={{ span: 8}}>
-                                   <img className={'img-responsive'}  style={{marginTop:'150px'}} src="../../static/images/design/become_an_investor_image@2x.jpg" alt=""/>
+                            <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 8 }}>
+                                <img className={'img-responsive'} style={{ marginTop: '150px' }}
+                                     src="../../static/images/design/become_an_investor_image@2x.jpg" alt=""/>
                             </Col>
                         </Row>
                     </div>
                 </div>
                 <div style={{ marginTop: '80px', marginBottom: '80px' }}>
                     <Row>
-                        <Col xs={{span:22,offset:2}} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
-                             xl={{ span: 12, push: 2 }} xxl={{ span: 10, push: 4 }}>
+                        <Col xs={{ span: 22, offset: 2 }} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
+                             xl={{ span: 10, push: 2 }} xxl={{ span: 10, push: 2 }}>
                             <div className={'join-freelancer-box'}>
                                 <span className={'join-freelancer-title'}>
                                     Be part of a community that
@@ -456,18 +379,18 @@ class NewHomeContainer extends Component {
                                 <p className={'join-freelancer-text'}>
                                     We believe in a true form of community.
                                     <br/>
-                                    With Veelancing, everyone can contribute  <br/> to the platform
+                                    With Veelancing, everyone can contribute <br/> to the platform
                                     by requesting and voting <br/>
                                     changes and new features.
                                 </p>
                                 <Button className={'vbr-btn-style'}>
                                     <Link href='/register' as={'/register'}>
-                                        <b style={{color:'#FFF'}}> Join as Freelancer</b>
+                                        <b style={{ color: '#FFF' }}> Join as Freelancer</b>
                                     </Link>
                                 </Button>
                             </div>
                         </Col>
-                        <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
+                        <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 10 }} xxl={{ span: 8, offset: 0 }}>
                             <div>
                                 <img className={'img-responsive'}
                                      src={'../../static/images/for_freelancers_imagery@2x.png'}/>
@@ -478,16 +401,17 @@ class NewHomeContainer extends Component {
 
 
                 <Row>
-                    <Col  sm={16} md={12} lg={10} xl={{ span: 12 }} xxl={{ span: 8, offset: 2 }}>
+                    <Col sm={16} md={12} lg={10} xl={{ span: 10, offset: 2 }} xxl={{ span: 8, offset: 2 }}>
                         <div>
                             <img className={'img-responsive'}
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>
                         </div>
                     </Col>
-                    <Col xs={{span:21,offset:2}} sm={16}
+                    <Col xs={{ span: 21 }}
+                         sm={16}
                          md={{ span: 12, }}
-                         lg={{ span: 10, offset: 4 }}
-                         xl={{ span: 12 }}
+                         lg={{ span: 10 }}
+                         xl={{ span: 8, offset: 1 }}
                          xxl={{ span: 8 }}>
 
                         <div className={'join-freelancer-box'}>
@@ -500,12 +424,12 @@ class NewHomeContainer extends Component {
                                 We believe in a true form of community.<br/>
                                 With Veelancing, everyone can contribute
                                 <br/>
-                                to the platform by requesting and voting  <br/>
+                                to the platform by requesting and voting <br/>
                                 changes and new features.
                             </p>
                             <Button className={'vbr-btn-style mt35'}>
                                 <Link href='/jobs/add-job' as={'/jobs/add-job'}>
-                                    <b style={{color:'#FFF'}}> Post a job</b>
+                                    <b style={{ color: '#FFF' }}> Post a job</b>
                                 </Link>
                             </Button>
                         </div>
@@ -513,14 +437,15 @@ class NewHomeContainer extends Component {
                     </Col>
                 </Row>
 
-                <div style={{ marginTop: '100px', marginBottom: '100px',textAlign:'center'}}>
-                    <div className={'well-let-you-know-w'} >
+                <div style={{ marginTop: '100px', marginBottom: '100px', textAlign: 'center' }}>
+                    <div className={'well-let-you-know-w'}>
                         We’ll let you know when we launch!
                     </div>
-                    <div style={{maxWidth:'300px',minWidth:'400px',margin:'0 auto'}}>
-                        <div style={{textAlign:'center'}}>
-                            <Input size={'large'} className={'launch-time-input'}  style={{marginTop:'20px'}} placeholder={'Email'}/>
-                            <Button className={'vbr-btn-style'} style={{marginTop:'20px'}}>
+                    <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <Input size={'large'} className={'launch-time-input'} style={{ marginTop: '20px' }}
+                                   placeholder={'Email'}/>
+                            <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
                                 Get Notified!
                             </Button>
                         </div>

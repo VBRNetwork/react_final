@@ -18,6 +18,7 @@ import HeaderMenu from './Elements/HeaderMenu'
 
 const { Content } = Layout
 const { SubMenu } = Menu
+var jwtDecode = require('jwt-decode')
 
 class HeaderNew extends Component {
 
@@ -49,14 +50,14 @@ class HeaderNew extends Component {
         this.handleChangeCategory = this.handleChangeCategory.bind(this)
     }
 
-    makeid(length) {
-        var result           = '';
-        var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
-        var charactersLength = characters.length;
-        for ( var i = 0; i < length; i++ ) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    makeid (length) {
+        var result = ''
+        var characters = 'abcdefghijklmnopqrstuvwxyz0123456789'
+        var charactersLength = characters.length
+        for (var i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength))
         }
-        return result;
+        return result
     }
 
     handleChangeCategory (event) {
@@ -77,7 +78,6 @@ class HeaderNew extends Component {
         getVBRSettings().then((e) => {
         })
         this.rebuildBreadcrumbs()
-
     }
 
     rebuildBreadcrumbs () {
@@ -163,8 +163,7 @@ class HeaderNew extends Component {
     }
 
     clickLogout (e) {
-        let { logout } = this.props
-        logout().then(() => {
+        this.props.logout().then(() => {
             this.setState({
                 isLogged: false
             })
@@ -206,14 +205,14 @@ class HeaderNew extends Component {
             <Menu>
                 <Menu.Item>
                     <Link href='/dashboard'>
-                        <a >
+                        <a>
                             Dashboard
                         </a>
                     </Link>
 
                 </Menu.Item>
                 <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' >
+                    <a target='_blank' rel='noopener noreferrer'>
                         Change Avatar
                     </a>
                 </Menu.Item>
@@ -224,29 +223,29 @@ class HeaderNew extends Component {
                 </Menu.Item>
                 <Menu.Item>
                     <div onClick={this.clickLogout}>
-                        <Icon style={{fontSize: 17}} type='logout'/> Logout
+                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
                     </div>
                 </Menu.Item>
             </Menu>
         )
 
-
         let menuItems = ''
-        if(typeof(this.props.settings.main_menu) !== 'undefined' &&
-            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined'){
+        if (typeof (this.props.settings.main_menu) !== 'undefined' &&
+            typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
             let main_menu = this.props.settings.main_menu.mainMenu
-            menuItems = Object.keys(main_menu).map((category,index) => {
+            menuItems = Object.keys(main_menu).map((category, index) => {
 
-                let subcategoriesList = [];
-                let subcategories = main_menu[category].subcategories;
-                subcategories.map(function(subcategory,index){
-                    let localSubcategories = subcategory.url.split("/")
+                let subcategoriesList = []
+                let subcategories = main_menu[category].subcategories
+                subcategories.map(function (subcategory, index) {
+                    let localSubcategories = subcategory.url.split('/')
                     localSubcategories = localSubcategories.filter(item => item !== 'categories')
                     subcategoriesList.push(
                         <Menu.Item key={'menu_' + index}>
                             <Link as={'/' + subcategory.url}
                                   href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
-                                <a><Icon style={{fontSize: 17}} type={main_menu[category].icon}/> {subcategory.title}</a>
+                                <a><Icon style={{ fontSize: 17 }} type={main_menu[category].icon}/> {subcategory.title}
+                                </a>
                             </Link>
                         </Menu.Item>
                     )
@@ -257,10 +256,10 @@ class HeaderNew extends Component {
                         key={'menu2_' + index}
                         title={
                             <span className="submenu-title-wrapper">
-                              <Icon type={main_menu[category].icon} />
+                              <Icon type={main_menu[category].icon}/>
                                 {main_menu[category].name}
                             </span>
-                        } >
+                        }>
                         {subcategoriesList}
                     </SubMenu>
                 )
@@ -273,7 +272,7 @@ class HeaderNew extends Component {
                     <meta charSet="utf-8"/>
                     <title>{this.state.breadcrumb.category.name}
                         {this.state.breadcrumb.subcategory.title && ' - ' + this.state.breadcrumb.subcategory.title}
-                        - Veelancing
+                        Veelancing - Blockchain freelancing
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
                 </Helmet>
