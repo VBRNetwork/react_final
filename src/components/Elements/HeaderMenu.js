@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Menu, Icon, Row, Col, Button, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import { connect } from 'react-redux'
-import { logout } from '../../actions/user'
+import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
 import {
     BrowserView,
@@ -20,6 +20,7 @@ class HeaderMenu extends Component {
         this.state = {
         }
         this.clickLogout = this.clickLogout.bind(this)
+        this.localLogout = this.localLogout.bind(this)
     }
 
 
@@ -34,13 +35,22 @@ class HeaderMenu extends Component {
 
 
     clickLogout (e) {
-        let { logout } = this.props
+        let { logout,logoutStore } = this.props
+        let that = this;
         logout().then(() => {
-            this.setState({
-                isLogged: false
-            })
-            Router.push(`/`)
+        }).catch(function (error) {
         })
+        .finally(function () {
+            that.localLogout()
+        });
+    }
+
+    localLogout(){
+        this.setState({
+            isLogged: false
+        })
+        logoutStore()
+        Router.push(`/`)
     }
 
     render () {
@@ -199,7 +209,8 @@ function mapStateToProps (state) {
 HeaderMenu.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
     logout: PropTypes.func.isRequired,
+    logoutStore: PropTypes.func.isRequired,
     redux_router: PropTypes.instanceOf(Object).isRequired,
     settings: PropTypes.instanceOf(Object).isRequired,
 }
-export default connect(mapStateToProps, { logout })(HeaderMenu)
+export default connect(mapStateToProps, { logout,logoutStore })(HeaderMenu)
