@@ -96,7 +96,7 @@ class HeaderMenu extends Component {
         return (
             <div>
                 <Row>
-                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={10}>
+                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={4}>
                         <div className="logo-box" style={{ textAlign: 'center' }}>
                             <Link href='/'>
                                 <span className="logo">VEELANCING</span>
@@ -104,9 +104,9 @@ class HeaderMenu extends Component {
                         </div>
                     </Col>
 
-                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={8}>
+                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
                         <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                            marginTop: '5px',
+                            marginTop: '25px',
                             background: 'transparent',
                             borderBottom: 'initial',
                             float: 'right'
@@ -135,7 +135,7 @@ class HeaderMenu extends Component {
                     </Col>
 
                     <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
-                        <div style={{ marginTop: '17px' }}>
+                        <div style={{ marginTop: '25px' }}>
                             {token === false && loginButton}
                             {token === false && joinButton}
 
@@ -150,7 +150,7 @@ class HeaderMenu extends Component {
                                     borderColor: '#2EC3AB'
                                 }}>
                                     <Link href='/dashboard/become-freelancer'>
-                                        <a>
+                                        <a style={{color:'#FFF'}}>
                                             Become a freelancer
                                         </a>
                                     </Link>
