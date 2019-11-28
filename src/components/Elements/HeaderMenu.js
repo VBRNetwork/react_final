@@ -35,21 +35,20 @@ class HeaderMenu extends Component {
 
 
     clickLogout (e) {
-        let { logout,logoutStore } = this.props
+        let { logout } = this.props
         let that = this;
         logout().then(() => {
-        }).catch(function (error) {
-        })
-        .finally(function () {
             that.localLogout()
-        });
+        }).catch(function (error) {
+            that.localLogout()
+        })
     }
 
     localLogout(){
         this.setState({
             isLogged: false
         })
-        logoutStore()
+        this.props.logoutStore()
         Router.push(`/`)
     }
 
