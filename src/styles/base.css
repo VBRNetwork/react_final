@@ -665,4 +665,7 @@ html {
         font-weight: bold !important;
         letter-spacing: 0.1px !important;
     }
+    .a-blockchain-marketp .big {
+        font-size: 43px !important;
+    }
 }

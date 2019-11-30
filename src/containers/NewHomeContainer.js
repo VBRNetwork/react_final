@@ -4,6 +4,7 @@ import Particles from 'react-particles-js'
 import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
+import { isBrowser, isMobile } from 'react-device-detect'
 
 class NewHomeContainer extends Component {
 
@@ -28,12 +29,30 @@ class NewHomeContainer extends Component {
                 debug: false,
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
-            }
+            },
+            particles_number : 70
         }
+
+        this.handleChangeParticles = this.handleChangeParticles.bind(this);
+    }
+
+    handleChangeParticles(value) {
+        this.setState({
+            particles_number: value
+        })
     }
 
     componentDidMount () {
+        let number_particles = 60;
 
+        if(isBrowser){
+            number_particles = 80;
+        }
+        if(isMobile){
+            number_particles = 30;
+        }
+
+        this.handleChangeParticles(number_particles);
     }
 
     render () {
@@ -102,7 +121,7 @@ class NewHomeContainer extends Component {
                         params={{
                             particles: {
                                 number: {
-                                    value: 70
+                                    value: this.state.particles_number
                                 },
                                 size: {
                                     value: 3
