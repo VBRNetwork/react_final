@@ -91,6 +91,7 @@ class RegisterContainer extends Component {
                         loggingIn: false
                     })
                 }
+                this.redirectToTarget()
             })
         }
     };
