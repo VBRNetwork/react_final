@@ -4,8 +4,10 @@ import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox, Breadcrumb 
 import Link from 'next/link'
 import FilterComponent from '../../components/PageElements/FilterComponent'
 import InfoBox from '../../components/InfoBox'
+import PropTypes from 'prop-types'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
+import {getMembersList} from '../../actions/members_actions.js'
 
 const listData = [{
     href: '/profile',
@@ -279,14 +281,21 @@ const IconText = ({ type, text }) => (
   </span>
 )
 
-class SearchJobsContainer extends Component {
+class SearchMembersContainer extends Component {
     constructor (props) {
         super(props)
-        this.onChange = this.onChange.bind(this)
+        this.getUsers = this.getUsers.bind(this)
+    }
+    componentDidMount () {
+        this.getUsers();
     }
 
-    onChange (e) {
-        console.log(`checked = ${e.target.checked}`)
+    getUsers(){
+        this.props.getMembersList({test:1}).then( (response) => {
+            console.log(response);
+        }).catch((err) => {
+            console.log(err);
+        })
     }
 
     render () {
@@ -316,10 +325,10 @@ class SearchJobsContainer extends Component {
                                                 xl: 4,
                                                 xxl: 4,
                                             }}
-                                            dataSource={listData}
+                                            dataSource={this.props.members.list}
                                             renderItem={item => (
                                                 <div>
-                                                    <List.Item key={item.title} >
+                                                    <List.Item key={item.username} >
                                                         <div style={{
                                                             boxShadow: '0px 0px 5px 0px #acacac',
                                                             padding:'5px'
@@ -331,7 +340,7 @@ class SearchJobsContainer extends Component {
                                                                 src='../../static/images/search_dsg.png'
                                                             />
                                                             <a>
-                                                                <h3>{item.user.name}</h3>
+                                                                <h3>{item.username}</h3>
                                                                 <h4>Senior Software Engineer, $37 </h4><em
                                                                 className="ant-list-item-action-split"/>
                                                             </a>
@@ -344,7 +353,7 @@ class SearchJobsContainer extends Component {
                                                                         backgroundColor: '#2EC3AB',
                                                                         borderColor: '#2EC3AB'
                                                                     }}>
-                                                                        <Link as={'/users/'+item.user.username}  href={'/users/?username='+item.user.username}>
+                                                                        <Link as={'/users/'+item.username}  href={'/users/?username='+item.username}>
                                                                             <a href="">View Profile </a>
                                                                         </Link>
                                                                     </Button>
@@ -371,9 +380,13 @@ class SearchJobsContainer extends Component {
 }
 
 function mapStateToProps (state) {
-    return {}
+    return {
+        members:state.members
+    }
 }
 
-SearchJobsContainer.propTypes = {}
+SearchMembersContainer.propTypes = {
+    getMembersList: PropTypes.func.isRequired
+}
 
-export default connect(mapStateToProps, {})(SearchJobsContainer)
+export default connect(mapStateToProps, {getMembersList})(SearchMembersContainer)

@@ -10,24 +10,30 @@ const instance = axios.create({
     headers: {'Access-Control-Allow-Origin': '*','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 });
 
-let token = '';
-let tokenJson = {};
-let tokenJsonRoot = {};
+function getToken(){
+    let token = '';
+    let tokenJson = {};
+    let tokenJsonRoot = {};
 
-if (typeof window !== 'undefined') {
-    tokenJson = JSON.parse(localStorage.getItem('persist:user'));
-    tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
-    if(tokenJson){
-      token = tokenJson.token
+    if (typeof window !== 'undefined') {
+        tokenJson = JSON.parse(localStorage.getItem('persist:user'));
+        tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
+        if(tokenJson){
+            token = tokenJson.token
+        }
+        if(tokenJsonRoot){
+            token = JSON.parse(tokenJsonRoot.user).token
+        }
     }
-    if(tokenJsonRoot){
-        token = JSON.parse(tokenJsonRoot.user).token
-    }
+
+    return token;
 }
+
+
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + token }
+    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + getToken() }
 });
 
 
@@ -94,6 +100,13 @@ const vbrincapi = {
             return humps.camelizeKeys(res.data)
         })
 
+    },
+
+    getMembers(filter, page=1 ){
+        let bodyFormData = new FormData();
+        return secureInstance.get(apiUrl + 'accounts/list/?page='+page).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
     }
 };
 

@@ -1,5 +1,5 @@
 import Immutable from 'immutable'
-import * as ActionType from 'actions/register_user'
+import * as ActionType from '../actions/register_user'
 
 export const initialState = Immutable.fromJS({
   step1:{name: 'e'},

@@ -27,7 +27,7 @@ class FilterComponent extends PureComponent {
     }
 
     getSubcategories(){
-        if(this.props.menu.mainMenu){
+        if(this.props.menu && this.props.menu.mainMenu){
             let main_menu = this.props.menu.mainMenu;
             let categories = [];
             let currentCategory = null;

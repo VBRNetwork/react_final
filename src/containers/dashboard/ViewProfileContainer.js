@@ -343,7 +343,7 @@ class ViewProfileContainer extends Component {
         return (
             <div>
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 12, offset:1}}>
+                    <Col xs={14} sm={14} md={14} lg={14} xl={14} xxl={{ span: 14, offset:1}}>
                         <h2>Your Profile - {this.props.user.name}</h2>
                         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
                             <Form.Item label="Freelancer Category">
@@ -438,8 +438,8 @@ class ViewProfileContainer extends Component {
                         </Form>
 
                     </Col>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 8, offset:2 }}>
-                        <div style={{marginTop:'10px'}}>
+                    <Col xs={24} sm={8} md={8} lg={8} xl={8} xxl={{ span: 8}}>
+                        <div style={{marginTop:'30px',padding:'5px',marginLeft:'10px',borderRadius:'2px'}}>
                             <img src="https://via.placeholder.com/250x250" alt=""/>
                         </div>
                     </Col>
