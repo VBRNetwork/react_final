@@ -35,7 +35,7 @@ class DashboardContainer extends Component {
           return letter.toUpperCase();
       });
       let dashboardComponent = <PanelContainer/>
-      if(this.state.location === '/dashboard/view-users'){
+      if(this.state.location === '/dashboard/view-profile'){
           dashboardComponent = <ViewProfileContainer/>
       }else if(this.state.location === '/dashboard/become-freelancer'){
           dashboardComponent = <BecomeFreelancerContainer/>
