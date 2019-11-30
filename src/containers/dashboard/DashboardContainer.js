@@ -24,13 +24,9 @@ class DashboardContainer extends Component {
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.router.pathname !== this.props.router.pathname){
-            console.log(this.props.router)
-
             this.setState({
                 location: this.props.router.pathname
             });
-
-            console.log('dashboarc contianer sent')
         }
     }
 
@@ -38,10 +34,6 @@ class DashboardContainer extends Component {
       let full_name = this.props.user.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
           return letter.toUpperCase();
       });
-
-      console.log(this.state.location );
-
-
       let dashboardComponent = <PanelContainer/>
       if(this.state.location === '/dashboard/view-profile'){
           dashboardComponent = <ViewProfileContainer/>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Menu, Icon, Row, Col, Button, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import { connect } from 'react-redux'
-import { logout } from '../../actions/user'
+import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
 import {
     BrowserView,
@@ -11,29 +11,45 @@ import {
     isBrowser,
     isMobile
 } from 'react-device-detect'
+import ReactGA from 'react-ga'
 
 class HeaderMenu extends Component {
 
     constructor (props) {
         super(props)
-        this.state = {}
+        this.state = {
+        }
         this.clickLogout = this.clickLogout.bind(this)
+        this.localLogout = this.localLogout.bind(this)
     }
 
+
     componentDidUpdate (prevProps, prevState, snapshot) {
+        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
+            ReactGA.pageview(window.location.pathname + window.location.search)
+        }
     }
 
     componentDidMount () {
     }
 
+
     clickLogout (e) {
         let { logout } = this.props
+        let that = this;
         logout().then(() => {
-            this.setState({
-                isLogged: false
-            })
-            Router.push(`/`)
+            that.localLogout()
+        }).catch(function (error) {
+            that.localLogout()
         })
+    }
+
+    localLogout(){
+        this.setState({
+            isLogged: false
+        })
+        this.props.logoutStore()
+        Router.push(`/`)
     }
 
     render () {
@@ -95,8 +111,9 @@ class HeaderMenu extends Component {
         )
         return (
             <div>
+
                 <Row>
-                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={10}>
+                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={4}>
                         <div className="logo-box" style={{ textAlign: 'center' }}>
                             <Link href='/'>
                                 <span className="logo">VEELANCING</span>
@@ -104,9 +121,9 @@ class HeaderMenu extends Component {
                         </div>
                     </Col>
 
-                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={8}>
+                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
                         <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                            marginTop: '5px',
+                            marginTop: '25px',
                             background: 'transparent',
                             borderBottom: 'initial',
                             float: 'right'
@@ -135,7 +152,7 @@ class HeaderMenu extends Component {
                     </Col>
 
                     <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
-                        <div style={{ marginTop: '17px' }}>
+                        <div style={{ marginTop: '25px' }}>
                             {token === false && loginButton}
                             {token === false && joinButton}
 
@@ -150,7 +167,7 @@ class HeaderMenu extends Component {
                                     borderColor: '#2EC3AB'
                                 }}>
                                     <Link href='/dashboard/become-freelancer'>
-                                        <a>
+                                        <a style={{color:'#FFF'}}>
                                             Become a freelancer
                                         </a>
                                     </Link>
@@ -183,11 +200,16 @@ class HeaderMenu extends Component {
 function mapStateToProps (state) {
     return {
         user: state.user,
+        redux_router: state.router,
+        settings:state.settings
     }
 }
 
 HeaderMenu.propTypes = {
     user: PropTypes.instanceOf(Object).isRequired,
-    logout: PropTypes.func.isRequired
+    logout: PropTypes.func.isRequired,
+    logoutStore: PropTypes.func.isRequired,
+    redux_router: PropTypes.instanceOf(Object).isRequired,
+    settings: PropTypes.instanceOf(Object).isRequired,
 }
-export default connect(mapStateToProps, { logout })(HeaderMenu)
+export default connect(mapStateToProps, { logout,logoutStore })(HeaderMenu)

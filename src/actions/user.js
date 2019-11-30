@@ -73,6 +73,28 @@ export function logout() {
     }
 }
 
+export function logoutStore() {
+    return dispatch => {
+        dispatch({
+            type: SAVE_TOKEN,
+            data: {
+                token: 0,
+                user:{
+                    pk:0,
+                    username: 'guest',
+                    first_name:'guest',
+                    last_name:'guest',
+                    type:0,
+                    profile:{
+                    }
+                },
+
+            }
+        });
+    }
+}
+
+
 export function registerAccount(data) {
     return dispatch => {
         return vbrincapi.registerAccount(data).then(res => {

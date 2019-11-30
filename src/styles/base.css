@@ -191,6 +191,9 @@ html {
   line-height: 3.5 !important;
 }
 
+.ant-menu-item {
+    vertical-align: middle !important;
+}
 .text-center {text-align: center}
 
 .sub-menu {list-style: none}

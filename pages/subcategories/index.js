@@ -7,7 +7,6 @@ export default class Index extends Component {
   componentWillMount () {
     let category = this.props.router.query.category
     let subcategory = this.props.router.query.subcategory
-    console.log('searchjob' ,category,subcategory)
   }
 
   render () {

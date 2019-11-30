@@ -171,7 +171,7 @@ class UserProfileContainer extends Component {
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
-                                        <h3 styl>What is Lorem Ipsum?</h3>
+                                        <h3>What is Lorem Ipsum?</h3>
                                         <p style={{paddingTop:'20px',fontSize:'15px'}}>
 
 

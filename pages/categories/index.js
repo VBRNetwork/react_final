@@ -7,6 +7,7 @@ import SearchMembersContainer from 'containers/members/SearchMembersContainer'
 import SubCategoriesContainer from '../../src/containers/SubCategoriesContainer'
 
 const Index = (props) => {
+    
     const router = useRouter()
     const { category, subcategory } = router.query
 

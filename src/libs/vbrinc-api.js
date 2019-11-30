@@ -78,7 +78,6 @@ const vbrincapi = {
 
     knowYourCustomer(data){
         let bodyFormData = new FormData();
-        console.log(data)
         bodyFormData.set('first_name', data.first_name)
         bodyFormData.set('last_name', data.last_name)
         bodyFormData.set('gender',data.gender)
