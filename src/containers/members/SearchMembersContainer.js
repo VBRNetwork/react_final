@@ -20,6 +20,7 @@ class SearchMembersContainer extends Component {
         super(props)
         this.getUsers = this.getUsers.bind(this)
     }
+
     componentDidMount () {
         this.getUsers();
     }
@@ -33,6 +34,7 @@ class SearchMembersContainer extends Component {
     }
 
     render () {
+        let {members} = this.props
         return (
             <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
@@ -59,7 +61,7 @@ class SearchMembersContainer extends Component {
                                                 xl: 4,
                                                 xxl: 4,
                                             }}
-                                            dataSource={this.props.members.list}
+                                            dataSource={members.list}
                                             renderItem={item => (
                                                 <div>
                                                     <List.Item key={item.username} >
