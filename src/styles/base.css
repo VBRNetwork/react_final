@@ -467,6 +467,9 @@ html {
     width: 660px;
     text-align: left;
     margin-left: 85px;
+
+
+
   }
   .stay-up-to-date-and {
     color: #FFFFFF;
@@ -508,6 +511,7 @@ html {
     font-family: dinfont;
     font-size: 14px;
     margin-left: 95px;
+    margin-top: 10px;
  }
 
  .get-notified {
@@ -665,4 +669,31 @@ html {
         font-weight: bold !important;
         letter-spacing: 0.1px !important;
     }
+}
+
+@media(max-width: 815px) {
+  .invest-in-the-first {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+ }
+ 
+ @media(max-width:815px) {
+  .stay-up-to-date-and {
+    margin-left: 10px;
+    display: inline !important;
+    text-align: center;
+  }
+ }
+
+ @media(max-width:815px){
+ .ico-email-reg {
+   margin-left: 50px !important;
+ }
+}
+
+@media(max-width:815px) {
+  .get-notified {
+    margin-left: 115px; 
+   }
 }

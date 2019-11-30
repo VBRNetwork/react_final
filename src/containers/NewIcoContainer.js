@@ -22,8 +22,7 @@ export default class NewIcoContainer extends Component {
 
         return (
             <div >
-                <div className='rectangle' xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-                    <div>
+                <div className='container background-header'>
                         <Particles
                             style={{ position: 'absolute' }}
                             params={{
@@ -47,41 +46,42 @@ export default class NewIcoContainer extends Component {
                             }}
                         >
                         </Particles>
-                        <HeaderMenu/>
-                        <Row style={{marginTop:'50px'}}>
-                            <div>
-                                <Col span={12}>
-                                    <h1 className="invest-in-the-first">Invest in the first</h1>
-                                    <h1 className="invest-in-the-first">Blockchain Community for</h1>
-                                    <h1 className="invest-in-the-first">Freelancers</h1>
-                                    <br />
-                                    <br />
-                                    <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                        <HeaderMenu />
+                    <Row>
+                        <div className="intro-text">
+                            <Col xs={24} sm={16}>
+                                <h1 className="invest-in-the-first">
+                                    <span className="big">Invest in the first</span></h1>
+                                <h1 className="invest-in-the-first">Blockchain Community for</h1>
+                                <h1 className="invest-in-the-first">Freelancers</h1>
+                                <br />
+                                <br />
+                                <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                                <Row>
+                                    <Col span={14}>
+                                        <div className="example-input">
+                                            <Input className="ico-email-reg" size="large" placeholder="Email" />
+                                            <Button className="get-notified">Get Notified!</Button>
+                                        </div>
+                                        <div>
+                                            <p className="no-spam">We promise no spam! Privacy Policy</p>
+                                        </div>
+                                    </Col>
+                                </Row>
                                 </Col>
                             </div>
                             <div>
-                                <Col span={12} push={2}>
+                                <Col xs={24} sm={6}>
                                     <div className="count-down">
                                     </div>
                                 </Col>
                                 <br />
                             </div>
                         </Row>
-                        <Row>
-                            <Col span={12}>
-                                <div className="example-input">
-                                    <Input size="large" placeholder="Email" />
-                                    <Button className="get-notified">Get Notified!</Button>
-                                </div>
-                                <div>
-                                    <p className="no-spam">We promise no spam! Privacy Policy</p>
-                                </div>
-                            </Col>
-                        </Row>
+
                         <br />
                         <br />
                         <br />
-                    </div>
                 </div>
                 <br />
                 <br />
