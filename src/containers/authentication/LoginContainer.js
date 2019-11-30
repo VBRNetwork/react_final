@@ -74,9 +74,9 @@ class LoginContainer extends Component {
                         content='Login application page'
                     />
                 </Helmet>
-                <div className='container'>
+                <div className='container' >
                     <Row>
-                        <Col xs={{span: 22, offset: 1}} sm={4} md={6} lg={8} xl={{span: 8, offset: 8}}>
+                        <Col xs={{span: 22, offset: 1}} sm={20} md={12} lg={8} xl={{span: 8, offset: 8}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <h2>Login Page</h2>
