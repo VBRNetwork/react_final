@@ -14,6 +14,7 @@ import {
 import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
 import ReCAPTCHA from "react-google-recaptcha";
+import Router from 'next/dist/client/router'
 class RegisterContainer extends Component {
     constructor(props) {
         super(props);
@@ -82,6 +83,7 @@ class RegisterContainer extends Component {
                 this.redirectToTarget()
             }).catch((error) => {
                 let errorText = '';
+
                 if(error && error.response){
                     Object.keys(error.response.data).map(function(e,i){
                         errorText += error.response.data[e][0]+'\n'
@@ -95,6 +97,10 @@ class RegisterContainer extends Component {
             })
         }
     };
+
+    redirectToTarget(){
+        Router.push('/dashboard')
+    }
 
     tosAccepted() {
         this.setState({
@@ -125,7 +131,7 @@ class RegisterContainer extends Component {
                 </Helmet>
                 <div className='container'>
                     <Row>
-                        <Col xs={{span: 22, offset: 1}} sm={4} md={6} lg={8} xl={{span: 8, offset: 8}}>
+                        <Col xs={{span: 20, offset:4}} sm={12} md={14} lg={16} xl={{span: 8, offset: 8}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <strong><h2>User Registration</h2></strong>
