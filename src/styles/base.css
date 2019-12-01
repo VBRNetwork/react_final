@@ -535,8 +535,6 @@ html {
 
   .rectangle-copy {
     background-color: #DEEEED !important;
-    width: 1400px !important;
-    height: 450px !important;
     margin-left: 35px !important;
   }
 
@@ -699,4 +697,12 @@ html {
   .get-notified {
     margin-left: 115px; 
    }
+}
+
+@media(max-width:815px) {
+  .count-down {
+    width: 350px;
+    height: 250px;
+    margin-left: 10px;
+  }
 }
