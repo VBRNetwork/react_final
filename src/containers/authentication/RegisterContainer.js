@@ -83,7 +83,6 @@ class RegisterContainer extends Component {
                 this.redirectToTarget()
             }).catch((error) => {
                 let errorText = '';
-
                 if(error && error.response){
                     Object.keys(error.response.data).map(function(e,i){
                         errorText += error.response.data[e][0]+'\n'
@@ -92,8 +91,9 @@ class RegisterContainer extends Component {
                         errorMessage: errorText,
                         loggingIn: false
                     })
+                }else{
+                    this.redirectToTarget()
                 }
-                this.redirectToTarget()
             })
         }
     };

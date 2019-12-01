@@ -14,7 +14,7 @@ export default class EditableTagGroup extends React.Component {
         let items = [];
         if(tags){
             tags.forEach(function(value,index){
-                items.push(<Tag>{value}</Tag>)
+                items.push(<Tag key={index}>{value}</Tag>)
             })
         }
 

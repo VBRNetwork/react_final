@@ -166,7 +166,7 @@ class HeaderMenu extends Component {
                                     backgroundColor: '#2EC3AB',
                                     borderColor: '#2EC3AB'
                                 }}>
-                                    <Link href='/dashboard/become-freelancer'>
+                                    <Link href={'/dashboard/?slug=become-freelancer'} as={'/dashboard/become-freelancer'}>
                                         <a style={{color:'#FFF'}}>
                                             Become a freelancer
                                         </a>

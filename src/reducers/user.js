@@ -1,5 +1,5 @@
 import Immutable from 'immutable'
-import * as ActionType from 'actions/user'
+import * as ActionType from '../actions/user'
 import update from 'immutability-helper'
 
 export const initialState = Immutable.fromJS({

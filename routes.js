@@ -23,8 +23,8 @@ const APP_ROUTES = [
         pattern: '/categories/:category/'
     },
     {
-        page: 'profile/',
-        pattern: '/profile/:username'
+        page: 'users/',
+        pattern: '/users/:username'
     }
 ]
 

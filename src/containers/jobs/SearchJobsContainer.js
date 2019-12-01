@@ -7,7 +7,7 @@ const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
 const listData = [{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
     slug: `looking-for-a-web-developer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -21,7 +21,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer`,
     slug: `looking-for-a-web-designer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -35,7 +35,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a test team for a large project!`,
     slug: `looking-for-a-large-project`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -49,7 +49,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer`,
     slug: `looking-for-a-large-webdesigner`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -63,7 +63,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Python Programmer Needed`,
     slug: `need-for-a-programmer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -77,7 +77,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `SEO Specialist Needed`,
     slug: `seo-specialist-needed`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
