@@ -142,6 +142,13 @@ class UserProfileContainer extends Component {
                                                   borderColor: 'rgba(0, 177, 153, 0.74)'}}
                                           >Edit Profile
                                           </Button>
+                                      <Button
+                                          type={'primary'}
+                                          style={{
+                                              background: 'rgba(0, 177, 153, 0.74)',
+                                              borderColor: 'rgba(0, 177, 153, 0.74)'}}
+                                      >Send Message
+                                      </Button>
                                   </div>}
                                 title={
                                     <div>

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 
+
 class NewHomeContainer extends Component {
 
     constructor (props) {
@@ -115,7 +116,7 @@ class NewHomeContainer extends Component {
 
         return (
             <Fragment>
-                <div className='container background-header'>
+                <div className='container background-header' style={{height:window.innerHeight}}>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
@@ -142,7 +143,7 @@ class NewHomeContainer extends Component {
                     <HeaderMenu/>
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
-                             xl={{ span: 17, offset: 3 }} xxl={{ span: 15, offset: 5 }}>
+                             xl={{ span: 17, offset: 3 }} xxl={{ span: 10, offset: 1 }}>
                             <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
@@ -176,18 +177,21 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
+                        <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
+                             xl={{ span: 17, offset: 3 }} xxl={{ span: 10, offset: 1 }}>
+                            <img className="img-responsive" src="../../static/images/design/black-woman.jpg" alt=""/>
+                        </Col>
                     </Row>
                 </div>
 
-
-                <div style={{ marginTop: '200px', marginBottom: '50px' }}>
+                <div style={{backgroundColor:"rgb(202, 202, 202)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
-                        <Col xs={{ span: 21, offset: 2 }} sm={16} md={24} lg={9} xl={9} xxl={{ span: 6, offset: 3 }}>
-                            <div className="intro-text">
+                        <Col xs={{ span: 21, offset: 2 }} sm={16} md={24} lg={9} xl={9} xxl={{ span: 9, offset:3}}>
+                            <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
                                     Find the job you love.
                                 </h2>
-                                <div className="" style={{ marginTop: '50px', marginBottom: '50px' }}>
+                                <div className="" style={{ marginTop: '2px', marginBottom: '2px' }}>
                                     <span className="choose-from-a-vast-p ">
                                       Choose from a vast pool of companies in over 85 industries.
                                     </span>
@@ -206,28 +210,32 @@ class NewHomeContainer extends Component {
                                 <Row>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/business_consultancy_image@1x.png"
-                                                 alt=""/>
-                                            <br/>
-                                            <span className="categories-title">Business Consultancy</span>
+                                            <div className="polaroid">
+                                                <img className="polaroid-image" src="../../static/images/design/business_consultancy_image@1x.png" style={{width:'100%'}}/>
+                                                    <div className="categories-title">
+                                                        Cinque Terre
+                                                    </div>
+                                            </div>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/customer_service_image@1x.png" alt=""/>
-                                            <br/>
-                                            <span className="categories-title">Customer Service</span>
+                                            <div className="polaroid">
+                                                <img className="polaroid-image" src="../../static/images/design/customer_service_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title">
+                                                    Customer Service
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/design_and_creative_image@1x.png"
-                                                 alt=""/>
-                                            <br/>
-                                            <span className="categories-title">Design & Creative</span>
+                                            <div className="polaroid">
+                                                <img className="polaroid-image" src="../../static/images/design/design_and_creative_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title ">
+                                                    Design & Creative
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
@@ -235,29 +243,33 @@ class NewHomeContainer extends Component {
                                 <Row>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/digital_marketing_image@1x.png"
-                                                 alt=""/>
-                                            <br/>
-                                            <span className="categories-title">Digital Marketing</span>
+                                            <div className="polaroid">
+                                                <img  className="polaroid-image"   src="../../static/images/design/digital_marketing_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title ">
+                                                    Digital Marketing
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </Col>
+                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
+                                        <div className="category-box">
+                                            <div className="polaroid">
+                                                <img  className="polaroid-image" src="../../static/images/design/it_and_programming_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title ">
+                                                  IT & Programing
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/it_and_programming_image@1x.png"
-                                                 alt=""/>
-                                            <br/>
-                                            <span className="categories-title">IT & Programing</span>
-                                        </div>
-                                    </Col>
-                                    <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
-                                        <div className="category-box">
-                                            <img className="categories-image img-responsive"
-                                                 src="../../static/images/design/writing_and_translation_image@1x.png"
-                                                 alt=""/>
-                                            <br/>
-                                            <span className="categories-title">Writing & Translation</span>
+                                            <div className="polaroid">
+                                                <img  className="polaroid-image" src="../../static/images/design/writing_and_translation_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title ">
+                                                    Digital Marketing
+                                                </div>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>
@@ -267,7 +279,7 @@ class NewHomeContainer extends Component {
                     </Row>
                 </div>
 
-                <div style={{ padding: '80px', marginTop: '120px' }}>
+                <div style={{ padding: '50px', marginTop: '50px' }}>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24 }}>
                             <div>
@@ -284,29 +296,26 @@ class NewHomeContainer extends Component {
 
                 <div>
                     <Row>
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset: 5 }}>
-                            <div style={{ padding: '20px' }}>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
+                            <div style={{ padding: '20px',textAlign:'center' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
                                 <span className={'home-paragraph-1'}>
                                     <p>
                                         You can easily connect and communicate
-                                        <br/>
                                         with a freelancer or recruiter directly with our chat feature.
                                     </p>
                                 </span>
                             </div>
                         </Col>
                         <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px' }}>
+                            <div style={{ padding: '19px',textAlign:'center'}}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
-                                <span className={'communicate-directly'}>Create Smart Contracts</span>
+                                <span className={'communicate-directly'} style={ {marginTop:'6px'} }>Create Smart Contracts</span>
                                 <div className={'home-paragraph-1'}>
                                     <p>
                                         As a freelancer or recruiter
-                                        <br/>
                                         you can create a contract together
-                                        <br/>
                                         and make the final agreement on your specific terms.
                                     </p>
                                 </div>
@@ -314,14 +323,13 @@ class NewHomeContainer extends Component {
                         </Col>
 
                         <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px' }}>
+                            <div style={{ padding: '20px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
                                 <span className={'communicate-directly'}>Get Paid Instantly</span>
                                 <div className={'home-paragraph-1'}>
                                     <p>
                                         The payments are processed instantly
                                         and in a highly secure environment
-                                        <br/>
                                         created with Blockchain technology.
                                     </p>
                                 </div>
@@ -329,13 +337,12 @@ class NewHomeContainer extends Component {
                         </Col>
 
                         <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px' }}>
+                            <div style={{ padding: '20px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
                                 <span className={'home-paragraph-1'}>
                                     <p>
                                         All transactions are made with our Veelancing token.
-                                        <br/>
                                         You can exchange tokens into any Crypto or currency with minimal fees or no fees at all.
                                     </p>
                                 </span>
@@ -419,7 +426,7 @@ class NewHomeContainer extends Component {
 
 
                 <Row>
-                    <Col sm={16} md={12} lg={10} xl={{ span: 10, offset: 2 }} xxl={{ span: 8, offset: 2 }}>
+                    <Col sm={16} md={12} lg={10} xl={{ span: 10, offset: 2 }} xxl={{ span: 8, offset: 4 }}>
                         <div>
                             <img className={'img-responsive'}
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>

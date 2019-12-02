@@ -323,7 +323,7 @@ class BecomeFreelancerContainer extends Component {
                             <Form.Item
                                 label={
                                     <span>
-                                  Short Description&nbsp;
+                                        Short Description&nbsp;
                                         <Tooltip title="Few words about you, and your professional background.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>

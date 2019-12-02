@@ -12,5 +12,6 @@ const persistConfig = {
   storage: storage,
   whitelist: ['user','settings','members','router']
 };
+
 const combinedReducers = combineReducers({ user,register_user, members,settings,router: routerReducer,});
 export default persistReducer(persistConfig, combinedReducers);
