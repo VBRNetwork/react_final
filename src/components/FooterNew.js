@@ -14,7 +14,7 @@ class NewFooter extends Component {
                 <Row>
                     <div className='container'>
                         <Row>
-                            <Col xs={24} sm={12} md={12} lg={12} xl={{span:12, offset:6}}>
+                            <Col xs={24} sm={12} md={12} lg={12} xl={{span:12, offset:4}}>
                                 <Menu mode='horizontal' style={{
                                     marginTop: '5px',
                                     background: 'transparent',
@@ -48,7 +48,7 @@ class NewFooter extends Component {
                                 </Menu>
                             </Col>
                             <Col xs={24} sm={12} md={12} lg={12} xl={6}>
-                                <div className='text-right text-white copyright mt35'>
+                                <div className='text-right text-white copyright' style={{marginTop:'25px'}}>
                                     VBR Inc. 2019 All Rights Reserved.
                                 </div>
                             </Col>

@@ -310,14 +310,13 @@ html {
 }
 
 .find-the-job-you-lov {
-    color: #3B3D47;
     font-size: 38px;
+    color: #3c3c3c;
     font-weight: 700;
-    text-align: left;
 }
 
 .choose-from-a-vast-p {
-    color: #3B3D47;
+    color: #3c3c3c;
     font-size: 21px;
     font-weight: 400;
     text-align: left;
@@ -325,13 +324,21 @@ html {
 
 .categories-image {
     margin:10px;
-    border-radius:10px
+}
+
+.polaroid {
+    margin-bottom: 25px;
 }
 
 .categories-title {
-
-    text-align: center;
+    color:#3c3c3c;
+    text-align:center;
+    margin-top: 5px;
+    font-size:16px;
+    padding:5px;
+    font-weight: bold;
 }
+
 .categories-title span {
     color: #202C39;
     font-size: 16px;
@@ -364,7 +371,7 @@ html {
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    text-align: left;
+    text-align: center;
 }
 
 .hiw-vbr-btn {
@@ -589,14 +596,19 @@ html {
   }
 
   .home-investors-box {
-      margin-top:250px;
-      margin-bottom:250px;
+      margin-top:110px;
+      margin-bottom:100px;
       background-color: #DEEEED;
-      padding: 30px;
+      padding: 60px;
   }
 
   .mt35 {
       margin-top:35px;
+  }
+  .polaroid-image {
+      border: 1px solid #FFF;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.15) !important;
   }
 
 .well-let-you-know-w {
