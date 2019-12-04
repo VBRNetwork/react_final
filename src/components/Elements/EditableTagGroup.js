@@ -1,23 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Tag, Input, Tooltip, Icon } from 'antd';
+import { Tag } from 'antd';
+import { array } from 'prop-types'
 
 export default class EditableTagGroup extends React.Component {
-    state = {
-        tags: [],
-        inputVisible: false,
-        inputValue: '',
-    };
+    constructor(props){
+        super(props)
+        this.state = {
+            tags: [],
+            inputVisible: false,
+            inputValue: '',
+        };
+    }
 
     render () {
         const { tags } = this.props;
         let items = [];
-        if(tags){
-            tags.forEach(function(value,index){
-                items.push(<Tag key={index}>{value}</Tag>)
-            })
+        if(tags.length > 0){
+            tags.forEach(function(tag,index){
+                let value = tag
+                if( Array.isArray(tag) ){
+                    value = tag.join(' / ')
+                }
+                items.push(<Tag closable={1} defaultValue={tag} onClose={this.props.handleClose} key={index}>{value}</Tag>)
+            },this)
         }
-
         return (
             <div>
                 {items}
