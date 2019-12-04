@@ -13,13 +13,6 @@ export default class NewIcoContainer extends Component {
 
     render() {
 
-        const { Countdown } = Statistic;
-        const deadline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30;
-
-        function onFinish() {
-            console.log('finished!');
-        }
-
         return (
             <div >
                 <div className='container background-header'>
@@ -51,27 +44,27 @@ export default class NewIcoContainer extends Component {
                         <div className="intro-text">
                             <Col xs={24} sm={16}>
                                 <h1 className="invest-in-the-first">
-                                    <span className="big">Invest in the first</span></h1>
-                                <h1 className="invest-in-the-first">Blockchain Community for</h1>
-                                <h1 className="invest-in-the-first">Freelancers</h1>
+                                Invest in the first<br />
+                                Blockchain Community for <br />
+                                Freelancers</h1>
                                 <br />
                                 <br />
                                 <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
                                 <Row>
-                                    <Col span={14}>
+                                    <Col xs={24} sm={16} md={14}>
                                         <div className="example-input">
                                             <Input className="ico-email-reg" size="large" placeholder="Email" />
                                             <Button className="get-notified">Get Notified!</Button>
                                         </div>
                                         <div>
-                                            <p className="no-spam">We promise no spam! Privacy Policy</p>
+                                            <p className="no-spam">We promise no spam! <u>Privacy Policy</u></p>
                                         </div>
                                     </Col>
                                 </Row>
                                 </Col>
                             </div>
                             <div>
-                                <Col xs={24} sm={6}>
+                                <Col xs={24} sm={{span:6, pull:2}}>
                                     <div className="count-down">
                                     </div>
                                 </Col>
@@ -127,11 +120,8 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <br />
-                <Row>
-                    <br />
-                    <br />
-                    <br />
-                    <div className='rectangle-copy' style={{ position: 'relative' }}>
+                <div className={'home-investors-box'}>
+                <Row gutter={[10,40]}>
                         <Col xs={24} sm={12} md={12} >
                             <div className={'the-problem'}>
                                 The Problem
@@ -169,63 +159,64 @@ export default class NewIcoContainer extends Component {
                                 With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.
                         </p>
                         </Col>
-                    </div>
                 </Row>
+                </div>
                 <br />
                 <br />
                 <br />
                 <br />
                 <Row>
-                    <Col span={12} push={1}>
+                    <Col xs={24} sm={24} md={24} lg={{span: 12, push: 1}}>
                         <h1 className={'the-blockchain-techn'}>
                             The Blockchain Technology
                         </h1>
-                        <p className="hotographs-are-a-wa">
+                        <p className="investors-text">
                             Photographs are a way of preserving a moment in our lives for the rest of our lives.
                             Many of us have at least been tempted at the flashy array of photo printers which seemingly
                             leap off the shelves at even the least tech-savvy.</p>
                         <br />
                         <br />
-                        <Row>
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                        <Row gutter={[16,24]}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/python@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/envoy@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/django@2x.jpg" />
                             </Col>
                         </Row>
                         <br />
-                        <Row >
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                        <Row gutter={[16,24]}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/mongo@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/react@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
                                      src="../../static/images/ethereum@2x.jpg" />
                             </Col>
                         </Row>
                     </Col>
-
-                    <Col span={12} push={2}>
-                        <div>
-                            <img src={'../../static/images/geometric_particles2.svg'} />
-                        </div>
+                    <div className="tech-particles">
+                    <Col xs={24} sm={24} md={24} lg={{span: 12, push: 2}}>  
+                            <img src={'../../static/images/geometric_particles2.svg'} />                      
                     </Col>
+                    </div>
                 </Row>
                 <br />
                 <br />
-                <Col span={24} push={10}><h1 className="the-blockchain-techn">Our Journey</h1></Col>
+                <Col span={24}>
+                    <h1 className="our-journey">Our Journey</h1>
+                </Col>
                 <br />
                 <br />
                 <br />
