@@ -21,6 +21,9 @@ export default class EditableTagGroup extends React.Component {
                 if( Array.isArray(tag) ){
                     value = tag.join(' / ')
                 }
+                if( value instanceof Object ){
+                    value = tag.name
+                }
                 items.push(<Tag closable={1} defaultValue={tag} onClose={this.props.handleClose} key={index}>{value}</Tag>)
             },this)
         }

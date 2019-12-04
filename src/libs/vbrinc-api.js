@@ -70,12 +70,13 @@ const vbrincapi = {
         })
     },
     becomeFreelancer(data){
+        console.log(data);
         let bodyFormData = new FormData();
         bodyFormData.set('description', data.description)
-        bodyFormData.set('languages', JSON.stringify(data.language))
+        bodyFormData.set('languages', JSON.stringify(data.languages))
         bodyFormData.set('categories',JSON.stringify(data.selectedCategories))
         bodyFormData.set('skills', JSON.stringify(data.skills))
-        bodyFormData.set('cv_file', data.cvFile)
+        bodyFormData.set('cv_file', data.cvFile[0])
         bodyFormData.set('tos',data.tos)
         return secureInstance.post(apiUrl + 'accounts/become-freelancer',bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
@@ -105,6 +106,13 @@ const vbrincapi = {
     getMembers(filter, page=1 ){
         let bodyFormData = new FormData();
         return secureInstance.get(apiUrl + 'accounts/list/?page='+page).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
+    },
+
+    getSkillsLanguages(){
+        let bodyFormData = new FormData();
+        return secureInstance.get(apiUrl + 'settings/profile').then(res => {
             return humps.camelizeKeys(res.data)
         })
     }
