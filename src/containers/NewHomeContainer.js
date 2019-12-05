@@ -179,7 +179,7 @@ class NewHomeContainer extends Component {
                         </Col>
                         <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
                              xl={{ span: 17, offset: 3 }} xxl={{ span: 10, offset: 1 }}>
-                            <img className="img-responsive" src="../../static/images/design/women_home.jpg" alt=""/>
+                            {/*<img className="img-responsive" src="../../static/images/design/women_home.jpg" alt=""/>*/}
                         </Col>
                     </Row>
                 </div>

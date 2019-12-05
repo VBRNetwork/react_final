@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
@@ -14,20 +14,46 @@ const { TextArea } = Input;
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
+import {getSkillsAndLanguages} from '../../actions/app_settings'
 import '../../styles/dashboard.css'
+const formItemLayout = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+        xxl: { span: 12 },
+    },
+    wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+        xxl: { span: 12 },
+    },
+};
+const tailFormItemLayout = {
+    wrapperCol: {
+        xs: {
+            span: 24,
+            offset: 0,
+        },
+        sm: {
+            span: 16,
+            offset: 8,
+        },
+        xxl: { span: 24 },
+    }
+};
 
 class BecomeFreelancerContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            payload:{
+            payload: {
                 selectedCategories:[],
                 languages: [],
                 description: '',
                 skills: [],
                 cvFile: '',
-                categories:[],
             },
+            categories:[],
             languagesOptions: [{
                 value: 'en-us',
                 label: 'English',
@@ -59,30 +85,33 @@ class BecomeFreelancerContainer extends Component {
             Object.keys(main_menu).map((category,index) => {
                 categories.push(main_menu[category])
             })
-
             this.setState({
-                payload:{
-                    categories
-                }
+                categories
             })
         }
     }
 
     componentDidMount () {
         this.getSubcategories();
+        this.props.getSkillsAndLanguages().then((e) => {
+        })
     }
 
     handleChangeLanguages(event) {
         let languages = this.state.payload.languages;
         languages.push(event)
         this.setState({
-            payload: {languages}
+            payload: {
+                ...this.state.payload,
+                languages
+            }
         })
     }
 
     handleChangeDescription(event) {
         this.setState({
             payload:{
+                ...this.state.payload,
                 description: event.target.value
             }
         });
@@ -93,6 +122,7 @@ class BecomeFreelancerContainer extends Component {
         skills.push(value);
         this.setState({
             payload:{
+                ...this.state.payload,
                 skills: skills
             }
         })
@@ -100,20 +130,18 @@ class BecomeFreelancerContainer extends Component {
 
     handleClose = removedTag => {
         const skills = this.state.payload.skills.filter(tag => tag !== removedTag);
-        console.log(skills)
         this.setState({
             payload: {
+                ...this.state.payload,
                 skills:skills
             }
         });
     };
 
-    static async getInitialProps ({ store, query }) {
-    }
-
     tosAccepted() {
         this.setState({
             payload: {
+                ...this.state.payload,
                 tos: !this.state.payload.tos
             }
         })
@@ -122,6 +150,7 @@ class BecomeFreelancerContainer extends Component {
     handleChangeCategory(value) {
         this.setState({
            payload: {
+               ...this.state.payload,
                selectedCategories:value
            }
         })
@@ -130,10 +159,13 @@ class BecomeFreelancerContainer extends Component {
     uploadCv(info){
         if (info.file.status !== 'uploading') {
             this.setState({
-                cvFile:[
-                    info.file,
-                    info.fileList
-                ]
+                payload: {
+                    ...this.state.payload,
+                    cvFile:[
+                        info.file,
+                        info.fileList
+                    ]
+                }
             })
         }
         if (info.file.status === 'done') {
@@ -142,37 +174,41 @@ class BecomeFreelancerContainer extends Component {
     }
 
     becomeFreelancerButton(){
-        this.props.becomeFreelancer(this.state).then((e) => {
+        this.props.becomeFreelancer(this.state.payload).then((e) => {
         })
     }
 
     render () {
-        const formItemLayout = {
-            labelCol: {
-                xs: { span: 24 },
-                sm: { span: 8 },
-                xxl: { span: 12 },
+        let skills =  [];
+        let languages = [];
+        let childrens = [
+            {
+                value: 1,
+                label: 'Beginner',
             },
-            wrapperCol: {
-                xs: { span: 24 },
-                sm: { span: 16 },
-                xxl: { span: 12 },
+            {
+                value: 2,
+                label: 'Medium'
             },
-        };
-        const tailFormItemLayout = {
-            wrapperCol: {
-                xs: {
-                    span: 24,
-                    offset: 0,
-                },
-                sm: {
-                    span: 16,
-                    offset: 8,
-                },
-                xxl: { span: 24 },
+            {
+                value: 3,
+                label: 'Advanced'
             }
-        };
+        ];
+        this.props.skills.map(function(value){
+            skills.push({
+                value:value.id,
+                text:value.name
+            });
+        })
 
+        this.props.languages.map(function(value){
+            languages.push({
+                value: value.code,
+                label: value.name,
+                children: childrens
+            })
+        })
         return (
             <div>
                 <Row>
@@ -187,8 +223,8 @@ class BecomeFreelancerContainer extends Component {
                                     placeholder="Please select"
                                     onChange={this.handleChangeCategory}>
 
-                                    {this.state.payload.categories &&
-                                    this.state.payload.categories.map((value, index, array) => {
+                                    {this.state.categories &&
+                                    this.state.categories.map((value, index, array) => {
                                         return <OptGroup key={value.id} label={value.name}>
                                             {value.subcategories.map((subcategory,indexsub) => {
                                                 return <Option key={'sub'+indexsub} value={subcategory.id}>{subcategory.title}</Option>})}
@@ -210,7 +246,6 @@ class BecomeFreelancerContainer extends Component {
                                     placeholder="Enter Short Description"
                                     autosize={{ minRows: 3, maxRows: 5 }}
                                 />
-
                             </Form.Item>
 
                             <Form.Item
@@ -221,17 +256,17 @@ class BecomeFreelancerContainer extends Component {
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
                                 </span> }>
-                                <AutoComplete mode={'tags'} size={'small'} placeholder={'Choose skill'} dataSource={['12345', '23456', '34567']} onSelect={this.saveSkills}/>
+                                <AutoComplete mode={'tags'} size={'small'} placeholder={'Choose skill'} dataSource={skills} onSelect={this.saveSkills}/>
                                 <SkillsGroup handleClose={this.handleClose} tags={this.state.payload.skills}/>
                             </Form.Item>
 
                             <Form.Item label="Languages">
-                                <Cascader options={this.state.languagesOptions} onChange={this.handleChangeLanguages}/>
-                                <SkillsGroup tags={this.state.payload.languages}/>
+                                <Cascader options={languages} onChange={this.handleChangeLanguages}/>
+                                <SkillsGroup tags={this.state.payload.languages}  handleClose={this.handleClose}/>
                             </Form.Item>
 
                             <Form.Item label="Import Your Portfolio" >
-                                <Upload  name='cvfile' onChange={this.uploadCv}>
+                                <Upload beforeUpload={() => false}  name='cvfile' onChange={this.uploadCv}>
                                     <Button>
                                         <Icon type="upload" /> Click to Upload
                                     </Button>
@@ -239,11 +274,11 @@ class BecomeFreelancerContainer extends Component {
                             </Form.Item>
 
                             <Form.Item {...tailFormItemLayout}>
-
                                 <Checkbox checked={this.state.payload.tos} name={'tos'} onChange={this.tosAccepted}>
                                     I agree with <strong>VBR Network</strong> <a href="">Terms & Conditions</a>
                                 </Checkbox>,
                             </Form.Item>
+
                             <Form.Item {...tailFormItemLayout}>
                                 <Button type="primary"
                                         htmlType="submit"
@@ -251,11 +286,11 @@ class BecomeFreelancerContainer extends Component {
                                         onClick={this.becomeFreelancerButton}
                                         style={{
                                             background: 'rgb(46, 195, 171)',
-                                            borderColor: 'rgb(46, 195, 171)'}}
-                                >
+                                            borderColor: 'rgb(46, 195, 171)'}}>
                                     Become Freelancer
                                 </Button>
                             </Form.Item>
+
                         </Form>
                     </Col>
                 </Row>
@@ -267,13 +302,16 @@ class BecomeFreelancerContainer extends Component {
 function mapStateToProps (state) {
     return {
         user:state.user,
-        menu:state.settings.main_menu
+        menu:state.settings.main_menu,
+        skills:state.settings.skills,
+        languages:state.settings.languages
     }
 }
 
 BecomeFreelancerContainer.propTypes = {
-    becomeFreelancer: PropTypes.func.isRequired
+    becomeFreelancer: PropTypes.func.isRequired,
+    getSkillsAndLanguages: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps, {becomeFreelancer
+export default connect(mapStateToProps, {becomeFreelancer,getSkillsAndLanguages
 })(BecomeFreelancerContainer)
