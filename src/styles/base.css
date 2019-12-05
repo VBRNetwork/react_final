@@ -505,7 +505,7 @@ label {
     line-height: 60px;
     width: 660px;
     text-align: left;
-    margin-left: 85px;
+    margin-left: 55px;
 }
 
   .stay-up-to-date-and {
@@ -863,7 +863,13 @@ label {
   font-weight: 700;
   width: 600px;
   text-align: center;
+}
 
+@media(max-width:815px) {
+    .our-journey {
+    text-align: left;
+    margin-left: 60px
+ }
 }
 
 .timeline-images {
@@ -901,7 +907,7 @@ label {
   border: 1px solid #EBEBEC !important;
   border-radius: 10px !important;
   width: 180px !important;
-  height: 120px !important;
+  height: 250px !important;
 }
 
 .the-team {
@@ -917,4 +923,42 @@ label {
   font-weight: 400 !important;
   text-align: left;
   margin-left: 10px;
+}
+
+.the-team-box {
+  padding-top: 90px !important;
+}
+
+.our-partners-box {
+    padding-top: 90px !important;
+}
+
+.our-partners-title {
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+ 
+.our-partners-images {
+    border-radius: 10px !important;
+    width: 180px !important;
+    height: 250px !important;
+    box-shadow: 0 15px 30px 0 rgba(34, 34, 34, 0.534);
+}
+
+.initial-coin {
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    width: 700px;
+    text-align: center;
+    margin-top: 110px;
+  }
+
+  .example-input-bot .ant-input {
+    width: 300px;
+    margin: 0 10px 10px 0;
+    background: transparent;
+    align-content: right !important;
 }

@@ -214,9 +214,11 @@ export default class NewIcoContainer extends Component {
                 </Row>
                 <br />
                 <br />
-                <Col span={24}>
+                <Row type="flex" justify="center">
+                <Col xs={24} sm={24} md={24} lg={{span:12}} xl={{span:12, push: 1}} xxl={{span:12, push: 4}}>
                     <h1 className="our-journey">Our Journey</h1>
                 </Col>
+                </Row>
                 <br />
                 <br />
                 <br />
@@ -376,59 +378,106 @@ export default class NewIcoContainer extends Component {
                     </VerticalTimelineElement>
                 </VerticalTimeline>
                 <br />
-                <Row gutter={[40,40]}>
-                    <Col span={8} push={1}>
-                        <h1 className="the-team">The team</h1>
-                        <p className="the-team-text">We are a team of enginneers and tech enthusiasts that aim to make the world a better place with the help of technology.</p>
-                    </Col>
+                
+                <Row gutter={[40, 40]}>
+                    <div className="the-team-box">
+                        <Col span={8} push={1}>
+                            <h1 className="the-team">The team</h1>
+                            <p className="the-team-text">We are a team of enginneers and tech enthusiasts that aim to make the world a better place with the help of technology.</p>
+                        </Col>
 
-                    <Col span={10} push={3}>
-                        <Row gutter={[40,40]}>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="the-team-images"
-                                    src="../../static/images/python@2x.jpg" />
+                        <Col span={10} push={3}>
+                            <Row gutter={[40, 40]}>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                                                        
-                            </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="the-team-images"
-                                    src="../../static/images/envoy@2x.jpg" />
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                            </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="the-team-images"
-                                    src="../../static/images/django@2x.jpg" />
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                            </Col>
-                        </Row>
-                        <br />
-                        <Row gutter={[40,40]}>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="the-team-images"
-                                    src="../../static/images/mongo@2x.jpg" />
+                                </Col>
+                            </Row>
+                            <br />
+                            <Row gutter={[40, 40]}>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                            </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="the-team-images"
-                                    src="../../static/images/react@2x.jpg" />
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                            </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                <img className="technology-images"
-                                    src="../../static/images/ethereum@2x.jpg" />
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                        src="../../static/images/team_member.jpg" />
                                     <div className="the-team-name">Mamie Norton</div>
                                     <div className="the-team-title">Writing & Translation</div>
-                            </Col>
-                        </Row>
-
-                    </Col>
-
+                                </Col>
+                            </Row>
+                        </Col>
+                    </div>
                 </Row>
+                <Row>
+                    <div className="our-partners-box">
+                        <Col span={8} push={1}>
+                            <h1 className="our-partners-title">Our Partners</h1>
+                        </Col>
+                    </div>
+                    <Col span={10} push={3}>
+                        <Row gutter={[40, 40]}>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <img className="our-partners-images"
+                                    src="../../static/images/team_member.jpg" />
+                            </Col>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <img className="our-partners-images"
+                                    src="../../static/images/team_member.jpg" />
+                            </Col>
+                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <img className="our-partners-images"
+                                    src="../../static/images/team_member.jpg" />
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+
+                <Row type="flex" justify="center">
+                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                        <h1 className="initial-coin">The initial coin offering starts soon!</h1>
+                    </Col>
+                </Row>
+
+                    <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
+                        <div style={{ textAlign: 'center' }}>
+                            <Input size={'large'} className={'launch-time-input'} style={{ marginTop: '20px' }}
+                                   placeholder={'Email'}/>
+                            <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
+                                Get Notified!
+                            </Button>
+                        </div>
+                    </div>
+                    <Row>
+                        <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
+                            <div className={'home-privacy-policy-text'}>
+                                <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span>
+                                </h4>
+                            </div>
+                        </Col>
+                    </Row>
             </div>
         )
     }
