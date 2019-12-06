@@ -638,7 +638,7 @@ label {
   margin-left: 5px !important;
 }
 
-@media(max-width: 815px) {
+@media(max-width: 650px) {
   .the-solution {
     margin-top: 30px;
   }
@@ -962,3 +962,17 @@ label {
     background: transparent;
     align-content: right !important;
 }
+
+.rectangle2 {
+    margin-top:110px;
+    background-color: #DEEEED;
+    padding: 30px;
+ }
+
+ .want-to-hear-more {
+    font-size: 38px;
+    font-weight: 700;
+    width: 700px;
+    line-height: 46px;
+    text-align: center;
+ }

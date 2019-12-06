@@ -16,37 +16,37 @@ export default class NewIcoContainer extends Component {
         return (
             <div >
                 <div className='container background-header'>
-                        <Particles
-                            style={{ position: 'absolute' }}
-                            params={{
-                                particles: {
-                                    number: {
-                                        value: 70
-                                    },
-                                    size: {
-                                        value: 3
-                                    },
-                                    color: { value: '#FFF' }
+                    <Particles
+                        style={{ position: 'absolute' }}
+                        params={{
+                            particles: {
+                                number: {
+                                    value: 70
                                 },
-                                interactivity: {
-                                    events: {
-                                        onhover: {
-                                            enable: true,
-                                            mode: 'repulse'
-                                        }
+                                size: {
+                                    value: 3
+                                },
+                                color: { value: '#FFF' }
+                            },
+                            interactivity: {
+                                events: {
+                                    onhover: {
+                                        enable: true,
+                                        mode: 'repulse'
                                     }
                                 }
-                            }}
-                        >
-                        </Particles>
-                        <HeaderMenu />
+                            }
+                        }}
+                    >
+                    </Particles>
+                    <HeaderMenu />
                     <Row>
                         <div className="intro-text">
                             <Col xs={24} sm={16} md={12} lg={14}>
                                 <h1 className="invest-in-the-first">
-                                Invest in the first<br />
-                                Blockchain Community for <br />
-                                Freelancers</h1>
+                                    Invest in the first<br />
+                                    Blockchain Community for <br />
+                                    Freelancers</h1>
                                 <br />
                                 <br />
                                 <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
@@ -61,27 +61,27 @@ export default class NewIcoContainer extends Component {
                                         </div>
                                     </Col>
                                 </Row>
-                                </Col>
-                            </div>
-                            <div>
-                                <Col xs={24} sm={12} md={10} lg={{span:10}}>
-                                    <div className="count-down">
-                                    </div>
-                                </Col>
-                                <br />
-                            </div>
-                        </Row>
+                            </Col>
+                        </div>
+                        <div>
+                            <Col xs={24} sm={12} md={10} lg={{ span: 10 }}>
+                                <div className="count-down">
+                                </div>
+                            </Col>
+                            <br />
+                        </div>
+                    </Row>
 
-                        <br />
-                        <br />
-                        <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
                 <br />
                 <br />
                 <br />
                 <Row>
                     <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
-                        <div className={'join-freelancer-box'} style={{marginLeft: "5px"}}>
+                        <div className={'join-freelancer-box'} style={{ marginLeft: "5px" }}>
                             <span className={'why-veelancing'}>
                                 Why Veelancing?</span>
                             <br />
@@ -97,7 +97,7 @@ export default class NewIcoContainer extends Component {
                             <br />
                             <br />
                             <br />
-                            <Button className={'vbr-btn-style'} style={{marginLeft: "15px"}}>
+                            <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
                                 Learn More
                             </Button>
                         </div>
@@ -111,7 +111,7 @@ export default class NewIcoContainer extends Component {
                                 <img src={'../../static/images/geometric_particles.svg'} />
                             </div>
                             <div>
-                                <img className={"coins"} src={'../../static/images/coins_photo@1x.jpg'} style={{marginLeft: "15px"}} />
+                                <img className={"coins"} src={'../../static/images/coins_photo@1x.jpg'} style={{ marginLeft: "15px" }} />
                             </div>
                         </div>
                     </Col>
@@ -121,8 +121,8 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <div className={'rectangle-copy'}>
-                <Row gutter={[40,36]}>
-                        <Col xs={24} sm={12} md={{span:11, pull: 1}} lg={12}>
+                    <Row gutter={[30, 30]}>
+                        <Col xs={24} sm={12} md={{ span: 12}} lg={12} xl={{span:12}} xxl={12}>
                             <div className={'the-problem'}>
                                 The Problem
                         </div>
@@ -141,7 +141,7 @@ export default class NewIcoContainer extends Component {
                         </p>
                         </Col>
 
-                        <Col xs={24} sm={12} md={{span:11, push:1}} lg={12}>
+                        <Col xs={24} sm={12} md={{ span: 12}} lg={{span:12, push: 1}} xl={12} xxl={12}>
                             <div className={'the-solution'}>
                                 The Solution
                         </div>
@@ -159,14 +159,14 @@ export default class NewIcoContainer extends Component {
                                 With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies.
                         </p>
                         </Col>
-                </Row>
+                    </Row>
                 </div>
                 <br />
                 <br />
                 <br />
                 <br />
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={{span: 12, push: 1}}>
+                    <Col xs={24} sm={24} md={24} lg={{ span: 12, push: 1 }}>
                         <h1 className={'the-blockchain-techn'}>
                             The Blockchain Technology
                         </h1>
@@ -176,48 +176,48 @@ export default class NewIcoContainer extends Component {
                             leap off the shelves at even the least tech-savvy.</p>
                         <br />
                         <br />
-                        <Row type="flex" justify="center">
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                        <Row>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/python@2x.jpg" />
+                                    src="../../static/images/python@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/envoy@2x.jpg" />
+                                    src="../../static/images/envoy@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/django@2x.jpg" />
+                                    src="../../static/images/django@2x.jpg" />
                             </Col>
                         </Row>
                         <br />
-                        <Row type="flex" justify="center">
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                        <Row>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/mongo@2x.jpg" />
+                                    src="../../static/images/mongo@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/react@2x.jpg" />
+                                    src="../../static/images/react@2x.jpg" />
                             </Col>
-                            <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                            <Col xs={24} sm={12} md={{span: 8, pull: 1}} lg={8} xl={8} xxl={8}>
                                 <img className="technology-images"
-                                     src="../../static/images/ethereum@2x.jpg" />
+                                    src="../../static/images/ethereum@2x.jpg" />
                             </Col>
                         </Row>
                     </Col>
                     <div className="tech-particles">
-                    <Col xs={24} sm={24} md={24} lg={{span: 12, push: 2}}>  
-                            <img src={'../../static/images/geometric_particles2.svg'} />                      
-                    </Col>
+                        <Col xs={24} sm={24} md={{span:24, push: 4}} lg={{ span: 12, push: 2 }}>
+                            <img src={'../../static/images/geometric_particles2.svg'} />
+                        </Col>
                     </div>
                 </Row>
                 <br />
                 <br />
                 <Row type="flex" justify="center">
-                <Col xs={24} sm={24} md={24} lg={{span:12}} xl={{span:12, push: 1}} xxl={{span:12, push: 4}}>
-                    <h1 className="our-journey">Our Journey</h1>
-                </Col>
+                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                        <h1 className="our-journey">Our Journey</h1>
+                    </Col>
                 </Row>
                 <br />
                 <br />
@@ -226,7 +226,7 @@ export default class NewIcoContainer extends Component {
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="2018"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -234,18 +234,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Veelancing concept is born</h3>
                         <p>
-                        ✓ Concept & Team Developement
+                            ✓ Concept & Team Developement
                         </p>
                         <p>
-                        ✓ Tech Research & Market Analysis   
+                            ✓ Tech Research & Market Analysis
                         </p>
                         <p>
-                        ✓ Platform Infrastructure & Architecture
+                            ✓ Platform Infrastructure & Architecture
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q1 - 2019"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -253,18 +253,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Planning & Strategy</h3>
                         <p>
-                        ✓ Blockchain Testing
+                            ✓ Blockchain Testing
                         </p>
                         <p>
-                        ✓ Whitepaper Creation   
+                            ✓ Whitepaper Creation
                         </p>
                         <p>
-                        ✓ Marketing Strategy   
+                            ✓ Marketing Strategy
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q2 - 2019"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -272,18 +272,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Building the Platform</h3>
                         <p>
-                        ✓ Veelancing Platform Developement
+                            ✓ Veelancing Platform Developement
                         </p>
                         <p>
-                        ✓ Partnership with Coin Exchange Data    
+                            ✓ Partnership with Coin Exchange Data
                         </p>
                         <p>
-                        ✓ Testing KYC API
+                            ✓ Testing KYC API
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q3 - 2019"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -291,18 +291,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Launching the Demo Version</h3>
                         <p>
-                        ✓ User Testing
+                            ✓ User Testing
                         </p>
                         <p>
-                        ✓ Capture Feedback & Iterate   
+                            ✓ Capture Feedback & Iterate
                         </p>
                         <p>
-                        ✓ Start Marketing Campaign   
+                            ✓ Start Marketing Campaign
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q4 - 2019"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -310,18 +310,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Raising Funds</h3>
                         <p>
-                        ✓ Private fundraising for early-bird investors
+                            ✓ Private fundraising for early-bird investors
                         </p>
                         <p>
-                        ✓ Launching Pre-initial Coin Offering    
+                            ✓ Launching Pre-initial Coin Offering
                         </p>
                         <p>
-                        ✓ Launching Initial Coin Offering   
+                            ✓ Launching Initial Coin Offering
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q1 - 2020"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -329,18 +329,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Growing User Data Base</h3>
                         <p>
-                        ✓ Referral Program & Airdrop
+                            ✓ Referral Program & Airdrop
                         </p>
                         <p>
-                        ✓ Growing Veelancing Community   
+                            ✓ Growing Veelancing Community
                         </p>
                         <p>
-                        ✓ New Partnerships  
+                            ✓ New Partnerships
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q2 - 2020"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -348,18 +348,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Launch Beta Version</h3>
                         <p>
-                        ✓ User Testing Beta Version
+                            ✓ User Testing Beta Version
                         </p>
                         <p>
-                        ✓ Capture Feedback & Iterate   
+                            ✓ Capture Feedback & Iterate
                         </p>
                         <p>
-                        ✓ Exchange Market Developement   
+                            ✓ Exchange Market Developement
                         </p>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--education"
-                        contentStyle={{boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px"}}
+                        contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                         contentArrowStyle={{ borderRight: '7px solid  #fff' }}
                         date="Q3 & Q4 - 2020"
                         iconStyle={{ background: '#008D7F', color: '#fff' }}
@@ -367,18 +367,18 @@ export default class NewIcoContainer extends Component {
                     >
                         <h3 className="vertical-timeline-element-title">Official Platform Release</h3>
                         <p>
-                        ✓ Final Platform Release
+                            ✓ Final Platform Release
                         </p>
                         <p>
-                        ✓ Mining Tokens   
+                            ✓ Mining Tokens
                         </p>
                         <p>
-                        ✓ Release Exchange Market Feature   
+                            ✓ Release Exchange Market Feature
                         </p>
                     </VerticalTimelineElement>
                 </VerticalTimeline>
                 <br />
-                
+
                 <Row gutter={[40, 40]}>
                     <div className="the-team-box">
                         <Col span={8} push={1}>
@@ -386,7 +386,7 @@ export default class NewIcoContainer extends Component {
                             <p className="the-team-text">We are a team of enginneers and tech enthusiasts that aim to make the world a better place with the help of technology.</p>
                         </Col>
 
-                        <Col span={10} push={3}>
+                        <Col span={12} push={3}>
                             <Row gutter={[40, 40]}>
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
@@ -461,23 +461,33 @@ export default class NewIcoContainer extends Component {
                     </Col>
                 </Row>
 
-                    <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <Input size={'large'} className={'launch-time-input'} style={{ marginTop: '20px' }}
-                                   placeholder={'Email'}/>
-                            <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
-                                Get Notified!
+                <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center' }}>
+                        <Input size={'large'} className={'launch-time-input'} style={{ marginTop: '20px' }}
+                            placeholder={'Email'} />
+                        <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
+                            Get Notified!
                             </Button>
-                        </div>
                     </div>
-                    <Row>
-                        <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
-                            <div className={'home-privacy-policy-text'}>
-                                <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span>
-                                </h4>
-                            </div>
+                </div>
+                <Row>
+                    <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
+                        <div className={'home-privacy-policy-text'}>
+                            <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span>
+                            </h4>
+                        </div>
+                    </Col>
+                </Row>
+                <div className="rectangle2">
+                    <Row type="flex" justify="center">
+                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                            <h1 className="want-to-hear-more">Want to hear more? Let's Talk!</h1>
+                        </Col>
+                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                            <Button className="vbr-btn-style">Contact Us</Button>
                         </Col>
                     </Row>
+                </div>
             </div>
         )
     }
