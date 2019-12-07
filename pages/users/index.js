@@ -1,2 +1,2 @@
-import UserProfileContainer from 'containers/UserProfileContainer'
+import UserProfileContainer from 'containers/members/UserProfileContainer'
 export default UserProfileContainer

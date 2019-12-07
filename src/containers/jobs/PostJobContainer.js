@@ -377,7 +377,7 @@ class PostJobContainer extends React.Component {
                                 </span>
                             }
                         >
-                            <SkillsGroup/>
+                            <SkillsGroup tags={['Add']}/>
                         </Form.Item>
 
                         <Form.Item label="Job Category">

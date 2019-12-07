@@ -1,12 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Menu, Icon, Button, Row, Card, Layout, Col, Empty, Rate, Tooltip, Comment, Avatar,Tag} from 'antd'
+import { Icon, Button, Row, Card, Col, Empty, Rate, Tooltip, Comment, Avatar, Tag, Modal, Input } from 'antd'
 import moment from 'moment';
-const { SubMenu } = Menu
-const { Header, Content, Footer, Sider } = Layout
 const { Meta } = Card
 import { List } from 'antd';
+import dynamic from 'next/dynamic'
+
+const Picker = dynamic(import('emoji-picker-react'), {
+    ssr: false,
+})
+const { TextArea } = Input;
+import {getMemberProfile} from '../../actions/members_actions';
 
 const data = [
     {
@@ -28,7 +33,19 @@ class UserProfileContainer extends Component {
             likes: 0,
             dislikes: 0,
             action: 'null',
-
+            loading: false,
+            visible: false,
+            message:'',
+            emoji_true:false,
+            profile:{
+                lastName:'',
+                firstName:'',
+                username:'',
+                skills:[0],
+                bio:'',
+                image:'../../../static/images/asset_profile.jpg',
+                type:0
+            }
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,17 +53,41 @@ class UserProfileContainer extends Component {
         this.handleChangeLocation = this.handleChangeLocation.bind(this);
         this.handleChangeStatus = this.handleChangeStatus.bind(this);
         this.handleChangeLikes = this.handleChangeLikes.bind(this);
-        this.handleChangeDisliked = this.handleChangeDislikes.bind(this);
+        this.composeMessage = this.composeMessage.bind(this);
         this.handleChangeAction = this.handleChangeAction.bind(this);
+        this.showEmoji = this.showEmoji.bind(this);
+        this.getProfileUsername = this.getProfileUsername.bind(this);
     }
 
-    static async getInitialProps ({ store, query }) {
+    componentDidMount(){
+        this.getProfileUsername(this.props.router.query.username);
     }
 
-    componentDidMount () {
+    getProfileUsername(username){
+        let profile = this.props.members.find(o => o.username === username);
+        if(profile){
+            this.props.getMemberProfile(profile.id).then((response) =>{
+                let image = this.state.profile.image;
+                if(response.profile.image.length > 0){
+                    image = response.profile.image
+                }
+                this.setState({
+                    profile:{
+                        ...this.state.profile,
+                        username:response.username,
+                        firstName:response.firstName,
+                        lastName:response.lastName,
+                        bio:response.profile.bio,
+                        type:response.profile.type,
+                        image:image,
+                        skills:response.profile.skills,
+                    }
+                })
+            });
+        }
+
+
     }
-
-
 
     handleChange(event) {
         this.setState()
@@ -92,8 +133,44 @@ class UserProfileContainer extends Component {
 
     }
 
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    };
+
+    handleOk = () => {
+        this.setState({ loading: true });
+        setTimeout(() => {
+            this.setState({ loading: false, visible: false });
+        }, 3000);
+    };
+
+    handleCancel = () => {
+        this.setState({ visible: false });
+    };
+
+    onEmojiClick = (event, emojiObject) => {
+        this.setState({
+            message:this.state.message + ' ' + emojiObject.emoji
+        })
+    }
+
+    composeMessage(message){
+        this.setState({
+            message: message
+        })
+    }
+
+    showEmoji(){
+        this.setState({
+            emoji_true: !this.state.emoji_true
+        })
+    }
+
     render () {
         const {likes, dislikes, action} = this.state;
+        let fullName = (this.state.profile.firstName + ' ' + this.state.profile.lastName).toLocaleUpperCase()
         const actions = (
             <div>
                  <span key='comment-like'>
@@ -132,19 +209,26 @@ class UserProfileContainer extends Component {
                                       <Button
                                           type={'primary'}
                                           style={{
+                                              marginLeft:'2px',
                                               background: 'rgba(0, 177, 153, 0.74)',
                                               borderColor: 'rgba(0, 177, 153, 0.74)'}}
-                                      >Copy link
-                                      </Button>  <Button
+                                      > Copy link
+                                      </Button>
+
+                                      <Button
                                               type={'primary'}
                                               style={{
+                                                  marginLeft:'2px',
                                                   background: 'rgba(0, 177, 153, 0.74)',
                                                   borderColor: 'rgba(0, 177, 153, 0.74)'}}
                                           >Edit Profile
-                                          </Button>
+                                      </Button>
+
                                       <Button
                                           type={'primary'}
+                                          onClick={this.showModal}
                                           style={{
+                                              marginLeft:'2px',
                                               background: 'rgba(0, 177, 153, 0.74)',
                                               borderColor: 'rgba(0, 177, 153, 0.74)'}}
                                       >Send Message
@@ -154,23 +238,21 @@ class UserProfileContainer extends Component {
                                     <div>
                                         <strong>
                                             <h2>
-                                                Stefan Vanea
+                                                {fullName}
                                             </h2>
                                         </strong>
-                                    </div>}
-                            >
-
+                                    </div>}>
 
                                 <Row>
                                     <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 4}}>
                                         <div>
                                             <img
                                                 style={{width: '100%',padding:'5px'}}
-                                                src='../../static/images/asset_profile.jpg'
+                                                src={this.state.profile.image}
                                             />
                                             <strong>
                                                 <h3>
-                                                    @StefanVanea
+                                                    @{this.state.profile.username}
                                                 </h3>
                                             </strong>
                                             <p>Bucharest, Romania</p>
@@ -178,16 +260,9 @@ class UserProfileContainer extends Component {
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
-                                        <h3>What is Lorem Ipsum?</h3>
+                                        <h3>Profile description</h3>
                                         <p style={{paddingTop:'20px',fontSize:'15px'}}>
-
-
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
-                                            <br/>
-                                            <br/>
-                                            Electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                            Why do we use it?
-
+                                            {this.state.profile.bio}
                                         </p>
                                     </Col>
 
@@ -198,7 +273,7 @@ class UserProfileContainer extends Component {
                                                 <h2>
                                                     <Icon
                                                         type={'dollar'}
-                                                    /> 200 - USD/hr
+                                                    /> 39 - USD/hr
                                                 </h2>
                                                 <hr />
 
@@ -336,6 +411,31 @@ class UserProfileContainer extends Component {
 
                     </Col>
                 </Row>
+
+                <Modal
+                    visible={this.state.visible}
+                    title="Send message"
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                    footer={[
+                        <Button key="back" onClick={this.handleCancel}>
+                            Close
+                        </Button>,
+                        <Button key="submit" type="primary" loading={this.state.loading} onClick={this.handleOk}>
+                            Send Message
+                        </Button>,
+                    ]}
+                >
+                    <TextArea rows={4} value={this.state.message} onChange={this.composeMessage}/>
+                    <div style={{paddingTop:'5px'}}>
+                        <div
+                            onClick={this.showEmoji}
+                        >
+                            <img style={{width:'25px'}} src="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f60a.png" alt=""/>
+                         </div>
+                    </div>
+                    {this.state.emoji_true && <Picker onEmojiClick={this.onEmojiClick}/>}
+                </Modal>
             </div>
         )
     }
@@ -343,12 +443,15 @@ class UserProfileContainer extends Component {
 
 function mapStateToProps (state) {
     return {
-        user:state.user
+        user:state.user,
+        members:state.members.list
     }
 }
 
 UserProfileContainer.propTypes = {
+    getMemberProfile: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, {
+    getMemberProfile
 })(UserProfileContainer)

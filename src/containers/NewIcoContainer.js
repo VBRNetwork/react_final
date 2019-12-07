@@ -121,7 +121,7 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <div className={'rectangle-copy'}>
-                    <Row gutter={[30, 30]}>
+                    <Row gutter={[32, 32]}>
                         <Col xs={24} sm={12} md={{ span: 12}} lg={12} xl={{span:12}} xxl={12}>
                             <div className={'the-problem'}>
                                 The Problem

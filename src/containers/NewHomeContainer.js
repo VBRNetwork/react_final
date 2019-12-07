@@ -142,9 +142,9 @@ class NewHomeContainer extends Component {
                     </Particles>
                     <HeaderMenu/>
                     <Row>
-                        <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
-                             xl={{ span: 17, offset: 3 }} xxl={{ span: 10, offset: 1 }}>
-                            <div className="intro-text">
+                        <Col xs={24} sm={24} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 2 }}
+                             xl={{ span: 10, offset: 3 }} xxl={{ span: 11, offset: 2}}>
+                            <div className="intro-text" style={{marginTop:'100px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big">A blockchain Marketplace<br/> for Freelancers </span>
@@ -157,7 +157,7 @@ class NewHomeContainer extends Component {
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
-                                        <Col xs={24} md={7}>
+                                        <Col xs={24} md={10}>
                                             <Button className="btn-style" size="large">
                                                 <Link href='/register'>
                                                     <a> <b>Join as Freelancer</b>
@@ -165,7 +165,7 @@ class NewHomeContainer extends Component {
                                                 </Link>
                                             </Button>
                                         </Col>
-                                        <Col xs={24} md={7}>
+                                        <Col xs={24} md={10}>
                                             <Button className="btn-style" size="large">
                                                 <Link href='/jobs/add-job'>
                                                     <a> <b>Post a job</b>
@@ -177,9 +177,9 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={24} sm={24} md={{ span: 17, offset: 1 }} lg={{ span: 17, offset: 2 }}
-                             xl={{ span: 17, offset: 3 }} xxl={{ span: 10, offset: 1 }}>
-                            {/*<img className="img-responsive" src="../../static/images/design/women_home.jpg" alt=""/>*/}
+                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
+                             xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
+                            <img style={{height:window.innerHeight-150,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
                         </Col>
                     </Row>
                 </div>

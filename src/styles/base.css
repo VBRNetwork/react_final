@@ -929,6 +929,7 @@ label {
   padding-top: 90px !important;
 }
 
+<<<<<<< HEAD
 .our-partners-box {
     padding-top: 90px !important;
 }
@@ -976,3 +977,11 @@ label {
     line-height: 46px;
     text-align: center;
  }
+=======
+}
+
+.emoji-picker-react {
+    width:100% !important;
+    height:200px !important;
+}
+>>>>>>> b274277aa47243ad6f578adb1a35838323a5bb82
