@@ -195,20 +195,22 @@ class BecomeFreelancerContainer extends Component {
                 label: 'Advanced'
             }
         ];
-        this.props.skills.map(function(value){
-            skills.push({
-                value:value.id,
-                text:value.name
-            });
-        })
-
-        this.props.languages.map(function(value){
-            languages.push({
-                value: value.code,
-                label: value.name,
-                children: childrens
+        if(this.props.skills){
+            this.props.skills.map(function(value){
+                skills.push({
+                    value:value.id,
+                    text:value.name
+                });
             })
-        })
+
+            this.props.languages.map(function(value){
+                languages.push({
+                    value: value.code,
+                    label: value.name,
+                    children: childrens
+                })
+            })
+        }
         return (
             <div>
                 <Row>
