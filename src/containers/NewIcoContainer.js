@@ -68,10 +68,8 @@ export default class NewIcoContainer extends Component {
                                 <div className="count-down">
                                 </div>
                             </Col>
-                            <br />
                         </div>
                     </Row>
-
                     <br />
                     <br />
                     <br />
@@ -80,7 +78,7 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <Row>
-                    <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
+                    <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 8, push: 2 }}>
                         <div className={'join-freelancer-box'} style={{ marginLeft: "5px" }}>
                             <span className={'why-veelancing'}>
                                 Why Veelancing?</span>
@@ -102,7 +100,7 @@ export default class NewIcoContainer extends Component {
                             </Button>
                         </div>
                     </Col>
-                    <Col xs={24} sm={16} md={{ span: 12, push: 4 }} lg={11} xl={{ span: 12 }} xxl={{ span: 12 }}>
+                    <Col xs={24} sm={16} md={{ span: 12, push: 4 }} lg={11} xl={{ span: 12 }} xxl={{ span: 8, offset:3 }}>
                         <br />
                         <br />
                         <br />
@@ -166,7 +164,7 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={{ span: 12, push: 1 }}>
+                    <Col xs={24} sm={24} md={24} lg={{ span: 9, push: 2 }}>
                         <h1 className={'the-blockchain-techn'}>
                             The Blockchain Technology
                         </h1>
@@ -207,7 +205,7 @@ export default class NewIcoContainer extends Component {
                         </Row>
                     </Col>
                     <div className="tech-particles">
-                        <Col xs={24} sm={24} md={{span:24, push: 4}} lg={{ span: 12, push: 2 }}>
+                        <Col xs={24} sm={24} md={{span:24, push: 4}} lg={{ span: 7, push: 4 }}>
                             <img src={'../../static/images/geometric_particles2.svg'} />
                         </Col>
                     </div>
@@ -432,12 +430,12 @@ export default class NewIcoContainer extends Component {
                     </div>
                 </Row>
                 <Row>
-                    <div className="our-partners-box">
-                        <Col span={8} push={1}>
-                            <h1 className="our-partners-title">Our Partners</h1>
-                        </Col>
-                    </div>
-                    <Col span={10} push={3}>
+                    <Col span={8} push={1}>
+                        <div className="our-partners-box">
+                             <h1 className="our-partners-title">Our Partners</h1>
+                        </div>
+                    </Col>
+                    <Col span={9} push={3}>
                         <Row gutter={[40, 40]}>
                             <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="our-partners-images"
@@ -456,7 +454,7 @@ export default class NewIcoContainer extends Component {
                 </Row>
 
                 <Row type="flex" justify="center">
-                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 10}}>
                         <h1 className="initial-coin">The initial coin offering starts soon!</h1>
                     </Col>
                 </Row>
@@ -467,7 +465,7 @@ export default class NewIcoContainer extends Component {
                             placeholder={'Email'} />
                         <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
                             Get Notified!
-                            </Button>
+                        </Button>
                     </div>
                 </div>
                 <Row>
@@ -480,10 +478,10 @@ export default class NewIcoContainer extends Component {
                 </Row>
                 <div className="rectangle2">
                     <Row type="flex" justify="center">
-                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 8, push: 2 }}>
                             <h1 className="want-to-hear-more">Want to hear more? Let's Talk!</h1>
                         </Col>
-                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 12, push: 4 }}>
+                        <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 8, push: 3 }}>
                             <Button className="vbr-btn-style">Contact Us</Button>
                         </Col>
                     </Row>
