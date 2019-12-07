@@ -27,9 +27,7 @@ class SearchMembersContainer extends Component {
 
     getUsers(){
         this.props.getMembersList({test:1}).then( (response) => {
-            console.log(response);
         }).catch((err) => {
-            console.log(err);
         })
     }
 
@@ -58,8 +56,8 @@ class SearchMembersContainer extends Component {
                                                 sm: 2,
                                                 md: 2,
                                                 lg: 3,
-                                                xl: 4,
-                                                xxl: 4,
+                                                xl: 3,
+                                                xxl: 3,
                                             }}
                                             dataSource={members.list}
                                             renderItem={item => {
@@ -84,7 +82,7 @@ class SearchMembersContainer extends Component {
                                                                 <div style={{padding:'5px'}}>
                                                                     <img
                                                                         width={'100%'}
-                                                                        height={'150px'}
+                                                                        height={'230px'}
                                                                         style={{objectFit:'cover'}}
                                                                         alt='logo'
                                                                         src={imageAvatar}

@@ -45,7 +45,8 @@ class UserProfileContainer extends Component {
                 bio:'',
                 image:'../../../static/images/asset_profile.jpg',
                 type:0
-            }
+            },
+            message_sent:false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -136,14 +137,16 @@ class UserProfileContainer extends Component {
     showModal = () => {
         this.setState({
             visible: true,
+            message_sent:false
         });
+
     };
 
     handleOk = () => {
-        this.setState({ loading: true });
+        this.setState({ loading: true, message_sent:true });
         setTimeout(() => {
-            this.setState({ loading: false, visible: false });
-        }, 3000);
+            this.setState({ loading: false, visible: false, message: '' });
+        }, 2200);
     };
 
     handleCancel = () => {
@@ -426,14 +429,20 @@ class UserProfileContainer extends Component {
                         </Button>,
                     ]}
                 >
-                    <TextArea placeholder={'Type a message...'} rows={4} value={this.state.message} onChange={this.composeMessage}/>
-                    <div style={{paddingTop:'5px'}}>
-                        <div
-                            onClick={this.showEmoji}
-                        >
-                            <img style={{width:'25px'}} src="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f60a.png" alt=""/>
-                         </div>
-                    </div>
+
+                    {this.state.message_sent === false &&
+                        <div>
+                            <TextArea placeholder={'Type a message...'} rows={4} value={this.state.message} onChange={this.composeMessage}/>
+                            <div>
+                                <div style={{paddingTop:'5px'}}>
+                                    <div onClick={this.showEmoji} >
+                                        <img style={{width:'25px'}} src="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f60a.png" alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    {this.state.message_sent === true && <h4><Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" /> Message sent successfully.</h4>}
                     {this.state.emoji_true && <Picker onEmojiClick={this.onEmojiClick}/>}
                 </Modal>
             </div>

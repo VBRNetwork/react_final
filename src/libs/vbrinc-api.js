@@ -70,7 +70,6 @@ const vbrincapi = {
         })
     },
     becomeFreelancer(data){
-        console.log(data);
         let bodyFormData = new FormData();
         bodyFormData.set('description', data.description)
         bodyFormData.set('languages', JSON.stringify(data.languages))

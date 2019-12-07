@@ -31,9 +31,7 @@ export default function withAuth(AuthComponent) {
             if(!this.props.user.token){
                 this.setState({isLoading: false})
                 try {
-                    // jwtDecode(this.props.user.token);
                 } catch (e) {
-                    console.log(e)
                 }
             }
         }
