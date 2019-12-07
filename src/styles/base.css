@@ -505,7 +505,7 @@ label {
     line-height: 60px;
     width: 660px;
     text-align: left;
-    margin-left: 85px;
+    margin-left: 55px;
 }
 
   .stay-up-to-date-and {
@@ -516,7 +516,7 @@ label {
     line-height: 19px;
     width: 600px;
     text-align: left;
-    margin-left: 85px;
+    margin-left: 55px;
 }
 
   .stay-up-to-date-and-box {
@@ -544,7 +544,7 @@ label {
     width: 300px;
     margin: 0 10px 10px 0;
     background: transparent;
-    margin-left: 90px;
+    margin-left: 55px;
 }
 
 .no-spam {
@@ -564,22 +564,6 @@ label {
     height: 43px !important;
     width: 180px !important;
 }
-
-.veelancing-is-a-dece {
-    color: #202C39 !important;
-    font-size: 17px !important;
-    font-weight: 400 !important;
-    width: 600px !important;
-    text-align: left !important;
-}
-
-.rectangle-copy {
-    background-color: #DEEEED !important;
-    width: 1400px !important;
-    height: 450px !important;
-    margin-left: 35px !important;
-    margin-top: 10px !important;
- }
 
 .no-spam-box {
   position: absolute;
@@ -610,28 +594,29 @@ label {
     font-weight: 400;
     line-height: 19px;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 5px;
+}
+
+.veelancing-is-a-dece-box {
+  position: absolute;
 }
 
 
-.veelancing-is-a-dece-box {
-    position: absolute;
-    top: 1px;
-    padding: 5%;
+.rectangle-copy {
+   margin-top:110px;
+   margin-bottom:100px;
+   background-color: #DEEEED;
+   padding: 60px;
 }
 
 @media(max-width: 815px) {
-.veelancing-is-a-dece {
-  margin-left: 10px;
-}
-}
   .rectangle-copy {
     margin-top:110px;
     margin-bottom:100px;
     background-color: #DEEEED;
-    padding: 60px;
-    
-  }
+    padding: 20px;
+ }
+}
 
 .the-problem {
     color: #3B3D47;
@@ -640,8 +625,24 @@ label {
     width: 480px;
     text-align: left;
     margin-bottom: 15px;
-    margin-left: 20px;
+    margin-left: 5px;
   }
+
+.the-solution {
+  color: #3B3D47;
+  font-size: 38px !important;
+  font-weight: 700 !important;
+  width: 480px !important;
+  text-align: left !important;
+  margin-bottom: 15px !important;
+  margin-left: 5px !important;
+}
+
+@media(max-width: 650px) {
+  .the-solution {
+    margin-top: 30px;
+  }
+}
 
 .geometric-particles {
     position: relative;
@@ -660,25 +661,20 @@ label {
     color: #202C39 !important;
     font-size: 16px !important;
     font-weight: 400 !important;
-    line-height: 19px !important;
-    width: 400px !important;
-    text-align: left !important;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.photographs-are-a-wa-box {
+  position: absolute;
+  padding: 5% !important;
 }
 
 .the-blockchain-techn {
     color: #202C39 !important;
     font-size: 38px;
     font-weight: 700;
-    width: 600px;
-    text-align: left;
-}
-
-
-  @media(max-width:815px) {
-  .the-blockchain-techn-box {
-    position: absolute;
-    text-align: center;
-  }
+    margin-left: 10px;
 }
 
   .technology-images {
@@ -686,6 +682,12 @@ label {
   border-radius: 10px;
   width: 180px;
   height: 120px;
+  }
+
+  @media(max-width: 815px) {
+    .technology-images {
+      margin-left: 85px;
+      }
   }
 
 .geometric-particles2 {
@@ -793,6 +795,14 @@ label {
     line-height: 40px;
   }
  }
+
+ @media only screen and (max-width: 1024px) {
+  .invest-in-the-first {
+    margin-left: 5px;
+    font-size: 28px;
+    line-height: 40px;
+  }
+ }
  
  @media(max-width:815px) {
   .stay-up-to-date-and {
@@ -802,6 +812,23 @@ label {
   }
  }
 
+ @media(max-width:1024px) {
+  .stay-up-to-date-and {
+    margin-left: 1px;
+    display: inline !important;
+    text-align: left;
+  }
+ }
+
+ @media(max-width:1024px) {
+ .example-input .ant-input {
+  width: 300px;
+  margin: 0 10px 10px 0;
+  background: transparent;
+  margin-left: 20px;
+ }
+} 
+
  @media(max-width:815px){
  .ico-email-reg {
    margin-left: 25px !important;
@@ -809,13 +836,13 @@ label {
  }
 }
 
-@media(max-width:815px) {
+@media(max-width:1024px) {
   .get-notified {
     margin-left: 90px; 
    }
 }
 
-@media(max-width:815px) {
+@media(max-width:1024px) {
   .count-down {
     width: 350px;
     height: 250px;
@@ -835,10 +862,126 @@ label {
   font-size: 38px;
   font-weight: 700;
   width: 600px;
+  text-align: center;
+}
 
+@media(max-width:815px) {
+    .our-journey {
+    text-align: left;
+    margin-left: 60px
+ }
+}
+
+.timeline-images {
+  margin-left: 15px;
+  margin-top: 8px;
+}
+
+.timeline-images2 {
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+.timeline-images3 {
+  margin-left: 13px;
+  margin-top: 8px;
+}
+
+.the-team-name {
+  color: #3c3c3c;
+  text-align: left;
+  margin-top: 5px;
+  font-size: 16px;
+  padding: 5px;
+  font-weight: bold;
+}
+.the-team-title {
+  color: #3c3c3c;
+  text-align: left;
+  margin-top: 5px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.the-team-images {
+  border: 1px solid #EBEBEC !important;
+  border-radius: 10px !important;
+  width: 180px !important;
+  height: 250px !important;
+}
+
+.the-team {
+  color: #202C39 !important;
+  font-size: 38px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.the-team-text {
+  color: #202C39 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.the-team-box {
+  padding-top: 90px !important;
+}
+
+<<<<<<< HEAD
+.our-partners-box {
+    padding-top: 90px !important;
+}
+
+.our-partners-title {
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+ 
+.our-partners-images {
+    border-radius: 10px !important;
+    width: 180px !important;
+    height: 250px !important;
+    box-shadow: 0 15px 30px 0 rgba(34, 34, 34, 0.534);
+}
+
+.initial-coin {
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    width: 700px;
+    text-align: center;
+    margin-top: 110px;
+  }
+
+  .example-input-bot .ant-input {
+    width: 300px;
+    margin: 0 10px 10px 0;
+    background: transparent;
+    align-content: right !important;
+}
+
+.rectangle2 {
+    margin-top:110px;
+    background-color: #DEEEED;
+    padding: 30px;
+ }
+
+ .want-to-hear-more {
+    font-size: 38px;
+    font-weight: 700;
+    width: 700px;
+    line-height: 46px;
+    text-align: center;
+ }
+=======
 }
 
 .emoji-picker-react {
     width:100% !important;
     height:200px !important;
 }
+>>>>>>> b274277aa47243ad6f578adb1a35838323a5bb82
