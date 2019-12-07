@@ -38,7 +38,7 @@ class SearchMembersContainer extends Component {
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                     <Content style={{marginLeft:'1rem'}}>
                         <InfoBox messages={{'h3':' Welcome to VBR Network Marketplace' ,
-                            'h4' : 'We are developing a travel and vacations website, and need a web designed with experience to help'}}/>
+                            'h4' : 'We are developing a freelancing blockchain platform, and need a web programmer with experience to help.'}}/>
                         <Layout style={{ padding: '24px 0', background: '#fff' }}>
                             <Row>
                                 <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
@@ -89,7 +89,7 @@ class SearchMembersContainer extends Component {
                                                                     />
                                                                     <a>
                                                                         <h3>{item.username}</h3>
-                                                                        <h4>{jobTitle}, {Math.floor((Math.random() * 50) + 1)}$ </h4><em
+                                                                        <h4>{jobTitle}, {item.profile.price}$ </h4><em
                                                                         className="ant-list-item-action-split"/>
                                                                     </a>
                                                                     {item.content}

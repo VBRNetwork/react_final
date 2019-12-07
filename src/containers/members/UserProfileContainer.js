@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Icon, Button, Row, Card, Col, Empty, Rate, Tooltip, Comment, Avatar, Tag, Modal, Input } from 'antd'
+import { Icon, Button, Row, Card, Col, Empty, Rate, Tooltip, Comment, Avatar, Tag, Modal, Input, Upload } from 'antd'
 import moment from 'moment';
 const { Meta } = Card
 import { List } from 'antd';
@@ -42,6 +42,7 @@ class UserProfileContainer extends Component {
                 firstName:'',
                 username:'',
                 skills:[0],
+                price:1,
                 bio:'',
                 image:'../../../static/images/sample-avatar.jpg',
                 type:0
@@ -80,6 +81,7 @@ class UserProfileContainer extends Component {
                         lastName:response.lastName,
                         bio:response.profile.bio,
                         type:response.profile.type,
+                        price:response.profile.price,
                         image:image,
                         skills:response.profile.skills,
                     }
@@ -259,7 +261,7 @@ class UserProfileContainer extends Component {
                                                 </h3>
                                             </strong>
                                             <p>Bucharest, Romania</p>
-                                            <p style={{fontSize:'12px'}}>Active since December { Math.floor(Math.random() * 10)}, 2019</p>
+                                            <p style={{fontSize:'12px'}}>Active since December { this.state.profile.price}, 2019</p>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
@@ -276,10 +278,9 @@ class UserProfileContainer extends Component {
                                                 <h2>
                                                     <Icon
                                                         type={'dollar'}
-                                                    /> 39 $/hr
+                                                    /> {this.state.profile.price} $/hr
                                                 </h2>
                                                 <hr />
-
                                             </strong>
                                             <p>
                                                 4 Reviews
@@ -395,17 +396,24 @@ class UserProfileContainer extends Component {
                                     title={<div><strong><h3> Work Portfolio</h3></strong></div>}
                                     extra={<Button type={'primary'} style={{background: 'rgba(0, 177, 153, 0.74)',
                                         borderColor: 'rgba(0, 177, 153, 0.74)'}}> Add Items</Button>}>
-
                                     <div>
-                                        <Empty
-                                            image={
-                                                <Icon
-                                                    style={{
-                                                        fontSize: 50,
-                                                        color: 'rgba(0, 177, 153, 0.74)'}}
-                                                    type={'file-image'}
-                                                />}
-
+                                        <List
+                                            itemLayout="horizontal"
+                                            dataSource={data}
+                                            renderItem={item => (
+                                                <List.Item>
+                                                    <List.Item.Meta
+                                                        avatar={ <Icon
+                                                            style={{
+                                                                fontSize: 50,
+                                                                color: 'rgba(251,10,0,0.74)'}}
+                                                            type={'file-image'}
+                                                        />}
+                                                        title={<a href="https://ant.design">{item.title}</a>}
+                                                        description=""
+                                                    />
+                                                </List.Item>
+                                            )}
                                         />
                                     </div>
                                 </Card>
@@ -434,9 +442,23 @@ class UserProfileContainer extends Component {
                         <div>
                             <TextArea placeholder={'Type a message...'} rows={4} value={this.state.message} onChange={this.composeMessage}/>
                             <div>
+                                <div style={{paddingTop:'5px',display:'inline'}}>
+                                    <span onClick={this.showEmoji} >
+                                        <img style={{width:'25px'}} src="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f60a.png" alt=""/>
+                                    </span>
+                                   <span>
+                                        <Upload  beforeUpload={() => false}  name={'file'} style={{marginLeft:'5px'}}>
+                                            <Button style={{marginTop:'10px'}}>
+                                              <Icon style={{fontSize:'16px'}} type="upload" />
+                                            </Button>
+                                          </Upload>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
                                 <div style={{paddingTop:'5px'}}>
                                     <div onClick={this.showEmoji} >
-                                        <img style={{width:'25px'}} src="https://cdn.jsdelivr.net/gh/iamcal/emoji-data@master/img-apple-160/1f60a.png" alt=""/>
+
                                     </div>
                                 </div>
                             </div>
