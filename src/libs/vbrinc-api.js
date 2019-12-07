@@ -115,6 +115,14 @@ const vbrincapi = {
         return secureInstance.get(apiUrl + 'settings/profile').then(res => {
             return humps.camelizeKeys(res.data)
         })
+    },
+
+    getProfileMember(id){
+        let bodyFormData = new FormData();
+        bodyFormData.set('id', id);
+        return secureInstance.post(apiUrl + 'accounts/profile/', bodyFormData).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
     }
 };
 

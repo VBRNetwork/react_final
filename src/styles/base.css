@@ -837,3 +837,8 @@ label {
   width: 600px;
 
 }
+
+.emoji-picker-react {
+    width:100% !important;
+    height:200px !important;
+}

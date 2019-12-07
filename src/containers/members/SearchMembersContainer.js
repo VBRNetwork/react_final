@@ -62,28 +62,42 @@ class SearchMembersContainer extends Component {
                                                 xxl: 4,
                                             }}
                                             dataSource={members.list}
-                                            renderItem={item => (
-                                                <div>
-                                                    <List.Item key={item.username} >
-                                                        <div style={{
-                                                            boxShadow: '0px 0px 5px 0px #acacac',
-                                                            padding:'5px'
-                                                        }}>
-                                                        <div style={{padding:'5px'}}>
-                                                            <img
-                                                                width={'100%'}
-                                                                alt='logo'
-                                                                src='../../static/images/search_dsg.png'
-                                                            />
-                                                            <a>
-                                                                <h3>{item.username}</h3>
-                                                                <h4>Senior Software Engineer, $37 </h4><em
-                                                                className="ant-list-item-action-split"/>
-                                                            </a>
-                                                            {item.content}
-                                                        </div>
+                                            renderItem={item => {
 
-                                                            <div style={{textAlign:'center'}}>
+                                                let imageAvatar ='../../static/images/search_dsg.png'
+                                                if(item.profile.image){
+                                                    imageAvatar = item.profile.image
+                                                }
+
+                                                let jobTitle = 'Freelancer'
+                                                if(item.profile.jobTitle){
+                                                    jobTitle = item.profile.jobTitle
+                                                }
+
+                                                return((
+                                                    <div>
+                                                        <List.Item key={item.username} >
+                                                            <div style={{
+                                                                boxShadow: '0px 0px 5px 0px #acacac',
+                                                                padding:'5px'
+                                                            }}>
+                                                                <div style={{padding:'5px'}}>
+                                                                    <img
+                                                                        width={'100%'}
+                                                                        height={'150px'}
+                                                                        style={{objectFit:'cover'}}
+                                                                        alt='logo'
+                                                                        src={imageAvatar}
+                                                                    />
+                                                                    <a>
+                                                                        <h3>{item.username}</h3>
+                                                                        <h4>{jobTitle}, {Math.floor((Math.random() * 50) + 1)}$ </h4><em
+                                                                        className="ant-list-item-action-split"/>
+                                                                    </a>
+                                                                    {item.content}
+                                                                </div>
+
+                                                                <div style={{textAlign:'center'}}>
 
                                                                     <Button type={'primary'} style={{
                                                                         backgroundColor: '#2EC3AB',
@@ -96,10 +110,11 @@ class SearchMembersContainer extends Component {
 
                                                                 </div>
 
-                                                        </div>
-                                                    </List.Item>
-                                                </div>
-                                            )}
+                                                            </div>
+                                                        </List.Item>
+                                                    </div>
+                                                ))
+                                            }}
                                         />
 
                                     </Content>
