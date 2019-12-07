@@ -158,7 +158,7 @@ class UserProfileContainer extends Component {
 
     composeMessage(message){
         this.setState({
-            message: message
+            message: message.target.value
         })
     }
 
@@ -426,7 +426,7 @@ class UserProfileContainer extends Component {
                         </Button>,
                     ]}
                 >
-                    <TextArea rows={4} value={this.state.message} onChange={this.composeMessage}/>
+                    <TextArea placeholder={'Type a message...'} rows={4} value={this.state.message} onChange={this.composeMessage}/>
                     <div style={{paddingTop:'5px'}}>
                         <div
                             onClick={this.showEmoji}
