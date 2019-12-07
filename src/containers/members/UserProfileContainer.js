@@ -43,7 +43,7 @@ class UserProfileContainer extends Component {
                 username:'',
                 skills:[0],
                 bio:'',
-                image:'../../../static/images/asset_profile.jpg',
+                image:'../../../static/images/sample-avatar.jpg',
                 type:0
             },
             message_sent:false,

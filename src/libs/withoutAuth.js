@@ -33,6 +33,8 @@ export default function withAuth(AuthComponent) {
                 try {
                 } catch (e) {
                 }
+            }else{
+                Router.push('/')
             }
         }
 

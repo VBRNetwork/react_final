@@ -158,20 +158,22 @@ class NewHomeContainer extends Component {
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
                                         <Col xs={24} md={10}>
-                                            <Button className="btn-style" size="large">
-                                                <Link href='/register'>
-                                                    <a> <b>Join as Freelancer</b>
+                                            <Link href='/register'>
+                                                <Button className="btn-style" size="large">
+                                                    <a>
+                                                        <b>Join as Freelancer</b>
                                                     </a>
-                                                </Link>
-                                            </Button>
+                                                </Button>
+                                            </Link>
                                         </Col>
                                         <Col xs={24} md={10}>
-                                            <Button className="btn-style" size="large">
                                                 <Link href='/jobs/add-job'>
-                                                    <a> <b>Post a job</b>
-                                                    </a>
+                                                    <Button className="btn-style" size="large">
+                                                        <a>
+                                                            <b>Post a job</b>
+                                                        </a>
+                                                    </Button>
                                                 </Link>
-                                            </Button>
                                         </Col>
                                     </Row>
                                 </div>
@@ -197,11 +199,11 @@ class NewHomeContainer extends Component {
                                     </span>
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-                                    <Button className="vbr-btn-style">
-                                        <Link href='/categories' as={'categories'}>
+                                    <Link href='/categories' as={'categories'}>
+                                        <Button className="vbr-btn-style">
                                             <b style={{ color: '#FFF' }}>See all categories</b>
-                                        </Link>
-                                    </Button>
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </Col>
@@ -353,11 +355,11 @@ class NewHomeContainer extends Component {
 
                 <div style={{ margin: '50px' }}>
                     <div style={{ textAlign: 'center' }}>
-                        <Button className={'vbr-btn-style'}>
-                            <Link href='/how-it-works' as={'/how-it-works'}>
+                        <Link href='/how-it-works' as={'/how-it-works'}>
+                            <Button className={'vbr-btn-style'}>
                                 <b style={{ color: '#FFF' }}> How it Works</b>
-                            </Link>
-                        </Button>
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 
@@ -378,11 +380,11 @@ class NewHomeContainer extends Component {
                                     With out Blockchain technology we give everyone the opportunity
                                     to have access to instant payment and cryptocurrencies.
                                 </p>
-                                <Button className={'vbr-btn-style mt35'}>
-                                    <Link href='/register' as={'/register'}>
+                                <Link href='/register' as={'/register'}>
+                                    <Button className={'vbr-btn-style mt35'}>
                                         <b style={{ color: '#FFF' }}>Become an Investor</b>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </Col>
                             <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 8 }}>
                                 <img className={'img-responsive'} style={{ marginTop: '150px' }}
@@ -408,11 +410,11 @@ class NewHomeContainer extends Component {
                                     by requesting and voting <br/>
                                     changes and new features.
                                 </p>
-                                <Button className={'vbr-btn-style'}>
-                                    <Link href='/register' as={'/register'}>
+                                <Link href='/register' as={'/register'}>
+                                    <Button className={'vbr-btn-style'}>
                                         <b style={{ color: '#FFF' }}> Join as Freelancer</b>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </div>
                         </Col>
                         <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 10 }} xxl={{ span: 8, offset: 0 }}>
@@ -452,13 +454,14 @@ class NewHomeContainer extends Component {
                                 to the platform by requesting and voting <br/>
                                 changes and new features.
                             </p>
-                            <Button className={'vbr-btn-style mt35'}>
+                            <div>
                                 <Link href='/jobs/add-job' as={'/jobs/add-job'}>
-                                    <b style={{ color: '#FFF' }}> Post a job</b>
+                                    <Button className={'vbr-btn-style mt35'}>
+                                        <b style={{ color: '#FFF' }}> Post a job</b>
+                                    </Button>
                                 </Link>
-                            </Button>
+                            </div>
                         </div>
-
                     </Col>
                 </Row>
 
