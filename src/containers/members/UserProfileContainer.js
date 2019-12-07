@@ -259,7 +259,7 @@ class UserProfileContainer extends Component {
                                                 </h3>
                                             </strong>
                                             <p>Bucharest, Romania</p>
-                                            <p style={{fontSize:'12px'}}>Active since September 18, 2019</p>
+                                            <p style={{fontSize:'12px'}}>Active since December { Math.floor(Math.random() * 10)}, 2019</p>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
@@ -276,15 +276,15 @@ class UserProfileContainer extends Component {
                                                 <h2>
                                                     <Icon
                                                         type={'dollar'}
-                                                    /> 39 - USD/hr
+                                                    /> 39 $/hr
                                                 </h2>
                                                 <hr />
 
                                             </strong>
                                             <p>
-                                                0 Reviews
+                                                4 Reviews
                                             </p>
-                                            <Rate />
+                                            <Rate value={4}/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -332,7 +332,7 @@ class UserProfileContainer extends Component {
                                             <div>
                                                 <Comment
                                                     actions={actions}
-                                                    author={<strong>Stefan Vanea</strong>}
+                                                    author={<strong>{fullName}</strong>}
                                                     avatar={
                                                         <Avatar
                                                             src='../../static/images/vbr_logo.png'
@@ -381,7 +381,7 @@ class UserProfileContainer extends Component {
                                                 <List.Item.Meta
                                                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                                                     title={<a href="https://ant.design">{item.title}</a>}
-                                                    description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                                    description=""
                                                 />
                                             </List.Item>
                                         )}
