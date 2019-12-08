@@ -5,7 +5,7 @@ import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'ant
 import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
-
+import ReactRevealText from 'react-reveal-text'
 
 class NewHomeContainer extends Component {
 
@@ -31,7 +31,9 @@ class NewHomeContainer extends Component {
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
             },
-            particles_number : 70
+            particles_number : 70,
+            showText:false,
+            showTextSecond:false
         }
 
         this.handleChangeParticles = this.handleChangeParticles.bind(this);
@@ -52,7 +54,12 @@ class NewHomeContainer extends Component {
         if(isMobile){
             number_particles = 30;
         }
-
+        setTimeout(() => {
+            this.setState({ showText: true });
+        }, 200);
+        setTimeout(() => {
+            this.setState({ showTextSecond: true });
+        }, 1000);
         this.handleChangeParticles(number_particles);
     }
 
@@ -147,12 +154,12 @@ class NewHomeContainer extends Component {
                             <div className="intro-text" style={{marginTop:'100px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
-                                    <span className="big">A blockchain Marketplace<br/> for Freelancers </span>
+                                    <span className="big"> <ReactRevealText show={this.state.showText}>A blockchain Marketplace for Freelancers </ReactRevealText></span>
                                 </h1>
                                 <div className="" style={{ marginTop: '50px', marginBottom: '50px' }}>
                                         <span className="stay-up-to-date">
-                                           Be part of our community to find a job or hire experts. <br/>
-                                           We are launching soon, but until then, join our BETA version!
+                                          <ReactRevealText show={this.state.showTextSecond}>Be part of our community to find a job or hire experts.
+                                              We are launching soon, but until then, join our BETA version!</ReactRevealText>
                                         </span>
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
