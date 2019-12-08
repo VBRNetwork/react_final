@@ -1,0 +1,2 @@
+import SmartContractContainer from 'containers/SmartContractContainer'
+export default SmartContractContainer
