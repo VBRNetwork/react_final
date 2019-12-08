@@ -180,7 +180,7 @@ class HeaderMenu extends Component {
                                 <Dropdown overlay={menu}>
                                     <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
                                          className='ant-dropdown-link'>
-                                        <Avatar src={'https://i.pravatar.cc/150?img=3'} size='large' icon='user'
+                                        <Avatar src={this.props.user.profile && this.props.user.profile.image} size='large' icon='user'
                                                 style={{
                                                     cursor: 'pointer',
                                                 }}/>

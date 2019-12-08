@@ -14,7 +14,7 @@ const listData = [{
     description:
         'Blockchain Expert',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Stefan Vanea',
         username: 'stefan_vanea',
@@ -28,7 +28,7 @@ const listData = [{
     description:
         'Python Programmer',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Fedot Serghei',
         username: 'fedot_serghei',
@@ -42,7 +42,7 @@ const listData = [{
     description:
         'Web designer for a traveling website',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'CEO of Samsung',
         username: 'ceo_samsung',
@@ -56,7 +56,7 @@ const listData = [{
     description:
         'Devops Vbrinc Platform',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Barborica Devops',
         username: 'barborica_devops',
@@ -130,7 +130,7 @@ class SearchJobsContainer extends Component {
                                                 Welcome to VBR Network Marketplace
                                             </h3>
                                             <h4>
-                                                We are developing a travel and vacations website, and need a web designed with experience to help
+                                                We are developing a freelancing blockchain platform, and need a web programmer with experience to help.
                                             </h4>
                                         </strong>
                                     </div>

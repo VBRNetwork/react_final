@@ -13,6 +13,9 @@ export default function (state = initialState, action) {
             return update(state, {list:{ $set: data }});
         case ActionType.UPDATE_MEMBERS:
             return update(state, {list:{ $set: data }});
+        case ActionType.SAVE_MEMBER_PROFILE:
+            let member_id = state.list.findIndex(o => o.id = data.id)
+            return update(state, {list:{[member_id]:{$merge:data}}});
         default:
             return state
     }

@@ -21,13 +21,13 @@ class Layout extends Component {
     }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
-        if (this.props.router_state.location.pathname !== prevProps.router_state.location.pathname) {
+        if (this.props.router.pathname !== prevProps.router.pathname) {
            this.showHeader()
         }
     }
 
     showHeader(){
-        if(this.props.router_state.location.pathname === '/' || this.props.router_state.location.pathname === '/ico'){
+        if(this.props.router.pathname === '/' || this.props.router.pathname === '/ico'){
             this.setState({
                 showHeader:false
             });

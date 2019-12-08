@@ -306,7 +306,6 @@ class PostJobContainer extends React.Component {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
             }
         });
     };
@@ -377,7 +376,7 @@ class PostJobContainer extends React.Component {
                                 </span>
                             }
                         >
-                            <SkillsGroup/>
+                            <SkillsGroup tags={['Add']}/>
                         </Form.Item>
 
                         <Form.Item label="Job Category">
