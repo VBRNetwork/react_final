@@ -266,9 +266,8 @@ class UserProfileContainer extends Component {
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
                                         <h3>Profile description</h3>
-                                        <p style={{paddingTop:'20px',fontSize:'15px'}}>
-                                            {this.state.profile.bio}
-                                        </p>
+                                        <div dangerouslySetInnerHTML={{__html: this.state.profile.bio}} style={{paddingTop:'20px',fontSize:'15px'}}>
+                                        </div>
                                     </Col>
 
                                     <Col xs={24} sm={{ span: 6}} md={{ span: 6}} lg={{ span: 6}} xl={{ span: 6}} xxl={{ span: 6}}>
