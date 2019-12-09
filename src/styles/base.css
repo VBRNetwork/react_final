@@ -805,11 +805,13 @@ label {
  }
  
  @media(max-width:815px) {
-  .stay-up-to-date-and {
-    margin-left: 1px;
-    display: inline !important;
-    text-align: center;
-  }
+      .stay-up-to-date-and {
+        margin-left: 1px;
+        display: inline !important;
+        text-align: center;
+      }
+
+
  }
 
  @media(max-width:1024px) {
@@ -929,7 +931,6 @@ label {
   padding-top: 90px !important;
 }
 
-<<<<<<< HEAD
 .our-partners-box {
     padding-top: 90px !important;
 }
@@ -961,7 +962,6 @@ label {
     width: 300px;
     margin: 0 10px 10px 0;
     background: transparent;
-    align-content: right !important;
 }
 
 .rectangle2 {
@@ -977,9 +977,6 @@ label {
     line-height: 46px;
     text-align: center;
  }
-
-
-
 
 .emoji-picker-react {
     width:100% !important;

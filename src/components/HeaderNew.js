@@ -158,7 +158,6 @@ class HeaderNew extends Component {
                     }
                 }
             }
-
         }
     }
 
@@ -172,63 +171,6 @@ class HeaderNew extends Component {
     }
 
     render () {
-        let token = false
-        if (this.props.user.token) {
-            token = true
-        }
-
-        let loginButton = (
-            <Button ghost size="large">
-                <Link href='/login'>
-                    <a><b>Log in</b></a>
-                </Link>
-            </Button>
-        )
-
-        let joinButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/register'>
-                    <a><b>Register</b></a>
-                </Link>
-            </Button>
-        )
-
-        let postJobButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/jobs/add-job'>
-                    <a><b>Post Job</b></a>
-                </Link>
-            </Button>
-        )
-
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <Link href='/dashboard'>
-                        <a>
-                            Dashboard
-                        </a>
-                    </Link>
-
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer'>
-                        Change Avatar
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' href='#'>
-                        Payments History
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <div onClick={this.clickLogout}>
-                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
-                    </div>
-                </Menu.Item>
-            </Menu>
-        )
-
         let menuItems = ''
         if (typeof (this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
