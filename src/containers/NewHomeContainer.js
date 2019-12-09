@@ -6,6 +6,7 @@ import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
+import ScrollButton from '../components/Elements/ScrollButton'
 
 class NewHomeContainer extends Component {
 
@@ -437,7 +438,7 @@ class NewHomeContainer extends Component {
                         </Col>
                     </Row>
                 </div>
-
+                <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
             </Fragment>
         )
     }
