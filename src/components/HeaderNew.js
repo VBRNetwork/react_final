@@ -248,8 +248,8 @@ class HeaderNew extends Component {
                     <HeaderMenu/>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                            background: 'rgba(26, 29, 40, 0.54)',
-                            boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
+                            background:'rgba(58, 62, 77, 0.54) none repeat scroll 0% 0%',
+                            boxShadow:'rgb(255, 255, 255) 0px 0px 6px 0px'
                         }}>
                             <div style={{ margin: '0 auto' }}>
                                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>

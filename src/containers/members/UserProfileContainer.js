@@ -203,7 +203,7 @@ class UserProfileContainer extends Component {
         );
 
         return (
-            <div style={{marginLeft:'1.3rem'}}>
+            <div style={{marginLeft:'1.3rem',marginTop:'5px'}}>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                         <div>
