@@ -248,8 +248,8 @@ class NewHomeContainer extends Component {
 
                 <div>
                     <Row>
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
-                            <div style={{ padding: '20px',textAlign:'center' }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
+                            <div style={{ padding: '18px',textAlign:'center' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
                                 <span className={'home-paragraph-1'}>
@@ -260,7 +260,7 @@ class NewHomeContainer extends Component {
                                 </span>
                             </div>
                         </Col>
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
                             <div style={{ padding: '19px',textAlign:'center'}}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
                                 <span className={'communicate-directly'} style={ {marginTop:'6px'} }>Create Smart Contracts</span>
@@ -274,8 +274,8 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px',textAlign:'center'  }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '19px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
                                 <span className={'communicate-directly'}>Get Paid Instantly</span>
                                 <div className={'home-paragraph-1'}>
@@ -288,8 +288,8 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px',textAlign:'center'  }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '19px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
                                 <span className={'home-paragraph-1'}>
