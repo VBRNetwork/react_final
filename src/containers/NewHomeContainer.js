@@ -129,7 +129,7 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
+                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 1 }}
                              xl={{ span: 5, offset: 2 }} xxl={{ span: 5, offset: 3 }}>
                             <img style={{height:window.innerHeight-150,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
                         </Col>
