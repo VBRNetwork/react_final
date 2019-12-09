@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Icon from 'antd/es/icon'
+import React from 'react'
+import {Icon} from 'antd'
 
 class ScrollButton extends React.Component {
     constructor() {
