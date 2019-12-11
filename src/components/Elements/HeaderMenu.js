@@ -10,7 +10,8 @@ import {
 } from 'react-device-detect'
 import ReactGA from 'react-ga'
 import 'antd/dist/antd.css'
-import 'styles/base.css'
+import '../../styles/base.css'
+
 class HeaderMenu extends Component {
     constructor (props) {
         super(props)
