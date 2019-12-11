@@ -14,7 +14,6 @@ import { AutoComplete } from 'antd';
 import PropTypes from "prop-types";
 
 const { TextArea } = Input;
-import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
