@@ -3,7 +3,6 @@ import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import {Row, Col, Button, Input } from 'antd'
-import "../styles/base.css"
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 

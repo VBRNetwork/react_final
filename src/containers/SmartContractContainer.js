@@ -1,36 +1,24 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Moment from 'react-moment';
-import moment from '../../node_modules/moment';
 import {
     Icon,
     Button,
-    Avatar,
     Row,
-    Layout,
     Col,
-    Select,
-    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown, DatePicker, TimePicker
+    Form, Input
 } from 'antd'
-import PropTypes from 'prop-types'
-// import '../styles/kyc.css'
-
 let id = 0;
-
 const { TextArea } = Input
 
 class SmartContractContainer extends Component {
-
     constructor (props) {
         super(props)
         this.state = {
-
             user: '',
             form: '',
         };
 
     }
-
     remove = k => {
         const { form } = this.props;
         // can use data-binding to get
@@ -189,14 +177,11 @@ class SmartContractContainer extends Component {
         )
     }
 }
-
 function mapStateToProps (state) {
     return {
     }
 }
 
 SmartContractContainer.propTypes = {}
-
 const WrappedSmartContractContainer = Form.create()(SmartContractContainer)
-
 export default  connect (mapStateToProps, {}) (WrappedSmartContractContainer)
