@@ -65,7 +65,7 @@
     "react-google-recaptcha": "^2.0.1",
     "react-helmet": "^5.2.0",
     "react-milestone": "^1.0.5",
-    "react-moment": "^0.9.6",
+    "react-moment": "^0.9.7",
     "react-moment-countdown": "^0.3.0",
     "react-particles-js": "^2.7.0",
     "react-redux": "^6.0.0",

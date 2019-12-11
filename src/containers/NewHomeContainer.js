@@ -1,12 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
-import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar } from 'antd'
+import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar, Card } from 'antd'
 import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
 import ScrollButton from '../components/Elements/ScrollButton'
+
+const { Meta } = Card;
 
 class NewHomeContainer extends Component {
 
@@ -98,7 +100,7 @@ class NewHomeContainer extends Component {
                             <div className="intro-text" style={{marginTop:'100px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
-                                    <span className="big"> <ReactRevealText show={this.state.showText}>A blockchain Marketplace for Freelancers </ReactRevealText></span>
+                                    <span className="big"> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
                                 </h1>
                                 <div className="" style={{ marginTop: '50px', marginBottom: '50px' }}>
                                         <span className="stay-up-to-date">
@@ -130,14 +132,25 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 1 }}
-                             xl={{ span: 5, offset: 2 }} xxl={{ span: 5, offset: 3 }}>
-                            <img style={{height:window.innerHeight-150,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
+                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
+                             xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
+                            <img style={{height:window.innerHeight-250,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        <Card
+                            bordered={false}
+                            style={{width: '100%', opacity: '0.5', height: '100px', marginTop: '45px'}}
+                            
+                        >
+                            <img style={{width: '150px', marginTop: '-2%'}} src={'../../static/images/urban_logo_partners_f.png'}/>
+                        </Card>
                         </Col>
                     </Row>
                 </div>
 
-                <div style={{backgroundColor:"rgba(202, 202, 202, 0.47)",paddingTop:'90px',paddingBottom:'50px' }}>
+                <div style={{backgroundColor:"rgb(181, 175, 170)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
@@ -164,10 +177,10 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
                                             <div className="polaroid">
-                                                <img className="polaroid-image" src="../../static/images/design/business_consultancy_image@1x.png" style={{width:'100%'}}/>
-                                                    <div className="categories-title">
-                                                        Cinque Terre
-                                                    </div>
+                                                <img  className="polaroid-image" src="../../static/images/design/writing_and_translation_image@1x.png" style={{width:'100%'}}/>
+                                                <div className="categories-title ">
+                                                    Writing & Translation
+                                                </div>
                                             </div>
                                         </div>
                                     </Col>
@@ -176,7 +189,7 @@ class NewHomeContainer extends Component {
                                             <div className="polaroid">
                                                 <img className="polaroid-image" src="../../static/images/design/customer_service_image@1x.png" style={{width:'100%'}}/>
                                                 <div className="categories-title">
-                                                    Customer Service
+                                                    Digital Marketing
                                                 </div>
                                             </div>
                                         </div>
@@ -186,7 +199,7 @@ class NewHomeContainer extends Component {
                                             <div className="polaroid">
                                                 <img className="polaroid-image" src="../../static/images/design/design_and_creative_image@1x.png" style={{width:'100%'}}/>
                                                 <div className="categories-title ">
-                                                    Design & Creative
+                                                    Web & Graphic Design
                                                 </div>
                                             </div>
                                         </div>
@@ -199,7 +212,7 @@ class NewHomeContainer extends Component {
                                             <div className="polaroid">
                                                 <img  className="polaroid-image"   src="../../static/images/design/digital_marketing_image@1x.png" style={{width:'100%'}}/>
                                                 <div className="categories-title ">
-                                                    Digital Marketing
+                                                    Legal Advice
                                                 </div>
                                             </div>
                                         </div>
@@ -216,12 +229,12 @@ class NewHomeContainer extends Component {
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
-                                        <div className="category-box">
+                                    <div className="category-box">
                                             <div className="polaroid">
-                                                <img  className="polaroid-image" src="../../static/images/design/writing_and_translation_image@1x.png" style={{width:'100%'}}/>
-                                                <div className="categories-title ">
-                                                    Digital Marketing
-                                                </div>
+                                                <img className="polaroid-image" src="../../static/images/design/business_consultancy_image@1x.png" style={{width:'100%'}}/>
+                                                    <div className="categories-title">
+                                                        Business Consultancy
+                                                    </div>
                                             </div>
                                         </div>
                                     </Col>
@@ -289,9 +302,9 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '19px',textAlign:'center'  }}>
-                                <img src={'../../static/images/get_paid_instantly.svg'}/> <br/>
+                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '20px',textAlign:'center'  }}>
+                                <img src={'../../static/images/exchange_money.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
                                 <span className={'home-paragraph-1'}>
                                     <p>
@@ -318,7 +331,7 @@ class NewHomeContainer extends Component {
                     <div>
                         <Row>
                             <Col xs={{ span: 22 }} sm={16} md={12} lg={12} xl={{ span: 10 }}
-                                 xxl={{ span: 8, offset: 4 }}>
+                                 xxl={{ span: 10 }}>
                                 <div className={'investors-title'}>
                                     Help us create the first
                                     <br/>
@@ -337,9 +350,9 @@ class NewHomeContainer extends Component {
                                     </Button>
                                 </Link>
                             </Col>
-                            <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 8 }}>
-                                <img className={'img-responsive'} style={{ marginTop: '150px' }}
-                                     src="../../static/images/design/become_an_investor_image@2x.jpg" alt=""/>
+                            <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 14 }}>
+                                <img className={'img-responsive'} 
+                                     src="../../static/images/coin-img-2.png" alt="become-an-investor"/>
                             </Col>
                         </Row>
                     </div>
