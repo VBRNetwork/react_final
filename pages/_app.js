@@ -76,10 +76,10 @@ class MyApp extends App {
                 <Provider store={store}>
                     <PersistGate loading={<div className={'loading-start'}>
                         <Spin size="large" /></div>} persistor={store.__persistor}>
-                        <ConnectedRouter><Layout><Component router={router} {...pageProps}/></Layout></ConnectedRouter>
+                        <ConnectedRouter><Layout><Component router={router} {...pageProps}/><div className="chat-support"/>
+                        </Layout></ConnectedRouter>
                     </PersistGate>
                 </Provider>
-                <div className="chat-support"/>
             </Container>
         )
     }
