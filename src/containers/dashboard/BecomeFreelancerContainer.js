@@ -15,7 +15,6 @@ import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
 import {getSkillsAndLanguages} from '../../actions/app_settings'
-import '../../styles/dashboard.css'
 const formItemLayout = {
     labelCol: {
         xs: { span: 24 },

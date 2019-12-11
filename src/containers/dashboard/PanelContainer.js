@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Menu, Icon, Button, Avatar, Progress, Row, Card, Switch, Layout, List, Col, Statistic, Timeline, Dropdown, Rate } from 'antd'
-import '../../styles/dashboard.css'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']

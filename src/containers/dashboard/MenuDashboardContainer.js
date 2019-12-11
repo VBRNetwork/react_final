@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Menu, Icon, Button, Avatar, Progress, Row, Card, Switch, Layout, List, Col, Statistic, Timeline, Dropdown, Rate } from 'antd'
-import '../../styles/dashboard.css'
 const { Header, Content, Footer, Sider } = Layout
 const { SubMenu } = Menu
 import Link from 'next/link'
