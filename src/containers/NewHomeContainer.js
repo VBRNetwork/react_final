@@ -105,13 +105,13 @@ class NewHomeContainer extends Component {
                             <div className="intro-text" style={{marginTop:'50px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
-                                    <span className="big"> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
+                                    <span className="big" style={{textTransform:'none'}}> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
                                 </h1>
                                 <div className="" style={{ marginTop: '50px', marginBottom: '50px' }}>
-                                        <span className="stay-up-to-date">
+                                        <h2 className="stay-up-to-date">
                                           <ReactRevealText show={this.state.showTextSecond}>Be part of our community to find a job or hire experts.
                                               We are launching soon, but until then, join our BETA version!</ReactRevealText>
-                                        </span>
+                                        </h2>
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
