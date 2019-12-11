@@ -157,7 +157,7 @@ class NewHomeContainer extends Component {
 
 
 
-                <div style={{backgroundColor:"rgb(244, 244, 244)",paddingTop:'90px',paddingBottom:'50px' }}>
+                <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
