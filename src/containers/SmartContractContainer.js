@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import Moment from 'react-moment';
+import moment from '../../node_modules/moment';
 import {
     Icon,
     Button,
@@ -13,6 +15,7 @@ import {
 import PropTypes from 'prop-types'
 import '../styles/dashboard.css'
 import '../styles/kyc.css'
+import CountDown from '../../src/components/CountDown'
 
 let id = 0;
 
@@ -121,6 +124,8 @@ class SmartContractContainer extends Component {
 
         return (
             <div className="smart-contract-container">
+<CountDown />
+
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24}}>
                         <h2 
@@ -182,6 +187,8 @@ class SmartContractContainer extends Component {
                 <img src="../../static/images/talent_seeker_imagery@1x.png"/>
                 </Col>
                 </Row>
+
+                
             </div>
         )
     }

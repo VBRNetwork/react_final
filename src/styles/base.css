@@ -422,7 +422,7 @@ label {
 }
 
 .investors-title {
-    color: #3B3D47;
+    color: #FFFFFF;
     font-size: 38px;
     font-weight: 700;
     text-align: left;
@@ -430,7 +430,7 @@ label {
 }
 
 .investors-text {
-    color: #202C39;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -698,7 +698,8 @@ label {
 .home-investors-box {
     margin-top: 110px;
     margin-bottom: 100px;
-    background-color: #DEEEED;
+    background: linear-gradient(225.57deg, #008D7F 0%, #00237C 100%);
+    border-radius: 10px;
     padding: 60px;
 }
 
@@ -986,3 +987,48 @@ label {
     height:200px !important;
 }
 
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.countdown-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    color: #111;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 30px;
+    margin: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.countdown-item span {
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
