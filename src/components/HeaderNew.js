@@ -158,7 +158,6 @@ class HeaderNew extends Component {
                     }
                 }
             }
-
         }
     }
 
@@ -172,63 +171,6 @@ class HeaderNew extends Component {
     }
 
     render () {
-        let token = false
-        if (this.props.user.token) {
-            token = true
-        }
-
-        let loginButton = (
-            <Button ghost size="large">
-                <Link href='/login'>
-                    <a><b>Log in</b></a>
-                </Link>
-            </Button>
-        )
-
-        let joinButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/register'>
-                    <a><b>Register</b></a>
-                </Link>
-            </Button>
-        )
-
-        let postJobButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/jobs/add-job'>
-                    <a><b>Post Job</b></a>
-                </Link>
-            </Button>
-        )
-
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <Link href='/dashboard'>
-                        <a>
-                            Dashboard
-                        </a>
-                    </Link>
-
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer'>
-                        Change Avatar
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' href='#'>
-                        Payments History
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <div onClick={this.clickLogout}>
-                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
-                    </div>
-                </Menu.Item>
-            </Menu>
-        )
-
         let menuItems = ''
         if (typeof (this.props.settings.main_menu) !== 'undefined' &&
             typeof (this.props.settings.main_menu.mainMenu) !== 'undefined') {
@@ -306,8 +248,8 @@ class HeaderNew extends Component {
                     <HeaderMenu/>
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
-                            background: 'rgba(26, 29, 40, 0.54)',
-                            boxShadow: 'rgb(185, 185, 185) 0px 0px 20px 0px'
+                            background:'rgba(58, 62, 77, 0.54) none repeat scroll 0% 0%',
+                            boxShadow:'rgb(255, 255, 255) 0px 0px 6px 0px'
                         }}>
                             <div style={{ margin: '0 auto' }}>
                                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 18, offset: 3 }}>

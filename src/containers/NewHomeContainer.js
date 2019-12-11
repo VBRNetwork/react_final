@@ -6,6 +6,7 @@ import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
+import ScrollButton from '../components/Elements/ScrollButton'
 
 const { Meta } = Card;
 
@@ -66,66 +67,9 @@ class NewHomeContainer extends Component {
     }
 
     render () {
-
-        let token = false
-        if (this.props.user.token) {
-            token = true
-        }
-
-        let loginButton = (
-            <Button ghost size="large"><Link href='/login'>
-                <a><b>Log in</b></a>
-            </Link>
-            </Button>
-        )
-
-        let joinButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/register'>
-                    <a><b>Register</b></a>
-                </Link>
-            </Button>
-        )
-
-        let postJobButton = (
-            <Button size="large" style={{ marginLeft: '10px' }}>
-                <Link href='/post-job'>
-                    <a><b>Post Job</b></a>
-                </Link>
-            </Button>
-        )
-
-        const menu = (
-            <Menu>
-                <Menu.Item>
-                    <Link href='/dashboard'>
-                        <a>
-                            Dashboard
-                        </a>
-                    </Link>
-
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer'>
-                        Change Avatar
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' href='#'>
-                        Payments History
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <div onClick={this.clickLogout}>
-                        <Icon style={{ fontSize: 17 }} type='logout'/> Logout
-                    </div>
-                </Menu.Item>
-            </Menu>
-        )
-
         return (
             <Fragment>
-                <div className='container background-header' style={{height:window.innerHeight}}>
+                <div className='container background-header' style={{minHeight:window.innerHeight}}>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
@@ -152,7 +96,7 @@ class NewHomeContainer extends Component {
                     <HeaderMenu/>
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 2 }}
-                             xl={{ span: 10, offset: 3 }} xxl={{ span: 11, offset: 2}}>
+                             xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
                             <div className="intro-text" style={{marginTop:'100px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
@@ -166,7 +110,7 @@ class NewHomeContainer extends Component {
                                 </div>
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
-                                        <Col xs={24} md={10}>
+                                        <Col xs={24} md={24} lg={12} xxl={8}>
                                             <Link href='/register'>
                                                 <Button className="btn-style" size="large">
                                                     <a>
@@ -175,14 +119,14 @@ class NewHomeContainer extends Component {
                                                 </Button>
                                             </Link>
                                         </Col>
-                                        <Col xs={24} md={10}>
-                                                <Link href='/jobs/add-job'>
-                                                    <Button className="btn-style" size="large">
-                                                        <a>
-                                                            <b>Post a job</b>
-                                                        </a>
-                                                    </Button>
-                                                </Link>
+                                        <Col xs={24} md={24} lg={12} xxl={8}>
+                                            <Link href='/jobs/add-job' >
+                                                <Button className="btn-style" size="large">
+                                                    <a>
+                                                        <b>Post a job</b>
+                                                    </a>
+                                                </Button>
+                                            </Link>
                                         </Col>
                                     </Row>
                                 </div>
@@ -208,7 +152,7 @@ class NewHomeContainer extends Component {
 
                 <div style={{backgroundColor:"rgb(181, 175, 170)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
-                        <Col xs={{ span: 21, offset: 2 }} sm={16} md={24} lg={9} xl={9} xxl={{ span: 9, offset:3}}>
+                        <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
                                     Find the job you love.
@@ -227,7 +171,7 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={{ span: 19, offset: 1 }} sm={16} md={{ span: 16 }} lg={10} xl={9} xxl={{ span: 10 }}>
+                        <Col xs={{ span: 19, offset: 1 }} sm={12} md={{ span: 11,offset:1 }} lg={10} xl={9} xxl={{ span: 10 }}>
                             <div>
                                 <Row>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
@@ -318,8 +262,8 @@ class NewHomeContainer extends Component {
 
                 <div>
                     <Row>
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
-                            <div style={{ padding: '20px',textAlign:'center' }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
+                            <div style={{ padding: '18px',textAlign:'center' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
                                 <span className={'home-paragraph-1'}>
@@ -330,7 +274,7 @@ class NewHomeContainer extends Component {
                                 </span>
                             </div>
                         </Col>
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
                             <div style={{ padding: '19px',textAlign:'center'}}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
                                 <span className={'communicate-directly'} style={ {marginTop:'6px'} }>Create Smart Contracts</span>
@@ -344,8 +288,8 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
-                            <div style={{ padding: '20px',textAlign:'center'  }}>
+                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                            <div style={{ padding: '19px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
                                 <span className={'communicate-directly'}>Get Paid Instantly</span>
                                 <div className={'home-paragraph-1'}>
@@ -507,7 +451,7 @@ class NewHomeContainer extends Component {
                         </Col>
                     </Row>
                 </div>
-
+                <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
             </Fragment>
         )
     }

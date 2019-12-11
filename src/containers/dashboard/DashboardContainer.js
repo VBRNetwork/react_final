@@ -12,6 +12,7 @@ import ViewProfileContainer from './ViewProfileContainer'
 import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
+import ProjectManagementContainer from './ProjectManagementContainer'
 
 class DashboardContainer extends Component {
 
@@ -41,13 +42,13 @@ class DashboardContainer extends Component {
           dashboardComponent = <BecomeFreelancerContainer/>
       }else if(this.state.location === '/dashboard/wallet'){
           dashboardComponent = <WalletContainer/>
+      }else if(this.state.location === '/dashboard/project-management'){
+          dashboardComponent = <ProjectManagementContainer/>
       }
 
       return (
           <DashboardLayout data={{full_name:full_name}}>
-              <div>
-                  {dashboardComponent}
-              </div>
+              {dashboardComponent}
           </DashboardLayout>
     )
   }

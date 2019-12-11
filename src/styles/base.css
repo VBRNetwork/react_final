@@ -569,13 +569,6 @@ label {
   position: absolute;
 }
 
- @media(max-width:815px) {
- .no-spam {
-   margin-top: 5px;
-   text-align: center !important;
-   margin-left: 1px;
- }
-}
 
  .get-notified {
    color: #008D7F !important;
@@ -806,11 +799,13 @@ label {
  }
  
  @media(max-width:815px) {
-  .stay-up-to-date-and {
-    margin-left: 1px;
-    display: inline !important;
-    text-align: center;
-  }
+      .stay-up-to-date-and {
+        margin-left: 1px;
+        display: inline !important;
+        text-align: center;
+      }
+
+
  }
 
  @media(max-width:1024px) {
@@ -930,7 +925,6 @@ label {
   padding-top: 90px !important;
 }
 
-<<<<<<< HEAD
 .our-partners-box {
     padding-top: 90px !important;
 }
@@ -962,7 +956,6 @@ label {
     width: 300px;
     margin: 0 10px 10px 0;
     background: transparent;
-    align-content: right !important;
 }
 
 .rectangle2 {
@@ -979,14 +972,10 @@ label {
     text-align: center;
  }
 
-
-
-
 .emoji-picker-react {
     width:100% !important;
     height:200px !important;
 }
-
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 

@@ -152,41 +152,40 @@ class HeaderMenu extends Component {
                     </Col>
 
                     <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
-                        <div style={{ marginTop: '25px' }}>
+                        <div style={{ marginTop: '25px', textAlign:'center' }}>
                             {token === false && loginButton}
                             {token === false && joinButton}
-
                             {token !== false &&
-                            <div>
-                                {postJobButton}
+                                <div>
+                                    {postJobButton}
+                                    {this.props.user.type === 0 &&
+                                        <Button type='primary' ghost size="large" style={{
+                                            marginLeft: '5px',
+                                            backgroundColor: '#2EC3AB',
+                                            borderColor: '#2EC3AB'
+                                        }}>
+                                            <Link href={'/dashboard/?slug=become-freelancer'} as={'/dashboard/become-freelancer'}>
+                                                <a style={{color:'#FFF'}}>
+                                                    Become a freelancer
+                                                </a>
+                                            </Link>
+                                        </Button>
+                                    }
 
-                                {this.props.user.type === 0 &&
-                                <Button type='primary' ghost size="large" style={{
-                                    marginLeft: '5px',
-                                    backgroundColor: '#2EC3AB',
-                                    borderColor: '#2EC3AB'
-                                }}>
-                                    <Link href={'/dashboard/?slug=become-freelancer'} as={'/dashboard/become-freelancer'}>
-                                        <a style={{color:'#FFF'}}>
-                                            Become a freelancer
-                                        </a>
-                                    </Link>
-                                </Button>
-                                }
-                                {this.props.user.type === 1 &&
-                                <span style={{ marginLeft: '5px' }}>You are freelancer</span>
-                                }
+                                    {this.props.user.type === 1 &&
+                                        <span style={{ marginLeft: '5px' }}>You are freelancer</span>
+                                    }
 
-                                <Dropdown overlay={menu}>
-                                    <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
-                                         className='ant-dropdown-link'>
-                                        <Avatar src={this.props.user.profile && this.props.user.profile.image} size='large' icon='user'
-                                                style={{
-                                                    cursor: 'pointer',
-                                                }}/>
-                                    </div>
-                                </Dropdown>
-                            </div>
+                                    <Dropdown overlay={menu}>
+                                        <div style={{ color: '#FFF', marginLeft: '20px', display: 'inline' }}
+                                             className='ant-dropdown-link'>
+                                            <Avatar src={this.props.user.profile && this.props.user.profile.image} size='large' icon='user'
+                                                    style={{
+                                                        cursor: 'pointer',
+                                                    }}/>
+                                        </div>
+                                    </Dropdown>
+                                </div>
                             }
                         </div>
 

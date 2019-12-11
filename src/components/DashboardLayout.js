@@ -28,9 +28,7 @@ class DashboardLayout extends Component {
                             <Layout style={{ background: '#fff' }}>
                                 <MenuDashboardContainer/>
                                 <Content style={{ marginLeft: '1%', marginRight: '1%' }}>
-                                    <div>
-                                        {this.props.children}
-                                    </div>
+                                    {this.props.children}
                                 </Content>
                             </Layout>
                         </div>
