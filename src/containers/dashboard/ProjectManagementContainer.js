@@ -13,8 +13,9 @@ import {
     Dropdown,
     Popup,
 } from 'react-chat-elements';
-
 import {Row,Col} from 'antd';
+import '../../styles/chat.css'
+
 
 export default class ProjectManagementContainer extends Component {
 
