@@ -63,12 +63,13 @@ class MenuDashboardContainer extends Component {
                             key='sub2'
                             title={
                                 <span>
-                                  <Icon type='tool'/>
-                                                VBR Tools
+                                    <Icon type='tool'/> VBR Tools
                                 </span>}>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='5'>Marketplace</Menu.Item>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='5'>Projects</Menu.Item>
+                            <Menu.Item style={{ color: '#2ec3ab' }} key='7'>
+                                <Link href={'/dashboard?slug=project-management'} as={'/dashboard/project-management'}><a>Projects Chat</a></Link>
+                            </Menu.Item>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='6'>Exchange Market</Menu.Item>
-                            <Menu.Item style={{ color: '#2ec3ab' }} key='7'>Chat Preferences</Menu.Item>
                             <Menu.Item style={{ color: '#2ec3ab' }} key='8'>Smart Contracts</Menu.Item>
                         </SubMenu>
 

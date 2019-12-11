@@ -67,7 +67,7 @@ class NewHomeContainer extends Component {
     render () {
         return (
             <Fragment>
-                <div className='container background-header' style={{height:window.innerHeight}}>
+                <div className='container background-header' style={{minHeight:window.innerHeight}}>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
