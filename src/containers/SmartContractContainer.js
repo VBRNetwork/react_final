@@ -13,8 +13,7 @@ import {
     Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown, DatePicker, TimePicker
 } from 'antd'
 import PropTypes from 'prop-types'
-import '../styles/dashboard.css'
-import '../styles/kyc.css'
+// import '../styles/kyc.css'
 import CountDown from '../../src/components/CountDown'
 
 let id = 0;
