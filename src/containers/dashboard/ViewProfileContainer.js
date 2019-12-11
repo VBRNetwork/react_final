@@ -1,23 +1,22 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
     Button,
-    Avatar,
     Row,
-    Layout,
     Col,
     Select,
-    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown
+    Form, Input, Tooltip, Cascader
 } from 'antd'
-import { AutoComplete } from 'antd';
-import PropTypes from "prop-types";
 
+import PropTypes from "prop-types";
 const { TextArea } = Input;
-import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
+
 import {becomeFreelancer} from '../../actions/user'
+import SkillsGroup from '../../components/Elements/EditableTagGroup'
 import AutoCompleteInput from '../../components/Elements/AutoCompleteInput'
+
 const lang = [
     {
         value: 'English',

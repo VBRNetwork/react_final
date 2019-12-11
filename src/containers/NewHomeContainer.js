@@ -1,14 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import Particles from 'react-particles-js'
-import { Row, Col, Button, Menu, Icon, Input, Form, Dropdown, Avatar, Card } from 'antd'
+import { Row, Col, Button,Input} from 'antd'
 import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
 import ScrollButton from '../components/Elements/ScrollButton'
-
-const { Meta } = Card;
+import { Helmet } from 'react-helmet'
 
 class NewHomeContainer extends Component {
 
@@ -69,6 +68,13 @@ class NewHomeContainer extends Component {
     render () {
         return (
             <Fragment>
+                <Helmet>
+                    <title>Veelancing - Blockchain freelancers jobs</title>
+                    <meta
+                        name='description'
+                        content='Blockchain Freelancers Jobs.Be part of our community to find a job or hire experts. We are launching soon, but until then, join our BETA version!'
+                    />
+                </Helmet>
                 <div className='container background-header' style={{height:window.innerHeight,position:'relative'}}>
                     <Particles
                         style={{ position: 'absolute' }}
@@ -96,7 +102,7 @@ class NewHomeContainer extends Component {
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
-                            <div className="intro-text" style={{marginTop:'100px'}}>
+                            <div className="intro-text" style={{marginTop:'50px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big"> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
@@ -136,7 +142,7 @@ class NewHomeContainer extends Component {
                             <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
                         </Col>
                     </Row>
-                    <div style={{position:'absolute',width:'100%'}}>
+                    <div style={{position:'absolute',width:'100%',bottom:'0px'}}>
                         <Row>
                             <Col>
                                 <div style={{opacity: '0.5',backgroundColor:'#FFF',height:'100px'}}>
