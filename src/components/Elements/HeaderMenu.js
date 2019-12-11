@@ -7,15 +7,12 @@ import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
 import {
     BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
 } from 'react-device-detect'
 import ReactGA from 'react-ga'
 import 'antd/dist/antd.css'
-import 'styles/base.css'
-class HeaderMenu extends Component {
+import '../../styles/base.css'
 
+class HeaderMenu extends Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -33,7 +30,6 @@ class HeaderMenu extends Component {
 
     componentDidMount () {
     }
-
 
     clickLogout (e) {
         let { logout } = this.props

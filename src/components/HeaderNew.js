@@ -13,7 +13,6 @@ import Particles from 'react-particles-js'
 ReactGA.initialize('UA-147139648-1')
 import { logout } from '../actions/user'
 import '../styles/home.css'
-import '../styles/base.css'
 import HeaderMenu from './Elements/HeaderMenu'
 
 const { Content } = Layout

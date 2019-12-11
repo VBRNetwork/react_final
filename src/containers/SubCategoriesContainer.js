@@ -5,7 +5,6 @@ const { Meta } = Card
 const { Content, Sider } = Layout
 import Link from 'next/link'
 import {Helmet} from "react-helmet";
-import '../styles/base.css'
 
 class SubCategoriesContainer extends Component {
 
