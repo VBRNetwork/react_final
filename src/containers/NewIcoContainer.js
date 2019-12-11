@@ -1,18 +1,15 @@
-import React, { Component, Fragment } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import { Carousel, Layout, Row, Col, Button, Card, Input, Avatar, Empty, Breadcrumb, Form, Icon, Statistic } from 'antd'
+import {Row, Col, Button, Input } from 'antd'
 import "../styles/base.css"
 import HeaderMenu from '../components/Elements/HeaderMenu'
-const { TextArea } = Input
-const { Meta } = Card
+import CountDown from '../../src/components/CountDown'
 
 export default class NewIcoContainer extends Component {
 
     render() {
-
         return (
             <div >
                 <div className='container background-header'>
@@ -66,6 +63,7 @@ export default class NewIcoContainer extends Component {
                         <div>
                             <Col xs={24} sm={12} md={10} lg={{ span: 10 }}>
                                 <div className="count-down">
+                                    <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
                                 </div>
                             </Col>
                         </div>
@@ -119,7 +117,7 @@ export default class NewIcoContainer extends Component {
                 <br />
                 <br />
                 <div className={'rectangle-copy'}>
-                    <Row gutter={[32, 32]}>
+                    <Row>
                         <Col xs={24} sm={12} md={{ span: 12}} lg={12} xl={{span:12}} xxl={12}>
                             <div className={'the-problem'}>
                                 The Problem
@@ -377,7 +375,7 @@ export default class NewIcoContainer extends Component {
                 </VerticalTimeline>
                 <br />
 
-                <Row gutter={[40, 40]}>
+                <Row >
                     <div className="the-team-box">
                         <Col span={8} push={1}>
                             <h1 className="the-team">The team</h1>
@@ -385,7 +383,7 @@ export default class NewIcoContainer extends Component {
                         </Col>
 
                         <Col span={12} push={3}>
-                            <Row gutter={[40, 40]}>
+                            <Row >
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                         src="../../static/images/team_member.jpg" />
@@ -406,7 +404,7 @@ export default class NewIcoContainer extends Component {
                                 </Col>
                             </Row>
                             <br />
-                            <Row gutter={[40, 40]}>
+                            <Row>
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                         src="../../static/images/team_member.jpg" />
@@ -436,7 +434,7 @@ export default class NewIcoContainer extends Component {
                         </div>
                     </Col>
                     <Col span={9} push={3}>
-                        <Row gutter={[40, 40]}>
+                        <Row >
                             <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                 <img className="our-partners-images"
                                     src="../../static/images/team_member.jpg" />
