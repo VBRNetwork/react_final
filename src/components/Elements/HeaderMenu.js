@@ -122,33 +122,34 @@ class HeaderMenu extends Component {
                     </Col>
 
                     <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
-                        <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                            marginTop: '25px',
-                            background: 'transparent',
-                            borderBottom: 'initial',
-                            float: 'right'
-                        }}>
-                            <Menu.Item key='app122'>
-                                <Link href='/ico'>
-                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                    Initial Coin Offering</a>
-                                </Link>
-                            </Menu.Item>
-                            <Menu.Item key='app1'>
-                                <Link href='/how-it-works'>
-                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
-                                        How it  works
-                                    </a>
-                                </Link>
-                            </Menu.Item>
-                            <Menu.Item key='about'>
-                                <BrowserView>
-                                    <Link href='/about-us'>
-                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                        <div style={{float:'right'}}>
+                            <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                marginTop: '25px',
+                                background: 'transparent',
+                                borderBottom: 'initial',
+                            }}>
+                                <Menu.Item key='app122'>
+                                    <Link href='/ico'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                            Initial Coin Offering</a>
                                     </Link>
-                                </BrowserView>
-                            </Menu.Item>
-                        </Menu>
+                                </Menu.Item>
+                                <Menu.Item key='app1'>
+                                    <Link href='/how-it-works'>
+                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                            How it  works
+                                        </a>
+                                    </Link>
+                                </Menu.Item>
+                                <Menu.Item key='about'>
+                                    <BrowserView>
+                                        <Link href='/about-us'>
+                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                        </Link>
+                                    </BrowserView>
+                                </Menu.Item>
+                            </Menu>
+                        </div>
                     </Col>
 
                     <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
