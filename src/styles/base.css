@@ -523,13 +523,13 @@ label {
     position: absolute;
   }
 
-  .count-down {
+.count-down {
     shape-rendering: geometricPrecision;
-    background-color: #3B3D47;
+    background-color:
+            #1AB0C48F;
     border-radius: 10px;
-    opacity: 0.1000000014901161;
-    width: 480px;
-    height: 280px;
+    height: 275px;
+    width: 82%;
 }
 
 .initial-coin-offering {
@@ -1001,7 +1001,7 @@ h1 {
 }
 
 .countdown-item {
-    color: #111;
+    color: #3e3e3e;
     font-size: 40px;
     display: flex;
     align-items: center;
@@ -1021,6 +1021,15 @@ h1 {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.countdown-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
 
 .go-top {
     display: none;

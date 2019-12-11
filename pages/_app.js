@@ -13,26 +13,13 @@ const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
 })
 import {PersistGate} from 'redux-persist/integration/react'
 import { Spin } from 'antd';
-import 'antd/dist/antd.css'
-import 'styles/base.css'
+
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { ConnectedRouter } from 'connected-next-router'
 import dynamic from 'next/dynamic'
-
-
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
 
 class MyApp extends App {
-    static async getInitialProps({Component, ctx}) {
-
-        return {
-            pageProps: Component.getInitialProps
-                ? await Component.getInitialProps(ctx)
-                : {}
-        }
-    }
-
-
     get helmetBodyAttrComponents() {
         return this.props.helmet.bodyAttributes.toComponent()
     }
@@ -42,7 +29,6 @@ class MyApp extends App {
         .filter(el => el !== 'htmlAttributes' && el !== 'bodyAttributes')
         .map(el => this.props.helmet[el].toComponent())
     }
-
 
     render() {
         const {Component, pageProps, store, router} = this.props

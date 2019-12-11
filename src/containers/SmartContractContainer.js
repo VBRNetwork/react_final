@@ -14,7 +14,6 @@ import {
 } from 'antd'
 import PropTypes from 'prop-types'
 // import '../styles/kyc.css'
-import CountDown from '../../src/components/CountDown'
 
 let id = 0;
 
@@ -123,8 +122,6 @@ class SmartContractContainer extends Component {
 
         return (
             <div className="smart-contract-container">
-<CountDown />
-
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24}}>
                         <h2 

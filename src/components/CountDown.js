@@ -2,10 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col, List } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import Moment from 'react-moment';
-import moment from '../../node_modules/moment';
-
-
+import moment from 'moment'
 
 class CountDown extends Component {
 
@@ -56,11 +53,9 @@ class CountDown extends Component {
         return null;
     }
 
-        
     return (
-      <div>
-
-<h1>Countdown</h1>
+      <div style={{paddingTop:'30px'}}>
+                <h1>Countdown</h1>
                 <div className="countdown-wrapper">
                     {days && (
                         <div className="countdown-item">
@@ -101,7 +96,7 @@ const SVGCircle = ({ radius }) => (
         <path
             fill="none"
             stroke="#333"
-            stroke-width="4"
+            strokeWidth="4"
             d={describeArc(50, 50, 48, 0, radius)}
         />
     </svg>
