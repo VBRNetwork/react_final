@@ -145,6 +145,8 @@ class NewHomeContainer extends Component {
                             </Col>
                         </Row>
                     </div>
+
+
                 </div>
 
 
