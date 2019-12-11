@@ -69,7 +69,7 @@ class NewHomeContainer extends Component {
     render () {
         return (
             <Fragment>
-                <div className='container background-header' style={{minHeight:window.innerHeight}}>
+                <div className='container background-header' style={{height:window.innerHeight,position:'relative'}}>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
@@ -90,12 +90,11 @@ class NewHomeContainer extends Component {
                                     }
                                 }
                             }
-                        }}
-                    >
+                        }}>
                     </Particles>
                     <HeaderMenu/>
                     <Row>
-                        <Col xs={24} sm={24} md={{ span: 10, offset: 1 }} lg={{ span: 10, offset: 2 }}
+                        <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
                             <div className="intro-text" style={{marginTop:'100px'}}>
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
@@ -134,21 +133,23 @@ class NewHomeContainer extends Component {
                         </Col>
                         <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
                              xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
-                            <img style={{height:window.innerHeight-250,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
+                            <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col>
-                        <Card
-                            bordered={false}
-                            style={{width: '100%', opacity: '0.5', height: '100px', marginTop: '45px'}}
-                            
-                        >
-                            <img style={{width: '150px', marginTop: '-2%'}} src={'../../static/images/urban_logo_partners_f.png'}/>
-                        </Card>
-                        </Col>
-                    </Row>
+                    <div style={{position:'absolute',width:'100%'}}>
+                        <Row>
+                            <Col>
+                                <div style={{opacity: '0.5',backgroundColor:'#FFF',height:'100px'}}>
+                                    <img style={{height:'115px'}} src={'../../static/images/urban_logo_partners_f.png'} />
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+
+
                 </div>
+
+
 
                 <div style={{backgroundColor:"rgb(181, 175, 170)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
