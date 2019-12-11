@@ -18,6 +18,8 @@ import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { ConnectedRouter } from 'connected-next-router'
 import dynamic from 'next/dynamic'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
+import 'antd/dist/antd.css'
+import 'styles/base.css'
 
 class MyApp extends App {
     get helmetBodyAttrComponents() {
