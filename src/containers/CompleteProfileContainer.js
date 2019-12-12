@@ -2,23 +2,17 @@
 import React from 'react';
 
 import {
-  Select,
   Row,
   Col,
   Button,
-  AutoComplete,
   Card,
-  Radio
 } from 'antd';
 
-const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
 import { connect } from 'react-redux'
 import RegisterStepOneContainer from '../containers/register/RegisterStepOneContainer'
 import RegisterStepTwoContainer from '../containers/register/RegisterStepTwoContainer'
 import RegisterStepThreeContainer from '../containers/register/RegisterStepThreeContainer'
 import '../styles/register.css'
-
 import { Steps, message } from 'antd';
 import Router from "next/dist/client/router";
 const Step = Steps.Step;

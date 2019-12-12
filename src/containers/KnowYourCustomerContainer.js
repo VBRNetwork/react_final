@@ -1,14 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
     Button,
-    Avatar,
     Row,
-    Layout,
     Col,
-    Select,
-    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown, DatePicker, TimePicker
+    Form, Input, Checkbox, Upload, DatePicker
 } from 'antd'
 import '../styles/kyc.css'
 import PropTypes from 'prop-types'
