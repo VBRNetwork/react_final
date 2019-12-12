@@ -11,8 +11,6 @@ import {
     Button,
     Card, Alert,
 } from 'antd';
-import PropTypes from "prop-types";
-import {registerAccount} from '../actions/user'
 import Router from "next/dist/client/router";
 
 class RecoveryAccountContainer extends Component {
