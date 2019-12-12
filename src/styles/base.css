@@ -430,7 +430,6 @@ label {
 }
 
 .investors-text {
-    color: #FFFFFF;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -599,7 +598,7 @@ label {
    margin-top:110px;
    margin-bottom:100px;
    background-color: #DEEEED;
-   padding: 60px;
+   padding: 80px;
 }
 
 @media(max-width: 815px) {
@@ -857,8 +856,8 @@ label {
   color: #202C39 !important;
   font-size: 38px;
   font-weight: 700;
-  width: 600px;
   text-align: center;
+  margin-top: 50px;
 }
 
 @media(max-width:815px) {
@@ -962,12 +961,12 @@ label {
     margin-top:110px;
     background-color: #DEEEED;
     padding: 30px;
+    text-align: center;
  }
 
  .want-to-hear-more {
     font-size: 38px;
     font-weight: 700;
-    width: 700px;
     line-height: 46px;
     text-align: center;
  }
