@@ -123,10 +123,10 @@ class RegisterContainer extends Component {
         return (
             <article>
                 <Helmet>
-                    <title>Register Page</title>
+                    <title>Create account</title>
                     <meta
                         name='description'
-                        content='Register account application page'
+                        content='Register account'
                     />
                 </Helmet>
                 <div className='container'>
