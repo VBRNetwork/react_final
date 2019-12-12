@@ -137,7 +137,7 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={24} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
+                        <Col xs={0} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
                              xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
                             <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market.png" alt=""/>
                         </Col>
@@ -151,7 +151,6 @@ class NewHomeContainer extends Component {
                             </Col>
                         </Row>
                     </div>
-
 
                 </div>
 
@@ -178,7 +177,7 @@ class NewHomeContainer extends Component {
                                 </div>
                             </div>
                         </Col>
-                        <Col xs={{ span: 19, offset: 1 }} sm={12} md={{ span: 11,offset:1 }} lg={10} xl={9} xxl={{ span: 10 }}>
+                        <Col xs={{ span: 19, offset: 3 }} sm={12} md={{ span: 11,offset:1 }} lg={10} xl={9} xxl={{ span: 10 }}>
                             <div>
                                 <Row>
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
@@ -269,7 +268,7 @@ class NewHomeContainer extends Component {
 
                 <div>
                     <Row>
-                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
                             <div style={{ padding: '18px',textAlign:'center' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
@@ -281,7 +280,7 @@ class NewHomeContainer extends Component {
                                 </span>
                             </div>
                         </Col>
-                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '19px',textAlign:'center'}}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
                                 <span className={'communicate-directly'} style={ {marginTop:'6px'} }>Create Smart Contracts</span>
@@ -295,7 +294,7 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '19px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
                                 <span className={'communicate-directly'}>Get Paid Instantly</span>
@@ -309,7 +308,7 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '20px',textAlign:'center'  }}>
                                 <img src={'../../static/images/exchange_money.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
@@ -348,7 +347,7 @@ class NewHomeContainer extends Component {
                                     Made by freelancers for freelancers, Veelancing aims to help people
                                     find jobs and talent fast and easy.
                                     <br/>
-                                    With out Blockchain technology we give everyone the opportunity
+                                    With Blockchain technology we give everyone the opportunity
                                     to have access to instant payment and cryptocurrencies.
                                 </p>
                                 <Link href='/register' as={'/register'}>
@@ -389,7 +388,7 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
                         <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 10 }} xxl={{ span: 8, offset: 0 }}>
-                            <div>
+                            <div style={{padding:'20px'}}>
                                 <img className={'img-responsive'}
                                      src={'../../static/images/for_freelancers_imagery@2x.png'}/>
                             </div>
@@ -405,7 +404,7 @@ class NewHomeContainer extends Component {
                                  src={'../../static/images/talent_seeker_imagery@1x.png'}/>
                         </div>
                     </Col>
-                    <Col xs={{ span: 21 }}
+                    <Col xs={{ span: 22, offset:2 }}
                          sm={16}
                          md={{ span: 12, }}
                          lg={{ span: 10 }}
