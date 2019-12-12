@@ -45,7 +45,8 @@ class UserProfileContainer extends Component {
                 price:1,
                 bio:'',
                 image:'../../../static/images/sample-avatar.jpg',
-                type:0
+                type:0,
+                country:'',
             },
             message_sent:false,
         };
@@ -84,6 +85,7 @@ class UserProfileContainer extends Component {
                         price:response.profile.price,
                         image:image,
                         skills:response.profile.skills,
+                        country:response.profile.country,
                     }
                 })
             });
@@ -260,7 +262,7 @@ class UserProfileContainer extends Component {
                                                     @{this.state.profile.username}
                                                 </h3>
                                             </strong>
-                                            <p>Bucharest, Romania</p>
+                                            <p>Country: {this.state.profile.country}</p>
                                             <p style={{fontSize:'12px'}}>Active since December { this.state.profile.price}, 2019</p>
                                         </div>
                                     </Col>

@@ -1,108 +1,112 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Row, Card, List, Col, Layout, Breadcrumb, Icon, Menu } from 'antd'
-const { Meta } = Card
+import { Row, Card, Col, Layout, Icon } from 'antd'
 const { Content, Sider } = Layout
 import Link from 'next/link'
-import {Helmet} from "react-helmet";
+import { Helmet } from 'react-helmet'
 
 class SubCategoriesContainer extends Component {
 
-  constructor(props){
-    super(props)
-  }
-  componentDidMount () {
-  }
+    constructor (props) {
+        super(props)
+    }
 
-  render () {
-    let categories_card = []
-    let menuItems = [];
-    let subcategories = []
-    let currentCategoryName = ''
+    componentDidMount () {
+    }
 
-    if(this.props.siderMenuItems && this.props.siderMenuItems.main_menu && this.props.siderMenuItems.main_menu.mainMenu){
-      let main_menu  = this.props.siderMenuItems.main_menu.mainMenu
-        Object.keys(main_menu).map((category,index) => {
-            subcategories.push(main_menu[category])
-            let categoryItem = main_menu[category];
-            let subcategoryItems = main_menu[category].subcategories;
+    render () {
+        let categories_card = []
+        let menuItems = []
+        let subcategories = []
+        let currentCategoryName = ''
 
-            menuItems.push(
-                <div><h4>{categoryItem.name}</h4></div>
-            )
+        if (this.props.siderMenuItems && this.props.siderMenuItems.main_menu && this.props.siderMenuItems.main_menu.mainMenu) {
+            let main_menu = this.props.siderMenuItems.main_menu.mainMenu
+            Object.keys(main_menu).map((category, index) => {
+                subcategories.push(main_menu[category])
+                let categoryItem = main_menu[category]
+                let subcategoryItems = main_menu[category].subcategories
 
-            subcategoryItems.forEach(function(subcategoryItem,index) {
-                let localSubcategories = subcategoryItem.url.split("/")
-                localSubcategories = localSubcategories.filter(item => item !== 'categories')
                 menuItems.push(
-                    <div> <Link as={'/' + subcategoryItem.url}
-                                     href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
-                        <a><h5> <Icon style={{fontSize: 17}} type={main_menu[category].icon}/>  {subcategoryItem.title}</h5></a>
-                    </Link>
-                    </div>
+                    <div><h4>{categoryItem.name}</h4></div>
                 )
-                categories_card.push(
-                    <Col xs={{span:22, offset:1}} sm={4} md={6} lg={8} xl={{span:6}} key={categoryItem.name + index} >
-                        <Card
-                            hoverable
-                            style={{ margin:'10px'}}
-                            bodyStyle={{padding:'10px'}}
-                            cover={<img alt={subcategoryItem.title} src={subcategoryItem.img}  />}>
-                            <Link as={'/'+subcategoryItem.url}  href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
-                                <a><h5>{subcategoryItem.title}</h5></a>
+
+                subcategoryItems.forEach(function (subcategoryItem, index) {
+                    let localSubcategories = subcategoryItem.url.split('/')
+                    localSubcategories = localSubcategories.filter(item => item !== 'categories')
+
+                    menuItems.push(
+                        <div>
+                            <Link as={'/' + subcategoryItem.url}
+                                  href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
+                                <a>
+                                    <h5>
+                                        <Icon style={{ fontSize: 17 }}
+                                              type={main_menu[category].icon}/> {subcategoryItem.title}
+                                    </h5>
+                                </a>
                             </Link>
-                        </Card>
-                    </Col>
-                )
+                        </div>
+                    )
+                    categories_card.push(
+                        <Col xs={{ span: 22, offset: 1 }} sm={4} md={6} lg={8} xl={{ span: 6 }}
+                             key={categoryItem.name + index}>
+                            <Card
+                                hoverable
+                                style={{ margin: '10px' }}
+                                bodyStyle={{ padding: '10px' }}
+                                cover={<img alt={subcategoryItem.title} src={subcategoryItem.img}/>}>
+                                <Link as={'/' + subcategoryItem.url}
+                                      href={'/categories/?category=' + localSubcategories[0] + '&subcategory=' + localSubcategories[1]}>
+                                    <a><h5>{subcategoryItem.title}</h5></a>
+                                </Link>
+                            </Card>
+                        </Col>
+                    )
+                })
             })
-        })
+        }
 
-      }
+        return (
+            <Content>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>VBR - {currentCategoryName}</title>
+                </Helmet>
+                <div>
+                    <Row>
 
-    return (
-      <Content>
-        <Helmet>
-            <meta charSet="utf-8" />
-            <title>VBR - {currentCategoryName}</title>
-        </Helmet>
-        <div>
-            <Row>
+                        <Col xs={{ span: 24, offset: 0 }} sm={4} md={6} lg={8} xl={{ span: 18, offset: 3 }}>
+                            <Layout>
+                                <Sider style={{ backgroundColor: '#FFF', padding: '1%' }} width={300}>
 
-            <Col xs={{span:24, offset:0}} sm={4} md={6} lg={8} xl={{span:18,offset:3}}>
-          <Layout  >
-            <Sider style={{ backgroundColor: '#FFF', padding: '1%' }} width={300}>
+                                    <div className='sider-menu' style={{ backgroundColor: '#FFF', marginLeft: '5%' }}>
 
-                  <div className='sider-menu' style={{ backgroundColor: '#FFF', marginLeft: '5%' }}>
-                    
-                    <strong><h3 style={{ margin: '16px 0'}}>{currentCategoryName}</h3></strong>
-                  </div>
-                  <ul className='sub-menu'>
-                    {menuItems}
-                  </ul>
+                                        <strong><h3 style={{ margin: '16px 0' }}>{currentCategoryName}</h3></strong>
+                                    </div>
+                                    <ul className='sub-menu'>
+                                        {menuItems}
+                                    </ul>
 
-            </Sider>
-            <Content  style={{marginBottom:'10px'}}>
-              <Row gutter={40}>
-                {categories_card}
-              </Row>
+                                </Sider>
+                                <Content style={{ marginBottom: '10px' }}>
+                                    <Row gutter={40}>
+                                        {categories_card}
+                                    </Row>
+                                </Content>
+                            </Layout>
+                        </Col>
+                    </Row>
+                </div>
             </Content>
-          </Layout>
-            </Col>
-        </Row>
-        </div>
-      </Content>
-    )
-  }
+        )
+    }
 }
 
 function mapStateToProps (state) {
-  return {
-
-  }
+    return {}
 }
 
-SubCategoriesContainer.propTypes = {
-}
+SubCategoriesContainer.propTypes = {}
 
-export default connect(mapStateToProps, {
-})(SubCategoriesContainer)
+export default connect(mapStateToProps, {})(SubCategoriesContainer)
