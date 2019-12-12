@@ -212,8 +212,8 @@ class HeaderNew extends Component {
                 <Helmet>
                     <meta charSet="utf-8"/>
                     <title>{this.state.breadcrumb.category.name}
-                        {this.state.breadcrumb.subcategory.title && ' - ' + this.state.breadcrumb.subcategory.title}
-                        Veelancing - Blockchain community
+                        {this.state.breadcrumb.subcategory.title && ' - ' + this.state.breadcrumb.subcategory.title} -
+                        Veelancing
                     </title>
                     <meta name="description" content={this.state.breadcrumb.category.metaDescription}/>
                 </Helmet>
