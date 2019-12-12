@@ -271,7 +271,6 @@ class UserProfileContainer extends Component {
                                         <div dangerouslySetInnerHTML={{__html: this.state.profile.bio}} style={{paddingTop:'20px',fontSize:'15px'}}>
                                         </div>
                                     </Col>
-
                                     <Col xs={24} sm={{ span: 6}} md={{ span: 6}} lg={{ span: 6}} xl={{ span: 6}} xxl={{ span: 6}}>
                                         <div style={{padding:'20px'}}>
 
