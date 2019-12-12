@@ -55,6 +55,7 @@ class NewFooter extends Component {
                         </Row>
                     </div>
                 </Row>
+                <div className="chat-support"/>
             </footer>
         )
     }
