@@ -16,13 +16,11 @@ const Index = (props) => {
     }
 
     if(category && subcategory){
-        if (props.user.type && props.user.type === 1) {
+        if (props.user.type != null && props.user.type === 1) {
             return <SearchJobsContainer jobs={[]} siderMenuItems={props.settings}/>
         }
         return <SearchMembersContainer category={category} siderMenuItems={props.settings}/>
     }
-
-
 
 }
 
