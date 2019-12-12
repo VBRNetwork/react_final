@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Row, Col, List, Menu, Icon } from 'antd'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Link from 'next/link'
 import '../styles/footer.css'
+import ScrollButton from './Elements/ScrollButton'
 library.add(fas, fab)
 
 class NewFooter extends Component {
@@ -55,6 +56,7 @@ class NewFooter extends Component {
                         </Row>
                     </div>
                 </Row>
+                <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
                 <div className="chat-support"/>
             </footer>
         )
