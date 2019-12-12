@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Row, Col, Card, Button} from 'antd'
+import { Row, Col, Card} from 'antd'
 const { Meta } = Card;
 
 class AboutUsContainer extends Component {
