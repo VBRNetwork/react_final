@@ -1,16 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import {Row, Col, Button, Input } from 'antd'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
+import { Helmet } from 'react-helmet'
 
 export default class NewIcoContainer extends Component {
 
     render() {
         return (
             <div >
+                <Helmet>
+                    <title>Initial Coin Offering - Veelancing</title>
+                    <meta
+                        name='description'
+                        content='Initial Coin Offering - Become part of community'
+                    />
+                </Helmet>
                 <div className='container background-header'>
                     <Particles
                         style={{ position: 'absolute' }}
@@ -185,7 +193,7 @@ export default class NewIcoContainer extends Component {
                 <div className={'mt35'}>
                     <Row type="flex" justify="center">
                         <Col xs={24} sm={24} md={24} lg={{ span: 24 }} xl={{ span: 24}} xxl={{ span: 24}}>
-                            <h1 className="our-journey">Our Journey</h1>
+                            <h1 className="our-journey"> Roadmap </h1>
                         </Col>
                     </Row>
                     <VerticalTimeline>

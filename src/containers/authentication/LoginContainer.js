@@ -68,10 +68,10 @@ class LoginContainer extends Component {
         return (
             <article>
                 <Helmet>
-                    <title>Login Page</title>
+                    <title>Login to Veelancing</title>
                     <meta
                         name='description'
-                        content='Login application page'
+                        content='Login Veelacing Platform'
                     />
                 </Helmet>
                 <div className='container' >
