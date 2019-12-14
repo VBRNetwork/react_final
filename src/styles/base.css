@@ -505,6 +505,7 @@ label {
     width: 660px;
     text-align: left;
     margin-left: 55px;
+    text-transform: none;
 }
 
   .stay-up-to-date-and {
@@ -540,7 +541,7 @@ label {
 }
 
 .example-input .ant-input {
-    width: 300px;
+    width: 250px;
     margin: 0 10px 10px 0;
     background: transparent;
     margin-left: 55px;
@@ -553,16 +554,6 @@ label {
     margin-left: 95px;
 }
 
-.get-notified {
-    color: #008D7F !important;
-    font-size: 15px !important;
-    text-align: center !important;
-    background-color: #FFFFFF;
-    border-radius: 7px !important;
-    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
-    height: 43px !important;
-    width: 180px !important;
-}
 
 .no-spam-box {
   position: absolute;
@@ -817,7 +808,7 @@ label {
 
  @media(max-width:1024px) {
  .example-input .ant-input {
-  width: 300px;
+  width: 250px;
   margin: 0 10px 10px 0;
   background: transparent;
   margin-left: 20px;
