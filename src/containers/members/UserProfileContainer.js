@@ -49,6 +49,7 @@ class UserProfileContainer extends Component {
                 type:0,
                 country:'',
                 certifications:[],
+                job_title:'',
                 portfolio_work:[],
                 last_login:'',
                 reviews:[]
@@ -86,6 +87,7 @@ class UserProfileContainer extends Component {
                         firstName:response.firstName,
                         lastName:response.lastName,
                         bio:response.profile.bio,
+                        job_title:response.profile.jobTitle,
                         type:response.profile.type,
                         price:response.profile.price,
                         image:image,
@@ -258,28 +260,26 @@ class UserProfileContainer extends Component {
                                     <div>
                                         <strong>
                                             <h2>
-                                                {fullName}
+                                                {fullName} - {this.state.profile.job_title}
                                             </h2>
                                         </strong>
                                     </div>}>
 
                                 <Row>
-                                    <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 4}}>
+                                    <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 6}}>
                                         <div>
                                             <img
-                                                style={{width: '100%',padding:'5px'}}
+                                                style={{width: '100%',padding:'5px',borderRadius:'10px'}}
                                                 src={this.state.profile.image}
                                             />
-                                            <strong>
-                                                <h3>
-                                                    @{this.state.profile.username}, {this.state.profile.country}
-                                                </h3>
-                                            </strong>
-                                            <p style={{fontSize:'12px'}}>Last login, { this.state.profile.last_login}</p>
+                                            <h3>
+                                                <strong>@{this.state.profile.username}</strong>, {this.state.profile.country},
+                                                <span style={{fontSize:'12px'}}> Last login { this.state.profile.last_login}</span>
+                                            </h3>
                                         </div>
                                     </Col>
-                                    <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
-                                        <h3>Profile description</h3>
+                                    <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 11,offset:1}}>
+                                        <h3><u>Profile description</u></h3>
                                         <div dangerouslySetInnerHTML={{__html: this.state.profile.bio}} style={{paddingTop:'20px',fontSize:'15px'}}>
                                         </div>
                                     </Col>
@@ -289,15 +289,12 @@ class UserProfileContainer extends Component {
                                             <strong>
                                                 <h2>
                                                     <Icon
-                                                        type={'dollar'}
-                                                    /> {this.state.profile.price} $/hr
+                                                        type={'euro'}
+                                                    /> {this.state.profile.price}/hr
                                                 </h2>
                                                 <hr />
+                                                <Rate value={this.state.profile.reviews.length*4.5}/> {this.state.profile.reviews.length} Reviews
                                             </strong>
-                                            <p>
-                                                4 Reviews
-                                            </p>
-                                            <Rate value={4}/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -311,7 +308,7 @@ class UserProfileContainer extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17,offset:3}}>
                         <Card
                             style={{marginTop:'20px',marginBottom:'20px'}}
-                            title={<h2>Skills</h2>}>
+                            title={<h2><u>Skills</u></h2>}>
 
                                 <List
                                     itemLayout="horizontal"
@@ -332,7 +329,7 @@ class UserProfileContainer extends Component {
                                         <div>
                                             <strong>
                                                 <h3>
-                                                    Reviews
+                                                    <u>Reviews</u>
                                                 </h3>
                                             </strong>
                                         </div>}>
@@ -366,7 +363,7 @@ class UserProfileContainer extends Component {
                         <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
-                                    title={<div><strong><h3>Certifications</h3></strong></div>}
+                                    title={<div><strong><h3><u>Certifications</u></h3></strong></div>}
                                     description={<strong>Currently no course/certification added.</strong>}
                                     extra={
                                         <Button type={'primary'}
@@ -396,7 +393,7 @@ class UserProfileContainer extends Component {
                         <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
-                                    title={<div><strong><h3> Work Portfolio</h3></strong></div>}
+                                    title={<div><strong><h3><u> Work Portfolio</u></h3></strong></div>}
                                     extra={<Button type={'primary'} style={{background: 'rgba(0, 177, 153, 0.74)',
                                         borderColor: 'rgba(0, 177, 153, 0.74)'}}> Add Items</Button>}>
                                     <div>
