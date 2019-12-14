@@ -77,7 +77,7 @@ export default class ico2 extends Component {
                                 </Col>
                             </div>
                             <div>
-                                <Col span={12} push={2}>
+                                <Col span={10} push={2}>
                                     <div className="count-down">
                                     </div>
                                 </Col>
@@ -104,7 +104,7 @@ export default class ico2 extends Component {
                 <br />
                 <br />
                 <Row>
-                    <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
+                    <Col xs={24} sm={16} md={{ span: 11, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 12, push: 4 }}>
                         <div className={'join-freelancer-box'}>
                             <span className={'why-veelancing'}>
                                 Why Veelancing?</span>
@@ -126,7 +126,7 @@ export default class ico2 extends Component {
                                 </Button>
                         </div>
                     </Col>
-                    <Col xs={24} sm={16} md={{ span: 12, push: 4 }} lg={11} xl={{ span: 12 }} xxl={{ span: 12 }}>
+                    <Col xs={24} sm={16} md={{ span: 10}} lg={11} xl={{ span: 12 }} xxl={{ span: 12 }}>
                         <br />
                         <br />
                         <br />
@@ -148,7 +148,7 @@ export default class ico2 extends Component {
                     <br />
                     <br />
                     <br />
-                    <Col span={10} push={1}>
+                    <Col span={9} push={1}>
                         <div className={'the-problem'}>
                             The Problem
                             </div>
@@ -167,7 +167,7 @@ export default class ico2 extends Component {
                         </p>
                     </Col>
 
-                    <Col span={12} push={3}>
+                    <Col span={9} push={3}>
                         <div className={'the-problem'}>
                             The Solution
                             </div>
@@ -191,7 +191,7 @@ export default class ico2 extends Component {
                     <br />
                     <br />
                     <Row>
-                        <Col span={12} push={1}>
+                        <Col span={11} push={1}>
                             <h1 className={'the-blockchain-techn'}>
                                 The Blockchain Technology
                         </h1>
@@ -232,7 +232,7 @@ export default class ico2 extends Component {
                             </Row>
                         </Col>
 
-                        <Col span={12} push={2}>
+                        <Col span={10} push={2}>
                             <div>
                                 <img src={'../../static/images/geometric_particles2.svg'} />
                             </div>
@@ -240,7 +240,7 @@ export default class ico2 extends Component {
                     </Row>
                 <br />
                 <br />
-                <Col span={24} push={10}><h1 className="the-blockchain-techn">Our Journey</h1></Col> 
+                <Col span={14} push={10}><h1 className="the-blockchain-techn">Our Journey</h1></Col> 
                 <br />
                 <br />
                 <br /> 
