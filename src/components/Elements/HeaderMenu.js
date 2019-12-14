@@ -126,17 +126,21 @@ class HeaderMenu extends Component {
                                     borderBottom: 'initial',
                                 }}>
                                     <Menu.Item key='app122'>
-                                        <Link href='/ico'>
-                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                Initial Coin Offering</a>
-                                        </Link>
+                                        <div>
+                                            <Link href='/ico'>
+                                                <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                    Initial Coin Offering</a>
+                                            </Link>
+                                        </div>
                                     </Menu.Item>
                                     <Menu.Item key='app1'>
-                                        <Link href='/how-it-works'>
-                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
-                                                How it  works
-                                            </a>
-                                        </Link>
+                                        <div>
+                                            <Link href='/how-it-works'>
+                                                <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                                    How it  works
+                                                </a>
+                                            </Link>
+                                        </div>
                                     </Menu.Item>
                                     <Menu.Item key='about'>
                                         <BrowserView>
