@@ -68,7 +68,7 @@ class NewHomeContainer extends Component {
         return (
             <Fragment>
                 <Helmet>
-                    <title>Join now BETA. Freelancers platform blockchain based - Veelancing</title>
+                    <title>Join now DEMO. Freelancers platform blockchain based - Veelancing</title>
                     <meta
                         name='description'
                         content='Blockchain Freelancers Jobs.Be part of our community to find a job or hire experts. We are launching soon, but until then, join our BETA version!'
