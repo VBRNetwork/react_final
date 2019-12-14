@@ -44,33 +44,35 @@ export default class NewIcoContainer extends Component {
                     >
                     </Particles>
                     <HeaderMenu />
-                    <Row>
-                        <Col xs={24} sm={16} md={12} lg={12}>
-                            <h1 className="invest-in-the-first">
-                                Invest in the first<br />
-                                Blockchain Community for <br />
-                                Freelancers</h1>
-                            <br />
-                            <br />
-                            <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
-                            <Row>
-                                <Col xs={24} sm={14} md={12} lg={18}>
-                                    <div className="example-input">
-                                        <Input className="ico-email-reg" size="large" placeholder="Email" />
-                                        <Button style={{backgroundColor:'#FFFFFF'}}>Get Notified!</Button>
-                                    </div>
-                                    <div>
-                                        <p className="no-spam">We promise no spam! <u>Privacy Policy</u></p>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Col>
-                        <Col xs={24} sm={12} md={10} lg={{ span: 12 }}>
-                            <div className="count-down">
-                                <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
-                            </div>
-                        </Col>
-                    </Row>
+                    <div style={{paddingTop:'80px',paddingBottom:'50px'}}>
+                        <Row>
+                            <Col xs={24} sm={16} md={12} lg={12}>
+                                <h1 className="invest-in-the-first">
+                                    Invest in the first<br />
+                                    Blockchain Community for <br />
+                                    Freelancers</h1>
+                                <br />
+                                <br />
+                                <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                                <Row>
+                                    <Col xs={24} sm={14} md={12} lg={18}>
+                                        <div className="example-input">
+                                            <Input className="ico-email-reg" size="large" placeholder="Email" />
+                                            <Button style={{backgroundColor:'#FFFFFF'}}>Get Notified!</Button>
+                                        </div>
+                                        <div>
+                                            <p className="no-spam">We promise no spam! <u>Privacy Policy</u></p>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col xs={24} sm={12} md={10} lg={{ span: 12 }}>
+                                <div className="count-down">
+                                    <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
                 </div>
 
                 <div className={'mt35'}>
