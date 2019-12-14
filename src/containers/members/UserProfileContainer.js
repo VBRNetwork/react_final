@@ -269,7 +269,7 @@ class UserProfileContainer extends Component {
                                     <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 6}}>
                                         <div>
                                             <img
-                                                style={{width: '100%',padding:'5px'}}
+                                                style={{width: '100%',padding:'5px',borderRadius:'10px'}}
                                                 src={this.state.profile.image}
                                             />
                                             <h3>
