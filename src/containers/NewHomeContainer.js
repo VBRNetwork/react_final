@@ -357,7 +357,7 @@ class NewHomeContainer extends Component {
                             </Col>
                             <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 14 }}>
                                 <img className={'img-responsive'} 
-                                     src="../../static/images/coin-img-2.png" alt="become-an-investor"/>
+                                     src="../../static/images/design/become_investor_coins-min.png" alt="become-an-investor"/>
                             </Col>
                         </Row>
                     </div>
