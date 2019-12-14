@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import {
-    MessageBox,
-    ChatItem,
     ChatList,
-    SystemMessage,
     MessageList,
     Input,
     Button,
-    Avatar,
-    Navbar,
     SideBar,
     Dropdown,
     Popup,
 } from 'react-chat-elements';
-import {Row,Col} from 'antd';
 import '../../styles/chat.css'
-
 
 export default class ProjectManagementContainer extends Component {
 

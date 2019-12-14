@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon, Button, Row, Card, Col, Empty, Rate, Tooltip, Comment, Avatar, Tag, Modal, Input, Upload } from 'antd'
@@ -12,6 +12,7 @@ const Picker = dynamic(import('emoji-picker-react'), {
 })
 const { TextArea } = Input;
 import {getMemberProfile} from '../../actions/members_actions';
+import { Helmet } from 'react-helmet'
 
 const data = [
     {
@@ -47,6 +48,10 @@ class UserProfileContainer extends Component {
                 image:'../../../static/images/sample-avatar.jpg',
                 type:0,
                 country:'',
+                certifications:[],
+                portfolio_work:[],
+                last_login:'',
+                reviews:[]
             },
             message_sent:false,
         };
@@ -86,6 +91,10 @@ class UserProfileContainer extends Component {
                         image:image,
                         skills:response.profile.skills,
                         country:response.profile.country,
+                        certifications:response.profile.certifications,
+                        portfolio_work:response.profile.portfolio,
+                        last_login:response.lastLogin,
+                        reviews:response.reviews,
                     }
                 })
             });
@@ -177,7 +186,7 @@ class UserProfileContainer extends Component {
 
     render () {
         const {likes, dislikes, action} = this.state;
-        let fullName = (this.state.profile.firstName + ' ' + this.state.profile.lastName).toLocaleUpperCase()
+        let fullName = (this.state.profile.firstName + ' ' + this.state.profile.lastName)
         const actions = (
             <div>
                  <span key='comment-like'>
@@ -206,6 +215,9 @@ class UserProfileContainer extends Component {
 
         return (
             <div style={{marginLeft:'1.3rem',marginTop:'5px'}}>
+                <Helmet>
+                    <title>{fullName} - Veelancing</title>
+                </Helmet>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                         <div>
@@ -219,17 +231,18 @@ class UserProfileContainer extends Component {
                                               marginLeft:'2px',
                                               background: 'rgba(0, 177, 153, 0.74)',
                                               borderColor: 'rgba(0, 177, 153, 0.74)'}}
-                                      > Copy link
+                                      > Link
                                       </Button>
 
+                                      {false &&
                                       <Button
-                                              type={'primary'}
-                                              style={{
-                                                  marginLeft:'2px',
-                                                  background: 'rgba(0, 177, 153, 0.74)',
-                                                  borderColor: 'rgba(0, 177, 153, 0.74)'}}
-                                          >Edit Profile
-                                      </Button>
+                                          type={'primary'}
+                                          style={{
+                                              marginLeft:'2px',
+                                              background: 'rgba(0, 177, 153, 0.74)',
+                                              borderColor: 'rgba(0, 177, 153, 0.74)'}}
+                                      >Edit Profile
+                                      </Button>}
 
                                       <Button
                                           type={'primary'}
@@ -259,11 +272,10 @@ class UserProfileContainer extends Component {
                                             />
                                             <strong>
                                                 <h3>
-                                                    @{this.state.profile.username}
+                                                    @{this.state.profile.username}, {this.state.profile.country}
                                                 </h3>
                                             </strong>
-                                            <p>Country: {this.state.profile.country}</p>
-                                            <p style={{fontSize:'12px'}}>Active since December { this.state.profile.price}, 2019</p>
+                                            <p style={{fontSize:'12px'}}>Active since, { this.state.profile.last_login}</p>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
@@ -300,18 +312,15 @@ class UserProfileContainer extends Component {
                         <Card
                             style={{marginTop:'20px',marginBottom:'20px'}}
                             title={<h2>Skills</h2>}>
-                            <div>
-                                <Tag>Python</Tag>
-                                <Tag>
-                                    <a href="https://github.com/ant-design/ant-design/issues/1862">MongoDB</a>
-                                </Tag>
-                                <Tag closable >
-                                    Linux
-                                </Tag>
-                                <Tag closable >
-                                    Databases
-                                </Tag>
-                            </div>
+
+                                <List
+                                    itemLayout="horizontal"
+                                    dataSource={this.state.profile.skills}
+                                    renderItem={item => (
+                                        <Tag>{item.name}</Tag>
+                                    )}
+                                />
+
                         </Card>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17,offset:3}}>
@@ -328,34 +337,28 @@ class UserProfileContainer extends Component {
                                             </strong>
                                         </div>}>
 
-                                    <Meta
-                                        description={
-                                            <div>
-                                                <Comment
-                                                    actions={actions}
-                                                    author={<strong>{fullName}</strong>}
-                                                    avatar={
-                                                        <Avatar
-                                                            src='../../static/images/vbr_logo.png'
-                                                            style={{width: 100}}
-                                                            alt='Avatar Comment'
-                                                        />
-                                                    }
-                                                    content={
-                                                        <div>
-                                                            We supply a series of design principles, practical patterns and high quality design
-                                                            resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                                            and efficiently.
-                                                        </div>
-                                                    }
-                                                    datetime={
-                                                        <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                                                            <span>{moment().fromNow()}</span>
-                                                        </Tooltip>
-                                                    }
-                                                />
-                                            </div>
-                                        }
+                                    <List
+                                        itemLayout="horizontal"
+                                        dataSource={this.state.profile.reviews}
+                                        renderItem={item => (
+                                            <Comment
+                                                actions={actions}
+                                                author={<strong>{item.name}</strong>}
+                                                avatar={
+                                                    <Avatar
+                                                        src='../../static/images/vbr_logo.png'
+                                                        style={{width: 100}}
+                                                        alt='Avatar'
+                                                    />
+                                                }
+                                                content={
+                                                    <div>
+                                                        {item.message}
+                                                    </div>
+                                                }
+                                                datetime={item.postDate}
+                                            />
+                                        )}
                                     />
                                 </Card>
                             </div>
@@ -376,12 +379,12 @@ class UserProfileContainer extends Component {
 
                                     <List
                                         itemLayout="horizontal"
-                                        dataSource={data}
+                                        dataSource={this.state.profile.certifications}
                                         renderItem={item => (
                                             <List.Item>
                                                 <List.Item.Meta
                                                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                    title={<a href="https://ant.design">{item.title}</a>}
+                                                    title={<a href="https://ant.design">{item.name}</a>}
                                                     description=""
                                                 />
                                             </List.Item>
@@ -399,7 +402,7 @@ class UserProfileContainer extends Component {
                                     <div>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={data}
+                                            dataSource={this.state.profile.portfolio_work}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
@@ -409,7 +412,7 @@ class UserProfileContainer extends Component {
                                                                 color: 'rgba(251,10,0,0.74)'}}
                                                             type={'file-image'}
                                                         />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}
+                                                        title={<a href="https://ant.design">{item.name}</a>}
                                                         description=""
                                                     />
                                                 </List.Item>
