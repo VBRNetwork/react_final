@@ -275,7 +275,7 @@ class UserProfileContainer extends Component {
                                                     @{this.state.profile.username}, {this.state.profile.country}
                                                 </h3>
                                             </strong>
-                                            <p style={{fontSize:'12px'}}>Active since, { this.state.profile.last_login}</p>
+                                            <p style={{fontSize:'12px'}}>Last login, { this.state.profile.last_login}</p>
                                         </div>
                                     </Col>
                                     <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
