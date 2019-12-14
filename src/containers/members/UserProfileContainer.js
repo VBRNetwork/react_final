@@ -49,6 +49,7 @@ class UserProfileContainer extends Component {
                 type:0,
                 country:'',
                 certifications:[],
+                job_title:'',
                 portfolio_work:[],
                 last_login:'',
                 reviews:[]
@@ -86,6 +87,7 @@ class UserProfileContainer extends Component {
                         firstName:response.firstName,
                         lastName:response.lastName,
                         bio:response.profile.bio,
+                        job_title:response.profile.jobTitle,
                         type:response.profile.type,
                         price:response.profile.price,
                         image:image,
@@ -258,7 +260,7 @@ class UserProfileContainer extends Component {
                                     <div>
                                         <strong>
                                             <h2>
-                                                {fullName}
+                                                {fullName} - {this.state.profile.job_title}
                                             </h2>
                                         </strong>
                                     </div>}>
@@ -289,15 +291,12 @@ class UserProfileContainer extends Component {
                                             <strong>
                                                 <h2>
                                                     <Icon
-                                                        type={'dollar'}
-                                                    /> {this.state.profile.price} $/hr
+                                                        type={'euro'}
+                                                    /> {this.state.profile.price}/hr
                                                 </h2>
                                                 <hr />
+                                                <Rate value={this.state.profile.reviews.length*4.5}/> {this.state.profile.reviews.length} Reviews
                                             </strong>
-                                            <p>
-                                                4 Reviews
-                                            </p>
-                                            <Rate value={4}/>
                                         </div>
                                     </Col>
                                 </Row>
