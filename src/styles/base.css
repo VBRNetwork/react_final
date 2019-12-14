@@ -259,12 +259,12 @@ label {
 }
 
 .menu-item {
-    color: #bbbbbb;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
     line-height: 17px;
     text-align: left;
+    color: #FFF;
 }
 
 .logo-box {
@@ -747,13 +747,6 @@ label {
     .logo-img {
         text-align: center;
     }
-
-}
-
-.menu-item {
-    color: #FFF !important;
-    font-weight: bold !important;
-    letter-spacing: 0.1px !important;
 }
 
 .category-box {
