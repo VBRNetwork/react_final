@@ -268,7 +268,12 @@ label {
 }
 
 .logo-box {
-    padding: 35px;
+    text-align: center;
+    margin:20px;
+}
+
+.logo-box img{
+    height:55px;
 }
 
 .auth-button {
@@ -526,9 +531,9 @@ label {
 
 .count-down {
     shape-rendering: geometricPrecision;
-    background-color:
-            #1AB0C48F;
+    background-color: #1AB0C48F;
     border-radius: 10px;
+    margin-left: 45px;
     height: 275px;
     width: 82%;
 }
@@ -542,10 +547,9 @@ label {
 }
 
 .example-input .ant-input {
-    width: 250px;
-    margin: 0 10px 10px 0;
+    max-width: 200px;
+    margin: 0 10px 10px 50px;
     background: transparent;
-    margin-left: 55px;
 }
 
 .no-spam {
@@ -887,7 +891,7 @@ label {
   border: 1px solid #EBEBEC !important;
   border-radius: 10px !important;
   width: 180px !important;
-  height: 250px !important;
+  height: 200px !important;
 }
 
 .the-team {
@@ -931,7 +935,6 @@ label {
     color: #202C39 !important;
     font-size: 38px;
     font-weight: 700;
-    width: 700px;
     text-align: center;
     margin-top: 110px;
   }
@@ -1052,19 +1055,31 @@ h1 {
     margin-left: -5px;
 }
 
-/*MEDIA QUERIES*/
 
-@media(max-width:1200px) {
+.community-part {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+/*MEDIA QUERIES*/
+@media(max-width:1350px) {
     .no-spam {
         margin-top: 5px;
         text-align: center !important;
         margin-left: 1px;
     }
     .a-blockchain-marketp .big {
-        font-size: 34px;
+        font-size: 34px !important;
     }
     .intro-text {
-        margin-top: 30px !important;
+        margin-top: 10px !important;
+    }
+    .community-part {
+        margin-top:15px !important;
+        margin-bottom:15px !important;
+    }
+    .invest-in-the-first {
+        font-size: 37px !important;
     }
 }
 
@@ -1077,3 +1092,12 @@ h1 {
     text-align: center;
 }
 
+.investors-text-ico {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+    color:#000 !important;
+    padding-top:20px;
+    padding-bottom:20px;
+}

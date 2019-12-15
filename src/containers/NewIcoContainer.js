@@ -46,14 +46,14 @@ export default class NewIcoContainer extends Component {
                     <HeaderMenu />
                     <div style={{paddingTop:'80px',paddingBottom:'50px'}}>
                         <Row>
-                            <Col xs={24} sm={16} md={12} lg={12}>
+                            <Col xs={24} sm={24} md={12} lg={12}>
                                 <h1 className="invest-in-the-first">
                                     Invest in the first<br />
                                     Blockchain Community for <br />
                                     Freelancers</h1>
                                 <br />
                                 <br />
-                                <p className="stay-up-to-date-and">Stay up to date, and get notified about when we open the Initial Coin Offering</p>
+                                <p className="stay-up-to-date-and">Stay up to date, and get notified, <br/> about when we open the Initial Coin Offering</p>
                                 <Row>
                                     <Col xs={24} sm={14} md={12} lg={18}>
                                         <div className="example-input">
@@ -85,9 +85,10 @@ export default class NewIcoContainer extends Component {
                                 <span className={'why-veelancing'}>
                                     Why Veelancing?
                                 </span>
-                                <p className="investors-text">
-                                    Veelancing is a decentralized platform for freelancers and talent seekers from all over the world.
+                                <p className="investors-text-ico">
+                                    Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
                                     Here, you can find the job you love or hire experts that fit your needs.
+                                    <br/>
                                     With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.<br />
                                     Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
                                     With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
@@ -146,7 +147,7 @@ export default class NewIcoContainer extends Component {
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={{ span: 9,offset:3}}>
                             <h1 className={'the-blockchain-techn'}>
-                                The Blockchain Technology
+                                Veelancing Technology
                             </h1>
                             <p className="photographs-are-a-wa">
                                 Photographs are a way of preserving a moment in our lives for the rest of our lives.
@@ -363,40 +364,37 @@ export default class NewIcoContainer extends Component {
 
                         <Col span={12} push={3}>
                             <Row >
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                         src="../../static/images/sample-avatar.jpg" />
                                     <div className="the-team-name">Stefan Vanea</div>
                                     <div className="the-team-title">Chief Executive Officer</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                         src="../../static/images/sample-avatar.jpg" />
                                     <div className="the-team-name">Fedot Serghei</div>
                                     <div className="the-team-title">Head of IT & Dev WW</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Sorin Anghelescu</div>
                                     <div className="the-team-title">Chief Financial Officer</div>
                                 </Col>
-                            </Row>
-
-                            <Row>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Alexandru Barborica</div>
                                     <div className="the-team-title">Chief Technology Officer</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Dan Constantinescu</div>
                                     <div className="the-team-title">Frontend Developer</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Ileana Marcut</div>
@@ -417,25 +415,23 @@ export default class NewIcoContainer extends Component {
                         </Col>
                         <Col span={9} push={3}>
                             <Row >
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                    <img className="our-partners-images"
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg" />
+                                    <div className="the-team-name">CoinExchangeData</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                    <img className="our-partners-images"
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg" />
-                                </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                    <img className="our-partners-images"
-                                         src="../../static/images/sample-avatar.jpg" />
+                                    <div className="the-team-name">VBRNETWORK</div>
                                 </Col>
                             </Row>
                         </Col>
                     </Row>
                 </div>
 
-                <Row type="flex" justify="center">
-                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12, push: 1 }} xxl={{ span: 10}}>
+                <Row type="flex">
+                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12}} xxl={{ span: 24}}>
                         <h1 className="initial-coin">The initial coin offering starts soon!</h1>
                     </Col>
                 </Row>

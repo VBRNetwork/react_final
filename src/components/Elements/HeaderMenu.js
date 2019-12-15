@@ -110,16 +110,16 @@ class HeaderMenu extends Component {
 
                 <Row>
                     <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={4}>
-                        <div className="logo-box" style={{ textAlign: 'center' }}>
+                        <div className="logo-box">
                             <Link href='/'>
-                                <span className="logo">VEELANCING</span>
+                                <img src="../../../static/images/design/veelancing_logo.svg" alt=""/>
                             </Link>
                         </div>
                     </Col>
 
                     <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
                         <div style={{position:'relative'}}>
-                            <div style={{position:'absolute',right:'1px'}}>
+                            <div style={{position:'absolute',right:'1px'}} className={'header-nav'}>
                                 <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
                                     marginTop: '25px',
                                     background: 'transparent',
