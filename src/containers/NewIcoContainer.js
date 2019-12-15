@@ -67,8 +67,11 @@ export default class NewIcoContainer extends Component {
                                 </Row>
                             </Col>
                             <Col xs={24} sm={12} md={10} lg={{ span: 12 }}>
-                                <div className="count-down">
-                                    <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
+                                <div className="count-down tba-text">
+                                    <h2 className="ico-tba-titile">Veelancing ICO Will Start In:</h2>
+                                    <br />
+                                    <div className="ico-tba-text"  ><h1 style={{color: '#FFF'}}>To Be Announced</h1></div>
+                                    { false && <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />}
                                 </div>
                             </Col>
                         </Row>
@@ -362,21 +365,21 @@ export default class NewIcoContainer extends Component {
                             <Row >
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
-                                        src="../../static/images/team_member.jpg" />
-                                    <div className="the-team-name">Teo Ghizdareanu</div>
-                                    <div className="the-team-title">Graphic Designer</div>
+                                        src="../../static/images/sample-avatar.jpg" />
+                                    <div className="the-team-name">Stefan Vanea</div>
+                                    <div className="the-team-title">Chief Executive Officer</div>
                                 </Col>
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                         src="../../static/images/sample-avatar.jpg" />
                                     <div className="the-team-name">Fedot Serghei</div>
-                                    <div className="the-team-title">Backend Web Developer</div>
+                                    <div className="the-team-title">Head of IT & Dev WW</div>
                                 </Col>
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
-                                    <div className="the-team-name">Andrei Toader</div>
-                                    <div className="the-team-title">SEO Specialist</div>
+                                    <div className="the-team-name">Sorin Anghelescu</div>
+                                    <div className="the-team-title">Chief Financial Officer</div>
                                 </Col>
                             </Row>
 
@@ -384,20 +387,20 @@ export default class NewIcoContainer extends Component {
                                 <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
-                                    <div className="the-team-name">Dan Constantinescu</div>
-                                    <div className="the-team-title">Junior Frontend Developer</div>
-                                </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                    <img className="the-team-images"
-                                         src="../../static/images/sample-avatar.jpg"  />
-                                    <div className="the-team-name">Stefan Vanea</div>
-                                    <div className="the-team-title">Business Specialist</div>
-                                </Col>
-                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
-                                    <img className="the-team-images"
-                                         src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Alexandru Barborica</div>
-                                    <div className="the-team-title">SysAdmin</div>
+                                    <div className="the-team-title">Chief Technology Officer</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                         src="../../static/images/sample-avatar.jpg"  />
+                                    <div className="the-team-name">Dan Constantinescu</div>
+                                    <div className="the-team-title">Frontend Developer</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={8} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                         src="../../static/images/sample-avatar.jpg"  />
+                                    <div className="the-team-name">Ileana Marcut</div>
+                                    <div className="the-team-title">UX & UI Designer</div>
                                 </Col>
                             </Row>
 
