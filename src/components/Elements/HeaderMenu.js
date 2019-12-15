@@ -110,9 +110,9 @@ class HeaderMenu extends Component {
 
                 <Row>
                     <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={4}>
-                        <div className="logo-box" style={{ textAlign: 'center' }}>
+                        <div className="logo-box">
                             <Link href='/'>
-                                <span className="logo">VEELANCING</span>
+                                <img src="../../../static/images/design/veelancing_logo.svg" alt=""/>
                             </Link>
                         </div>
                     </Col>

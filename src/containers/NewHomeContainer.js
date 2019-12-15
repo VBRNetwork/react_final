@@ -101,7 +101,7 @@ class NewHomeContainer extends Component {
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
-                            <div className="intro-text" style={{marginTop:'50px'}}>
+                            <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big" style={{textTransform:'none'}}> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
@@ -156,7 +156,7 @@ class NewHomeContainer extends Component {
 
 
                 <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
-                    <Row>
+                    <Row> 
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
