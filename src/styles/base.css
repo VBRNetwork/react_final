@@ -526,9 +526,9 @@ label {
 
 .count-down {
     shape-rendering: geometricPrecision;
-    background-color:
-            #1AB0C48F;
+    background-color: #1AB0C48F;
     border-radius: 10px;
+    margin-left: 30px;
     height: 275px;
     width: 82%;
 }
@@ -1054,16 +1054,28 @@ h1 {
 
 /*MEDIA QUERIES*/
 
-@media(max-width:1200px) {
+.community-part {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+@media(max-width:1350px) {
     .no-spam {
         margin-top: 5px;
         text-align: center !important;
         margin-left: 1px;
     }
     .a-blockchain-marketp .big {
-        font-size: 34px;
+        font-size: 34px !important;
     }
     .intro-text {
-        margin-top: 30px !important;
+        margin-top: 10px !important;
+    }
+    .community-part {
+        margin-top:15px !important;
+        margin-bottom:15px !important;
+    }
+    .invest-in-the-first {
+        font-size: 37px !important;
     }
 }

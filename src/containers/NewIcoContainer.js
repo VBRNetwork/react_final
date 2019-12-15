@@ -46,7 +46,7 @@ export default class NewIcoContainer extends Component {
                     <HeaderMenu />
                     <div style={{paddingTop:'80px',paddingBottom:'50px'}}>
                         <Row>
-                            <Col xs={24} sm={16} md={12} lg={12}>
+                            <Col xs={24} sm={24} md={12} lg={12}>
                                 <h1 className="invest-in-the-first">
                                     Invest in the first<br />
                                     Blockchain Community for <br />
@@ -66,7 +66,7 @@ export default class NewIcoContainer extends Component {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col xs={24} sm={12} md={10} lg={{ span: 12 }}>
+                            <Col xs={24} sm={12} md={12} lg={{ span: 12 }}>
                                 <div className="count-down">
                                     <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />
                                 </div>

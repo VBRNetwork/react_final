@@ -119,7 +119,7 @@ class HeaderMenu extends Component {
 
                     <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
                         <div style={{position:'relative'}}>
-                            <div style={{position:'absolute',right:'1px'}}>
+                            <div style={{position:'absolute',right:'1px'}} className={'header-nav'}>
                                 <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
                                     marginTop: '25px',
                                     background: 'transparent',
