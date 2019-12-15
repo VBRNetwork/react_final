@@ -417,13 +417,18 @@ export default class NewIcoContainer extends Component {
                             <Row >
                                 <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
-                                         src="../../static/images/sample-avatar.jpg" />
+                                         src="../../static/images/logo_CED.png" />
                                     <div className="the-team-name">CoinExchangeData</div>
                                 </Col>
                                 <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
-                                         src="../../static/images/sample-avatar.jpg" />
-                                    <div className="the-team-name">VBRNETWORK</div>
+                                         src="../../static/images/NMC_productions.png" />
+                                    <div className="the-team-name">NMC Productions</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                         src="../../static/images/urban_logo_home.png" />
+                                    <div className="the-team-name">Urban Garden</div>
                                 </Col>
                             </Row>
                         </Col>

@@ -141,13 +141,22 @@ class NewHomeContainer extends Component {
                             <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
                         </Col>
                     </Row>
-                    <div style={{position:'absolute',width:'100%',bottom:'0px'}}>
-                        <Row>
-                            <Col>
-                                <div style={{opacity: '0.5',backgroundColor:'#FFF',height:'100px'}}>
-                                    <img style={{height:'115px'}} src={'../../static/images/urban_logo_partners_f.png'} />
-                                </div>
-                            </Col>
+                    <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
+                        <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '100px' }} 
+                        type="flex" 
+                        justify="end"
+                        >
+                                <Col span={3} pull={1}>
+                                    <img style={{ height: '115px' }} src={'../../static/images/urban_logo_partners_f.png'} />
+                                </Col>
+                                <Col span={3} pull={2}>
+                                    <div style={{marginLeft: '35px'}}>
+                                    <img style={{marginTop: '48px'}} src={'../../static/images/NMC_productions_home.png'} />
+                                    </div>
+                                </Col>
+                                <Col span={3} pull={1}>
+                                    <img style={{marginTop: '25px'}} src={'../../static/images/Logo_CED_home.png'} />
+                                </Col>
                         </Row>
                     </div>
 
