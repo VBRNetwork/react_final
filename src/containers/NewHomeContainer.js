@@ -78,10 +78,18 @@ class NewHomeContainer extends Component {
 
     render () {
 
-        let join_as_freelancer = '/dashboard/become-freelancer'
-        if(!this.state.isLogged){
-            join_as_freelancer = '/register'
+        let join_as_freelancer = {
+            url:'/dashboard/become-freelancer',
+            as:'/dashboard/?slug=become-freelancer'
         }
+
+        if(!this.state.isLogged){
+            join_as_freelancer = {
+                url:'/register',
+                as:'/register'
+            }
+        }
+
         return (
             <Fragment>
                 <Helmet>
@@ -132,7 +140,7 @@ class NewHomeContainer extends Component {
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
                                         <Col xs={24} md={24} lg={12} xxl={8}>
-                                            <Link href={join_as_freelancer}>
+                                            <Link href={join_as_freelancer['url']} as={join_as_freelancer['as']}>
                                                 <Button className="btn-style" size="large">
                                                     <a>
                                                         <b>Join as Freelancer</b>
