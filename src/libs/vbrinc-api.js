@@ -10,24 +10,30 @@ const instance = axios.create({
     headers: {'Access-Control-Allow-Origin': '*','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 });
 
-let token = '';
-let tokenJson = {};
-let tokenJsonRoot = {};
+function getToken(){
+    let token = '';
+    let tokenJson = {};
+    let tokenJsonRoot = {};
 
-if (typeof window !== 'undefined') {
-    tokenJson = JSON.parse(localStorage.getItem('persist:user'));
-    tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
-    if(tokenJson){
-      token = tokenJson.token
+    if (typeof window !== 'undefined') {
+        tokenJson = JSON.parse(localStorage.getItem('persist:user'));
+        tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
+        if(tokenJson){
+            token = tokenJson.token
+        }
+        if(tokenJsonRoot){
+            token = JSON.parse(tokenJsonRoot.user).token
+        }
     }
-    if(tokenJsonRoot){
-        token = JSON.parse(tokenJsonRoot.user).token
-    }
+
+    return token;
 }
+
+
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + token }
+    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + getToken() }
 });
 
 
@@ -66,10 +72,10 @@ const vbrincapi = {
     becomeFreelancer(data){
         let bodyFormData = new FormData();
         bodyFormData.set('description', data.description)
-        bodyFormData.set('languages', JSON.stringify(data.language))
+        bodyFormData.set('languages', JSON.stringify(data.languages))
         bodyFormData.set('categories',JSON.stringify(data.selectedCategories))
         bodyFormData.set('skills', JSON.stringify(data.skills))
-        bodyFormData.set('cv_file', data.cvFile)
+        bodyFormData.set('cv_file', data.cvFile[0])
         bodyFormData.set('tos',data.tos)
         return secureInstance.post(apiUrl + 'accounts/become-freelancer',bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
@@ -78,7 +84,6 @@ const vbrincapi = {
 
     knowYourCustomer(data){
         let bodyFormData = new FormData();
-        console.log(data)
         bodyFormData.set('first_name', data.first_name)
         bodyFormData.set('last_name', data.last_name)
         bodyFormData.set('gender',data.gender)
@@ -86,12 +91,37 @@ const vbrincapi = {
         bodyFormData.set('id_front_picture', data.id_front_picture[0])
         bodyFormData.set('id_back_picture', data.id_back_picture[0])
         bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])
+        bodyFormData.set('address_line1', data.address_line1)
+        bodyFormData.set('address_line2', data.address_line2)
+        bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
         return secureInstance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
         })
 
+    },
+
+    getMembers(filter, page=1 ){
+        let bodyFormData = new FormData();
+        return secureInstance.get(apiUrl + 'accounts/list/?page='+page).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
+    },
+
+    getSkillsLanguages(){
+        let bodyFormData = new FormData();
+        return secureInstance.get(apiUrl + 'settings/profile').then(res => {
+            return humps.camelizeKeys(res.data)
+        })
+    },
+
+    getProfileMember(id){
+        let bodyFormData = new FormData();
+        bodyFormData.set('id', id);
+        return secureInstance.post(apiUrl + 'accounts/profile/', bodyFormData).then(res => {
+            return humps.camelizeKeys(res.data)
+        })
     }
 };
 

@@ -13,8 +13,8 @@ import {
 } from 'antd';
 import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
-import Router from "next/dist/client/router";
-
+import ReCAPTCHA from "react-google-recaptcha";
+import Router from 'next/dist/client/router'
 class RegisterContainer extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +26,10 @@ class RegisterContainer extends Component {
             first_name: '',
             last_name: '',
             tos: false,
-            loggingIn: false, errorMessage: ''
+            loggingIn: false,
+            errorMessage: '',
+            captcha:false,
+            captchaKey:'6LfHWsQUAAAAAEDzYgjRyY2bftAt_lO-yF9qmFcN'
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +39,7 @@ class RegisterContainer extends Component {
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeLastName = this.handleChangeLastName.bind(this);
         this.tosAccepted = this.tosAccepted.bind(this);
+        this.captchaResponse = this.captchaResponse.bind(this);
     }
 
     handleChangeLastName(event) {
@@ -79,16 +83,24 @@ class RegisterContainer extends Component {
                 this.redirectToTarget()
             }).catch((error) => {
                 let errorText = '';
-                Object.keys(error.response.data).map(function(e,i){
-                    errorText += error.response.data[e][0]+'\n'
-                });
-                this.setState({
-                    errorMessage: errorText,
-                    loggingIn: false
-                })
+                if(error && error.response){
+                    Object.keys(error.response.data).map(function(e,i){
+                        errorText += error.response.data[e][0]+'\n'
+                    });
+                    this.setState({
+                        errorMessage: errorText,
+                        loggingIn: false
+                    })
+                }else{
+                    this.redirectToTarget()
+                }
             })
         }
     };
+
+    redirectToTarget(){
+        Router.push('/dashboard')
+    }
 
     tosAccepted() {
         this.setState({
@@ -96,19 +108,30 @@ class RegisterContainer extends Component {
         })
     }
 
+    captchaResponse(value){
+        this.setState({
+            captcha: value
+        })
+    }
+
     render() {
+        let securityPassed = true;
+        if(this.state.tos && this.state.captcha){
+            securityPassed = false;
+        }
+
         return (
             <article>
                 <Helmet>
-                    <title>Register Page</title>
+                    <title>Create account</title>
                     <meta
                         name='description'
-                        content='Register account application page'
+                        content='Register account'
                     />
                 </Helmet>
                 <div className='container'>
                     <Row>
-                        <Col xs={{span: 22, offset: 1}} sm={4} md={6} lg={8} xl={{span: 8, offset: 8}}>
+                        <Col xs={{span: 20, offset:4}} sm={12} md={14} lg={16} xl={{span: 8, offset: 8}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <strong><h2>User Registration</h2></strong>
@@ -175,8 +198,14 @@ class RegisterContainer extends Component {
                                         </Row>
                                         }
 
+                                        <ReCAPTCHA
+                                            sitekey={this.state.captchaKey}
+                                            onChange={this.captchaResponse}
+                                        />
+
                                         <Form.Item>
-                                            <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>I agree with
+                                            <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
+                                                I agree with
                                                 VBR Platform Terms & Conditions
                                             </Checkbox>
                                             <br/>
@@ -189,7 +218,7 @@ class RegisterContainer extends Component {
                                                 background: 'rgba(0, 177, 153, 0.74)',
                                                 borderColor: 'rgba(0, 177, 153, 0.74)',
                                             }} type='primary' htmlType='submit'
-                                                    disabled={!this.state.tos}
+                                                    disabled={securityPassed}
                                                     className='login-form-button'>
                                                 Create account
                                             </Button>

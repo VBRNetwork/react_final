@@ -1,14 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
     Button,
-    Avatar,
     Row,
-    Layout,
     Col,
-    Select,
-    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown, DatePicker, TimePicker
+    Form, Input, Checkbox, Upload, DatePicker
 } from 'antd'
 import '../styles/kyc.css'
 import PropTypes from 'prop-types'
@@ -182,6 +179,7 @@ class KnowYourCustomerContainer extends Component {
             id_front_picture: '',
             id_back_picture: '',
             id_selfie_picture: '',
+            phone: '',
             fileList: [],
             previewVisible: false,
             previewImage: "",
@@ -197,6 +195,7 @@ class KnowYourCustomerContainer extends Component {
         this.uploadFrontPicture = this.uploadFrontPicture.bind(this)
         this.uploadBackPicture = this.uploadBackPicture.bind(this)
         this.handleSetDateBirth = this.handleSetDateBirth.bind(this)
+        this.handleChangePhone = this.handleChangePhone.bind(this)
         this.selfiePicture = this.selfiePicture.bind(this)
     }
 
@@ -217,6 +216,14 @@ class KnowYourCustomerContainer extends Component {
             last_name: event.target.value,
         })
     }
+
+
+    handleChangePhone (event) {
+        this.setState({
+            phone: event.target.value,
+        })
+    }
+
 
     handleChangeAddress1 (event) {
         this.setState({
@@ -283,7 +290,6 @@ class KnowYourCustomerContainer extends Component {
                 ]
             })
         }
-
         if (info.file.status === 'done') {
         } else if (info.file.status === 'error') {
         }
@@ -291,19 +297,15 @@ class KnowYourCustomerContainer extends Component {
 
     knowYourCustomerButton() {
         this.props.knowYourCustomer(this.state).then((e) => {
-            console.log(e)
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-
         this.props.form.validateFields((err, fieldsValue) => {
             if (err) {
                 return
             }
-
-            // Should format date value before submit.
             const rangeValue = fieldsValue['range-picker']
             const rangeTimeValue = fieldsValue['range-time-picker']
             const values = {
@@ -318,12 +320,10 @@ class KnowYourCustomerContainer extends Component {
                 ],
                 'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
             }
-            console.log('Received values of form: ', values)
         })
     }
 
     render () {
-
         const { getFieldDecorator } = this.props.form
         const formItemLayout = {
             labelCol: {
@@ -337,7 +337,7 @@ class KnowYourCustomerContainer extends Component {
                 sm: { span: 16 },
                 xl: { span: 8 },
                 xxl: { span: 12 },
-            },
+            }
         }
         const tailFormItemLayout = {
             wrapperCol: {
@@ -350,16 +350,19 @@ class KnowYourCustomerContainer extends Component {
                 },
                 xl: { span: 24 },
                 xxl: { span: 24 },
-            },
+            }
         }
 
         const config = {
             rules: [{ type: 'object', required: true, message: 'Please select time!' }],
         }
+
         const rangeConfig = {
             rules: [{ type: 'array', required: true, message: 'Please select time!' }],
         }
+
         const { fileList } = this.state;
+
         return (
             <div>
                 <Row>
@@ -378,6 +381,11 @@ class KnowYourCustomerContainer extends Component {
                             <Form.Item label="Gender">
                                 <Input className="kyc-input" onChange={this.handleChangeGender} placeholder="Gender"/>
                             </Form.Item>
+
+                            <Form.Item label="Phone">
+                                <Input className="kyc-input" type={'number'} pattern="[0-9]"  onChange={this.handleChangePhone} placeholder="Phone"/>
+                            </Form.Item>
+
 
                             <Form.Item label="Date Of Birth">
                                 {getFieldDecorator('date-picker', config)(<DatePicker onChange={this.handleSetDateBirth} className="kyc-input"/>)}
@@ -430,7 +438,7 @@ class KnowYourCustomerContainer extends Component {
                                 <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
                                     I have read and agreed with <strong>Veelancing</strong> <a href="">Terms &
                                     Conditions</a> and <a href="">Privacy Policy</a>
-                                </Checkbox>,
+                                </Checkbox>
                             </Form.Item>
 
                             <Form.Item className="kyc-form-btn" {...tailFormItemLayout}>
@@ -438,8 +446,7 @@ class KnowYourCustomerContainer extends Component {
                                         className="kyc-upload-btn-sub"
                                         htmlType="submit"
                                         disabled={!this.state.tos}
-                                        onClick={this.knowYourCustomerButton}
-                                >
+                                        onClick={this.knowYourCustomerButton}>
                                     Submit KYC
                                 </Button>
                             </Form.Item>

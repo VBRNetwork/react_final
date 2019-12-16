@@ -54,7 +54,16 @@
   .ant-carousel .slick-slide img {display: inline}
 
   .intro-text {
-    margin-top: 35px;
+        margin-top: 35px;
+        padding:10px;
+        margin-bottom:50px;
+  }
+
+.intro-text-job {
+    margin-top: 50px;
+    padding:10px;
+    margin-bottom:50px;
+    text-align: center;
   }
  
   .image {
@@ -85,7 +94,6 @@
 
 .background-header {
     background-image: linear-gradient(225deg, #20A3CA 0%, #008D7F 100%);
-    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3);
     position:relative
 }
 

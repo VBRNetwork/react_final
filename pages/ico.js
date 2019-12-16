@@ -1,2 +1,2 @@
-import IcoContainer from 'containers/IcoContainer'
-export default IcoContainer
+import NewIcoContainer from 'containers/NewIcoContainer'
+export default NewIcoContainer

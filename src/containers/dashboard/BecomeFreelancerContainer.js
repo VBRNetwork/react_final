@@ -1,189 +1,69 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
     Button,
-    Avatar,
     Row,
-    Layout,
     Col,
     Select,
-    Form, Input, Tooltip, Cascader, Checkbox, Menu, Upload, Dropdown
+    Form, Input, Tooltip, Cascader, Checkbox, Upload,
+    AutoComplete
 } from 'antd'
-
 import PropTypes from "prop-types";
 const { TextArea } = Input;
-import '../../styles/dashboard.css'
 import SkillsGroup from '../../components/Elements/EditableTagGroup'
 const { Option, OptGroup } = Select;
 import {becomeFreelancer} from '../../actions/user'
+import {getSkillsAndLanguages} from '../../actions/app_settings'
 
-
-const lang = [
-    {
-        value: 'English',
-        label: 'English',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
+const formItemLayout = {
+    labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+        xxl: { span: 12 },
     },
-    {
-        value: 'Spanish',
-        label: 'Spanish',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
+    wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+        xxl: { span: 12 },
     },
-    {
-        value: 'Mandarin',
-        label: 'Mandarin',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'French',
-        label: 'French',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'German',
-        label: 'German',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-
-    {
-        value: 'Italian',
-        label: 'Italian',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-];
-
+};
+const tailFormItemLayout = {
+    wrapperCol: {
+        xs: {
+            span: 24,
+            offset: 0,
+        },
+        sm: {
+            span: 16,
+            offset: 8,
+        },
+        xxl: { span: 24 },
+    }
+};
 
 class BecomeFreelancerContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCategories:[],
-            languages: '',
-            description: '',
-            skills: '',
-            cvFile: '',
-            categories:[]
+            payload: {
+                selectedCategories:[],
+                languages: [],
+                description: '',
+                skills: [],
+                cvFile: '',
+            },
+            categories:[],
+            languagesOptions: [{
+                value: 'en-us',
+                label: 'English',
+                children: [
+                    {
+                        value: 1,
+                        label: 'Beginner',
+                    }
+                ]
+            }],
         };
 
         this.handleChangeLanguages = this.handleChangeLanguages.bind(this);
@@ -194,6 +74,7 @@ class BecomeFreelancerContainer extends Component {
         this.becomeFreelancerButton = this.becomeFreelancerButton.bind(this);
         this.saveSkills = this.saveSkills.bind(this);
         this.uploadCv = this.uploadCv.bind(this);
+        this.handleClose = this.handleClose.bind(this)
 
     }
 
@@ -204,99 +85,132 @@ class BecomeFreelancerContainer extends Component {
             Object.keys(main_menu).map((category,index) => {
                 categories.push(main_menu[category])
             })
-
             this.setState({
-                categories:categories
+                categories
             })
         }
     }
 
     componentDidMount () {
         this.getSubcategories();
+        this.props.getSkillsAndLanguages().then((e) => {
+        })
     }
 
     handleChangeLanguages(event) {
+        let languages = this.state.payload.languages;
+        languages.push(event)
         this.setState({
-            language:event
-        });
+            payload: {
+                ...this.state.payload,
+                languages
+            }
+        })
     }
 
     handleChangeDescription(event) {
         this.setState({
-            description: event.target.value,
+            payload:{
+                ...this.state.payload,
+                description: event.target.value
+            }
         });
     }
 
-    saveSkills(event){
+    saveSkills(value,option){
+        let skills = this.state.payload.skills
+        skills.push(value);
         this.setState({
-            skills:event
+            payload:{
+                ...this.state.payload,
+                skills: skills
+            }
         })
     }
 
-    static async getInitialProps ({ store, query }) {
-    }
+    handleClose = removedTag => {
+        const skills = this.state.payload.skills.filter(tag => tag !== removedTag);
+        this.setState({
+            payload: {
+                ...this.state.payload,
+                skills:skills
+            }
+        });
+    };
 
     tosAccepted() {
         this.setState({
-            tos: !this.state.tos
+            payload: {
+                ...this.state.payload,
+                tos: !this.state.payload.tos
+            }
         })
     }
 
     handleChangeCategory(value) {
         this.setState({
-            selectedCategories:value
+           payload: {
+               ...this.state.payload,
+               selectedCategories:value
+           }
         })
     }
 
     uploadCv(info){
         if (info.file.status !== 'uploading') {
             this.setState({
-                cvFile:[
-                    info.file,
-                    info.fileList
-                ]
+                payload: {
+                    ...this.state.payload,
+                    cvFile:[
+                        info.file,
+                        info.fileList
+                    ]
+                }
             })
         }
-
         if (info.file.status === 'done') {
         } else if (info.file.status === 'error') {
         }
     }
 
     becomeFreelancerButton(){
-        this.props.becomeFreelancer(this.state).then((e) => {
-            console.log(e);
+        this.props.becomeFreelancer(this.state.payload).then((e) => {
         })
     }
+
     render () {
-
-
-        const formItemLayout = {
-            labelCol: {
-                xs: { span: 24 },
-                sm: { span: 8 },
-                xxl: { span: 12 },
+        let skills =  [];
+        let languages = [];
+        let childrens = [
+            {
+                value: 1,
+                label: 'Beginner',
             },
-            wrapperCol: {
-                xs: { span: 24 },
-                sm: { span: 16 },
-                xxl: { span: 12 },
+            {
+                value: 2,
+                label: 'Medium'
             },
-        };
-        const tailFormItemLayout = {
-            wrapperCol: {
-                xs: {
-                    span: 24,
-                    offset: 0,
-                },
-                sm: {
-                    span: 16,
-                    offset: 8,
-                },
-                xxl: { span: 24 },
-            },
-        };
+            {
+                value: 3,
+                label: 'Advanced'
+            }
+        ];
+        if(this.props.skills){
+            this.props.skills.map(function(value){
+                skills.push({
+                    value:value.id,
+                    text:value.name
+                });
+            })
 
+            this.props.languages.map(function(value){
+                languages.push({
+                    value: value.code,
+                    label: value.name,
+                    children: childrens
+                })
+            })
+        }
         return (
             <div>
                 <Row>
@@ -309,8 +223,7 @@ class BecomeFreelancerContainer extends Component {
                                     mode="multiple"
                                     style={{ width: '100%' }}
                                     placeholder="Please select"
-                                    onChange={this.handleChangeCategory}
-                                >
+                                    onChange={this.handleChangeCategory}>
 
                                     {this.state.categories &&
                                     this.state.categories.map((value, index, array) => {
@@ -324,37 +237,38 @@ class BecomeFreelancerContainer extends Component {
                             <Form.Item
                                 label={
                                     <span>
-                                  Short Description&nbsp;
+                                        Short Description&nbsp;
                                         <Tooltip title="Few words about you, and your professional background.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
-                                </span>
-                                }
-                            >
+                                </span> }>
+
                                 <TextArea
                                     onChange={this.handleChangeDescription}
                                     placeholder="Enter Short Description"
                                     autosize={{ minRows: 3, maxRows: 5 }}
                                 />
                             </Form.Item>
+
                             <Form.Item
                                 label={
                                     <span>
-                                  Skills&nbsp;
+                                        Skills&nbsp;
                                         <Tooltip title="Up to 5 Skills.">
                                     <Icon type="question-circle-o" />
                                   </Tooltip>
-                                </span>
-                                }
-                            >
-                                <SkillsGroup saveTags={this.saveSkills}/>
+                                </span> }>
+                                <AutoComplete mode={'tags'} size={'small'} placeholder={'Choose skill'} dataSource={skills} onSelect={this.saveSkills}/>
+                                <SkillsGroup handleClose={this.handleClose} tags={this.state.payload.skills}/>
                             </Form.Item>
 
                             <Form.Item label="Languages">
-                                <Cascader options={lang} onChange={this.handleChangeLanguages}/>
+                                <Cascader options={languages} onChange={this.handleChangeLanguages}/>
+                                <SkillsGroup tags={this.state.payload.languages}  handleClose={this.handleClose}/>
                             </Form.Item>
+
                             <Form.Item label="Import Your Portfolio" >
-                                <Upload  name='cvfile' onChange={this.uploadCv}>
+                                <Upload beforeUpload={() => false}  name='cvfile' onChange={this.uploadCv}>
                                     <Button>
                                         <Icon type="upload" /> Click to Upload
                                     </Button>
@@ -362,23 +276,23 @@ class BecomeFreelancerContainer extends Component {
                             </Form.Item>
 
                             <Form.Item {...tailFormItemLayout}>
-
-                                <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
+                                <Checkbox checked={this.state.payload.tos} name={'tos'} onChange={this.tosAccepted}>
                                     I agree with <strong>VBR Network</strong> <a href="">Terms & Conditions</a>
                                 </Checkbox>,
                             </Form.Item>
+
                             <Form.Item {...tailFormItemLayout}>
                                 <Button type="primary"
                                         htmlType="submit"
-                                        disabled={!this.state.tos}
+                                        disabled={!this.state.payload.tos}
                                         onClick={this.becomeFreelancerButton}
                                         style={{
                                             background: 'rgb(46, 195, 171)',
-                                            borderColor: 'rgb(46, 195, 171)'}}
-                                >
+                                            borderColor: 'rgb(46, 195, 171)'}}>
                                     Become Freelancer
                                 </Button>
                             </Form.Item>
+
                         </Form>
                     </Col>
                 </Row>
@@ -390,13 +304,16 @@ class BecomeFreelancerContainer extends Component {
 function mapStateToProps (state) {
     return {
         user:state.user,
-        menu:state.settings.main_menu
+        menu:state.settings.main_menu,
+        skills:state.settings.skills,
+        languages:state.settings.languages
     }
 }
 
 BecomeFreelancerContainer.propTypes = {
-    becomeFreelancer: PropTypes.func.isRequired
+    becomeFreelancer: PropTypes.func.isRequired,
+    getSkillsAndLanguages: PropTypes.func.isRequired
 }
 
-export default connect(mapStateToProps, {becomeFreelancer
+export default connect(mapStateToProps, {becomeFreelancer,getSkillsAndLanguages
 })(BecomeFreelancerContainer)

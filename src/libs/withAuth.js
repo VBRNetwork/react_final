@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import Router from 'next/router'
-import AuthService from './authService'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 var jwtDecode = require('jwt-decode');
 
 export default function withAuth (AuthComponent) {
-  const Auth = new AuthService('http://marketplace.vbrinc.ro/api/');
 
   class Authenticated extends Component {
     static async getInitialProps (ctx) {
@@ -36,7 +34,6 @@ export default function withAuth (AuthComponent) {
           let decoded = null;
           try {
                decoded = jwtDecode(this.props.user.token);
-              console.log(decoded);
           } catch (e) {
               Router.push('/')
           }
@@ -48,12 +45,7 @@ export default function withAuth (AuthComponent) {
     render () {
       return (
         <div>
-          {this.state.isLoading ? (
-            <div>LOADING....</div>
-          ) : (
-            <AuthComponent {...this.props} auth={Auth} />
-          )}
-        </div>
+          {this.state.isLoading ? (<div>LOADING....</div> ) : (<AuthComponent {...this.props}  />)}</div>
       )
     }
   }

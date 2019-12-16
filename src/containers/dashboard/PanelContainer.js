@@ -1,13 +1,7 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Menu, Icon, Button, Avatar, Progress, Row, Card, Switch, Layout, List, Col, Statistic, Timeline, Dropdown, Rate } from 'antd'
-import '../../styles/dashboard.css'
-const { SubMenu } = Menu
-const { Header, Content, Footer, Sider } = Layout
-const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
-import MenuDashboardContainer from './MenuDashboardContainer'
-import DashboardLayout from '../../components/DashboardLayout'
+import { Icon, Button, Row, Card, Col, Statistic, Timeline} from 'antd'
+
 class PanelContainer extends Component {
     static async getInitialProps ({ store, query }) {
     }

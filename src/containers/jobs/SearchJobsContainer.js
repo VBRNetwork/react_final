@@ -7,63 +7,63 @@ const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
 const listData = [{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer (Req: React,Javascript,Node)`,
     slug: `looking-for-a-web-developer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
         'Blockchain Expert',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Stefan Vanea',
         username: 'stefan_vanea',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer`,
     slug: `looking-for-a-web-designer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
         'Python Programmer',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Fedot Serghei',
         username: 'fedot_serghei',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a test team for a large project!`,
     slug: `looking-for-a-large-project`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
         'Web designer for a traveling website',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'CEO of Samsung',
         username: 'ceo_samsung',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Looking for a Web Designer`,
     slug: `looking-for-a-large-webdesigner`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     description:
         'Devops Vbrinc Platform',
     content:
-        'We are developing a travel and vacations webstie, and need a web designed with experience to help us make it as user friendly as possible',
+        'We are developing a freelancers blockchain platform, and need a web programmer with experience to help us make it as user friendly as possible',
     user: {
         name: 'Barborica Devops',
         username: 'barborica_devops',
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `Python Programmer Needed`,
     slug: `need-for-a-programmer`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -77,7 +77,7 @@ const listData = [{
         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
     }
 },{
-    href: '/profile',
+    href: '/users',
     title: `SEO Specialist Needed`,
     slug: `seo-specialist-needed`,
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
@@ -130,7 +130,7 @@ class SearchJobsContainer extends Component {
                                                 Welcome to VBR Network Marketplace
                                             </h3>
                                             <h4>
-                                                We are developing a travel and vacations website, and need a web designed with experience to help
+                                                We are developing a freelancing blockchain platform, and need a web programmer with experience to help.
                                             </h4>
                                         </strong>
                                     </div>

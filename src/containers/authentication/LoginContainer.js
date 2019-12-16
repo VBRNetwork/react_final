@@ -68,15 +68,15 @@ class LoginContainer extends Component {
         return (
             <article>
                 <Helmet>
-                    <title>Login Page</title>
+                    <title>Login to Veelancing</title>
                     <meta
                         name='description'
-                        content='Login application page'
+                        content='Login Veelacing Platform'
                     />
                 </Helmet>
-                <div className='container'>
+                <div className='container' >
                     <Row>
-                        <Col xs={{span: 22, offset: 1}} sm={4} md={6} lg={8} xl={{span: 8, offset: 8}}>
+                        <Col xs={{span: 20, offset: 4}} sm={20} md={14} lg={8} xl={{span: 8, offset: 8}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <h2>Login Page</h2>

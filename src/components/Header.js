@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Menu, Icon, Row, Col, Layout, Breadcrumb, List, Dropdown, Avatar } from 'antd'
 import Link from 'next/link'
 import {Button} from 'antd'
-import '../styles/base.css'
 import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
@@ -59,7 +58,6 @@ class Header extends Component {
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname){
             ReactGA.pageview(window.location.pathname + window.location.search);
-            console.log('pageview sent')
             this.rebuildBreadcrumbs()
         }
     }
@@ -232,9 +230,6 @@ class Header extends Component {
               )
             })
         }
-
-        console.log('vanea', this.state)
-        console.log(this.state.breadcrumb);
 
         return (
             <div>

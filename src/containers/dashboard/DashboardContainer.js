@@ -12,6 +12,7 @@ import ViewProfileContainer from './ViewProfileContainer'
 import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
+import ProjectManagementContainer from './ProjectManagementContainer'
 
 class DashboardContainer extends Component {
 
@@ -24,13 +25,9 @@ class DashboardContainer extends Component {
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if(prevProps.router.pathname !== this.props.router.pathname){
-            console.log(this.props.router)
-
             this.setState({
                 location: this.props.router.pathname
             });
-
-            console.log('dashboarc contianer sent')
         }
     }
 
@@ -38,10 +35,6 @@ class DashboardContainer extends Component {
       let full_name = this.props.user.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
           return letter.toUpperCase();
       });
-
-      console.log(this.state.location );
-
-
       let dashboardComponent = <PanelContainer/>
       if(this.state.location === '/dashboard/view-profile'){
           dashboardComponent = <ViewProfileContainer/>
@@ -49,13 +42,13 @@ class DashboardContainer extends Component {
           dashboardComponent = <BecomeFreelancerContainer/>
       }else if(this.state.location === '/dashboard/wallet'){
           dashboardComponent = <WalletContainer/>
+      }else if(this.state.location === '/dashboard/project-management'){
+          dashboardComponent = <ProjectManagementContainer/>
       }
 
       return (
           <DashboardLayout data={{full_name:full_name}}>
-              <div>
-                  {dashboardComponent}
-              </div>
+              {dashboardComponent}
           </DashboardLayout>
     )
   }

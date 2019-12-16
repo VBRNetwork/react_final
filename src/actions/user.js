@@ -51,6 +51,7 @@ function generateAuthCookies(res) {
 export function logout() {
     return dispatch => {
         return vbrincapi.logout().then(res => {
+            document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             dispatch({
                 type: SAVE_TOKEN,
                 data: {
@@ -67,11 +68,32 @@ export function logout() {
 
                 }
             });
-            document.cookie = 'token= ""; expires=Thu, 01 Jul 2017 00:00:00 UTC; path=/;'
             return res
         })
     }
 }
+
+export function logoutStore() {
+    return dispatch => {
+        dispatch({
+            type: SAVE_TOKEN,
+            data: {
+                token: 0,
+                user:{
+                    pk:0,
+                    username: 'guest',
+                    first_name:'guest',
+                    last_name:'guest',
+                    type:0,
+                    profile:{
+                    }
+                },
+
+            }
+        });
+    }
+}
+
 
 export function registerAccount(data) {
     return dispatch => {

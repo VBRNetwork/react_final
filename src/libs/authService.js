@@ -33,12 +33,12 @@ export default class AuthService {
   }
 
   setProfile (profile) {
-    // Saves profile data to localStorage
+    // Saves users data to localStorage
     localStorage.setItem('profile', JSON.stringify(profile))
   }
 
   getProfile () {
-    // Retrieves the profile data from localStorage
+    // Retrieves the users data from localStorage
     const profile = localStorage.getItem('profile')
     return profile ? JSON.parse(localStorage.profile) : {}
   }
@@ -55,7 +55,7 @@ export default class AuthService {
   }
 
   logout () {
-    // Clear user token and profile data from localStorage
+    // Clear user token and users data from localStorage
     localStorage.removeItem('id_token')
     localStorage.removeItem('profile')
   }

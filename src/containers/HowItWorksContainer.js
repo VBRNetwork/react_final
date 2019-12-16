@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Row, Col, Card, Icon, Divider, Breadcrumb} from 'antd'
+import { Row, Col, Card, Icon, Divider} from 'antd'
 import '../styles/hiw.css'
 const { Meta } = Card;
 
 class HowItWorksContainer extends Component {
-  static async getInitialProps ({ store, query }) {
-  }
-
-  componentDidMount () {
-  }
-
   render () {
     return (
             <div>
@@ -267,7 +260,6 @@ class HowItWorksContainer extends Component {
 
 function mapStateToProps (state) {
   return {
-
   }
 }
 

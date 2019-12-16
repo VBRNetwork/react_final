@@ -49,11 +49,9 @@ class HomeContainer extends Component {
 
         if(isBrowser){
             number_particles = 80;
-            console.log('isBrowser');
         }
         if(isMobile){
             number_particles = 30;
-            console.log('isMobile');
         }
 
         this.handleChangeParticles(number_particles);

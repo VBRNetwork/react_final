@@ -49,14 +49,13 @@ app.prepare().then(() => {
     })
 
     server.get('/users/search', (req, res) => {
-        const actualPage = '/profile/search'
+        const actualPage = '/users/search'
         const queryParams = {  }
         app.render(req, res, actualPage, queryParams)
     })
 
-
     server.get('/users/:username/', (req, res) => {
-        const actualPage = '/profile'
+        const actualPage = '/users'
         const queryParams = { username: req.params.username }
         app.render(req, res, actualPage, queryParams)
     })
