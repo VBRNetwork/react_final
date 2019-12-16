@@ -102,7 +102,7 @@ class NewHomeContainer extends Component {
                         <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
                             <div className="intro-text">
-                                <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
+                                {false && <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>}
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big" style={{textTransform:'none'}}> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
                                 </h1>
@@ -151,7 +151,7 @@ class NewHomeContainer extends Component {
                                 </Col>
                                 <Col span={3} pull={2}>
                                     <div style={{marginLeft: '35px'}}>
-                                    <img style={{marginTop: '48px'}} src={'../../static/images/NMC_productions_home.png'} />
+                                    <img style={{marginTop: '51px'}} src={'../../static/images/NMC_productions_home.png'} />
                                     </div>
                                 </Col>
                                 <Col span={3} pull={1}>
