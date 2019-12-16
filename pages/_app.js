@@ -14,7 +14,6 @@ import dynamic from 'next/dynamic'
 const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
     ssr: false,
 })
-
 import {makeStore} from 'store/createStore'
 import {PersistGate} from 'redux-persist/integration/react'
 import { Spin } from 'antd';
@@ -22,7 +21,6 @@ import Layout from 'components/Layout'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
-
 
 class MyApp extends App {
     render() {

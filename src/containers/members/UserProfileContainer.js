@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Icon, Button, Row, Card, Col, Empty, Rate, Tooltip, Comment, Avatar, Tag, Modal, Input, Upload } from 'antd'
@@ -12,6 +12,7 @@ const Picker = dynamic(import('emoji-picker-react'), {
 })
 const { TextArea } = Input;
 import {getMemberProfile} from '../../actions/members_actions';
+import { Helmet } from 'react-helmet'
 
 const data = [
     {
@@ -47,6 +48,11 @@ class UserProfileContainer extends Component {
                 image:'../../../static/images/sample-avatar.jpg',
                 type:0,
                 country:'',
+                certifications:[],
+                job_title:'',
+                portfolio_work:[],
+                last_login:'',
+                reviews:[]
             },
             message_sent:false,
         };
@@ -81,11 +87,16 @@ class UserProfileContainer extends Component {
                         firstName:response.firstName,
                         lastName:response.lastName,
                         bio:response.profile.bio,
+                        job_title:response.profile.jobTitle,
                         type:response.profile.type,
                         price:response.profile.price,
                         image:image,
                         skills:response.profile.skills,
                         country:response.profile.country,
+                        certifications:response.profile.certifications,
+                        portfolio_work:response.profile.portfolio,
+                        last_login:response.lastLogin,
+                        reviews:response.reviews,
                     }
                 })
             });
@@ -177,7 +188,7 @@ class UserProfileContainer extends Component {
 
     render () {
         const {likes, dislikes, action} = this.state;
-        let fullName = (this.state.profile.firstName + ' ' + this.state.profile.lastName).toLocaleUpperCase()
+        let fullName = (this.state.profile.firstName + ' ' + this.state.profile.lastName)
         const actions = (
             <div>
                  <span key='comment-like'>
@@ -206,6 +217,9 @@ class UserProfileContainer extends Component {
 
         return (
             <div style={{marginLeft:'1.3rem',marginTop:'5px'}}>
+                <Helmet>
+                    <title>{fullName} - Veelancing</title>
+                </Helmet>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                         <div>
@@ -219,17 +233,18 @@ class UserProfileContainer extends Component {
                                               marginLeft:'2px',
                                               background: 'rgba(0, 177, 153, 0.74)',
                                               borderColor: 'rgba(0, 177, 153, 0.74)'}}
-                                      > Copy link
+                                      > Link
                                       </Button>
 
+                                      {false &&
                                       <Button
-                                              type={'primary'}
-                                              style={{
-                                                  marginLeft:'2px',
-                                                  background: 'rgba(0, 177, 153, 0.74)',
-                                                  borderColor: 'rgba(0, 177, 153, 0.74)'}}
-                                          >Edit Profile
-                                      </Button>
+                                          type={'primary'}
+                                          style={{
+                                              marginLeft:'2px',
+                                              background: 'rgba(0, 177, 153, 0.74)',
+                                              borderColor: 'rgba(0, 177, 153, 0.74)'}}
+                                      >Edit Profile
+                                      </Button>}
 
                                       <Button
                                           type={'primary'}
@@ -245,29 +260,26 @@ class UserProfileContainer extends Component {
                                     <div>
                                         <strong>
                                             <h2>
-                                                {fullName}
+                                                {fullName} - {this.state.profile.job_title}
                                             </h2>
                                         </strong>
                                     </div>}>
 
                                 <Row>
-                                    <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 4}}>
+                                    <Col xs={24} sm={{span:4}} md={{span:4}} lg={{span:4}} xl={{span:4}} xxl={{ span: 6}}>
                                         <div>
                                             <img
-                                                style={{width: '100%',padding:'5px'}}
+                                                style={{width: '100%',padding:'5px',borderRadius:'10px'}}
                                                 src={this.state.profile.image}
                                             />
-                                            <strong>
-                                                <h3>
-                                                    @{this.state.profile.username}
-                                                </h3>
-                                            </strong>
-                                            <p>Country: {this.state.profile.country}</p>
-                                            <p style={{fontSize:'12px'}}>Active since December { this.state.profile.price}, 2019</p>
+                                            <h3>
+                                                <strong>@{this.state.profile.username}</strong>, {this.state.profile.country},
+                                                <span style={{fontSize:'12px'}}> Last login { this.state.profile.last_login}</span>
+                                            </h3>
                                         </div>
                                     </Col>
-                                    <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 13,offset:1}}>
-                                        <h3>Profile description</h3>
+                                    <Col xs={24} sm={{ span: 13,offset:1}} md={{ span: 13,offset:1}} lg={{ span: 13,offset:1}} xl={{ span: 13,offset:1}} xxl={{ span: 11,offset:1}}>
+                                        <h3><u>Profile description</u></h3>
                                         <div dangerouslySetInnerHTML={{__html: this.state.profile.bio}} style={{paddingTop:'20px',fontSize:'15px'}}>
                                         </div>
                                     </Col>
@@ -277,15 +289,12 @@ class UserProfileContainer extends Component {
                                             <strong>
                                                 <h2>
                                                     <Icon
-                                                        type={'dollar'}
-                                                    /> {this.state.profile.price} $/hr
+                                                        type={'euro'}
+                                                    /> {this.state.profile.price}/hr
                                                 </h2>
                                                 <hr />
+                                                <Rate value={this.state.profile.reviews.length*4.5}/> {this.state.profile.reviews.length} Reviews
                                             </strong>
-                                            <p>
-                                                4 Reviews
-                                            </p>
-                                            <Rate value={4}/>
                                         </div>
                                     </Col>
                                 </Row>
@@ -299,19 +308,16 @@ class UserProfileContainer extends Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17,offset:3}}>
                         <Card
                             style={{marginTop:'20px',marginBottom:'20px'}}
-                            title={<h2>Skills</h2>}>
-                            <div>
-                                <Tag>Python</Tag>
-                                <Tag>
-                                    <a href="https://github.com/ant-design/ant-design/issues/1862">MongoDB</a>
-                                </Tag>
-                                <Tag closable >
-                                    Linux
-                                </Tag>
-                                <Tag closable >
-                                    Databases
-                                </Tag>
-                            </div>
+                            title={<h2><u>Skills</u></h2>}>
+
+                                <List
+                                    itemLayout="horizontal"
+                                    dataSource={this.state.profile.skills}
+                                    renderItem={item => (
+                                        <Tag>{item.name}</Tag>
+                                    )}
+                                />
+
                         </Card>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17,offset:3}}>
@@ -323,39 +329,33 @@ class UserProfileContainer extends Component {
                                         <div>
                                             <strong>
                                                 <h3>
-                                                    Reviews
+                                                    <u>Reviews</u>
                                                 </h3>
                                             </strong>
                                         </div>}>
 
-                                    <Meta
-                                        description={
-                                            <div>
-                                                <Comment
-                                                    actions={actions}
-                                                    author={<strong>{fullName}</strong>}
-                                                    avatar={
-                                                        <Avatar
-                                                            src='../../static/images/vbr_logo.png'
-                                                            style={{width: 100}}
-                                                            alt='Avatar Comment'
-                                                        />
-                                                    }
-                                                    content={
-                                                        <div>
-                                                            We supply a series of design principles, practical patterns and high quality design
-                                                            resources (Sketch and Axure), to help people create their product prototypes beautifully
-                                                            and efficiently.
-                                                        </div>
-                                                    }
-                                                    datetime={
-                                                        <Tooltip title={moment().format('YYYY-MM-DD HH:mm:ss')}>
-                                                            <span>{moment().fromNow()}</span>
-                                                        </Tooltip>
-                                                    }
-                                                />
-                                            </div>
-                                        }
+                                    <List
+                                        itemLayout="horizontal"
+                                        dataSource={this.state.profile.reviews}
+                                        renderItem={item => (
+                                            <Comment
+                                                actions={actions}
+                                                author={<strong>{item.name}</strong>}
+                                                avatar={
+                                                    <Avatar
+                                                        src='../../static/images/vbr_logo.png'
+                                                        style={{width: 100}}
+                                                        alt='Avatar'
+                                                    />
+                                                }
+                                                content={
+                                                    <div>
+                                                        {item.message}
+                                                    </div>
+                                                }
+                                                datetime={item.postDate}
+                                            />
+                                        )}
                                     />
                                 </Card>
                             </div>
@@ -363,7 +363,7 @@ class UserProfileContainer extends Component {
                         <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
-                                    title={<div><strong><h3>Certifications</h3></strong></div>}
+                                    title={<div><strong><h3><u>Certifications</u></h3></strong></div>}
                                     description={<strong>Currently no course/certification added.</strong>}
                                     extra={
                                         <Button type={'primary'}
@@ -376,12 +376,12 @@ class UserProfileContainer extends Component {
 
                                     <List
                                         itemLayout="horizontal"
-                                        dataSource={data}
+                                        dataSource={this.state.profile.certifications}
                                         renderItem={item => (
                                             <List.Item>
                                                 <List.Item.Meta
                                                     avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                                                    title={<a href="https://ant.design">{item.title}</a>}
+                                                    title={<a href="https://ant.design">{item.name}</a>}
                                                     description=""
                                                 />
                                             </List.Item>
@@ -393,13 +393,13 @@ class UserProfileContainer extends Component {
                         <Col xs={24} sm={24} md={8} lg={{ span: 8}} xl={8} xxl={8}>
                             <div>
                                 <Card
-                                    title={<div><strong><h3> Work Portfolio</h3></strong></div>}
+                                    title={<div><strong><h3><u> Work Portfolio</u></h3></strong></div>}
                                     extra={<Button type={'primary'} style={{background: 'rgba(0, 177, 153, 0.74)',
                                         borderColor: 'rgba(0, 177, 153, 0.74)'}}> Add Items</Button>}>
                                     <div>
                                         <List
                                             itemLayout="horizontal"
-                                            dataSource={data}
+                                            dataSource={this.state.profile.portfolio_work}
                                             renderItem={item => (
                                                 <List.Item>
                                                     <List.Item.Meta
@@ -409,7 +409,7 @@ class UserProfileContainer extends Component {
                                                                 color: 'rgba(251,10,0,0.74)'}}
                                                             type={'file-image'}
                                                         />}
-                                                        title={<a href="https://ant.design">{item.title}</a>}
+                                                        title={<a href="https://ant.design">{item.name}</a>}
                                                         description=""
                                                     />
                                                 </List.Item>

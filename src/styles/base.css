@@ -259,16 +259,21 @@ label {
 }
 
 .menu-item {
-    color: #bbbbbb;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 0px;
     line-height: 17px;
     text-align: left;
+    color: #FFF;
 }
 
 .logo-box {
-    padding: 35px;
+    text-align: center;
+    margin:20px;
+}
+
+.logo-box img{
+    height:55px;
 }
 
 .auth-button {
@@ -430,10 +435,11 @@ label {
 }
 
 .investors-text {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 19px;
     text-align: left;
+    color:#FFF !important;
 }
 
 
@@ -505,6 +511,7 @@ label {
     width: 660px;
     text-align: left;
     margin-left: 55px;
+    text-transform: none;
 }
 
   .stay-up-to-date-and {
@@ -524,9 +531,9 @@ label {
 
 .count-down {
     shape-rendering: geometricPrecision;
-    background-color:
-            #1AB0C48F;
+    background-color: #1AB0C48F;
     border-radius: 10px;
+    margin-left: 45px;
     height: 275px;
     width: 82%;
 }
@@ -540,10 +547,9 @@ label {
 }
 
 .example-input .ant-input {
-    width: 300px;
-    margin: 0 10px 10px 0;
+    max-width: 200px;
+    margin: 0 10px 10px 50px;
     background: transparent;
-    margin-left: 55px;
 }
 
 .no-spam {
@@ -553,16 +559,6 @@ label {
     margin-left: 95px;
 }
 
-.get-notified {
-    color: #008D7F !important;
-    font-size: 15px !important;
-    text-align: center !important;
-    background-color: #FFFFFF;
-    border-radius: 7px !important;
-    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
-    height: 43px !important;
-    width: 180px !important;
-}
 
 .no-spam-box {
   position: absolute;
@@ -756,13 +752,6 @@ label {
     .logo-img {
         text-align: center;
     }
-
-}
-
-.menu-item {
-    color: #FFF !important;
-    font-weight: bold !important;
-    letter-spacing: 0.1px !important;
 }
 
 .category-box {
@@ -817,7 +806,7 @@ label {
 
  @media(max-width:1024px) {
  .example-input .ant-input {
-  width: 300px;
+  width: 250px;
   margin: 0 10px 10px 0;
   background: transparent;
   margin-left: 20px;
@@ -902,7 +891,7 @@ label {
   border: 1px solid #EBEBEC !important;
   border-radius: 10px !important;
   width: 180px !important;
-  height: 250px !important;
+  height: 200px !important;
 }
 
 .the-team {
@@ -946,7 +935,6 @@ label {
     color: #202C39 !important;
     font-size: 38px;
     font-weight: 700;
-    width: 700px;
     text-align: center;
     margin-top: 110px;
   }
@@ -1067,18 +1055,49 @@ h1 {
     margin-left: -5px;
 }
 
-/*MEDIA QUERIES*/
 
-@media(max-width:1200px) {
+.community-part {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+/*MEDIA QUERIES*/
+@media(max-width:1350px) {
     .no-spam {
         margin-top: 5px;
         text-align: center !important;
         margin-left: 1px;
     }
     .a-blockchain-marketp .big {
-        font-size: 34px;
+        font-size: 34px !important;
     }
     .intro-text {
-        margin-top: 30px !important;
+        margin-top: 10px !important;
     }
+    .community-part {
+        margin-top:15px !important;
+        margin-bottom:15px !important;
+    }
+    .invest-in-the-first {
+        font-size: 37px !important;
+    }
+}
+
+.ico-tba-titile {
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.ico-tba-text {
+    text-align: center;
+}
+
+.investors-text-ico {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+    color:#000 !important;
+    padding-top:20px;
+    padding-bottom:20px;
 }

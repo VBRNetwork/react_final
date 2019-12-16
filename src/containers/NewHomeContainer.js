@@ -68,7 +68,7 @@ class NewHomeContainer extends Component {
         return (
             <Fragment>
                 <Helmet>
-                    <title>Join now BETA. Freelancers platform blockchain based - Veelancing</title>
+                    <title>Join now DEMO. Freelancers platform blockchain based - Veelancing</title>
                     <meta
                         name='description'
                         content='Blockchain Freelancers Jobs.Be part of our community to find a job or hire experts. We are launching soon, but until then, join our BETA version!'
@@ -101,12 +101,12 @@ class NewHomeContainer extends Component {
                     <Row>
                         <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
-                            <div className="intro-text" style={{marginTop:'50px'}}>
+                            <div className="intro-text">
                                 <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big" style={{textTransform:'none'}}> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
                                 </h1>
-                                <div className="" style={{ marginTop: '50px', marginBottom: '50px' }}>
+                                <div className="community-part" >
                                         <h2 className="stay-up-to-date">
                                           <ReactRevealText show={this.state.showTextSecond}>Be part of our community to find a job or hire experts.
                                               We are launching soon, but until then, join our BETA version!</ReactRevealText>
@@ -141,13 +141,22 @@ class NewHomeContainer extends Component {
                             <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
                         </Col>
                     </Row>
-                    <div style={{position:'absolute',width:'100%',bottom:'0px'}}>
-                        <Row>
-                            <Col>
-                                <div style={{opacity: '0.5',backgroundColor:'#FFF',height:'100px'}}>
-                                    <img style={{height:'115px'}} src={'../../static/images/urban_logo_partners_f.png'} />
-                                </div>
-                            </Col>
+                    <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
+                        <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '100px' }} 
+                        type="flex" 
+                        justify="end"
+                        >
+                                <Col span={3} pull={1}>
+                                    <img style={{ height: '115px' }} src={'../../static/images/urban_logo_partners_f.png'} />
+                                </Col>
+                                <Col span={3} pull={2}>
+                                    <div style={{marginLeft: '35px'}}>
+                                    <img style={{marginTop: '48px'}} src={'../../static/images/NMC_productions_home.png'} />
+                                    </div>
+                                </Col>
+                                <Col span={3} pull={1}>
+                                    <img style={{marginTop: '25px'}} src={'../../static/images/Logo_CED_home.png'} />
+                                </Col>
                         </Row>
                     </div>
 
@@ -156,7 +165,7 @@ class NewHomeContainer extends Component {
 
 
                 <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
-                    <Row>
+                    <Row> 
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
@@ -267,7 +276,7 @@ class NewHomeContainer extends Component {
 
                 <div>
                     <Row>
-                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 12, offset:0}} lg={6} xl={6} xxl={{ span: 4, offset: 4 }}>
                             <div style={{ padding: '18px',textAlign:'center' }}>
                                 <img src={'../../static/images/communicate_directly.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Communicate Directly</span>
@@ -279,7 +288,7 @@ class NewHomeContainer extends Component {
                                 </span>
                             </div>
                         </Col>
-                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 12, offset:0}} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '19px',textAlign:'center'}}>
                                 <img src={'../../static/images/smart_contracts.svg'}/><br/>
                                 <span className={'communicate-directly'} style={ {marginTop:'6px'} }>Create Smart Contracts</span>
@@ -293,7 +302,7 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 11 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={12} md={{ span: 12, offset:0 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '19px',textAlign:'center'  }}>
                                 <img src={'../../static/images/get_paid_instantly.svg'}/><br/>
                                 <span className={'communicate-directly'}>Get Paid Instantly</span>
@@ -307,7 +316,7 @@ class NewHomeContainer extends Component {
                             </div>
                         </Col>
 
-                        <Col xs={{ span: 20, offset:2 }} sm={16} md={{ span: 12 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
+                        <Col xs={{ span: 20, offset:2 }} sm={16} md={{ span: 12, offset:0 }} lg={6} xl={6} xxl={{ span: 4, offset:0 }}>
                             <div style={{ padding: '20px',textAlign:'center'  }}>
                                 <img src={'../../static/images/exchange_money.svg'}/> <br/>
                                 <span className={'communicate-directly'}>Exchange You Money</span>
@@ -357,7 +366,7 @@ class NewHomeContainer extends Component {
                             </Col>
                             <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 14 }}>
                                 <img className={'img-responsive'} 
-                                     src="../../static/images/coin-img-2.png" alt="become-an-investor"/>
+                                     src="../../static/images/design/become_investor_coins-min.png" alt="become-an-investor"/>
                             </Col>
                         </Row>
                     </div>
