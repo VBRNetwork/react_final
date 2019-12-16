@@ -38,11 +38,22 @@ class NewHomeContainer extends Component {
         }
 
         this.handleChangeParticles = this.handleChangeParticles.bind(this);
+        this.isLoggedIn = this.isLoggedIn.bind(this);
     }
 
     handleChangeParticles(value) {
         this.setState({
             particles_number: value
+        })
+    }
+
+    isLoggedIn(){
+        let isLogged = false;
+        if(this.props.user.token !== 0 && this.props.user.token != null){
+            isLogged = true;
+        }
+        this.setState({
+            isLogged: isLogged
         })
     }
 
@@ -62,9 +73,15 @@ class NewHomeContainer extends Component {
             this.setState({ showTextSecond: true });
         }, 1000);
         this.handleChangeParticles(number_particles);
+        this.isLoggedIn();
     }
 
     render () {
+
+        let join_as_freelancer = '/dashboard/become-freelancer'
+        if(!this.state.isLogged){
+            join_as_freelancer = '/register'
+        }
         return (
             <Fragment>
                 <Helmet>
@@ -115,7 +132,7 @@ class NewHomeContainer extends Component {
                                 <div style={{ marginTop: '50px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
                                         <Col xs={24} md={24} lg={12} xxl={8}>
-                                            <Link href='/register'>
+                                            <Link href={join_as_freelancer}>
                                                 <Button className="btn-style" size="large">
                                                     <a>
                                                         <b>Join as Freelancer</b>
