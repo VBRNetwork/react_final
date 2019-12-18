@@ -4,11 +4,8 @@ import {withRouter} from 'next/router'
 import {Provider} from 'react-redux'
 import App from 'next/app'
 import { ConnectedRouter } from 'connected-next-router'
-
 import {faHome, faPlayCircle, faEnvelopeOpen} from '@fortawesome/free-solid-svg-icons'
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
-import 'antd/dist/antd.css'
-import 'styles/base.css'
 
 import dynamic from 'next/dynamic'
 const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
@@ -21,6 +18,7 @@ import Layout from 'components/Layout'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import Head from 'next/head'
 library.add(faHome, faPlayCircle, faEnvelopeOpen)
+import 'antd/dist/antd.css';
 
 class MyApp extends App {
     render() {
