@@ -21,7 +21,20 @@ library.add(faHome, faPlayCircle, faEnvelopeOpen)
 import 'antd/dist/antd.css';
 
 class MyApp extends App {
+
+    state = {
+        gateLifted: false
+    }
+
+    onBeforeLift = () => {
+        // Take an action before the gate lifts
+        setTimeout(() => {
+            this.setState({ gateLifted: true})
+        }, 1000);
+    }
+
     render() {
+
         const {Component, pageProps, store, router} = this.props
         return (
              <Provider store={store}>
@@ -49,12 +62,14 @@ class MyApp extends App {
                         });
                     });`}}/>
                  </Head>
-                 <PersistGate loading={<div className={'loading-start'}><Spin size="large" /></div>} persistor={store.__persistor}>
-                    <ConnectedRouter>
-                        <Layout>
-                            <Component router={router} {...pageProps}/>
-                        </Layout>
-                    </ConnectedRouter>
+                 <PersistGate persistor={store.__persistor} onBeforeLift={this.onBeforeLift}>
+                     { this.state.gateLifted ?
+                             <ConnectedRouter>
+                                <Layout>
+                                    <Component router={router} {...pageProps}/>
+                                </Layout>
+                            </ConnectedRouter>
+                     : <div className={'loading-start'}><Spin size="large" /></div>}
                 </PersistGate>
             </Provider>
         )
