@@ -21,16 +21,13 @@ library.add(faHome, faPlayCircle, faEnvelopeOpen)
 import 'antd/dist/antd.css';
 
 class MyApp extends App {
-
     state = {
         gateLifted: false
     }
-
     onBeforeLift = () => {
-        // Take an action before the gate lifts
         setTimeout(() => {
             this.setState({ gateLifted: true})
-        }, 1000);
+        }, 600);
     }
 
     render() {
