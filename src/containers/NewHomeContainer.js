@@ -168,7 +168,7 @@ class NewHomeContainer extends Component {
                     <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
                         <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '80px' }} type="flex" justify="end">
                             <Col span={3} pull={1}>
-                                <img style={{ height: '20px', marginTop:'30px' }} src={'../../static/images/urban_logo_partners_f.png'} />
+                                <img style={{ height: '20px', marginTop:'30px' }} src={'../../static/images/urban_logo_partners_foto.png'} />
                             </Col>
                             <Col span={3} pull={2}>
                                 <img style={{marginTop: '35px', marginLeft: '35px'}} src={'../../static/images/NMC_productions_home.png'} />
