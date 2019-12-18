@@ -172,12 +172,10 @@ class NewHomeContainer extends Component {
                         justify="end"
                         >
                                 <Col span={3} pull={1}>
-                                    <img style={{ height: '110px' }} src={'../../static/images/urban_logo_partners_f.png'} />
+                                    <img style={{ height: '20px', marginTop:'30px' }} src={'../../static/images/urban_logo_partners_f.png'} />
                                 </Col>
                                 <Col span={3} pull={2}>
-                                    <div style={{marginLeft: '35px'}}>
-                                    <img style={{marginTop: '25px'}} src={'../../static/images/NMC_productions_home.png'} />
-                                    </div>
+                                    <img style={{marginTop: '35px', marginLeft: '35px'}} src={'../../static/images/NMC_productions_home.png'} />
                                 </Col>
                                 <Col span={3} pull={1}>
                                     <img style={{marginTop: '5px'}} src={'../../static/images/Logo_CED_home.png'} />
