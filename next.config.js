@@ -1,6 +1,5 @@
 const withCSS = require('@zeit/next-css')
 const webpack = require('webpack')
-
 module.exports = withCSS({
     poweredByHeader: false,
     webpack: (config, { dev }) => {
