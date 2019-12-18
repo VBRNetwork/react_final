@@ -124,7 +124,7 @@ class NewHomeContainer extends Component {
                     </Particles>
                     <HeaderMenu/>
                     <Row>
-                        <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 10, offset: 2 }}
+                        <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 12, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
                             <div className="intro-text">
                                 {false && <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>}
@@ -137,7 +137,7 @@ class NewHomeContainer extends Component {
                                               We are launching soon, but until then, join our BETA version!</ReactRevealText>
                                         </h2>
                                 </div>
-                                <div style={{ marginTop: '50px', marginBottom: '50px' }}>
+                                <div style={{ marginTop: '30px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
                                         <Col xs={24} md={24} lg={12} xxl={8}>
                                             <Link as={join_as_freelancer['url']} href={join_as_freelancer['as']}>
@@ -163,24 +163,24 @@ class NewHomeContainer extends Component {
                         </Col>
                         <Col xs={0} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
                              xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
-                            <img style={{height:window.innerHeight-205,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
+                            <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
                         </Col>
                     </Row>
                     <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
-                        <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '100px' }} 
+                        <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '80px' }}
                         type="flex" 
                         justify="end"
                         >
                                 <Col span={3} pull={1}>
-                                    <img style={{ height: '115px' }} src={'../../static/images/urban_logo_partners_f.png'} />
+                                    <img style={{ height: '110px' }} src={'../../static/images/urban_logo_partners_f.png'} />
                                 </Col>
                                 <Col span={3} pull={2}>
                                     <div style={{marginLeft: '35px'}}>
-                                    <img style={{marginTop: '51px'}} src={'../../static/images/NMC_productions_home.png'} />
+                                    <img style={{marginTop: '25px'}} src={'../../static/images/NMC_productions_home.png'} />
                                     </div>
                                 </Col>
                                 <Col span={3} pull={1}>
-                                    <img style={{marginTop: '25px'}} src={'../../static/images/Logo_CED_home.png'} />
+                                    <img style={{marginTop: '5px'}} src={'../../static/images/Logo_CED_home.png'} />
                                 </Col>
                         </Row>
                     </div>
