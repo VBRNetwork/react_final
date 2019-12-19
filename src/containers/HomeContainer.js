@@ -18,17 +18,7 @@ class HomeContainer extends Component {
     constructor(props) {
         super(props);
         this.state= {
-            particles: {
-                number: {
-                    value: 70
-                },
-                size: {
-                    value: 2
-                },
-                color:{
-                    value:'#FFF'
-                }
-            },
+            particles: 30,
         };
 
         this.handleChangeParticles = this.handleChangeParticles.bind(this);
@@ -36,22 +26,18 @@ class HomeContainer extends Component {
 
     handleChangeParticles(value) {
         this.setState({
-            particles:  {
-                number: {
-                    value: value
-                }
-            },
+            particles: value,
         })
     }
 
     componentDidMount () {
-        let number_particles = 60;
+        let number_particles = 30;
 
         if(isBrowser){
-            number_particles = 80;
+            number_particles = 45;
         }
         if(isMobile){
-            number_particles = 30;
+            number_particles = 20;
         }
 
         this.handleChangeParticles(number_particles);
@@ -69,7 +55,7 @@ class HomeContainer extends Component {
                             params={{
                                 particles: {
                                     number: {
-                                        value: 70
+                                        value: this.state.particles
                                     },
                                     size: {
                                         value: 2

@@ -7,6 +7,9 @@ import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
 import { Helmet } from 'react-helmet'
+import {
+    BrowserView,
+} from 'react-device-detect'
 
 class NewHomeContainer extends Component {
     constructor (props) {
@@ -165,19 +168,21 @@ class NewHomeContainer extends Component {
                             <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
                         </Col>
                     </Row>
-                    <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
-                        <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '80px' }} type="flex" justify="end">
-                            <Col span={3} pull={1}>
-                                <img style={{ height: '20px', marginTop:'30px' }} src={'../../static/images/urban_logo_partners_f.png'} />
-                            </Col>
-                            <Col span={3} pull={2}>
-                                <img style={{marginTop: '35px', marginLeft: '35px'}} src={'../../static/images/NMC_productions_home.png'} />
-                            </Col>
-                            <Col span={3} pull={1}>
-                                <img style={{marginTop: '5px'}} src={'../../static/images/Logo_CED_home.png'} />
-                            </Col>
-                        </Row>
-                    </div>
+                    <BrowserView>
+                        <div style={{ position: 'absolute', width: '100%', bottom: '0px' }}>
+                            <Row style={{ opacity: '0.5', backgroundColor: '#FFF', height: '80px' }} type="flex" justify="end">
+                                <Col span={3} pull={1}>
+                                    <img style={{ height: '20px', marginTop:'30px' }} src={'../../static/images/urban_logo_partners_foto.png'} />
+                                </Col>
+                                <Col span={3} pull={2}>
+                                    <img style={{marginTop: '35px', marginLeft: '35px'}} src={'../../static/images/NMC_productions_home.png'} />
+                                </Col>
+                                <Col span={3} pull={1}>
+                                    <img style={{marginTop: '5px'}} src={'../../static/images/Logo_CED_home.png'} />
+                                </Col>
+                            </Row>
+                        </div>
+                    </BrowserView>
                 </div>
 
                 <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>

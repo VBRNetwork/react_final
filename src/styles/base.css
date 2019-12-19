@@ -627,9 +627,9 @@ label {
 }
 
 @media(max-width: 650px) {
-  .the-solution {
-    margin-top: 30px;
-  }
+    .the-solution {
+        margin-top: 30px;
+    }
 }
 
 .geometric-particles {
@@ -1083,6 +1083,18 @@ h1 {
     }
 }
 
+@media(min-width: 800px){
+    .header-nav {
+        margin-top: 17px;
+        float:right;
+    }
+}
+
+.ant-popover-inner {
+    background-color: #0b0a0ade !important;
+    margin-left:10px;
+}
+
 .ico-tba-titile {
     text-align: center;
     color: #FFFFFF;
@@ -1101,3 +1113,4 @@ h1 {
     padding-top:20px;
     padding-bottom:20px;
 }
+

@@ -19,6 +19,12 @@ import HeaderMenu from './Elements/HeaderMenu'
 const { Content } = Layout
 const { SubMenu } = Menu
 var jwtDecode = require('jwt-decode')
+import {
+    isBrowser,
+    isMobile,
+    isTablet,
+    isSmartTV
+} from "react-device-detect";
 
 class HeaderNew extends Component {
 
@@ -44,10 +50,19 @@ class HeaderNew extends Component {
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
             },
+            particles:35,
         }
         this.clickLogout = this.clickLogout.bind(this)
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this)
         this.handleChangeCategory = this.handleChangeCategory.bind(this)
+        this.handleChangeParticles = this.handleChangeParticles.bind(this);
+    }
+
+
+    handleChangeParticles(value) {
+        this.setState({
+            particles: value
+        })
     }
 
     makeid (length) {
@@ -74,10 +89,22 @@ class HeaderNew extends Component {
     }
 
     componentDidMount () {
+        let number_particles = 30;
+
+        if(isBrowser){
+            number_particles = 40;
+        }
+        if(isMobile){
+            number_particles = 14;
+        }
+
+        this.handleChangeParticles(number_particles);
+
         let { getVBRSettings } = this.props
         getVBRSettings().then((e) => {
         })
         this.rebuildBreadcrumbs()
+
     }
 
     rebuildBreadcrumbs () {
@@ -227,7 +254,7 @@ class HeaderNew extends Component {
                         params={{
                             particles: {
                                 number: {
-                                    value: 45
+                                    value: this.state.particles
                                 },
                                 size: {
                                     value: 3

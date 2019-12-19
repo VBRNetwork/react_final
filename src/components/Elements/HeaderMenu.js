@@ -5,10 +5,8 @@ import Link from 'next/link'
 import { connect } from 'react-redux'
 import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
-import {
-    BrowserView,
-} from 'react-device-detect'
 import ReactGA from 'react-ga'
+import ResponsiveAntMenu from 'responsive-ant-menu'
 
 
 class HeaderMenu extends Component {
@@ -117,44 +115,66 @@ class HeaderMenu extends Component {
                         </div>
                     </Col>
 
-                    <Col xs={24} sm={16} md={16} lg={13} xl={10} xxl={14}>
-                        <div style={{position:'relative'}}>
-                            <div style={{position:'absolute',right:'1px'}} className={'header-nav'}>
-                                <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                                    marginTop: '25px',
-                                    background: 'transparent',
-                                    borderBottom: 'initial',
-                                }}>
-                                    <Menu.Item key='app122'>
-                                        <div>
-                                            <Link href='/ico'>
-                                                <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                    Initial Coin Offering</a>
-                                            </Link>
-                                        </div>
-                                    </Menu.Item>
-                                    <Menu.Item key='app1'>
-                                        <div>
-                                            <Link href='/how-it-works'>
-                                                <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
-                                                    How it  works
-                                                </a>
-                                            </Link>
-                                        </div>
-                                    </Menu.Item>
-                                    <Menu.Item key='about'>
-                                        <BrowserView>
-                                            <Link href='/about-us'>
-                                                <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
-                                            </Link>
-                                        </BrowserView>
-                                    </Menu.Item>
-                                </Menu>
+                    <Col xs={10} sm={16} md={16} lg={13} xl={10} xxl={14}>
+                        <div>
+                            <div className={'header-nav'}>
+                                <ResponsiveAntMenu
+                                    activeLinkKey={location.pathname}
+                                    mode={isMenuShown => isMenuShown ? 'vertical' : 'horizontal'}
+                                    mobileMenuContent={isMenuShown => isMenuShown ? <Button type='primary' ghost size="large" style={{
+                                        marginTop: '25px',
+                                        marginLeft:'10px',
+                                        backgroundColor: '#2EC3AB',
+                                        color:'#FFF',
+                                        borderColor: '#2EC3AB'
+                                    }}>Close Menu</Button> : <Button type='primary' ghost size="large" style={{
+                                        marginTop: '25px',
+                                        marginLeft:'10px',
+                                        color:'#FFF',
+                                        backgroundColor: '#2EC3AB',
+                                        borderColor: '#2EC3AB'
+                                    }}>Menu</Button>}
+                                    menuClassName={'responsive-ant-menu'}
+                                >
+                                    {(onLinkClick) =>
+                                        <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                            marginTop: '5px',
+                                            background: 'transparent',
+                                            borderBottom: 'initial',
+                                        }}>
+                                            <Menu.Item key='app122'>
+                                                <div>
+                                                    <Link href='/ico'>
+                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                            Initial Coin Offering</a>
+                                                    </Link>
+                                                </div>
+                                            </Menu.Item>
+                                            <Menu.Item key='app1'>
+                                                <div>
+                                                    <Link href='/how-it-works'>
+                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                                            How it  works
+                                                        </a>
+                                                    </Link>
+                                                </div>
+                                            </Menu.Item>
+                                            <Menu.Item key='about'>
+                                                <div>
+                                                    <Link href='/about-us'>
+                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                                    </Link>
+                                                </div>
+                                            </Menu.Item>
+                                        </Menu>
+                                    }
+                                </ResponsiveAntMenu>
+
                             </div>
                         </div>
                     </Col>
 
-                    <Col xs={0} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
+                    <Col xs={14} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
                         <div style={{ marginTop: '25px', textAlign:'center' }}>
                             {token === false && loginButton}
                             {token === false && joinButton}
