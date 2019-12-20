@@ -7,23 +7,16 @@ import { getVBRSettings } from '../actions/app_settings'
 import Router from 'next/router'
 import { FullStory } from 'react-fullstory-component'
 import { Helmet } from 'react-helmet'
-import ReactGA from 'react-ga'
 import Particles from 'react-particles-js'
-
-ReactGA.initialize('UA-147139648-1')
 import { logout } from '../actions/user'
 import '../styles/home.css'
 import 'styles/base.css'
 import HeaderMenu from './Elements/HeaderMenu'
-
-const { Content } = Layout
 const { SubMenu } = Menu
 var jwtDecode = require('jwt-decode')
 import {
     isBrowser,
     isMobile,
-    isTablet,
-    isSmartTV
 } from "react-device-detect";
 
 class HeaderNew extends Component {
@@ -79,13 +72,6 @@ class HeaderNew extends Component {
         this.setState({
             category: event.target.value,
         })
-    }
-
-    componentDidUpdate (prevProps, prevState, snapshot) {
-        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
-            ReactGA.pageview(window.location.pathname + window.location.search)
-            this.rebuildBreadcrumbs()
-        }
     }
 
     componentDidMount () {
