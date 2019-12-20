@@ -7,6 +7,7 @@ import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
 import ReactGA from 'react-ga'
 import ResponsiveAntMenu from 'responsive-ant-menu'
+ReactGA.initialize('UA-147139648-1');
 
 class HeaderMenu extends Component {
     constructor (props) {
