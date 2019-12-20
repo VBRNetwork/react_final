@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Menu, Icon, Button, Row, Card, Layout, Col, Empty, Rate, Tooltip, Comment, Avatar,Tag} from 'antd'
+import { Icon, Button, Row, Card,  Col, Rate, Tooltip, Comment, Avatar,Tag} from 'antd'
 import moment from 'moment';
-const { SubMenu } = Menu
-const { Header, Content, Footer, Sider } = Layout
 const { Meta } = Card
-import { List } from 'antd';
 import Link from 'next/link'
 
 const data = [
@@ -41,16 +37,7 @@ class ViewJobContainer extends Component {
         this.handleChangeAction = this.handleChangeAction.bind(this);
     }
 
-    static async getInitialProps ({ store, query }) {
-    }
-
-    componentDidMount () {
-    }
-
-
-
     handleChange(event) {
-        this.setState()
     }
 
     handleChangeName(event) {
