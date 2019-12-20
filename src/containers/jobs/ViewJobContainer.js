@@ -5,15 +5,6 @@ import moment from 'moment';
 const { Meta } = Card
 import Link from 'next/link'
 
-const data = [
-    {
-        title: 'VBR Academy Tier 1 - Linux Class 1',
-    },
-    {
-        title: 'CISCO Network - Routing',
-    }
-];
-
 class ViewJobContainer extends Component {
 
     constructor(props) {
@@ -25,7 +16,6 @@ class ViewJobContainer extends Component {
             likes: 0,
             dislikes: 0,
             action: 'null',
-
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -125,9 +115,7 @@ class ViewJobContainer extends Component {
                                                 Looking for a Web Designer (Req: React,Javascript,Node)
                                             </h2>
                                         </strong>
-                                    </div>}
-                            >
-
+                                    </div>} >
 
                                 <Row>
 
