@@ -964,22 +964,6 @@ label {
     height:200px !important;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Lato', sans-serif;
-}
-
-h1 {
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
 .countdown-wrapper {
     display: flex;
     align-items: center;
