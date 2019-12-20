@@ -1117,5 +1117,6 @@ h1 {
 .menu-button-responsive {
     margin-top: 25px;
     margin-left:10px;
-    color:#FFF;
+    color:#FFF !important;
+    border-color:#FFF !important;
 }
