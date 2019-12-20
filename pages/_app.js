@@ -6,9 +6,8 @@ import App from 'next/app'
 import { ConnectedRouter } from 'connected-next-router'
 import {faHome, faPlayCircle, faEnvelopeOpen} from '@fortawesome/free-solid-svg-icons'
 import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
-
 import dynamic from 'next/dynamic'
-const GoogleFontLoader = dynamic(import('react-google-font-loader'), {
+const GoogleFontLoader = dynamic(() => import('react-google-font-loader'), {
     ssr: false,
 })
 import {makeStore} from 'store/createStore'
