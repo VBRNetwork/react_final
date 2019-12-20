@@ -38,8 +38,7 @@ const ResponsiveAntMenu = (props) => {
             trigger={popoverTrigger}
             placement={placement}
             visible={isMenuShown}
-            onVisibleChange={setIsMenuShown}
-        >
+            onVisibleChange={setIsMenuShown}>
             {mobileMenuContent(isMenuShown)}
         </Popover> : menuToRender;
 };
