@@ -4,12 +4,9 @@ import Particles from 'react-particles-js'
 import { Row, Col, Button,Input} from 'antd'
 import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
-import { isBrowser, isMobile } from 'react-device-detect'
+import { isBrowser, isMobile,BrowserView } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
 import { Helmet } from 'react-helmet'
-import {
-    BrowserView,
-} from 'react-device-detect'
 
 class NewHomeContainer extends Component {
     constructor (props) {
