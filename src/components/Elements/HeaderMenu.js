@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
 import ReactGA from 'react-ga'
-// import ResponsiveAntMenu from '../../components/Elements/ResponsiveAntMenu'
+import ResponsiveAntMenu from '../../components/Elements/ResponsiveAntMenu'
 ReactGA.initialize('UA-147139648-1');
 
 class HeaderMenu extends Component {
@@ -117,7 +117,20 @@ class HeaderMenu extends Component {
                     <Col xs={10} sm={16} md={16} lg={13} xl={10} xxl={14}>
                         <div>
                             <div className={'header-nav'}>
-
+                                <ResponsiveAntMenu
+                                    activeLinkKey={location.pathname}
+                                    mode={isMenuShown => isMenuShown ? 'vertical' : 'horizontal'}
+                                    mobileMenuContent={isMenuShown => isMenuShown ?
+                                        <Button type='primary' ghost size="large"
+                                                className={'menu-button-responsive '}>Close Menu
+                                        </Button>
+                                        : <Button type='primary' ghost size="large"
+                                                  className={'menu-button-responsive '}>
+                                            Menu
+                                        </Button>}
+                                    menuClassName={'responsive-ant-menu'}
+                                >
+                                    {(onLinkClick) =>
                                         <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
                                             marginTop: '5px',
                                             background: 'transparent',
@@ -148,6 +161,9 @@ class HeaderMenu extends Component {
                                                 </div>
                                             </Menu.Item>
                                         </Menu>
+                                    }
+                                </ResponsiveAntMenu>
+
                             </div>
                         </div>
                     </Col>
