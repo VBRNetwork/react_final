@@ -8,7 +8,6 @@ import Router from 'next/router'
 import ReactGA from 'react-ga'
 import ResponsiveAntMenu from 'responsive-ant-menu'
 
-
 class HeaderMenu extends Component {
     constructor (props) {
         super(props)
@@ -23,9 +22,6 @@ class HeaderMenu extends Component {
         if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
             ReactGA.pageview(window.location.pathname + window.location.search)
         }
-    }
-
-    componentDidMount () {
     }
 
     clickLogout (e) {
@@ -121,19 +117,14 @@ class HeaderMenu extends Component {
                                 <ResponsiveAntMenu
                                     activeLinkKey={location.pathname}
                                     mode={isMenuShown => isMenuShown ? 'vertical' : 'horizontal'}
-                                    mobileMenuContent={isMenuShown => isMenuShown ? <Button type='primary' ghost size="large" style={{
-                                        marginTop: '25px',
-                                        marginLeft:'10px',
-                                        backgroundColor: '#2EC3AB',
-                                        color:'#FFF',
-                                        borderColor: '#2EC3AB'
-                                    }}>Close Menu</Button> : <Button type='primary' ghost size="large" style={{
-                                        marginTop: '25px',
-                                        marginLeft:'10px',
-                                        color:'#FFF',
-                                        backgroundColor: '#2EC3AB',
-                                        borderColor: '#2EC3AB'
-                                    }}>Menu</Button>}
+                                    mobileMenuContent={isMenuShown => isMenuShown ?
+                                        <Button type='primary' ghost size="large"
+                                                className={'menu-button-responsive '}>Close Menu
+                                        </Button>
+                                        : <Button type='primary' ghost size="large"
+                                                  className={'menu-button-responsive '}>
+                                            Menu
+                                        </Button>}
                                     menuClassName={'responsive-ant-menu'}
                                 >
                                     {(onLinkClick) =>
