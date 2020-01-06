@@ -15,7 +15,6 @@ import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
 import ReCAPTCHA from "react-google-recaptcha";
 import Router from 'next/dist/client/router'
-import ReactRevealText from 'react-reveal-text'
 class RegisterContainer extends Component {
     constructor(props) {
         super(props);
@@ -132,7 +131,7 @@ class RegisterContainer extends Component {
                 </Helmet>
                 <div className='container'>
                     <Row>
-                        <Col xs={{span: 20, offset:4}} sm={12} md={14} lg={16} xl={{span: 7, offset: 3}}>
+                        <Col xs={{span: 20, offset:2}} sm={{span:12,offset:4}} md={{span:14,offset:4}} lg={{span:16,offset:4}} xl={{span: 7, offset: 3}}>
                             <Card  className='p-5' style={{margin: '20px'}}>
                                 <strong><h2>Be one of the first!</h2></strong>
                                 <img src="../../../static/images/asset_job1.jpeg" style={{width:'100%'}} alt=""/>
@@ -144,7 +143,7 @@ class RegisterContainer extends Component {
                                 </div>
                             </Card>
                         </Col>
-                        <Col xs={{span: 20, offset:4}} sm={12} md={14} lg={16} xl={{span: 8, offset: 0}}>
+                        <Col xs={{span: 20, offset:2}} sm={{span:12,offset:4}} md={{span:14,offset:4}} lg={{span:16,offset:4}} xl={{span: 7, offset: 3}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <strong><h2>Create free account</h2></strong>
@@ -264,4 +263,3 @@ RegisterContainer.propTypes = {
 };
 
 export default connect(mapStateToProps, {registerAccount})(RegisterContainer)
-    
