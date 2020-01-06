@@ -162,7 +162,7 @@ class NewHomeContainer extends Component {
                         </Col>
                         <Col xs={0} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
                              xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
-                            <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.png" alt=""/>
+                            <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.webp" alt=""/>
                         </Col>
                     </Row>
                     <BrowserView>
@@ -183,7 +183,7 @@ class NewHomeContainer extends Component {
                 </div>
 
                 <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
-                    <Row> 
+                    <Row>
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
@@ -263,7 +263,7 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                     <div className="category-box">
                                             <div className="polaroid">
-                                                <img className="polaroid-image" src="../../static/images/design/business_consultancy_image@1x.png" style={{width:'100%'}}/>
+                                                <img className="polaroid-image" src="../../static/images/design/business_consultancy_image@1x.webp" style={{width:'100%'}}/>
                                                     <div className="categories-title">
                                                         Business Consultancy
                                                     </div>
@@ -383,7 +383,7 @@ class NewHomeContainer extends Component {
                                 </Link>
                             </Col>
                             <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 14 }}>
-                                <img className={'img-responsive'} 
+                                <img className={'img-responsive'}
                                      src="../../static/images/design/become_investor_coins-min.png" alt="become-an-investor"/>
                             </Col>
                         </Row>
@@ -416,7 +416,7 @@ class NewHomeContainer extends Component {
                         <Col xs={24} sm={16} md={12} lg={10} xl={{ span: 10 }} xxl={{ span: 8, offset: 0 }}>
                             <div style={{padding:'20px'}}>
                                 <img className={'img-responsive'}
-                                     src={'../../static/images/for_freelancers_imagery@2x.png'}/>
+                                     src={'../../static/images/for_freelancers_imagery@2x.webp'}/>
                             </div>
                         </Col>
                     </Row>
@@ -427,7 +427,7 @@ class NewHomeContainer extends Component {
                     <Col sm={16} md={12} lg={10} xl={{ span: 10, offset: 2 }} xxl={{ span: 8, offset: 4 }}>
                         <div>
                             <img className={'img-responsive'}
-                                 src={'../../static/images/talent_seeker_imagery@1x.png'}/>
+                                 src={'../../static/images/talent_seeker_imagery@1x.webp'}/>
                         </div>
                     </Col>
                     <Col xs={{ span: 22, offset:2 }}

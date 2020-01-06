@@ -5,7 +5,7 @@ import throttle from 'lodash.throttle';
 
 const ResponsiveAntMenu = (props) => {
     const {
-        children: MenuMarkup, activeLinkKey, menuClassName: className,
+        children, activeLinkKey, menuClassName: className,
         theme, mode, mobileMenuContent, placement, popoverTrigger,
         throttleViewportChange, mobileBreakPoint, closeOnClick
     } = props;
@@ -30,7 +30,7 @@ const ResponsiveAntMenu = (props) => {
         className,
     };
 
-    const menuToRender = React.cloneElement(MenuMarkup(onLinkClick()), MenuMarkupConfig);
+    const menuToRender = React.cloneElement(children, MenuMarkupConfig);
 
     return isMobile() ?
         <Popover
