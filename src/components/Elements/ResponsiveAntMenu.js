@@ -1,47 +1,83 @@
-import React, { useEffect, useState } from 'react';
-import { number, string, func, oneOfType, bool, oneOf } from 'prop-types';
-import { Popover } from 'antd';
-import throttle from 'lodash.throttle';
+import React from 'react'
+import { number, string, func, oneOfType, bool, oneOf } from 'prop-types'
+import { Popover } from 'antd'
+import throttle from 'lodash.throttle'
 
-const ResponsiveAntMenu = (props) => {
-    const {
-        children, activeLinkKey, menuClassName: className,
-        theme, mode, mobileMenuContent, placement, popoverTrigger,
-        throttleViewportChange, mobileBreakPoint, closeOnClick
-    } = props;
+class ResponsiveAntMenu extends React.Component {
 
-    const [viewportWidth, setViewportWidth] = useState(0);
-    const [isMenuShown, setIsMenuShown] = useState(false);
-    const isMobile = () => viewportWidth < mobileBreakPoint;
-    const onLinkClick = () => () => isMobile() && closeOnClick ? setIsMenuShown(false) : null;
+    constructor (props) {
+        super(props)
+        this.state = {
+            viewportWidth: 0,
+            setViewportWidth: 0,
+            isMenuShown: false,
+            mobileBreakPoint: 575,
+        }
 
-    useEffect(() => {
-        setViewportWidth(window.innerWidth);
-        const throttledSetViewPortWidth = throttle(() => setViewportWidth(window.innerWidth), throttleViewportChange);
-        window.addEventListener('resize', throttledSetViewPortWidth);
+        this.setViewportWidth = this.setViewportWidth.bind(this)
+        this.setIsMenuShown = this.setIsMenuShown.bind(this)
+        this.isMobile = this.isMobile.bind(this)
+        this.onLinkClick = this.onLinkClick.bind(this)
+    }
 
-        return () => window.removeEventListener('resize', throttledSetViewPortWidth);
-    }, []);
+    isMobile () {
+        return this.state.viewportWidth < this.state.mobileBreakPoint
+    }
 
-    const MenuMarkupConfig = {
-        theme: !theme ? 'light' : typeof theme === 'function' ? theme(isMobile()) : theme,
-        mode: !mode ? 'horizontal' : typeof mode === 'function' ? mode(isMobile()) : mode,
-        selectedKeys: [`${activeLinkKey}`],
-        className,
-    };
+    setViewportWidth (width) {
+        this.setState({
+            viewportWidth: width
+        })
+    }
 
-    const menuToRender = React.cloneElement(children, MenuMarkupConfig);
+    setIsMenuShown (width) {
+        this.setState({
+            isMenuShown: width
+        })
+    }
 
-    return isMobile() ?
-        <Popover
-            content={menuToRender}
-            trigger={popoverTrigger}
-            placement={placement}
-            visible={isMenuShown}
-            onVisibleChange={setIsMenuShown}>
-            {mobileMenuContent(isMenuShown)}
-        </Popover> : menuToRender;
-};
+    onLinkClick(){
+        if(this.isMobile()){
+            this.setState({ isMenuShown: false })
+        }
+    }
+
+    componentDidMount () {
+        this.useEffect()
+    }
+
+    useEffect = () => {
+        this.setViewportWidth(window.innerWidth)
+        const throttledSetViewPortWidth = throttle(() => this.setViewportWidth(window.innerWidth), 250)
+        window.addEventListener('resize', throttledSetViewPortWidth)
+        return () => window.removeEventListener('resize', throttledSetViewPortWidth)
+    }
+
+    render () {
+        const {
+            children: MenuMarkup, activeLinkKey, menuClassName: className,
+            theme, mode, mobileMenuContent, placement, popoverTrigger,
+        } = this.props
+
+        const MenuMarkupConfig = {
+            theme: !theme ? 'light' : typeof theme === 'function' ? theme(this.isMobile()) : theme,
+            mode: !mode ? 'horizontal' : typeof mode === 'function' ? mode(this.isMobile()) : mode,
+            selectedKeys: [`${activeLinkKey}`],
+            className,
+        }
+
+        return this.isMobile() ?
+            <Popover
+                content={this.props.children}
+                trigger={popoverTrigger}
+                placement={placement}
+                visible={this.state.isMenuShown}
+                onVisibleChange={this.setIsMenuShown}
+            >
+                {mobileMenuContent(this.state.isMenuShown)}
+            </Popover> : this.props.children
+    }
+}
 
 ResponsiveAntMenu.propTypes = {
     children: func.isRequired,
@@ -58,7 +94,7 @@ ResponsiveAntMenu.propTypes = {
     mobileMenuContent: func.isRequired,
     menuClassName: string,
     popoverTrigger: oneOf(['click', 'hover', 'focus'])
-};
+}
 
 ResponsiveAntMenu.defaultProps = {
     mobileBreakPoint: 575,
@@ -66,6 +102,6 @@ ResponsiveAntMenu.defaultProps = {
     placement: 'bottom',
     closeOnClick: true,
     popoverTrigger: 'click',
-};
+}
 
-export default ResponsiveAntMenu;
+export default ResponsiveAntMenu
