@@ -1,10 +1,12 @@
 const withCSS = require('@zeit/next-css')
 const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const WithBabelMinify = require('next-babel-minify')
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = withCSS({
     poweredByHeader: false,
     webpack: (config, { dev }) => {
+        config.mode = 'production'
         config.plugins.push(
             new webpack.ProvidePlugin({
                 '$': 'jquery',
@@ -13,7 +15,7 @@ module.exports = withCSS({
         )
         config.optimization.minimizer = [
             new OptimizeCSSAssetsPlugin({}),
-            WithBabelMinify({comments: false})
+            new TerserPlugin({})
         ];
         return config
     }
