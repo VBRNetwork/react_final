@@ -57,6 +57,7 @@ class MyApp extends App {
                             show: true,
                         });
                     });`}}/>
+                     <link rel="shortcut icon" href="/static/favicon.ico" />
                  </Head>
                  <PersistGate persistor={store.__persistor} onBeforeLift={this.onBeforeLift}>
                      { this.state.gateLifted ?
