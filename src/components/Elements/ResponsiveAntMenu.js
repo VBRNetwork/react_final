@@ -66,16 +66,18 @@ class ResponsiveAntMenu extends React.Component {
             className,
         }
 
+        const menuToRender = React.cloneElement(MenuMarkup(this.onLinkClick), MenuMarkupConfig)
+
         return this.isMobile() ?
             <Popover
-                content={this.props.children}
+                content={menuToRender}
                 trigger={popoverTrigger}
                 placement={placement}
                 visible={this.state.isMenuShown}
                 onVisibleChange={this.setIsMenuShown}
             >
                 {mobileMenuContent(this.state.isMenuShown)}
-            </Popover> : this.props.children
+            </Popover> : menuToRender
     }
 }
 
