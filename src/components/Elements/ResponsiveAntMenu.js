@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { number, string, func, oneOfType, bool, oneOf } from 'prop-types'
 import { Popover } from 'antd'
 import throttle from 'lodash.throttle'
