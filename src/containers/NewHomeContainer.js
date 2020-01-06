@@ -97,7 +97,7 @@ class NewHomeContainer extends Component {
                         content='Blockchain Freelancers Jobs.Be part of our community to find a job or hire experts. We are launching soon, but until then, join our BETA version!'
                     />
                 </Helmet>
-                <div className='container background-header' style={{height:window.innerHeight,position:'relative'}}>
+                <div className='container background-header' style={{height:window.innerHeight,position:'relative',minHeight:'715px'}}>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
