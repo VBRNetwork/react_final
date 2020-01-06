@@ -76,7 +76,7 @@ class LoginContainer extends Component {
                 </Helmet>
                 <div className='container' >
                     <Row>
-                        <Col xs={{span: 20, offset: 4}} sm={20} md={14} lg={8} xl={{span: 8, offset: 8}}>
+                        <Col xs={{span: 20, offset: 2}} sm={{span:20,offset:4}} md={{span:14,offset:4}} lg={{span:8,offset:4}} xl={{span: 8, offset: 8}}>
                             <div>
                                 <Card className='p-5' style={{margin: '20px'}}>
                                     <h2>Login Page</h2>
