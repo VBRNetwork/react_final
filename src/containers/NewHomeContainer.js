@@ -218,7 +218,7 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
                                             <div className="polaroid">
-                                                <img className="polaroid-image" src="../../static/images/design/customer_service_image@1x.png" style={{width:'100%'}}/>
+                                                <img className="polaroid-image" src="../../static/images/design/customer_service_image@1x.webp" style={{width:'100%'}}/>
                                                 <div className="categories-title">
                                                     Digital Marketing
                                                 </div>
@@ -228,7 +228,7 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
                                             <div className="polaroid">
-                                                <img className="polaroid-image" src="../../static/images/design/design_and_creative_image@1x.png" style={{width:'100%'}}/>
+                                                <img className="polaroid-image" src="../../static/images/design/design_and_creative_image@1x.webp" style={{width:'100%'}}/>
                                                 <div className="categories-title ">
                                                     Web & Graphic Design
                                                 </div>
@@ -241,7 +241,7 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
                                             <div className="polaroid">
-                                                <img  className="polaroid-image"   src="../../static/images/design/digital_marketing_image@1x.png" style={{width:'100%'}}/>
+                                                <img  className="polaroid-image"   src="../../static/images/design/digital_marketing_image@1x.webp" style={{width:'100%'}}/>
                                                 <div className="categories-title ">
                                                     Legal Advice
                                                 </div>
@@ -252,7 +252,7 @@ class NewHomeContainer extends Component {
                                     <Col xs={24} sm={16} md={8} lg={8} xl={8} xxl={6}>
                                         <div className="category-box">
                                             <div className="polaroid">
-                                                <img  className="polaroid-image" src="../../static/images/design/it_and_programming_image@1x.png" style={{width:'100%'}}/>
+                                                <img  className="polaroid-image" src="../../static/images/design/it_and_programming_image@1x.webp" style={{width:'100%'}}/>
                                                 <div className="categories-title ">
                                                   IT & Programing
                                                 </div>
@@ -383,7 +383,7 @@ class NewHomeContainer extends Component {
                             </Col>
                             <Col xs={24} sm={16} md={12} lg={12} xl={11} xxl={{ span: 14 }}>
                                 <img className={'img-responsive'}
-                                     src="../../static/images/design/become_investor_coins-min.png" alt="become-an-investor"/>
+                                     src="../../static/images/design/become_investor_coins-min.webp" alt="become-an-investor"/>
                             </Col>
                         </Row>
                     </div>
