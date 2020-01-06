@@ -65,7 +65,6 @@ class NewHomeContainer extends Component {
             number_particles = 20;
         }
         this.handleChangeParticles(number_particles);
-
         setTimeout(() => {
             this.setState({ showText: true });
         }, 200);
