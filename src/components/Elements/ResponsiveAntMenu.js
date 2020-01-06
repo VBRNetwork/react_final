@@ -40,7 +40,7 @@ const ResponsiveAntMenu = (props) => {
             visible={isMenuShown}
             onVisibleChange={setIsMenuShown}>
             {mobileMenuContent(isMenuShown)}
-        </Popover> : menuToRender;
+        </Popover> : this.props.children;
 };
 
 ResponsiveAntMenu.propTypes = {
