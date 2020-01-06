@@ -30,13 +30,16 @@ const ResponsiveAntMenu = (props) => {
         className,
     };
 
-    const menuToRender = React.cloneElement(MenuMarkup(onLinkClick()), MenuMarkupConfig);
-
     return isMobile() ?
         <Popover
-
+            content={props.children}
+            trigger={popoverTrigger}
+            placement={placement}
+            visible={isMenuShown}
+            onVisibleChange={setIsMenuShown}
         >
-        </Popover> : menuToRender;
+            {mobileMenuContent(isMenuShown)}
+        </Popover> : props.children;
 };
 
 ResponsiveAntMenu.propTypes = {
