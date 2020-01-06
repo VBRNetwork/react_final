@@ -31,7 +31,7 @@ class NewHomeContainer extends Component {
                 host: 'www.fullstory.com',
                 orgKey: 'PDZM8'
             },
-            particles_number : 70,
+            particles_number : 40,
             showText:false,
             showTextSecond:false
         }
@@ -57,21 +57,21 @@ class NewHomeContainer extends Component {
     }
 
     componentDidMount () {
-        let number_particles = 60;
-
+        let number_particles = 30;
         if(isBrowser){
-            number_particles = 80;
+            number_particles = 60;
         }
         if(isMobile){
-            number_particles = 30;
+            number_particles = 20;
         }
+        this.handleChangeParticles(number_particles);
+
         setTimeout(() => {
             this.setState({ showText: true });
         }, 200);
         setTimeout(() => {
             this.setState({ showTextSecond: true });
         }, 1000);
-        this.handleChangeParticles(number_particles);
         this.isLoggedIn();
     }
 
@@ -389,7 +389,7 @@ class NewHomeContainer extends Component {
                         </Row>
                     </div>
                 </div>
-                <div style={{ marginTop: '80px', marginBottom: '80px' }}>
+                <div style={{ marginTop: '80px', marginBottom: '80px' ,zIndex:1,position:'relative'}}>
                     <Row>
                         <Col xs={{ span: 22, offset: 2 }} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }}
                              xl={{ span: 10, push: 2 }} xxl={{ span: 10, push: 2 }}>
