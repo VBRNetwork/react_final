@@ -32,7 +32,11 @@ const ResponsiveAntMenu = (props) => {
 
     const menuToRender = React.cloneElement(MenuMarkup(onLinkClick()), MenuMarkupConfig);
 
-    return  menuToRender;
+    return isMobile() ?
+        <Popover
+
+        >
+        </Popover> : menuToRender;
 };
 
 ResponsiveAntMenu.propTypes = {
