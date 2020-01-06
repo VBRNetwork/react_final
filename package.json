@@ -94,6 +94,7 @@
     "enzyme-adapter-react-16": "^1.15.0",
     "jest": "^24.9.0",
     "lint-staged": "^8.2.1",
+    "next-babel-minify": "^1.0.0",
     "nodemon": "^1.19.3",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "pre-commit": "^1.2.2",

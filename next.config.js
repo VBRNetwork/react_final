@@ -1,7 +1,7 @@
 const withCSS = require('@zeit/next-css')
 const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
+const WithBabelMinify = require('next-babel-minify')
 module.exports = withCSS({
     poweredByHeader: false,
     webpack: (config, { dev }) => {
@@ -11,8 +11,10 @@ module.exports = withCSS({
                 'jQuery': 'jquery',
             })
         )
-        config.optimization.minimizer = [];
-        config.optimization.minimizer.push(new OptimizeCSSAssetsPlugin({}));
+        config.optimization.minimizer = [
+            new OptimizeCSSAssetsPlugin({}),
+            WithBabelMinify({comments: false})
+        ];
         return config
     }
 })
