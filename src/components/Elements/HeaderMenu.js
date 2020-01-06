@@ -131,6 +131,7 @@ class HeaderMenu extends Component {
                                         </Button>}
                                     menuClassName={'responsive-ant-menu'}>
 
+                                    {(onLinkClick) =>
                                         <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
                                             marginTop: '5px',
                                             background: 'transparent',
@@ -161,6 +162,7 @@ class HeaderMenu extends Component {
                                                 </div>
                                             </Menu.Item>
                                         </Menu>
+                                    }
                                 </ResponsiveAntMenu>
 
                             </div>
