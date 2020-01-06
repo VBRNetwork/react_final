@@ -30,16 +30,7 @@ const ResponsiveAntMenu = (props) => {
         className,
     };
 
-    return isMobile() ?
-        <Popover
-            content={props.children}
-            trigger={popoverTrigger}
-            placement={placement}
-            visible={isMenuShown}
-            onVisibleChange={setIsMenuShown}
-        >
-            {mobileMenuContent(isMenuShown)}
-        </Popover> : props.children;
+     return props.children;
 };
 
 ResponsiveAntMenu.propTypes = {
