@@ -131,38 +131,36 @@ class HeaderMenu extends Component {
                                         </Button>}
 
                                     menuClassName={'responsive-ant-menu'}>
-                                    {(onLinkClick) =>
-                                        <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
-                                            marginTop: '5px',
-                                            background: 'transparent',
-                                            borderBottom: 'initial',
-                                        }}>
-                                            <Menu.Item key='app122'>
-                                                <div>
-                                                    <Link href='/ico'>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                            Initial Coin Offering</a>
-                                                    </Link>
-                                                </div>
-                                            </Menu.Item>
-                                            <Menu.Item key='app1'>
-                                                <div>
-                                                    <Link href='/how-it-works'>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
-                                                            How it  works
-                                                        </a>
-                                                    </Link>
-                                                </div>
-                                            </Menu.Item>
-                                            <Menu.Item key='about'>
-                                                <div>
-                                                    <Link href='/about-us'>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
-                                                    </Link>
-                                                </div>
-                                            </Menu.Item>
-                                        </Menu>
-                                    }
+                                    <Menu selectedKeys={[this.state.current]} mode='horizontal' style={{
+                                        marginTop: '5px',
+                                        background: 'transparent',
+                                        borderBottom: 'initial',
+                                    }}>
+                                        <Menu.Item key='app122'>
+                                            <div>
+                                                <Link href='/ico'>
+                                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                        Initial Coin Offering</a>
+                                                </Link>
+                                            </div>
+                                        </Menu.Item>
+                                        <Menu.Item key='app1'>
+                                            <div>
+                                                <Link href='/how-it-works'>
+                                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
+                                                        How it  works
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </Menu.Item>
+                                        <Menu.Item key='about'>
+                                            <div>
+                                                <Link href='/about-us'>
+                                                    <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
+                                                </Link>
+                                            </div>
+                                        </Menu.Item>
+                                    </Menu>
                                 </ResponsiveAntMenu>
 
                             </div>
