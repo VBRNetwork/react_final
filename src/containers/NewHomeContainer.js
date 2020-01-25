@@ -7,6 +7,15 @@ import HeaderMenu from '../components/Elements/HeaderMenu'
 import { isBrowser, isMobile,BrowserView } from 'react-device-detect'
 import ReactRevealText from 'react-reveal-text'
 import { Helmet } from 'react-helmet'
+import { withNamespaces, NamespacesConsumer, Trans } from 'react-i18next';
+
+function Slogan(props) {
+    return <NamespacesConsumer>{(t, { i18n }) => <ReactRevealText show={props.show}>{t('homepage.slogan')}</ReactRevealText>}</NamespacesConsumer>;
+}
+
+function MainDescription(props) {
+    return <NamespacesConsumer>{(t, { i18n }) => <ReactRevealText show={props.show}>{t('homepage.description') + t('homepage.description2')}</ReactRevealText>}</NamespacesConsumer>;
+}
 
 class NewHomeContainer extends Component {
     constructor (props) {
@@ -74,6 +83,7 @@ class NewHomeContainer extends Component {
         this.isLoggedIn();
     }
 
+
     render () {
 
         let join_as_freelancer = {
@@ -127,13 +137,14 @@ class NewHomeContainer extends Component {
                             <div className="intro-text">
                                 {false && <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>}
                                 <h1 className="a-blockchain-marketp">
-                                    <span className="big" style={{textTransform:'none'}}> <ReactRevealText show={this.state.showText}>A Marketplace for Freelancers on Blockchain</ReactRevealText></span>
+                                    <span className="big" style={{textTransform:'none'}}>
+                                        <Slogan show={this.state.showText}/>
+                                    </span>
                                 </h1>
                                 <div className="community-part" >
-                                        <h2 className="stay-up-to-date">
-                                          <ReactRevealText show={this.state.showTextSecond}>Be part of our community to find a job or hire experts.
-                                              We are launching soon, but until then, join our BETA version!</ReactRevealText>
-                                        </h2>
+                                    <h2 className="stay-up-to-date">
+                                        <MainDescription show={this.state.showTextSecond} />
+                                    </h2>
                                 </div>
                                 <div style={{ marginTop: '30px', marginBottom: '50px' }}>
                                     <Row gutter={5}>
@@ -141,7 +152,9 @@ class NewHomeContainer extends Component {
                                             <Link as={join_as_freelancer['url']} href={join_as_freelancer['as']}>
                                                 <Button className="btn-style" size="large">
                                                     <a>
-                                                        <b>Join as Freelancer</b>
+                                                        <b>
+                                                            <Trans i18nKey="homepage.register_button" />
+                                                        </b>
                                                     </a>
                                                 </Button>
                                             </Link>
@@ -150,7 +163,7 @@ class NewHomeContainer extends Component {
                                             <Link href='/jobs/add-job' >
                                                 <Button className="btn-style" size="large">
                                                     <a>
-                                                        <b>Post a job</b>
+                                                        <b><Trans i18nKey="homepage.jobpost_button" /></b>
                                                     </a>
                                                 </Button>
                                             </Link>
@@ -494,5 +507,4 @@ function mapStateToProps (state) {
 }
 
 NewHomeContainer.propTypes = {}
-
-export default connect(mapStateToProps, {})(NewHomeContainer)
+export default connect(mapStateToProps, {})(withNamespaces()(NewHomeContainer))
