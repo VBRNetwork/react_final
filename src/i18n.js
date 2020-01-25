@@ -8,8 +8,8 @@ const resources = {
     ro: {translation: translationRO}
 };
 i18n.use(LanguageDetector).use(reactI18nextModule)
-.init({resources,fallbackLng: 'en',debug: true,
+.init({resources,fallbackLng: 'en',debug: false,
     keySeparator: false,interpolation: {escapeValue: false},
-    react:{wait: true},
+    react:{wait: false},
 });
 export default i18n;
