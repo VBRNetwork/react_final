@@ -7,8 +7,8 @@ import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
 
-export default class NewIcoContainer extends Component {
 
+export default class NewIcoContainer extends Component {
     render() {
         return (
             <div >

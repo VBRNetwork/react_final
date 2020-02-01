@@ -14,12 +14,21 @@ class HeaderMenu extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            current:''
+            current:'',
+            is_ico:false
         }
         this.clickLogout = this.clickLogout.bind(this)
         this.localLogout = this.localLogout.bind(this)
     }
 
+    componentDidMount () {
+        let icoDomains = ['localhost', 'ico.veelancing.io']
+        if(window && icoDomains.includes(window.location.hostname)){
+            this.setState({
+                is_ico:true
+            })
+        }
+    }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
         if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
@@ -138,12 +147,22 @@ class HeaderMenu extends Component {
                                             borderBottom: 'initial',
                                         }}>
                                             <Menu.Item key='app122'>
-                                                <div>
-                                                    <Link href='/ico'>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                            Initial Coin Offering</a>
-                                                    </Link>
-                                                </div>
+                                                {!this.state.is_ico ?
+                                                    <div>
+                                                        <Link href='https://ico.veelancing.io'>
+                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                                Initial Coin Offering</a>
+                                                        </Link>
+                                                    </div>:
+                                                    <div>
+                                                        <Link href='https://veelancing.io'>
+                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                                View our <span style={{color:'#9cff9c'}}>Beta</span>
+                                                            </a>
+                                                        </Link>
+                                                    </div>
+                                                }
+
                                             </Menu.Item>
                                             <Menu.Item key='app1'>
                                                 <div>
