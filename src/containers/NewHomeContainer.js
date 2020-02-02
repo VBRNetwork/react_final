@@ -174,7 +174,7 @@ class NewHomeContainer extends Component {
                         </Col>
                         <Col xs={0} sm={24} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 2 }}
                              xl={{ span: 5, offset: 3 }} xxl={{ span: 5, offset: 3 }}>
-                            <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="../../static/images/design/homepage_market-min.webp" alt=""/>
+                            <img style={{height:window.innerHeight-185,marginTop:'10px'}} src="/static/images/design/homepage_market-min.webp" alt=""/>
                         </Col>
                     </Row>
                     <BrowserView>
