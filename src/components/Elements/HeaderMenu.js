@@ -113,20 +113,17 @@ class HeaderMenu extends Component {
         )
         return (
             <div>
-
                 <Row>
-                    <Col xs={24} sm={4} md={4} lg={5} xl={6} xxl={4}>
+                    <Col xs={24} sm={10} md={4} lg={5} xl={6} xxl={4}>
                         <div className="logo-box">
                             <Link href='/'>
                                 <img src="../../../static/images/design/veelancing_logo.svg" alt=""/>
                             </Link>
                         </div>
                     </Col>
-
-                    <Col xs={10} sm={16} md={16} lg={13} xl={10} xxl={14}>
+                    <Col xs={12} sm={12} md={10} lg={13} xl={10} xxl={14}>
                         <div>
                             <div className={'header-nav'}>
-
                                 <ResponsiveAntMenu
                                     activeLinkKey={location.pathname}
                                     mode={isMenuShown => isMenuShown ? 'vertical' : 'horizontal'}
@@ -187,8 +184,7 @@ class HeaderMenu extends Component {
                             </div>
                         </div>
                     </Col>
-
-                    <Col xs={14} sm={16} md={4} lg={5} xl={{ span: 8 }} xxl={6}>
+                    <Col xs={12} sm={12} md={5} lg={5} xl={{ span: 8 }} xxl={6}>
                         <div style={{ marginTop: '25px', textAlign:'center' }}>
                             {token === false && loginButton}
                             {token === false && joinButton}
@@ -225,7 +221,6 @@ class HeaderMenu extends Component {
                                 </div>
                             }
                         </div>
-
                     </Col>
                 </Row>
             </div>
