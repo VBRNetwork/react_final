@@ -7,7 +7,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 
 const instance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+    headers: {'Access-Control-Allow-Origin': '*'}
 });
 
 function getToken(){
@@ -124,6 +124,13 @@ const vbrincapi = {
     },
     getIntlang(id){
         return secureInstance.post(apiUrl + 'intl').then(res => {
+            return res.data
+        })
+    },
+    subscribeToNewsletter(email){
+        let bodyFormData = new FormData();
+        bodyFormData.set('email', email);
+        return instance.post(apiUrl + 'subscribe/', bodyFormData).then(res => {
             return res.data
         })
     }

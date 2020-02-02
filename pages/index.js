@@ -10,5 +10,5 @@ const IndexHome = (props) => {
     }
     return <NewHomeContainer/>
 }
-function mapStateToProps (state) {}
+function mapStateToProps (state) { return {} }
 export default connect(mapStateToProps, {})(IndexHome)

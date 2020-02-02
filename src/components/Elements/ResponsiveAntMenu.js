@@ -11,7 +11,7 @@ class ResponsiveAntMenu extends React.Component {
             viewportWidth: 0,
             setViewportWidth: 0,
             isMenuShown: false,
-            mobileBreakPoint: 575,
+            mobileBreakPoint: 800,
         }
 
         this.setViewportWidth = this.setViewportWidth.bind(this)
