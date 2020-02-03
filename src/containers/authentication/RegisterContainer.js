@@ -15,6 +15,9 @@ import PropTypes from "prop-types";
 import {registerAccount} from '../../actions/user'
 import ReCAPTCHA from "react-google-recaptcha";
 import Router from 'next/dist/client/router'
+import withoutAuth from  '../../libs/withoutAuth'
+
+
 class RegisterContainer extends Component {
     constructor(props) {
         super(props);
@@ -262,4 +265,4 @@ RegisterContainer.propTypes = {
     registerAccount: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, {registerAccount})(RegisterContainer)
+export default connect(mapStateToProps, {registerAccount})(withoutAuth(RegisterContainer))
