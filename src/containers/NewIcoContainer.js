@@ -127,9 +127,11 @@ class NewIcoContainer extends Component {
                                     Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
                                     Here, you can find the job you love or hire experts that fit your needs.
                                     <br/>
-                                    With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.<br />
-                                    Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
-                                    With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
+                                    We believe Veelancing is the platform that will make freelancing the stress-free <br />
+                                    and fair career option it once was. Aside from making your own rules by voting on the T&C <br />
+                                    and being sure exactly what job you are signing up for due to smart contracts, <br />
+                                    we also make sure to address what’s really on all of our minds: money. <br />
+                                    At only 3% service fees, Veelancing is the most unobtrusive freelancing website around. <br />
                                 </p>
                                 <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
                                     Learn More
@@ -156,11 +158,10 @@ class NewIcoContainer extends Component {
                                 The Problem
                             </div>
                             <p className="veelancing-is-a-dece">
-                                Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
-                                Here, you can find the job you love or hire experts that fit your needs. <br/>
-                                With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community. <br/>
-                                Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
-                                With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
+                                The current freelancing market has been monopolized by big corporations <br />
+                                who impose more and more overbearing restrictions and claim the lions’ share as fees. <br />
+                                This problem is exacerbated by poor customer support, long delays and sometimes even unfair mediation. <br />
+                                Furthermore, freelancers as clients often have no say in the platform they make their living on. <br />
                             </p>
                         </Col>
 
@@ -186,9 +187,9 @@ class NewIcoContainer extends Component {
                                 Veelancing Technology
                             </h1>
                             <p className="photographs-are-a-wa">
-                                Photographs are a way of preserving a moment in our lives for the rest of our lives.
-                                Many of us have at least been tempted at the flashy array of photo printers which seemingly
-                                leap off the shelves at even the least tech-savvy.
+                                Veelaning is a decentralized marketplace, based on Blockchain technology, and built within Ethereum Blockchain.<br />
+                                We are using latest technology, and future proof tools in order to povide the best, community oriented and user friendly <br />
+                                environment. Envoy, Django and React are few of the technologies we are working with, stay tuned for more on our blog !
                             </p>
                             <br />
                             <br />
@@ -426,14 +427,20 @@ class NewIcoContainer extends Component {
                                 <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
-                                    <div className="the-team-name">Dan Constantinescu</div>
-                                    <div className="the-team-title">Frontend Developer</div>
+                                    <div className="the-team-name">Cristian Lipciuc</div>
+                                    <div className="the-team-title">Content Creator & Copywriter</div>
                                 </Col>
                                 <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Ileana Marcut</div>
                                     <div className="the-team-title">UX & UI Designer</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                         src="../../static/images/sample-avatar.jpg"  />
+                                    <div className="the-team-name">Marius Glufcios</div>
+                                    <div className="the-team-title">Investor & President</div>
                                 </Col>
                             </Row>
 
