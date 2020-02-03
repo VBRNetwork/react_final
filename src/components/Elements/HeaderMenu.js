@@ -19,9 +19,13 @@ class HeaderMenu extends Component {
         }
         this.clickLogout = this.clickLogout.bind(this)
         this.localLogout = this.localLogout.bind(this)
+        this.isIco = this.isIco.bind(this)
     }
 
     componentDidMount () {
+       this.isIco()
+    }
+    isIco(){
         let icoDomains = ['localhost', 'ico.veelancing.io']
         if(window && icoDomains.includes(window.location.hostname)){
             this.setState({
@@ -186,7 +190,7 @@ class HeaderMenu extends Component {
                     </Col>
                     <Col xs={12} sm={12} md={5} lg={5} xl={{ span: 8 }} xxl={6}>
                         <div style={{ marginTop: '25px', textAlign:'center' }}>
-                            {token === false && loginButton}
+                            {(token === false && !this.state.is_ico) && loginButton}
                             {token === false && joinButton}
                             {token !== false &&
                                 <div>
