@@ -44,13 +44,23 @@ class HeaderNew extends Component {
                 orgKey: 'PDZM8'
             },
             particles:35,
+            is_ico:false
         }
         this.clickLogout = this.clickLogout.bind(this)
         this.rebuildBreadcrumbs = this.rebuildBreadcrumbs.bind(this)
         this.handleChangeCategory = this.handleChangeCategory.bind(this)
         this.handleChangeParticles = this.handleChangeParticles.bind(this);
+        this.isIco = this.isIco.bind(this)
     }
 
+    isIco(){
+        let icoDomains = ['localhost', 'ico.veelancing.io']
+        if(window && icoDomains.includes(window.location.hostname)){
+            this.setState({
+                is_ico:true
+            })
+        }
+    }
 
     handleChangeParticles(value) {
         this.setState({
@@ -75,6 +85,8 @@ class HeaderNew extends Component {
     }
 
     componentDidMount () {
+        this.isIco()
+
         let number_particles = 30;
 
         if(isBrowser){
@@ -259,6 +271,7 @@ class HeaderNew extends Component {
                     >
                     </Particles>
                     <HeaderMenu/>
+                    {!this.state.is_ico &&
                     <Row>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{
                             background:'rgba(58, 62, 77, 0.54) none repeat scroll 0% 0%',
@@ -274,7 +287,7 @@ class HeaderNew extends Component {
                                 </Col>
                             </div>
                         </Col>
-                    </Row>
+                    </Row>}
 
                 </div>
 

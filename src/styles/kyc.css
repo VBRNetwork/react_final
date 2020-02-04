@@ -15,8 +15,6 @@
     box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
     width: 260px !important;
     height: 60px !important;
-    margin-left: 30% !important;
-    
 }
 
 .kyc-upload-btn-sub {
@@ -26,7 +24,7 @@
     box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
     width: 260px !important;
     height: 60px !important;
-    
+    margin-left:50px;
 }
 
 .kyc-input {

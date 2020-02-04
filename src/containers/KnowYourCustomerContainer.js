@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
@@ -11,160 +11,7 @@ import '../styles/kyc.css'
 import PropTypes from 'prop-types'
 import '../styles/dashboard.css'
 import {knowYourCustomer} from '../actions/user'
-
-const lang = [
-    {
-        value: 'English',
-        label: 'English',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'Spanish',
-        label: 'Spanish',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'Mandarin',
-        label: 'Mandarin',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'French',
-        label: 'French',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-    {
-        value: 'German',
-        label: 'German',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-
-    {
-        value: 'Italian',
-        label: 'Italian',
-        children: [
-            {
-                value: 'Beginner',
-                label: 'Beginner',
-            },
-
-            {
-                value: 'Intermediate',
-                label: 'Intermediate',
-            },
-
-            {
-                value: 'Advanced',
-                label: 'Advanced',
-            },
-
-            {
-                value: 'Native',
-                label: 'Native',
-            },
-        ],
-    },
-]
+import { Helmet } from 'react-helmet'
 
 class KnowYourCustomerContainer extends Component {
     constructor (props) {
@@ -330,7 +177,7 @@ class KnowYourCustomerContainer extends Component {
                 xs: { span: 24 },
                 sm: { span: 8 },
                 xl: { span: 8 },
-                xxl: { span: 12 },
+                xxl: { span: 9 },
             },
             wrapperCol: {
                 xs: { span: 24 },
@@ -356,20 +203,21 @@ class KnowYourCustomerContainer extends Component {
         const config = {
             rules: [{ type: 'object', required: true, message: 'Please select time!' }],
         }
-
-        const rangeConfig = {
-            rules: [{ type: 'array', required: true, message: 'Please select time!' }],
-        }
-
         const { fileList } = this.state;
 
         return (
             <div>
+                <Helmet>
+                    <title>Know Your Customer - Veelancing ICO</title>
+                    <meta
+                        name='description'
+                        content='Register to our ICO'
+                    />
+                </Helmet>
                 <Row>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 10, offset: 5 }}>
-                        <h2 style={{ textAlign: 'center', marginBottom: '5%' }}>Veelancing - Know Your Customer</h2>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 24}}>
                         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-
+                            <h2 style={{ textAlign: 'center', marginBottom: '1%' }}>Veelancing - Know Your Customer</h2>
                             <Form.Item label="First Name">
                                 <Input className="kyc-input" onChange={this.handleChangeFirstname} placeholder="First Name"/>
                             </Form.Item>
@@ -399,40 +247,32 @@ class KnowYourCustomerContainer extends Component {
                                 <Input className="kyc-input" onChange={this.handleChangeAddress2} placeholder="Address Line 2"/>
                             </Form.Item>
 
-                            <div>
-                                <Form.Item label="ID Front Picture">
-                                    <Upload name='id_front_picture'
-                                            fileList={fileList}
-                                            beforeUpload={() => false}
-                                            onChange={this.uploadFrontPicture}>
-                                        <Button className="kyc-upload-btn">
-                                            <Icon type="upload"/> Upload ID Front
-                                        </Button>
-                                    </Upload>
-                                </Form.Item>
+                            <Form.Item label="ID Front Picture">
+                                <Upload className="kyc-input" name='id_front_picture'
+                                        onChange={this.uploadFrontPicture}>
+                                    <Button className="kyc-upload-btn">
+                                        <Icon type="upload"/> Upload ID Front
+                                    </Button>
+                                </Upload>
+                            </Form.Item>
 
-                                <Form.Item label="ID Back Picture">
-                                    <Upload name='id_back_picture'
-                                            fileList={fileList}
-                                            beforeUpload={() => false}
-                                            onChange={this.uploadBackPicture}>
-                                        <Button className="kyc-upload-btn">
-                                            <Icon type="upload"/> Upload ID Back
-                                        </Button>
-                                    </Upload>
-                                </Form.Item>
+                            <Form.Item label="ID Back Picture">
+                                <Upload className="kyc-input" name='id_back_picture'
+                                        onChange={this.uploadBackPicture}>
+                                    <Button className="kyc-upload-btn">
+                                        <Icon type="upload"/> Upload ID Back
+                                    </Button>
+                                </Upload>
+                            </Form.Item>
 
-                                <Form.Item label="Selfie Picture">
-                                    <Upload name='id_selfie_picture'
-                                            fileList={fileList}
-                                            beforeUpload={() => false}
-                                            onChange={this.selfiePicture}>
-                                        <Button className="kyc-upload-btn">
-                                            <Icon type="upload"/> Upload Selfie
-                                        </Button>
-                                    </Upload>
-                                </Form.Item>
-                            </div>
+                            <Form.Item label="Selfie Picture">
+                                <Upload className="kyc-input" name='id_selfie_picture'
+                                        onChange={this.selfiePicture}>
+                                    <Button className="kyc-upload-btn">
+                                        <Icon type="upload"/> Upload Selfie
+                                    </Button>
+                                </Upload>
+                            </Form.Item>
 
                             <Form.Item className="kyc-form-footer" {...tailFormItemLayout}>
                                 <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
