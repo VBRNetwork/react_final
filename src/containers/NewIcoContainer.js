@@ -125,12 +125,14 @@ class NewIcoContainer extends Component {
                                 </span>
                                 <p className="investors-text-ico">
                                     Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
+                                    <br/>
                                     Here, you can find the job you love or hire experts that fit your needs.
                                     <br/>
                                     We believe Veelancing is the platform that will make freelancing the stress-free <br />
-                                    and fair career option it once was. Aside from making your own rules by voting on the T&C <br />
-                                    and being sure exactly what job you are signing up for due to smart contracts, <br />
+                                    and fair career option it once was. Aside from making your own rules by voting on the T&C 
+                                    and being sure exactly what job you are signing up for due to smart contracts, 
                                     we also make sure to address what’s really on all of our minds: money. <br />
+                                    <br/>
                                     At only 3% service fees, Veelancing is the most unobtrusive freelancing website around. <br />
                                 </p>
                                 <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
@@ -158,9 +160,11 @@ class NewIcoContainer extends Component {
                                 The Problem
                             </div>
                             <p className="veelancing-is-a-dece">
-                                The current freelancing market has been monopolized by big corporations <br />
+                                The current freelancing market has been monopolized by big corporations 
                                 who impose more and more overbearing restrictions and claim the lions’ share as fees. <br />
+                                <br />
                                 This problem is exacerbated by poor customer support, long delays and sometimes even unfair mediation. <br />
+                                <br/>
                                 Furthermore, freelancers as clients often have no say in the platform they make their living on. <br />
                             </p>
                         </Col>
@@ -171,9 +175,13 @@ class NewIcoContainer extends Component {
                             </div>
                             <p className="veelancing-is-a-dece">
                                 Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
+                                <br/>
                                 Here, you can find the job you love or hire experts that fit your needs. <br/>
                                 With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.
+                                <br/>
+                                <br/>
                                 Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
+                                <br/>
                                 With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
                             </p>
                         </Col>
@@ -189,7 +197,9 @@ class NewIcoContainer extends Component {
                             <p className="photographs-are-a-wa">
                                 Veelaning is a decentralized marketplace, based on Blockchain technology, and built within Ethereum Blockchain.<br />
                                 We are using latest technology, and future proof tools in order to povide the best, community oriented and user friendly <br />
-                                environment. Envoy, Django and React are few of the technologies we are working with, stay tuned for more on our blog !
+                                environment. <br/>
+                                <br/>
+                                Envoy, Django and React are few of the technologies we are working with, stay tuned for more on our blog !
                             </p>
                             <br />
                             <br />
@@ -319,6 +329,26 @@ class NewIcoContainer extends Component {
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images3" src={'../../static/images/raising_funds.svg'} />}
                         >
+                            <h3 className="vertical-timeline-element-title">Platform Improvement</h3>
+                            <p>
+                                ✓ Implementing changes based on users feedback
+                            </p>
+                            <p>
+                                ✓ Analyzed Google stats to determine correct target user
+                            </p>
+                            <p>
+                                ✓ Adapted marketing strategy based on latest analysys
+                            </p>
+                        </VerticalTimelineElement>
+
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--education"
+                            contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
+                            contentArrowStyle={{ borderRight: '7px solid  #fff' }}
+                            date="Q1 - 2020"
+                            iconStyle={{ background: '#008D7F', color: '#fff' }}
+                            icon={<img className="timeline-images3" src={'../../static/images/raising_funds.svg'} />}
+                        >
                             <h3 className="vertical-timeline-element-title">Raising Funds</h3>
                             <p>
                                 ✓ Private fundraising for early-bird investors
@@ -329,12 +359,12 @@ class NewIcoContainer extends Component {
                             <p>
                                 ✓ Launching Initial Coin Offering
                             </p>
-                        </VerticalTimelineElement>
+                            </VerticalTimelineElement>
                         <VerticalTimelineElement
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q1 - 2020"
+                            date="Q2 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/grow.svg'} />}
                         >
@@ -353,7 +383,7 @@ class NewIcoContainer extends Component {
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q2 - 2020"
+                            date="Q3 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/beta.svg'} />}
                         >
@@ -372,7 +402,7 @@ class NewIcoContainer extends Component {
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q3 & Q4 - 2020"
+                            date="Q4 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/official_launch.svg'} />}
                         >
@@ -381,7 +411,7 @@ class NewIcoContainer extends Component {
                                 ✓ Final Platform Release
                             </p>
                             <p>
-                                ✓ Mining Tokens
+                                ✓ Minting Tokens
                             </p>
                             <p>
                                 ✓ Release Exchange Market Feature
