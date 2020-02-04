@@ -7,8 +7,7 @@ import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { subscribeEmail } from '../actions/user'
+import vbrincapi from 'libs/vbrinc-api'
 
 class NewIcoContainer extends Component {
 
@@ -17,6 +16,7 @@ class NewIcoContainer extends Component {
         this.state = {
             email: '',
             error_email:false,
+            success:false
         }
         this.subscribeAction = this.subscribeAction.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
@@ -25,13 +25,20 @@ class NewIcoContainer extends Component {
     subscribeAction(){
         let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (filter.test(this.state.email)) {
-            this.props.subscribeEmail(this.state.email).then((e) => {
-                console.log(e)
-            })
-        }else{
-            this.setState({
-                error_email:true
-            })
+           vbrincapi.subscribeToNewsletter(this.state.email).then((e) => {
+               if(e.error === false){
+                   this.setState({
+                       success:true,
+                       error_email:false,
+                   })
+               }
+               if(e.error === true){
+                   this.setState({
+                       error_email:true,
+                       success:false,
+                   })
+               }
+            });
         }
         return false;
     }
@@ -91,12 +98,19 @@ class NewIcoContainer extends Component {
                                 <Row>
                                     <Col xs={24} sm={24} md={24} lg={18}>
                                         <div className="example-input">
-                                            <Input className="ico-email-reg" size="large" type="email" placeholder="Email" onChange={this.changeEmail} />
+                                            <Input className="ico-email-reg" size="large" type="email" placeholder="Email"
+                                                   onChange={this.changeEmail}
+                                                   onPressEnter={this.changeEmail}/>
                                             <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
                                         </div>
-                                        {this.state.error_email && <div style={{marginLeft:'20px'}}><span className={'error-text'}>
-                                            Please enter a valid email.
-                                        </span></div>}
+
+                                        <div style={{marginLeft:'20px'}}>
+                                            {(!this.state.success && this.state.error_email) &&
+                                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
+                                            {(this.state.success && !this.state.error_email)  &&
+                                            <span className={'success-text'}>Thank you for subscription. </span>}
+                                        </div>
+
                                         <div>
                                             <p className="no-spam">
                                                 We promise no spam! <u>Privacy Policy</u>
@@ -515,11 +529,14 @@ class NewIcoContainer extends Component {
 
                 <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        {this.state.error_email && <div style={{marginLeft:'20px'}}><span className={'error-text'}>
-                                            Please enter a valid email.
-                                        </span></div>}
+                        <div style={{marginLeft:'20px'}}>
+                            {(!this.state.success && this.state.error_email) &&
+                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
+                            {(this.state.success && !this.state.error_email)  &&
+                            <span className={'success-text'}>Thank you for subscription. </span>}
+                        </div>
                         <Input size={'large'} className={'launch-time-input'} type="email" style={{ marginTop: '20px' }}
-                            placeholder={'Email'} onChange={this.changeEmail} />
+                            placeholder={'Email'} onChange={this.changeEmail} onPressEnter={this.changeEmail} />
                         <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }} onClick={this.subscribeAction}>
                             Get Notified!
                         </Button>
@@ -556,7 +573,6 @@ function mapStateToProps (state) {
 }
 
 NewIcoContainer.propTypes = {
-    subscribeEmail: PropTypes.func.isRequired,
 }
 
-export default connect(mapStateToProps, {subscribeEmail})(NewIcoContainer)
+export default connect(mapStateToProps, {})(NewIcoContainer)
