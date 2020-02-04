@@ -1115,11 +1115,15 @@ label {
     border-color: #FFF !important;
 }
 
+.success-text {
+    margin-left: 50px;
+    font-size: 13px;
+    color: #FFF;
+}
 .error-text {
     margin-left: 50px;
-    font-size: 12px;
-    color: #FFF;
-    background:#c10b0b82
+    font-size: 13px;
+    color: #ff1600;
 }
 .ant-calendar-picker-input.ant-input {
     border: none;

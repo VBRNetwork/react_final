@@ -16,6 +16,7 @@ class NewIcoContainer extends Component {
         this.state = {
             email: '',
             error_email:false,
+            success:false
         }
         this.subscribeAction = this.subscribeAction.bind(this)
         this.changeEmail = this.changeEmail.bind(this)
@@ -25,10 +26,19 @@ class NewIcoContainer extends Component {
         let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if (filter.test(this.state.email)) {
            vbrincapi.subscribeToNewsletter(this.state.email).then((e) => {
-               this.setState({
-                   error_email:e.error
-               })
-            })
+               if(e.error === false){
+                   this.setState({
+                       success:true,
+                       error_email:false,
+                   })
+               }
+               if(e.error === true){
+                   this.setState({
+                       error_email:true,
+                       success:false,
+                   })
+               }
+            });
         }
         return false;
     }
@@ -93,9 +103,14 @@ class NewIcoContainer extends Component {
                                                    onPressEnter={this.changeEmail}/>
                                             <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
                                         </div>
-                                        {this.state.error_email && <div style={{marginLeft:'10px'}}><span className={'error-text'}>
-                                            Please enter a valid email or maybe this email already exists.
-                                        </span></div>}
+
+                                        <div style={{marginLeft:'20px'}}>
+                                            {(!this.state.success && this.state.error_email) &&
+                                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
+                                            {(this.state.success && !this.state.error_email)  &&
+                                            <span className={'success-text'}>Thank you for subscription. </span>}
+                                        </div>
+
                                         <div>
                                             <p className="no-spam">
                                                 We promise no spam! <u>Privacy Policy</u>
@@ -514,9 +529,12 @@ class NewIcoContainer extends Component {
 
                 <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        {this.state.error_email && <div style={{marginLeft:'20px'}}><span className={'error-text'}>
-                                            Please enter a valid email.
-                                        </span></div>}
+                        <div style={{marginLeft:'20px'}}>
+                            {(!this.state.success && this.state.error_email) &&
+                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
+                            {(this.state.success && !this.state.error_email)  &&
+                            <span className={'success-text'}>Thank you for subscription. </span>}
+                        </div>
                         <Input size={'large'} className={'launch-time-input'} type="email" style={{ marginTop: '20px' }}
                             placeholder={'Email'} onChange={this.changeEmail} onPressEnter={this.changeEmail} />
                         <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }} onClick={this.subscribeAction}>
