@@ -2,6 +2,7 @@ import vbrincapi from 'libs/vbrinc-api'
 
 export const SAVE_TOKEN = Symbol('SAVE_TOKEN');
 export const BECOME_FREELANCER = Symbol('BECOME_FREELANCER');
+export const SUBSCRIBE_EMAIL = Symbol('SUBSCRIBE_EMAIL');
 export const NO_DATA = Symbol('NO_DATA');
 
 export function getAccessToken({username, password}) {
@@ -28,6 +29,19 @@ export function becomeFreelancer(data) {
         })
     }
 }
+
+export function subscribeEmail(email) {
+    return dispatch => {
+        return vbrincapi.subscribeToNewsletter(email).then(res => {
+            dispatch({
+                type: SUBSCRIBE_EMAIL,
+                data: res.data
+            });
+            return res.data
+        })
+    }
+}
+
 
 export function knowYourCustomer(data) {
     return dispatch => {

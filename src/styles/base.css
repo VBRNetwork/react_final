@@ -269,11 +269,11 @@ label {
 
 .logo-box {
     text-align: center;
-    margin:20px;
+    margin: 20px;
 }
 
-.logo-box img{
-    height:55px;
+.logo-box img {
+    height: 55px;
 }
 
 .auth-button {
@@ -364,6 +364,8 @@ label {
 
 .polaroid {
     margin-bottom: 25px;
+    padding: 20px;
+    margin: 20px;
 }
 
 .categories-title {
@@ -439,7 +441,7 @@ label {
     font-weight: 400;
     line-height: 19px;
     text-align: left;
-    color:#FFF !important;
+    color: #FFF !important;
 }
 
 
@@ -508,13 +510,12 @@ label {
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 60px;
-    width: 660px;
     text-align: left;
     margin-left: 55px;
     text-transform: none;
 }
 
-  .stay-up-to-date-and {
+.stay-up-to-date-and {
     color: #FFFFFF;
     font-family: dinfont;
     font-size: 16px;
@@ -523,19 +524,18 @@ label {
     width: 600px;
     text-align: left;
     margin-left: 55px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
-  .stay-up-to-date-and-box {
+.stay-up-to-date-and-box {
     position: absolute;
-  }
+}
 
 .count-down {
-    shape-rendering: geometricPrecision;
     background-color: #1AB0C48F;
     border-radius: 10px;
-    margin-left: 45px;
-    height: 275px;
-    width: 82%;
+    min-height:250px;
 }
 
 .initial-coin-offering {
@@ -546,8 +546,14 @@ label {
     opacity: 100%;
 }
 
+.example-input {
+    width:300px;
+    display: inline-flex;
+    margin-left:5px;
+}
+
 .example-input .ant-input {
-    max-width: 200px;
+    display:inline;
     margin: 0 10px 10px 50px;
     background: transparent;
 }
@@ -561,22 +567,22 @@ label {
 
 
 .no-spam-box {
-  position: absolute;
+    position: absolute;
 }
 
 
- .get-notified {
-   color: #008D7F !important;
-   font-size: 15px !important;
-   text-align: center !important;
-   background-color: #FFFFFF;
-   border-radius: 7px !important;
-   box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
-   height: 43px !important;
-   width: 180px !important;
-  }
+.get-notified {
+    color: #008D7F !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    background-color: #FFFFFF;
+    border-radius: 7px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    height: 43px !important;
+    width: 180px !important;
+}
 
-  .veelancing-is-a-dece {
+.veelancing-is-a-dece {
     color: #202C39;
     font-size: 16px;
     font-weight: 400;
@@ -586,24 +592,24 @@ label {
 }
 
 .veelancing-is-a-dece-box {
-  position: absolute;
+    position: absolute;
 }
 
 
 .rectangle-copy {
-   margin-top:110px;
-   margin-bottom:100px;
-   background-color: #DEEEED;
-   padding: 80px;
+    margin-top: 110px;
+    margin-bottom: 100px;
+    background-color: #DEEEED;
+    padding: 80px;
 }
 
-@media(max-width: 815px) {
-  .rectangle-copy {
-    margin-top:110px;
-    margin-bottom:100px;
-    background-color: #DEEEED;
-    padding: 20px;
- }
+@media (max-width: 815px) {
+    .rectangle-copy {
+        margin-top: 110px;
+        margin-bottom: 100px;
+        background-color: #DEEEED;
+        padding: 20px;
+    }
 }
 
 .the-problem {
@@ -614,19 +620,19 @@ label {
     text-align: left;
     margin-bottom: 15px;
     margin-left: 5px;
-  }
-
-.the-solution {
-  color: #3B3D47;
-  font-size: 38px !important;
-  font-weight: 700 !important;
-  width: 480px !important;
-  text-align: left !important;
-  margin-bottom: 15px !important;
-  margin-left: 5px !important;
 }
 
-@media(max-width: 650px) {
+.the-solution {
+    color: #3B3D47;
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    width: 480px !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    margin-left: 5px !important;
+}
+
+@media (max-width: 650px) {
     .the-solution {
         margin-top: 30px;
     }
@@ -634,7 +640,6 @@ label {
 
 .geometric-particles {
     position: relative;
-    margin-left: -115px;
 }
 
 .coins {
@@ -654,8 +659,8 @@ label {
 }
 
 .photographs-are-a-wa-box {
-  position: absolute;
-  padding: 5% !important;
+    position: absolute;
+    padding: 5% !important;
 }
 
 .the-blockchain-techn {
@@ -665,18 +670,18 @@ label {
     margin-left: 10px;
 }
 
-  .technology-images {
-  border: 1px solid #EBEBEC;
-  border-radius: 10px;
-  width: 180px;
-  height: 120px;
-  }
+.technology-images {
+    border: 1px solid #EBEBEC;
+    border-radius: 10px;
+    width: 180px;
+    height: 120px;
+}
 
-  @media(max-width: 815px) {
+@media (max-width: 815px) {
     .technology-images {
-      margin-left: 85px;
-      }
-  }
+        margin-left: 85px;
+    }
+}
 
 .geometric-particles2 {
     color: #87C6C1;
@@ -770,147 +775,148 @@ label {
     }
 }
 
-@media(max-width: 815px) {
-  .invest-in-the-first {
-    margin-left: 1px;
-    font-size: 28px;
-    line-height: 40px;
-  }
- }
-
- @media only screen and (max-width: 1024px) {
-  .invest-in-the-first {
-    margin-left: 5px;
-    font-size: 28px;
-    line-height: 40px;
-  }
- }
- 
- @media(max-width:815px) {
-      .stay-up-to-date-and {
+@media (max-width: 815px) {
+    .invest-in-the-first {
         margin-left: 1px;
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .invest-in-the-first {
+        margin-left: 10px;
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 815px) {
+    .stay-up-to-date-and {
+        margin-left: 5px;
         display: inline !important;
         text-align: center;
-      }
+    }
 
 
- }
-
- @media(max-width:1024px) {
-  .stay-up-to-date-and {
-    margin-left: 1px;
-    display: inline !important;
-    text-align: left;
-  }
- }
-
- @media(max-width:1024px) {
- .example-input .ant-input {
-  width: 250px;
-  margin: 0 10px 10px 0;
-  background: transparent;
-  margin-left: 20px;
- }
-} 
-
- @media(max-width:815px){
- .ico-email-reg {
-   margin-left: 25px !important;
-   margin-top: 20px !important;
- }
 }
 
-@media(max-width:1024px) {
-  .get-notified {
-    margin-left: 90px; 
-   }
+@media (max-width: 1024px) {
+    .stay-up-to-date-and {
+        margin-left: 5px;
+        display: inline !important;
+        text-align: left;
+    }
 }
 
-@media(max-width:1024px) {
-  .count-down {
-    width: 350px;
-    height: 250px;
-    margin-left: 10px;
-  }
+@media (max-width: 1024px) {
+    .example-input .ant-input {
+        width: 250px;
+        margin: 0 10px 10px 0;
+        background: transparent;
+        margin-left: 20px;
+    }
 }
 
-@media(max-width:815px) {
-  .tech-particles {
-    margin-right: 20px;
-    
-  }
+@media (max-width: 815px) {
+    .ico-email-reg {
+        margin-left: 25px !important;
+        margin-top: 20px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .get-notified {
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .count-down {
+        width: 350px;
+        height: 250px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 815px) {
+    .tech-particles {
+        margin-right: 20px;
+
+    }
 }
 
 .our-journey {
-  color: #202C39 !important;
-  font-size: 38px;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 50px;
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 50px;
 }
 
-@media(max-width:815px) {
+@media (max-width: 815px) {
     .our-journey {
-    text-align: left;
-    margin-left: 60px
- }
+        text-align: left;
+        margin-left: 60px
+    }
 }
 
 .timeline-images {
-  margin-left: 15px;
-  margin-top: 8px;
+    margin-left: 15px;
+    margin-top: 8px;
 }
 
 .timeline-images2 {
-  margin-left: 10px;
-  margin-top: 13px;
+    margin-left: 10px;
+    margin-top: 13px;
 }
 
 .timeline-images3 {
-  margin-left: 13px;
-  margin-top: 8px;
+    margin-left: 13px;
+    margin-top: 8px;
 }
 
 .the-team-name {
-  color: #3c3c3c;
-  text-align: left;
-  margin-top: 5px;
-  font-size: 16px;
-  padding: 5px;
-  font-weight: bold;
+    color: #3c3c3c;
+    text-align: left;
+    margin-top: 5px;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: bold;
 }
+
 .the-team-title {
-  color: #3c3c3c;
-  text-align: left;
-  margin-top: 5px;
-  font-size: 12px;
-  padding: 5px;
+    color: #3c3c3c;
+    text-align: left;
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 5px;
 }
 
 .the-team-images {
-  border: 1px solid #EBEBEC !important;
-  border-radius: 10px !important;
-  width: 180px !important;
-  height: 200px !important;
+    border: 1px solid #EBEBEC !important;
+    border-radius: 10px !important;
+    width: 180px !important;
+    height: 200px !important;
 }
 
 .the-team {
-  color: #202C39 !important;
-  font-size: 38px;
-  font-weight: 700;
-  margin-left: 10px;
+    color: #202C39 !important;
+    font-size: 38px;
+    font-weight: 700;
+    margin-left: 10px;
 }
 
 .the-team-text {
-  color: #202C39 !important;
-  font-size: 16px !important;
-  font-weight: 400 !important;
-  text-align: left;
-  margin-left: 10px;
+    color: #202C39 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    text-align: left;
+    margin-left: 10px;
 }
 
 .the-team-box {
-  padding-top: 90px !important;
+    padding-top: 90px !important;
 }
 
 .our-partners-box {
@@ -922,8 +928,8 @@ label {
     font-size: 38px;
     font-weight: 700;
     margin-left: 10px;
-  }
- 
+}
+
 .our-partners-images {
     border-radius: 10px !important;
     width: 180px !important;
@@ -937,31 +943,31 @@ label {
     font-weight: 700;
     text-align: center;
     margin-top: 110px;
-  }
+}
 
-  .example-input-bot .ant-input {
+.example-input-bot .ant-input {
     width: 300px;
     margin: 0 10px 10px 0;
     background: transparent;
 }
 
 .rectangle2 {
-    margin-top:110px;
+    margin-top: 110px;
     background-color: #DEEEED;
     padding: 30px;
     text-align: center;
- }
+}
 
- .want-to-hear-more {
+.want-to-hear-more {
     font-size: 38px;
     font-weight: 700;
     line-height: 46px;
     text-align: center;
- }
+}
 
 .emoji-picker-react {
-    width:100% !important;
-    height:200px !important;
+    width: 100% !important;
+    height: 200px !important;
 }
 
 .countdown-wrapper {
@@ -1041,45 +1047,49 @@ label {
 
 
 .community-part {
-    margin-top:50px;
-    margin-bottom:50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /*MEDIA QUERIES*/
-@media(max-width:1350px) {
+@media (max-width: 1350px) {
     .no-spam {
         margin-top: 5px;
         text-align: center !important;
         margin-left: 1px;
     }
+
     .a-blockchain-marketp .big {
         font-size: 34px !important;
     }
+
     .intro-text {
         margin-top: 10px !important;
     }
+
     .community-part {
-        margin-top:15px !important;
-        margin-bottom:15px !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
     }
+
     .invest-in-the-first {
         font-size: 37px !important;
     }
 }
 
-@media(min-width: 800px){
+@media (min-width: 800px) {
     .header-nav {
         margin-top: 17px;
-        float:right;
+        float: right;
     }
 }
 
 .ant-popover-inner {
     background-color: #0b0a0ade !important;
-    margin-left:10px;
+    margin-left: 10px;
 }
 
-.ico-tba-titile {
+.ico-tba-title {
     text-align: center;
     color: #FFFFFF;
 }
@@ -1093,14 +1103,21 @@ label {
     font-weight: 400;
     line-height: 19px;
     text-align: left;
-    color:#000 !important;
-    padding-top:20px;
-    padding-bottom:20px;
+    color: #000 !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .menu-button-responsive {
     margin-top: 25px;
-    margin-left:10px;
-    color:#FFF !important;
-    border-color:#FFF !important;
+    margin-left: 10px;
+    color: #FFF !important;
+    border-color: #FFF !important;
 }
+
+.error-text {
+    margin-left: 55px;
+    font-size: 12px;
+    color: #e64545;
+}
+

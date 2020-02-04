@@ -1,5 +1,170 @@
 .hiw-icon   {color: rgba(0, 177, 153, 0.74)}
 
-.paragraphs {color: rgba(0, 37, 70, 0.74) !important;}
+.paragraphs {
+    border: 1px solid #DEEEED;
+    border-radius: 10px !important;
+    width: 400px !important;
+    height: 60px !important;
+    padding: 10px !important;
+
+}
+
+.hiw-toggle-btn {
+    
+  background-color: #008D7F;
+  border-radius: 10px !important;
+  width: 180px !important;
+  height: 40px !important;
+}
+
+.hiw-toggle-btn1 {
+    
+    border-radius: 10px !important;
+    width: 180px !important;
+    height: 40px !important;
+  }
+
+  .btn-text-hiw {
+    color: #FFFFFF !important;
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    margin-top: 4% !important;
+  }
+
+  .btn-text-hiw1 {
+
+  color: #008D7F !important;
+  font-family: Roboto !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 22px !important;
+  text-align: center !important;
+  margin-top: 4% !important;
+  }
+
+  .hiw-text {
+    color: #3B3D47 !important;
+    font-family: Roboto !important;
+    font-size: 38px !important;
+    font-weight: 300 !important;
+    line-height: 48px !important;
+    width: 600px !important;
+    text-align: left !important;
+    margin-top: -100% !important;
+  }
+
+  .browse-btn-hiw {
+    border: 1px solid #87C6C1 !important;
+    border-radius: 10px !important;
+    width: 160px !important;
+    height: 40px !important;
+    margin-bottom: 5%;
+  }
+
+  .browse-btn-text {
+
+    color: #008D7F !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 19px !important;
+    text-align: center !important;
+  }
+
+  .hiw-text-title {
+    color: #3B3D47 !important;
+    font-family: Roboto !important; 
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    line-height: 48px !important;
+    width: 600px !important;
+    text-align: center !important;
+  }
+
+  .card-title {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    width: 240px !important;
+    text-align: left !important;
+  }
+  .card-description {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    width: 240px !important;
+    text-align: left !important;
+  }
+
+  .safe-secure-envrionment {
+    color: #3B3D47 !important;
+    font-family: Roboto !important;
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    line-height: 48px !important;
+    width: 420px !important;
+    text-align: left !important;
+  }
+
+  .hiw-descr {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    width: 420px !important;
+    text-align: left !important;
+  }
+
+  .hiw-categories-title {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    width: 145px !important;
+    text-align: left !important;
+  }
+
+  .be-part {
+    background-image: linear-gradient(225deg, #20A3CA 0%, #008D7F 100%) !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    width: 100% !important;
+    height: 328px !important;
+  }
+
+  .be-part-btn {
+    background-color: #FFFFFF !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    width: 260px !important;
+    height: 60px !important;
+    
+  }
+
+  .be-part-title {
+    color: #FFFFFF !important;
+    font-family: Roboto !important;
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    line-height: 48px !important;
+    text-align: center !important;
+  }
+
+  .be-part-btn-text {
+    color: #008D7F !important;
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 22px !important;
+    text-align: center !important;
+  }
 
 .about {color: rgb(14, 1, 82) !important}

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
@@ -6,9 +6,42 @@ import {Row, Col, Button, Input } from 'antd'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import { subscribeEmail } from '../actions/user'
 
+class NewIcoContainer extends Component {
 
-export default class NewIcoContainer extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            email: '',
+            error_email:false,
+        }
+        this.subscribeAction = this.subscribeAction.bind(this)
+        this.changeEmail = this.changeEmail.bind(this)
+    }
+
+    subscribeAction(){
+        let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (filter.test(this.state.email)) {
+            this.props.subscribeEmail(this.state.email).then((e) => {
+                console.log(e)
+            })
+        }else{
+            this.setState({
+                error_email:true
+            })
+        }
+        return false;
+    }
+
+    changeEmail(event){
+        this.setState({
+            email:event.target.value
+        })
+    }
+
     render() {
         return (
             <div >
@@ -25,7 +58,7 @@ export default class NewIcoContainer extends Component {
                         params={{
                             particles: {
                                 number: {
-                                    value: 70
+                                    value: 45
                                 },
                                 size: {
                                     value: 3
@@ -46,32 +79,37 @@ export default class NewIcoContainer extends Component {
                     <HeaderMenu />
                     <div style={{paddingTop:'80px',paddingBottom:'50px'}}>
                         <Row>
-                            <Col xs={24} sm={24} md={12} lg={12}>
-                                <h1 className="invest-in-the-first">
-                                    Invest in the first<br />
-                                    Blockchain Community for <br />
-                                    Freelancers</h1>
-                                <br />
-                                <br />
-                                <p className="stay-up-to-date-and">Stay up to date, and get notified, <br/> about when we open the Initial Coin Offering</p>
+                            <Col xs={24} sm={24} md={{span:12, push:1}} lg={{span:10, push:1}}>
+                                <div className="invest-in-the-first">
+                                    Invest in the first <br/>
+                                    Blockchain Community for
+                                    Freelancers
+                                </div>
+                                <div className="stay-up-to-date-and">
+                                    <span>Stay up to date, and get notified, <br/> about when we open the Initial Coin Offering</span>
+                                </div>
                                 <Row>
-                                    <Col xs={24} sm={14} md={12} lg={18}>
+                                    <Col xs={24} sm={24} md={24} lg={18}>
                                         <div className="example-input">
-                                            <Input className="ico-email-reg" size="large" placeholder="Email" />
-                                            <Button style={{backgroundColor:'#FFFFFF'}}>Get Notified!</Button>
+                                            <Input className="ico-email-reg" size="large" type="email" placeholder="Email" onChange={this.changeEmail} />
+                                            <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
                                         </div>
+                                        {this.state.error_email && <div style={{marginLeft:'20px'}}><span className={'error-text'}>
+                                            Please enter a valid email.
+                                        </span></div>}
                                         <div>
-                                            <p className="no-spam">We promise no spam! <u>Privacy Policy</u></p>
+                                            <p className="no-spam">
+                                                We promise no spam! <u>Privacy Policy</u>
+                                            </p>
                                         </div>
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col xs={24} sm={12} md={10} lg={{ span: 12 }}>
-                                <div className="count-down tba-text">
-                                    <h2 className="ico-tba-titile">Veelancing ICO Will Start In:</h2>
-                                    <br />
+                            <Col xs={24} sm={24} md={12} lg={{ span: 9, push:2 }}>
+                                <div className="count-down tba-text" style={{margin:'0 auto'}}>
+                                    <h2 className="ico-tba-title">Veelancing ICO Will Start In</h2>
                                     <div className="ico-tba-text"  ><h1 style={{color: '#FFF'}}>To Be Announced</h1></div>
-                                    { false && <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" />}
+                                    { false && <CountDown timeTillDate="05 01 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a" /> }
                                 </div>
                             </Col>
                         </Row>
@@ -80,31 +118,35 @@ export default class NewIcoContainer extends Component {
 
                 <div className={'mt35'}>
                     <Row>
-                        <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 8, push: 2 }}>
+                        <Col xs={24} sm={16} md={{ span: 12, push: 1 }} lg={{ span: 11, push: 2 }} xl={{ span: 12, push: 2 }} xxl={{ span: 10, push: 2 }}>
                             <div className={'join-freelancer-box'} style={{ marginLeft: "5px" }}>
                                 <span className={'why-veelancing'}>
                                     Why Veelancing?
                                 </span>
                                 <p className="investors-text-ico">
                                     Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
+                                    <br/>
                                     Here, you can find the job you love or hire experts that fit your needs.
                                     <br/>
-                                    With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.<br />
-                                    Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
-                                    With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
+                                    We believe Veelancing is the platform that will make freelancing the stress-free <br />
+                                    and fair career option it once was. Aside from making your own rules by voting on the T&C 
+                                    and being sure exactly what job you are signing up for due to smart contracts, 
+                                    we also make sure to address what’s really on all of our minds: money. <br />
+                                    <br/>
+                                    At only 3% service fees, Veelancing is the most unobtrusive freelancing website around. <br />
                                 </p>
                                 <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
                                     Learn More
                                 </Button>
                             </div>
                         </Col>
-                        <Col xs={24} sm={16} md={{ span: 12, push: 4 }} lg={11} xl={{ span: 12 }} xxl={{ span: 8, offset:3 }}>
-                            <div>
-                                <div className={"geometric-particles"}>
+                        <Col xs={24} sm={16} md={{ span: 12}} lg={{ span: 8, push:2 }} xl={{ span: 8, push:2 }} xxl={{ span: 10, push:2}}>
+                            <div style={{width:'300px', margin:'0 auto'}}>
+                                <div>
                                     <img src={'../../static/images/geometric_particles.svg'} />
                                 </div>
                                 <div>
-                                    <img className={"coins"} src={'../../static/images/coins_photo@1x.jpg'} style={{ marginLeft: "15px" }} />
+                                    <img className={"coins"} src={'../../static/images/coins_photo@1x.jpg'} style={{ marginLeft: "120px" }} />
                                 </div>
                             </div>
                         </Col>
@@ -117,15 +159,14 @@ export default class NewIcoContainer extends Component {
                             <div className={'the-problem'}>
                                 The Problem
                             </div>
-
                             <p className="veelancing-is-a-dece">
-                                Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
-                                Here, you can find the job you love or hire experts that fit your needs. <br/>
-                                With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community. <br/>
-                                Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
-                                With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
+                                The current freelancing market has been monopolized by big corporations 
+                                who impose more and more overbearing restrictions and claim the lions’ share as fees. <br />
+                                <br />
+                                This problem is exacerbated by poor customer support, long delays and sometimes even unfair mediation. <br />
+                                <br/>
+                                Furthermore, freelancers as clients often have no say in the platform they make their living on. <br />
                             </p>
-
                         </Col>
 
                         <Col xs={24} sm={12} md={{ span: 12}} lg={{span:12}} xl={12} xxl={{span:12,offset:0}}>
@@ -134,9 +175,13 @@ export default class NewIcoContainer extends Component {
                             </div>
                             <p className="veelancing-is-a-dece">
                                 Veelancing is a decentralized platform for freelancers and talent seekers from all over the world. <br/>
+                                <br/>
                                 Here, you can find the job you love or hire experts that fit your needs. <br/>
                                 With the help of Blockchain technology, we created a transparent and flexible platform that belongs to the community.
+                                <br/>
+                                <br/>
                                 Everyone can contribute to the platform by requesting and voting changes and new features. <br/>
+                                <br/>
                                 With Veelancing, we give everyone the opportunity to have access to instant payment and cryptocurrencies. <br/>
                             </p>
                         </Col>
@@ -150,42 +195,43 @@ export default class NewIcoContainer extends Component {
                                 Veelancing Technology
                             </h1>
                             <p className="photographs-are-a-wa">
-                                Photographs are a way of preserving a moment in our lives for the rest of our lives.
-                                Many of us have at least been tempted at the flashy array of photo printers which seemingly
-                                leap off the shelves at even the least tech-savvy.</p>
+                                Veelaning is a decentralized marketplace, based on Blockchain technology, and built within Ethereum Blockchain.<br />
+                                We are using latest technology, and future proof tools in order to povide the best, community oriented and user friendly <br />
+                                environment. <br/>
+                                <br/>
+                                Envoy, Django and React are few of the technologies we are working with, stay tuned for more on our blog !
+                            </p>
                             <br />
                             <br />
                             <Row>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/python@2x.jpg" />
                                 </Col>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/envoy@2x.jpg" />
                                 </Col>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/django@2x.jpg" />
                                 </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/mongo@2x.jpg" />
                                 </Col>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/react@2x.jpg" />
                                 </Col>
-                                <Col xs={24} sm={12} md={{span: 8}} lg={8} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={{span: 12}} lg={12} xl={8} xxl={8}>
                                     <img className="technology-images"
                                          src="../../static/images/ethereum@2x.jpg" />
                                 </Col>
                             </Row>
                         </Col>
                         <div className="tech-particles">
-                            <Col xs={24} sm={24} md={{span:24, push: 4}} lg={{ span: 7}}>
+                            <Col xs={24} sm={24} md={{span:24}} lg={{ span: 10, offset:2}}>
                                 <img src={'../../static/images/geometric_particles2.svg'} />
                             </Col>
                         </div>
@@ -283,6 +329,26 @@ export default class NewIcoContainer extends Component {
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images3" src={'../../static/images/raising_funds.svg'} />}
                         >
+                            <h3 className="vertical-timeline-element-title">Platform Improvement</h3>
+                            <p>
+                                ✓ Implementing changes based on users feedback
+                            </p>
+                            <p>
+                                ✓ Analyzed Google stats to determine correct target user
+                            </p>
+                            <p>
+                                ✓ Adapted marketing strategy based on latest analysys
+                            </p>
+                        </VerticalTimelineElement>
+
+                        <VerticalTimelineElement
+                            className="vertical-timeline-element--education"
+                            contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
+                            contentArrowStyle={{ borderRight: '7px solid  #fff' }}
+                            date="Q1 - 2020"
+                            iconStyle={{ background: '#008D7F', color: '#fff' }}
+                            icon={<img className="timeline-images3" src={'../../static/images/raising_funds.svg'} />}
+                        >
                             <h3 className="vertical-timeline-element-title">Raising Funds</h3>
                             <p>
                                 ✓ Private fundraising for early-bird investors
@@ -293,12 +359,12 @@ export default class NewIcoContainer extends Component {
                             <p>
                                 ✓ Launching Initial Coin Offering
                             </p>
-                        </VerticalTimelineElement>
+                            </VerticalTimelineElement>
                         <VerticalTimelineElement
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q1 - 2020"
+                            date="Q2 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/grow.svg'} />}
                         >
@@ -317,7 +383,7 @@ export default class NewIcoContainer extends Component {
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q2 - 2020"
+                            date="Q3 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/beta.svg'} />}
                         >
@@ -336,7 +402,7 @@ export default class NewIcoContainer extends Component {
                             className="vertical-timeline-element--education"
                             contentStyle={{ boxShadow: "0 15px 30px 0 rgba(0, 96, 94, 0.3)", borderRadius: "10px" }}
                             contentArrowStyle={{ borderRight: '7px solid  #fff' }}
-                            date="Q3 & Q4 - 2020"
+                            date="Q4 - 2020"
                             iconStyle={{ background: '#008D7F', color: '#fff' }}
                             icon={<img className="timeline-images2" src={'../../static/images/official_launch.svg'} />}
                         >
@@ -345,7 +411,7 @@ export default class NewIcoContainer extends Component {
                                 ✓ Final Platform Release
                             </p>
                             <p>
-                                ✓ Mining Tokens
+                                ✓ Minting Tokens
                             </p>
                             <p>
                                 ✓ Release Exchange Market Feature
@@ -391,14 +457,20 @@ export default class NewIcoContainer extends Component {
                                 <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
-                                    <div className="the-team-name">Dan Constantinescu</div>
-                                    <div className="the-team-title">Frontend Developer</div>
+                                    <div className="the-team-name">Cristian Lipciuc</div>
+                                    <div className="the-team-title">Content Creator & Copywriter</div>
                                 </Col>
                                 <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Ileana Marcut</div>
                                     <div className="the-team-title">UX & UI Designer</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={8} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
+                                         src="../../static/images/sample-avatar.jpg"  />
+                                    <div className="the-team-name">Marius Glufcios</div>
+                                    <div className="the-team-title">Investor & President</div>
                                 </Col>
                             </Row>
 
@@ -415,17 +487,17 @@ export default class NewIcoContainer extends Component {
                         </Col>
                         <Col span={9} push={3}>
                             <Row >
-                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={8}>
                                     <img className="the-team-images"
-                                         src="../../static/images/logo_CED.png" />
+                                         src="https://coinexchangedata.com/images/logo-ced-day.png" />
                                     <div className="the-team-name">CoinExchangeData</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/NMC_productions.png" />
                                     <div className="the-team-name">NMC Productions</div>
                                 </Col>
-                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={12} xxl={8}>
                                     <img className="the-team-images"
                                          src="../../static/images/urban_logo_home.png" />
                                     <div className="the-team-name">Urban Garden</div>
@@ -436,16 +508,19 @@ export default class NewIcoContainer extends Component {
                 </div>
 
                 <Row type="flex">
-                    <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12}} xxl={{ span: 24}}>
+                    <Col xs={24} sm={24} md={24} lg={{ span: 24 }} xl={{ span: 24}} xxl={{ span: 24}}>
                         <h1 className="initial-coin">The initial coin offering starts soon!</h1>
                     </Col>
                 </Row>
 
                 <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        <Input size={'large'} className={'launch-time-input'} style={{ marginTop: '20px' }}
-                            placeholder={'Email'} />
-                        <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }}>
+                        {this.state.error_email && <div style={{marginLeft:'20px'}}><span className={'error-text'}>
+                                            Please enter a valid email.
+                                        </span></div>}
+                        <Input size={'large'} className={'launch-time-input'} type="email" style={{ marginTop: '20px' }}
+                            placeholder={'Email'} onChange={this.changeEmail} />
+                        <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }} onClick={this.subscribeAction}>
                             Get Notified!
                         </Button>
                     </div>
@@ -474,3 +549,14 @@ export default class NewIcoContainer extends Component {
         )
     }
 }
+
+function mapStateToProps (state) {
+    return {
+    }
+}
+
+NewIcoContainer.propTypes = {
+    subscribeEmail: PropTypes.func.isRequired,
+}
+
+export default connect(mapStateToProps, {subscribeEmail})(NewIcoContainer)
