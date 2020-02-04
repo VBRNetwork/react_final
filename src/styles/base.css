@@ -1120,4 +1120,11 @@ label {
     font-size: 12px;
     color: #e64545;
 }
-
+.ant-calendar-picker-input.ant-input {
+    border: none;
+    height: 57px;
+    border-radius: 13px;
+}
+.header-grid-box {
+    padding-bottom: 10px;
+}

@@ -126,7 +126,7 @@ class HeaderMenu extends Component {
                         </div>
                     </Col>
                     <Col xs={12} sm={12} md={10} lg={13} xl={10} xxl={14}>
-                        <div>
+                        <div className={'header-grid-box'}>
                             <div className={'header-nav'}>
                                 <ResponsiveAntMenu
                                     activeLinkKey={location.pathname}
