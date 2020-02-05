@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox, Breadcrumb } from 'antd'
 import Link from 'next/link'
+import '../../styles/members.css'
 
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
@@ -142,18 +143,21 @@ class SearchJobsContainer extends Component {
                             <Row>
                                 <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
                                         <div><strong>Filters</strong></div>
+                                        <div style={{color: '#008D7F', float: 'right'}} ><strong>Clear All</strong></div>
                                         <Menu
                                             mode='inline'
                                             defaultSelectedKeys={['1']}
                                             defaultOpenKeys={['filter1']}
-                                            style={{ height: '100%' }}>
+                                            style={{ height: '100%' }}
+                                            theme={'dark'}>
+                                            
 
                                             <SubMenu
                                                 key='filter1'
                                                 title={
-                                                    <span>
-                                              <Icon style={{ fontSize: '20px' }} type='appstore'/>
-                                                Categories
+                                                    <span className={'filter-title'}>
+                                             
+                                                Category
                                             </span>
                                                 }>
 

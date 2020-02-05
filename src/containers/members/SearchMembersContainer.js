@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox, Breadcrumb ,Button} from 'antd'
+import { List, Avatar, Icon, Card, Layout, Menu, Row, Col, Checkbox, Button, Select, Input} from 'antd'
 import Link from 'next/link'
 import FilterComponent from '../../components/PageElements/FilterComponent'
 import InfoBox from '../../components/InfoBox'
 import PropTypes from 'prop-types'
 const { Content } = Layout
 import {getMembersList} from '../../actions/members_actions.js'
+import '../../styles/members.css'
+
+const { Option } = Select;
+
+function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
 
 const IconText = ({ type, text }) => (
     <span>
@@ -37,12 +44,62 @@ class SearchMembersContainer extends Component {
             <Row>
                 <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
                     <Content style={{marginLeft:'1rem'}}>
-                        <InfoBox messages={{'h3':' Welcome to VBR Network Marketplace' ,
-                            'h4' : 'We are developing a freelancing blockchain platform, and need a web programmer with experience to help.'}}/>
+                        <div style={{marginTop: '3%', marginBottom: '3%'}}>
+                            <Row>
+                                <Col span={10}>
+                                    <Input style={{borderRadius: '10px', boxShadow: '-5px 10px 30px 0 rgba(0, 96, 94, 0.25)'}} size={'large'} placeholder={'Search'} prefix={<div><Icon type={'search'}/></div>}/>
+                                </Col>
+                                <Col span={10}>
+                                    <Input style={{borderRadius: '10px', boxShadow: '-5px 10px 30px 0 rgba(0, 96, 94, 0.25)'}} size={'large'} placeholder={'Location'} prefix={<div><Icon type={'pushpin'}/></div>}/>
+                                </Col>
+                                <Col span={4}>
+                                    <Button className={'search-btn'} size={'large'} ><div className={'search-btn-text'}>Search</div></Button>
+                                </Col>
+                            </Row>
+                        </div>
                         <Layout style={{ padding: '24px 0', background: '#fff' }}>
                             <Row>
+                                
                                 <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
-                                    <div><strong>Filters</strong></div>
+                                    <div><strong>Filters</strong><div style={{color: '#008D7F', float: 'right'}} ><strong>Clear All</strong></div></div>
+                                    <div style={{marginTop: '5%'}}>
+                                        <Select
+                                            mode="multiple"
+                                            style={{ width: '100%'}}
+                                            placeholder="Select skill"
+                                            defaultValue={['Python']}
+                                            onChange={handleChange}
+                                            optionLabelProp="label"
+                                        >
+                                            <Option className={'option-filters'} value="python" label="Python">
+                                            <span role="img" aria-label="Python">
+                                                PY
+                                            </span>
+                                            Python (PY)
+                                            </Option>
+                                            <Option className={'option-filters'} value="javascript" label="JavaScript">
+                                            <span role="img" aria-label="JavaScript">
+                                                JS
+                                            </span>
+                                            JavaScript (JS)
+                                            </Option>
+                                            <Option className={'option-filters'} value="ui" label="UI Design">
+                                            <span role="img" aria-label="UI Design">
+                                                UI
+                                            </span>
+                                            UI Design (UI)
+                                            </Option>
+                                            <Option className={'option-filters'} value="ux" label="UX Design">
+                                            <span role="img" aria-label="UX Design">
+                                                UX
+                                            </span>
+                                            UX Design (UX)
+                                            </Option>
+                                        </Select>
+                                    </div>
+                                    <div className={'filter-title'}><span >
+                                        Category
+                                    </span></div>
                                     <FilterComponent />
                                 </Col>
                                 <Col  xs={24} sm={24} md={{span:17}} lg={{span:19}} xl={{span:19}} xxl={{ span: 19}}>
@@ -74,10 +131,12 @@ class SearchMembersContainer extends Component {
 
                                                 return((
                                                     <div>
-                                                        <List.Item key={item.username} >
-                                                            <div style={{
+                                                        <Link as={'/users/'+item.username}  href={'/users/?username='+item.username}>
+                                                        <List.Item 
+                                                            key={item.username} >
+                                                            <div className={'list-search-members'} style={{
                                                                 boxShadow: '0px 0px 5px 0px #acacac',
-                                                                padding:'5px'
+                                                                padding:'5px',
                                                             }}>
                                                                 <div style={{padding:'5px'}}>
                                                                     <img
@@ -87,29 +146,32 @@ class SearchMembersContainer extends Component {
                                                                         alt='logo'
                                                                         src={imageAvatar}
                                                                     />
+                                                                    <div className={'list-header-members'}><div className={'list-header-text'} ><span>${item.profile.price}</span></div></div>
                                                                     <a>
-                                                                        <h3>{item.username}</h3>
-                                                                        <h4>{jobTitle}, {item.profile.price}$ </h4><em
+                                                                        <div className={'user-name'}>{item.username}</div>
+                                                                        <div className={'job-title'}>{jobTitle}</div><em
                                                                         className="ant-list-item-action-split"/>
                                                                     </a>
                                                                     {item.content}
                                                                 </div>
-
-                                                                <div style={{textAlign:'center'}}>
-
-                                                                    <Button type={'primary'} style={{
-                                                                        backgroundColor: '#2EC3AB',
-                                                                        borderColor: '#2EC3AB'
-                                                                    }}>
-                                                                        <Link as={'/users/'+item.username}  href={'/users/?username='+item.username}>
-                                                                            <a href="">View Profile </a>
-                                                                        </Link>
-                                                                    </Button>
-
+                                                                <div style={{marginTop: '15%'}}>
+                                                                    <Row>
+                                                                        <Col span={16}>
+                                                                            <div className={'skills-members'}>
+                                                                            <div style={{textAlign: 'center'}}><span> UI & UX Designer </span></div>
+                                                                            </div>
+                                                                        </Col>
+                                                                        <Col span={8}>
+                                                                            <div className={'skills-members1'}>
+                                                                            <div style={{textAlign: 'center'}}><span> NodeJS </span></div>
+                                                                            </div>
+                                                                        </Col>
+                                                                    </Row>
                                                                 </div>
-
                                                             </div>
+                                                            
                                                         </List.Item>
+                                                        </Link>
                                                     </div>
                                                 ))
                                             }}

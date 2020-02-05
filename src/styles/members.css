@@ -1,0 +1,125 @@
+.list-search-members {
+
+    background-color: #FFFFFF !important;
+    border-radius: 10px !important;
+    box-shadow: 0 10px 30px 0 rgba(177, 177, 181, 0.4) !important;
+    width: 290px !important;
+    height: 420px !important;
+}
+
+.filter-title {
+    color: #3B3D47 !important;
+    font-family: Roboto !important;
+    font-size: 38px !important;
+    font-weight: 300 !important;
+    line-height: 48px !important;
+    text-align: left !important;
+    margin-top: 10% !important;
+    margin-bottom: 10% !important;
+
+}
+
+.option-filters {
+
+    border: 1px solid #B1B1B5 !important;
+    border-radius: 10px !important;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25) !important;
+    width: 156px !important;
+    height: 30px !important;
+
+}
+
+.filters-title {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    text-align: left !important;
+}
+
+
+.filters-item-text {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    text-align: left !important;
+}
+
+.check-filter {
+    float: left !important;
+    border-radius: 6px !important;
+    box-shadow: -5px 10px 60px 0 rgba(0, 96, 94, 0.25)  !important;
+   
+}
+
+.search-btn {
+    background-color: #008D7F !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    width: 180px !important;
+}
+
+.search-btn-text {
+    color: #FFFFFF !important;
+    font-family: Roboto !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 22px !important;
+    text-align: center !important;
+}
+
+.list-header-members {
+    background-color: #0081DB !important;
+    border-radius: 10px 10px 0 0 !important;
+    box-shadow: 0 10px 30px 0 rgba(177, 177, 181, 0.4) !important;
+    width: 80px !important;
+    height: 34px !important;
+    position: relative !important;
+    float: right !important;
+}
+
+.list-header-text {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    text-align: center !important;
+}
+
+.job-title {
+    color: #202C39 !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    text-align: left !important;
+}
+
+.user-name {
+    color: #3B3D47 !important;
+    font-family: Roboto !important;
+    font-size: 21px !important;
+    font-weight: 700 !important;
+    line-height: 30px !important;
+    text-align: left !important;
+}
+
+.skills-members {
+    border: 1px solid #B1B1B5 !important;
+    border-radius: 10px !important;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25) !important;
+    width: 154px !important;
+    height: 30px !important;
+}
+
+.skills-members1 {
+    border: 1px solid #B1B1B5 !important;
+    border-radius: 10px !important;
+    box-shadow: -5px 10px 30px 0 rgba(0, 96, 94, 0.25) !important;
+    width: 62px !important;
+    height: 30px !important;
+}
