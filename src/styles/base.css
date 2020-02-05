@@ -900,6 +900,14 @@ label {
     height: 200px !important;
 }
 
+.the-team-images1 {
+    border: 1px solid #EBEBEC !important;
+    border-radius: 10px !important;
+    width: 240px !important;
+    height: auto !important;
+    margin-top: 15% !important;
+}
+
 .the-team {
     color: #202C39 !important;
     font-size: 38px;
