@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 import { useRouter } from 'next/router'
+import '../../styles/members.css'
 
 
 class FilterComponent extends PureComponent {
@@ -62,78 +63,113 @@ class FilterComponent extends PureComponent {
 
         return (
             <div>
-
                 <Menu
                     mode='inline'
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['filter1','filter2']}
-                    style={{ height: '100%' }}>
-
+                    style={{ height: '100%' }}
+                >
                     <SubMenu
                         key='filter1'
-                        title={
+                        title={<div className={'filters-title'}>
                             <span>
-                              <Icon style={{ fontSize: '20px' }} type='appstore'/>
-                                Categories
-                            </span>
+                                Writing & Translation
+                            </span></div>
                         }>
-
-                        <Menu.Item key='1'><Checkbox style={{ float: 'right' }}
-                                                     onChange={this.onChange}/>Writing </Menu.Item>
-                        <Menu.Item key='2'><Checkbox style={{ float: 'right' }}
-                                                     onChange={this.onChange}/>Marketing</Menu.Item>
-                        <Menu.Item key='3'><Checkbox style={{ float: 'right' }}
-                                                     onChange={this.onChange}/>Design</Menu.Item>
-                        <Menu.Item key='4'><Checkbox style={{ float: 'right' }}
-                                                     onChange={this.onChange}/>Consultancy</Menu.Item>
-                        <Menu.Item key='5'><Checkbox style={{ float: 'right' }}
-                                                     onChange={this.onChange}/>Developers</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='1'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Translation </Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='2'><div className={'check-filter'}><Checkbox 
+                                                     onChange={this.onChange}/></div>Copywriter</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='3'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Articles & News</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='4'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Web Content</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='5'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Books</Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key='filter2'
-                        title={
+                        title={<div className={'filters-title'}>
                             <span>
-                              <Icon style={{ fontSize: '20px' }} type='cluster'/>
-                                Subcategories
-                            </span>}>
+                                Digital Marketing
+                            </span> </div>}> 
 
-                        {subcategoriesElements}
+                            <Menu.Item className={'filters-item-text'} key='1'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Social Media </Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='2'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Google Ads</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='3'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Organic SEO</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='4'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Influencers</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='5'><Checkbox className={'check-filter'}
+                                                     onChange={this.onChange}/>Press Releases</Menu.Item>
                     </SubMenu>
 
                     <SubMenu
                         key='filter3'
                         title={
+                            <div className={'filters-title'}>
                             <span>
-                                <Icon style={{ fontSize: '20px' }} type='euro'/>
-                                Pricing
+                                Business Consultancy
                             </span>
+                            </div>
                         }>
-                        <Menu.Item key='17'><Checkbox style={{ float: 'right' }}
+                        <Menu.Item className={'filters-item-text'} key='17'><Checkbox className={'check-filter'}
                           onChange={this.onChange}/> &lt; $30/hour</Menu.Item>
-                        <Menu.Item key='18'><Checkbox style={{ float: 'right' }}
+                        <Menu.Item className={'filters-item-text'} key='18'><Checkbox className={'check-filter'}
                                   onChange={this.onChange}/>$30 -
                             $50/hour</Menu.Item>
-                        <Menu.Item key='19'><Checkbox style={{ float: 'right' }}
+                        <Menu.Item className={'filters-item-text'} key='19'><Checkbox className={'check-filter'}
                               onChange={this.onChange}/>$50 -
                             $100/hour</Menu.Item>
-                        <Menu.Item key='20'><Checkbox style={{ float: 'right' }}
+                        <Menu.Item className={'filters-item-text'} key='20'><Checkbox className={'check-filter'}
                           onChange={this.onChange}/>&gt; $100/hour</Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key='filter4'
-                        title={
+                        title={<div className={'filters-title'}>
                             <span>
-                              <Icon style={{ fontSize: '20px' }} type='star'/>
                                 Rating
-                            </span>}>
-                        <Menu.Item key='21'>
-                            <Checkbox style={{ float: 'right' }} onChange={this.onChange}/>3 Stars</Menu.Item>
-                        <Menu.Item key='22'>
-                            <Checkbox style={{ float: 'right' }} onChange={this.onChange}/>4 Stars</Menu.Item>
-                        <Menu.Item key='23'>
-                            <Checkbox style={{ float: 'right' }} onChange={this.onChange}/>5 Stars</Menu.Item>
-                        <Menu.Item key='24'>
-                            <Checkbox style={{ float: 'right' }} onChange={this.onChange}/>Top Rated</Menu.Item>
+                            </span></div>}>
+                        <Menu.Item className={'filters-item-text'} key='21'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>3 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='22'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>4 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='23'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>5 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='24'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>Top Rated</Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key='filter5'
+                        title={<div className={'filters-title'}>
+                            <span>
+                                Design & Creative
+                            </span></div>}>
+                        <Menu.Item className={'filters-item-text'} key='25'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>3 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='26'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>4 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='27'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>5 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='28'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>Top Rated</Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key='filter6'
+                        title={<div className={'filters-title'}>
+                            <span>
+                                IT & Programming
+                            </span></div>}>
+                        <Menu.Item className={'filters-item-text'} key='28'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>3 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='29'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>4 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='30'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>5 Stars</Menu.Item>
+                        <Menu.Item className={'filters-item-text'} key='31'>
+                            <Checkbox className={'check-filter'} onChange={this.onChange}/>Top Rated</Menu.Item>
                     </SubMenu>
                 </Menu>
             </div>
