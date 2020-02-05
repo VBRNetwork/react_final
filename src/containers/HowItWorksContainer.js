@@ -144,8 +144,26 @@ class HowItWorksContainer extends Component {
                             <Col xs={24} lg={12} xxl={12}>
                                 <div className="paragraphs" style={{marginTop: '10%', color: 'rgba(0, 37, 70, 0.74)'}}>
                                     <Radio.Group>
-                                    <Radio.Button className='hiw-toggle-btn' value="job"><div className={'btn-text-hiw'}><span   >I want a job</span></div></Radio.Button>
-                                    <Radio.Button className='hiw-toggle-btn1' value="hire"><div className={'btn-text-hiw1'}><span>I want to hire</span></div></Radio.Button>
+                                        <Radio.Button 
+                                            className='hiw-toggle-btn' 
+                                            value="job">
+                                                <div 
+                                                    className={'btn-text-hiw'}
+                                                >
+                                                    <span>
+                                                        I want a job
+                                                    </span>
+                                                </div>
+                                        </Radio.Button>
+                                        <Radio.Button 
+                                            className='hiw-toggle-btn1' 
+                                            value="hire">
+                                                <div className={'btn-text-hiw1'}>
+                                                    <span>
+                                                        I want to hire
+                                                    </span>
+                                                </div>
+                                        </Radio.Button>
                                     </ Radio.Group>
                                 </div>
                                 <div className={'hiw-text'} >
@@ -157,7 +175,7 @@ class HowItWorksContainer extends Component {
                             </Col>
                             <Col xs={24} lg={12} xxl={12} >
                                 <div >
-                                    <img style={{width: '440px'}} src={'../../static/images/for_freelancers_imagery@2x.webp'} />
+                                    <img style={{width: '440px'}} src={'../../static/images/hiw_img.png'} />
                                 </div>
                             </Col>
                         </Row>
