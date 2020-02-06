@@ -59,6 +59,7 @@ class VBRApp extends App {
                      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-699838440"/>
                      <script src="/static/chat.min.js"/>
                      <script src="/static/form.js"/>
+                     <script src="/static/tagm.js"/>
                      <script dangerouslySetInnerHTML={{
                          __html:`
                             $( document ).ready(function() {
