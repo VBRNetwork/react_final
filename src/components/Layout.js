@@ -4,6 +4,8 @@ import HeaderNew from '../components/HeaderNew'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { withRouter } from 'next/dist/client/router'
+import ReactGA from 'react-ga'
+ReactGA.initialize('UA-147139648-1');
 
 class Layout extends Component {
 
@@ -23,6 +25,10 @@ class Layout extends Component {
     componentDidUpdate (prevProps, prevState, snapshot) {
         if (this.props.router.pathname !== prevProps.router.pathname) {
            this.showHeader()
+        }
+
+        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
+            ReactGA.pageview(window.location.pathname + window.location.search)
         }
     }
 
@@ -52,11 +58,13 @@ class Layout extends Component {
 
 function mapStateToProps (state) {
     return {
-        router_state: state.router
+        router_state: state.router,
+        redux_router: state.router
     }
 }
 
 Layout.propTypes = {
     router_state: PropTypes.instanceOf(Object).isRequired,
+    redux_router: PropTypes.instanceOf(Object).isRequired,
 }
 export default connect(mapStateToProps, {})(withRouter(Layout))

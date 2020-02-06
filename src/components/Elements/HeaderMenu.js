@@ -5,9 +5,7 @@ import Link from 'next/link'
 import { connect } from 'react-redux'
 import { logout,logoutStore } from '../../actions/user'
 import Router from 'next/router'
-import ReactGA from 'react-ga'
 import ResponsiveAntMenu from '../../components/Elements/ResponsiveAntMenu'
-ReactGA.initialize('UA-147139648-1');
 
 class HeaderMenu extends Component {
 
@@ -31,12 +29,6 @@ class HeaderMenu extends Component {
             this.setState({
                 is_ico:true
             })
-        }
-    }
-
-    componentDidUpdate (prevProps, prevState, snapshot) {
-        if (prevProps.redux_router.location.pathname !== this.props.redux_router.location.pathname) {
-            ReactGA.pageview(window.location.pathname + window.location.search)
         }
     }
 
