@@ -1,7 +1,10 @@
 import axios from 'axios'
 import humps from 'humps'
 let apiUrl = 'https://veelancing.io/api/v1/';
-if (!process.env.NODE_ENV || process.env.NODE_ENV === false) {
+
+if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
+    //PUT false
+    && true) {
     apiUrl = 'https://veelancing.io/api/v1/'
 }
 
@@ -130,7 +133,7 @@ const vbrincapi = {
     subscribeToNewsletter(email){
         let bodyFormData = new FormData();
         bodyFormData.set('email', email);
-        return instance.post(apiUrl + 'subscribe/', bodyFormData).then(res => {
+        return instance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
             return res.data
         })
     }

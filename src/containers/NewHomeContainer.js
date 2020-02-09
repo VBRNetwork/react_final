@@ -9,6 +9,7 @@ import ReactRevealText from 'react-reveal-text'
 import { Helmet } from 'react-helmet'
 import { withNamespaces, NamespacesConsumer, Trans } from 'react-i18next';
 
+
 function Slogan(props) {
     return <NamespacesConsumer>{(t, { i18n }) => <ReactRevealText show={props.show}>{t('homepage.slogan')}</ReactRevealText>}</NamespacesConsumer>;
 }

@@ -900,6 +900,14 @@ label {
     height: 200px !important;
 }
 
+.the-team-images1 {
+    border: 1px solid #EBEBEC !important;
+    border-radius: 10px !important;
+    width: 240px !important;
+    height: auto !important;
+    margin-top: 15% !important;
+}
+
 .the-team {
     color: #202C39 !important;
     font-size: 38px;
@@ -1115,9 +1123,22 @@ label {
     border-color: #FFF !important;
 }
 
-.error-text {
-    margin-left: 55px;
-    font-size: 12px;
-    color: #e64545;
+.success-text {
+    margin-left: 50px;
+    font-size: 13px;
+    color: #FFF;
 }
 
+.error-text {
+    margin-left: 50px;
+    font-size: 13px;
+    color: #ff1600;
+}
+.ant-calendar-picker-input.ant-input {
+    border: none;
+    height: 57px;
+    border-radius: 13px;
+}
+.header-grid-box {
+    padding-bottom: 10px;
+}
