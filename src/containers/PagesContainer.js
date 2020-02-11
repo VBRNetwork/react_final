@@ -20,7 +20,7 @@ class PagesContainer extends Component {
     }
 
     componentDidMount () {
-        window.gtag_report_conversion_employer()
+        // window.gtag_report_conversion_employer()
     }
 
     onChange (e) {
