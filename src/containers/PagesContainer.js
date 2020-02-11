@@ -35,11 +35,11 @@ class PagesContainer extends Component {
                         <Layout style={{ padding: '24px 0', background: '#fff' }}>
                             <Row>
                                 {this.props.pageContent &&
-                                <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
-                                    { this.props.pageContent.title && <div>{this.props.pageContent.title}</div>}
-                                    <br/>
-                                    {this.props.pageContent.content && <div>{this.props.pageContent.content}</div>}
-                                </Col>
+                                    <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
+                                        { this.props.pageContent.title && <div>{this.props.pageContent.title}</div>}
+                                        <br/>
+                                        {this.props.pageContent.content && <div>{this.props.pageContent.content}</div>}
+                                    </Col>
                                 }
                             </Row>
 
