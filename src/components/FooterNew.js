@@ -7,6 +7,7 @@ import Link from 'next/link'
 import '../styles/footer.css'
 import ScrollButton from './Elements/ScrollButton'
 library.add(fas, fab)
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 class NewFooter extends Component {
     render () {
@@ -58,6 +59,17 @@ class NewFooter extends Component {
                 </Row>
                 <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
                 <div className="chat-support"/>
+                <CookieConsent
+                    location="bottom"
+                    buttonText="I agree!"
+                    cookieName="vee_cookie_consent"
+                    style={{ background: "#2B373B" }}
+                    buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+                    expires={150}
+                >
+                    This website uses cookies to enhance the user experience.{" "}
+                    <span style={{ fontSize: "10px" }}>.</span>
+                </CookieConsent>
             </footer>
         )
     }

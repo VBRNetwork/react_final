@@ -136,6 +136,11 @@ const vbrincapi = {
         return instance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
             return res.data
         })
+    },
+    getPageDetails(post_url){
+        return instance.get(apiUrl + 'community/'+post_url).then(res => {
+            return res.data
+        })
     }
 };
 
