@@ -36,6 +36,12 @@ app.prepare().then(() => {
         app.render(req, res, actualPage, queryParams)
     })
 
+    server.get('/community/:article', (req, res) => {
+        const actualPage = '/community'
+        const queryParams = { article: req.params.article }
+        app.render(req, res, actualPage, queryParams)
+    })
+
     server.get('/dashboard', (req, res) => {
         const actualPage = '/dashboard'
         const queryParams = {  }
