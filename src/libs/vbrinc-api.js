@@ -4,7 +4,7 @@ let apiUrl = 'https://veelancing.io/api/v1/';
 
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
-    && false) {
+    && true) {
     apiUrl = 'https://veelancing.io/api/v1/'
 }
 
