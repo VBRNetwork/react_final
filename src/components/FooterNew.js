@@ -61,18 +61,14 @@ class NewFooter extends Component {
                 <div className="chat-support"/>
                 <CookieConsent
                     location="bottom"
-                    buttonText={<div><strong>I Agree !</strong></div>}
+                    buttonText="I agree!"
                     cookieName="vee_cookie_consent"
                     style={{ background: "#2B373B" }}
-                    buttonStyle={{ color: "#008D7F", fontSize: "15px", backgroundColor: '#FFF' }}
+                    buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
                     expires={150}
                 >
-                    <span style={{fontSize: '15px'}}>
-                        By continuing to navigate on this website, 
-                        you consent with our <a href={'#'} style={{color: '#008D7F'}}> Cookie Policy & Privacy Policy </a>, 
-                        our <a ref={'#'} style={{color: '#008D7F'}}> Terms & Conditions </a>, and consent that you are at least 18 years old, 
-                        or 21 if from USA {" "}
-                    </span>
+                    This website uses cookies to enhance the user experience.{" "}
+                    <span style={{ fontSize: "10px" }}>.</span>
                 </CookieConsent>
             </footer>
         )
