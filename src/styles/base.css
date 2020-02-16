@@ -332,6 +332,15 @@ label {
     width: 260px !important;
 }
 
+.vbr-btn-style-buy {
+    background-color: #FFFFFF !important;
+    color: #008D7F !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    height: 60px !important;
+    width: 260px !important;
+}
+
 .vbr-btn-style span {
     color: #FFF;
     font-weight: bold;

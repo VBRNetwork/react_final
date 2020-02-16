@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import {Row, Col, Button, Input } from 'antd'
+import {Row, Col, Button, Input, Tooltip } from 'antd'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
@@ -101,7 +101,10 @@ class NewIcoContainer extends Component {
                                             <Input className="ico-email-reg" size="large" type="email" placeholder="Email"
                                                    onChange={this.changeEmail}
                                                    onPressEnter={this.changeEmail}/>
-                                            <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
+                                            <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}><strong>Get Notified!</strong></Button>
+                                            <Tooltip placement="topLeft" title="ICO will start soon !">
+                                            <Button disabled style={{backgroundColor:'#FFFFFF', color: '#089291', marginLeft: '2%'}} size={'large'}><strong>Buy Tokens</strong></Button>
+                                            </Tooltip>
                                         </div>
 
                                         <div style={{marginLeft:'20px'}}>
@@ -151,6 +154,9 @@ class NewIcoContainer extends Component {
                                 </p>
                                 <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
                                     Learn More
+                                </Button>
+                                <Button className={'vbr-btn-style-buy'} style={{ marginLeft: "15px" }}>
+                                    <strong>Join ICO</strong>
                                 </Button>
                             </div>
                         </Col>
@@ -537,9 +543,18 @@ class NewIcoContainer extends Component {
                         </div>
                         <Input size={'large'} className={'launch-time-input'} type="email" style={{ marginTop: '20px' }}
                             placeholder={'Email'} onChange={this.changeEmail} onPressEnter={this.changeEmail} />
-                        <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }} onClick={this.subscribeAction}>
-                            Get Notified!
-                        </Button>
+                        <Row>
+                            <Col span={16} pull={6}>
+                                <Button className={'vbr-btn-style'} style={{ marginTop: '20px'}} onClick={this.subscribeAction}>
+                                    Get Notified!
+                                </Button>
+                            </Col>
+                            <Col span={8}>
+                                <Button className={'vbr-btn-style-buy'} style={{ marginTop: "20px" }}>
+                                    <strong>Buy Tokens</strong>
+                                </Button>
+                            </Col>
+                        </Row>
                     </div>
                 </div>
                 <Row>
