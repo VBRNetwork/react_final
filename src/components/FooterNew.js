@@ -71,7 +71,7 @@ class NewFooter extends Component {
                         By continuing to navigate on this website, 
                         you consent with our <a href={'#'} style={{color: '#008D7F'}}> Cookie Policy & Privacy Policy </a>, 
                         our <a ref={'#'} style={{color: '#008D7F'}}> Terms & Conditions </a>, and consent that you are at least 18 years old, 
-                        or 21 if from USA
+                        or 21 if from USA {" "}
                     </span>
                 </CookieConsent>
             </footer>
