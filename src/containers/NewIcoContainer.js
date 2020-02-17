@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import {Row, Col, Button, Input } from 'antd'
+import {Row, Col, Button, Input, Tooltip } from 'antd'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
@@ -102,6 +102,7 @@ class NewIcoContainer extends Component {
                                                    onChange={this.changeEmail}
                                                    onPressEnter={this.changeEmail}/>
                                             <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
+                                            <Tooltip placement="topLeft" title="ICO will start soon !"><Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} disabled><strong>Buy Tokens</strong></Button></Tooltip>
                                         </div>
 
                                         <div style={{marginLeft:'20px'}}>
