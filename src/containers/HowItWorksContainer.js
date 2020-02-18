@@ -204,7 +204,7 @@ class HowItWorksContainer extends Component {
                                             {<div 
                                                 className={'card-title'} >
                                                 Create your profile
-                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                         <Icon style={{fontSize: '30px'}} type='profile' />
                                                 </div>
                                             </div>}
@@ -221,7 +221,6 @@ class HowItWorksContainer extends Component {
                                                         All your data is stored safely, and you are in full control of it, at any given time.
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -233,7 +232,7 @@ class HowItWorksContainer extends Component {
                                             {<div 
                                                 className={'card-title'} >
                                                 Find the job you love
-                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                     <Icon style={{fontSize: '30px'}} type='heart' />
                                                 </div>
                                             </div>}
@@ -250,7 +249,6 @@ class HowItWorksContainer extends Component {
                                                         Veelancing has over 85 different job categories !
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -262,7 +260,7 @@ class HowItWorksContainer extends Component {
                                             {<div 
                                                 className={'card-title'} >
                                                     Settle your own terms 
-                                                    <div style={{float: 'right', color: '#FFA17A'}}>
+                                                    <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                         <Icon style={{fontSize: '30px'}} type='file-protect' />
                                                     </div>
                                             </div>}
@@ -278,7 +276,6 @@ class HowItWorksContainer extends Component {
                                                         This will allow a peer-topeer interaction, eliminating third party intervention.
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -291,7 +288,7 @@ class HowItWorksContainer extends Component {
                                             {<div 
                                                 className={'card-title'} >
                                                 Get payed instantly
-                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                     <Icon style={{fontSize: '30px'}} type='dollar' />
                                                 </div>
                                             </div>}
@@ -306,7 +303,6 @@ class HowItWorksContainer extends Component {
                                                         <a style={{color: '#008D7F'}} href={'#'}> More about Tokens & Exchange</a>
                                                     </p>
                                                 </div>}
-                                            avatar={<div><i className="fas fa-dice-one"></i></div>}
                                         />
                                     </Card>
                                 </Col>
