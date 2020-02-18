@@ -592,7 +592,7 @@ label {
 }
 
 .veelancing-is-a-dece {
-    color: #202C39;
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -607,8 +607,7 @@ label {
 
 .rectangle-copy {
     margin-top: 110px;
-    margin-bottom: 100px;
-    background-color: #DEEEED;
+    background-color: #5A6463EB;
     padding: 80px;
 }
 
@@ -616,13 +615,13 @@ label {
     .rectangle-copy {
         margin-top: 110px;
         margin-bottom: 100px;
-        background-color: #DEEEED;
+        background-color: #5A6463EB;
         padding: 20px;
     }
 }
 
 .the-problem {
-    color: #3B3D47;
+    color: #FFFFFF;
     font-size: 38px !important;
     font-weight: 700;
     width: 480px;
@@ -632,7 +631,7 @@ label {
 }
 
 .the-solution {
-    color: #3B3D47;
+    color: #FFFFFF;
     font-size: 38px !important;
     font-weight: 700 !important;
     width: 480px !important;
@@ -660,7 +659,7 @@ label {
 }
 
 .photographs-are-a-wa {
-    color: #202C39 !important;
+    color: #FFFFFF !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     text-align: left;
@@ -673,7 +672,7 @@ label {
 }
 
 .the-blockchain-techn {
-    color: #202C39 !important;
+    color: #FFFFFF !important;
     font-size: 38px;
     font-weight: 700;
     margin-left: 10px;
@@ -705,8 +704,9 @@ label {
     padding: 60px;
 }
 
-.mt35 {
-    margin-top: 35px;
+.tech-box-ico {
+    background: linear-gradient(225.57deg,#008d7f,#00237c);
+    padding: 2%;
 }
 
 .polaroid-image {

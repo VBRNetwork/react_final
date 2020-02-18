@@ -200,7 +200,14 @@ class HowItWorksContainer extends Component {
                                     <Card
                                         bordered={true}
                                         className={'hiw-cards'}
-                                        title={<div className={'card-title'} >Create your profile</div>}
+                                        title=
+                                            {<div 
+                                                className={'card-title'} >
+                                                Create your profile
+                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                        <Icon style={{fontSize: '30px'}} type='profile' />
+                                                </div>
+                                            </div>}
                                         style={{height: '360px'}}
                                     >
                                         <Meta
@@ -222,7 +229,14 @@ class HowItWorksContainer extends Component {
                                     <Card
                                         bordered={true}
                                         className={'hiw-cards'}
-                                        title={<div className={'card-title'} >Find the job you love</div>}
+                                        title=
+                                            {<div 
+                                                className={'card-title'} >
+                                                Find the job you love
+                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                    <Icon style={{fontSize: '30px'}} type='heart' />
+                                                </div>
+                                            </div>}
                                         style={{height: '360px'}}
                                     >
                                         <Meta
@@ -244,7 +258,14 @@ class HowItWorksContainer extends Component {
                                     <Card
                                         bordered={true}
                                         className={'hiw-cards'}
-                                        title={<div className={'card-title'} >Settle your own terms</div>}
+                                        title=
+                                            {<div 
+                                                className={'card-title'} >
+                                                    Settle your own terms 
+                                                    <div style={{float: 'right', color: '#FFA17A'}}>
+                                                        <Icon style={{fontSize: '30px'}} type='file-protect' />
+                                                    </div>
+                                            </div>}
                                         style={{height: '360px'}}
                                     >
                                         <Meta
@@ -266,7 +287,14 @@ class HowItWorksContainer extends Component {
                                         bordered={true}
                                         className={'hiw-cards'}
                                         style={{height: '360px'}}
-                                        title={<div className={'card-title'} >Get payed instantly</div>}
+                                        title=
+                                            {<div 
+                                                className={'card-title'} >
+                                                Get payed instantly
+                                                <div style={{float: 'right', color: '#FFA17A'}}>
+                                                    <Icon style={{fontSize: '30px'}} type='dollar' />
+                                                </div>
+                                            </div>}
 
                                     >
                                         <Meta
