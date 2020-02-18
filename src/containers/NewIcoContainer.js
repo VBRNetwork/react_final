@@ -203,8 +203,8 @@ class NewIcoContainer extends Component {
                     </Row>
                 </div>
 
-                <div className="mt35">
-                    <Row>
+                <div className="mt35 tech-box-ico">
+                    <Row> 
                         <Col xs={24} sm={24} md={24} lg={{ span: 9,offset:3}}>
                             <h1 className={'the-blockchain-techn'}>
                                 Veelancing Technology
