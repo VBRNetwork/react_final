@@ -22,7 +22,9 @@ class HeaderMenu extends Component {
 
     componentDidMount () {
         this.isIco()
-        window.gtag_report_conversion_employer()
+        if(typeof window !== 'undefined'){
+            window.gtag_report_conversion_employer()
+        }
     }
     isIco(){
         let icoDomains = ['localhost', 'ico.veelancing.io']
