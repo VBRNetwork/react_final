@@ -163,8 +163,6 @@ class RecoveryAccountContainer extends Component {
                                             </Button>
                                         </Form.Item>
 
-
-
                                     </Form>
                                 </Card>
                             </div>

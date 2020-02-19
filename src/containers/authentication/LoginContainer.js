@@ -35,10 +35,10 @@ class LoginContainer extends Component {
     validateForm() {
         return (this.state.username.length > 0 && this.state.password.length > 0)
     }
-    redirectToTarget(){
-        Router.push('/dashboard')
-    }
 
+    redirectToTarget(){
+        Router.push('/dashboard?register_success=1')
+    }
 
     handleSubmit(event) {
         event.preventDefault();
@@ -90,7 +90,7 @@ class LoginContainer extends Component {
                                             />
                                         </Form.Item>
                                         <Form.Item>
-                                            <Input
+                                            <Input.Password
                                                 prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type='password'
                                                 value={this.state.password}

@@ -113,4 +113,11 @@
     font-size: 20px;
 }
 
+.ant-select-selection__rendered {
+    margin-top:12px;
+}
 
+.ant-select-selection--single {
+    height: 58px !important;
+    border:0;
+}

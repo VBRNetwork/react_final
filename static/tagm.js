@@ -10,6 +10,7 @@ $( document ).ready(function() {
         gtag('event', 'conversion', {
             'send_to': 'AW-699838440/NhQ6CLfmyMIBEOjf2s0C',
         });
+        console.log('SENDED')
         return false;
     }
     window.gtag_report_conversion_freelancer = function () {

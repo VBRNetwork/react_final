@@ -47,7 +47,6 @@ class Layout extends Component {
     render () {
         return (
             <div>
-
                 <div className='layout'>
                     {this.state.showHeader && <HeaderNew/>}{this.props.children}<FooterNew/>
                 </div>

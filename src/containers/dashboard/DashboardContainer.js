@@ -13,6 +13,7 @@ import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
 import ProjectManagementContainer from './ProjectManagementContainer'
+import { Helmet } from 'react-helmet'
 
 class DashboardContainer extends Component {
 
@@ -47,9 +48,19 @@ class DashboardContainer extends Component {
       }
 
       return (
-          <DashboardLayout data={{full_name:full_name}}>
-              {dashboardComponent}
-          </DashboardLayout>
+          <div>
+              <Helmet>
+                  <title>Initial Coin Offering - Veelancing</title>
+                  <meta
+                      name='description'
+                      content='Initial Coin Offering - Become part of community'
+                  />
+              </Helmet>
+              <DashboardLayout data={{full_name:full_name}}>
+                  {dashboardComponent}
+              </DashboardLayout>
+          </div>
+
     )
   }
 }
