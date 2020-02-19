@@ -23,7 +23,7 @@ class HeaderMenu extends Component {
     componentDidMount () {
         this.isIco()
         if(typeof window !== 'undefined'){
-            window.gtag_report_conversion_employer()
+            // window.gtag_report_conversion_employer()
         }
     }
     isIco(){
