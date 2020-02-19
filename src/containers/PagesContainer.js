@@ -37,7 +37,7 @@ class PagesContainer extends Component {
                                     <Col>
                                         { this.props.pageContent.title && <div>{this.props.pageContent.title}</div>}
                                         <br/>
-                                        {this.props.pageContent.content && <div>{this.props.pageContent.content}</div>}
+                                        {this.props.pageContent.content && <div dangerouslySetInnerHTML={{__html:this.props.pageContent.content}}/>}
                                     </Col>
                                 }
                             </Row>
