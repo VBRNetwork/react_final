@@ -102,7 +102,11 @@ class NewIcoContainer extends Component {
                                                    onChange={this.changeEmail}
                                                    onPressEnter={this.changeEmail}/>
                                             <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
-                                            <Tooltip placement="topLeft" title="ICO will start soon !"><Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} disabled><strong>Buy Tokens</strong></Button></Tooltip>
+                                            <Tooltip placement="topLeft" title="ICO will start soon !">
+                                                <Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} disabled>
+                                                    <strong> Buy Tokens</strong>
+                                                </Button>
+                                            </Tooltip>
                                         </div>
 
                                         <div style={{marginLeft:'20px'}}>
@@ -152,6 +156,11 @@ class NewIcoContainer extends Component {
                                 </p>
                                 <Button className={'vbr-btn-style'} style={{ marginLeft: "15px" }}>
                                     Learn More
+                                </Button>
+                                <Button className={'vbr-btn-style'} style={{cursor:'not-allowed'}}>
+                                    <Tooltip placement="topLeft" title="ICO will start soon!">
+                                         <strong style={{color:'#FFF'}}> Buy Tokens</strong>
+                                    </Tooltip>
                                 </Button>
                             </div>
                         </Col>
@@ -560,6 +569,11 @@ class NewIcoContainer extends Component {
                     <Row type="flex" justify="center">
                         <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12}} xxl={{ span: 24 }}>
                             <Button className="vbr-btn-style">Contact Us</Button>
+                            <Button className={'vbr-btn-style'} style={{cursor:'not-allowed'}}>
+                                <Tooltip placement="topLeft" title="ICO will start soon!">
+                                    <strong style={{color:'#FFF'}}> Buy Tokens</strong>
+                                </Tooltip>
+                            </Button>
                         </Col>
                     </Row>
                 </div>

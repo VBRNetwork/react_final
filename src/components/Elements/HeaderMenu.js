@@ -21,7 +21,8 @@ class HeaderMenu extends Component {
     }
 
     componentDidMount () {
-       this.isIco()
+        this.isIco()
+        window.gtag_report_conversion_employer()
     }
     isIco(){
         let icoDomains = ['localhost', 'ico.veelancing.io']
@@ -89,16 +90,6 @@ class HeaderMenu extends Component {
                         </a>
                     </Link>
 
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer'>
-                        Change Avatar
-                    </a>
-                </Menu.Item>
-                <Menu.Item>
-                    <a target='_blank' rel='noopener noreferrer' href='#'>
-                        Payments History
-                    </a>
                 </Menu.Item>
                 <Menu.Item>
                     <div onClick={this.clickLogout}>
@@ -182,7 +173,7 @@ class HeaderMenu extends Component {
                     </Col>
                     <Col xs={12} sm={12} md={5} lg={5} xl={{ span: 8 }} xxl={6}>
                         <div style={{ marginTop: '25px', textAlign:'center' }}>
-                            {(token === false && !this.state.is_ico) && loginButton}
+                            {(token === false) && loginButton}
                             {token === false && joinButton}
                             {token !== false &&
                                 <div>

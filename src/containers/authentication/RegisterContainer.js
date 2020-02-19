@@ -102,7 +102,7 @@ class RegisterContainer extends Component {
     };
 
     redirectToTarget(){
-        Router.push('/dashboard')
+        Router.push('/dashboard?reg_form=1')
     }
 
     tosAccepted() {

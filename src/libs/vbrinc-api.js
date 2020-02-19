@@ -1,11 +1,10 @@
 import axios from 'axios'
 import humps from 'humps'
 let apiUrl = 'https://veelancing.io/api/v1/';
-
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
-    && true) {
-    apiUrl = 'https://veelancing.io/api/v1/'
+    || true) {
+    apiUrl = 'http://127.0.0.1:8000/api/v1/'
 }
 
 const instance = axios.create({
@@ -89,8 +88,11 @@ const vbrincapi = {
         let bodyFormData = new FormData();
         bodyFormData.set('first_name', data.first_name)
         bodyFormData.set('last_name', data.last_name)
+        bodyFormData.set('email', data.last_name)
         bodyFormData.set('gender',data.gender)
         bodyFormData.set('date_birth', data.date_birth)
+        bodyFormData.set('password1', data.password);
+        bodyFormData.set('password2', data.password_confirm);
         bodyFormData.set('id_front_picture', data.id_front_picture[0])
         bodyFormData.set('id_back_picture', data.id_back_picture[0])
         bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])

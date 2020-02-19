@@ -11,23 +11,35 @@ class PanelContainer extends Component {
             <div>
                 <div>
                     <Row gutter={15}>
-                        <Col xs={24} sm={7} md={7} lg={7} xl={7}>
-                            <Card size='small' title='Wallet Preview' extra={<a href='#'>More</a>}>
-                                <Statistic title='Account Balance (EUR)' value={112893} precision={2}/>
-                                <Icon type='euro' style={{ marginTop: '20px', fontSize: '30px' }}/>
-                                <Button className='post-job-button'
-                                        style={{ marginTop: 16, float: 'right' }} type='primary'>
-                                    Withdraw
-                                </Button>
+                        <Col xs={24} sm={7} md={7} lg={7} xl={12}>
+                            <Card size='small' title='KYC'>
+                                <Row>
+                                    <Col xl={18}>
+                                        "Know Your Customer"
+                                    </Col>
+                                    <Col xl={6}>
+                                        <Icon type="check-circle" style={{ color: '#ffdc00' }}/> Status Pending
+                                    </Col>
+                                </Row>
+                            </Card>
+                            <Card size='small' title='Wallet'>
+                                <Row>
+                                    <Col xl={18}>
+                                        0xafe39800b6dfbb48f1797ea4e32622f942378bfa
+                                    </Col>
+                                    <Col xl={6}>
+                                        112,893 VEE
+                                    </Col>
+                                </Row>
                             </Card>
                         </Col>
-                        <Col xs={24} sm={17} md={17} lg={17} xl={17}>
+                        <Col xs={24} sm={17} md={17} lg={17} xl={12}>
                             <Card size='small' title='Completed Jobs Chart' extra={<a href='#'>More</a>}>
                                 <Col span={8}>
                                     <Card>
                                         <Statistic
                                             title='In progress'
-                                            value={1}
+                                            value={0}
                                             valueStyle={{ color: '#ffdc00' }}
                                             prefix={<Icon type='arrow-up'/>}
                                         />
@@ -37,7 +49,7 @@ class PanelContainer extends Component {
                                     <Card>
                                         <Statistic
                                             title='Completed'
-                                            value={3}
+                                            value={0}
                                             valueStyle={{ color: '#3f8600' }}
                                             prefix={<Icon type="check-circle" />}
                                         />
@@ -47,7 +59,7 @@ class PanelContainer extends Component {
                                     <Card>
                                         <Statistic
                                             title='Closed'
-                                            value={3}
+                                            value={0}
                                             valueStyle={{ color: '#b82300' }}
                                             prefix={<Icon type="check-circle" />}
                                         />
@@ -62,56 +74,33 @@ class PanelContainer extends Component {
                     <Row gutter={15}>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                             <Card size='small' title='Your activity'>
+                                <Col span={8}>
+                                    <Card>
+                                        <Row gutter={0}>
+                                            <Col span={12}>
+                                                <Statistic title='Reviews' value={0}
+                                                           prefix={<Icon type='like'/>}/>
+                                            </Col>
+                                            <Col span={12}>
+                                                <Statistic title='Completed Jobs' value={0}
+                                                           suffix='/ 100'/>
+                                            </Col>
+                                        </Row>
+                                    </Card>
+                                </Col>
                                 <Col span={16}>
                                     <Card>
                                         <Row>
                                             <Col span={12}>
                                                 <Timeline>
-                                                    <Timeline.Item>Create a services site
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item>Solve initial network problems
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item>Technical testing
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item>Network problems being solved
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item color='red'>
-                                                        <p>Solve initial network problems 1</p>
-                                                        <p>Solve initial network problems 2</p>
-                                                        <p>Solve initial network problems 3 2015-09-01</p>
-                                                    </Timeline.Item>
+                                                    <Timeline.Item>No activity.</Timeline.Item>
                                                 </Timeline>
                                             </Col>
                                             <Col span={12}>
-                                                <Timeline>
-                                                    <Timeline.Item color='green'>Create a services site
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item color='green'>Create a services site
-                                                        2015-09-01</Timeline.Item>
-                                                    <Timeline.Item>
-                                                        <p>Technical testing 1</p>
-                                                        <p>Technical testing 2</p>
-                                                        <p>Technical testing 3 2015-09-01</p>
-                                                    </Timeline.Item>
-                                                </Timeline>
                                             </Col>
                                         </Row>
                                     </Card>
 
-                                </Col>
-                                <Col span={8}>
-                                    <Card title='Stats'>
-                                        <Row gutter={0}>
-                                            <Col span={12}>
-                                                <Statistic title='Reviews' value={1128}
-                                                           prefix={<Icon type='like'/>}/>
-                                            </Col>
-                                            <Col span={12}>
-                                                <Statistic title='Completed Jobs' value={93}
-                                                           suffix='/ 100'/>
-                                            </Col>
-                                        </Row>
-                                    </Card>
                                 </Col>
                             </Card>
                         </Col>

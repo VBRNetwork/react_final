@@ -7,15 +7,11 @@ import {connect} from 'react-redux'
 import {getVBRSettings} from '../actions/app_settings'
 import {logout} from '../actions/user'
 import Router from 'next/router'
-import { FullStory } from 'react-fullstory-component';
 const {Content} = Layout
 const {SubMenu} = Menu
 import {withRouter} from 'next/router';
 import {Helmet} from "react-helmet";
-import Navigation from '../components/Navigation/navigation'
 import ReactGA from 'react-ga';
-import Head from 'next/head'
-
 
 class Header extends Component {
 
@@ -243,8 +239,6 @@ class Header extends Component {
 
                 </Helmet>
                 
-                <FullStory settings={this.state.fullStorySettings} sessionId={'ad9iuya98d8347684'} custom={{key: 'vanea'}} />
-
                 <Content style={{marginBottom: '10px'}}>
                     <Row>
 
