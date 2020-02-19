@@ -29,12 +29,12 @@ class PagesContainer extends Component {
     render() {
         return (
             <Row>
-                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 3 }}>
+                <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 14, offset: 4 }}>
                     <Content style={{marginLeft:'1rem'}}>
                         <Layout style={{ padding: '24px 0', background: '#fff' }}>
                             <Row>
                                 {this.props.pageContent &&
-                                    <Col  xs={24} sm={24} md={{span:7}} lg={{span:5}} xl={{span:5}} xxl={{ span: 5}}>
+                                    <Col>
                                         { this.props.pageContent.title && <div>{this.props.pageContent.title}</div>}
                                         <br/>
                                         {this.props.pageContent.content && <div>{this.props.pageContent.content}</div>}
