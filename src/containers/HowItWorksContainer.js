@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Row, Col, Card, Icon, Radio, Button, Tree} from 'antd'
+import { Row, Col, Card, Icon, Radio, Button, Tree,Collapse} from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import '../styles/hiw.css'
 const { Meta } = Card;
 const { TreeNode } = Tree;
-
+const { Panel } = Collapse;
 const x = 3;
 const y = 2;
 const z = 1;
@@ -114,7 +114,12 @@ class HowItWorksContainer extends Component {
         });
       };
 
-  render () {
+    callback(key) {
+        console.log(key);
+    }
+
+
+    render () {
 
     const loop = data =>
       data.map(item => {
@@ -127,6 +132,11 @@ class HowItWorksContainer extends Component {
         }
         return <TreeNode key={item.key} title={item.title} />;
       });
+      const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
     return (
             <div>
@@ -409,16 +419,17 @@ class HowItWorksContainer extends Component {
                 </div>
 
                 <div>
-                <Tree
-                    className="draggable-tree"
-                    defaultExpandedKeys={this.state.expandedKeys}
-                    draggable
-                    blockNode
-                    onDragEnter={this.onDragEnter}
-                    onDrop={this.onDrop}
-                >
-                    {loop(this.state.gData)}
-                </Tree>
+                    <Collapse defaultActiveKey={['1']} onChange={callback}>
+                        <Panel header="This is panel header 1" key="1">
+                            <p>{text}</p>
+                        </Panel>
+                        <Panel header="This is panel header 2" key="2">
+                            <p>{text}</p>
+                        </Panel>
+                        <Panel header="This is panel header 3" key="3" disabled>
+                            <p>{text}</p>
+                        </Panel>
+                    </Collapse>
                 </div>
             </div>
         )
