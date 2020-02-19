@@ -91,8 +91,8 @@ const vbrincapi = {
         bodyFormData.set('email', data.last_name)
         bodyFormData.set('gender',data.gender)
         bodyFormData.set('date_birth', data.date_birth)
-        bodyFormData.set('password1', data.password);
-        bodyFormData.set('password2', data.password_confirm);
+        bodyFormData.set('password1', data.password1);
+        bodyFormData.set('password2', data.password2);
         bodyFormData.set('id_front_picture', data.id_front_picture[0])
         bodyFormData.set('id_back_picture', data.id_back_picture[0])
         bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])
@@ -101,7 +101,7 @@ const vbrincapi = {
         bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
-        return secureInstance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+        return instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
             return humps.camelizeKeys(res.data)
         })
 

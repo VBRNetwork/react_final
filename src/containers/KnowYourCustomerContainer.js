@@ -171,7 +171,7 @@ class KnowYourCustomerContainer extends Component {
     }
 
     redirectToTarget(){
-        Router.push('/dashboard?register_success=1')
+        Router.push('/dashboard?register_success_kyc=1')
     }
 
     knowYourCustomerButton () {
@@ -180,14 +180,16 @@ class KnowYourCustomerContainer extends Component {
         }).then((error) => {
             console.log(error)
             let errorText = '';
-            if (error.response) {
-                Object.keys(error.response.data).map(function (e, i) {
+            if(error.response){
+                Object.keys(error.response.data).map(function(e,i){
                     errorText += error.response.data[e][0] + '\n'
                 });
                 this.setState({
                     errorMessage: errorText,
                     loggingIn: false
                 })
+            }else {
+                this.redirectToTarget()
             }
         })
     }
