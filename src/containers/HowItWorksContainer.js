@@ -224,7 +224,6 @@ class HowItWorksContainer extends Component {
                                                         All your data is stored safely, and you are in full control of it, at any given time.
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -246,7 +245,6 @@ class HowItWorksContainer extends Component {
                                                         Veelancing has over 85 different job categories !
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -267,7 +265,6 @@ class HowItWorksContainer extends Component {
                                                         This will allow a peer-topeer interaction, eliminating third party intervention.
                                                     </p>
                                                 </div>}
-                                            avatar={<div><FontAwesomeIcon icon={['fas', 'fa-dice-one']} /></div>}
                                         />
                                     </Card>
                                 </Col>
@@ -391,21 +388,29 @@ class HowItWorksContainer extends Component {
                     <Button type={'primary'} className={'be-part-btn'} >
                         <div className={'be-part-btn-text'}><span>Join as a Freelancer</span></div>
                     </Button>
-                    <div style={{marginTop: '3%'}} ><span style={{textAlign: 'center', color: '#FFFFFF'}} >or <strong><a href='#' style={{color: '#FFFFFF'}} >Hire Experts</a></strong></span></div>
+                    <div style={{marginTop: '3%'}} >
+                        <span style={{textAlign: 'center', color: '#FFFFFF'}} >or
+                        <strong><a href='#' style={{color: '#FFFFFF'}} >Hire Experts</a></strong>
+                        </span>
+                    </div>
                 </div>
 
-                <div>
-                    <Collapse defaultActiveKey={['1']} onChange={callback}>
-                        <Panel header="This is panel header 1" key="1">
-                            <p>{text}</p>
-                        </Panel>
-                        <Panel header="This is panel header 2" key="2">
-                            <p>{text}</p>
-                        </Panel>
-                        <Panel header="This is panel header 3" key="3" disabled>
-                            <p>{text}</p>
-                        </Panel>
-                    </Collapse>
+                <div style={{padding:'25px'}}>
+                    <Row>
+                        <Col xs={{span:24,offset:0}} sm={16} md={8} lg={8} xl={8} xxl={{span:13,offset:5}}>
+                            <Collapse defaultActiveKey={['1']} onChange={this.callback} style={{textAlign:'center'}}>
+                                <Panel header="This is panel header 1" key="1">
+                                    <p>{text}</p>
+                                </Panel>
+                                <Panel header="This is panel header 2" key="2">
+                                    <p>{text}</p>
+                                </Panel>
+                                <Panel header="This is panel header 3" key="3" disabled>
+                                    <p>{text}</p>
+                                </Panel>
+                            </Collapse>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         )

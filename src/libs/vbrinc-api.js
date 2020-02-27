@@ -3,7 +3,7 @@ import humps from 'humps'
 let apiUrl = 'https://veelancing.io/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
-    || true) {
+    || false) {
     apiUrl = 'http://127.0.0.1:8000/api/v1/'
 }
 
@@ -101,9 +101,15 @@ const vbrincapi = {
         bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
-        return instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
-            return humps.camelizeKeys(res.data)
-        })
+        let response = false
+        try {
+            response = instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+                return humps.camelizeKeys(res.data)
+            })
+        }catch (e) {
+            console.log(e)
+        }
+        return response
 
     },
 
