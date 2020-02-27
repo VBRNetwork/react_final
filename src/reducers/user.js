@@ -1,6 +1,7 @@
 import Immutable from 'immutable'
 import * as ActionType from '../actions/user'
 import update from 'immutability-helper'
+import { NO_DATA } from '../actions/user'
 
 export const initialState = Immutable.fromJS({
   name: 'guest',
@@ -26,6 +27,8 @@ export default function (state = initialState, action) {
                     $set: data.user.profile
                 }
           });
+    case ActionType.NO_DATA:
+        return state
     default:
       return state
   }
