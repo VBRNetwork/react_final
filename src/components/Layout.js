@@ -20,6 +20,7 @@ class Layout extends Component {
 
     componentDidMount () {
         this.showHeader()
+        ReactGA.pageview('/')
     }
 
     componentDidUpdate (prevProps, prevState, snapshot) {
