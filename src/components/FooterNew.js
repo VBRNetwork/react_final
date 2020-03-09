@@ -69,7 +69,7 @@ class NewFooter extends Component {
                 >
                     <span style={{ fontSize: "13px" }}>
                         By continuing to navgate on this website, you agree with our 
-                        <a href="#" style={{color: '#0b9599'}}> Cookie Policy & Privacy Policy </a>, our <a href="#" style={{color: '#0b9599'}}> Terms & Conditions </a>, 
+                        <a href="/community/privacy-policy" style={{color: '#0b9599'}}> Cookie Policy & Privacy Policy </a>, our <a href="#" style={{color: '#0b9599'}}> Terms & Conditions </a>, 
                         and you consent that you have at least 18 yars old, or if based on USA, 21.
                     </span>
                 </CookieConsent>
