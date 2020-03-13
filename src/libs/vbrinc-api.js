@@ -8,7 +8,7 @@ if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     apiUrl = 'http://127.0.0.1:8000/api/v1/'
 }
 
-if(location && location.host === 'ico.veelancing.io'){
+if (typeof window !== 'undefined' && window.location && window.location.host === 'ico.veelancing.io') {
     apiUrl = 'https://ico.veelancing.io/api/v1/';
 }
 
