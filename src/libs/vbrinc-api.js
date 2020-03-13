@@ -1,10 +1,15 @@
 import axios from 'axios'
 import humps from 'humps'
+
 let apiUrl = 'https://veelancing.io/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
     || false) {
     apiUrl = 'http://127.0.0.1:8000/api/v1/'
+}
+
+if(location && location.host === 'ico.veelancing.io'){
+    apiUrl = 'https://ico.veelancing.io/api/v1/';
 }
 
 const instance = axios.create({
