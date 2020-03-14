@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Card, Col, Form, Icon, Input, Row, Radio } from 'antd'
+import { Card, Col, Form, Icon, Row, Radio } from 'antd'
 import Link from 'next/link'
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
