@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Particles from 'react-particles-js'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
-import {Row, Col, Button, Input, Tooltip } from 'antd'
+import { Row, Col, Button, Input, Tooltip, Form, Modal, Alert } from 'antd'
+const FormItem = Form.Item
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
@@ -15,41 +16,82 @@ class NewIcoContainer extends Component {
         super(props)
         this.state = {
             email: '',
-            error_email:false,
-            success:false
+            errorMessage:false,
+            success:false,
+            successSubscribe:false
         }
-        this.subscribeAction = this.subscribeAction.bind(this)
-        this.changeEmail = this.changeEmail.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
+        this.handleOk = this.handleOk.bind(this)
     }
 
-    subscribeAction(){
-        let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if (filter.test(this.state.email)) {
-           vbrincapi.subscribeToNewsletter(this.state.email).then((e) => {
-               if(e.error === false){
-                   this.setState({
-                       success:true,
-                       error_email:false,
-                   })
-               }
-               if(e.error === true){
-                   this.setState({
-                       error_email:true,
-                       success:false,
-                   })
-               }
-            });
-        }
-        return false;
-    }
-
-    changeEmail(event){
-        this.setState({
-            email:event.target.value
+    subscribeAction = e => {
+        e.preventDefault()
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                vbrincapi.subscribeToNewsletter(values.email).then((response) => {
+                    console.log(response)
+                    this.setState({
+                        errorMessage: response.data,
+                        successSubscribe: true,
+                    })
+                }).catch((error) => {
+                    this.setState({
+                        errorMessage: error.response.data,
+                    })
+                });
+            }
         })
     }
 
+    handleOk = e => {
+        console.log(e);
+        this.setState({
+            successSubscribe: false,
+        });
+    };
+
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+            successSubscribe: false,
+        });
+    };
+
+
     render() {
+
+        const {getFieldDecorator} = this.props.form
+
+        let formSubscribe = (
+            <div style={{marginLeft:'55px'}}>
+                <Form inline="true" onSubmit={this.subscribeAction} style={{width:'350px'}}>
+                    <FormItem>
+                        {getFieldDecorator('email', {
+                            rules: [{ required: true, message: 'Please input your email!' , type:'email'}],
+                        })(
+                            <Input placeholder="Email"/>
+                        )}
+                    </FormItem>
+                    <div>
+                        {this.state.errorMessage.length > 0 && <Alert style={{marginBottom:'10px'}} message={ this.state.errorMessage}/>}
+                    </div>
+                    <Button style={{backgroundColor:'#FFFFFF'}} size={'large'}  htmlType="submit">Get Notified!</Button>
+                    <Tooltip placement="topLeft" title="ICO will start soon !">
+                        <Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} >
+                            <strong> Buy Tokens</strong>
+                        </Button>
+                    </Tooltip>
+                </Form>
+
+
+                <div>
+                    <p className="no-spam">
+                        We promise no spam! <u>Privacy Policy</u>
+                    </p>
+                </div>
+            </div>
+        )
+
         return (
             <div >
                 <Helmet>
@@ -59,7 +101,16 @@ class NewIcoContainer extends Component {
                         content='Initial Coin Offering - Become part of community'
                     />
                 </Helmet>
+
                 <div className='container background-header'>
+                    <Modal
+                        title="Thank you for subscription"
+                        visible={this.state.successSubscribe}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                    >
+                        <p>Choose your destiny</p>
+                    </Modal>
                     <Particles
                         style={{ position: 'absolute' }}
                         params={{
@@ -95,34 +146,7 @@ class NewIcoContainer extends Component {
                                 <div className="stay-up-to-date-and">
                                     <span>Stay up to date, and get notified, <br/> about when we open the Initial Coin Offering</span>
                                 </div>
-                                <Row>
-                                    <Col xs={24} sm={24} md={24} lg={18}>
-                                        <div className="example-input">
-                                            <Input className="ico-email-reg" size="large" type="email" placeholder="Email"
-                                                   onChange={this.changeEmail}
-                                                   onPressEnter={this.changeEmail}/>
-                                            <Button style={{backgroundColor:'#FFFFFF'}} size={'large'} onClick={this.subscribeAction}>Get Notified!</Button>
-                                            <Tooltip placement="topLeft" title="ICO will start soon !">
-                                                <Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} disabled>
-                                                    <strong> Buy Tokens</strong>
-                                                </Button>
-                                            </Tooltip>
-                                        </div>
-
-                                        <div style={{marginLeft:'20px'}}>
-                                            {(!this.state.success && this.state.error_email) &&
-                                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
-                                            {(this.state.success && !this.state.error_email)  &&
-                                            <span className={'success-text'}>Thank you for subscription. </span>}
-                                        </div>
-
-                                        <div>
-                                            <p className="no-spam">
-                                                We promise no spam! <u>Privacy Policy</u>
-                                            </p>
-                                        </div>
-                                    </Col>
-                                </Row>
+                                {formSubscribe}
                             </Col>
                             <Col xs={24} sm={24} md={12} lg={{ span: 9, push:2 }}>
                                 <div className="count-down tba-text" style={{margin:'0 auto'}}>
@@ -537,29 +561,6 @@ class NewIcoContainer extends Component {
                     </Col>
                 </Row>
 
-                <div style={{ maxWidth: '300px', minWidth: '340px', margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <div style={{marginLeft:'20px'}}>
-                            {(!this.state.success && this.state.error_email) &&
-                            <span className={'error-text'}>Please enter a valid email or maybe the email already exists.  </span>}
-                            {(this.state.success && !this.state.error_email)  &&
-                            <span className={'success-text'}>Thank you for subscription. </span>}
-                        </div>
-                        <Input size={'large'} className={'launch-time-input'} type="email" style={{ marginTop: '20px' }}
-                            placeholder={'Email'} onChange={this.changeEmail} onPressEnter={this.changeEmail} />
-                        <Button className={'vbr-btn-style'} style={{ marginTop: '20px' }} onClick={this.subscribeAction}>
-                            Get Notified!
-                        </Button>
-                    </div>
-                </div>
-                <Row>
-                    <Col xs={24} sm={16} md={19} lg={24} xl={{ span: 22 }} xxl={{ span: 24 }}>
-                        <div className={'home-privacy-policy-text'}>
-                            <h4> We promise no spam!<span><a href="/"><b> <u> Privacy Policy</u> </b></a></span>
-                            </h4>
-                        </div>
-                    </Col>
-                </Row>
                 <div className="rectangle2">
                     <Row type="flex" justify="center">
                         <Col xs={24} sm={24} md={24} lg={{ span: 12 }} xl={{ span: 12 }} xxl={{ span: 24}}>
@@ -590,4 +591,8 @@ function mapStateToProps (state) {
 NewIcoContainer.propTypes = {
 }
 
-export default connect(mapStateToProps, {})(NewIcoContainer)
+
+const NewIcoContainerForm = Form.create({ name: 'ico_container' })(NewIcoContainer)
+
+
+export default connect(mapStateToProps, {})(NewIcoContainerForm)

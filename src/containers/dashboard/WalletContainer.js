@@ -1,35 +1,22 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import {
-    CircularProgressbar,
-    CircularProgressbarWithChildren,
-    buildStyles,
-} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import {
     Menu,
     Icon,
     Button,
-    Progress,
     Row,
     Card,
-    Layout,
-    List,
     Col,
     Statistic,
     Dropdown,
     Tabs,
-    Empty,
     Tooltip
 } from 'antd'
 const { SubMenu } = Menu;
 const { Meta } = Card;
-
-
 import { DonutChart } from '../../components/Charts/DonutChart'
-
 import '../../styles/dashboard.css'
-const percentage = 40;
 
 const menu = (
     <Menu>
@@ -80,8 +67,8 @@ class WalletContainer extends Component {
                                 <Icon type='wallet' />
                                   <span>My Wallet</span>
                             </span>}
-                        key='1'
-                    >
+                        key='1'>
+
                         <div className={'wallet-statistic-1'}>
                             <Card
                                 title={

@@ -1,35 +1,18 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     Menu,
     Icon,
-    Button,
-    Avatar,
-    Progress,
-    Row,
-    Card,
-    Switch,
     Layout,
-    List,
-    Col,
-    Statistic,
-    Timeline,
-    Dropdown,
-    Rate
 } from 'antd'
-
-const { Header, Content, Footer, Sider } = Layout
+const {  Sider } = Layout
 const { SubMenu } = Menu
 import Link from 'next/link'
 
 class MenuDashboardContainer extends Component {
     static async getInitialProps ({ store, query }) {
     }
-
     render () {
-        let full_name = this.props.user.name.toLowerCase().replace(/\b[a-z]/g, function (letter) {
-            return letter.toUpperCase()
-        })
         return (
             <Sider breakpoint='sm'
                    collapsedWidth='0'

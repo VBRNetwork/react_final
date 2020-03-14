@@ -4,9 +4,7 @@ import 'antd/dist/antd.css'
 import {
     Form,
     Input,
-    Tooltip,
     Icon,
-    Cascader,
     Select,
     Row,
     Col,
@@ -17,11 +15,11 @@ import {
 import { Helmet } from 'react-helmet'
 import moment from 'moment'
 const FormItem = Form.Item
-import '../../styles/kyc.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { knowYourCustomer } from '../../actions/user'
 import Router from 'next/dist/client/router'
+import '../../styles/kyc.css'
 
 class LoginForm extends React.Component {
     state = {

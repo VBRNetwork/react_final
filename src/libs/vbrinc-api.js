@@ -136,7 +136,7 @@ const vbrincapi = {
         let bodyFormData = new FormData();
         bodyFormData.set('email', email);
         return instance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
-            return res.data
+            return res
         })
     },
     getPageDetails(post_url){

@@ -1,12 +1,6 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Menu, Icon, Button, Avatar, Progress, Row, Card, Switch, Layout, List, Col, Statistic, Timeline, Dropdown, Rate } from 'antd'
 import '../../styles/dashboard.css'
-const { SubMenu } = Menu
-const { Header, Content, Footer, Sider } = Layout
-const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful']
-import MenuDashboardContainer from './MenuDashboardContainer'
 import DashboardLayout from '../../components/DashboardLayout'
 import ViewProfileContainer from './ViewProfileContainer'
 import PanelContainer from './PanelContainer'
@@ -53,7 +47,7 @@ class DashboardContainer extends Component {
       return (
           <div>
               <Helmet>
-                  <title>Initial Coin Offering - Veelancing</title>
+                  <title>Dashboard</title>
                   <meta
                       name='description'
                       content='Initial Coin Offering - Become part of community'
