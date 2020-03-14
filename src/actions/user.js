@@ -47,7 +47,7 @@ export function knowYourCustomer(data) {
     return dispatch => {
         return vbrincapi.knowYourCustomer(data).then(res => {
             dispatch({
-                type: NO_DATA,
+                type: SAVE_TOKEN,
                 data: res.data
             });
             return res.data

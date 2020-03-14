@@ -11,6 +11,7 @@ import DashboardLayout from '../../components/DashboardLayout'
 import ViewProfileContainer from './ViewProfileContainer'
 import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
+import KnowCustomerContainer from './KnowCustomerContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
 import ProjectManagementContainer from './ProjectManagementContainer'
 import { Helmet } from 'react-helmet'
@@ -45,6 +46,8 @@ class DashboardContainer extends Component {
           dashboardComponent = <WalletContainer/>
       }else if(this.state.location === '/dashboard/project-management'){
           dashboardComponent = <ProjectManagementContainer/>
+      }else if(this.state.location === '/dashboard/know-your-customer'){
+          dashboardComponent = <KnowCustomerContainer/>
       }
 
       return (

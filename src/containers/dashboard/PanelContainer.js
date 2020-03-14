@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Icon, Button, Row, Card, Col, Statistic, Timeline} from 'antd'
+import { Icon, Button, Row, Card, Col, Statistic, Timeline, Menu } from 'antd'
+import Link from 'next/link'
 
 class PanelContainer extends Component {
     static async getInitialProps ({ store, query }) {
@@ -18,7 +19,9 @@ class PanelContainer extends Component {
                                         "Know Your Customer"
                                     </Col>
                                     <Col xl={6}>
-                                        <Icon type="check-circle" style={{ color: '#ffdc00' }}/> Status Pending
+                                        <Link href={'/dashboard?slug=know-your-customer'} as={'/dashboard/know-your-customer'}>
+                                            <a><Icon type="check-circle" style={{ color: '#ffdc00' }}/> Not Verified</a>
+                                        </Link>
                                     </Col>
                                 </Row>
                             </Card>

@@ -3,7 +3,7 @@ import humps from 'humps'
 let apiUrl = 'https://veelancing.io/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
-    || false) {
+    || true) {
     apiUrl = 'http://127.0.0.1:8000/api/v1/'
 }
 
@@ -88,28 +88,22 @@ const vbrincapi = {
         let bodyFormData = new FormData();
         bodyFormData.set('first_name', data.first_name)
         bodyFormData.set('last_name', data.last_name)
-        bodyFormData.set('email', data.last_name)
+        bodyFormData.set('email', data.email)
         bodyFormData.set('gender',data.gender)
         bodyFormData.set('date_birth', data.date_birth)
         bodyFormData.set('password1', data.password1);
         bodyFormData.set('password2', data.password2);
-        bodyFormData.set('id_front_picture', data.id_front_picture[0])
-        bodyFormData.set('id_back_picture', data.id_back_picture[0])
-        bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])
-        bodyFormData.set('address_line1', data.address_line1)
-        bodyFormData.set('address_line2', data.address_line2)
+        // bodyFormData.set('id_front_picture', data.id_front_picture[0])
+        // bodyFormData.set('id_back_picture', data.id_back_picture[0])
+        // bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])
+        bodyFormData.set('address', data.address)
+        // bodyFormData.set('address_line2', data.address_line2)
         bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
-        let response = false
-        try {
-            response = instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
-                return humps.camelizeKeys(res.data)
-            })
-        }catch (e) {
-            console.log(e)
-        }
-        return response
+        return instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+            return res
+        })
 
     },
 
