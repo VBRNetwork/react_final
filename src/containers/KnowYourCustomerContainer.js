@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { connect } from 'react-redux'
 import {
     Icon,
@@ -22,7 +22,7 @@ class KnowYourCustomerContainer extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            first_name: '',
+            first_name: false,
             last_name: '',
             gender: '',
             email: '',
@@ -207,6 +207,8 @@ class KnowYourCustomerContainer extends Component {
     }
 
     render () {
+        const [form] = Form.useForm();
+
         const { getFieldDecorator } = this.props.form
         const formItemLayout = {
             labelCol: {
@@ -222,29 +224,13 @@ class KnowYourCustomerContainer extends Component {
                 xxl: { span: 6 },
             }
         }
-        const tailFormItemLayout = {
-            wrapperCol: {
-                xs: {
-                    span: 24,
-                    offset: 0,
-                },
-                sm: {
-                    span: 16,
-                },
-                xl: { span: 24 },
-                xxl: { span: 24 },
-            }
-        }
 
-        const config = {
-            rules: [{ type: 'object', required: true, message: 'Please select time!' }],
-        }
         const { fileList } = this.state
 
         return (
             <div>
                 <Helmet>
-                    <title>Know Your Customer - Veelancing ICO</title>
+                    Know Your Customer - Veelancing ICO
                     <meta
                         name='description'
                         content='Register to our ICO'
@@ -255,21 +241,24 @@ class KnowYourCustomerContainer extends Component {
                         <h2 className={'text-center'}>Veelancing - Know Your Customer</h2>
                         <Row>
                             <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 17, offset: 7 }}>
-                                <Form {...formItemLayout}>
+                                <Form {...formItemLayout} form={form}>
 
                                     <Form.Item
+                                        name="first_name"
                                         label="First Name"
-                                        hasFeedback={(this.state.first_name.length > 0)}
-                                        required
-                                        validateStatus={(this.state.first_name.length > 0) ? 'success' : 'error'}>
-                                        <Input className="kyc-input" onChange={this.handleChangeFirstname}
-                                               placeholder="First Name"/>
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: 'Please input your nickname',
+                                            },
+                                        ]}>
+                                        <Input placeholder="Please input your nickname" />
                                     </Form.Item>
 
                                     <Form.Item
                                         label="Last Name"
                                         required
-                                        hasFeedback={(this.state.last_name.length > 0)}
+                                        hasFeedback
                                         validateStatus={(this.state.last_name.length > 0) ? 'success' : ''}>
                                         <Input className="kyc-input" onChange={this.handleChangeLastname}
                                                placeholder="Last Name"/>
@@ -278,7 +267,7 @@ class KnowYourCustomerContainer extends Component {
                                     <Form.Item
                                         label="Email"
                                         required
-                                        hasFeedback={(this.state.email.length > 0)}
+                                        hasFeedback
                                         validateStatus={(this.state.email.length > 0) ? 'success' : ''}>
                                         <Input className="kyc-input" onChange={this.handleChangeEmail}
                                                placeholder="Email"/>
@@ -286,7 +275,7 @@ class KnowYourCustomerContainer extends Component {
 
                                     <Form.Item  label="Password"
                                                 required
-                                                hasFeedback={(this.state.password1.length > 0)}
+                                                hasFeedback
                                                 validateStatus={(this.state.password1.length > 0) ? 'success' : ''}>
                                         <Input.Password className="kyc-input" onChange={this.handleChangePassword}
                                                placeholder="Password"/>
@@ -295,7 +284,7 @@ class KnowYourCustomerContainer extends Component {
                                     <Form.Item
                                         label="Password"
                                         required
-                                        hasFeedback={(this.state.password2.length > 0)}
+                                        hasFeedback
                                         validateStatus={(this.state.password2.length > 0) ? 'success' : ''}>
                                         <Input.Password className="kyc-input" onChange={this.handleChangeRepeatPassword}
                                                placeholder="Repeat your password"/>
@@ -304,7 +293,7 @@ class KnowYourCustomerContainer extends Component {
                                     <Form.Item
                                         label="Gender"
                                         required
-                                        hasFeedback={(this.state.gender.length > 0)}
+                                        hasFeedback
                                         validateStatus={(this.state.gender.length > 0) ? 'success' : ''}>
                                         <Select placeholder="Choose gender" style={{ width: 120 }}
                                                 className="kyc-input" onChange={this.handleChangeGender}>
@@ -315,7 +304,7 @@ class KnowYourCustomerContainer extends Component {
 
                                     <Form.Item label="Phone"
                                                required
-                                               hasFeedback={(this.state.phone.length > 0)}
+                                               hasFeedback
                                                validateStatus={(this.state.phone.length > 0) ? 'success' : ''}>
                                         <Input className="kyc-input" type={'number'} pattern="[0-9]"
                                                onChange={this.handleChangePhone} placeholder="Phone number"/>
@@ -323,26 +312,19 @@ class KnowYourCustomerContainer extends Component {
 
                                     <Form.Item label="Date of birth"
                                                required
-                                               hasFeedback={(this.state.date_birth.length > 0)}
+                                               hasFeedback
                                                validateStatus={(this.state.date_birth.length > 0) ? 'success' : ''}>
                                         <DatePicker onChange={this.handleSetDateBirth} className="kyc-input"/>
                                     </Form.Item>
 
-                                    <Form.Item label="Address Line 1"
+                                    <Form.Item label="Address"
                                                required
-                                               hasFeedback={(this.state.address_line1.length > 0)}
+                                               hasFeedback
                                                validateStatus={(this.state.address_line1.length > 0) ? 'success' : ''}>
                                         <Input className="kyc-input" onChange={this.handleChangeAddress1}
-                                               placeholder="Address Line 1"/>
+                                               placeholder="Address Line"/>
                                     </Form.Item>
 
-                                    <Form.Item label="Address Line 2"
-                                               required
-                                               hasFeedback={(this.state.address_line2.length > 0)}
-                                               validateStatus={(this.state.address_line2.length > 0) ? 'success' : ''}>
-                                        <Input className="kyc-input" onChange={this.handleChangeAddress2}
-                                               placeholder="Address Line 2"/>
-                                    </Form.Item>
 
                                     <Form.Item label="ID Front Picture"
                                                required
@@ -396,20 +378,21 @@ class KnowYourCustomerContainer extends Component {
                                             </Col>
                                         </Row>
                                         }
-                                        <Form.Item className="kyc-form-footer">
+                                    </div>
+
+                                    <Form.Item label="Terms and Privacy" className="kyc-form-footer">
                                             <Checkbox checked={this.state.tos} name={'tos'} onChange={this.tosAccepted}>
                                                 I have read and agreed with <strong>Veelancing</strong> <a href="">Terms & Conditions</a> and <a href="">Privacy Policy</a>
                                             </Checkbox>
-                                        </Form.Item>
-                                        <Form.Item className="kyc-form-btn">
-                                            <Button type="primary"
-                                                    className="kyc-upload-btn-sub"
-                                                    onClick={this.handleSubmit}
-                                                    disabled={!this.state.tos}>
-                                                Submit KYC
-                                            </Button>
-                                        </Form.Item>
-                                    </div>
+                                    </Form.Item>
+                                    <Form.Item className="kyc-form-btn">
+                                        <Button type="primary"
+                                                className="kyc-upload-btn-sub"
+                                                onClick={this.handleSubmit}
+                                                disabled={!this.state.tos}>
+                                            Submit KYC
+                                        </Button>
+                                    </Form.Item>
                                 </Form>
                             </Col>
                         </Row>

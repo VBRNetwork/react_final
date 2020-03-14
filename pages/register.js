@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import RegisterContainer from 'containers/authentication/RegisterContainer'
-import KnowYourCustomerContainer from 'containers/KnowYourCustomerContainer'
+import KnowYourCustomerContainer from 'containers/authentication/KnowYourCustomerRegister'
 
 const IndexRegister = (props) => {
     let icoDomains = ['localhost', 'ico.veelancing.io']
