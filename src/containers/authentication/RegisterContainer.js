@@ -83,6 +83,9 @@ class RegisterContainer extends Component {
         if (!this.state.loggingIn) {
             this.setState({loggingIn: true, errorMessage: ''});
             registerAccount(this.state).then((res) => {
+                if(typeof window !== 'undefined'){
+                    window.gtag_report_conversion_freelancer()
+                }
                 this.redirectToTarget()
             }).catch((error) => {
                 let errorText = '';

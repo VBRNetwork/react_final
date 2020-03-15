@@ -38,6 +38,9 @@ class LoginForm extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', values);
                 this.props.knowYourCustomer(values).then((e) => {
+                    if(typeof window !== 'undefined'){
+                        window.gtag_report_conversion_ico_signup()
+                    }
                     this.redirectToTarget()
                 }).catch((error) => {
                     if(error.response){

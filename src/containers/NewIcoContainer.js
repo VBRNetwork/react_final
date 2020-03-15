@@ -20,6 +20,7 @@ class NewIcoContainer extends Component {
             success:false,
             successSubscribe:false
         }
+
         this.handleCancel = this.handleCancel.bind(this)
         this.handleOk = this.handleOk.bind(this)
     }
@@ -42,7 +43,7 @@ class NewIcoContainer extends Component {
             }
         })
     }
-
+    
     handleOk = e => {
         console.log(e);
         this.setState({
