@@ -1,0 +1,13 @@
+.get-notified-page-btn {background-color: #FFFFFF !important;
+    color: #008D7F !important;
+    border-radius: 10px !important;
+    box-shadow: 0 15px 30px 0 rgba(0, 96, 94, 0.3) !important;
+    height: 60px !important;
+    width: 260px !important;
+}
+
+.subscription-success-box {
+    background: linear-gradient(225.57deg, #008D7F 0%, #00237C 100%);
+    padding: 200px;
+    height: 700px;
+}
