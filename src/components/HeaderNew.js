@@ -99,7 +99,7 @@ class HeaderNew extends Component {
         this.handleChangeParticles(number_particles);
 
         let { getVBRSettings } = this.props
-        getVBRSettings().then((e) => {
+        getVBRSettings().catch((e) => {
         })
         this.rebuildBreadcrumbs()
 

@@ -22,7 +22,7 @@ class MenuDashboardContainer extends Component {
 
                 <Menu
                     mode='inline'
-                    defaultSelectedKeys={['knc']}
+                    defaultSelectedKeys={['abc']}
                     defaultOpenKeys={['sub1']}
                     style={{ height: '100%' }}
                     theme='dark'>
@@ -33,14 +33,14 @@ class MenuDashboardContainer extends Component {
                             <Icon type='user'/>Profile
                         </span>}>
 
+                        <Menu.Item style={{ color: '#2ec3ab' }} key='abc'>
+                            <Link href={'/dashboard'} as={'/dashboard'}><a>Main Panel</a></Link>
+                        </Menu.Item>
+
                         <Menu.Item style={{ color: '#2ec3ab' }} key='knc'>
                             <Link href={'/dashboard?slug=know-your-customer'} as={'/dashboard/know-your-customer'}>
                                 <a>Know Your Customer</a>
                             </Link>
-                        </Menu.Item>
-
-                        <Menu.Item style={{ color: '#2ec3ab' }} key='abc'>
-                            <Link href={'/dashboard'} as={'/dashboard'}><a>Status</a></Link>
                         </Menu.Item>
 
                         <Menu.Item style={{ color: '#2ec3ab' }} key='1'>

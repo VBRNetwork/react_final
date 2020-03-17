@@ -37,7 +37,7 @@ class LoginContainer extends Component {
     }
 
     redirectToTarget(){
-        Router.push('/dashboard?register_success=1')
+        Router.push('/dashboard')
     }
 
     handleSubmit(event) {
@@ -48,8 +48,9 @@ class LoginContainer extends Component {
             getAccessToken({username: this.state.username, password: this.state.password}).then((res) => {
                 this.redirectToTarget()
             }).catch((error) => {
-                let errorText = '';
+
                 if(error.response){
+                    let errorText = '';
                     Object.keys(error.response.data).map(function(e,i){
                         errorText += error.response.data[e][0] + '\n'
                     });
