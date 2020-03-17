@@ -5,6 +5,7 @@ import DashboardLayout from '../../components/DashboardLayout'
 import ViewProfileContainer from './ViewProfileContainer'
 import PanelContainer from './PanelContainer'
 import WalletContainer from './WalletContainer'
+import BuyTokensContainer from './BuyTokensContainer'
 import KnowCustomerContainer from './KnowCustomerContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
 import ProjectManagementContainer from './ProjectManagementContainer'
@@ -31,7 +32,7 @@ class DashboardContainer extends Component {
       let full_name = this.props.user.name.toLowerCase().replace(/\b[a-z]/g, function(letter) {
           return letter.toUpperCase();
       });
-      let dashboardComponent = <PanelContainer/>
+      let dashboardComponent = <BuyTokensContainer/>
       if(this.state.location === '/dashboard/view-profile'){
           dashboardComponent = <ViewProfileContainer/>
       }else if(this.state.location === '/dashboard/become-freelancer'){

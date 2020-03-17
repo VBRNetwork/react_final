@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
     }
 
     redirectToTarget = () => {
-        Router.push('/dashboard/know-your-customer')
+        Router.push('/dashboard')
     };
 
     handleSubmit = e => {

@@ -84,20 +84,9 @@ class KnowCustomerContainer extends Component {
                                     )}
                                 </FormItem>
 
-                                <FormItem label={'How many tokens do you buy? (VEE Tokens)'}>
-                                   <div style={{width:'300px'}}> <Slider defaultValue={30} max={5000} min={10}  tooltipVisible /> </div>
-                                </FormItem>
-
-                                <FormItem label={'Choose payment method'}>
-                                    <Radio.Group onChange={this.onChange} value={this.state.value}>
-                                        <Radio value={1}>Credit Card</Radio>
-                                        <Radio value={2}>Bitcoin</Radio>
-                                    </Radio.Group>
-                                </FormItem>
-
                                 <FormItem>
                                     <Button type="primary" htmlType="submit">
-                                        BUY TOKENS
+                                        Submit
                                     </Button>
                                 </FormItem>
                             </Form>

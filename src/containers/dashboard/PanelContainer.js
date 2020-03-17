@@ -28,10 +28,10 @@ class PanelContainer extends Component {
                             <Card size='small' title='Wallet'>
                                 <Row>
                                     <Col xl={18}>
-                                        0xafe39800b6dfbb48f1797ea4e32622f942378bfa
+                                        Buy Tokens
                                     </Col>
                                     <Col xl={6}>
-                                        112,893 VEE
+                                        0 VEE
                                     </Col>
                                 </Row>
                             </Card>
