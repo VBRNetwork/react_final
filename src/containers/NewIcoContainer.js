@@ -35,6 +35,9 @@ class NewIcoContainer extends Component {
                         errorMessage: response.data,
                         successSubscribe: true,
                     })
+                    if(typeof window !== 'undefined'){
+                        window.gtag_report_conversion_ico_signup()
+                    }
                 }).catch((error) => {
                     this.setState({
                         errorMessage: error.response.data,
@@ -43,7 +46,7 @@ class NewIcoContainer extends Component {
             }
         })
     }
-    
+
     handleOk = e => {
         console.log(e);
         this.setState({
