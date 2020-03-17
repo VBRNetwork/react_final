@@ -134,37 +134,36 @@ class HeaderMenu extends Component {
                                         }}>
                                             <Menu.Item key='app122'>
                                                 {!this.state.is_ico ?
+                                                    <Link href='https://ico.veelancing.io'>
                                                     <div>
-                                                        <Link href='https://ico.veelancing.io'>
-                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                                Initial Coin Offering</a>
-                                                        </Link>
-                                                    </div>:
-                                                    <div>
-                                                        <Link href='https://veelancing.io'>
-                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                                View our <span style={{color:'#9cff9c'}}>Beta</span>
-                                                            </a>
-                                                        </Link>
-                                                    </div>
+                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                            Initial Coin Offering</a>
+                                                    </div> </Link>:
+                                                    <Link href='https://veelancing.io'>
+                                                        <div>
+                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                            View our <span style={{color:'#9cff9c'}}>Beta</span>
+                                                        </a>
+                                                        </div>
+                                                    </Link>
                                                 }
 
                                             </Menu.Item>
                                             <Menu.Item key='app1'>
-                                                <div>
-                                                    <Link href='/how-it-works'>
+                                                <Link href='/how-it-works'>
+                                                    <div>
                                                         <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='bulb'/>
                                                             How it  works
                                                         </a>
-                                                    </Link>
-                                                </div>
+                                                    </div>
+                                                </Link>
                                             </Menu.Item>
                                             <Menu.Item key='about'>
-                                                <div>
-                                                    <Link href='/about-us'>
+                                                <Link href='/about-us'>
+                                                    <div>
                                                         <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='mail'/> About Us</a>
-                                                    </Link>
-                                                </div>
+                                                    </div>
+                                                </Link>
                                             </Menu.Item>
                                         </Menu>
                                     }
