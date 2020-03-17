@@ -4,6 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css'
 import { Row, Col, Button, Input, Tooltip, Form, Modal, Alert } from 'antd'
 const FormItem = Form.Item
+import Link from 'next/link'
 import HeaderMenu from '../components/Elements/HeaderMenu'
 import CountDown from '../../src/components/CountDown'
 import { Helmet } from 'react-helmet'
@@ -81,9 +82,11 @@ class NewIcoContainer extends Component {
                     </div>
                     <Button style={{backgroundColor:'#FFFFFF'}} size={'large'}  htmlType="submit">Get Notified!</Button>
                     <Tooltip placement="topLeft" title="ICO will start soon !">
-                        <Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} >
-                            <strong> Buy Tokens</strong>
-                        </Button>
+                        <Link href={'/register'}>
+                            <Button style={{backgroundColor:'#FFFFFF', color: '#0b9599', marginLeft: '2%'}} size={'large'} >
+                                <strong> Buy Tokens</strong>
+                            </Button>
+                        </Link>
                     </Tooltip>
                 </Form>
 
@@ -563,7 +566,11 @@ class NewIcoContainer extends Component {
                     <Col xs={24} sm={24} md={24} lg={{ span: 24 }} xl={{ span: 24}} xxl={{ span: 24}}>
                         <h1 className="initial-coin">The initial coin offering starts soon!</h1>
                     </Col>
+                    <Col xs={{ span: 14,offset:0}} sm={{ span: 14,offset:4}} md={{ span: 14,offset:6}} lg={{ span: 14,offset:9}} xl={{ span: 14,offset:9}} xxl={{ span: 14,offset:9}}>
+                        {formSubscribe}
+                    </Col>
                 </Row>
+
 
                 <div className="rectangle2">
                     <Row type="flex" justify="center">
