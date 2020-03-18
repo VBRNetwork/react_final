@@ -136,7 +136,7 @@ class NewHomeContainer extends Component {
                         <Col xs={24} sm={24} md={{ span: 12, offset: 1 }} lg={{ span: 12, offset: 2 }}
                              xl={{ span: 10, offset: 3 }} xxl={{ span: 10, offset: 2}}>
                             <div className="intro-text">
-                                {true && <div><span className="coming-soon">👉🏻 Coming Soon!</span></div>}
+                                <div><span className="coming-soon">👉 Coming Soon!</span></div>
                                 <h1 className="a-blockchain-marketp">
                                     <span className="big" style={{textTransform:'none'}}>
                                         <Slogan show={this.state.showText}/>
