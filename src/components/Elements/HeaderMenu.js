@@ -132,15 +132,15 @@ class HeaderMenu extends Component {
                                         }}>
                                             <Menu.Item key='app122'>
                                                 {!this.state.is_ico ?
-                                                    <Link href='https://ico.veelancing.io'>
+                                                    <Link>
                                                         <div>
-                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                            <a className="menu-item" target="_blank" href="https://ico.veelancing.io"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
                                                                 Initial Coin Offering</a>
                                                         </div>
                                                     </Link>:
-                                                    <Link href='https://veelancing.io'>
+                                                    <Link>
                                                         <div>
-                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                            <a  target="_blank" href="https://veelancing.io" className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
                                                                 View our <span style={{color:'#9cff9c'}}>Beta</span>
                                                             </a>
                                                         </div>
