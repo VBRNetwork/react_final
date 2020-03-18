@@ -566,9 +566,7 @@ class NewIcoContainer extends Component {
                     <Col xs={24} sm={24} md={24} lg={{ span: 24 }} xl={{ span: 24}} xxl={{ span: 24}}>
                         <h1 className="initial-coin">The initial coin offering starts soon!</h1>
                     </Col>
-                    <Col xs={{ span: 14,offset:0}} sm={{ span: 14,offset:4}} md={{ span: 14,offset:6}} lg={{ span: 14,offset:9}} xl={{ span: 14,offset:9}} xxl={{ span: 14,offset:9}}>
-                        {formSubscribe}
-                    </Col>
+
                 </Row>
 
 

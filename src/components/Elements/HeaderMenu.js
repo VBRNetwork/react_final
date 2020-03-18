@@ -22,10 +22,8 @@ class HeaderMenu extends Component {
 
     componentDidMount () {
         this.isIco()
-        if(typeof window !== 'undefined'){
-            // window.gtag_report_conversion_employer()
-        }
     }
+
     isIco(){
         let icoDomains = ['localhost', 'ico.veelancing.io']
         if(window && icoDomains.includes(window.location.hostname)){
@@ -135,19 +133,19 @@ class HeaderMenu extends Component {
                                             <Menu.Item key='app122'>
                                                 {!this.state.is_ico ?
                                                     <Link href='https://ico.veelancing.io'>
-                                                    <div>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                            Initial Coin Offering</a>
-                                                    </div> </Link>:
+                                                        <div>
+                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                                Initial Coin Offering</a>
+                                                        </div>
+                                                    </Link>:
                                                     <Link href='https://veelancing.io'>
                                                         <div>
-                                                        <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
-                                                            View our <span style={{color:'#9cff9c'}}>Beta</span>
-                                                        </a>
+                                                            <a className="menu-item"> <Icon style={{ fontSize: 17 }} type='file-protect'/>
+                                                                View our <span style={{color:'#9cff9c'}}>Beta</span>
+                                                            </a>
                                                         </div>
                                                     </Link>
                                                 }
-
                                             </Menu.Item>
                                             <Menu.Item key='app1'>
                                                 <Link href='/how-it-works'>

@@ -12,8 +12,7 @@ class VBRDocument extends Document {
                 enhanceApp: App => App,
                 enhanceComponent: Component => Component,
             })
-        const initialProps = await Document.getInitialProps(ctx)
-        return initialProps
+        return await Document.getInitialProps(ctx)
     }
 
     render () {

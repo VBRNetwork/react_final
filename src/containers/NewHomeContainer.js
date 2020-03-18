@@ -161,7 +161,7 @@ class NewHomeContainer extends Component {
                                             </Link>
                                         </Col>
                                         <Col xs={24} md={24} lg={12} xxl={8}>
-                                            <Link href='/jobs/add-job' >
+                                            <Link href='/jobs/add-job'>
                                                 <Button className="btn-style" size="large">
                                                     <a>
                                                         <b><Trans i18nKey="homepage.jobpost_button" /></b>
@@ -197,7 +197,8 @@ class NewHomeContainer extends Component {
 
                 <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
-                        <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
+                        <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}}
+                             xxl={{ span: 9, offset:3}}>
                             <div className="intro-text-job">
                                 <h2 className="find-the-job-you-lov">
                                     Find the job you love.
