@@ -4,7 +4,7 @@ import humps from 'humps'
 let apiUrl = 'https://veelancing.io/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
-    || true) {
+    || false) {
     apiUrl = 'http://127.0.0.1:8000/api/v1/'
 }
 
