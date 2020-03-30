@@ -48,6 +48,13 @@ class MenuDashboardContainer extends Component {
                                 Profile</a></Link>
                         </Menu.Item>
 
+                        <Menu.Item style={{ color: '#2ec3ab' }} key='29'>
+                            <Link href={'/dashboard?slug=referral-members'} as={'/dashboard/referral-members'}><a>
+                                Referral Members
+                            </a></Link>
+                        </Menu.Item>
+
+
                         <Menu.Item disabled style={{ color: '#2ec3ab' }} key='4'>
                             <Link href={'/dashboard?slug=settings'} as={'/dashboard/settings'}><a>Settings</a></Link>
                         </Menu.Item>

@@ -10,6 +10,7 @@ import KnowCustomerContainer from './KnowCustomerContainer'
 import BecomeFreelancerContainer from './BecomeFreelancerContainer'
 import ProjectManagementContainer from './ProjectManagementContainer'
 import { Helmet } from 'react-helmet'
+import ReferralsContainer from './ReferralsContainer'
 
 class DashboardContainer extends Component {
 
@@ -43,6 +44,8 @@ class DashboardContainer extends Component {
           dashboardComponent = <ProjectManagementContainer/>
       }else if(this.state.location === '/dashboard/know-your-customer'){
           dashboardComponent = <KnowCustomerContainer/>
+      }else if(this.state.location === '/dashboard/referral-members'){
+          dashboardComponent = <ReferralsContainer/>
       }
 
       return (

@@ -20,17 +20,32 @@ import { connect } from 'react-redux'
 import { knowYourCustomer } from '../../actions/user'
 import Router from 'next/dist/client/router'
 import '../../styles/kyc.css'
-
+import {withRouter} from 'next/router';
 class LoginForm extends React.Component {
-    state = {
-        confirmDirty: false,
-        autoCompleteResult: [],
-        errorMessage:''
+    constructor(props){
+        super(props)
+        this.state = {
+            confirmDirty: false,
+            autoCompleteResult: [],
+            errorMessage:'',
+            referral_code:null
+        }
     }
 
     redirectToTarget = () => {
         Router.push('/dashboard')
     };
+
+    componentDidMount () {
+        if(typeof this.props.router.query.join != 'undefined'){
+            const {join} = this.props.router.query;
+            this.setState({
+                referral_code: join
+            })
+
+        }
+
+    }
 
     handleSubmit = e => {
         e.preventDefault()
@@ -77,6 +92,7 @@ class LoginForm extends React.Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={{ span: 4, offset:2}}>
                         <h2 className={'text-center'}>Sign Up to Veelancing ICO</h2>
                         <Form inline="true" onSubmit={this.handleSubmit}>
+
                             <FormItem>
                                 {getFieldDecorator('first_name', {
                                     rules: [{ required: true, message: 'Please input your first name!' }],
@@ -178,6 +194,18 @@ class LoginForm extends React.Component {
                             </Row>
                             }
 
+                            {this.state.referral_code && <FormItem>
+                                {getFieldDecorator('referral_code', {
+                                    rules: [{ required: false}],
+                                    initialValue:  this.state.referral_code,
+                                })(
+                                    <Input
+                                        addonBefore={'Referral:'}
+                                        disabled={true}
+                                    />
+                                )}
+                            </FormItem>}
+
 
                             <FormItem>
                                 {getFieldDecorator('tos', {
@@ -209,10 +237,11 @@ function mapStateToProps (state) {
 }
 
 LoginForm.propTypes = {
-    knowYourCustomer: PropTypes.func.isRequired
+    knowYourCustomer: PropTypes.func.isRequired,
+    router: PropTypes.instanceOf(Object).isRequired,
 }
 
-const KnowYourCustomerRegister = Form.create({ name: 'login' })(LoginForm)
+const KnowYourCustomerRegister = Form.create({ name: 'login' })(withRouter(LoginForm))
 
 export default connect(mapStateToProps, {
     knowYourCustomer
