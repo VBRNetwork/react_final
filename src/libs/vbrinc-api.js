@@ -13,7 +13,7 @@ const instance = axios.create({
 });
 
 function getToken(){
-    let token = '';
+    let token = false;
     let tokenJson = {};
     let tokenJsonRoot = {};
 
@@ -54,6 +54,13 @@ const vbrincapi = {
         })
     },
     getAppSettings() {
+
+        if(getToken()){
+            return secureInstance.get(apiUrl + 'settings/', {}).then(res => {
+                return humps.camelizeKeys(res.data)
+            })
+        }
+
         return instance.get(apiUrl + 'settings/', {}).then(res => {
             return humps.camelizeKeys(res.data)
         })
@@ -93,6 +100,9 @@ const vbrincapi = {
         bodyFormData.set('date_birth', data.date_birth)
         bodyFormData.set('password1', data.password1);
         bodyFormData.set('password2', data.password2);
+        if(typeof data.referral_code != 'undefined'){
+            bodyFormData.set('referral_code', data.referral_code);
+        }
         // bodyFormData.set('id_front_picture', data.id_front_picture[0])
         // bodyFormData.set('id_back_picture', data.id_back_picture[0])
         // bodyFormData.set('id_selfie_picture', data.id_selfie_picture[0])

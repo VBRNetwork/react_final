@@ -26,6 +26,10 @@ class NewIcoContainer extends Component {
         this.handleOk = this.handleOk.bind(this)
     }
 
+    componentDidMount () {
+
+    }
+
     subscribeAction = e => {
         e.preventDefault()
         this.props.form.validateFieldsAndScroll((err, values) => {

@@ -6,7 +6,7 @@ export const initialState = Immutable.fromJS({
     main_menu:[],
     breadcrumbs:[],
     skills:[],
-    languages:[]
+    languages:[],
 });
 
 export default function (state = initialState, action) {

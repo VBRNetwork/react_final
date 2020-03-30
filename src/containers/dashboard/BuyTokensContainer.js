@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 const FormItem = Form.Item
-import { Slider, Typography } from 'antd';
+import { Slider, Typography, Alert } from 'antd';
 const { Text } = Typography;
 
 class BuyTokensContainer extends Component {
@@ -43,8 +43,6 @@ class BuyTokensContainer extends Component {
                 <Card title='Buy Veelancing Tokens'>
                     <Row>
                         <Col xl={16}>
-                            <Text>Ant Design</Text>
-
                             <Form inline="true" onSubmit={this.handleSubmit}>
                                 <FormItem label={'How many tokens do you buy? (VEE Tokens)'}>
                                     <div style={{width:'300px'}}> <Slider defaultValue={this.state.balance} max={10000} onChange={this.changeBalance} min={10}  tooltipVisible /> </div>
@@ -66,10 +64,17 @@ class BuyTokensContainer extends Component {
                         </Col>
 
                         <Col xl={8}>
-                            <Card title='Wallet'>
-                                Balance: <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {this.state.balance} VEE
+                            <Card title='Calculator'>
+                                ETH: <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {this.state.balance}
                                 <br/>
-                                Currency : <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {(this.state.balance*(3/10)).toFixed(2)} $
+                                VEE : <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {(this.state.balance*(3/10)).toFixed(2)}
+                                <br/>
+                                USD : <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {(this.state.balance*(3/10)).toFixed(2)}
+                            </Card>
+                            <Card title='Wallet'>
+                                Address: <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {this.state.balance}
+                                <br/>
+                                Balance : <Icon type="check-circle" style={{ color: '#ffdc00' }}/> {(this.state.balance*(3/10)).toFixed(2)} VEE
                             </Card>
                         </Col>
 
