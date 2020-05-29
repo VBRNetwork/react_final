@@ -25,19 +25,17 @@ function getToken(){
         tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
         if(tokenJson){
             json = JSON.parse(tokenJson.user)
-            if(json.token != 0)
-                token = "JWT " + json.token
-            else
-                token = null
         }else if(tokenJsonRoot){
             json = JSON.parse(tokenJsonRoot.user)
-            if(json.token != 0)
-                token = "JWT " + json.token
-            else
-                token = null
         }else {
             token = null
+            return token
         }
+
+        if(json.token != 0)
+            token = "JWT " + json.token
+        else
+            token = null
     }
 
     return token;
