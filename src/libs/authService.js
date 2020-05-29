@@ -1,3 +1,5 @@
+import {setTokenHeader} from './vbrinc-api.js'
+
 export default class AuthService {
   constructor (domain) {
     this.domain = domain || 'http://localhost'
@@ -47,6 +49,7 @@ export default class AuthService {
     // Saves user token to localStorage
     localStorage.setItem('id_token', tokenResponse.accessToken)
     localStorage.setItem('token', tokenResponse.token)
+    setTokenHeader()
   }
 
   getToken () {
@@ -58,6 +61,7 @@ export default class AuthService {
     // Clear user token and users data from localStorage
     localStorage.removeItem('id_token')
     localStorage.removeItem('profile')
+    secureInstance.defaults.headers.common['Authorization'] = ""
   }
 
   _checkStatus (response) {

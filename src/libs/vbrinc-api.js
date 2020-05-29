@@ -12,10 +12,6 @@ if (typeof window !== 'undefined' && window.location && window.location.host ===
     apiUrl = 'https://ico.veelancing.io/api/v1/';
 }
 
-const instance = axios.create({
-    baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*'}
-});
 
 function getToken(){
     let token = false;
@@ -27,16 +23,19 @@ function getToken(){
         tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
         if(tokenJson){
             token = tokenJson.token
-        }
-        if(tokenJsonRoot){
+        }else if(tokenJsonRoot){
             token = JSON.parse(tokenJsonRoot.user).token
+        }else {
+            token = null
         }
     }
 
     return token;
 }
 
-
+export function setTokenHeader(){
+    secureInstance.defaults.headers.common['Authorization'] = "JWT " + getToken()
+}
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
@@ -49,7 +48,7 @@ const vbrincapi = {
         let bodyFormData = new FormData();
         bodyFormData.set('username', username);
         bodyFormData.set('password', password);
-        return instance.post(apiUrl + 'accounts/auth/login/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/auth/login/', bodyFormData).then(res => {
             return res;
         })
     },
@@ -59,14 +58,7 @@ const vbrincapi = {
         })
     },
     getAppSettings() {
-
-        if(getToken()){
-            return secureInstance.get(apiUrl + 'settings/', {}).then(res => {
-                return humps.camelizeKeys(res.data)
-            })
-        }
-
-        return instance.get(apiUrl + 'settings/', {}).then(res => {
+        return secureInstance.get(apiUrl + 'settings/', {}).then(res => {
             return humps.camelizeKeys(res.data)
         })
     },
@@ -79,7 +71,7 @@ const vbrincapi = {
         bodyFormData.set('password1', data.password1);
         bodyFormData.set('password2', data.password2,);
 
-        return instance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
             return humps.camelizeKeys(res)
         })
     },
@@ -116,7 +108,7 @@ const vbrincapi = {
         bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
-        return instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
             return res
         })
 
@@ -150,12 +142,12 @@ const vbrincapi = {
     subscribeToNewsletter(email){
         let bodyFormData = new FormData();
         bodyFormData.set('email', email);
-        return instance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
             return res
         })
     },
     getPageDetails(post_url){
-        return instance.get(apiUrl + 'community/'+post_url).then(res => {
+        return secureInstance.get(apiUrl + 'community/'+post_url).then(res => {
             return res.data
         })
     },
