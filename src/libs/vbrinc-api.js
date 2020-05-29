@@ -18,6 +18,7 @@ function getToken(){
     let token = false;
     let tokenJson = {};
     let tokenJsonRoot = {};
+    let json = {};
 
     if (typeof window !== 'undefined') {
         tokenJson = JSON.parse(localStorage.getItem('persist:user'));
