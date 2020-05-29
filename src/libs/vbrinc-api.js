@@ -1,5 +1,6 @@
 import axios from 'axios'
 import humps from 'humps'
+import { json } from 'express';
 
 let apiUrl = 'https://127.0.0.1:8000/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
@@ -22,9 +23,17 @@ function getToken(){
         tokenJson = JSON.parse(localStorage.getItem('persist:user'));
         tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
         if(tokenJson){
-            token = "JWT " + tokenJson.token
+            json = JSON.parse(tokenJson.user)
+            if(json.token != 0)
+                token = "JWT " + json.token
+            else
+                token = null
         }else if(tokenJsonRoot){
-            token = "JWT " + JSON.parse(tokenJsonRoot.user).token
+            json = JSON.parse(tokenJsonRoot.user)
+            if(json.token != 0)
+                token = "JWT " + json.token
+            else
+                token = null
         }else {
             token = null
         }
