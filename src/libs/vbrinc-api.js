@@ -1,7 +1,7 @@
 import axios from 'axios'
 import humps from 'humps'
 
-let apiUrl = 'https://veelancing.io/api/v1/';
+let apiUrl = 'https://127.0.0.1:8000/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
     || false) {
@@ -157,6 +157,14 @@ const vbrincapi = {
     getPageDetails(post_url){
         return instance.get(apiUrl + 'community/'+post_url).then(res => {
             return res.data
+        })
+    },
+    //User deletion api, as parameter the id of the user which you want to delete
+    deleteUser(id){
+        let bodyFormData = new FormData;
+        bodyFormData.set('id', id);
+        return secureInstance.post(apiUrl + 'accounts/delete-user', bodyFormData).then(res => {
+            return res
         })
     }
 };
