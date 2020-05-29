@@ -22,9 +22,9 @@ function getToken(){
         tokenJson = JSON.parse(localStorage.getItem('persist:user'));
         tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
         if(tokenJson){
-            token = tokenJson.token
+            token = "JWT " + tokenJson.token
         }else if(tokenJsonRoot){
-            token = JSON.parse(tokenJsonRoot.user).token
+            token = "JWT " + JSON.parse(tokenJsonRoot.user).token
         }else {
             token = null
         }
@@ -34,12 +34,12 @@ function getToken(){
 }
 
 export function setTokenHeader(){
-    secureInstance.defaults.headers.common['Authorization'] = "JWT " + getToken()
+    secureInstance.defaults.headers.common['Authorization'] = getToken()
 }
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + getToken() }
+    headers: {'Access-Control-Allow-Origin': '*','Authorization': getToken() }
 });
 
 
