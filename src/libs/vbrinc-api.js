@@ -1,6 +1,5 @@
 import axios from 'axios'
 import humps from 'humps'
-import { json } from 'express';
 
 let apiUrl = 'https://127.0.0.1:8000/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
