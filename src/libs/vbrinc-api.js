@@ -1,7 +1,8 @@
 import axios from 'axios'
 import humps from 'humps'
+import { json } from 'express';
 
-let apiUrl = 'https://veelancing.io/api/v1/';
+let apiUrl = 'https://127.0.0.1:8000/api/v1/';
 if ((!process.env.NODE_ENV || process.env.NODE_ENV === false)
     //PUT false
     || false) {
@@ -12,35 +13,41 @@ if (typeof window !== 'undefined' && window.location && window.location.host ===
     apiUrl = 'https://ico.veelancing.io/api/v1/';
 }
 
-const instance = axios.create({
-    baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*'}
-});
 
 function getToken(){
     let token = false;
     let tokenJson = {};
     let tokenJsonRoot = {};
+    let json = {};
 
     if (typeof window !== 'undefined') {
         tokenJson = JSON.parse(localStorage.getItem('persist:user'));
         tokenJsonRoot = JSON.parse(localStorage.getItem('persist:root'));
         if(tokenJson){
-            token = tokenJson.token
+            json = JSON.parse(tokenJson.user)
+        }else if(tokenJsonRoot){
+            json = JSON.parse(tokenJsonRoot.user)
+        }else {
+            token = null
+            return token
         }
-        if(tokenJsonRoot){
-            token = JSON.parse(tokenJsonRoot.user).token
-        }
+
+        if(json.token != 0)
+            token = "JWT " + json.token
+        else
+            token = null
     }
 
     return token;
 }
 
-
+export function setTokenHeader(){
+    secureInstance.defaults.headers.common['Authorization'] = getToken()
+}
 
 const secureInstance = axios.create({
     baseURL: apiUrl,
-    headers: {'Access-Control-Allow-Origin': '*','Authorization': "JWT " + getToken() }
+    headers: {'Access-Control-Allow-Origin': '*','Authorization': getToken() }
 });
 
 
@@ -49,7 +56,7 @@ const vbrincapi = {
         let bodyFormData = new FormData();
         bodyFormData.set('username', username);
         bodyFormData.set('password', password);
-        return instance.post(apiUrl + 'accounts/auth/login/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/auth/login/', bodyFormData).then(res => {
             return res;
         })
     },
@@ -59,14 +66,7 @@ const vbrincapi = {
         })
     },
     getAppSettings() {
-
-        if(getToken()){
-            return secureInstance.get(apiUrl + 'settings/', {}).then(res => {
-                return humps.camelizeKeys(res.data)
-            })
-        }
-
-        return instance.get(apiUrl + 'settings/', {}).then(res => {
+        return secureInstance.get(apiUrl + 'settings/', {}).then(res => {
             return humps.camelizeKeys(res.data)
         })
     },
@@ -79,7 +79,7 @@ const vbrincapi = {
         bodyFormData.set('password1', data.password1);
         bodyFormData.set('password2', data.password2,);
 
-        return instance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/auth/registration',bodyFormData).then(res => {
             return humps.camelizeKeys(res)
         })
     },
@@ -116,7 +116,7 @@ const vbrincapi = {
         bodyFormData.set('phone', data.phone)
         bodyFormData.set('tos', data.tos)
 
-        return instance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'bc/coinexchangedata/verify-user/', bodyFormData).then(res => {
             return res
         })
 
@@ -150,13 +150,21 @@ const vbrincapi = {
     subscribeToNewsletter(email){
         let bodyFormData = new FormData();
         bodyFormData.set('email', email);
-        return instance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
+        return secureInstance.post(apiUrl + 'accounts/subscribe/', bodyFormData).then(res => {
             return res
         })
     },
     getPageDetails(post_url){
-        return instance.get(apiUrl + 'community/'+post_url).then(res => {
+        return secureInstance.get(apiUrl + 'community/'+post_url).then(res => {
             return res.data
+        })
+    },
+    //User deletion api, as parameter the id of the user which you want to delete
+    deleteUser(id){
+        let bodyFormData = new FormData;
+        bodyFormData.set('id', id);
+        return secureInstance.post(apiUrl + 'accounts/delete-user', bodyFormData).then(res => {
+            return res
         })
     }
 };
