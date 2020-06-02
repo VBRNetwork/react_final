@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = withCSS({
     poweredByHeader: false,
-    webpack: (config, { dev }) => {
+    webpack: (config, { dev, isServer  }) => {
         config.mode = 'production'
         config.plugins.push(
             new webpack.ProvidePlugin({
@@ -17,6 +17,11 @@ module.exports = withCSS({
             new OptimizeCSSAssetsPlugin({}),
             new TerserPlugin({})
         ];
+        if (!isServer) {
+            config.node = {
+              fs: 'empty'
+            }
+        }
         return config
     }
 })
