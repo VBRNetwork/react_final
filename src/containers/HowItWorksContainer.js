@@ -41,6 +41,7 @@ class HowItWorksContainer extends Component {
 
     state = {
         gData,
+        child: 0,
         expandedKeys: ['0-0', '0-0-0', '0-0-0-0'],
       };
 
@@ -154,7 +155,8 @@ class HowItWorksContainer extends Component {
                             <Col xs={24} lg={12} xxl={12}>
                                 <div className="paragraphs" style={{marginTop: '10%', color: 'rgba(0, 37, 70, 0.74)'}}>
                                     <Radio.Group>
-                                        <Radio.Button 
+                                        <Radio.Button
+                                            onClick = {()=>{this.setState({child: 0})}}
                                             className='hiw-toggle-btn' 
                                             value="job">
                                                 <div 
@@ -166,6 +168,7 @@ class HowItWorksContainer extends Component {
                                                 </div>
                                         </Radio.Button>
                                         <Radio.Button 
+                                        onClick = {()=>{this.setState({child: 1})}}
                                             className='hiw-toggle-btn1' 
                                             value="hire">
                                                 <div className={'btn-text-hiw1'}>
@@ -189,6 +192,7 @@ class HowItWorksContainer extends Component {
                                 </div>
                             </Col>
                         </Row>
+                        {this.state.child == 0 &&              
                         <Row>
                             <Col>
                                 <Button
@@ -199,6 +203,8 @@ class HowItWorksContainer extends Component {
                                 </Button>
                             </Col>
                         </Row>
+                        }
+                        
                         <div className={'how-it-works-ideas'}>
                             <Row>
                                 <Col span={24}>
@@ -241,7 +247,16 @@ class HowItWorksContainer extends Component {
                                         title=
                                             {<div 
                                                 className={'card-title'} >
-                                                Find the job you love
+                                                {this.state.child == 0 &&
+                                                    <span>
+                                                        Find the job you love
+                                                    </span>
+                                                }
+                                                {this.state.child == 1 &&
+                                                    <span>
+                                                        Recruit the right person for job!
+                                                    </span>
+                                                }
                                                 <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                     <Icon style={{fontSize: '30px'}} type='heart' />
                                                 </div>
@@ -251,13 +266,22 @@ class HowItWorksContainer extends Component {
                                         <Meta
                                             description=
                                                 {<div className={'card-description'} >
+                                                {this.state.child == 0 &&
                                                     <p>
                                                         Search and apply for jobs that fit your needs or accept offers directly from customers,
                                                         and receive notifications when new opportunities occur.
                                                     </p>
+                                                }
+                                                {this.state.child == 0 &&
                                                     <p>
                                                         Veelancing has over 85 different job categories !
                                                     </p>
+                                                }
+                                                {this.state.child == 1 &&
+                                                    <p>
+                                                    Post the job you need done or you can approach a freelancer directly. You will receive notifications if someone applies for the job or if you receive a reply from a freelancer.
+                                                    </p>
+                                                }
                                                 </div>}
                                         />
                                     </Card>
@@ -279,12 +303,21 @@ class HowItWorksContainer extends Component {
                                         <Meta
                                             description=
                                                 {<div className={'card-description'} >
+                                                    {this.state.child == 0 &&
                                                     <p> After being awarded with the job, use our Smart Contract feature
                                                         to agree and set the terms of collaboration with your customer
                                                     </p>
+                                                    }
+                                                    {this.state.child == 0 &&
                                                     <p>
                                                         This will allow a peer-topeer interaction, eliminating third party intervention.
                                                     </p>
+                                                    }
+                                                    {this.state.child == 1 &&
+                                                        <p>
+                                                        After awarding the job to the freelancer, use our smart contract feature to agree and set the terms of the collaboration with him or her.
+                                                        </p>
+                                                    }
                                                 </div>}
                                         />
                                     </Card>
@@ -297,7 +330,17 @@ class HowItWorksContainer extends Component {
                                         title=
                                             {<div 
                                                 className={'card-title'} >
-                                                Get payed instantly
+                                                {this.state.child == 0 &&
+                                                    <span>
+                                                    Get payed instantly
+                                                    </span>
+                                                }
+                                                {this.state.child == 1 &&
+                                                    <span>
+                                                    Assured quality
+                                                    </span>
+                                                }
+                                                
                                                 <div style={{float: 'right', color: '#FFA17A !important'}}>
                                                     <Icon style={{fontSize: '30px'}} type='dollar' />
                                                 </div>
@@ -307,20 +350,29 @@ class HowItWorksContainer extends Component {
                                         <Meta
                                             description=
                                                 {<div  className={'card-description'}>
+                                                {this.state.child == 0 &&
                                                     <p> The payment will be made in Tokens within 48 hours after completing the job.
-                                                        Exchange your tokens in any currency and cryptocurrency available, and transfer your income anytime.
+                                                    Exchange your tokens in any currency and cryptocurrency available, and transfer your income anytime.
                                                         <br />
                                                         <a style={{color: '#008D7F'}} href={'#'}> More about Tokens & Exchange</a>
                                                     </p>
+                                                }
+                                                {this.state.child == 1 &&
+                                                    <p>
+                                                    Your payment will be released to the freelancer only after the work is completed and it passes through a quality algorithm, based on similar contracts from our network. Exchange your currency or cryptocurrency in tokens to use on our platform.
+                                                    </p>
+                                                }
+                                                    
                                                 </div>}
                                         />
                                     </Card>
                                 </Col>
                             </Row>
                         </div>
-                    </div>
+                        </div>
                   </Col>
-              </Row>
+              </Row>  
+              {this.state.child == 0 &&            
               <div style={{backgroundColor:"rgb(227, 227, 227)",paddingTop:'90px',paddingBottom:'50px' }}>
                     <Row>
                         <Col xs={{ span: 21, offset: 2 }} sm={12} md={{span:12,offset:0}} lg={{span:7, offset:3}} xl={{span:9, offset:2}} xxl={{ span: 9, offset:3}}>
@@ -410,6 +462,8 @@ class HowItWorksContainer extends Component {
                         </Col>
                     </Row>
                 </div>
+              }
+              {this.state.child == 0 &&
                 <div className={'be-part'} >
                     <div className={'be-part-title'} ><span>Be part of the Veelancing community!</span></div>
                     <Button type={'primary'} className={'be-part-btn'} >
@@ -421,7 +475,7 @@ class HowItWorksContainer extends Component {
                         </span>
                     </div>
                 </div>
-
+                }
                 <div style={{padding:'25px'}}>
                     <Row>
                         <Col xs={{span:24,offset:0}} sm={16} md={8} lg={8} xl={8} xxl={{span:13,offset:5}}>

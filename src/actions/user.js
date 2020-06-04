@@ -121,3 +121,11 @@ export function registerAccount(data) {
         })
     }
 }
+
+export function resetPassword(data){
+    return dispatch => {
+        return vbrincapi.resetPassword(data.email).then(res => {
+            return res.data
+        })
+    }
+}
