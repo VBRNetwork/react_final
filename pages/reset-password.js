@@ -1,0 +1,3 @@
+import ResetPasswordContainer from 'containers/authentication/ResetPasswordContainer'
+export default ResetPasswordContainer
+
