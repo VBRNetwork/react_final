@@ -1,68 +1,58 @@
 import React, {Component, Fragment} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {getAccessToken} from 'actions/user'
 import {Helmet} from 'react-helmet'
 import Router from 'next/router'
 import {Form, Icon, Input, Button, Checkbox, Card, Col, Row, Alert} from 'antd'
+import { resetPassword } from 'actions/user'
 
 class ResetPasswordContainer extends Component {
     constructor(props) {
         super(props)
-        this.state = {username: '', password: '', loggingIn: false, errorMessage: ''}
+        this.state = {email: '', errorMessage: '', successMessage: ''}
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.validateForm = this.validateForm.bind(this)
-
-        this.handleChangePassword = this.handleChangePassword.bind(this)
     }
 
     handleChange(event) {
         const target = event.target;
         const value = target.value;
-        const name = target.name
-        this.setState({username: value})
+        this.setState({email: value})
+        this.validateForm();
     }
-
-    handleChangePassword(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name
-        this.setState({password: value})
-    }
-
     validateForm() {
-        return (this.state.username.length > 0 && this.state.password.length > 0)
+        if(this.state.email.length < 1){
+            this.state.errorMessage = "";
+            return false;
+        }
+        else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,4})+$/.test(this.state.email))){
+            this.state.errorMessage = "Invalid Email.";
+            return false;
+        }else{
+            this.state.errorMessage = "";
+            return true;
+        }
     }
 
     redirectToTarget(){
-        Router.push('/dashboard')
+        Router.push('/confirmation')
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        let {getAccessToken} = this.props
-        if (!this.state.loggingIn) {
-            this.setState({loggingIn: true, errorMessage: ''})
-            getAccessToken({username: this.state.username, password: this.state.password}).then((res) => {
-                this.redirectToTarget()
-            }).catch((error) => {
-
-                if(error.response){
-                    let errorText = '';
-                    Object.keys(error.response.data).map(function(e,i){
-                        errorText += error.response.data[e][0] + '\n'
-                    });
-                    this.setState({
-                        errorMessage: errorText,
-                        loggingIn: false
-                    })
-                }else {
-                    this.redirectToTarget()
-                }
-            })
+        if(!this.validateForm()){
+            return;
         }
+        let {resetPassword} = this.props
+        resetPassword({email: this.state.email}).then(res =>{
+            this.state.successMessage = "Email sent.";
+        }).catch(e =>{
+            this.state.errorMessage = "Invalid Email.";
+            console.log(e);
+            
+        });
     }
 
     render() {
@@ -85,9 +75,9 @@ class ResetPasswordContainer extends Component {
                                         <Form.Item>
                                             <Input
                                                 onChange={this.handleChange}
-                                                value={this.state.username}
+                                                value={this.state.email}
                                                 prefix={<Icon type='mail' style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                                placeholder='Email'
+                                                placeholder='Email'  
                                             />
                                         </Form.Item>
                                         <Form.Item>
@@ -107,6 +97,17 @@ class ResetPasswordContainer extends Component {
                                         </Col>
                                     </Row>
                                     }
+                                    {this.state.successMessage.length > 0 &&
+                                        <Row>
+                                            <Col>
+                                                <Alert
+                                                    showIcon
+                                                    message={this.state.successMessage}
+                                                    type="success"
+                                                />
+                                            </Col>
+                                        </Row>
+                                    }
                                 </Card>
                             </div>
                         </Col>
@@ -123,10 +124,9 @@ function mapStateToProps(state) {
 }
 
 ResetPasswordContainer.propTypes = {
-    // user: PropTypes.instanceOf(Map).isRequired,
-    getAccessToken: PropTypes.func.isRequired
+    resetPassword: PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps, {
-    getAccessToken
+    resetPassword
 })(ResetPasswordContainer)

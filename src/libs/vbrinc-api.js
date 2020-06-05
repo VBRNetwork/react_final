@@ -59,6 +59,13 @@ const vbrincapi = {
             return res;
         })
     },
+    resetPassword({email}){
+        let bodyFormData = new FormData();
+        bodyFormData.set('email', email);
+        return secureInstance.get(apiUrl + 'accounts/auth/password/reset/', bodyFormData).then(res => {
+            return res;
+        })
+    },
     logout() {
         return secureInstance.post(apiUrl+'accounts/auth/logout/').then(res => {
             return humps.camelizeKeys(res.data)
