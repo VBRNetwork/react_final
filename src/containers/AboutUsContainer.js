@@ -80,6 +80,12 @@ class AboutUsContainer extends Component {
                                 </Col>
                                 <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
                                     <img className="the-team-images"
+                                        src="../../static/images/sample-avatar.jpg" />
+                                    <div className="the-team-name">Daniel Ionut</div>
+                                    <div className="the-team-title">Web Developer</div>
+                                </Col>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={8} xxl={8}>
+                                    <img className="the-team-images"
                                          src="../../static/images/sample-avatar.jpg"  />
                                     <div className="the-team-name">Sorin Anghelescu</div>
                                     <div className="the-team-title">Chief Financial Officer</div>
