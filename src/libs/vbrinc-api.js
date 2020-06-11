@@ -181,6 +181,14 @@ const vbrincapi = {
             return res
         })
     },
+    //job = Json
+    postJob(job){
+        let bodyFormData = new FormData;
+        bodyFormData.set('job', job);
+        return secureInstance.post(apiUrl + 'jobs/list', bodyFormData).then(res => {
+            return res
+        })
+    },
     //id = job id
     getUpdateJob(id){
         return secureInstance.post(apiUrl + 'jobs/update?id='+id).then(res => {
