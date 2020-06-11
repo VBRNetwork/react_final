@@ -172,7 +172,36 @@ const vbrincapi = {
         return secureInstance.post(apiUrl + 'accounts/delete-user', bodyFormData).then(res => {
             return res
         })
-    }
+    },
+    //skills = Array of ids
+    getJobs(skills){
+        let bodyFormData = new FormData;
+        bodyFormData.set('filter', skills);
+        return secureInstance.post(apiUrl + 'jobs/list', bodyFormData).then(res => {
+            return res
+        })
+    },
+    //id = job id
+    getUpdateJob(id){
+        return secureInstance.post(apiUrl + 'jobs/update?id='+id).then(res => {
+            return res
+        })
+    },
+    //id = job id, job = json
+    postUpdateJob(id, job){
+        let bodyFormData = new FormData;
+        bodyFormData.set('id', id);
+        bodyFormData.set('job', job);
+        return secureInstance.post(apiUrl + 'jobs/update', bodyFormData).then(res => {
+            return res
+        })
+    },
+    //id = job id
+    deleteJob(id){
+        return secureInstance.post(apiUrl + 'jobs/delete?id='+id).then(res => {
+            return res
+        })
+    },
 };
 
 
